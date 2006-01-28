@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-01-13 00:47+0200\n"
-"PO-Revision-Date: 2004-01-13 00:50+0200\n"
+"POT-Creation-Date: 2004-02-07 10:27+0200\n"
+"PO-Revision-Date: 2004-02-07 10:13+0200\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +36,12 @@ msgid "FIELD,FIELD,..."
 msgstr "KENTTÄ,KENTT�,..."
 
 #: grep-dctrl.c:125
-msgid "Restrict pattern matching  to the FIELDs given."
+msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
 #: grep-dctrl.c:126
-msgid "Shorthand for -FPackage"
-msgstr "Lyhyt muoto vivulle -FPackage"
+msgid "This is a shorthand for -FPackage."
+msgstr "Lyhyt muoto vivulle -FPackage."
 
 #: grep-dctrl.c:127
 msgid "Show only the body of these fields from the matching paragraphs."
@@ -111,16 +111,16 @@ msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
 #: grep-dctrl.c:142 grep-dctrl.c:143
-msgid "No output to stdout"
-msgstr "Älä tulosta mitään vakiotulostevirtaan"
+msgid "Do no output to stdout."
+msgstr "Älä tulosta mitään vakiotulostevirtaan."
 
 #: grep-dctrl.c:207 grep-dctrl.c:277 grep-dctrl.c:343 predicate.c:39
 msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
 #: grep-dctrl.c:239
-msgid "A pattern is mandatory."
-msgstr "Hakuehto on välttämätön."
+msgid "A pattern is mandatory"
+msgstr "Hakuehto on välttämätön"
 
 #: grep-dctrl.c:298
 msgid "syntax error in command line"
@@ -154,41 +154,45 @@ msgstr "liikaa tiedostonimiä"
 msgid "a predicate is required"
 msgstr "predikaatti on välttämätön"
 
-#: grep-dctrl.c:605
+#: grep-dctrl.c:604
+msgid "malformed predicate"
+msgstr ""
+
+#: grep-dctrl.c:610
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:609
+#: grep-dctrl.c:614
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:618
+#: grep-dctrl.c:623
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: grep-dctrl.c:658
+#: grep-dctrl.c:663
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: grep-dctrl.c:667
+#: grep-dctrl.c:672
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: grep-dctrl.c:668
+#: grep-dctrl.c:673
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: grep-dctrl.c:669
+#: grep-dctrl.c:674
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: grep-dctrl.c:670
+#: grep-dctrl.c:675
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: grep-dctrl.c:671
+#: grep-dctrl.c:676
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 

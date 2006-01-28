@@ -1,1 +1,1 @@
-langs = ca fi
+langs = ca fi de

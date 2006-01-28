@@ -129,6 +129,27 @@ static bool verify_atom(struct atom * atom, para_t * para)
 	assert(0);
 }
 
+bool check_predicate(struct predicate * p)
+{
+	size_t sp = 0;
+	/* Run the program. */
+	for (size_t i = 0; i < p->proglen; i++) {
+		switch (p->program[i]) {
+		case I_NOP: break;
+		case I_NEG:
+			if (sp == 0) return false;
+			break;
+		case I_AND: case I_OR:
+			if (sp < 2) return false;
+			--sp;
+			break;
+		default:
+			++sp;
+		}
+	}
+	return true;
+}
+
 bool does_para_satisfy(struct predicate * p, para_t * para)
 {
 	assert(para->trie == & p->trie);
