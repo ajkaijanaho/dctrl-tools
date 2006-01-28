@@ -19,12 +19,21 @@
 #ifndef RC_H__
 #define RC_H__
 
+extern char const * const ifile_modes[];
+
+struct ifile {
+	enum ifile_mode { m_error, m_read, m_exec } mode;
+	char const * s;
+};
+
 /* Search for exename (only basename, though) in rcfname (or if it is
    null, in default rc files) and return the found corresponding
-   default input file name, or null, if not found or other error
-   occurred.  The returned pointer will be invalidated by the next
-   call to this function.  */
-const char *
+   default input file name.  The mode will be m_error, if not found or
+   other error occurred, m_read, if it is intended to be interpreted
+   as a file name, and m_exec, if the string is to be interpreted as a
+   shell command whose stdout should be used.  The returned pointer
+   will be invalidated by the next call to this function.  */
+struct ifile
 find_ifile_by_exename (const char * exename, const char * rcfname);
 
 #endif

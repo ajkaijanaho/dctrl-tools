@@ -21,6 +21,8 @@ clean-build:
 
 debian/stamp/binary/arch: debian/stamp/binary/grep-dctrl
 
+aliases = grep-status grep-available grep-aptavail
+
 debian/stamp/binary/grep-dctrl: package=grep-dctrl
 debian/stamp/binary/grep-dctrl: debian/stamp/build
 	$(prebinary)
@@ -33,14 +35,14 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 #	Install the binary.
 	$(install_dir) $(bindir)
 	$(install_exec) grep-dctrl $(bindir)
-	set -e ; for dest in grep-status grep-available ; do \
+	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
 	 done
 #	Zip the manual page.
 	$(install_dir) $(man1dir)
 	$(install_nonex) grep-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/grep-dctrl.1
-	set -e ; for dest in grep-status grep-available ; do \
+	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
 	 done
 #	Install the supporting documentation.

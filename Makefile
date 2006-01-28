@@ -4,7 +4,7 @@ localedir = /usr/share/locale
 
 CC = gcc -std=gnu99 
 CFLAGS = -O2 -g -Wall -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
-         -DHAVE_GETTEXT -DPACKAGE=\"grep-dctrl\" -DLOCALEDIR=\"$(localedir)\" 
+         -DHAVE_GETTEXT -DPACKAGE=\"grep-dctrl\" -DLOCALEDIR=\"$(localedir)\"
 
 CFLAGS += -DVERSION=\"$(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)\"
 CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
@@ -55,7 +55,7 @@ po/grep-dctrl.pot : $(src)
 fsaf.test : fsaf.test.o msg.o
 
 clean :
-	$(RM) core grep-dctrl grep-dctrl.1 *.o po/*.mo po/*.pot TAGS
+	$(RM) core grep-dctrl grep-dctrl.1 *.o po/*.mo TAGS
 
 tags :
 	etags *.[hc]

@@ -4,6 +4,14 @@
 # by whitespace.  The hash '#' begins a comment that lasts to the end
 # of line.  Empty lines are ignored.
 
+# There is some magic in the  default input file name field.
+# If it starts with
+#  @exec, the rest of the name is given to /bin/sh -c and its stdout is 
+#         used as input, if no explicit file name is given on the command
+#         line
+# A double @ at the start of the field denotes a single @ in the actual 
+# name.
+
 # Template:
 #   <executable name>   <default input file name>
 
@@ -13,3 +21,6 @@
 # The following two pairs define common aliases for grep-dctrl.
 grep-status     /var/lib/dpkg/status
 grep-available  /var/lib/dpkg/available
+
+# A new feature: grepping apt's available information
+grep-aptavail	@exec apt-cache dumpavail

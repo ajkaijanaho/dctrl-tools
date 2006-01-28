@@ -1,1 +1,1 @@
-langs = ca de fi fr it
+langs = ca fi

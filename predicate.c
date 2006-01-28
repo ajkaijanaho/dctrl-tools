@@ -45,14 +45,11 @@ void addinsn(struct predicate * p, int insn)
 void predicate_finish_atom(struct predicate * p)
 {
 	struct atom * atom =  get_current_atom(p);
-	debug_message("predicate_finish_atom", 0);
 	if (atom->field_name != 0) {
 		atom->field_inx = fieldtrie_insert(&p->trie, atom->field_name);
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {
-		debug_message("compiling:", 0);
-		debug_message(atom->pat, 0);
 		int rerr = regcomp(&atom->regex, atom->pat,
 				   (atom->mode == M_EREGEX ? REG_EXTENDED : 0)
 				   | REG_NOSUB
@@ -130,28 +127,6 @@ static bool verify_atom(struct atom * atom, para_t * para)
 	}
 	}
 	assert(0);
-}
-
-bool check_predicate(struct predicate * p)
-{
-	size_t sp = 0;
-	/* Run the program. */
-	for (size_t i = 0; i < p->proglen; i++) {
-		switch (p->program[i]) {
-		case I_NOP: break;
-		case I_NEG:
-			if (sp == 0) return false;
-			break;
-		case I_AND: case I_OR:
-			if (sp < 2) return false;
-			--sp;
-			break;
-		default:
-			++sp;
-		}
-	}
-	if (sp != 1) return false;
-	return true;
 }
 
 bool does_para_satisfy(struct predicate * p, para_t * para)

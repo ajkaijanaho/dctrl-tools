@@ -7,216 +7,203 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-05 13:27+0300\n"
-"PO-Revision-Date: 2004-07-05 13:36+0300\n"
+"POT-Creation-Date: 2004-01-16 03:00+0200\n"
+"PO-Revision-Date: 2004-01-13 00:50+0200\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: grep-dctrl.c:43
+#: grep-dctrl.c:44
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:123
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
 
-#: grep-dctrl.c:124
+#: grep-dctrl.c:125
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl.c:124
+#: grep-dctrl.c:125
 msgid "Set debugging level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
-#: grep-dctrl.c:125 grep-dctrl.c:127
+#: grep-dctrl.c:126 grep-dctrl.c:128
 msgid "FIELD,FIELD,..."
 msgstr "KENTTÄ,KENTT�,..."
 
-#: grep-dctrl.c:125
-msgid "Restrict pattern matching to the FIELDs given."
+#: grep-dctrl.c:126
+msgid "Restrict pattern matching  to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
-#: grep-dctrl.c:126
-msgid "This is a shorthand for -FPackage."
-msgstr "Lyhyt muoto vivulle -FPackage."
-
 #: grep-dctrl.c:127
+msgid "Shorthand for -FPackage"
+msgstr "Lyhyt muoto vivulle -FPackage"
+
+#: grep-dctrl.c:128
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Näytä vain näiden kenttien sisältö täsmäävissä tietueissa"
 
-#: grep-dctrl.c:128
+#: grep-dctrl.c:129
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
 "Näytä täsmäävien tietueiden \"Description\"-kentästä vain ensimmäinen rivi."
 
-#: grep-dctrl.c:129
+#: grep-dctrl.c:130
 msgid "Suppress field names when showing specified fields."
 msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
 
-#: grep-dctrl.c:130
+#: grep-dctrl.c:131
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
-#: grep-dctrl.c:131
+#: grep-dctrl.c:132
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
 
-#: grep-dctrl.c:132
+#: grep-dctrl.c:133
 msgid "Ignore case when looking for a match."
 msgstr "Jätä kirjainkoko huomiotta haussa."
 
-#: grep-dctrl.c:133
+#: grep-dctrl.c:134
 msgid "Show only paragraphs that do not match."
 msgstr "Näytä vain ne tietueet, jotka eivät täsmää."
 
-#: grep-dctrl.c:134
+#: grep-dctrl.c:135
 msgid "Show only the count of matching paragraphs."
 msgstr "Näytä vain täsmäävien tietueiden lukumäärä."
 
-#: grep-dctrl.c:135
+#: grep-dctrl.c:136
 msgid "FNAME"
 msgstr "TIEDNIMI"
 
-#: grep-dctrl.c:135
+#: grep-dctrl.c:136
 msgid "Use FNAME as the config file."
 msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
 
-#: grep-dctrl.c:136
+#: grep-dctrl.c:137
 msgid "Do an exact match."
 msgstr "Käytä täsmällistä hakua."
 
-#: grep-dctrl.c:137
+#: grep-dctrl.c:138
 msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
-#: grep-dctrl.c:138
+#: grep-dctrl.c:139
 msgid "Conjunct predicates."
 msgstr "Yhdistä predikaatit JA-konnektiivilla"
 
-#: grep-dctrl.c:139
+#: grep-dctrl.c:140
 msgid "Disjunct predicates."
 msgstr "Yhdistä predikaatit TAI-konnektiivilla"
 
-#: grep-dctrl.c:140
+#: grep-dctrl.c:141
 msgid "Negate the following predicate."
 msgstr "Negatoi seuraava predikaatti."
 
-#: grep-dctrl.c:141
+#: grep-dctrl.c:142
 msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
-#: grep-dctrl.c:142 grep-dctrl.c:143
-msgid "Do no output to stdout."
-msgstr "Älä tulosta mitään vakiotulostevirtaan."
+#: grep-dctrl.c:143 grep-dctrl.c:144
+msgid "No output to stdout"
+msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
-#: grep-dctrl.c:221 grep-dctrl.c:334 predicate.c:39
+#: grep-dctrl.c:208 grep-dctrl.c:278 grep-dctrl.c:344 predicate.c:39
 msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
-#: grep-dctrl.c:302
-msgid "predicate is too long"
-msgstr "predikaatti on liian pitkä"
+#: grep-dctrl.c:240
+msgid "A pattern is mandatory."
+msgstr "Hakuehto on välttämätön."
 
-#: grep-dctrl.c:416
-msgid "no such log level"
-msgstr "ei sellaista seurantatasoa ole"
+#: grep-dctrl.c:299
+msgid "syntax error in command line"
+msgstr "komentorivillä on syntaksivirhe"
 
-#: grep-dctrl.c:456 grep-dctrl.c:465
-msgid "inconsistent atom modifiers"
-msgstr "ristitiitaiset atomin määritteet"
-
-#: grep-dctrl.c:511
-msgid "too many file names"
-msgstr "liikaa tiedostonimiä"
-
-#: grep-dctrl.c:597
-msgid "unexpected end of predicate"
-msgstr "odottamaton predikaatin loppu"
-
-#: grep-dctrl.c:600
-msgid "unexpected '!' in command line"
-msgstr "odottamaton '!' komentorivillä"
-
-#: grep-dctrl.c:603
-msgid "unexpected '-a' in command line"
-msgstr "odottamaton '-a' komentorivillä"
-
-#: grep-dctrl.c:606
-msgid "unexpected '-o' in command line"
-msgstr "odottamaton '-o' komentorivillä"
-
-#: grep-dctrl.c:609
-msgid "unexpected '(' in command line"
-msgstr "odottamaton '(' komentorivillä"
-
-#: grep-dctrl.c:612
-msgid "unexpected ')' in command line"
-msgstr "odottamaton ')' komentorivillä"
-
-#: grep-dctrl.c:616
-msgid "unexpected atom in command line"
-msgstr "odottamaton atomi komentorivillä"
-
-#: grep-dctrl.c:629
+#: grep-dctrl.c:316
 msgid "missing ')' in command line"
 msgstr "komentoriviltä puuttuu ')'"
 
-#: grep-dctrl.c:700
-msgid "A pattern is mandatory"
-msgstr "Hakuehto on välttämätön"
+#: grep-dctrl.c:334
+msgid "Unexpected atom in command line. Did you forget to use a connective?"
+msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
 
-#: grep-dctrl.c:707
+#: grep-dctrl.c:411
+msgid "no such log level"
+msgstr "ei sellaista seurantatasoa ole"
+
+#: grep-dctrl.c:450 grep-dctrl.c:459
+msgid "inconsistent atom modifiers"
+msgstr "ristitiitaiset atomin määritteet"
+
+#: grep-dctrl.c:500
+msgid "unexpected ')' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:512
+msgid "too many file names"
+msgstr "liikaa tiedostonimiä"
+
+#: grep-dctrl.c:592
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr ""
+
+#: grep-dctrl.c:601
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr ""
+
+#: grep-dctrl.c:639
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr ""
+
+#: grep-dctrl.c:696
 msgid "a predicate is required"
 msgstr "predikaatti on välttämätön"
 
-#: grep-dctrl.c:712
-msgid "malformed predicate"
-msgstr "rikkinäinen predikaatti"
-
-#: grep-dctrl.c:718
+#: grep-dctrl.c:702
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:722
+#: grep-dctrl.c:706
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:731
+#: grep-dctrl.c:715
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: grep-dctrl.c:751
-msgid "executable name not found; reading from standard input"
-msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
-
-#: grep-dctrl.c:778
+#: grep-dctrl.c:749
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: grep-dctrl.c:787
+#: grep-dctrl.c:758
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: grep-dctrl.c:788
+#: grep-dctrl.c:759
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: grep-dctrl.c:789
+#: grep-dctrl.c:760
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: grep-dctrl.c:790
+#: grep-dctrl.c:761
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: grep-dctrl.c:791
+#: grep-dctrl.c:762
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
@@ -228,36 +215,43 @@ msgstr "odottamaton tiedoston loppu"
 msgid "unexpected end of line"
 msgstr "odottamaton rivin loppu"
 
-#: rc.c:75
+#: rc.c:65
+#, fuzzy
+msgid "Malformed default input file name"
+msgstr "oletussyötetiedosto"
+
+#: rc.c:78
+msgid "not owned by you or root, ignoring"
+msgstr ""
+
+#: rc.c:83
+msgid "write permissions for group or others, ignoring"
+msgstr ""
+
+#: rc.c:123
 msgid "reading config file"
 msgstr "luen asetustiedostoa"
 
-#: rc.c:96
+#: rc.c:150
 msgid "read failure or out of memory"
 msgstr "lukeminen epäonnistui tai muisti loppui"
 
-#: rc.c:117
+#: rc.c:170
 msgid "syntax error: need a executable name"
 msgstr "syntaksivirhe: tarvitsen ohjelmannimen"
 
-#: rc.c:125
+#: rc.c:178
 msgid "syntax error: need an input file name"
 msgstr "syntaksivirhe: tarvitsen syötetiedoston nimen"
 
-#: rc.c:130
+#: rc.c:183
 msgid "considering executable name"
 msgstr "harkitsen ohjelmannimeä"
 
-#: rc.c:132
+#: rc.c:185
 msgid "yes, will use executable name"
 msgstr "kyllä, käytän ohjelmannimeä"
 
-#: rc.c:134
+#: rc.c:187
 msgid "default input file"
 msgstr "oletussyötetiedosto"
-
-#~ msgid "syntax error in command line"
-#~ msgstr "komentorivillä on syntaksivirhe"
-
-#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
-#~ msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
