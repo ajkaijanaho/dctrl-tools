@@ -29,6 +29,7 @@
 #include "fnutil.h"
 #include "fsaf.h"
 #include "i18n.h"
+#include "misc.h"
 #include "msg.h"
 #include "paragraph.h"
 #include "predicate.h"
@@ -53,34 +54,6 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 #define OPT_GE 263
 
 #undef BANNER
-
-#define COPYING "/usr/share/common-licenses/GPL"
-
-/* Copy the file called fname to standard outuput stream.  Return zero
-   iff problems were encountered. */
-static int to_stdout (const char * fname)
-{
-	FILE * f;
-	int c;
-	int rv = 1;
-
-	f = fopen (fname, "r");
-	if (f == 0) {
-		message (L_FATAL, strerror (errno), COPYING);
-		return 0;
-	}
-
-	while ( ( c = getc (f)) != EOF) putchar (c);
-
-	if (ferror (f)) {
-		message (L_FATAL, strerror (errno), COPYING);
-		rv = 0;
-	}
-
-	fclose (f);
-
-	return rv;
-}
 
 #ifdef BANNER
 void banner(bool automatic)

@@ -1,12 +1,13 @@
 
 sysconfdir = /etc
 localedir = /usr/share/locale
+version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
 
 CC = gcc -std=gnu99 
 CFLAGS = -O2 -g -Wall -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
          -DHAVE_GETTEXT -DPACKAGE=\"grep-dctrl\" -DLOCALEDIR=\"$(localedir)\" 
 
-CFLAGS += -DVERSION=\"$(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)\"
+CFLAGS += -DVERSION=\"$(version)\"
 CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
 
 #CFLAGS += -pg
@@ -14,7 +15,7 @@ CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
 
 LDLIBS = -lgmp
 
-obj = grep-dctrl.o msg.o predicate.o util.o fsaf.o paragraph.o \
+obj = grep-dctrl.o misc.o msg.o predicate.o util.o fsaf.o paragraph.o \
       fieldtrie.o rc.o strutil.o getaline.o fnutil.o
 src = $(obj:.o=.c)
 
@@ -39,7 +40,7 @@ grep-dctrl : $(obj)
 %.1 : %.1.cp
 	sed 's*SYSCONF*$(sysconf)*' $< > $@
 
-update-avail : update-avail.cp
+sync-available : sync-available.cp
 	sed 's*VERSION*$(version)*' $< > $@
 	chmod 755 $@
 
@@ -60,6 +61,7 @@ fsaf.test : fsaf.test.o msg.o
 
 clean :
 	$(RM) core grep-dctrl grep-dctrl.1 *.o po/*.mo po/*.pot TAGS
+	$(RM) sync-available
 
 tags :
 	etags *.[hc]
