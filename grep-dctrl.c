@@ -770,7 +770,7 @@ int main (int argc, char * argv[])
 
 		if (!chk_ifile(fname, fd)) break;
 
-		FSAF * fp = fsaf_fdopen(fd);
+		FSAF * fp = fsaf_fdopen(fd, fname.s);
 		para_parser_t pp;
 		para_parser_init(&pp, fp, true);
 		para_t para;

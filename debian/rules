@@ -50,6 +50,7 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 	$(install_dir) $(sbindir)
 	$(install_script) sync-available $(sbindir)
 	$(install_dir) $(bindir)
+	$(install_exec) tbl-dctrl $(bindir)
 	$(install_exec) sort-dctrl $(bindir)
 	$(install_exec) grep-dctrl $(bindir)
 	set -e ; for dest in $(aliases) ; do \
@@ -62,6 +63,8 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 	$(install_dir) $(man1dir)
 	$(install_nonex) sort-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/sort-dctrl.1
+	$(install_nonex) tbl-dctrl.1 $(man1dir)/
+	$(gzip) $(man1dir)/tbl-dctrl.1
 	$(install_nonex) grep-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/grep-dctrl.1
 	set -e ; for dest in $(aliases) ; do \

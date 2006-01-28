@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2005-06-09 00:22+0300\n"
+"POT-Creation-Date: 2005-07-20 13:08+0300\n"
 "PO-Revision-Date: 2004-07-08 18:29+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -133,11 +133,11 @@ msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
@@ -200,7 +200,7 @@ msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
 msgid "Do an exact match."
 msgstr "Käytä täsmällistä hakua."
 
-#: grep-dctrl.c:119 sort-dctrl.c:35
+#: grep-dctrl.c:119 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
@@ -242,6 +242,7 @@ msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
 #: grep-dctrl.c:129 grep-dctrl.c:130 sort-dctrl.c:37 sort-dctrl.c:38
+#: tbl-dctrl.c:39 tbl-dctrl.c:40
 msgid "Do no output to stdout."
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
@@ -253,11 +254,11 @@ msgstr "predikaatti on liian pitkä"
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:409 sort-dctrl.c:99
+#: grep-dctrl.c:409 sort-dctrl.c:99 tbl-dctrl.c:278
 msgid "no such log level"
 msgstr "ei sellaista seurantatasoa ole"
 
-#: grep-dctrl.c:509 sort-dctrl.c:111
+#: grep-dctrl.c:509 sort-dctrl.c:111 tbl-dctrl.c:290
 msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
@@ -334,6 +335,39 @@ msgstr ""
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
+
+#: tbl-dctrl.c:35
+msgid "DELIM"
+msgstr ""
+
+#: tbl-dctrl.c:35
+msgid "Specify a delimiter."
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "SPEC"
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "Append the specified column."
+msgstr ""
+
+#: tbl-dctrl.c:264
+msgid "invalid column length"
+msgstr ""
+
+#: tbl-dctrl.c:311
+#, fuzzy
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
+
+#: tbl-dctrl.c:325
+msgid "bad multibyte character"
+msgstr ""
+
+#, fuzzy
+#~ msgid "pretty-dctrl -- pretty-print Debian control files"
+#~ msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
 #~ msgid "invalid numeric pattern"
 #~ msgstr "rikkinäinen lukuhakuehto"

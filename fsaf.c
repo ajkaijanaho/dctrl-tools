@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2005 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,11 +35,13 @@
 
 #define READAHEAD 1
 
-FSAF * fsaf_fdopen(int fd)
+FSAF * fsaf_fdopen(int fd, char const *fname)
 {
 	FSAF * rv = malloc(sizeof *rv);
 	if (rv == 0) { errno = ENOMEM; return 0; }
 
+	rv->fname = strdup(fname);
+	if (rv->fname == NULL) { errno = ENOMEM; free(rv); return 0; }
 	rv->fd = fd;
 	rv->eof_mark = (size_t)(-1);
 	rv->buf = 0;
@@ -91,6 +93,7 @@ void fsaf_close(FSAF * fp)
 		return;
 	}
 #endif
+	free(fp->fname);
 	free(fp->buf);
 	free(fp);
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2005-06-09 00:22+0300\n"
+"POT-Creation-Date: 2005-07-20 13:08+0300\n"
 "PO-Revision-Date: 2004-07-23 15:28+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -133,11 +133,11 @@ msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
 msgid "Show the testing banner."
 msgstr "Zeigt den Testing-Banner."
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "EBENE"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Setzt Debugging-Ebene auf EBENE."
 
@@ -200,7 +200,7 @@ msgstr "Verwendet FNAME als Konfigurationsdatei."
 msgid "Do an exact match."
 msgstr "Führt eine exakte Übereinstimmung durch."
 
-#: grep-dctrl.c:119 sort-dctrl.c:35
+#: grep-dctrl.c:119 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Gibt die Copyright-Lizenz aus."
 
@@ -242,6 +242,7 @@ msgid "Debug option parsing."
 msgstr "Optionenverarbeitung debuggen."
 
 #: grep-dctrl.c:129 grep-dctrl.c:130 sort-dctrl.c:37 sort-dctrl.c:38
+#: tbl-dctrl.c:39 tbl-dctrl.c:40
 msgid "Do no output to stdout."
 msgstr "Keine Ausgabe auf die Standardausgabe."
 
@@ -253,11 +254,11 @@ msgstr "Eigenschaft ist zu lang"
 msgid "inconsistent atom modifiers"
 msgstr "Inkonsistener Atom-Modifikator"
 
-#: grep-dctrl.c:409 sort-dctrl.c:99
+#: grep-dctrl.c:409 sort-dctrl.c:99 tbl-dctrl.c:278
 msgid "no such log level"
 msgstr "Keine solche Log-Ebene"
 
-#: grep-dctrl.c:509 sort-dctrl.c:111
+#: grep-dctrl.c:509 sort-dctrl.c:111 tbl-dctrl.c:290
 msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
@@ -333,6 +334,39 @@ msgstr ""
 #: sort-dctrl.c:131
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- sortiert Debian-Control-Dateien"
+
+#: tbl-dctrl.c:35
+msgid "DELIM"
+msgstr ""
+
+#: tbl-dctrl.c:35
+msgid "Specify a delimiter."
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "SPEC"
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "Append the specified column."
+msgstr ""
+
+#: tbl-dctrl.c:264
+msgid "invalid column length"
+msgstr ""
+
+#: tbl-dctrl.c:311
+#, fuzzy
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
+
+#: tbl-dctrl.c:325
+msgid "bad multibyte character"
+msgstr ""
+
+#, fuzzy
+#~ msgid "pretty-dctrl -- pretty-print Debian control files"
+#~ msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
 
 #~ msgid "invalid numeric pattern"
 #~ msgstr "Ungültiges numerisches Muster"
