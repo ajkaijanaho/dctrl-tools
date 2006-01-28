@@ -27,6 +27,7 @@
 #include <unistd.h>
 #include "fnutil.h"
 #include "fsaf.h"
+#include "i18n.h"
 #include "msg.h"
 #include "paragraph.h"
 #include "predicate.h"
@@ -39,7 +40,7 @@ const char * argp_program_bug_address = MAINTAINER;
 const char description [] = "Description";
 size_t description_inx;
 
-static char progdoc [] = "grep-dctrl -- grep Debian control files";
+static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 
 #define OPT_CONFIG 256
 #define OPT_OPTPARSE 257
@@ -118,28 +119,28 @@ end:
 
 static struct argp_option options[] = {
 #ifdef BANNER
-	{ "banner",	    'B', 0,		    0, "Show the testing banner." },
+	{ "banner",	    'B', 0,		    0, N_("Show the testing banner.") },
 #endif
-	{ "errorlevel",	    'l', "LEVEL",	    0, "Set debugging level to LEVEL." },
-	{ "field",	    'F', "FIELD,FIELD,...", 0, "Restrict  pattern  matching  to	 the FIELDs given." },
-	{ 0,		    'P', 0,		    0, "Shorthand for -FPackage" },
-	{ "show-field",	    's', "FIELD,FIELD,...", 0, "Show only the body of these fields from the matching paragraphs." },
-	{ 0,		    'd', 0,		    0, "Show only the first line of the Description field from the matching paragraphs." },
-	{ "no-field-names", 'n', 0,		    0, "Suppress field names when showing specified fields." },
-	{ "eregex",	    'e', 0,		    0, "Regard the pattern as an extended POSIX regular expression." },
-	{ "regex",	    'r', 0,		    0, "The pattern is a standard POSIX regular expression." },
-	{ "ignore-case",    'i', 0,		    0, "Ignore case when looking for a match." },
-	{ "invert-match",   'v', 0,		    0, "Show only paragraphs that do not match." },
-	{ "count",	    'c', 0,		    0, "Show only the count of matching paragraphs." },
-	{ "config-file",    OPT_CONFIG, "FNAME",    0, "Use FNAME as the config file." },
-	{ "exact-match",    'X', 0,		    0, "Do an exact match." },
-	{ "copying",	    'C', 0,		    0, "Print out the copyright license." },
-	{ "and",	    'a', 0,		    0, "Conjunct predicates." },
-	{ "or",		    'o', 0,		    0, "Disjunct predicates." },
-	{ "not",	    '!', 0,		    0, "Negate the following predicate." },
-	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, "Debug option parsing." },
-	{ "quiet",	    'q', 0,		    0, "No output to stdout" },
-	{ "silent",	    OPT_SILENT, 0,	    0, "No output to stdout" },
+	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set debugging level to LEVEL.") },
+	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching  to the FIELDs given.") },
+	{ 0,		    'P', 0,		    0, N_("Shorthand for -FPackage") },
+	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs.") },
+	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
+	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
+	{ "eregex",	    'e', 0,		    0, N_("Regard the pattern as an extended POSIX regular expression.") },
+	{ "regex",	    'r', 0,		    0, N_("The pattern is a standard POSIX regular expression.") },
+	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match.") },
+	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match.") },
+	{ "count",	    'c', 0,		    0, N_("Show only the count of matching paragraphs.") },
+	{ "config-file",    OPT_CONFIG, N_("FNAME"),0, N_("Use FNAME as the config file.") },
+	{ "exact-match",    'X', 0,		    0, N_("Do an exact match.") },
+	{ "copying",	    'C', 0,		    0, N_("Print out the copyright license.") },
+	{ "and",	    'a', 0,		    0, N_("Conjunct predicates.") },
+	{ "or",		    'o', 0,		    0, N_("Disjunct predicates.") },
+	{ "not",	    '!', 0,		    0, N_("Negate the following predicate.") },
+	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
+	{ "quiet",	    'q', 0,		    0, N_("No output to stdout") },
+	{ "silent",	    OPT_SILENT, 0,	    0, N_("No output to stdout") },
 	{ 0 }
 };
 
@@ -201,7 +202,7 @@ struct arguments {
 struct atom * clone_atom(struct arguments * args)
 {
 	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, "predicate is too complex", 0);
+		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
 	struct atom * atom = get_current_atom(&args->p);
@@ -233,7 +234,7 @@ static void finish_atom(struct arguments * args)
 {
 	struct atom * atom = get_current_atom(&args->p);
 	if (atom->pat == 0) {
-		message(L_FATAL, "A pattern is mandatory.", 0);
+		message(L_FATAL, _("A pattern is mandatory."), 0);
 		fail();
 	}
 	for (size_t i = 0; i < args->num_search_fields; i++) {
@@ -241,6 +242,7 @@ static void finish_atom(struct arguments * args)
 		atom->field_name = args->search_fields[i];
 		predicate_finish_atom(&args->p);
 	}
+	args->num_search_fields = 0;
 }
 
 /* Pop off one stack state, inserting the associated instructions to
@@ -270,7 +272,7 @@ static void leave(struct arguments * args, int paren)
 static void prim_enter(struct arguments * args, const enum state state, const int insn)
 {
 	if (args->top >= MAX_OPS) {
-		message(L_FATAL, "predicate is too complex", 0);
+		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
 //	args->stack[args->top].insn = insn;
@@ -291,7 +293,7 @@ static void prim_enter(struct arguments * args, const enum state state, const in
 static void enter(struct arguments * args, const enum state state, const int insn)
 {
 	if (args->state == STATE_FINISHED) {
-		message(L_FATAL, "syntax error in command line", 0);
+		message(L_FATAL, _("syntax error in command line"), 0);
 		fail();
 	}
 	while (args->state < state || (state != STATE_NEG && args->state == state)) {
@@ -308,7 +310,7 @@ static void finish(struct arguments * args)
 {
 	while (args->top > 0) {
 		if (args->state == STATE_PAREN) {
-			message(L_FATAL, "missing ')' in command line", 0);
+			message(L_FATAL, _("missing ')' in command line"), 0);
 			fail();
 		}
 		leave(args, 0);
@@ -331,7 +333,7 @@ static struct atom * enter_atom(struct arguments * args)
 		return &args->p.atoms[args->p.num_atoms-1];
 	}
 	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, "predicate is too complex", 0);
+		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
 	ENTER(STATE_ATOM, I_PUSH(args->p.num_atoms));
@@ -435,7 +437,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: X", 0);
 		atom = ENTER_ATOM;
 		if (atom->mode != M_SUBSTR) {
-			message(L_FATAL, "inconsistent atom modifiers", 0);
+			message(L_FATAL, _("inconsistent atom modifiers"), 0);
 			fail();
 		}
 		atom->mode = M_EXACT;
@@ -444,7 +446,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: r", 0);
 		atom = ENTER_ATOM;
 		if (atom->mode != M_SUBSTR) {
-			message(L_FATAL, "inconsistent atom modifiers", 0);
+			message(L_FATAL, _("inconsistent atom modifiers"), 0);
 			fail();
 		}
 		atom->mode = M_REGEX;
@@ -485,7 +487,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			debug_message("parse_opt: )", 0);
 			while (args->state != STATE_PAREN) {
 				if (args->top == 0) {
-					message(L_FATAL, "unexpected ')' in command line", 0);
+					message(L_FATAL, _("unexpected ')' in command line"), 0);
 					fail();
 				}
 				leave(args, 0);
@@ -496,7 +498,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		if (args->state == STATE_FINISHED) {
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, "too many file names", 0);
+				message(L_FATAL, _("too many file names"), 0);
 				fail();
 			}
 			s = strdup(arg);
@@ -565,6 +567,11 @@ static struct argp argp = { options, parse_opt, 0, progdoc };
 
 int main (int argc, char * argv[])
 {
+	setlocale(LC_ALL, "");
+	bindtextdomain (PACKAGE, LOCALEDIR);
+	textdomain(PACKAGE);
+
+
 	static struct arguments args;
 	args.state = STATE_START;
 	args.show_field_name = true;
@@ -579,7 +586,7 @@ int main (int argc, char * argv[])
 	if (debug_optparse) { dump_args(&args); return 0; }
 
 	if (args.p.num_atoms == 0) {
-		message(L_FATAL, "a predicate is required", 0);
+		message(L_FATAL, _("a predicate is required"), 0);
 		fail();
 	}
 
@@ -589,7 +596,7 @@ int main (int argc, char * argv[])
 			fail();
 		}
 		message(L_INFORMATIONAL,
-			_("Adding Description to selected output fields because of -d"),
+			_("Adding \"Description\" to selected output fields because of -d"),
 			0);
 		args.show_fields[args.num_show_fields].name = description;
 		args.show_fields[args.num_show_fields].inx = description_inx;
@@ -638,20 +645,20 @@ int main (int argc, char * argv[])
 			int r = fstat(fd, &stat);
 			mode_t m = stat.st_mode;
 			if (r == -1) {
-				fprintf(stderr, "%s: %s: cannot stat: %s\n",
+				fprintf(stderr, _("%s: %s: cannot stat: %s\n"),
 					argv[0], fname, strerror(errno));
 				record_error();
 				close(fd);
 				break;
 			}
 			if (!(S_ISREG(m) || S_ISCHR(m) || S_ISFIFO(m))) {
-				fprintf(stderr, "%s: %s: %s, skipping\n",
+				fprintf(stderr, "%s: %s: %s\n",
 					argv[0], fname,
-					S_ISDIR(m) ? "is a directory" :
-					S_ISBLK(m) ? "is a block device" :
-					S_ISLNK(m) ? "internal error" :
-					S_ISSOCK(m) ? "is a socket" :
-					"unknown file type");
+					S_ISDIR(m) ? _("is a directory, skipping") :
+					S_ISBLK(m) ? _("is a block device, skipping") :
+					S_ISLNK(m) ? _("internal error") :
+					S_ISSOCK(m) ? _("is a socket, skipping") :
+					_("unknown file type, skipping"));
 				record_error();
 				close(fd);
 				break;

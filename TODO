@@ -1,8 +1,11 @@
 Things left to be done on grep-dctrl:
    * Write a good Texinfo manual.
    * Do translations of the messages to other languages
-     (we now have English).
+     (we now have Catalan, English and Finnish).
    * Fix any bugs.
+   * Add requested features (see 
+http://bugs.debian.org/cgi-bin/pkgreport.cgi?which=pkg&data=grep-dctrl&sev-inc=wishlist
+     )
 
 If you want to help with one of these (or you have some other ideas
 for grep-dctrl), contact <ajk@debian.org>.

@@ -93,7 +93,7 @@ const char * find_ifile_by_exename(const char * exename, const char * rcfname)
 
 		line = getaline (f);
 		if (line == 0) {
-			message(L_FATAL, "read failure or out of memory",
+			message(L_FATAL, _("read failure or out of memory"),
 				fname);
 			fail();
 		}

@@ -36,7 +36,7 @@ void addinsn(struct predicate * p, int insn)
 {
 	if (insn == I_NOP) return;
 	if (p->proglen >= MAX_OPS) {
-		message(L_FATAL, "predicate is too complex", 0);
+		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
 	p->program[p->proglen++] = insn;

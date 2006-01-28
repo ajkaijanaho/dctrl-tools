@@ -6,6 +6,8 @@ librules_interface = 2
 librules_native_pkg=yes
 include debian/librules.mk
 
+include langs.mk
+
 debian/stamp/build: #debian/stamp/build-configure
 	$(MAKE)
 	touch $@
@@ -42,7 +44,13 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
 	 done
 #	Install the supporting documentation.
-	$(install_nonex) TODO NEWS Compatibility $(docdir)
+	$(install_nonex) TODO Compatibility $(docdir)
+#	Install message catalogues
+	set -e ; for lang in $(langs) ; do \
+		$(install_dir) $(rootdir)/usr/share/locale/$$lang/LC_MESSAGES ; \
+		$(install_nonex) po/$$lang.mo \
+		  $(rootdir)/usr/share/locale/$$lang/LC_MESSAGES/$(package).mo ; \
+	done
 #	Install config file information
 	$(install_nonex) debian/conffiles $(rootdir)/DEBIAN
 #	Get the shared library deps

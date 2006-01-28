@@ -28,5 +28,6 @@
 #define textdomain(Domain)
 #define bindtextdomain(Package, Directory)
 #endif
+#define N_(String) (String)
 
 #endif /* I18N_H__ */

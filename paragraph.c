@@ -38,7 +38,7 @@ void para_parse_next(para_t * para)
 		para->fields[i].end = 0;
 	}
 	fsaf_invalidate(para->fp, para->start);
-	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE, 
+	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
 			BODY_SKIPBLANKS, END } state = START;
 	register size_t pos = para->start;
 	register FSAF * fp = para->fp;
@@ -70,7 +70,7 @@ void para_parse_next(para_t * para)
 		case FIELD_NAME:
 			switch (c) {
 			case -1:
-				message(L_FATAL, "unexpected end of file", 0);
+				message(L_FATAL, _("unexpected end of file"), 0);
 				fail();
 			case ':': {
 				size_t len = (pos-1) - field_start;
@@ -88,14 +88,14 @@ void para_parse_next(para_t * para)
 			}
 				break;
 			case '\n':
-				message(L_FATAL, "unexpected end of line", 0);
+				message(L_FATAL, _("unexpected end of line"), 0);
 				fail();
 			}
 			break;
 		case BODY:
 			switch (c) {
 			case -1:
-				message(L_FATAL, "unexpected end of file", 0);
+				message(L_FATAL, _("unexpected end of file"), 0);
 				fail();
 			case '\n':
 				if (field_data != 0) {

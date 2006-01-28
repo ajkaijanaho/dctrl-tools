@@ -1,3 +1,25 @@
+grep-dctrl (2.0) unstable; urgency=low
+
+  * The Polish Release.
+  * Internationalized again,  thanks to Jordi Mallach for help
+  * Now includes Catalan messages, courtesy of Jordi Mallach
+  * Also includes Finnish messages (my own translation, with thanks to
+    Tommi Vainikainen)
+  * debian/NEWS: Moved old 1.10x-entries to debian/NEWS.superseded
+  * debian/NEWS: Document everything since 1.9
+  * debian/rules: ./NEWS is no longer installed, debian/NEWS is better
+  * grep-dctrl.c (finish_atom): Zero args->num_search_fields.  This fixes
+    a particularly nasty unreported bug, where the right-hand side of an
+    --and was essentially ignored.
+  * The above changes, along with the changes in 1.103 and 1.104,
+    closes: #208646 (Unsuitable for testing)
+  * debian/control [Build-Depends]: Add gettext
+  * TODO: Updated.
+  * grep-dctrl.1.cp: Updated messages in DIAGNOSTICS.
+  * grep-dctrl.1.cp: Mention ara(1) in SEE ALSO.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed,  7 Jan 2004 03:09:44 +0200
+
 grep-dctrl (1.104) unstable; urgency=low
 
   * grep-dctrl.c (parse_option [case 's']): free carg after use

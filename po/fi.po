@@ -1,0 +1,226 @@
+# Finnish translation of dctrl-tools
+# Copyright (C) 2004 Antti-Juhani Kaijanaho
+# This file is distributed under the same license as the dctrl-tools package.
+# Antti-Juhani Kaijanaho <ajk@debian.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2004-01-06 20:55+0200\n"
+"PO-Revision-Date: 2004-01-06 19:45+0200\n"
+"Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: grep-dctrl.c:43
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
+
+#: grep-dctrl.c:122
+msgid "Show the testing banner."
+msgstr "Näytä testausviesti."
+
+#: grep-dctrl.c:124
+msgid "LEVEL"
+msgstr "TASO"
+
+#: grep-dctrl.c:124
+msgid "Set debugging level to LEVEL."
+msgstr "Aseta vianetsintätasoksi TASO."
+
+#: grep-dctrl.c:125 grep-dctrl.c:127
+msgid "FIELD,FIELD,..."
+msgstr "KENTTÄ,KENTT�,..."
+
+#: grep-dctrl.c:125
+msgid "Restrict pattern matching  to the FIELDs given."
+msgstr "Rajoita haku annettuihin KENTTIIN."
+
+#: grep-dctrl.c:126
+msgid "Shorthand for -FPackage"
+msgstr "Lyhyt muoto vivulle -FPackage"
+
+#: grep-dctrl.c:127
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Näytä vain näiden kenttien sisältö täsmäävissä tietueissa"
+
+#: grep-dctrl.c:128
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+"Näytä täsmäävien tietueiden \"Description\"-kentästä vain ensimmäinen rivi."
+
+#: grep-dctrl.c:129
+msgid "Suppress field names when showing specified fields."
+msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
+
+#: grep-dctrl.c:130
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
+
+#: grep-dctrl.c:131
+msgid "The pattern is a standard POSIX regular expression."
+msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
+
+#: grep-dctrl.c:132
+msgid "Ignore case when looking for a match."
+msgstr "Jätä kirjainkoko huomiotta haussa."
+
+#: grep-dctrl.c:133
+msgid "Show only paragraphs that do not match."
+msgstr "Näytä vain ne tietueet, jotka eivät täsmää."
+
+#: grep-dctrl.c:134
+msgid "Show only the count of matching paragraphs."
+msgstr "Näytä vain täsmäävien tietueiden lukumäärä."
+
+#: grep-dctrl.c:135
+msgid "FNAME"
+msgstr "TIEDNIMI"
+
+#: grep-dctrl.c:135
+msgid "Use FNAME as the config file."
+msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
+
+#: grep-dctrl.c:136
+msgid "Do an exact match."
+msgstr "Käytä täsmällistä hakua."
+
+#: grep-dctrl.c:137
+msgid "Print out the copyright license."
+msgstr "Tulosta tekijänoikeuslisenssi."
+
+#: grep-dctrl.c:138
+msgid "Conjunct predicates."
+msgstr "Yhdistä predikaatit JA-konnektiivilla"
+
+#: grep-dctrl.c:139
+msgid "Disjunct predicates."
+msgstr "Yhdistä predikaatit TAI-konnektiivilla"
+
+#: grep-dctrl.c:140
+msgid "Negate the following predicate."
+msgstr "Negatoi seuraava predikaatti."
+
+#: grep-dctrl.c:141
+msgid "Debug option parsing."
+msgstr "Testaa valitsimien jäsennyst�."
+
+#: grep-dctrl.c:142 grep-dctrl.c:143
+msgid "No output to stdout"
+msgstr "Älä tulosta mitään vakiotulostevirtaan"
+
+#: grep-dctrl.c:205 grep-dctrl.c:275 grep-dctrl.c:336 predicate.c:39
+msgid "predicate is too complex"
+msgstr "predikaatti on liian monimutkainen"
+
+#: grep-dctrl.c:237
+msgid "A pattern is mandatory."
+msgstr "Hakuehto on välttämätön."
+
+#: grep-dctrl.c:296
+msgid "syntax error in command line"
+msgstr "komentorivillä on syntaksivirhe"
+
+#: grep-dctrl.c:313
+msgid "missing ')' in command line"
+msgstr "komentoriviltä puuttuu ')'"
+
+#: grep-dctrl.c:401
+msgid "no such log level"
+msgstr "ei sellaista seurantatasoa ole"
+
+#: grep-dctrl.c:440 grep-dctrl.c:449
+msgid "inconsistent atom modifiers"
+msgstr "ristitiitaiset atomin määritteet"
+
+#: grep-dctrl.c:490
+msgid "unexpected ')' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:501
+msgid "too many file names"
+msgstr "liikaa tiedostonimiä"
+
+#: grep-dctrl.c:589
+msgid "a predicate is required"
+msgstr "predikaatti on välttämätön"
+
+#: grep-dctrl.c:595
+msgid "too many output fields"
+msgstr "liikaa tulostettavia kenttiä"
+
+#: grep-dctrl.c:599
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
+
+#: grep-dctrl.c:608
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr ""
+"en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
+
+#: grep-dctrl.c:648
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
+
+#: grep-dctrl.c:657
+msgid "is a directory, skipping"
+msgstr "on hakemisto, jätän huomiotta"
+
+#: grep-dctrl.c:658
+msgid "is a block device, skipping"
+msgstr "on lohkolaite, jätän huomiotta"
+
+#: grep-dctrl.c:659
+msgid "internal error"
+msgstr "ohjelman oma virhe"
+
+#: grep-dctrl.c:660
+msgid "is a socket, skipping"
+msgstr "on pistoke, jätän huomiotta"
+
+#: grep-dctrl.c:661
+msgid "unknown file type, skipping"
+msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
+
+#: paragraph.c:73 paragraph.c:98
+msgid "unexpected end of file"
+msgstr "odottamaton tiedoston loppu"
+
+#: paragraph.c:91
+msgid "unexpected end of line"
+msgstr "odottamaton rivin loppu"
+
+#: rc.c:75
+msgid "reading config file"
+msgstr "luen asetustiedostoa"
+
+#: rc.c:96
+msgid "read failure or out of memory"
+msgstr "lukeminen epäonnistui tai muisti loppui"
+
+#: rc.c:116
+msgid "syntax error: need a executable name"
+msgstr "syntaksivirhe: tarvitsen ohjelmannimen"
+
+#: rc.c:124
+msgid "syntax error: need an input file name"
+msgstr "syntaksivirhe: tarvitsen syötetiedoston nimen"
+
+#: rc.c:129
+msgid "considering executable name"
+msgstr "harkitsen ohjelmannimeä"
+
+#: rc.c:131
+msgid "yes, will use executable name"
+msgstr "kyllä, käytän ohjelmannimeä"
+
+#: rc.c:133
+msgid "default input file"
+msgstr "oletussyötetiedosto"
+
