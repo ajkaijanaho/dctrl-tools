@@ -1,0 +1,15 @@
+
+Developers and users interested in the future of dctrl-tools
+(grep-dctrl and friends) are encouraged to subscribe to the
+dctrl-tools-devel mailing list at
+  http://lists.alioth.debian.org/mailman/listinfo/dctrl-tools-devel
+
+Early versions are available in the experimental distribution of
+Debian.  Those and also occasional very early preview versions are
+available at
+  deb http://antti-juhani.kaijanaho.info/dctrl-tools-experimental/ ./
+  deb-src http://antti-juhani.kaijanaho.info/dctrl-tools-experimental/ ./
+I would appreciate if all users of these sources subscribed to the
+above mailing list.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 17 Jul 2004 04:31:34 +0300

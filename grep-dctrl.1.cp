@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2004-01-19 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2004-07-17 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
@@ -141,30 +141,35 @@ literal.  Any paragraphs where the field to be searched in does not
 parse as an integer literal are regarded as not matching.  Note that
 using numeric comparison when looking at full paragraphs does not make
 sense.
+.B WARNING!  The semantics of numeric comparison will change in the future.
 .IP "--lt"
 Use numeric strictly-less-than comparison in matching.  The pattern
 must be an integer literal.  Any paragraphs where the field to be
 searched in does not parse as an integer literal are regarded as not
 matching.  Note that using numeric comparison when looking at full
 paragraphs does not make sense.
+.B WARNING!  The semantics of numeric comparison will change in the future.
 .IP "--le"
 Use numeric less-than-or-equal comparison in matching.  The pattern
 must be an integer literal.  Any paragraphs where the field to be
 searched in does not parse as an integer literal are regarded as not
 matching.  Note that using numeric comparison when looking at full
 paragraphs does not make sense.
+.B WARNING!  The semantics of numeric comparison will change in the future.
 .IP "--gt"
 Use numeric strictly-greater-than comparison in matching.  The pattern
 must be an integer literal.  Any paragraphs where the field to be
 searched in does not parse as an integer literal are regarded as not
 matching.  Note that using numeric comparison when looking at full
 paragraphs does not make sense.
+.B WARNING!  The semantics of numeric comparison will change in the future.
 .IP "--ge"
 Use numeric greater-than-or-equal comparison in matching.  The pattern
 must be an integer literal.  Any paragraphs where the field to be
 searched in does not parse as an integer literal are regarded as not
 matching.  Note that using numeric comparison when looking at full
 paragraphs does not make sense.
+.B WARNING!  The semantics of numeric comparison will change in the future.
 .SS Predicate connectives
 .IP "-!, --not, !"
 Negate the following predicate.

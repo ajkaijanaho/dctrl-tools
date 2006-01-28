@@ -1,3 +1,15 @@
+grep-dctrl (2.6.4) experimental; urgency=low
+
+  * debian/control (Build-Depends): gcc (>= 3.0)
+  * debian/README: New file.
+  * debian/rules: Install debian/README as README.Debian.
+  * grep-dctrl.1.cp: Warn about coming semantics change for
+    numeric comparisons.  
+  * grep-dctrl.c: Add warning about coming semantics change for
+    numeric comparisons. 
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 17 Jul 2004 04:44:40 +0300
+
 grep-dctrl (2.6.3) experimental; urgency=low
 
   * sync-available.cp, Makefile: Fix the goofup which made sync-available

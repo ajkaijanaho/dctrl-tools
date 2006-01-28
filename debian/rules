@@ -52,6 +52,7 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 	 done
 #	Install the supporting documentation.
 	$(install_nonex) TODO Compatibility $(docdir)
+	$(install_nonex) debian/README $(docdir)/README.Debian
 #	Install message catalogues
 	set -e ; for lang in $(langs) ; do \
 		$(install_dir) $(rootdir)/usr/share/locale/$$lang/LC_MESSAGES ; \
