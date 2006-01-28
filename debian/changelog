@@ -1,3 +1,16 @@
+grep-dctrl (2.1.2) unstable; urgency=low
+
+  * debian/control (Build-Depends): Add version constraint >= 0.11-0 for
+    gettext, due to the use of --copyright-holder, with thanks to Michael
+    Schultheiss.
+    Closes: #230399 (Needs to Build-Depend on versioned gettext)
+  * Backport from experimental:
+    - debian/control (Suggests): Add dselect
+    - debian/control [Description]: Mention the specializations.
+  * po/fi.po: Updated.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 11 Feb 2004 17:40:13 +0200
+
 grep-dctrl (2.1.1) unstable; urgency=low
 
   * New German translation by Gerfried Fuchs.
@@ -9,7 +22,7 @@ grep-dctrl (2.1.1) unstable; urgency=low
     This is a kluge, but gets rid of certain assertion failures.
   * Update Catalan translation by Jordi Mallach.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat,  7 Feb 2004 10:29:44 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 10 Feb 2004 20:41:32 +0200
 
 grep-dctrl (2.1.0) unstable; urgency=low
 
