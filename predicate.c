@@ -24,6 +24,7 @@
 #include "msg.h"
 #include "util.h"
 #include "predicate.h"
+#include "strutil.h"
 
 void init_predicate(struct predicate * p)
 {
@@ -45,8 +46,12 @@ void addinsn(struct predicate * p, int insn)
 void predicate_finish_atom(struct predicate * p)
 {
 	struct atom * atom =  get_current_atom(p);
+	bool numeric = M_FIRST_NUMERIC <= atom->mode
+		&& atom->mode <= M_LAST_NUMERIC;
 	if (atom->field_name != 0) {
-		atom->field_inx = fieldtrie_insert(&p->trie, atom->field_name);
+		struct field_attr fa = { .numeric = numeric };
+		atom->field_inx = fieldtrie_insert(&p->trie, atom->field_name,
+						   fa);
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {
@@ -63,20 +68,35 @@ void predicate_finish_atom(struct predicate * p)
 			fail();
 		}
 	}
+
+	if (numeric) {
+		bool ok = str2intmax(&atom->intpat, atom->pat,
+				     atom->patlen);
+		if (!ok) {
+			message(L_FATAL, _("invalid numeric pattern"), 0);
+			fail();
+		}
+	}
 }
 
 static bool verify_atom(struct atom * atom, para_t * para)
 {
 	size_t start, end;
+	intmax_t intval, intpat = atom->intpat;
+	bool int_valid;
 	if (atom->field_inx == -1) {
 		/* Take the full paragraph */
 		start = para->start;
 		end = para->end;
+		intval = 0;
+		int_valid = false;
 	} else {
 		/* Take the field */
 		struct field_data * fd = &para->fields[atom->field_inx];
 		start = fd->start;
 		end = fd->end;
+		intval = fd->parsed;
+		int_valid = fd->int_valid;
 	}
 	size_t len = end - start;
 	struct fsaf_read_rv r = fsaf_read(para->fp, start, len);
@@ -125,6 +145,21 @@ static bool verify_atom(struct atom * atom, para_t * para)
 		free(s);
 		return false;
 	}
+	case M_NUM_EQ:
+		if (!int_valid) return false;
+		return intpat == intval;
+	case M_NUM_LT:
+		if (!int_valid) return false;
+		return intpat > intval;
+	case M_NUM_LE:
+		if (!int_valid) return false;
+		return intpat >= intval;
+	case M_NUM_GT:
+		if (!int_valid) return false;
+		return intpat < intval;
+	case M_NUM_GE:
+		if (!int_valid) return false;
+		return intpat <= intval;
 	}
 	assert(0);
 }

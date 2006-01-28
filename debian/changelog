@@ -1,3 +1,10 @@
+grep-dctrl (2.3) experimental; urgency=low
+
+  * Add numeric comparison capability
+    Closes: #157042 (could allow numeric comparison on fields)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Jan 2004 00:46:59 +0200
+
 grep-dctrl (2.2) experimental; urgency=low
 
   * This version starts adding features and thus belongs in experimental.

@@ -22,11 +22,14 @@
 #define MAX_FIELDS 100
 
 #include <stddef.h>
+#include <stdint.h>
 #include "fsaf.h"
 #include "fieldtrie.h"
 
 struct field_data {
 	size_t start, end; /* offsets to the file; [start,end) is the body */
+	bool int_valid;    /* whether .parsed is valid */
+	intmax_t parsed;   /* a parsed value for the data */
 };
 
 struct paragraph_private {
@@ -34,7 +37,7 @@ struct paragraph_private {
 	fieldtrie_t * trie;
 	bool eof;
 
-	// CURRENT PARAGRAPH PARSED 
+	// CURRENT PARAGRAPH PARSED
 
 	size_t start, end; /* offsets to the file; [start,end) is the paragraph */
 	struct field_data fields[MAX_FIELDS];

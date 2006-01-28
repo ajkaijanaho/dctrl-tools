@@ -46,6 +46,11 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 #define OPT_CONFIG 256
 #define OPT_OPTPARSE 257
 #define OPT_SILENT 258
+#define OPT_EQ 259
+#define OPT_LT 260
+#define OPT_LE 261
+#define OPT_GT 262
+#define OPT_GE 263
 
 #undef BANNER
 
@@ -139,6 +144,11 @@ static struct argp_option options[] = {
 	{ "and",	    'a', 0,		    0, N_("Conjunct predicates.") },
 	{ "or",		    'o', 0,		    0, N_("Disjunct predicates.") },
 	{ "not",	    '!', 0,		    0, N_("Negate the following predicate.") },
+	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for numerical equality.") },
+	{ "lt",		    OPT_LT, 0,		    0, N_("Numerical test: <.") },
+	{ "le",		    OPT_LE, 0,		    0, N_("Numerical test: <=.") },
+	{ "gt",		    OPT_GT, 0,		    0, N_("Numerical test: >.") },
+	{ "ge",		    OPT_GE, 0,		    0, N_("Numerical test: >=.") },
 	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
 	{ "quiet",	    'q', 0,		    0, N_("No output to stdout") },
 	{ "silent",	    OPT_SILENT, 0,	    0, N_("No output to stdout") },
@@ -355,6 +365,15 @@ static struct atom * enter_atom(struct arguments * args, bool just_seen_cparen)
 	return rv;
 }
 
+#define set_mode(nmode) do { \
+	atom = ENTER_ATOM; \
+	if (atom->mode != M_SUBSTR) { \
+		message(L_FATAL, _("inconsistent atom modifiers"), 0); \
+		fail(); \
+	} \
+	atom->mode = (nmode); \
+} while (0)
+
 static error_t parse_opt (int key, char * arg, struct argp_state * state)
 {
 	struct arguments * args = state->input;
@@ -395,7 +414,8 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				&args->show_fields[args->num_show_fields];
 			sf->name = strdup(s);
 			if (sf->name == 0) fatal_enomem(0);
-			sf->inx = fieldtrie_insert(&args->p.trie, s);
+			struct field_attr fa = { .numeric = false };
+			sf->inx = fieldtrie_insert(&args->p.trie, s, fa);
 			if (sf->inx == description_inx) {
 				args->description_selected = true;
 			}
@@ -445,30 +465,35 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case 'X':
 		debug_message("parse_opt: X", 0);
-		atom = ENTER_ATOM;
-		if (atom->mode != M_SUBSTR) {
-			message(L_FATAL, _("inconsistent atom modifiers"), 0);
-			fail();
-		}
-		atom->mode = M_EXACT;
+		set_mode(M_EXACT);
 		break;
 	case 'r':
 		debug_message("parse_opt: r", 0);
-		atom = ENTER_ATOM;
-		if (atom->mode != M_SUBSTR) {
-			message(L_FATAL, _("inconsistent atom modifiers"), 0);
-			fail();
-		}
-		atom->mode = M_REGEX;
+		set_mode(M_REGEX);
 		break;
 	case 'e':
 		debug_message("parse_opt: e", 0);
-		atom = ENTER_ATOM;
-		if (atom->mode != M_SUBSTR) {
-			message(L_FATAL, "inconsistent atom modifiers", 0);
-			fail();
-		}
-		atom->mode = M_EREGEX;
+		set_mode(M_EREGEX);
+		break;
+	case OPT_EQ:
+		debug_message("parse_opt: eq", 0);
+		set_mode(M_NUM_EQ);
+		break;
+	case OPT_LT:
+		debug_message("parse_opt: lt", 0);
+		set_mode(M_NUM_LT);
+		break;
+	case OPT_LE:
+		debug_message("parse_opt: le", 0);
+		set_mode(M_NUM_LE);
+		break;
+	case OPT_GT:
+		debug_message("parse_opt: gt", 0);
+		set_mode(M_NUM_GT);
+		break;
+	case OPT_GE:
+		debug_message("parse_opt: ge", 0);
+		set_mode(M_NUM_GE);
 		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
@@ -684,7 +709,8 @@ int main (int argc, char * argv[])
 	args.show_field_name = true;
 	msg_set_progname(argv[0]);
 	init_predicate(&args.p);
-	description_inx = fieldtrie_insert(&args.p.trie, description);
+	struct field_attr fa = { .numeric = false };
+	description_inx = fieldtrie_insert(&args.p.trie, description, fa);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 #ifdef BANNER
 	banner(true);
