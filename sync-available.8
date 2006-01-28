@@ -1,0 +1,60 @@
+.TH UPDATE-AVAIL 8 2004-07-11 "Debian Project" "Debian administrator's manual"
+\" Copyright (C) 2004  Antti-Juhani Kaijanaho <gaia@iki.fi>
+\"      This program is free software; you can redistribute it and/or modify
+\"      it under the terms of the GNU General Public License as published by
+\"      the Free Software Foundation; either version 2 of the License, or
+\"      (at your option) any later version.
+\" 
+\"      This program is distributed in the hope that it will be useful,
+\"      but WITHOUT ANY WARRANTY; without even the implied warranty of
+\"      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+\"      GNU General Public License for more details. 
+\"  
+\"      You should have received a copy of the GNU General Public License
+\"      along with this program; see the file COPYING.  If not, write to
+\"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+\"      Boston, MA 02111-1307, USA.
+.SH NAME
+update-avail \- sync dpkg's available database with apt's database
+.SH SYNOPSIS
+.B update-avail
+.sp
+.B update-avail --version
+.sp
+.B update-avail --help
+.SH DESCRIPTION
+This program updates the
+.BR dpkg (8)
+available database with the data in the
+.BR apt (8)
+package database.  This is required for
+.BR grep-available (1)
+and other similar programs to give up-to-date results.
+.PP
+The same functionality is available through
+.BR dselect (8),
+when it is configured to use
+.BR apt (8)
+as its aquisition method.  However, this program does not require that
+.BR dselect (8)
+is installed.
+.SH EXIT STATUS
+The program exits with status code 0 if all went well, and a non-zero
+status code otherwise.
+.SH OPTIONS
+.IP --version
+Output the name and version of the program onto standard output stream.
+.IP --help
+Give a brief usage statement on the standard output stream.
+.SH ENVIRONMENT
+.IP TMPDIR
+The name of the directory where temporary files are created.  Default is
+.IR /tmp .
+.SH AUTHOR
+This program and this manual page were written by Antti-Juhani
+Kaijanaho <ajk@debian.org>.
+.SH SEE ALSO
+.BR apt (8),
+.BR dpkg (8),
+.BR dselect (8),
+.BR grep-available (1)

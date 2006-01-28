@@ -32,13 +32,18 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 #	Install configuration file
 	$(install_dir) $(etcdir)
 	$(install_nonex) grep-dctrl.rc $(etcdir)
-#	Install the binary.
+#	Install the binaries.
+	$(install_dir) $(sbindir)
+	$(install_script) sync-available $(sbindir)
 	$(install_dir) $(bindir)
 	$(install_exec) grep-dctrl $(bindir)
 	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
 	 done
-#	Zip the manual page.
+#	Install and zip the manual pages.
+	$(install_dir) $(man8dir)
+	$(install_nonex) sync-available.8 $(man8dir)/
+	$(gzip) $(man8dir)/sync-available.8
 	$(install_dir) $(man1dir)
 	$(install_nonex) grep-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/grep-dctrl.1

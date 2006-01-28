@@ -8,7 +8,7 @@ Build-Depends: gettext (>= 0.11-0), libgmp3-dev
 Package: grep-dctrl
 Architecture: any
 Depends: ${shlibs:Depends}
-Suggests: dselect, apt
+Suggests: apt
 Description: Grep Debian package information
  The grep-dctrl program can answer such questions as
    * "What is the Debian package foo?"
@@ -28,7 +28,11 @@ Description: Grep Debian package information
  .
  This package includes the specializations grep-status, grep-available
  and grep-aptavail, which take their input by default from the dpkg
- status file, the dpkg available file (updated by dselect update) and
- the apt available database (updated by apt-get update), respectively.
- The grep-available specialization is useful mainly to users of
- dselect, while grep-aptavail only works if apt is installed.
+ status file, the dpkg available file (updated by dselect update, but
+ see below) and the apt available database (updated by apt-get
+ update), respectively.  The grep-available specialization is useful
+ mainly to users of dselect or apt, while grep-aptavail only works if
+ apt is installed.
+ .
+ A script, sync-available, which syncs the dpkg available file to the
+ apt available database without requiring dselect, is included.
