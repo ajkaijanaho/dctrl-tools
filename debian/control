@@ -3,11 +3,12 @@ Section: utils
 Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.6.1
-Build-Depends: gettext
+Build-Depends: gettext (>= 0.11-0)
 
 Package: grep-dctrl
 Architecture: any
 Depends: ${shlibs:Depends}
+Suggests: dselect
 Description: Grep Debian package information
  The grep-dctrl program can answer such questions as
    * "What is the Debian package foo?"
@@ -24,3 +25,9 @@ Description: Grep Debian package information
  These include the dpkg available file, the dpkg status file, and the
  Packages files on a distribution medium (such as a Debian CD-ROM or
  an FTP site carrying Debian).
+ .
+ This package includes the specializations grep-status and
+ grep-available, which take their input by default from the dpkg
+ status file and the dpkg available file (updated by dselect update),
+ respectively.  The grep-available specialization is useful mainly to
+ users of dselect.
