@@ -34,11 +34,16 @@
 
 #include <stdbool.h>
 
-bool errors = false;
-
 #include <assert.h>
 #include <string.h>
 #include "msg.h"
+
+#define PROGNAME_MAXLEN 64
+
+bool errors = false;
+
+int loglevel = L_IMPORTANT;
+char progname [PROGNAME_MAXLEN];
 
 struct str2int_avec_t {
   const char * str;
