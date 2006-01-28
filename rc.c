@@ -38,6 +38,7 @@
 #include "msg.h"
 #include "rc.h"
 #include "strutil.h"
+#include "util.h"
 
 
 const char * find_ifile_by_exename(const char * exename, const char * rcfname)

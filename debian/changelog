@@ -1,3 +1,16 @@
+grep-dctrl (1.101) unstable; urgency=low
+
+  * fieldtrie.h (fieldtrie_count): New function.
+  * paragraph.c (para_parse_next): Clear the fields too.
+    Closes: #205373, #205376, #205295.
+  * grep-dctrl.c (main): If no predicate is given, bail out.
+    Closes: #205511.
+  * grep-dctrl.c (dump_args): Use C99 %zi and not %i to print out size_t
+    (size mismatch on 64-bit archs).
+  * rc.c: #include "util.h"
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 15 Aug 2003 21:37:30 +0300
+
 grep-dctrl (1.100) unstable; urgency=low
 
   * A (nearly) full rewrite (bumped minor version number to match)

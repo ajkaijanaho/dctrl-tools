@@ -413,17 +413,17 @@ static void dump_args(struct arguments * args)
 	size_t i;
 	assert(args->state == STATE_FINISHED);
 	assert(args->top == 0);
-	printf("num_atoms = %i\n", args->p.num_atoms);
+	printf("num_atoms = %zi\n", args->p.num_atoms);
 	for (i = 0; i < args->p.num_atoms; i++) {
-		printf("atoms[%i].field_name = %s\n", i, args->p.atoms[i].field_name);
-		printf("atoms[%i].mode = %i\n", i, args->p.atoms[i].mode);
-		printf("atoms[%i].ignore_case = %i\n", i, args->p.atoms[i].ignore_case);
-		printf("atoms[%i].pat = %s\n", i, args->p.atoms[i].pat);
+		printf("atoms[%zi].field_name = %s\n", i, args->p.atoms[i].field_name);
+		printf("atoms[%zi].mode = %i\n", i, args->p.atoms[i].mode);
+		printf("atoms[%zi].ignore_case = %i\n", i, args->p.atoms[i].ignore_case);
+		printf("atoms[%zi].pat = %s\n", i, args->p.atoms[i].pat);
 	}
-	printf("proglen = %i\n", args->p.proglen);
+	printf("proglen = %zi\n", args->p.proglen);
 	for (i = 0; i < args->p.proglen; i++) {	
 		int op = args->p.program[i];
-		printf("program[%i] = ", i);
+		printf("program[%zi] = ", i);
 		switch (op) {
 		case I_NOP: puts("NOP"); break;
 		case I_NEG: puts("NEG"); break;
@@ -433,9 +433,9 @@ static void dump_args(struct arguments * args)
 			printf("PUSH(%i)\n", op - I_PUSH(0));
 		}
 	}
-	printf("num_fnames = %i\n", args->num_fnames);
+	printf("num_fnames = %zi\n", args->num_fnames);
 	for (i = 0; i < args->num_fnames; i++) {
-		printf("fname[%i] = %s\n", i, args->fname[i]);
+		printf("fname[%zi] = %s\n", i, args->fname[i]);
 	}
 }
 
@@ -453,6 +453,11 @@ int main (int argc, char * argv[])
 	banner(true);
 
 	if (debug_optparse) { dump_args(&args); return 0; }
+
+	if (args.p.num_atoms == 0) {
+		message(L_FATAL, "a predicate is required", 0);
+		exit(EXIT_FAILURE);
+	}
 	
 	if (args.short_descr && !args.description_selected) {
 		if (args.num_show_fields >= MAX_FIELDS) {

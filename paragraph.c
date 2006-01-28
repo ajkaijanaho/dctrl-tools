@@ -33,6 +33,10 @@ void para_parse_next(para_t * para)
 {
 	debug_message("para_parse_next", 0);
 	para->start = para->end;
+	for (size_t i = 0; i < fieldtrie_count(para->trie); i++) {
+		para->fields[i].start = 0;
+		para->fields[i].end = 0;
+	}
 	fsaf_invalidate(para->fp, para->start);
 	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE, 
 			BODY_SKIPBLANKS, END } state = START;
