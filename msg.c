@@ -1,5 +1,5 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright (C) 1999, 2004  Antti-Juhani Kaijanaho
+     Copyright (C) 1999  Antti-Juhani Kaijanaho
   
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
   
      The author can be reached via mail at (ISO 8859-1 charset for the city)
         Antti-Juhani Kaijanaho
-        Helokantie 1 A 16
-        FIN-40640 JYVÄSKYLÄ
+        Helvintie 2 e as 9
+        FIN-40500 JYVÄSKYLÄ
         FINLAND
         EUROPE
      and via electronic mail from
@@ -34,16 +34,11 @@
 
 #include <stdbool.h>
 
+bool errors = false;
+
 #include <assert.h>
 #include <string.h>
 #include "msg.h"
-
-#define PROGNAME_MAXLEN 64
-
-bool errors = false;
-
-int loglevel = L_IMPORTANT;
-char progname [PROGNAME_MAXLEN];
 
 struct str2int_avec_t {
   const char * str;

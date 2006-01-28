@@ -3,12 +3,12 @@ Section: utils
 Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.6.1
-Build-Depends: gettext (>= 0.11-0)
+Build-Depends: gettext
 
 Package: grep-dctrl
 Architecture: any
 Depends: ${shlibs:Depends}
-Suggests: dselect
+Suggests: dselect, apt
 Description: Grep Debian package information
  The grep-dctrl program can answer such questions as
    * "What is the Debian package foo?"
@@ -18,7 +18,7 @@ Description: Grep Debian package information
       programming language?"
  and with some help
    * "Who maintain the essential packages of a Debian system?"
- given a useful input file.
+ given a useful input file. 
  .
  It is a specialised grep program that is meant for processing any
  file which has the general format of a Debian package control file.
@@ -26,8 +26,9 @@ Description: Grep Debian package information
  Packages files on a distribution medium (such as a Debian CD-ROM or
  an FTP site carrying Debian).
  .
- This package includes the specializations grep-status and
- grep-available, which take their input by default from the dpkg
- status file and the dpkg available file (updated by dselect update),
- respectively.  The grep-available specialization is useful mainly to
- users of dselect.
+ This package includes the specializations grep-status, grep-available
+ and grep-aptavail, which take their input by default from the dpkg
+ status file, the dpkg available file (updated by dselect update) and
+ the apt available database (updated by apt-get update), respectively.
+ The grep-available specialization is useful mainly for users of
+ dselect; while grep-aptavail only works if apt is installed.

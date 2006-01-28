@@ -24,6 +24,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 #include <unistd.h>
 #include "fnutil.h"
 #include "fsaf.h"
@@ -122,8 +123,8 @@ static struct argp_option options[] = {
 	{ "banner",	    'B', 0,		    0, N_("Show the testing banner.") },
 #endif
 	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set debugging level to LEVEL.") },
-	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
-	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
+	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching  to the FIELDs given.") },
+	{ 0,		    'P', 0,		    0, N_("Shorthand for -FPackage") },
 	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs.") },
 	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
 	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
@@ -139,28 +140,22 @@ static struct argp_option options[] = {
 	{ "or",		    'o', 0,		    0, N_("Disjunct predicates.") },
 	{ "not",	    '!', 0,		    0, N_("Negate the following predicate.") },
 	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
-	{ "quiet",	    'q', 0,		    0, N_("Do no output to stdout.") },
-	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
+	{ "quiet",	    'q', 0,		    0, N_("No output to stdout") },
+	{ "silent",	    OPT_SILENT, 0,	    0, N_("No output to stdout") },
 	{ 0 }
 };
 
 
-// Tokens
-#define TOK_EOD 0
-#define TOK_NOT 1
-#define TOK_AND 2
-#define TOK_OR  3
-#define TOK_LP  4 /* left paren */
-#define TOK_RP  5 /* right paren */
-#define TOK_ATOM_BASE 6 /* All tokens >= TOK_ATOM_BASE are atoms; the
-			   difference is the atom index.  */
+enum state { STATE_ATOM,  STATE_NEG,   STATE_CONJ,     STATE_DISJ,
+	     STATE_PAREN, STATE_START, STATE_FINISHED };
 
 #define MAX_FNAMES 4096
-#define MAX_TOKS   16384
 
 static int debug_optparse = 0;
 
 struct arguments {
+	/* Parser state, used when parsing the predicate. */
+	enum state state;
 	/* Parser state flag: last token seen was ')' */
 	bool just_seen_cparen;
 	/* Top of the parser stack.  */
@@ -187,25 +182,17 @@ struct arguments {
 	bool count;
 	/* Invert match? */
 	bool invert_match;
-	/* Token stream for the predicate parser. */
-	int toks[MAX_TOKS];
-	/* First unused position in toks.  */
-	size_t toks_np;
-        /* Token read position. */
-	size_t toks_pos;
-	/* Finished with the predicate scanning? */
-	bool finished;
-	/* Are we inside an atom? */
-	bool in_atom;
-	/* Pattern error? */
-	bool pattern_error;
-	/* For each atom, give code with which it can be accessed.  */
-	struct atom_code {
-		size_t n;
-		int * routine;
-	} atom_code[MAX_ATOMS];
+	/* Parser stack.  */
+	struct stack_elem {
+		enum state state;
+		/* A linked list of instructions.  */
+		struct insn_node {
+			int insn;
+			struct insn_node * next;
+		} * insns_first, * insns_last;
+	} stack[MAX_OPS];
 	/* File names seen on the command line.  */
-	char const * fname[MAX_FNAMES];
+	struct ifile fname[MAX_FNAMES];
 	/**/
 	struct show_fields {
 		char const * name;
@@ -221,9 +208,8 @@ struct atom * clone_atom(struct arguments * args)
 		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
-	int oa = args->p.num_atoms-1;
 	struct atom * atom = get_current_atom(&args->p);
-	int na = args->p.num_atoms;
+	int push_insn = I_PUSH(args->p.num_atoms);
 	struct atom * rv = &args->p.atoms[args->p.num_atoms++];
 	rv->field_name = atom->field_name;
 	rv->field_inx = atom->field_inx;
@@ -231,42 +217,37 @@ struct atom * clone_atom(struct arguments * args)
 	rv->ignore_case = atom->ignore_case;
 	rv->pat = atom->pat;
 	rv->patlen = atom->patlen;
-	struct atom_code * oac = &args->atom_code[oa];
-	struct atom_code * nac = &args->atom_code[na];
-	assert(nac->n == 0);
-	assert(oac->n > 0);
-	nac->n = oac->n+2;
-	nac->routine = malloc(nac->n);
-	if (nac->routine == 0) fatal_enomem(0);
-	for (size_t i = 0; i < oac->n; i++) {
-		nac->routine[i] = oac->routine[i];
-	}
-	nac->routine[oac->n+0] = I_PUSH(na);
-	nac->routine[oac->n+1] = I_OR;
+	assert(args->top > 0);
+	struct stack_elem * selem = &args->stack[args->top-1];
+	assert(selem->insns_first != 0);
+	assert(selem->insns_last != 0);
+	struct insn_node * node1 = malloc(sizeof *node1);
+	struct insn_node * node2 = malloc(sizeof *node2);
+	if (node1 == 0 || node2  == 0) fatal_enomem(0);
+	node1->insn = push_insn;
+	node2->insn = I_OR;
+	node1->next = node2;
+	node2->next = 0;
+	selem->insns_last->next = node1;
+	selem->insns_last = node2;
 	return rv;
 }
 
 static void finish_atom(struct arguments * args)
 {
-	assert(args->in_atom);
-	args->in_atom = false;
 	struct atom * atom = get_current_atom(&args->p);
 	if (atom->pat == 0) {
-		args->pattern_error = true;
-		return;
+		message(L_FATAL, _("A pattern is mandatory."), 0);
+		fail();
 	}
 	for (size_t i = 0; i < args->num_search_fields; i++) {
 		if (i > 0) atom = clone_atom(args);
 		atom->field_name = args->search_fields[i];
 		predicate_finish_atom(&args->p);
 	}
-	// If there are no fields, we have not yet run this...
-	// ... but it must be done (especially with -r/-e atoms)
-	if (args->num_search_fields == 0) predicate_finish_atom(&args->p);
 	args->num_search_fields = 0;
 }
 
-#if 0
 /* Pop off one stack state, inserting the associated instructions to
  * the predicate program.  If paren is true, current state must be
  * STATE_PAREN, and if paren is false, it must not be STATE_PAREN. */
@@ -288,21 +269,41 @@ static void leave(struct arguments * args, int paren)
 	args->stack[args->top].insns_last = 0;
 	args->state = args->stack[args->top].state;
 }
-#endif
 
-#define APPTOK(tok) do { apptok(args, (tok)); } while (0)
+#define ENTER(state,insn) do { enter(args, (state), (insn)); } while (0)
 
-static void apptok(struct arguments * args, const int tok)
+static void prim_enter(struct arguments * args, const enum state state, const int insn)
 {
-	debug_message("apptok", 0);
-	if (args->in_atom && tok < TOK_ATOM_BASE) {
-		finish_atom(args);
-	}
-	if (args->toks_np >= MAX_TOKS) {
-		message(L_FATAL, _("predicate is too long"), 0);
+	if (args->top >= MAX_OPS) {
+		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
-	args->toks[args->toks_np++] = tok;
+//	args->stack[args->top].insn = insn;
+	struct insn_node * node = malloc(sizeof *node);
+	if (node == 0) fatal_enomem(0);
+	node->insn = insn;
+	node->next = 0;
+	args->stack[args->top].insns_first = node;
+	args->stack[args->top].insns_last = node;
+	args->stack[args->top].state = args->state;
+	++args->top;
+	args->state = state;
+}
+
+/* Push current state along with the given instruction to stack and
+ * enter the given state.
+ */
+static void enter(struct arguments * args, const enum state state, const int insn)
+{
+	if (args->state == STATE_FINISHED) {
+		message(L_FATAL, _("syntax error in command line"), 0);
+		fail();
+	}
+	while (args->state < state || (state != STATE_NEG && args->state == state)) {
+		leave(args, 0);
+	}
+	prim_enter(args, state, insn);
+	debug_message("entering...", 0);
 }
 
 #define FINISH do { finish(args); } while (0)
@@ -310,39 +311,40 @@ static void apptok(struct arguments * args, const int tok)
 /* Flush the state stack. */
 static void finish(struct arguments * args)
 {
-	assert(!args->finished);
-	if (args->in_atom) finish_atom(args);
-	args->finished = true;
+	while (args->top > 0) {
+		if (args->state == STATE_PAREN) {
+			message(L_FATAL, _("missing ')' in command line"), 0);
+			fail();
+		}
+		leave(args, 0);
+	}
+	assert(args->state == STATE_START);
+	args->state = STATE_FINISHED;
 }
 
-#define ENTER_ATOM (enter_atom((args)))
+#define ENTER_ATOM (enter_atom((args),(just_seen_cparen)))
 
-/* FIXME: UPDATE COMMENT
-If necessary, enter STATE_ATOM and allocate a new atom, pushing
+/* If necessary, enter STATE_ATOM and allocate a new atom, pushing
  * along with the old state a PUSH instruction for the new atom to the
  * parser stack.  If we are already in STATE_ATOM, reuse the current
  * atom. */
-static struct atom * enter_atom(struct arguments * args)
+static struct atom * enter_atom(struct arguments * args, bool just_seen_cparen)
 {
+	if (just_seen_cparen) {
+		message(L_FATAL, _("Unexpected atom in command line. "
+				   "Did you forget to use a connective?"), 0);
+		fail();
+	}
 	struct atom * rv;
-	if (args->in_atom) {
+	if (args->state == STATE_ATOM || args->state == STATE_FINISHED) {
 		assert(args->p.num_atoms > 0);
 		return &args->p.atoms[args->p.num_atoms-1];
 	}
-	args->in_atom = true;
 	if (args->p.num_atoms >= MAX_ATOMS) {
 		message(L_FATAL, _("predicate is too complex"), 0);
 		fail();
 	}
-	APPTOK(args->p.num_atoms + TOK_ATOM_BASE);
-	assert(args->atom_code[args->p.num_atoms].n == 0);
-	args->atom_code[args->p.num_atoms].n = 1;
-	args->atom_code[args->p.num_atoms].routine = malloc(1);
-	if (args->atom_code[args->p.num_atoms].routine == 0) {
-		fatal_enomem(0);
-	}
-	args->atom_code[args->p.num_atoms].routine[0] 
-		= I_PUSH(args->p.num_atoms);
+	ENTER(STATE_ATOM, I_PUSH(args->p.num_atoms));
 	rv = &args->p.atoms[args->p.num_atoms++];
 	rv->field_name = 0;
 	rv->field_inx = -1;
@@ -360,13 +362,6 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	args->just_seen_cparen = false;
 	struct atom * atom;
 	debug_message("parse_opt", 0);
-#ifdef INCLUDE_DEBUG_MSGS
-		if (do_msg(L_DEBUG)) {
-			fprintf(stderr, "%s: in_atom = %s\n",
-				msg_get_progname(),
-				args->in_atom ? "true" : "false");
-		}
-#endif
 	switch (key) {
 	case 'C':
 		if (!to_stdout (COPYING)) fail();
@@ -422,22 +417,21 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case '!':
 		debug_message("parse_opt: !", 0);
-		APPTOK(TOK_NOT);
+		ENTER(STATE_NEG, I_NEG);
 		break;
 	case 'a':
 		debug_message("parse_opt: a", 0);
-		APPTOK(TOK_AND);
+		ENTER(STATE_CONJ, I_AND);
 		break;
 	case 'o':
 		debug_message("parse_opt: o", 0);
-		APPTOK(I_OR);
+		ENTER(STATE_DISJ, I_OR);
 		break;
 	case 'P':
 		debug_message("parse_opt: P", 0);
 		arg = "Package";
 		/* pass through */
 	case 'F': {
-		debug_message("parse_opt: Fv", 0);
 		atom = ENTER_ATOM;
 		char * carg = strdup(arg);
 		if (carg == 0) fatal_enomem(0);
@@ -491,21 +485,28 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("!!!", 0);
 		if (strcmp(arg, "!") == 0) {
 			debug_message("parse_opt: !", 0);
-			APPTOK(TOK_NOT);
+			ENTER(STATE_NEG, I_NEG);
 			break;
 		}
 		if (strcmp(arg, "(") == 0) {
 			debug_message("parse_opt: (", 0);
-			APPTOK(TOK_LP);
+			prim_enter(args, STATE_PAREN, I_NOP);
 			break;
 		}
 		if (strcmp(arg, ")") == 0) {
 			debug_message("parse_opt: )", 0);
+			while (args->state != STATE_PAREN) {
+				if (args->top == 0) {
+					message(L_FATAL, _("unexpected ')' in command line"), 0);
+					fail();
+				}
+				leave(args, 0);
+			}
+			leave(args, 1);
 			args->just_seen_cparen = true;
-			APPTOK(TOK_RP);
 			break;
 		}
-		if (args->finished) {
+		if (args->state == STATE_FINISHED) {
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
 				message(L_FATAL, _("too many file names"), 0);
@@ -513,11 +514,11 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			}
 			s = strdup(arg);
 			if (s == 0) fatal_enomem(0);
-			args->fname[args->num_fnames++] = s;
+			args->fname[args->num_fnames++] =
+				(struct ifile){ .mode = m_read, .s = s };
 			break;
 		}
-		if (just_seen_cparen) { FINISH; goto redo; }
-		if (strcmp(arg, "--") == 0) { FINISH; break; }
+		if (just_seen_cparen || strcmp(arg, "--") == 0) { FINISH; break; }
 		atom = ENTER_ATOM;
 		if (atom->pat != 0) { FINISH; goto redo; }
 		atom->patlen = strlen(arg);
@@ -527,7 +528,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case ARGP_KEY_END:
 		debug_message("parse_opt: end", 0);
-		if (!args->finished) FINISH;
+		if (args->state != STATE_FINISHED) FINISH;
 		break;
 	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS:
 	case ARGP_KEY_ERROR: case ARGP_KEY_FINI: case ARGP_KEY_NO_ARGS:
@@ -546,7 +547,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 static void dump_args(struct arguments * args)
 {
 	size_t i;
-	assert(args->finished);
+	assert(args->state == STATE_FINISHED);
 	assert(args->top == 0);
 	printf("num_atoms = %zi\n", args->p.num_atoms);
 	for (i = 0; i < args->p.num_atoms; i++) {
@@ -570,111 +571,103 @@ static void dump_args(struct arguments * args)
 	}
 	printf("num_fnames = %zi\n", args->num_fnames);
 	for (i = 0; i < args->num_fnames; i++) {
-		printf("fname[%zi] = %s\n", i, args->fname[i]);
+		printf("fname[%zi].mode = %s, fname[%zi].s = %s\n",
+		       i, ifile_modes[args->fname[i].mode],
+		       i, args->fname[i].s);
 	}
 }
 
-static
-int peek_token(struct arguments const * args)
+static void close_ifile(struct ifile f, int fd)
 {
-	assert(args->toks_pos <= args->toks_np);
-	if (args->toks_pos == args->toks_np) return TOK_EOD;
-	return args->toks[args->toks_pos];
-}
-
-static
-int get_token(struct arguments * args)
-{
-	assert(args->toks_pos <= args->toks_np);
-	if (args->toks_pos == args->toks_np) return TOK_EOD;
-	return args->toks[args->toks_pos++];
-}
-
-static void unexpected(int tok)
-{
-	switch (tok) {
-	case TOK_EOD:
-		message(L_FATAL, _("unexpected end of predicate"), 0);
-		fail();
-	case TOK_NOT: 
-		message(L_FATAL, _("unexpected '!' in command line"), 0);
-		fail();
-	case TOK_AND:
-		message(L_FATAL, _("unexpected '-a' in command line"), 0);
-		fail();
-	case TOK_OR : 
-		message(L_FATAL, _("unexpected '-o' in command line"), 0);
-		fail();
-	case TOK_LP :
-		message(L_FATAL, _("unexpected '(' in command line"), 0);
-		fail();
-	case TOK_RP :
-		message(L_FATAL, _("unexpected ')' in command line"), 0);
-		fail();
-	default:
-		assert(tok >=TOK_ATOM_BASE);
-		message(L_FATAL, _("unexpected atom in command line"), 0);
-		fail();
-	}
-}
-
-static void parse_conj(struct arguments * args);
-
-static void parse_prim(struct arguments * args)
-{
-	if (peek_token(args) == TOK_LP) {
-		get_token(args);
-		parse_conj(args);
-		if (get_token(args) != TOK_RP) {
-			message(L_FATAL, _("missing ')' in command line"), 0);
-			fail();
+	close(fd);
+	if (f.mode == m_exec) {
+		int status;
+		int r = wait(&status);
+		if (r == -1) {
+			errno_msg(L_IMPORTANT, f.s);
+			return;
 		}
-		return;
-	}
-	if (peek_token(args) < TOK_ATOM_BASE) unexpected(peek_token(args));
-	int atom = get_token(args) - TOK_ATOM_BASE;
-	assert(atom >= 0);
-	assert(atom < MAX_ATOMS);
-	addinsn(&args->p, I_PUSH(atom));
-}
-
-static void parse_neg(struct arguments * args)
-{
-	bool neg = false;
-	if (peek_token(args) == TOK_NOT) {
-		neg = true;
-		get_token(args);
-	}
-	parse_prim(args);
-	if (neg) addinsn(&args->p, I_NEG);
-}
-
-static void parse_disj(struct arguments * args)
-{
-	parse_neg(args);
-	while (peek_token(args) == TOK_OR) {
-		get_token(args);
-		parse_neg(args);
-		addinsn(&args->p, I_OR);
+		if (WIFEXITED(status)) {
+			if (WEXITSTATUS(status) == 0) return;
+			fprintf(stderr, _("%s: command (%s) failed "
+					  "(exit status %d)\n"),
+				get_progname(),
+				f.s,
+				WEXITSTATUS(status));
+			record_error();
+			return;
+		}
+		if (WIFSIGNALED(status)) {
+			fprintf(stderr, _("%s: command (%s) was killed "
+					  "by signal %d\n"),
+				get_progname(),
+				f.s,
+				WTERMSIG(status));
+			record_error();
+			return;
+		}
 	}
 }
 
-static void parse_conj(struct arguments * args)
+static int open_pipe(char const * s)
 {
-	parse_disj(args);
-	while (peek_token(args) == TOK_AND) {
-		get_token(args);
-		parse_disj(args);
-		addinsn(&args->p, I_AND);
+	int ps[2];
+	int r = pipe(ps);
+	if (r == -1) {
+		errno_msg(L_IMPORTANT, 0);
+		return -1;
 	}
+	pid_t pid = fork();
+	switch (pid) {
+	case -1:
+		errno_msg(L_IMPORTANT, 0);
+		close(ps[0]);
+		close(ps[1]);
+		return -1;
+	case 0:
+		// child
+		close(STDIN_FILENO);
+		r = dup2(ps[1], STDOUT_FILENO);
+		if (r == -1) {
+			fprintf(stderr, "%s (child): %s\n",
+				get_progname(), strerror(errno));
+			_exit(1);
+		}
+		close(ps[0]);
+		close(ps[1]);
+		execl("/bin/sh", "/bin/sh", "-c", s, 0);
+		fprintf(stderr, _("%s (child): failed to exec /bin/sh: %s\n"),
+			get_progname(), strerror(errno));
+		_exit(1);
+	}
+	// parent
+	close(ps[1]);
+	return ps[0];
 }
 
-static void parse_predicate(struct arguments * args)
+static int open_ifile(struct ifile f)
 {
-	args->toks_pos = 0;
-	parse_conj(args);
-	int tok = peek_token(args);
-	if (tok != TOK_EOD) unexpected(tok);
+	switch (f.mode) {
+	case m_read:
+		if (strcmp(f.s, "-") == 0) {
+			return STDIN_FILENO;
+		}
+		{
+			int fd = open(f.s, O_RDONLY);
+			if (fd == -1) {
+				fprintf(stderr, "%s: %s: %s\n",
+					get_progname(), f.s, strerror(errno));
+				record_error();
+				return -1;
+			}
+			return fd;
+		}
+	case m_exec:
+		return open_pipe(f.s);
+	case m_error:
+		abort();
+	}
+	abort();
 }
 
 static struct argp argp = { options, parse_opt, 0, progdoc };
@@ -687,6 +680,7 @@ int main (int argc, char * argv[])
 
 
 	static struct arguments args;
+	args.state = STATE_START;
 	args.show_field_name = true;
 	msg_set_progname(argv[0]);
 	init_predicate(&args.p);
@@ -695,21 +689,11 @@ int main (int argc, char * argv[])
 #ifdef BANNER
 	banner(true);
 #endif
-	parse_predicate(&args);
-	if (args.pattern_error) {
-		message(L_FATAL, _("A pattern is mandatory"), 0);
-		fail();
-	}
 
 	if (debug_optparse) { dump_args(&args); return 0; }
 
 	if (args.p.num_atoms == 0) {
 		message(L_FATAL, _("a predicate is required"), 0);
-		fail();
-	}
-
-	if (!check_predicate(&args.p)) {
-		message(L_FATAL, _("malformed predicate"), 0);
 		fail();
 	}
 
@@ -737,38 +721,25 @@ int main (int argc, char * argv[])
 	bool found = false;
 	for (size_t i = 0; i < args.num_fnames || (i == 0 && args.num_fnames == 0); ++i) {
 		int fd;
-		const char * fname;
+		struct ifile fname;
 		if (args.num_fnames == 0) {
 			// Hardcode grep-dctrl <-> "-" mapping so that
 			// Debian packages can genuinely depend on it.
 			char * argv0 = fnbase(argv[0]);
 			if (strcmp(argv0, "grep-dctrl") == 0) {
-				fname = "-";
+				fname = (struct ifile){ .mode = m_read,
+							.s = "-" };
 			} else {
 				fname = find_ifile_by_exename(argv0, args.rcname);
-				if (fname == 0) {
-					message(L_IMPORTANT, 
-						_("executable name not found; "
-						  "reading from standard input"),
-						0);
-					fname = "-";
-				}
 			}
 		} else {
 			fname = args.fname[i];
 		}
 
-		if (strcmp(fname, "-") == 0) {
-			fd = STDIN_FILENO;
-			fname = "stdin";
-		} else {
-			fd = open(fname, O_RDONLY);
-			if (fd == -1) {
-				fprintf(stderr, "%s: %s: %s\n", argv[0], fname, strerror(errno));
-				record_error();
-				break;
-			}
-		}
+		if (fname.mode == m_error) break;
+
+		fd = open_ifile(fname);
+		if (fd == -1) break;
 
 		{
 			struct stat stat;
@@ -776,21 +747,21 @@ int main (int argc, char * argv[])
 			mode_t m = stat.st_mode;
 			if (r == -1) {
 				fprintf(stderr, _("%s: %s: cannot stat: %s\n"),
-					argv[0], fname, strerror(errno));
+					argv[0], fname.s, strerror(errno));
 				record_error();
-				close(fd);
+				close_ifile(fname, fd);
 				break;
 			}
 			if (!(S_ISREG(m) || S_ISCHR(m) || S_ISFIFO(m))) {
 				fprintf(stderr, "%s: %s: %s\n",
-					argv[0], fname,
+					argv[0], fname.s,
 					S_ISDIR(m) ? _("is a directory, skipping") :
 					S_ISBLK(m) ? _("is a block device, skipping") :
 					S_ISLNK(m) ? _("internal error") :
 					S_ISSOCK(m) ? _("is a socket, skipping") :
 					_("unknown file type, skipping"));
 				record_error();
-				close(fd);
+				close_ifile(fname, fd);
 				break;
 			}
 		}
@@ -824,7 +795,7 @@ int main (int argc, char * argv[])
 				}
 				struct field_data * fd = &para.fields[args.show_fields[j].inx];
 				struct fsaf_read_rv r = fsaf_read(fp, fd->start, fd->end - fd->start);
-				if (args.short_descr && 
+				if (args.short_descr &&
 				    args.show_fields[j].inx == description_inx) {
 					char * nl = memchr(r.b, '\n', r.len);
 					if (nl != 0) r.len = nl - r.b;
@@ -836,7 +807,7 @@ int main (int argc, char * argv[])
 			if (args.num_show_fields > 1) puts("");
 		}
 
-		if (fd != STDIN_FILENO) close(fd);
+		close_ifile(fname, fd);
 	}
 	if (count) printf("%zi\n", count);
 	return errors_reported() ? 2 : found ? 0 : 1;

@@ -1,94 +1,14 @@
-grep-dctrl (2.1.7) unstable; urgency=low
+grep-dctrl (2.2) experimental; urgency=low
 
-  * Apply patch by Andreas Metzler.  Closes: #265858 (Unescaped dashes in
-    manpage break searching or cut-and-paste with UTF-8 locale)
+  * This version starts adding features and thus belongs in experimental.
+  * rc.h, rc.c, grep-dctrl.c, grep-dctrl.1.cp:
+    Add @exec syntax to rc files, and support reading stdout of given commands
+  * debian/rules, grep-dctrl.rc: Add grep-aptavail
+    Closes: #207440 (grep-available for apt?)
+  * debian/control [Suggests]: Add dselect and apt
+  * debian/control [Description]: Mention the specializations.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 16 Aug 2004 19:52:03 +0300
-
-grep-dctrl (2.1.6) unstable; urgency=low
-
-  * Translation update release.
-  * grep-dctrl.c (main): Shorten the new #236196 warning
-    (the old was problematic for translators).
-  * msg.c: Update author snail-mail address.
-  * po/fi.po: Updated.
-  * po/de.po: Updated by Gerfried Fuchs.
-  * po/ca.po: Updated by Jordi Mallach.
-  * po/fr.po: Updated by Nicolas Bertolissio.
-  * langs.mk, po/it.po: New translation by Danilo Piazzalunga.
-    Closes: #258389 (Italian translation for r_2_1_maint branch)
-  * grep-dctrl.1.cp: Change license to GPL.
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri,  9 Jul 2004 19:30:59 +0300
-
-grep-dctrl (2.1.5) unstable; urgency=low
-
-  * msg.[ch]: Rearranging.
-  * msg.h (msg_get_progname): New function.
-  * grep-dctrl.c: Rewrite the parser so that argp only
-    produces a list of tokens for a new recursive-descent
-    predicate parser.
-    Closes: #227543 (Predicate parser is fragile) [Reported by AJK]
-  * French translation by Nicolas Bertolissio, proofread by
-    Michel Grentzinger, Claude Thomassin and Denis Barbier
-  * po/fi.po: Updated.
-  * getaline.c (getaline): Ensure that there is a null terminator in an
-    empty return value.
-  * grep-dctrl.c (main): Warn about the use of standard input when the
-    command name was not found.
-    Closes: #236196 (please tell the user when falling back to reading stdin)
-    [Reported by Danilo Piazzalunga]
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  4 Jul 2004 15:12:04 +0300
-
-grep-dctrl (2.1.4) unstable; urgency=low
-
-  * predicate.c (verify_atom): Check that the stack contains exactly
-    one element (the result) after simulated execution.
-    Closes: #241766 (segfault) [Reported by Joey Hess]
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 19 Jun 2004 16:49:24 +0300
-
-grep-dctrl (2.1.3) unstable; urgency=low
-
-  * rc.c (find_ifile_by_exename): Fix EOF handling.
-  * grep-dctrl.c (main): If no default file is found, use "-".
-  * strutil.c (chomp): New function.
-  * These fix a bug that is fuctionally equivalent to 
-    bug#235785 (segfaults when using an unknown exe name or an empty config file)
-    but is caused by legacy code not present in experimental, and thus this does
-    not close it.
-  * grep-dctrl.c (finish_atom): Run predicate_finish_atom even if there
-    are no search fields.
-    Closes: #234657 ("-e" causes matches to fail)
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed,  3 Mar 2004 21:21:56 +0200
-
-grep-dctrl (2.1.2) unstable; urgency=low
-
-  * debian/control (Build-Depends): Add version constraint >= 0.11-0 for
-    gettext, due to the use of --copyright-holder, with thanks to Michael
-    Schultheiss.
-    Closes: #230399 (Needs to Build-Depend on versioned gettext)
-  * Backport from experimental:
-    - debian/control (Suggests): Add dselect
-    - debian/control [Description]: Mention the specializations.
-  * po/fi.po: Updated.
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 11 Feb 2004 17:40:13 +0200
-
-grep-dctrl (2.1.1) unstable; urgency=low
-
-  * New German translation by Gerfried Fuchs.
-  * grep-dctrl.c: Fix help message inconsistent punctuation and other
-    minor message errors
-    Closes: #229821 (some minor nitpicks with the po files)
-  * Makefile (clean): Remove also *.pot
-  * predicate.[ch], grep-dctrl.c: Check for malformed predicates.
-    This is a kluge, but gets rid of certain assertion failures.
-  * Update Catalan translation by Jordi Mallach.
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 10 Feb 2004 20:41:32 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 16 Jan 2004 03:08:58 +0200
 
 grep-dctrl (2.1.0) unstable; urgency=low
 

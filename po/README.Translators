@@ -36,6 +36,6 @@ generated file and thus does not belong under version control).
 You need to add your language to ../langs.mk for the makefile magic to
 work.
 
-Please, do not touch the C sources without consulting AJK first.
+Do not touch the C sources without consulting AJK first.
 
 

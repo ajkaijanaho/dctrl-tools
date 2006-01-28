@@ -66,8 +66,6 @@ char * getaline (FILE * f)
 	buf = malloc (size);
 	if (buf == NULL) return NULL;
 
-	buf[0] = '\0';
-
 	while (fgets (buf + len, size - len, f) != NULL) {
 		len += strlen(buf + len);
 		if (len > 0 && buf[len - 1] == '\n')
@@ -95,6 +93,8 @@ char * getaline (FILE * f)
 #if 0
 	if (buf[len - 1] == '\n')	/* remove newline, if there */
 		buf[--len] = '\0';
+#else
+	buf[len] = '\0';
 #endif
 
 	if (size - len > mucho)	{ /* a plenitude of unused memory? */
