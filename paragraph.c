@@ -16,6 +16,8 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <gmp.h>
+#include <string.h>
 #include "msg.h"
 #include "paragraph.h"
 #include "strutil.h"
@@ -27,12 +29,15 @@ void parse_int(FSAF * fp, struct field_data * fd)
 	struct fsaf_read_rv rd = fsaf_read(fp, fd->start, len);
 	assert(rd.len == len);
 	fd->int_valid = false;
-	bool ok = str2intmax(&fd->parsed, rd.b, len);
-	if (!ok) {
+	char * s = strndup(rd.b, len);
+	if (s == 0) fatal_enomem(0);
+	int r = mpz_set_str(fd->parsed, s, 10);
+	free(s);
+	fd->int_valid = (r == 0);
+	if (!fd->int_valid) {
 		message(L_INFORMATIONAL, _("parse of a numeric field failed"),
 			0);
 	}
-	fd->int_valid = ok;
 }
 
 void para_init(para_t * para, FSAF * fp, fieldtrie_t * trie)
@@ -42,6 +47,9 @@ void para_init(para_t * para, FSAF * fp, fieldtrie_t * trie)
 	para->start = 0;
 	para->end = 0;
 	para->eof = false;
+	for (size_t i = 0; i < MAX_FIELDS; i++) {
+		mpz_init(para->fields[i].parsed);
+	}
 	para_parse_next(para);
 }
 

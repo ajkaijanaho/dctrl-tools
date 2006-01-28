@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-02-11 11:20+0100\n"
+"POT-Creation-Date: 2004-07-04 20:23+0300\n"
 "PO-Revision-Date: 2004-02-11 11:22+0100\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -134,156 +134,194 @@ msgstr "Optionenverarbeitung debuggen."
 msgid "Do no output to stdout."
 msgstr "Keine Ausgabe auf die Standardausgabe."
 
-#: grep-dctrl.c:218 grep-dctrl.c:288 grep-dctrl.c:354 predicate.c:40
+#: grep-dctrl.c:232 grep-dctrl.c:345 predicate.c:41
 msgid "predicate is too complex"
 msgstr "Eigenschaft ist zu komplex"
 
-#: grep-dctrl.c:250
-msgid "A pattern is mandatory"
-msgstr "Ein Muster wird benötigt"
+#: grep-dctrl.c:313
+#, fuzzy
+msgid "predicate is too long"
+msgstr "Eigenschaft ist zu komplex"
 
-#: grep-dctrl.c:309
-msgid "syntax error in command line"
-msgstr "Syntax-Fehler in der Befehlszeile"
-
-#: grep-dctrl.c:326
-msgid "missing ')' in command line"
-msgstr "Fehlende »)« in der Befehlszeile"
-
-#: grep-dctrl.c:344
-msgid "Unexpected atom in command line. Did you forget to use a connective?"
-msgstr ""
-"Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder vergessen?"
-
-#: grep-dctrl.c:371
+#: grep-dctrl.c:370
 msgid "inconsistent atom modifiers"
 msgstr "Inkonsistener Atom-Modifikator"
 
-#: grep-dctrl.c:431
+#: grep-dctrl.c:437
 msgid "no such log level"
 msgstr "Keine solche Log-Ebene"
-
-#: grep-dctrl.c:525
-msgid "unexpected ')' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
 
 #: grep-dctrl.c:537
 msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
-#: grep-dctrl.c:617
+#: grep-dctrl.c:618
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
 
-#: grep-dctrl.c:626
+#: grep-dctrl.c:627
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
 
-#: grep-dctrl.c:664
+#: grep-dctrl.c:665
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
 
+#: grep-dctrl.c:719
+#, fuzzy
+msgid "unexpected end of predicate"
+msgstr "unerwartetes Dateiende"
+
 #: grep-dctrl.c:722
+#, fuzzy
+msgid "unexpected '!' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:725
+#, fuzzy
+msgid "unexpected '-a' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:728
+#, fuzzy
+msgid "unexpected '-o' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:731
+#, fuzzy
+msgid "unexpected '(' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:734
+msgid "unexpected ')' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:738
+#, fuzzy
+msgid "unexpected atom in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:751
+msgid "missing ')' in command line"
+msgstr "Fehlende »)« in der Befehlszeile"
+
+#: grep-dctrl.c:823
+msgid "A pattern is mandatory"
+msgstr "Ein Muster wird benötigt"
+
+#: grep-dctrl.c:830
 msgid "a predicate is required"
 msgstr "Eine Eigenschaft wird benötigt"
 
-#: grep-dctrl.c:727
+#: grep-dctrl.c:835
 msgid "malformed predicate"
 msgstr "Missgebildete Eigenschaft"
 
-#: grep-dctrl.c:733
+#: grep-dctrl.c:841
 msgid "too many output fields"
 msgstr "Zu viele Ausgabefelder"
 
-#: grep-dctrl.c:737
+#: grep-dctrl.c:845
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
-#: grep-dctrl.c:746
+#: grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
 
-#: grep-dctrl.c:780
+#: grep-dctrl.c:888
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat kann nicht durchgeführt werden: %s\n"
 
-#: grep-dctrl.c:789
+#: grep-dctrl.c:897
 msgid "is a directory, skipping"
 msgstr "ist ein Verzeichnis, wird übersprungen"
 
-#: grep-dctrl.c:790
+#: grep-dctrl.c:898
 msgid "is a block device, skipping"
 msgstr "ist ein Block-Gerät, wird übersprungen"
 
-#: grep-dctrl.c:791
+#: grep-dctrl.c:899
 msgid "internal error"
 msgstr "interner Fehler"
 
-#: grep-dctrl.c:792
+#: grep-dctrl.c:900
 msgid "is a socket, skipping"
 msgstr "ist ein Socket, wird übersprungen"
 
-#: grep-dctrl.c:793
+#: grep-dctrl.c:901
 msgid "unknown file type, skipping"
 msgstr "unbekannter Dateityp, wird übersprungen"
 
-#: predicate.c:76
+#: predicate.c:79
 msgid "invalid numeric pattern"
 msgstr "Ungültiges numerisches Muster"
 
-#: paragraph.c:32
+#: paragraph.c:38
 msgid "parse of a numeric field failed"
 msgstr "Analyse eines numerischen Feldes fehlgeschlagen"
 
-#: paragraph.c:90 paragraph.c:116
+#: paragraph.c:98 paragraph.c:124
 msgid "unexpected end of file"
 msgstr "unerwartetes Dateiende"
 
-#: paragraph.c:109
+#: paragraph.c:117
 msgid "unexpected end of line"
 msgstr "unerwartetes Zeilenende"
 
-#: rc.c:65
+#: rc.c:66
 msgid "Malformed default input file name"
 msgstr "Missgebildeter Default-Eingabedatei-Name"
 
-#: rc.c:78
+#: rc.c:79
 msgid "not owned by you or root, ignoring"
 msgstr "gehört nicht Ihnen oder root, wird ignoriert"
 
-#: rc.c:83
+#: rc.c:84
 msgid "write permissions for group or others, ignoring"
 msgstr "Schreibberechtigungen für die Gruppe oder andere, wird ignoriert"
 
-#: rc.c:123
+#: rc.c:124
 msgid "reading config file"
 msgstr "lese Konfigurationsdatei"
 
-#: rc.c:150
+#: rc.c:151
 msgid "read failure or out of memory"
 msgstr "Lesefehler oder zuwenig Speicher verfügbar"
 
-#: rc.c:170
+#: rc.c:173
 msgid "syntax error: need a executable name"
 msgstr "Syntax-Fehler: Benötige einen Programmnamen"
 
-#: rc.c:178
+#: rc.c:181
 msgid "syntax error: need an input file name"
 msgstr "Syntax-Fehler: Benötige einen Eingabe-Dateinamen"
 
-#: rc.c:183
+#: rc.c:186
 msgid "considering executable name"
 msgstr "Programmname wird in Betracht gezogen"
 
-#: rc.c:185
+#: rc.c:188
 msgid "yes, will use executable name"
 msgstr "Ja, Programmname wird verwendet"
 
-#: rc.c:187
+#: rc.c:190
 msgid "default input file"
 msgstr "Default-Eingabedatei"
+
+#: rc.c:201
+msgid "executable name not found; reading from standard input"
+msgstr ""
+
+#~ msgid "syntax error in command line"
+#~ msgstr "Syntax-Fehler in der Befehlszeile"
+
+#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
+#~ msgstr ""
+#~ "Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder "
+#~ "vergessen?"

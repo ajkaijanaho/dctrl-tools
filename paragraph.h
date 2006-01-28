@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,15 +21,15 @@
 
 #define MAX_FIELDS 100
 
+#include <gmp.h>
 #include <stddef.h>
-#include <stdint.h>
 #include "fsaf.h"
 #include "fieldtrie.h"
 
 struct field_data {
 	size_t start, end; /* offsets to the file; [start,end) is the body */
 	bool int_valid;    /* whether .parsed is valid */
-	intmax_t parsed;   /* a parsed value for the data */
+	mpz_t parsed;   /* a parsed value for the data */
 };
 
 struct paragraph_private {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-01-18 00:35+0200\n"
+"POT-Creation-Date: 2004-07-04 20:23+0300\n"
 "PO-Revision-Date: 2004-01-13 00:50+0200\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -36,11 +36,13 @@ msgid "FIELD,FIELD,..."
 msgstr "KENTTÄ,KENTT�,..."
 
 #: grep-dctrl.c:131
-msgid "Restrict pattern matching  to the FIELDs given."
+#, fuzzy
+msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
 #: grep-dctrl.c:132
-msgid "Shorthand for -FPackage"
+#, fuzzy
+msgid "This is a shorthand for -FPackage."
 msgstr "Lyhyt muoto vivulle -FPackage"
 
 #: grep-dctrl.c:133
@@ -131,155 +133,198 @@ msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
 #: grep-dctrl.c:153 grep-dctrl.c:154
-msgid "No output to stdout"
+#, fuzzy
+msgid "Do no output to stdout."
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
-#: grep-dctrl.c:218 grep-dctrl.c:288 grep-dctrl.c:354 predicate.c:40
+#: grep-dctrl.c:232 grep-dctrl.c:345 predicate.c:41
 msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
-#: grep-dctrl.c:250
-msgid "A pattern is mandatory."
-msgstr "Hakuehto on välttämätön."
+#: grep-dctrl.c:313
+#, fuzzy
+msgid "predicate is too long"
+msgstr "predikaatti on liian monimutkainen"
 
-#: grep-dctrl.c:309
-msgid "syntax error in command line"
-msgstr "komentorivillä on syntaksivirhe"
-
-#: grep-dctrl.c:326
-msgid "missing ')' in command line"
-msgstr "komentoriviltä puuttuu ')'"
-
-#: grep-dctrl.c:344
-msgid "Unexpected atom in command line. Did you forget to use a connective?"
-msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
-
-#: grep-dctrl.c:371
+#: grep-dctrl.c:370
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:431
+#: grep-dctrl.c:437
 msgid "no such log level"
 msgstr "ei sellaista seurantatasoa ole"
-
-#: grep-dctrl.c:525
-msgid "unexpected ')' in command line"
-msgstr "odottamaton ')' komentorivill�"
 
 #: grep-dctrl.c:537
 msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
-#: grep-dctrl.c:617
+#: grep-dctrl.c:618
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr ""
 
-#: grep-dctrl.c:626
+#: grep-dctrl.c:627
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr ""
 
-#: grep-dctrl.c:664
+#: grep-dctrl.c:665
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr ""
 
+#: grep-dctrl.c:719
+#, fuzzy
+msgid "unexpected end of predicate"
+msgstr "odottamaton tiedoston loppu"
+
 #: grep-dctrl.c:722
+#, fuzzy
+msgid "unexpected '!' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:725
+#, fuzzy
+msgid "unexpected '-a' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:728
+#, fuzzy
+msgid "unexpected '-o' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:731
+#, fuzzy
+msgid "unexpected '(' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:734
+msgid "unexpected ')' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:738
+#, fuzzy
+msgid "unexpected atom in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl.c:751
+msgid "missing ')' in command line"
+msgstr "komentoriviltä puuttuu ')'"
+
+#: grep-dctrl.c:823
+#, fuzzy
+msgid "A pattern is mandatory"
+msgstr "Hakuehto on välttämätön."
+
+#: grep-dctrl.c:830
 msgid "a predicate is required"
 msgstr "predikaatti on välttämätön"
 
-#: grep-dctrl.c:728
+#: grep-dctrl.c:835
+msgid "malformed predicate"
+msgstr ""
+
+#: grep-dctrl.c:841
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:732
+#: grep-dctrl.c:845
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:741
+#: grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: grep-dctrl.c:775
+#: grep-dctrl.c:888
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: grep-dctrl.c:784
+#: grep-dctrl.c:897
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: grep-dctrl.c:785
+#: grep-dctrl.c:898
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: grep-dctrl.c:786
+#: grep-dctrl.c:899
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: grep-dctrl.c:787
+#: grep-dctrl.c:900
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: grep-dctrl.c:788
+#: grep-dctrl.c:901
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
-#: predicate.c:76
+#: predicate.c:79
 msgid "invalid numeric pattern"
 msgstr ""
 
-#: paragraph.c:32
+#: paragraph.c:38
 msgid "parse of a numeric field failed"
 msgstr ""
 
-#: paragraph.c:90 paragraph.c:116
+#: paragraph.c:98 paragraph.c:124
 msgid "unexpected end of file"
 msgstr "odottamaton tiedoston loppu"
 
-#: paragraph.c:109
+#: paragraph.c:117
 msgid "unexpected end of line"
 msgstr "odottamaton rivin loppu"
 
-#: rc.c:65
+#: rc.c:66
 #, fuzzy
 msgid "Malformed default input file name"
 msgstr "oletussyötetiedosto"
 
-#: rc.c:78
+#: rc.c:79
 msgid "not owned by you or root, ignoring"
 msgstr ""
 
-#: rc.c:83
+#: rc.c:84
 msgid "write permissions for group or others, ignoring"
 msgstr ""
 
-#: rc.c:123
+#: rc.c:124
 msgid "reading config file"
 msgstr "luen asetustiedostoa"
 
-#: rc.c:150
+#: rc.c:151
 msgid "read failure or out of memory"
 msgstr "lukeminen epäonnistui tai muisti loppui"
 
-#: rc.c:170
+#: rc.c:173
 msgid "syntax error: need a executable name"
 msgstr "syntaksivirhe: tarvitsen ohjelmannimen"
 
-#: rc.c:178
+#: rc.c:181
 msgid "syntax error: need an input file name"
 msgstr "syntaksivirhe: tarvitsen syötetiedoston nimen"
 
-#: rc.c:183
+#: rc.c:186
 msgid "considering executable name"
 msgstr "harkitsen ohjelmannimeä"
 
-#: rc.c:185
+#: rc.c:188
 msgid "yes, will use executable name"
 msgstr "kyllä, käytän ohjelmannimeä"
 
-#: rc.c:187
+#: rc.c:190
 msgid "default input file"
 msgstr "oletussyötetiedosto"
+
+#: rc.c:201
+msgid "executable name not found; reading from standard input"
+msgstr ""
+
+#~ msgid "syntax error in command line"
+#~ msgstr "komentorivillä on syntaksivirhe"
+
+#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
+#~ msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
