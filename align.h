@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright (C) 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,28 +16,37 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef FIELDTRIE_H
-#define FIELDTRIE_H
+#ifndef ALIGN_H
+#define ALIGN_H
 
-#include <limits.h>
-#include <stddef.h>
+#include <assert.h>
 #include <stdbool.h>
+#include <unistd.h>
 
-struct field_attr {
-	bool valid;
-	size_t inx;
-};
+#define MAX_ALIGN 8
 
-void fieldtrie_init(void);
+static inline
+size_t get_pagesize(void)
+{
+	static size_t pagesize = 0;
+	if (pagesize == 0) {
+		pagesize = (size_t) sysconf(_SC_PAGESIZE);
+	}
+	assert(pagesize != 0);
+	return pagesize;
+}
 
-// case-insensitive
-size_t fieldtrie_insert(char const *);
+static inline
+size_t align(size_t offset, size_t alignment, bool ceil)
+{
+	return (offset / alignment + (ceil && offset % alignment != 0))
+		* alignment;
+}
 
-// case-insensitive
-struct field_attr fieldtrie_lookup(char const *, size_t n);
+static inline
+size_t pg_align(size_t offset, bool ceil)
+{
+	return align(offset, get_pagesize(), ceil);
+}
 
-//void fieldtrie_clear(void);
-
-size_t fieldtrie_count(void);
-
-#endif /* FIELDTRIE_H */
+#endif /* ALIGN_H */

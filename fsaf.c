@@ -25,6 +25,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include "align.h"
 #include "fsaf.h"
 #include "msg.h"
 
@@ -34,17 +35,8 @@
 
 #define READAHEAD 1
 
-static size_t pagesize;
-
-static inline
-size_t align(size_t offset, bool ceil)
-{
-	return (offset / pagesize + (ceil && offset % pagesize != 0)) * pagesize;
-}
-
 FSAF * fsaf_fdopen(int fd)
 {
-	pagesize = (size_t) sysconf (_SC_PAGESIZE);
 	FSAF * rv = malloc(sizeof *rv);
 	if (rv == 0) { errno = ENOMEM; return 0; }
 
@@ -68,7 +60,7 @@ FSAF * fsaf_fdopen(int fd)
 		rv->eof_mark = stat.st_size;
 #ifdef _POSIX_MAPPED_FILES
 		/* try mmapping, it is a regular file */
-		size_t eof_pagebound = align(rv->eof_mark, true);
+		size_t eof_pagebound = pg_align(rv->eof_mark, true);
 		char * buf = mmap(0, eof_pagebound, PROT_READ, MAP_SHARED, fd, 0);
 		if (buf != MAP_FAILED) {
 			debug_message("mmapping", 0);
@@ -193,8 +185,8 @@ void fsaf_invalidate(FSAF * fp, size_t offset)
 
 #ifdef _POSIX_MAPPED_FILES
 	if (fp->mapped) {
-		size_t old = align(fp->eof_mark - fp->buf_offset, 0);
-		size_t new = align(offset - fp->buf_offset, 0);
+		size_t old = pg_align(fp->eof_mark - fp->buf_offset, 0);
+		size_t new = pg_align(offset - fp->buf_offset, 0);
 		madvise(fp->buf + old, new - old, MADV_DONTNEED);
 	}
 #endif	

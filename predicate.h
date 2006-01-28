@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2004, 2005 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -77,7 +77,6 @@ struct predicate {
 	int program[MAX_OPS];
 	/* The atomic predicates */
 	struct atom atoms[MAX_ATOMS];
-	fieldtrie_t trie;
 };
 
 void init_predicate(struct predicate * p);

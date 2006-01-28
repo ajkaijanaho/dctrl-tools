@@ -21,6 +21,8 @@
 
 #include <assert.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* FAST (MOSTLY) SEQUENTIAL-ACCESS FILE LAYER */
 
@@ -56,6 +58,21 @@ struct fsaf_read_rv {
 	char const * b;
 	size_t len;
 } fsaf_read(FSAF *, size_t offset, size_t len);
+
+/* Behaves like fsaf_read except that the result is put in a malloc'd
+ * zero-terminated buffer.  NULL return value indicates either memory
+ * allocation failure or that the read was below the invalid mark.  */
+static inline
+char * fsaf_getas(FSAF * fp, size_t offset, size_t len)
+{
+	struct fsaf_read_rv r = fsaf_read(fp, offset, len);
+	if (r.b == 0) return 0;
+	char * rv = malloc(r.len+1);
+	if (rv == 0) return 0;
+	memcpy(rv, r.b, r.len);
+	rv[r.len] = 0;
+	return rv;
+}
 
 static inline
 int fsaf_getc(FSAF * fp, size_t offset)

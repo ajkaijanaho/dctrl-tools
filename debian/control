@@ -1,15 +1,43 @@
-Source: grep-dctrl
+Source: dctrl-tools
 Section: utils
 Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.6.1
 Build-Depends: gettext (>= 0.11-0), gcc (>= 3.0)
 
-Package: grep-dctrl
+Package: dctrl-tools
 Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: apt
-Description: Grep Debian package information
+Conflicts: grep-dctrl (<< 2.7)
+Replaces: grep-dctrl (<< 2.7)
+Description: Command-line tools to process Debian package information
+ Debian package information is generally stored in files having a
+ special file format, dubbed the Debian control file format (the dctrl
+ format), a special case of the record jar file format.  These tools
+ operate on any files conforming in a general sense to that format and
+ are therefore widely applicable whenever those formats are in play.
+ .
+ Included are:
+ .
+   grep-dctrl     - Grep dctrl-format files
+   grep-available - Grep the DPKG available database
+   grep-status    - Grep the DPKG status database
+   grep-aptavail  - Grep the APT available database
+ .
+   sort-dctrl     - Sort dctrl-format files
+ . 
+   sync-available - Sync the dpkg available database with
+                    the apt database
+
+Package: grep-dctrl
+Architecture: all
+Depends: dctrl-tools (= ${Source-Version})
+Description: Grep Debian package information - transition package
+ The grep-dctrl program is provided by the dctrl-tools package.  This
+ package is available to ease the transition.  You can safely remove
+ this package when no other package depends on it.
+ .
  The grep-dctrl program can answer such questions as
    * "What is the Debian package foo?"
    * "Which version of the Debian package bar is now current?"
@@ -26,13 +54,12 @@ Description: Grep Debian package information
  Packages files on a distribution medium (such as a Debian CD-ROM or
  an FTP site carrying Debian).
  .
- This package includes the specializations grep-status, grep-available
- and grep-aptavail, which take their input by default from the dpkg
- status file, the dpkg available file (updated by dselect update, but
- see below) and the apt available database (updated by apt-get
- update), respectively.  The grep-available specialization is useful
- mainly to users of dselect or apt, while grep-aptavail only works if
- apt is installed.
+ The specializations grep-status, grep-available and grep-aptavail,
+ which take their input by default from the dpkg status file, the dpkg
+ available file (updated by dselect update, but see below) and the apt
+ available database (updated by apt-get update), respectively.  The
+ grep-available specialization is useful mainly to users of dselect or
+ apt, while grep-aptavail only works if apt is installed.
  .
  A script, sync-available, which syncs the dpkg available file to the
- apt available database without requiring dselect, is included.
+ apt available database without requiring dselect, is provided.

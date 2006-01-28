@@ -22,20 +22,34 @@
 #include "fieldtrie.h"
 #include "msg.h"
 
-void fieldtrie_init(fieldtrie_t * trie)
+struct field_bucket {
+	char const * name;
+	size_t namelen;
+	struct field_attr attr;
+	struct field_bucket * next;
+};
+
+struct fieldtrie_private {
+	size_t nextfree;
+	/* A one-level trie listing all field names occurring in the
+	 * atomic predicates. */
+	struct field_bucket * fields[UCHAR_MAX];
+};
+
+static struct fieldtrie_private trie;
+
+void fieldtrie_init(void)
 {
-	assert(trie != 0);
 	for (size_t i = 0; i < UCHAR_MAX; i++) {
-		trie->fields[i] = 0;
+		trie.fields[i] = 0;
 	}
-	trie->nextfree = 0;
+	trie.nextfree = 0;
 }
 
-size_t fieldtrie_insert(fieldtrie_t * trie, char const * s,
-			struct field_attr attr)
+size_t fieldtrie_insert(char const * s)
 {
 	size_t slen = strlen(s);
-	struct field_attr l_attr = fieldtrie_lookup(trie, s, slen);
+	struct field_attr l_attr = fieldtrie_lookup(s, slen);
 	if (l_attr.valid) return l_attr.inx;
 	struct field_bucket * b = malloc(sizeof *b);
 	if (b == 0) fatal_enomem(0);
@@ -43,19 +57,17 @@ size_t fieldtrie_insert(fieldtrie_t * trie, char const * s,
 	if (b->name == 0) fatal_enomem(0);
 	strcpy((char*)b->name, s);
 	b->namelen = slen;
-	attr.inx = trie->nextfree++;
-	attr.valid = true;
-	b->attr = attr;
+	b->attr.inx = trie.nextfree++;
+	b->attr.valid = true;
 	unsigned char c = tolower((unsigned char)(b->name[0]));
-	b->next = trie->fields[c];
-	trie->fields[c] = b;
+	b->next = trie.fields[c];
+	trie.fields[c] = b;
 	return b->attr.inx;
 }
 
-struct field_attr fieldtrie_lookup(fieldtrie_t * trie, char const * s,
-				   size_t n)
+struct field_attr fieldtrie_lookup(char const * s, size_t n)
 {
-	for (struct field_bucket * b = trie->fields[tolower((unsigned char)s[0])];
+	for (struct field_bucket * b = trie.fields[tolower((unsigned char)s[0])];
 	     b != 0;
 	     b = b->next) {
 		if (n == b->namelen &&
@@ -64,10 +76,16 @@ struct field_attr fieldtrie_lookup(fieldtrie_t * trie, char const * s,
 	return (struct field_attr){ .valid = false };
 }
 
-void fieldtrie_clear(fieldtrie_t * trie)
+size_t fieldtrie_count(void)
+{
+	return trie.nextfree;
+}
+
+#if 0
+void fieldtrie_clear(void)
 {
 	for (size_t i = 0; i < UCHAR_MAX; i++) {
-		struct field_bucket * b = trie->fields[i];
+		struct field_bucket * b = trie.fields[i];
 		while (b != 0) {
 			struct field_bucket * bn = b->next;
 			free(b);
@@ -77,3 +95,4 @@ void fieldtrie_clear(fieldtrie_t * trie)
 	}
 	trie->nextfree = 0;
 }
+#endif

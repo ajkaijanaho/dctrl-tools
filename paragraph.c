@@ -21,29 +21,56 @@
 #include "paragraph.h"
 #include "strutil.h"
 
-void para_init(para_t * para, FSAF * fp, fieldtrie_t * trie)
+void para_parser_init(para_parser_t * pp, FSAF * fp, bool invalidate_p)
 {
-	para->fp = fp;
-	para->trie = trie;
+	pp->fp = fp;
+	pp->eof = false;
+	pp->loc = 0;
+	pp->invalidate_p = invalidate_p;
+}
+
+void para_init(para_parser_t * pp, para_t * para)
+{
+	para->common = pp;
 	para->start = 0;
 	para->end = 0;
-	para->eof = false;
-	para_parse_next(para);
+	para->fields = 0;
+	para->nfields = 0;
+	para->nfields = fieldtrie_count();
+	para->fields = malloc(para->nfields * sizeof *para->fields);
+	if (para->fields == 0) fatal_enomem(0);
+}
+
+void para_finalize(para_t * para)
+{
+	para->common = 0;
+	para->start = 0;
+	para->end = 0;
+	if (para->fields != 0) {
+		free(para->fields);
+	}
+	para->nfields = 0;
+	para->fields = 0;
 }
 
 void para_parse_next(para_t * para)
 {
 	debug_message("para_parse_next", 0);
-	para->start = para->end;
-	for (size_t i = 0; i < fieldtrie_count(para->trie); i++) {
+	assert(para != 0);
+	para_parser_t * pp = para->common;
+	assert(para->nfields == fieldtrie_count());
+	para->start = pp->loc;
+	for (size_t i = 0; i < para->nfields; i++) {
 		para->fields[i].start = 0;
 		para->fields[i].end = 0;
 	}
-	fsaf_invalidate(para->fp, para->start);
+	if (pp->invalidate_p) {
+		fsaf_invalidate(pp->fp, para->start);
+	}
 	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
 			BODY_SKIPBLANKS, END } state = START;
 	register size_t pos = para->start;
-	register FSAF * fp = para->fp;
+	register FSAF * fp = pp->fp;
 	size_t field_start = 0;
 	struct field_data * field_data = 0;
 	while (state != END) {
@@ -58,7 +85,7 @@ void para_parse_next(para_t * para)
 		case START:
 			switch (c) {
 			case -1:
-				para->eof = true;
+				pp->eof = true;
 				state = END;
 				break;
 			case '\n':
@@ -76,10 +103,12 @@ void para_parse_next(para_t * para)
 				fail();
 			case ':': {
 				size_t len = (pos-1) - field_start;
-				struct fsaf_read_rv r = fsaf_read(fp, field_start, len);
+				struct fsaf_read_rv r = fsaf_read(fp,
+								  field_start,
+								  len);
 				assert(r.len == len);
 				struct field_attr attr =
-					fieldtrie_lookup(para->trie, r.b, len);
+					fieldtrie_lookup(r.b, len);
 				if (!attr.valid) {
 					field_data = 0;
 				} else {
@@ -104,7 +133,8 @@ void para_parse_next(para_t * para)
 				if (field_data != 0) {
 					field_data->end = pos-1;
 					while (field_data->start < field_data->end
-					       && fsaf_getc(fp, field_data->start) == ' ') {
+					       && fsaf_getc(fp, field_data->start)
+					       == ' ') {
 						++field_data->start;
 					}
 				}
@@ -145,4 +175,5 @@ void para_parse_next(para_t * para)
 		}
 	}
 	para->end = pos-1;
+	pp->loc = para->end;
 }

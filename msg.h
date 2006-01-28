@@ -20,6 +20,7 @@
 #define MSG_H__
 
 #include <errno.h>
+#include <stdarg.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,7 +58,7 @@ do_msg(int severity)
 inline static char const *
 get_progname(void)
 {
-	extern char progname [];
+	extern const char progname [];
 	return progname;
 }
 
@@ -103,6 +104,24 @@ debug_message (const char * s, const char * fname)
 {
 #ifdef INCLUDE_DEBUG_MSGS
   message (L_DEBUG, s, fname);
+#endif
+}
+
+static void
+debug(const char * s, ...) __attribute__((format(printf, 1, 2)));
+
+inline static void
+debug(const char * s, ...) 
+{
+#ifdef INCLUDE_DEBUG_MSGS
+	if (do_msg(L_DEBUG)) {
+		va_list va;
+		va_start(va, s);
+		fprintf(stderr, "%s: ", get_progname());
+		vfprintf(stderr, s, va);
+		fprintf(stderr, "\n");
+		va_end(va);
+	}
 #endif
 }
 

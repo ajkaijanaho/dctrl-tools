@@ -19,12 +19,26 @@ debian/stamp/build: #debian/stamp/build-configure
 clean-build:
 	-$(MAKE) clean
 
-debian/stamp/binary/arch: debian/stamp/binary/grep-dctrl
+debian/stamp/binary/indep: debian/stamp/binary/grep-dctrl
+
+debian/stamp/binary/arch: debian/stamp/binary/dctrl-tools
+
+# Generate an empty package
+# (a doc symlink is still required)
+debian/stamp/binary/grep-dctrl: package=grep-dctrl
+debian/stamp/binary/grep-dctrl: debian/stamp/build
+	$(RM) -r $(rootdir)
+	$(install_dir) $(ctldir)
+	$(install_dir) $(rootdir)/usr/share/doc
+	$(install_symlink) dctrl-tools $(docdir)
+	chmod -R g-s $(rootdir)
+	dpkg-gencontrol -isp -p$(package) -P$(rootdir) $(gencontrol_options)
+	dpkg --build $(rootdir) ..
 
 aliases = grep-status grep-available grep-aptavail
 
-debian/stamp/binary/grep-dctrl: package=grep-dctrl
-debian/stamp/binary/grep-dctrl: debian/stamp/build
+debian/stamp/binary/dctrl-tools: package=dctrl-tools
+debian/stamp/binary/dctrl-tools: debian/stamp/build
 	$(prebinary)
 #	Install by the master makefile
 #	$(MAKE) prefix=$(rootdir)/usr sysconfdir=$(rootdir)/etc \
@@ -36,6 +50,7 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 	$(install_dir) $(sbindir)
 	$(install_script) sync-available $(sbindir)
 	$(install_dir) $(bindir)
+	$(install_exec) sort-dctrl $(bindir)
 	$(install_exec) grep-dctrl $(bindir)
 	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
@@ -45,6 +60,8 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 	$(install_nonex) sync-available.8 $(man8dir)/
 	$(gzip) $(man8dir)/sync-available.8
 	$(install_dir) $(man1dir)
+	$(install_nonex) sort-dctrl.1 $(man1dir)/
+	$(gzip) $(man1dir)/sort-dctrl.1
 	$(install_nonex) grep-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/grep-dctrl.1
 	set -e ; for dest in $(aliases) ; do \
@@ -62,7 +79,7 @@ debian/stamp/binary/grep-dctrl: debian/stamp/build
 #	Install config file information
 	$(install_nonex) debian/conffiles $(rootdir)/DEBIAN
 #	Get the shared library deps
-	dpkg-shlibdeps $(bindir)/grep-dctrl
+	dpkg-shlibdeps $(bindir)/grep-dctrl $(bindir)/sort-dctrl
 	$(postbinary)
 	touch $@
 

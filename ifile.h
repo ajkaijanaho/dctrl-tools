@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright (C) 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,28 +16,23 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef FIELDTRIE_H
-#define FIELDTRIE_H
+#ifndef IFILE_H
+#define IFILE_H
 
-#include <limits.h>
-#include <stddef.h>
 #include <stdbool.h>
 
-struct field_attr {
-	bool valid;
-	size_t inx;
+struct ifile {
+	enum ifile_mode { m_error, m_read, m_exec } mode;
+	char const * s;
 };
 
-void fieldtrie_init(void);
+// returns fd
+int open_ifile(struct ifile f);
 
-// case-insensitive
-size_t fieldtrie_insert(char const *);
+// must be used on ifile-opened fd's
+void close_ifile(struct ifile f, int fd);
 
-// case-insensitive
-struct field_attr fieldtrie_lookup(char const *, size_t n);
+// check if a safe file to read from
+bool chk_ifile(struct ifile fname, int fd);
 
-//void fieldtrie_clear(void);
-
-size_t fieldtrie_count(void);
-
-#endif /* FIELDTRIE_H */
+#endif /* IFILE_H */
