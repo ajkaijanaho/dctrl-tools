@@ -99,12 +99,13 @@ const char * find_ifile_by_exename(const char * exename, const char * rcfname)
 		}
 
 		++lineno;
-		if (line == 0) {
+		if (*line == 0) {
 			rv = 0;
 			break;
 		}
 
 		chop_comment(line, '#');
+		chomp(line);
 
 		if (left_trimmed(line) [0] == 0) {
 			continue;

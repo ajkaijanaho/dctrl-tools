@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 1999, 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 1999, 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
  */
 
 #include <ctype.h>
+#include <string.h>
 #include "strutil.h"
 
 const char * left_trimmed(const char * s)
@@ -28,7 +29,15 @@ const char * left_trimmed(const char * s)
 	return p;
 }
 
-void trim_right (char * s) 
+void chomp(char * s)
+{
+	size_t sl = strlen(s);
+	if (sl == 0) return;
+	if (s[sl-1] != '\n') return;
+	s[sl-1] = '\0';
+}
+
+void trim_right (char * s)
 {
 	char * p;
 	char * herep;

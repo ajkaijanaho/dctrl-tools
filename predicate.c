@@ -45,11 +45,14 @@ void addinsn(struct predicate * p, int insn)
 void predicate_finish_atom(struct predicate * p)
 {
 	struct atom * atom =  get_current_atom(p);
+	debug_message("predicate_finish_atom", 0);
 	if (atom->field_name != 0) {
 		atom->field_inx = fieldtrie_insert(&p->trie, atom->field_name);
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {
+		debug_message("compiling:", 0);
+		debug_message(atom->pat, 0);
 		int rerr = regcomp(&atom->regex, atom->pat,
 				   (atom->mode == M_EREGEX ? REG_EXTENDED : 0)
 				   | REG_NOSUB
