@@ -21,7 +21,7 @@ src = $(obj:.o=.c)
 # List of translated languages is given in langs.mk
 include langs.mk
 
-all : grep-dctrl grep-dctrl.1 mo
+all : grep-dctrl grep-dctrl.1 sync-available mo
 
 pot : po/grep-dctrl.pot
 
@@ -38,6 +38,10 @@ grep-dctrl : $(obj)
 
 %.1 : %.1.cp
 	sed 's*SYSCONF*$(sysconf)*' $< > $@
+
+update-avail : update-avail.cp
+	sed 's*VERSION*$(version)*' $< > $@
+	chmod 755 $@
 
 xgettext_opts=--copyright-holder="Antti-Juhani Kaijanaho" \
 	      --msgid-bugs-address="ajk@debian.org" -kN_ -k_

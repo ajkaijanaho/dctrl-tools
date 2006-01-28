@@ -1,3 +1,11 @@
+grep-dctrl (2.6.1) unstable; urgency=low
+
+    This version introduces a new program, sync-available, whose function
+    is to sync the dpkg's available database with apt's database (sort of
+    dselect update without dselect).
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 11 Jul 2004 20:11:08 +0300
+
 grep-dctrl (2.3) unstable; urgency=low
 
     Numeric comparisons are now supported.
