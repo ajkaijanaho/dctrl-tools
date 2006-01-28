@@ -66,6 +66,8 @@ char * getaline (FILE * f)
 	buf = malloc (size);
 	if (buf == NULL) return NULL;
 
+	buf[0] = '\0';
+
 	while (fgets (buf + len, size - len, f) != NULL) {
 		len += strlen(buf + len);
 		if (len > 0 && buf[len - 1] == '\n')

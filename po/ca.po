@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-03-03 21:11+0200\n"
+"POT-Creation-Date: 2004-07-04 15:07+0300\n"
 "PO-Revision-Date: 2004-02-09 10:20+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -116,87 +116,116 @@ msgstr "Depura l'anàlisi d'opcions."
 msgid "Do no output to stdout."
 msgstr "No mostra res a l'eixida estàndard."
 
-#: grep-dctrl.c:207 grep-dctrl.c:280 grep-dctrl.c:346 predicate.c:39
+#: grep-dctrl.c:221 grep-dctrl.c:334 predicate.c:39
 msgid "predicate is too complex"
 msgstr "el predicat és massa complex"
 
-#: grep-dctrl.c:239
-msgid "A pattern is mandatory"
-msgstr "Es necessita un patró"
+#: grep-dctrl.c:302
+#, fuzzy
+msgid "predicate is too long"
+msgstr "el predicat és massa complex"
 
-#: grep-dctrl.c:301
-msgid "syntax error in command line"
-msgstr "hi ha un error de sintaxi a la línia d'ordres"
-
-#: grep-dctrl.c:318
-msgid "missing ')' in command line"
-msgstr "manca un «)» en la línia d'ordres"
-
-#: grep-dctrl.c:336
-msgid "Unexpected atom in command line. Did you forget to use a connective?"
-msgstr ""
-"S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
-"connector?"
-
-#: grep-dctrl.c:413
+#: grep-dctrl.c:416
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:452 grep-dctrl.c:461
+#: grep-dctrl.c:456 grep-dctrl.c:465
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:502
-msgid "unexpected ')' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
-
-#: grep-dctrl.c:514
+#: grep-dctrl.c:511
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
-#: grep-dctrl.c:602
+#: grep-dctrl.c:597
+#, fuzzy
+msgid "unexpected end of predicate"
+msgstr "s'ha trobat un final de fitxer inesperat"
+
+#: grep-dctrl.c:600
+#, fuzzy
+msgid "unexpected '!' in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:603
+#, fuzzy
+msgid "unexpected '-a' in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:606
+#, fuzzy
+msgid "unexpected '-o' in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:609
+#, fuzzy
+msgid "unexpected '(' in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:612
+msgid "unexpected ')' in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:616
+#, fuzzy
+msgid "unexpected atom in command line"
+msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:629
+msgid "missing ')' in command line"
+msgstr "manca un «)» en la línia d'ordres"
+
+#: grep-dctrl.c:700
+msgid "A pattern is mandatory"
+msgstr "Es necessita un patró"
+
+#: grep-dctrl.c:707
 msgid "a predicate is required"
 msgstr "es requereix un predicat"
 
-#: grep-dctrl.c:607
+#: grep-dctrl.c:712
 msgid "malformed predicate"
 msgstr "el predicat és malformat"
 
-#: grep-dctrl.c:613
+#: grep-dctrl.c:718
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl.c:617
+#: grep-dctrl.c:722
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl.c:626
+#: grep-dctrl.c:731
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: grep-dctrl.c:667
+#: grep-dctrl.c:751
+msgid "warning: this command name is not configured; using standard input"
+msgstr ""
+
+#: grep-dctrl.c:778
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: no es pot fer stat(): %s\n"
 
-#: grep-dctrl.c:676
+#: grep-dctrl.c:787
 msgid "is a directory, skipping"
 msgstr "és un directori, s'està ometent"
 
-#: grep-dctrl.c:677
+#: grep-dctrl.c:788
 msgid "is a block device, skipping"
 msgstr "és un dispositiu de bloc, s'està ometent"
 
-#: grep-dctrl.c:678
+#: grep-dctrl.c:789
 msgid "internal error"
 msgstr "s'ha produït un error intern"
 
-#: grep-dctrl.c:679
+#: grep-dctrl.c:790
 msgid "is a socket, skipping"
 msgstr "és un sòcol, s'està ometent"
 
-#: grep-dctrl.c:680
+#: grep-dctrl.c:791
 msgid "unknown file type, skipping"
 msgstr "el tipus de fitxer és desconegut, s'està ometent"
 
@@ -235,6 +264,14 @@ msgstr "sí, s'utilitzarà el nom d'executable"
 #: rc.c:134
 msgid "default input file"
 msgstr "fitxer d'entrada per defecte"
+
+#~ msgid "syntax error in command line"
+#~ msgstr "hi ha un error de sintaxi a la línia d'ordres"
+
+#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
+#~ msgstr ""
+#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar "
+#~ "un connector?"
 
 #~ msgid "Test for numerical equality."
 #~ msgstr "Comprova l'igualtat numèrica."

@@ -1,3 +1,23 @@
+grep-dctrl (2.1.5) unstable; urgency=low
+
+  * msg.[ch]: Rearranging.
+  * msg.h (msg_get_progname): New function.
+  * grep-dctrl.c: Rewrite the parser so that argp only
+    produces a list of tokens for a new recursive-descent
+    predicate parser.
+    Closes: #227543 (Predicate parser is fragile) [Reported by AJK]
+  * French translation by Nicolas Bertolissio, proofread by
+    Michel Grentzinger, Claude Thomassin and Denis Barbier
+  * po/fi.po: Updated.
+  * getaline.c (getaline): Ensure that there is a null terminator in an
+    empty return value.
+  * grep-dctrl.c (main): Warn about the use of standard input when the
+    command name was not found.
+    Closes: #236196 (please tell the user when falling back to reading stdin)
+    [Reported by Danilo Piazzalunga]
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  4 Jul 2004 15:12:04 +0300
+
 grep-dctrl (2.1.4) unstable; urgency=low
 
   * predicate.c (verify_atom): Check that the stack contains exactly

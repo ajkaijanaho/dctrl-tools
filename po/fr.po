@@ -1,202 +1,198 @@
-# German translation of dctrl-tools
-# Copyright Â© 2004 Gerfried Fuchs
-# This file is distributed under the same license as the dctrl-tools package.
-# Gerfried Fuchs <alfie@debian.org>, 2004.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Antti-Juhani Kaijanaho
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools\n"
+"Project-Id-Version: dctrl-tools 2.0\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2004-07-04 15:07+0300\n"
-"PO-Revision-Date: 2004-02-09 09:58+0100\n"
-"Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
-"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"PO-Revision-Date: 2004-07-04 10:41+0200\n"
+"Last-Translator: Nicolas Bertolissio <nico.bertol@free.fr>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: grep-dctrl.c:43
 msgid "grep-dctrl -- grep Debian control files"
-msgstr "grep-dctrl -- grep Debian-Control-Dateien"
+msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
 
 #: grep-dctrl.c:122
 msgid "Show the testing banner."
-msgstr "Zeigt den Testing-Banner."
+msgstr "Afficher la bannière de test"
 
 #: grep-dctrl.c:124
 msgid "LEVEL"
-msgstr "EBENE"
+msgstr "NIVEAU"
 
 #: grep-dctrl.c:124
 msgid "Set debugging level to LEVEL."
-msgstr "Setzt Debugging-Ebene auf EBENE."
+msgstr "Sélectionner le niveau de débogage NIVEAU"
 
 #: grep-dctrl.c:125 grep-dctrl.c:127
 msgid "FIELD,FIELD,..."
-msgstr "FELD,FELD,..."
+msgstr "CHAMP,CHAMP,..."
 
 #: grep-dctrl.c:125
 msgid "Restrict pattern matching to the FIELDs given."
-msgstr "BeschrÃ¤nkt die MusterprÃ¼fung auf die angegebenen FELDer."
+msgstr "Restreindre le motif de correspondance aux CHAMPS fournis"
 
 #: grep-dctrl.c:126
 msgid "This is a shorthand for -FPackage."
-msgstr "Dies ist eine Kurzform fÃ¼r -FPackage."
+msgstr "Il s'agit d'un raccourci pour -FPackage."
 
 #: grep-dctrl.c:127
 msgid "Show only the body of these fields from the matching paragraphs."
-msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
+msgstr "N'afficher que le corps des champs des paragraphes qui correspondent"
 
 #: grep-dctrl.c:128
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Zeigt nur die erste Zeile des Â»DescriptionÂ«-Feldes des passenden Abschnitts."
+"N'afficher que la première ligne du champ « Description » des paragraphes "
+"qui correspondent"
 
 #: grep-dctrl.c:129
 msgid "Suppress field names when showing specified fields."
-msgstr "UnterdrÃ¼ckt die Feldnamen beim Anzeigen der angegebenen Felder."
+msgstr "Supprimer les noms de champs lors de l'affichage des champs spécifiés"
 
 #: grep-dctrl.c:130
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Behandelt das Muster als erweiterten POSIX-regulÃ¤ren Ausdruck."
+msgstr "Considérer le motif comme une expression rationnelle POSIX étendue"
 
 #: grep-dctrl.c:131
 msgid "The pattern is a standard POSIX regular expression."
-msgstr "Das Muster ist ein Standard-POSIX regulÃ¤rer Ausdruck."
+msgstr "Le motif est une expression rationnelle POSIX standard."
 
 #: grep-dctrl.c:132
 msgid "Ignore case when looking for a match."
-msgstr "Ignoriert die GroÃŸ-/Kleinschreibung beim Suchen eines Treffers."
+msgstr "Ignorer la casse lors de la recherche d'un motif"
 
 #: grep-dctrl.c:133
 msgid "Show only paragraphs that do not match."
-msgstr "Zeigt nur die Abschnitte, die nicht passen."
+msgstr "N'afficher que les paragraphes qui ne correspondent pas"
 
 #: grep-dctrl.c:134
 msgid "Show only the count of matching paragraphs."
-msgstr "Zeigt nur die Anzahl der passenden Abschnitte."
+msgstr "N'afficher que le nombre de paragraphes qui correspondent"
 
 #: grep-dctrl.c:135
 msgid "FNAME"
-msgstr "FNAME"
+msgstr "FICHIER"
 
 #: grep-dctrl.c:135
 msgid "Use FNAME as the config file."
-msgstr "Verwendet FNAME als Konfigurationsdatei."
+msgstr "Utiliser FICHIER comme fichier de configuration"
 
 #: grep-dctrl.c:136
 msgid "Do an exact match."
-msgstr "FÃ¼hrt eine exakte Ãœbereinstimmung durch."
+msgstr "Rechercher une correspondance exacte"
 
 #: grep-dctrl.c:137
 msgid "Print out the copyright license."
-msgstr "Gibt die Copyright-Lizenz aus."
+msgstr "Afficher la licence"
 
 #: grep-dctrl.c:138
 msgid "Conjunct predicates."
-msgstr "UND-verknÃ¼pfte Eigenschaften."
+msgstr "Associer les prédicats"
 
 #: grep-dctrl.c:139
 msgid "Disjunct predicates."
-msgstr "ODER-verknÃ¼pfte Eigenschaften."
+msgstr "Dissocier les prédicats"
 
 #: grep-dctrl.c:140
 msgid "Negate the following predicate."
-msgstr "Negiert die folgende Eigenschaft."
+msgstr "Inverser le prédicat suivant"
 
 #: grep-dctrl.c:141
 msgid "Debug option parsing."
-msgstr "Optionenverarbeitung debuggen."
+msgstr "Déboguer l'analyse des options"
 
 #: grep-dctrl.c:142 grep-dctrl.c:143
 msgid "Do no output to stdout."
-msgstr "Keine Ausgabe auf die Standardausgabe."
+msgstr "Pas de sortie sur la sortie standard."
 
 #: grep-dctrl.c:221 grep-dctrl.c:334 predicate.c:39
 msgid "predicate is too complex"
-msgstr "Eigenschaft ist zu komplex"
+msgstr "le prédicat est trop complexe"
 
 #: grep-dctrl.c:302
-#, fuzzy
 msgid "predicate is too long"
-msgstr "Eigenschaft ist zu komplex"
+msgstr "le prédicat est trop long"
 
 #: grep-dctrl.c:416
 msgid "no such log level"
-msgstr "Keine solche Log-Ebene"
+msgstr "niveau de journalisation inexistant"
 
 #: grep-dctrl.c:456 grep-dctrl.c:465
 msgid "inconsistent atom modifiers"
-msgstr "Inkonsistener Atom-Modifikator"
+msgstr "modificateurs d'atome incohérents"
 
 #: grep-dctrl.c:511
 msgid "too many file names"
-msgstr "Zu viele Dateinamen"
+msgstr "trop de noms de fichiers"
 
 #: grep-dctrl.c:597
-#, fuzzy
 msgid "unexpected end of predicate"
-msgstr "unerwartetes Dateiende"
+msgstr "fin de prédicat inattendue"
 
 #: grep-dctrl.c:600
-#, fuzzy
 msgid "unexpected '!' in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "« ! » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:603
-#, fuzzy
 msgid "unexpected '-a' in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "« -a » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:606
-#, fuzzy
 msgid "unexpected '-o' in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "« -o » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:609
-#, fuzzy
 msgid "unexpected '(' in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "« ( » inattendue sur la ligne de commande"
 
 #: grep-dctrl.c:612
 msgid "unexpected ')' in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "« ) » inattendue sur la ligne de commande"
 
 #: grep-dctrl.c:616
-#, fuzzy
 msgid "unexpected atom in command line"
-msgstr "Unerwartete Â»)Â« in der Befehlszeile"
+msgstr "atome inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:629
 msgid "missing ')' in command line"
-msgstr "Fehlende Â»)Â« in der Befehlszeile"
+msgstr "« ) » manquante sur la ligne de commande"
 
 #: grep-dctrl.c:700
 msgid "A pattern is mandatory"
-msgstr "Ein Muster wird benÃ¶tigt"
+msgstr "Un motif est nécessaire"
 
 #: grep-dctrl.c:707
 msgid "a predicate is required"
-msgstr "Eine Eigenschaft wird benÃ¶tigt"
+msgstr "un prédicat est nécessaire"
 
 #: grep-dctrl.c:712
 msgid "malformed predicate"
-msgstr "Missgebildete Eigenschaft"
+msgstr "prédicat mal formé"
 
 #: grep-dctrl.c:718
 msgid "too many output fields"
-msgstr "Zu viele Ausgabefelder"
+msgstr "trop de champs de sortie"
 
 #: grep-dctrl.c:722
 msgid "Adding \"Description\" to selected output fields because of -d"
-msgstr "FÃ¼ge Â»DescriptionÂ« wegen -d zu den gewÃ¤hlten Ausgabefeldern hinzu"
+msgstr ""
+"Ajout de « Description » aux champs de sortie sélectionnés à cause de -d"
 
 #: grep-dctrl.c:731
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
-"Kann keine Feldnamen unterdrÃ¼cken, wenn komplette Abschnitte angezeigt werden"
+"impossible de supprimer les noms de champs lors de l'affichage des "
+"paragraphes complets"
 
 #: grep-dctrl.c:751
 msgid "warning: this command name is not configured; using standard input"
@@ -205,98 +201,107 @@ msgstr ""
 #: grep-dctrl.c:778
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
-msgstr "%s: %s: stat kann nicht durchgefÃ¼hrt werden: %s\n"
+msgstr "%s : impossible d'analyser « %s » : %s\n"
 
 #: grep-dctrl.c:787
 msgid "is a directory, skipping"
-msgstr "ist ein Verzeichnis, wird Ã¼bersprungen"
+msgstr "est un répertoire, ignoré"
 
 #: grep-dctrl.c:788
 msgid "is a block device, skipping"
-msgstr "ist ein Block-GerÃ¤t, wird Ã¼bersprungen"
+msgstr "est un périphérique bloc, ignoré"
 
 #: grep-dctrl.c:789
 msgid "internal error"
-msgstr "interner Fehler"
+msgstr "erreur interne"
 
 #: grep-dctrl.c:790
 msgid "is a socket, skipping"
-msgstr "ist ein Socket, wird Ã¼bersprungen"
+msgstr "est une socket, ignorée"
 
 #: grep-dctrl.c:791
 msgid "unknown file type, skipping"
-msgstr "unbekannter Dateityp, wird Ã¼bersprungen"
+msgstr "type de fichier inconnu, ignoré"
 
 #: paragraph.c:73 paragraph.c:98
 msgid "unexpected end of file"
-msgstr "unerwartetes Dateiende"
+msgstr "fin de fichier inattendue"
 
 #: paragraph.c:91
 msgid "unexpected end of line"
-msgstr "unerwartetes Zeilenende"
+msgstr "fin de ligne inattendue"
 
 #: rc.c:75
 msgid "reading config file"
-msgstr "lese Konfigurationsdatei"
+msgstr "lecture du fichier de configuration"
 
 #: rc.c:96
 msgid "read failure or out of memory"
-msgstr "Lesefehler oder zuwenig Speicher verfÃ¼gbar"
+msgstr "erreur de lecture ou manque de mémoire"
 
 #: rc.c:117
 msgid "syntax error: need a executable name"
-msgstr "Syntax-Fehler: BenÃ¶tige einen Programmnamen"
+msgstr "erreur de syntaxe : nécessite un nom d'exécutable"
 
 #: rc.c:125
 msgid "syntax error: need an input file name"
-msgstr "Syntax-Fehler: BenÃ¶tige einen Eingabe-Dateinamen"
+msgstr "erreur de syntaxe : nécessite un nom de fichier d'entrée"
 
 #: rc.c:130
 msgid "considering executable name"
-msgstr "Programmname wird in Betracht gezogen"
+msgstr "étude de l'exécutable nommé"
 
 #: rc.c:132
 msgid "yes, will use executable name"
-msgstr "Ja, Programmname wird verwendet"
+msgstr "utilise l'exécutable nommé"
 
 #: rc.c:134
 msgid "default input file"
-msgstr "Default-Eingabedatei"
+msgstr "fichier d'entrée par défaut"
+
+#~ msgid "Test for numerical equality."
+#~ msgstr "Test d'égalité numérique"
+
+#~ msgid "Numerical test: <."
+#~ msgstr "Test numérique : <"
+
+#~ msgid "Numerical test: <=."
+#~ msgstr "Test numérique : <="
+
+#~ msgid "Numerical test: >."
+#~ msgstr "Test numérique : >"
+
+#~ msgid "Numerical test: >=."
+#~ msgstr "Test numérique : >="
 
 #~ msgid "syntax error in command line"
-#~ msgstr "Syntax-Fehler in der Befehlszeile"
+#~ msgstr "erreur de syntaxe sur la ligne de commande"
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder "
-#~ "vergessen?"
-
-#~ msgid "Test for numerical equality."
-#~ msgstr "Test auf numerische Ãœbereinstimmung."
-
-#~ msgid "Numerical test: <."
-#~ msgstr "Numerischer Test: <."
-
-#~ msgid "Numerical test: <=."
-#~ msgstr "Numerischer Test: <=."
-
-#~ msgid "Numerical test: >."
-#~ msgstr "Numerischer Test: >."
-
-#~ msgid "Numerical test: >=."
-#~ msgstr "Numerischer Test: >=."
+#~ "Atome inattendu sur la ligne de commande. Auriez-vous oublié d'utiliser "
+#~ "un connecteur ?"
 
 #~ msgid "%s: command (%s) failed (exit status %d)\n"
-#~ msgstr "%s: Befehl (%s) fehlgeschlagen (RÃ¼ckgabewert %d)\n"
+#~ msgstr "%s : la commande (%s) a échoué (état de sortie %d)\n"
 
 #~ msgid "%s: command (%s) was killed by signal %d\n"
-#~ msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
+#~ msgstr "%s : la commande (%s) a été tuée par le signal %d\n"
 
 #~ msgid "%s (child): failed to exec /bin/sh: %s\n"
-#~ msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausfÃ¼hren: %s\n"
+#~ msgstr "%s (enfant) : échec d'exécution de /bin/sh : %s\n"
+
+#~ msgid "invalid numeric pattern"
+#~ msgstr "motif numérique invalide"
+
+#~ msgid "parse of a numeric field failed"
+#~ msgstr "l'analyse d'un champ numérique a échoué"
+
+#~ msgid "Malformed default input file name"
+#~ msgstr "nom de fichier d'entrée par défaut mal formé"
 
 #~ msgid "not owned by you or root, ignoring"
-#~ msgstr "gehÃ¶rt nicht Ihnen oder root, wird ignoriert"
+#~ msgstr "détenu ni par vous ni par le super-utilisateur, ignoré"
 
 #~ msgid "write permissions for group or others, ignoring"
-#~ msgstr "Schreibberechtigungen fÃ¼r die Gruppe oder andere, wird ignoriert"
+#~ msgstr "droits d'écriture pour le groupe ou le reste du monde, ignoré"
