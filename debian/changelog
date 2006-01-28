@@ -1,3 +1,19 @@
+grep-dctrl (2.1.0) unstable; urgency=low
+
+  * Creating a 2.1 maintenance branch - patchlevel added to version number.
+  * grep-dctrl.c (main): Use C99 %zi and not %i to print out size_t
+    (size mismatch on 64-bit archs).
+    Closes: #226569 (printf format problem in grep-dctrl.c)
+  * grep-dctrl.c (struct arguments, enter_atom, parse_opt),
+    grep-dctrl.1.cp (DIAGNOSTICS): Treat ')' on command line as a "soft"
+    '--'; ie. if ')' is followed by a connective, continue predicate,
+    otherwise finish it.
+    Closes: #226477 (Misparses a file name following a closing paren as a
+    pattern)
+  * Catalan translation updated by Jordi Mallach.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 13 Jan 2004 20:14:43 +0200
+
 grep-dctrl (2.0) unstable; urgency=low
 
   * The Polish Release.

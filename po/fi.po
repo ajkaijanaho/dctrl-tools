@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-01-06 20:55+0200\n"
-"PO-Revision-Date: 2004-01-06 19:45+0200\n"
+"POT-Creation-Date: 2004-01-13 00:47+0200\n"
+"PO-Revision-Date: 2004-01-13 00:50+0200\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,77 +114,81 @@ msgstr "Testaa valitsimien jäsennyst�."
 msgid "No output to stdout"
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
-#: grep-dctrl.c:205 grep-dctrl.c:275 grep-dctrl.c:336 predicate.c:39
+#: grep-dctrl.c:207 grep-dctrl.c:277 grep-dctrl.c:343 predicate.c:39
 msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
-#: grep-dctrl.c:237
+#: grep-dctrl.c:239
 msgid "A pattern is mandatory."
 msgstr "Hakuehto on välttämätön."
 
-#: grep-dctrl.c:296
+#: grep-dctrl.c:298
 msgid "syntax error in command line"
 msgstr "komentorivillä on syntaksivirhe"
 
-#: grep-dctrl.c:313
+#: grep-dctrl.c:315
 msgid "missing ')' in command line"
 msgstr "komentoriviltä puuttuu ')'"
 
-#: grep-dctrl.c:401
+#: grep-dctrl.c:333
+msgid "Unexpected atom in command line. Did you forget to use a connective?"
+msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
+
+#: grep-dctrl.c:410
 msgid "no such log level"
 msgstr "ei sellaista seurantatasoa ole"
 
-#: grep-dctrl.c:440 grep-dctrl.c:449
+#: grep-dctrl.c:449 grep-dctrl.c:458
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:490
+#: grep-dctrl.c:499
 msgid "unexpected ')' in command line"
 msgstr "odottamaton ')' komentorivill�"
 
-#: grep-dctrl.c:501
+#: grep-dctrl.c:511
 msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
-#: grep-dctrl.c:589
+#: grep-dctrl.c:599
 msgid "a predicate is required"
 msgstr "predikaatti on välttämätön"
 
-#: grep-dctrl.c:595
+#: grep-dctrl.c:605
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:599
+#: grep-dctrl.c:609
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:608
+#: grep-dctrl.c:618
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: grep-dctrl.c:648
+#: grep-dctrl.c:658
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: grep-dctrl.c:657
+#: grep-dctrl.c:667
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: grep-dctrl.c:658
+#: grep-dctrl.c:668
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: grep-dctrl.c:659
+#: grep-dctrl.c:669
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: grep-dctrl.c:660
+#: grep-dctrl.c:670
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: grep-dctrl.c:661
+#: grep-dctrl.c:671
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
@@ -223,4 +227,3 @@ msgstr "kyllä, käytän ohjelmannimeä"
 #: rc.c:133
 msgid "default input file"
 msgstr "oletussyötetiedosto"
-
