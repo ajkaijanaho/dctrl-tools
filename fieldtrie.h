@@ -49,4 +49,7 @@ size_t fieldtrie_lookup(fieldtrie_t *, char const *, size_t n);
 
 void fieldtrie_clear(fieldtrie_t *);
 
+static inline
+size_t fieldtrie_count(fieldtrie_t * ft) { return ft->nextfree; }
+
 #endif /* FIELDTRIE_H */
