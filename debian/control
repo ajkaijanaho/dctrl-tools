@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.6.1
-Build-Depends: gettext
+Build-Depends: gettext (>= 0.11-0)
 
 Package: grep-dctrl
 Architecture: any
@@ -30,5 +30,5 @@ Description: Grep Debian package information
  and grep-aptavail, which take their input by default from the dpkg
  status file, the dpkg available file (updated by dselect update) and
  the apt available database (updated by apt-get update), respectively.
- The grep-available specialization is useful mainly for users of
- dselect; while grep-aptavail only works if apt is installed.
+ The grep-available specialization is useful mainly to users of
+ dselect, while grep-aptavail only works if apt is installed.

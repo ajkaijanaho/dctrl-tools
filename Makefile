@@ -55,7 +55,7 @@ po/grep-dctrl.pot : $(src)
 fsaf.test : fsaf.test.o msg.o
 
 clean :
-	$(RM) core grep-dctrl grep-dctrl.1 *.o po/*.mo TAGS
+	$(RM) core grep-dctrl grep-dctrl.1 *.o po/*.mo po/*.pot TAGS
 
 tags :
 	etags *.[hc]

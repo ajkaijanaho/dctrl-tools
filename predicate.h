@@ -96,4 +96,6 @@ void addinsn(struct predicate * p, int insn);
 
 bool does_para_satisfy(struct predicate * p, para_t *);
 
+bool check_predicate(struct predicate * p);
+
 #endif /* PREDICATE_H */

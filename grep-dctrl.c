@@ -128,8 +128,8 @@ static struct argp_option options[] = {
 	{ "banner",	    'B', 0,		    0, N_("Show the testing banner.") },
 #endif
 	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set debugging level to LEVEL.") },
-	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching  to the FIELDs given.") },
-	{ 0,		    'P', 0,		    0, N_("Shorthand for -FPackage") },
+	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
+	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
 	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs.") },
 	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
 	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
@@ -150,8 +150,8 @@ static struct argp_option options[] = {
 	{ "gt",		    OPT_GT, 0,		    0, N_("Numerical test: >.") },
 	{ "ge",		    OPT_GE, 0,		    0, N_("Numerical test: >=.") },
 	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
-	{ "quiet",	    'q', 0,		    0, N_("No output to stdout") },
-	{ "silent",	    OPT_SILENT, 0,	    0, N_("No output to stdout") },
+	{ "quiet",	    'q', 0,		    0, N_("Do no output to stdout.") },
+	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
 	{ 0 }
 };
 
@@ -247,7 +247,7 @@ static void finish_atom(struct arguments * args)
 {
 	struct atom * atom = get_current_atom(&args->p);
 	if (atom->pat == 0) {
-		message(L_FATAL, _("A pattern is mandatory."), 0);
+		message(L_FATAL, _("A pattern is mandatory"), 0);
 		fail();
 	}
 	for (size_t i = 0; i < args->num_search_fields; i++) {
@@ -255,6 +255,9 @@ static void finish_atom(struct arguments * args)
 		atom->field_name = args->search_fields[i];
 		predicate_finish_atom(&args->p);
 	}
+	// If there are no fields, we have not yet run this...
+	// ... but it must be done (especially with -r/-e atoms)
+	if (args->num_search_fields == 0) predicate_finish_atom(&args->p);
 	args->num_search_fields = 0;
 }
 
@@ -720,6 +723,11 @@ int main (int argc, char * argv[])
 
 	if (args.p.num_atoms == 0) {
 		message(L_FATAL, _("a predicate is required"), 0);
+		fail();
+	}
+
+	if (!check_predicate(&args.p)) {
+		message(L_FATAL, _("malformed predicate"), 0);
 		fail();
 	}
 
