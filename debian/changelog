@@ -1,3 +1,22 @@
+grep-dctrl (2.6.7) unstable; urgency=low
+
+  * fr.po: Update by Nicolas Bertolissio.
+    Closes: #314893 (French translation update of gettext debconf template)
+    (Nothing to do with debconf regardless of the bug title)
+  * msg.h: Fix progname type.
+    Closes: #314601 (FTBFS (amd64/gcc-4.0): conflicting types for 'progname')
+    [Reported by Andreas Jochens]
+  * grep-dctrl.1.cp: Fix "preceding" typo.
+    Closes: #311032 *'man grep-dctrl' typo: "predecing")
+    [Reported by A Costa]
+  * sync-available.8: Miscellaneous fixes.
+    Closes: #312630 (sync-available(8) thinks it is update-avail(8))
+    [Reported by Antti-Juhani Kaijanaho]
+    Closes: #312766 ('man sync-available' typo: "aquisition")
+    [Reported by A Costa]
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 11 Jul 2005 18:26:46 +0300
+
 grep-dctrl (2.6.6) unstable; urgency=low
 
   * Go to unstable again.

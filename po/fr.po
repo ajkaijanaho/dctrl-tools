@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools 2.0\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2005-06-08 19:26+0300\n"
-"PO-Revision-Date: 2004-07-03 23:48+0200\n"
+"PO-Revision-Date: 2005-06-13 23:38+0200\n"
 "Last-Translator: Nicolas Bertolissio <nico.bertol@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "CHAMP,CHAMP,..."
 
 #: grep-dctrl.c:106
 msgid "Restrict pattern matching to the FIELDs given."
-msgstr "Restreindre le motif de correspondance aux CHAMPS fournis"
+msgstr "Restreindre la recherche du motif aux CHAMPS fournis"
 
 #: grep-dctrl.c:107
 msgid "This is a shorthand for -FPackage."
@@ -108,25 +108,24 @@ msgid "Negate the following predicate."
 msgstr "Inverser le prédicat suivant"
 
 #: grep-dctrl.c:122
-#, fuzzy
 msgid "Test for version number equality."
-msgstr "Test d'égalité numérique"
+msgstr "Test d'égalité de numéro de version."
 
 #: grep-dctrl.c:123
 msgid "Version number comparison: <."
-msgstr ""
+msgstr "Comparaison de numéro de version : <."
 
 #: grep-dctrl.c:124
 msgid "Version number comparison: <=."
-msgstr ""
+msgstr "Comparaison de numéro de version : <=."
 
 #: grep-dctrl.c:125
 msgid "Version number comparison: >."
-msgstr ""
+msgstr "Comparaison de numéro de version : >."
 
 #: grep-dctrl.c:126
 msgid "Version number comparison: >=."
-msgstr ""
+msgstr "Comparaison de numéro de version : >=."
 
 #: grep-dctrl.c:127
 msgid "Debug option parsing."
@@ -141,9 +140,8 @@ msgid "predicate is too complex"
 msgstr "le prédicat est trop complexe"
 
 #: grep-dctrl.c:284
-#, fuzzy
 msgid "predicate is too long"
-msgstr "le prédicat est trop complexe"
+msgstr "le prédicat est trop long"
 
 #: grep-dctrl.c:343
 msgid "inconsistent atom modifiers"
@@ -173,38 +171,32 @@ msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (enfant) : échec d'exécution de /bin/sh : %s\n"
 
 #: grep-dctrl.c:692
-#, fuzzy
 msgid "unexpected end of predicate"
-msgstr "fin de fichier inattendue"
+msgstr "fin de prédicat inattendue"
 
 #: grep-dctrl.c:695
-#, fuzzy
 msgid "unexpected '!' in command line"
-msgstr "« ) » inattendue sur la ligne de commande"
+msgstr "« ! » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:698
-#, fuzzy
 msgid "unexpected '-a' in command line"
-msgstr "« ) » inattendue sur la ligne de commande"
+msgstr "« -a » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:701
-#, fuzzy
 msgid "unexpected '-o' in command line"
-msgstr "« ) » inattendue sur la ligne de commande"
+msgstr "« -o » inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:704
-#, fuzzy
 msgid "unexpected '(' in command line"
-msgstr "« ) » inattendue sur la ligne de commande"
+msgstr "« ( » inattendue sur la ligne de commande"
 
 #: grep-dctrl.c:707
 msgid "unexpected ')' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
 #: grep-dctrl.c:711
-#, fuzzy
 msgid "unexpected atom in command line"
-msgstr "« ) » inattendue sur la ligne de commande"
+msgstr "atome inattendu sur la ligne de commande"
 
 #: grep-dctrl.c:724
 msgid "missing ')' in command line"
@@ -265,12 +257,12 @@ msgstr "type de fichier inconnu, ignoré"
 #: misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr ""
+msgstr "%s : utilisation de « %s » comme afficheur\n"
 
 #: misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
-msgstr ""
+msgstr "%s : popen a échoué pour %s : %s\n"
 
 #: paragraph.c:75 paragraph.c:101
 msgid "unexpected end of file"
@@ -323,18 +315,7 @@ msgstr "fichier d'entrée par défaut"
 #: rc.c:201
 msgid "executable name not found; reading from standard input"
 msgstr ""
-
-#~ msgid "Numerical test: <."
-#~ msgstr "Test numérique : <"
-
-#~ msgid "Numerical test: <=."
-#~ msgstr "Test numérique : <="
-
-#~ msgid "Numerical test: >."
-#~ msgstr "Test numérique : >"
-
-#~ msgid "Numerical test: >=."
-#~ msgstr "Test numérique : >="
+"nom de fichier exécutable non trouvé : lecture à partir de l'entrée standard"
 
 #~ msgid "parse of a numeric field failed"
 #~ msgstr "l'analyse d'un champ numérique a échoué"
