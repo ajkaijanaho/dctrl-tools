@@ -1,0 +1,26 @@
+Source: grep-dctrl
+Section: utils
+Priority: optional
+Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
+Standards-Version: 3.6.0
+Build-Depends: publib-dev
+
+Package: grep-dctrl
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Grep Debian package information
+ The grep-dctrl program can answer such questions as
+   * "What is the Debian package foo?"
+   * "Which version of the Debian package bar is now current?"
+   * "Which Debian packages does John Doe maintain?"
+   * "Which Debian packages are somehow related to the Scheme
+      programming language?"
+ and with some help
+   * "Who maintain the essential packages of a Debian system?"
+ given a useful input file.
+ .
+ It is a specialised grep program that is meant for processing any
+ file which has the general format of a Debian package control file.
+ These include the dpkg available file, the dpkg status file, and the
+ Packages files on a distribution medium (such as a Debian CD-ROM or
+ an FTP site carrying Debian).

@@ -1,0 +1,15 @@
+# Configuration for grep-dctrl.  The config line format is
+# line-oriented.  Each line defines one executable name - default
+# input file pair; the elements of the pair are in order and separated
+# by whitespace.  The hash '#' begins a comment that lasts to the end
+# of line.  Empty lines are ignored.
+
+# Template:
+#   <executable name>   <default input file name>
+
+# The following line used to be required, but it is now hardcoded.
+# grep-dctrl      -
+
+# The following two pairs define common aliases for grep-dctrl.
+grep-status     /var/lib/dpkg/status
+grep-available  /var/lib/dpkg/available

@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# Written by Antti-Juhani Kaijanaho <ajk@debian.org>.  
+# You may treat this file as if it were in the public domain.
+
+librules_interface = 2
+librules_native_pkg=yes
+include debian/librules.mk
+
+debian/stamp/build: #debian/stamp/build-configure
+	$(MAKE)
+	touch $@
+
+#debian/stamp/build-configure:
+#	./configure --prefix=/usr --sysconfdir=/etc --mandir=/usr/share
+#	touch $@
+
+clean-build:
+	-$(MAKE) clean
+
+debian/stamp/binary/arch: debian/stamp/binary/grep-dctrl
+
+debian/stamp/binary/grep-dctrl: package=grep-dctrl
+debian/stamp/binary/grep-dctrl: debian/stamp/build
+	$(prebinary)
+#	Install by the master makefile
+#	$(MAKE) prefix=$(rootdir)/usr sysconfdir=$(rootdir)/etc \
+#	  mandir=$(mandir) install
+#	Install configuration file
+	$(install_dir) $(etcdir)
+	$(install_nonex) grep-dctrl.rc $(etcdir)
+#	Install the binary.
+	$(install_dir) $(bindir)
+	$(install_exec) grep-dctrl $(bindir)
+	set -e ; for dest in grep-status grep-available ; do \
+	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
+	 done
+#	Zip the manual page.
+	$(install_dir) $(man1dir)
+	$(install_nonex) grep-dctrl.1 $(man1dir)/
+	$(gzip) $(man1dir)/grep-dctrl.1
+	set -e ; for dest in grep-status grep-available ; do \
+	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
+	 done
+#	Install the supporting documentation.
+	$(install_nonex) TODO NEWS Compatibility $(docdir)
+#	Install config file information
+	$(install_nonex) debian/conffiles $(rootdir)/DEBIAN
+#	Get the shared library deps
+	dpkg-shlibdeps $(bindir)/grep-dctrl
+	$(postbinary)
+	touch $@
+
+clean-binary:
+	$(RM) *~
