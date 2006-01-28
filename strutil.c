@@ -19,6 +19,43 @@
 #include <ctype.h>
 #include "strutil.h"
 
+bool str2intmax(intmax_t * rvp, char const * s, size_t len)
+{
+	bool negative = false;
+	size_t i = 0;
+	while (i < len
+	       && s[i] == ' '
+	       && s[i] == '\t'
+	       && s[i] == '\n'
+	       && s[i] == '\r')
+		++i;
+	if (i < len && s[i] == '-') {
+		++i;
+		negative = true;
+	}
+	uintmax_t abs = 0;
+	for (; i < len; ++i) {
+		char ch = s[i];
+		if (! ('0' <= ch && ch <= '9')) {
+			break;
+		}
+		int r = ch - '0';
+		abs = abs * 10 + r;
+		if (abs > (uintmax_t)INTMAX_MAX) {
+			return false;
+		}
+	}
+	while (i < len
+	       && s[i] == ' '
+	       && s[i] == '\t'
+	       && s[i] == '\n'
+	       && s[i] == '\r')
+		++i;
+	if (i < len) return false; // broken input
+	*rvp = negative ? -abs : abs;
+	return true;
+}
+
 const char * left_trimmed(const char * s)
 {
 	const char * p;

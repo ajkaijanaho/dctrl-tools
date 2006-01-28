@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,12 +18,28 @@
 
 #include "msg.h"
 #include "paragraph.h"
+#include "strutil.h"
 
-void para_init(para_t * para, FSAF * fp, fieldtrie_t * trie) 
+static
+void parse_int(FSAF * fp, struct field_data * fd)
+{
+	const size_t len = fd->end - fd->start;
+	struct fsaf_read_rv rd = fsaf_read(fp, fd->start, len);
+	assert(rd.len == len);
+	fd->int_valid = false;
+	bool ok = str2intmax(&fd->parsed, rd.b, len);
+	if (!ok) {
+		message(L_INFORMATIONAL, _("parse of a numeric field failed"),
+			0);
+	}
+	fd->int_valid = ok;
+}
+
+void para_init(para_t * para, FSAF * fp, fieldtrie_t * trie)
 {
 	para->fp = fp;
 	para->trie = trie;
-	para->start = 0; 
+	para->start = 0;
 	para->end = 0;
 	para->eof = false;
 	para_parse_next(para);
@@ -36,6 +52,7 @@ void para_parse_next(para_t * para)
 	for (size_t i = 0; i < fieldtrie_count(para->trie); i++) {
 		para->fields[i].start = 0;
 		para->fields[i].end = 0;
+		para->fields[i].int_valid = 0;
 	}
 	fsaf_invalidate(para->fp, para->start);
 	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
@@ -76,12 +93,13 @@ void para_parse_next(para_t * para)
 				size_t len = (pos-1) - field_start;
 				struct fsaf_read_rv r = fsaf_read(fp, field_start, len);
 				assert(r.len == len);
-				size_t inx = fieldtrie_lookup(para->trie, r.b, len);
-				if (inx == -1) {
+				struct field_attr attr =
+					fieldtrie_lookup(para->trie, r.b, len);
+				if (!attr.valid) {
 					field_data = 0;
 				} else {
-					assert(inx < MAX_FIELDS);
-					field_data = &para->fields[inx];
+					assert(attr.inx < MAX_FIELDS);
+					field_data = &para->fields[attr.inx];
 					field_data->start = pos;
 				}
 				state = BODY;
@@ -104,6 +122,7 @@ void para_parse_next(para_t * para)
 					       && fsaf_getc(fp, field_data->start) == ' ') {
 						++field_data->start;
 					}
+					parse_int(fp, field_data);
 				}
 				state = BODY_NEWLINE;
 				break;
@@ -111,7 +130,7 @@ void para_parse_next(para_t * para)
 			break;
 		case BODY_NEWLINE:
 			switch (c) {
-			case -1: 
+			case -1:
 				//para->eof = true;
 				/* pass through */
 			case '\n':

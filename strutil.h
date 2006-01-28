@@ -20,7 +20,15 @@
 #ifndef STRUTIL_H__
 #define STRUTIL_H__
 
+#include <stddef.h>
 #include <string.h>
+#include <stdbool.h>
+#include <stdint.h>
+
+/* Parse an integer from the (possibly not null-terminated) string s
+ * of length len, and place the result in *rvp.  If return value is
+ * false, *rvp is untouched. */
+bool str2intmax(intmax_t * rvp, char const * s, size_t len);
 
 /* Return a pointer to first nonblank character in s.  */
 const char * left_trimmed(const char * s);

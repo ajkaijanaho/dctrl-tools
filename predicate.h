@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 
 #include <assert.h>
 #include <regex.h>
+#include <stdint.h>
 #include "fieldtrie.h"
 #include "paragraph.h"
 
@@ -40,16 +41,26 @@ struct atom {
 	 * field_inx is -1. */
 	char const * field_name; size_t field_inx;
 	/* Matching mode */
-	enum { M_SUBSTR, /* substring matching */
-	       M_REGEX, /* POSIX regular expression match */
-	       M_EREGEX, /* POSIX extended regular expression matching */
-	       M_EXACT /* exact match */
-	       } mode;
+	enum matching_mode {
+		M_SUBSTR, /* substring matching */
+		M_REGEX, /* POSIX regular expression match */
+		M_EREGEX, /* POSIX extended regular expression matching */
+		M_EXACT, /* exact string match */
+#define M_FIRST_NUMERIC M_NUM_EQ
+		M_NUM_EQ, /* numeric equality comparison */
+		M_NUM_LT, /* numeric < */
+		M_NUM_LE, /* numeric <= */
+		M_NUM_GT, /* numeric > */
+		M_NUM_GE, /* numeric >= */
+#define M_LAST_NUMERIC M_NUM_GE
+	} mode;
 	/* Flag: should matching ignore case */
 	unsigned ignore_case;
 	/* The pattern as given on the command line; interpretation
 	 * depends on matching mode. */
 	char const * pat; size_t patlen;
+	/* A parsed value of an integer pattern */
+	intmax_t intpat;
 	/* A compiled version of pat; valid only when mode is M_REGEX
 	 * or M_EREGEX.  */
 	regex_t regex;

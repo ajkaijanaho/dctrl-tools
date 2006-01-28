@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2004-01-16 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2004-01-19 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \" Permission is granted to make and distribute verbatim copies of
@@ -136,6 +136,36 @@ Ignore case when looking for a match in the current atomic predicate.
 .IP "-X, --exact-match"
 Do an exact match (as opposed to a substring match) in the current
 atomic predicate.
+.IP "--eq"
+Use numeric equality in matching.  The pattern must be an integer
+literal.  Any paragraphs where the field to be searched in does not
+parse as an integer literal are regarded as not matching.  Note that
+using numeric comparison when looking at full paragraphs does not make
+sense.
+.IP "--lt"
+Use numeric strictly-less-than comparison in matching.  The pattern
+must be an integer literal.  Any paragraphs where the field to be
+searched in does not parse as an integer literal are regarded as not
+matching.  Note that using numeric comparison when looking at full
+paragraphs does not make sense.
+.IP "--le"
+Use numeric less-than-or-equal comparison in matching.  The pattern
+must be an integer literal.  Any paragraphs where the field to be
+searched in does not parse as an integer literal are regarded as not
+matching.  Note that using numeric comparison when looking at full
+paragraphs does not make sense.
+.IP "--gt"
+Use numeric strictly-greater-than comparison in matching.  The pattern
+must be an integer literal.  Any paragraphs where the field to be
+searched in does not parse as an integer literal are regarded as not
+matching.  Note that using numeric comparison when looking at full
+paragraphs does not make sense.
+.IP "--ge"
+Use numeric greater-than-or-equal comparison in matching.  The pattern
+must be an integer literal.  Any paragraphs where the field to be
+searched in does not parse as an integer literal are regarded as not
+matching.  Note that using numeric comparison when looking at full
+paragraphs does not make sense.
 .SS Predicate connectives
 .IP "-!, --not, !"
 Negate the following predicate.

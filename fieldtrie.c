@@ -31,33 +31,37 @@ void fieldtrie_init(fieldtrie_t * trie)
 	trie->nextfree = 0;
 }
 
-size_t fieldtrie_insert(fieldtrie_t * trie, char const * s)
+size_t fieldtrie_insert(fieldtrie_t * trie, char const * s,
+			struct field_attr attr)
 {
 	size_t slen = strlen(s);
-	size_t r = fieldtrie_lookup(trie, s, slen);
-	if (r != -1) return r;
+	struct field_attr l_attr = fieldtrie_lookup(trie, s, slen);
+	if (l_attr.valid) return l_attr.inx;
 	struct field_bucket * b = malloc(sizeof *b);
 	if (b == 0) fatal_enomem(0);
 	b->name = malloc(slen+1);
 	if (b->name == 0) fatal_enomem(0);
 	strcpy((char*)b->name, s);
 	b->namelen = slen;
-	b->inx = trie->nextfree++;
+	attr.inx = trie->nextfree++;
+	attr.valid = true;
+	b->attr = attr;
 	unsigned char c = tolower((unsigned char)(b->name[0]));
 	b->next = trie->fields[c];
 	trie->fields[c] = b;
-	return b->inx;
+	return b->attr.inx;
 }
 
-size_t fieldtrie_lookup(fieldtrie_t * trie, char const * s, size_t n)
+struct field_attr fieldtrie_lookup(fieldtrie_t * trie, char const * s,
+				   size_t n)
 {
 	for (struct field_bucket * b = trie->fields[tolower((unsigned char)s[0])];
 	     b != 0;
 	     b = b->next) {
 		if (n == b->namelen &&
-		    strncasecmp(s, b->name, n) == 0) return b->inx;
+		    strncasecmp(s, b->name, n) == 0) return b->attr;
 	}
-	return (size_t)(-1);
+	return (struct field_attr){ .valid = false };
 }
 
 void fieldtrie_clear(fieldtrie_t * trie)

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,11 +21,18 @@
 
 #include <limits.h>
 #include <stddef.h>
+#include <stdbool.h>
+
+struct field_attr {
+	bool valid : 1;
+	bool numeric : 1;
+	size_t inx;
+};
 
 struct field_bucket {
 	char const * name;
 	size_t namelen;
-	size_t inx;
+	struct field_attr attr;
 	struct field_bucket * next;
 };
 
@@ -41,11 +48,10 @@ typedef struct fieldtrie_private fieldtrie_t;
 void fieldtrie_init(fieldtrie_t *);
 
 // case-insensitive
-size_t fieldtrie_insert(fieldtrie_t *, char const *);
+size_t fieldtrie_insert(fieldtrie_t *, char const *, struct field_attr);
 
 // case-insensitive
-// (size_t)(-1) if failed
-size_t fieldtrie_lookup(fieldtrie_t *, char const *, size_t n);
+struct field_attr fieldtrie_lookup(fieldtrie_t *, char const *, size_t n);
 
 void fieldtrie_clear(fieldtrie_t *);
 
