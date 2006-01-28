@@ -1,312 +1,322 @@
-# German translation of dctrl-tools
-# Copyright © 2004 Gerfried Fuchs
+# Italian translations for dctrl-tools
+# Copyright © 2004 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Gerfried Fuchs <alfie@debian.org>, 2004.
+# Danilo Piazzalunga <danilopiazza@libero.it>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools\n"
+"Project-Id-Version: dctrl-tools 2.6\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-04 20:23+0300\n"
-"PO-Revision-Date: 2004-07-05 13:41+0200\n"
-"Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
-"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"POT-Creation-Date: 2004-07-09 12:19+0200\n"
+"PO-Revision-Date: 2004-07-09 15:57+0300\n"
+"Last-Translator: Danilo Piazzalunga <danilopiazza@libero.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: grep-dctrl.c:44
 msgid "grep-dctrl -- grep Debian control files"
-msgstr "grep-dctrl -- grep Debian-Control-Dateien"
+msgstr "grep-dctrl -- ricerca attraverso i file di controllo di Debian"
 
+# NdT: Sì, questa traduzione è appropriata ;-)
 #: grep-dctrl.c:128
 msgid "Show the testing banner."
-msgstr "Zeigt den Testing-Banner."
+msgstr "Mostra l'avviso fastidioso."
 
 #: grep-dctrl.c:130
 msgid "LEVEL"
-msgstr "EBENE"
+msgstr "LIVELLO"
 
 #: grep-dctrl.c:130
 msgid "Set debugging level to LEVEL."
-msgstr "Setzt Debugging-Ebene auf EBENE."
+msgstr "Imposta il livello di debug a LIVELLO."
 
 #: grep-dctrl.c:131 grep-dctrl.c:133
 msgid "FIELD,FIELD,..."
-msgstr "FELD,FELD,..."
+msgstr "CAMPO,CAMPO,..."
 
+# Ndt: era msgstr "Restringe la ricerca dei modelli ai campi specificati."
 #: grep-dctrl.c:131
 msgid "Restrict pattern matching to the FIELDs given."
-msgstr "Beschränkt die Musterprüfung auf die angegebenen FELDer."
+msgstr "Cerca le corrispondenze solo all'interno dei campi specificati."
 
 #: grep-dctrl.c:132
 msgid "This is a shorthand for -FPackage."
-msgstr "Dies ist eine Kurzform für -FPackage."
+msgstr "Questa è una forma abbreviata per «-FPackage»."
 
+# NdT: era msgstr "Mostra solo i campi specificati anziché l'intero "
+# "paragrafo corrispondente."
 #: grep-dctrl.c:133
 msgid "Show only the body of these fields from the matching paragraphs."
-msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
+msgstr "Mostra solo il valore dei campi selezionati del paragrafo corrispondente."
 
 #: grep-dctrl.c:134
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Zeigt nur die erste Zeile des »Description«-Feldes des passenden Abschnitts."
+"Mostra solo la prima riga del campo «Description» dei paragrafi "
+"corrispondenti."
 
 #: grep-dctrl.c:135
 msgid "Suppress field names when showing specified fields."
-msgstr "Unterdrückt die Feldnamen beim Anzeigen der angegebenen Felder."
+msgstr "Mostra solo il contenuto (e non il nome) dei campi specificati."
 
 #: grep-dctrl.c:136
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
+msgstr "Considera il modello come un'espressione regolare POSIX estesa."
 
 #: grep-dctrl.c:137
 msgid "The pattern is a standard POSIX regular expression."
-msgstr "Das Muster ist ein Standard-POSIX regulärer Ausdruck."
+msgstr "Considera il modello come un'espressione regolare POSIX standard."
 
 #: grep-dctrl.c:138
 msgid "Ignore case when looking for a match."
-msgstr "Ignoriert die Groß-/Kleinschreibung beim Suchen eines Treffers."
+msgstr "Ignora maiuscole/minuscole durante il confronto."
 
 #: grep-dctrl.c:139
 msgid "Show only paragraphs that do not match."
-msgstr "Zeigt nur die Abschnitte, die nicht passen."
+msgstr "Mostra solo i paragrafi non corrispondenti."
 
+# Ndt: grep(1) usa «conto»; io preferisco «conteggio» o «numero».
 #: grep-dctrl.c:140
 msgid "Show only the count of matching paragraphs."
-msgstr "Zeigt nur die Anzahl der passenden Abschnitte."
+msgstr "Mostra solo il conteggio dei paragrafi corrispondenti."
 
 #: grep-dctrl.c:141
 msgid "FNAME"
-msgstr "FNAME"
+msgstr "NOMEFILE"
 
 #: grep-dctrl.c:141
 msgid "Use FNAME as the config file."
-msgstr "Verwendet FNAME als Konfigurationsdatei."
+msgstr "Usa NOMEFILE come file di configurazione."
 
 #: grep-dctrl.c:142
 msgid "Do an exact match."
-msgstr "Führt eine exakte Übereinstimmung durch."
+msgstr "Cerca solo corrispondenze esatte."
 
 #: grep-dctrl.c:143
 msgid "Print out the copyright license."
-msgstr "Gibt die Copyright-Lizenz aus."
+msgstr "Mostra la licenza."
 
 #: grep-dctrl.c:144
 msgid "Conjunct predicates."
-msgstr "UND-verknüpfte Eigenschaften."
+msgstr "Effettua la congiunzione di due predicati."
 
 #: grep-dctrl.c:145
 msgid "Disjunct predicates."
-msgstr "ODER-verknüpfte Eigenschaften."
+msgstr "Effettua la disgiunzione di due predicati."
 
 #: grep-dctrl.c:146
 msgid "Negate the following predicate."
-msgstr "Negiert die folgende Eigenschaft."
+msgstr "Negazione del predicato che lo segue."
 
 #: grep-dctrl.c:147
 msgid "Test for numerical equality."
-msgstr "Test auf numerische Übereinstimmung."
+msgstr "Controlla l'uguaglianza numerica."
 
 #: grep-dctrl.c:148
 msgid "Numerical test: <."
-msgstr "Numerischer Test: <."
+msgstr "Effettua il test numerico: <."
 
 #: grep-dctrl.c:149
 msgid "Numerical test: <=."
-msgstr "Numerischer Test: <=."
+msgstr "Effettua il test numerico: <=."
 
 #: grep-dctrl.c:150
 msgid "Numerical test: >."
-msgstr "Numerischer Test: >."
+msgstr "Effettua il test numerico: >."
 
 #: grep-dctrl.c:151
 msgid "Numerical test: >=."
-msgstr "Numerischer Test: >=."
+msgstr "Effettua il test numerico: >=."
 
 #: grep-dctrl.c:152
 msgid "Debug option parsing."
-msgstr "Optionenverarbeitung debuggen."
+msgstr "Fa il debug dell'analisi delle opzioni."
 
 #: grep-dctrl.c:153 grep-dctrl.c:154
 msgid "Do no output to stdout."
-msgstr "Keine Ausgabe auf die Standardausgabe."
+msgstr "Non invia output verso stdout."
 
 #: grep-dctrl.c:232 grep-dctrl.c:345 predicate.c:41
 msgid "predicate is too complex"
-msgstr "Eigenschaft ist zu komplex"
+msgstr "il predicato è troppo complesso"
 
 #: grep-dctrl.c:313
 msgid "predicate is too long"
-msgstr "Eigenschaft ist zu lang"
+msgstr "il predicato è troppo lungo"
 
+# Ndt: appare se si usano le opzioni per BRE, ERE o exact match tutte insieme.
 #: grep-dctrl.c:370
 msgid "inconsistent atom modifiers"
-msgstr "Inkonsistener Atom-Modifikator"
+msgstr "modificatori di atomi incoerenti"
 
 #: grep-dctrl.c:437
 msgid "no such log level"
-msgstr "Keine solche Log-Ebene"
+msgstr "livello di log inesistente"
 
 #: grep-dctrl.c:537
 msgid "too many file names"
-msgstr "Zu viele Dateinamen"
+msgstr "troppi nomi di file"
 
 #: grep-dctrl.c:618
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
+msgstr "%s: il comando (%s) non è riuscito (stato di uscita %d)\n"
 
 #: grep-dctrl.c:627
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
-msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
+msgstr "%s: il comando (%s) è stato ucciso dal segnale %d\n"
 
 #: grep-dctrl.c:665
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
-msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
+msgstr "%s (figlio): impossibile eseguire /bin/sh: %s\n"
 
 #: grep-dctrl.c:719
 msgid "unexpected end of predicate"
-msgstr "unerwartetes Eigenschaftsende"
+msgstr "improvvisa fine del predicato"
 
 #: grep-dctrl.c:722
 msgid "unexpected '!' in command line"
-msgstr "Unerwartetes »!« in der Befehlszeile"
+msgstr "«!» non previsto sulla riga di comando"
 
 #: grep-dctrl.c:725
 msgid "unexpected '-a' in command line"
-msgstr "Unerwartetes »-a« in der Befehlszeile"
+msgstr "«-a» non previsto sulla riga di comando"
 
 #: grep-dctrl.c:728
 msgid "unexpected '-o' in command line"
-msgstr "Unerwartetes »-o« in der Befehlszeile"
+msgstr "«-o» non previsto sulla riga di comando"
 
 #: grep-dctrl.c:731
 msgid "unexpected '(' in command line"
-msgstr "Unerwartete »(« in der Befehlszeile"
+msgstr "«(» non prevista sulla riga di comando"
 
 #: grep-dctrl.c:734
 msgid "unexpected ')' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "«)» non prevista sulla riga di comando"
 
 #: grep-dctrl.c:738
 msgid "unexpected atom in command line"
-msgstr "Unerwartetes Atom in der Befehlszeile"
+msgstr "atomo non previsto sulla riga di comando"
 
 #: grep-dctrl.c:751
 msgid "missing ')' in command line"
-msgstr "Fehlende »)« in der Befehlszeile"
+msgstr "manca una «)» sulla riga di comando"
 
 #: grep-dctrl.c:823
 msgid "A pattern is mandatory"
-msgstr "Ein Muster wird benötigt"
+msgstr "Bisogna specificare un modello di ricerca"
 
 #: grep-dctrl.c:830
 msgid "a predicate is required"
-msgstr "Eine Eigenschaft wird benötigt"
+msgstr "bisogna specificare un predicato"
 
+# NdT: credo che il termine tecnico corretto sia
+# «well-formed» --> «ben formato».
 #: grep-dctrl.c:835
 msgid "malformed predicate"
-msgstr "Missgebildete Eigenschaft"
+msgstr "il predicato non è ben formato"
 
 #: grep-dctrl.c:841
 msgid "too many output fields"
-msgstr "Zu viele Ausgabefelder"
+msgstr "troppi campi da visualizzare"
 
 #: grep-dctrl.c:845
 msgid "Adding \"Description\" to selected output fields because of -d"
-msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
+msgstr "È stato aggiunto «Description» ai campi da mostrare a causa di -d"
 
 #: grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr ""
-"Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
+msgstr "impossibile omettere i nomi dei campi quando si mostra l'intero paragrafo"
 
+# NdT: questa traduzione rispecchia quella di cp, mv, rm, etc.
 #: grep-dctrl.c:888
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
-msgstr "%s: %s: stat kann nicht durchgeführt werden: %s\n"
+msgstr "%s: impossibile fare stat di «%s»: %s\n"
 
 #: grep-dctrl.c:897
 msgid "is a directory, skipping"
-msgstr "ist ein Verzeichnis, wird übersprungen"
+msgstr "è una directory e viene ignorata"
 
 #: grep-dctrl.c:898
 msgid "is a block device, skipping"
-msgstr "ist ein Block-Gerät, wird übersprungen"
+msgstr "è un file speciale a blocchi e viene ignorato"
 
 #: grep-dctrl.c:899
 msgid "internal error"
-msgstr "interner Fehler"
+msgstr "errore interno"
 
 #: grep-dctrl.c:900
 msgid "is a socket, skipping"
-msgstr "ist ein Socket, wird übersprungen"
+msgstr "è un socket e viene ignorato"
 
 #: grep-dctrl.c:901
 msgid "unknown file type, skipping"
-msgstr "unbekannter Dateityp, wird übersprungen"
+msgstr "è un file di tipo sconosciuto e viene ignorato"
 
 #: predicate.c:79
 msgid "invalid numeric pattern"
-msgstr "Ungültiges numerisches Muster"
+msgstr "modello di ricerca numerico errato"
 
 #: paragraph.c:38
 msgid "parse of a numeric field failed"
-msgstr "Analyse eines numerischen Feldes fehlgeschlagen"
+msgstr "errore durante la lettura di un campo numerico"
 
 #: paragraph.c:98 paragraph.c:124
 msgid "unexpected end of file"
-msgstr "unerwartetes Dateiende"
+msgstr "improvvisa fine del file"
 
 #: paragraph.c:117
 msgid "unexpected end of line"
-msgstr "unerwartetes Zeilenende"
+msgstr "improvvisa fine della riga"
 
 #: rc.c:66
 msgid "Malformed default input file name"
-msgstr "Missgebildeter Default-Eingabedatei-Name"
+msgstr "Nome del file di input predefinito non corretto"
 
 #: rc.c:79
 msgid "not owned by you or root, ignoring"
-msgstr "gehört nicht Ihnen oder root, wird ignoriert"
+msgstr "viene ignorato perché non ha come proprietario né te né root"
 
 #: rc.c:84
 msgid "write permissions for group or others, ignoring"
-msgstr "Schreibberechtigungen für die Gruppe oder andere, wird ignoriert"
+msgstr "viene ignorato perché è scrivibile dal gruppo e/o da tutti"
 
 #: rc.c:124
 msgid "reading config file"
-msgstr "lese Konfigurationsdatei"
+msgstr "lettura del file di configurazione"
 
 #: rc.c:151
 msgid "read failure or out of memory"
-msgstr "Lesefehler oder zuwenig Speicher verfügbar"
+msgstr "errore di lettura o memoria esaurita"
 
 #: rc.c:173
 msgid "syntax error: need a executable name"
-msgstr "Syntax-Fehler: Benötige einen Programmnamen"
+msgstr "errore di sintassi: serve il nome di un programma"
 
 #: rc.c:181
 msgid "syntax error: need an input file name"
-msgstr "Syntax-Fehler: Benötige einen Eingabe-Dateinamen"
+msgstr "errore di sintassi: serve il nome di un file di input"
 
 #: rc.c:186
 msgid "considering executable name"
-msgstr "Programmname wird in Betracht gezogen"
+msgstr "nome del programma da considerare"
 
 #: rc.c:188
 msgid "yes, will use executable name"
-msgstr "Ja, Programmname wird verwendet"
+msgstr "nome del programma da usare"
 
 #: rc.c:190
 msgid "default input file"
-msgstr "Default-Eingabedatei"
+msgstr "file di input predefinito"
 
 #: rc.c:201
 msgid "executable name not found; reading from standard input"
-msgstr "Programmname nicht gefunden; es wird von der Standardeingabe gelesen"
+msgstr "nome del programma non trovato; lettura dallo standard input"
