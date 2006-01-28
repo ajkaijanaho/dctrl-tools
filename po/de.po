@@ -1,0 +1,289 @@
+# German translation of dctrl-tools
+# Copyright © 2004 Gerfried Fuchs
+# This file is distributed under the same license as the dctrl-tools package.
+# Gerfried Fuchs <alfie@debian.org>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2004-02-11 11:20+0100\n"
+"PO-Revision-Date: 2004-02-11 11:22+0100\n"
+"Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: grep-dctrl.c:44
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- grep Debian-Control-Dateien"
+
+#: grep-dctrl.c:128
+msgid "Show the testing banner."
+msgstr "Zeigt den Testing-Banner."
+
+#: grep-dctrl.c:130
+msgid "LEVEL"
+msgstr "EBENE"
+
+#: grep-dctrl.c:130
+msgid "Set debugging level to LEVEL."
+msgstr "Setzt Debugging-Ebene auf EBENE."
+
+#: grep-dctrl.c:131 grep-dctrl.c:133
+msgid "FIELD,FIELD,..."
+msgstr "FELD,FELD,..."
+
+#: grep-dctrl.c:131
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Beschränkt die Musterprüfung auf die angegebenen FELDer."
+
+#: grep-dctrl.c:132
+msgid "This is a shorthand for -FPackage."
+msgstr "Dies ist eine Kurzform für -FPackage."
+
+#: grep-dctrl.c:133
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
+
+#: grep-dctrl.c:134
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+"Zeigt nur die erste Zeile des »Description«-Feldes des passenden Abschnitts."
+
+#: grep-dctrl.c:135
+msgid "Suppress field names when showing specified fields."
+msgstr "Unterdrückt die Feldnamen beim Anzeigen der angegebenen Felder."
+
+#: grep-dctrl.c:136
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
+
+#: grep-dctrl.c:137
+msgid "The pattern is a standard POSIX regular expression."
+msgstr "Das Muster ist ein Standard-POSIX regulärer Ausdruck."
+
+#: grep-dctrl.c:138
+msgid "Ignore case when looking for a match."
+msgstr "Ignoriert die Groß-/Kleinschreibung beim Suchen eines Treffers."
+
+#: grep-dctrl.c:139
+msgid "Show only paragraphs that do not match."
+msgstr "Zeigt nur die Abschnitte, die nicht passen."
+
+#: grep-dctrl.c:140
+msgid "Show only the count of matching paragraphs."
+msgstr "Zeigt nur die Anzahl der passenden Abschnitte."
+
+#: grep-dctrl.c:141
+msgid "FNAME"
+msgstr "FNAME"
+
+#: grep-dctrl.c:141
+msgid "Use FNAME as the config file."
+msgstr "Verwendet FNAME als Konfigurationsdatei."
+
+#: grep-dctrl.c:142
+msgid "Do an exact match."
+msgstr "Führt eine exakte Übereinstimmung durch."
+
+#: grep-dctrl.c:143
+msgid "Print out the copyright license."
+msgstr "Gibt die Copyright-Lizenz aus."
+
+#: grep-dctrl.c:144
+msgid "Conjunct predicates."
+msgstr "UND-verknüpfte Eigenschaften."
+
+#: grep-dctrl.c:145
+msgid "Disjunct predicates."
+msgstr "ODER-verknüpfte Eigenschaften."
+
+#: grep-dctrl.c:146
+msgid "Negate the following predicate."
+msgstr "Negiert die folgende Eigenschaft."
+
+#: grep-dctrl.c:147
+msgid "Test for numerical equality."
+msgstr "Test auf numerische Übereinstimmung."
+
+#: grep-dctrl.c:148
+msgid "Numerical test: <."
+msgstr "Numerischer Test: <."
+
+#: grep-dctrl.c:149
+msgid "Numerical test: <=."
+msgstr "Numerischer Test: <=."
+
+#: grep-dctrl.c:150
+msgid "Numerical test: >."
+msgstr "Numerischer Test: >."
+
+#: grep-dctrl.c:151
+msgid "Numerical test: >=."
+msgstr "Numerischer Test: >=."
+
+#: grep-dctrl.c:152
+msgid "Debug option parsing."
+msgstr "Optionenverarbeitung debuggen."
+
+#: grep-dctrl.c:153 grep-dctrl.c:154
+msgid "Do no output to stdout."
+msgstr "Keine Ausgabe auf die Standardausgabe."
+
+#: grep-dctrl.c:218 grep-dctrl.c:288 grep-dctrl.c:354 predicate.c:40
+msgid "predicate is too complex"
+msgstr "Eigenschaft ist zu komplex"
+
+#: grep-dctrl.c:250
+msgid "A pattern is mandatory"
+msgstr "Ein Muster wird benötigt"
+
+#: grep-dctrl.c:309
+msgid "syntax error in command line"
+msgstr "Syntax-Fehler in der Befehlszeile"
+
+#: grep-dctrl.c:326
+msgid "missing ')' in command line"
+msgstr "Fehlende »)« in der Befehlszeile"
+
+#: grep-dctrl.c:344
+msgid "Unexpected atom in command line. Did you forget to use a connective?"
+msgstr ""
+"Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder vergessen?"
+
+#: grep-dctrl.c:371
+msgid "inconsistent atom modifiers"
+msgstr "Inkonsistener Atom-Modifikator"
+
+#: grep-dctrl.c:431
+msgid "no such log level"
+msgstr "Keine solche Log-Ebene"
+
+#: grep-dctrl.c:525
+msgid "unexpected ')' in command line"
+msgstr "Unerwartete »)« in der Befehlszeile"
+
+#: grep-dctrl.c:537
+msgid "too many file names"
+msgstr "Zu viele Dateinamen"
+
+#: grep-dctrl.c:617
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
+
+#: grep-dctrl.c:626
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
+
+#: grep-dctrl.c:664
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
+
+#: grep-dctrl.c:722
+msgid "a predicate is required"
+msgstr "Eine Eigenschaft wird benötigt"
+
+#: grep-dctrl.c:727
+msgid "malformed predicate"
+msgstr "Missgebildete Eigenschaft"
+
+#: grep-dctrl.c:733
+msgid "too many output fields"
+msgstr "Zu viele Ausgabefelder"
+
+#: grep-dctrl.c:737
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
+
+#: grep-dctrl.c:746
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr ""
+"Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
+
+#: grep-dctrl.c:780
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: stat kann nicht durchgeführt werden: %s\n"
+
+#: grep-dctrl.c:789
+msgid "is a directory, skipping"
+msgstr "ist ein Verzeichnis, wird übersprungen"
+
+#: grep-dctrl.c:790
+msgid "is a block device, skipping"
+msgstr "ist ein Block-Gerät, wird übersprungen"
+
+#: grep-dctrl.c:791
+msgid "internal error"
+msgstr "interner Fehler"
+
+#: grep-dctrl.c:792
+msgid "is a socket, skipping"
+msgstr "ist ein Socket, wird übersprungen"
+
+#: grep-dctrl.c:793
+msgid "unknown file type, skipping"
+msgstr "unbekannter Dateityp, wird übersprungen"
+
+#: predicate.c:76
+msgid "invalid numeric pattern"
+msgstr "Ungültiges numerisches Muster"
+
+#: paragraph.c:32
+msgid "parse of a numeric field failed"
+msgstr "Analyse eines numerischen Feldes fehlgeschlagen"
+
+#: paragraph.c:90 paragraph.c:116
+msgid "unexpected end of file"
+msgstr "unerwartetes Dateiende"
+
+#: paragraph.c:109
+msgid "unexpected end of line"
+msgstr "unerwartetes Zeilenende"
+
+#: rc.c:65
+msgid "Malformed default input file name"
+msgstr "Missgebildeter Default-Eingabedatei-Name"
+
+#: rc.c:78
+msgid "not owned by you or root, ignoring"
+msgstr "gehört nicht Ihnen oder root, wird ignoriert"
+
+#: rc.c:83
+msgid "write permissions for group or others, ignoring"
+msgstr "Schreibberechtigungen für die Gruppe oder andere, wird ignoriert"
+
+#: rc.c:123
+msgid "reading config file"
+msgstr "lese Konfigurationsdatei"
+
+#: rc.c:150
+msgid "read failure or out of memory"
+msgstr "Lesefehler oder zuwenig Speicher verfügbar"
+
+#: rc.c:170
+msgid "syntax error: need a executable name"
+msgstr "Syntax-Fehler: Benötige einen Programmnamen"
+
+#: rc.c:178
+msgid "syntax error: need an input file name"
+msgstr "Syntax-Fehler: Benötige einen Eingabe-Dateinamen"
+
+#: rc.c:183
+msgid "considering executable name"
+msgstr "Programmname wird in Betracht gezogen"
+
+#: rc.c:185
+msgid "yes, will use executable name"
+msgstr "Ja, Programmname wird verwendet"
+
+#: rc.c:187
+msgid "default input file"
+msgstr "Default-Eingabedatei"

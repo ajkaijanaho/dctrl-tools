@@ -50,9 +50,10 @@ char const * const ifile_modes[] = { [m_error] = "m_error",
 
 static struct ifile parse(char * s)
 {
+	if (s == 0) return (struct ifile) { .mode = m_read, .s = "-" };
 	s = (char*)left_trimmed(s);
 	trim_right(s);
-	if (s == 0) return (struct ifile) { .mode = m_read, .s = "-" };
+	if (*s == 0) return (struct ifile) { .mode = m_read, .s = "-" };
 	static const char at_exec[] = "@exec ";
 	if (s[0] != '@') return (struct ifile){ .mode = m_read, .s = s };
 	assert(s[0] == '@');
@@ -153,12 +154,14 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 		}
 
 		++lineno;
-		if (line[0] == 0) {
+
+		if (*line == 0) {
 			rv = 0;
 			break;
 		}
 
 		chop_comment(line, '#');
+		chomp(line);
 
 		if (left_trimmed(line) [0] == 0) {
 			continue;

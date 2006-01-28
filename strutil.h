@@ -36,6 +36,9 @@ const char * left_trimmed(const char * s);
 /* Mutate s and trim whitespace off its right end.  */
 void trim_right(char * s);
 
+/* Remove a trailing newline, if any. */
+void chomp(char *);
+
 /* Chop off everything after and including the first comchar in line.
    This mutates line!  */
 static inline void chop_comment(char * line, char comchar)

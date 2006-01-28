@@ -48,6 +48,7 @@ void predicate_finish_atom(struct predicate * p)
 	struct atom * atom =  get_current_atom(p);
 	bool numeric = M_FIRST_NUMERIC <= atom->mode
 		&& atom->mode <= M_LAST_NUMERIC;
+	debug_message("predicate_finish_atom", 0);
 	if (atom->field_name != 0) {
 		struct field_attr fa = { .numeric = numeric };
 		atom->field_inx = fieldtrie_insert(&p->trie, atom->field_name,
@@ -55,6 +56,8 @@ void predicate_finish_atom(struct predicate * p)
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {
+		debug_message("compiling:", 0);
+		debug_message(atom->pat, 0);
 		int rerr = regcomp(&atom->regex, atom->pat,
 				   (atom->mode == M_EREGEX ? REG_EXTENDED : 0)
 				   | REG_NOSUB
@@ -162,6 +165,27 @@ static bool verify_atom(struct atom * atom, para_t * para)
 		return intpat <= intval;
 	}
 	assert(0);
+}
+
+bool check_predicate(struct predicate * p)
+{
+	size_t sp = 0;
+	/* Simulate the program. */
+	for (size_t i = 0; i < p->proglen; i++) {
+		switch (p->program[i]) {
+		case I_NOP: break;
+		case I_NEG:
+			if (sp == 0) return false;
+			break;
+		case I_AND: case I_OR:
+			if (sp < 2) return false;
+			--sp;
+			break;
+		default:
+			++sp;
+		}
+	}
+	return true;
 }
 
 bool does_para_satisfy(struct predicate * p, para_t * para)
