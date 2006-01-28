@@ -1,3 +1,12 @@
+grep-dctrl (2.6.2) experimental; urgency=low
+
+  * sync-available: -ge 1, not -gt 1, when comparing the number of
+    arguments.  Thanks to Pasi Savolainen.
+  * Belated thanks to Juhapekka Tolvanen for inspiring the sync-available
+    script.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 12 Jul 2004 04:24:49 +0300
+
 grep-dctrl (2.6.1) experimental; urgency=low
 
   * sync-available.cp, Makefile, debian/rules: New program.
