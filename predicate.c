@@ -17,6 +17,7 @@
  */
 
 #include <ctype.h>
+#include <gmp.h>
 #include <stdlib.h>
 #include <regex.h>
 #include <string.h>
@@ -73,9 +74,8 @@ void predicate_finish_atom(struct predicate * p)
 	}
 
 	if (numeric) {
-		bool ok = str2intmax(&atom->intpat, atom->pat,
-				     atom->patlen);
-		if (!ok) {
+		int r = mpz_init_set_str(atom->intpat, atom->pat, 10);
+		if (r != 0) {
 			message(L_FATAL, _("invalid numeric pattern"), 0);
 			fail();
 		}
@@ -85,21 +85,18 @@ void predicate_finish_atom(struct predicate * p)
 static bool verify_atom(struct atom * atom, para_t * para)
 {
 	size_t start, end;
-	intmax_t intval, intpat = atom->intpat;
-	bool int_valid;
+	mpz_t * intval;
 	if (atom->field_inx == -1) {
 		/* Take the full paragraph */
 		start = para->start;
 		end = para->end;
 		intval = 0;
-		int_valid = false;
 	} else {
 		/* Take the field */
 		struct field_data * fd = &para->fields[atom->field_inx];
 		start = fd->start;
 		end = fd->end;
-		intval = fd->parsed;
-		int_valid = fd->int_valid;
+		intval = fd->int_valid ? &fd->parsed : 0;
 	}
 	size_t len = end - start;
 	struct fsaf_read_rv r = fsaf_read(para->fp, start, len);
@@ -149,20 +146,20 @@ static bool verify_atom(struct atom * atom, para_t * para)
 		return false;
 	}
 	case M_NUM_EQ:
-		if (!int_valid) return false;
-		return intpat == intval;
+		if (*intval == 0) return false;
+		return mpz_cmp(atom->intpat, *intval) == 0;
 	case M_NUM_LT:
-		if (!int_valid) return false;
-		return intpat > intval;
+		if (*intval == 0) return false;
+		return mpz_cmp(atom->intpat, *intval) > 0;
 	case M_NUM_LE:
-		if (!int_valid) return false;
-		return intpat >= intval;
+		if (*intval == 0) return false;
+		return mpz_cmp(atom->intpat, *intval) >= 0;
 	case M_NUM_GT:
-		if (!int_valid) return false;
-		return intpat < intval;
+		if (*intval == 0) return false;
+		return mpz_cmp(atom->intpat, *intval) < 0;
 	case M_NUM_GE:
-		if (!int_valid) return false;
-		return intpat <= intval;
+		if (*intval == 0) return false;
+		return mpz_cmp(atom->intpat, *intval) <= 0;
 	}
 	assert(0);
 }
@@ -185,6 +182,7 @@ bool check_predicate(struct predicate * p)
 			++sp;
 		}
 	}
+	if (sp != 1) return false;
 	return true;
 }
 

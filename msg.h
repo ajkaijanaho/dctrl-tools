@@ -35,23 +35,14 @@ void fail(void) { exit(2); }
 #define L_INFORMATIONAL 1
 #define L_DEBUG 0
 
-#define PROGNAME_MAXLEN 64
-
 #if !defined(NDEBUG) && !defined(TEST_NODEBUG) && defined(ENABLE_L_DEBUG)
 #  define INCLUDE_DEBUG_MSGS
-#endif
-
-#ifdef MSG_C__
-int loglevel = L_IMPORTANT;
-char progname [PROGNAME_MAXLEN];
 #endif
 
 inline static int
 do_msg(int severity)
 {
-#ifndef MSG_C__
   extern int loglevel;
-#endif
 
 #if defined(TEST_NODEBUG)
   if (severity == L_DEBUG) {
@@ -66,18 +57,14 @@ do_msg(int severity)
 inline static char const *
 get_progname(void)
 {
-#ifndef MSG_C__
-	extern const char progname [PROGNAME_MAXLEN];
-#endif
+	extern const char progname [];
 	return progname;
 }
 
 static inline
 void record_error(void)
 {
-#ifndef MSG_C__
 	extern bool errors;
-#endif
 	errors = 1;
 }
 
@@ -160,11 +147,8 @@ msg_set_progname (const char * pn);
 static inline
 bool errors_reported(void)
 {
-#ifndef MSG_C__
 	extern bool errors;
-#endif
 	return errors;
 }
-
 
 #endif /* MSG_H__ */

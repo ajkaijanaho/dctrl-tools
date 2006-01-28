@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.6.1
-Build-Depends: gettext (>= 0.11-0)
+Build-Depends: gettext (>= 0.11-0), libgmp3-dev
 
 Package: grep-dctrl
 Architecture: any

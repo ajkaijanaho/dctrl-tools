@@ -20,6 +20,7 @@
 #define PREDICATE_H
 
 #include <assert.h>
+#include <gmp.h>
 #include <regex.h>
 #include <stdint.h>
 #include "fieldtrie.h"
@@ -57,10 +58,11 @@ struct atom {
 	/* Flag: should matching ignore case */
 	unsigned ignore_case;
 	/* The pattern as given on the command line; interpretation
-	 * depends on matching mode. */
+	 * depends on matching mode. Must be null-terminated and
+	 * patlen must equal strlen(pat).  */
 	char const * pat; size_t patlen;
 	/* A parsed value of an integer pattern */
-	intmax_t intpat;
+	mpz_t intpat;
 	/* A compiled version of pat; valid only when mode is M_REGEX
 	 * or M_EREGEX.  */
 	regex_t regex;

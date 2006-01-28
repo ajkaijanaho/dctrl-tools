@@ -1,3 +1,19 @@
+grep-dctrl (2.3) unstable; urgency=low
+
+    Numeric comparisons are now supported.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Jan 2004 00:46:59 +0200
+
+grep-dctrl (2.2) unstable; urgency=low
+
+    Grep-dctrl now supports using the output of a specified
+    command as the default input.  As a result, a
+    grep-aptavail command has been introduced; it uses APT's
+    available database like grep-available uses dselect's
+    available database.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 16 Jan 2004 03:08:58 +0200
+
 grep-dctrl (2.0) unstable; urgency=low
 
     This entry describes changes since the last version in stable, 1.9,

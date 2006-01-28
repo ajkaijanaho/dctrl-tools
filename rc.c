@@ -50,7 +50,7 @@ char const * const ifile_modes[] = { [m_error] = "m_error",
 
 static struct ifile parse(char * s)
 {
-	if (s == 0) return (struct ifile) { .mode = m_read, .s = "-" };
+	assert(s != 0);
 	s = (char*)left_trimmed(s);
 	trim_right(s);
 	if (*s == 0) return (struct ifile) { .mode = m_read, .s = "-" };
@@ -194,6 +194,13 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 
 	fclose(f);
 	free(fname);
-	return parse(rv);
+
+	if (rv != 0) {
+		return parse(rv);
+	} else {
+		message(L_IMPORTANT, _("executable name not found; "
+				       "reading from standard input"), 0);
+		return (struct ifile) { .mode = m_read, .s = "-" };
+	}
 }
 
