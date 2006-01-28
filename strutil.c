@@ -86,8 +86,9 @@ main (void)
       char * orig_ts;
 
       orig_ts = ts = strdup (teststrings [i]);
-      if (ts == 0)
-        exit (EXIT_FAILURE);
+      if (ts == 0) {
+	      fail();
+      }
 
       printf ("Plain: ");
       printout (ts);

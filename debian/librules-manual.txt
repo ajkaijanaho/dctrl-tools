@@ -1,6 +1,6 @@
 Manual for the librules helper                          -*- Text -*-
 ------------------------------
-Last modified: 2002-10-16
+Last modified: 2004-01-01
 
 This file documents an experimental new debian/rules helper, a
 makefile called "librules.mk", which does all the boring work of
@@ -39,9 +39,11 @@ debian/stamp/binary/<package>: debian/stamp/build
         $(postbinary)
         touch $@
 
-     The $(prebinary) macro will create a skeletal build tree for the 
+     The $(prebinary) macro will create a skeletal build tree for the
      package.  It also install the copyright file (debian/copyright)
-     and the Debian changelog file (debian/changelog).
+     and the Debian changelog file (debian/changelog).  If there is a
+     debian/NEWS, it will install it as NEWS.Debian to the
+     documentation directory, compressed.
 
      See below for instructions about how to write your own install commands.
 

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright (C) 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,12 +16,10 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef FNUTIL_H
+#define FNUTIL_H
 
-#include <regex.h>
+char *fnbase(const char *fname);
+char * fnqualify(char const * path);
 
-char * get_regerror (int errcode, regex_t *compiled);
-
-
-#endif /* UTIL_H */
+#endif /* FNUTIL_H */

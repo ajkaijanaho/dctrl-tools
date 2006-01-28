@@ -71,7 +71,7 @@ void para_parse_next(para_t * para)
 			switch (c) {
 			case -1:
 				message(L_FATAL, "unexpected end of file", 0);
-				exit(EXIT_FAILURE);
+				fail();
 			case ':': {
 				size_t len = (pos-1) - field_start;
 				struct fsaf_read_rv r = fsaf_read(fp, field_start, len);
@@ -89,14 +89,14 @@ void para_parse_next(para_t * para)
 				break;
 			case '\n':
 				message(L_FATAL, "unexpected end of line", 0);
-				exit(EXIT_FAILURE);
+				fail();
 			}
 			break;
 		case BODY:
 			switch (c) {
 			case -1:
 				message(L_FATAL, "unexpected end of file", 0);
-				exit(EXIT_FAILURE);
+				fail();
 			case '\n':
 				if (field_data != 0) {
 					field_data->end = pos-1;

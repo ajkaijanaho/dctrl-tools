@@ -1,21 +1,21 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright (C) 1999, 2003  Antti-Juhani Kaijanaho
-  
+     Copyright (C) 1999, 2003, 2004  Antti-Juhani Kaijanaho
+
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
      the Free Software Foundation; either version 2 of the License, or
      (at your option) any later version.
-  
+
      This program is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-     GNU General Public License for more details. 
-  
+     GNU General Public License for more details.
+
      You should have received a copy of the GNU General Public License
      along with this program; see the file COPYING.  If not, write to
      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
      Boston, MA 02111-1307, USA.
-  
+
      The author can be reached via mail at (ISO 8859-1 charset for the city)
         Antti-Juhani Kaijanaho
         Helokantie 1 A 16
@@ -31,11 +31,12 @@
 
 #include <assert.h>
 #include <errno.h>
-#include <publib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "msg.h"
+#include "fnutil.h"
+#include "getaline.h"
 #include "rc.h"
 #include "strutil.h"
 #include "util.h"
@@ -53,19 +54,23 @@ const char * find_ifile_by_exename(const char * exename, const char * rcfname)
 	char * fname;
 	int lineno;
 	FILE * f;
-  
+
 	assert(exename != 0);
-  
+
 	if (rcfname == 0) {
 		for (i = 0; rv == 0 && default_rcfiles [i] != 0; i++) {
 			rv = find_ifile_by_exename(exename, default_rcfiles [i]);
 		}
 		return rv;
 	}
-	
+
 	assert(rcfname != 0);
-	
-	fname = fnqualify_xalloc(rcfname);
+
+	fname = fnqualify(rcfname);
+	if (fname == 0) {
+		errno_msg(L_IMPORTANT, rcfname);
+		return 0;
+	}
 
 	message(L_INFORMATIONAL, _("reading config file"), fname);
 
@@ -86,7 +91,13 @@ const char * find_ifile_by_exename(const char * exename, const char * rcfname)
 		   non-first iterations, too. */
 		free(line);
 
-		line = xgetaline (f);
+		line = getaline (f);
+		if (line == 0) {
+			message(L_FATAL, "read failure or out of memory",
+				fname);
+			fail();
+		}
+
 		++lineno;
 		if (line == 0) {
 			rv = 0;
@@ -101,7 +112,7 @@ const char * find_ifile_by_exename(const char * exename, const char * rcfname)
 
 		line_exe = strtok(line, " \t");
 		if (line_exe == 0) {
-			line_message(L_IMPORTANT, 
+			line_message(L_IMPORTANT,
 				     _("syntax error: need a executable name"),
 				     fname, lineno);
 			continue;

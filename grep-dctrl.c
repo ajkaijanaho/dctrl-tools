@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 1999, 2000, 2001, 2002, 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,12 +19,13 @@
 #include <argp.h>
 #include <assert.h>
 #include <fcntl.h>
-#include <publib.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include "fnutil.h"
 #include "fsaf.h"
 #include "msg.h"
 #include "paragraph.h"
@@ -39,10 +40,14 @@ const char description [] = "Description";
 size_t description_inx;
 
 static char progdoc [] = "grep-dctrl -- grep Debian control files";
-     
+
 #define OPT_CONFIG 256
 #define OPT_OPTPARSE 257
+#define OPT_SILENT 258
 
+#undef BANNER
+
+#ifdef BANNER
 void banner(bool automatic)
 {
 	char * fname = fnqualify_xalloc("~/.grep-dctrl-banner-shown");
@@ -69,7 +74,7 @@ void banner(bool automatic)
 	int r = creat(fname, 0644);
 	if (r == -1) perror(fname);
 
-	if (!automatic) exit(EXIT_SUCCESS);
+	if (!automatic) exit(0);
 
 	for (int i = 15; i > 0; i--) {
 		fprintf(fp, "%2d seconds until program is resumed...\r", i);
@@ -81,6 +86,7 @@ void banner(bool automatic)
 end:
 	free(fname);
 }
+#endif
 
 static struct argp_option options[] = {
 	{ "banner",         'B', 0,                 0, "Show the testing banner." },
@@ -102,6 +108,8 @@ static struct argp_option options[] = {
 	{ "or",             'o', 0,                 0, "Disjunct predicates." },
 	{ "not",            '!', 0,                 0, "Negate the following predicate." },
 	{ "debug-optparse", OPT_OPTPARSE, 0,        0, "Debug option parsing." },
+	{ "quiet",          'q', 0,                 0, "No output to stdout" },
+	{ "silent",         OPT_SILENT, 0,          0, "No output to stdout" },
 	{ 0 }
 };
 
@@ -126,6 +134,8 @@ struct arguments {
 	struct predicate p;
 	/* Configuration file name */
 	char const * rcname;
+	/* Quiet operation? */
+	bool quiet;
 	/* Do show field names? */
 	bool show_field_name;
 	/* Do show (only) first line of Description? */
@@ -155,7 +165,7 @@ static void finish_atom(struct arguments * args)
 	struct atom * atom = get_current_atom(&args->p);
 	if (atom->pat == 0) {
 		message(L_FATAL, "A pattern is mandatory.", 0);
-		exit(EXIT_FAILURE);
+		fail();
 	}
 	predicate_finish_atom(&args->p);
 }
@@ -180,7 +190,7 @@ static void prim_enter(struct arguments * args, const enum state state, const in
 {
 	if (args->top >= MAX_OPS) {
 		message(L_FATAL, "predicate is too complex", 0);
-		exit(EXIT_FAILURE);
+		fail();
 	}
 	args->stack[args->top].insn = insn;
 	args->stack[args->top].state = args->state;
@@ -195,7 +205,7 @@ static void enter(struct arguments * args, const enum state state, const int ins
 {
 	if (args->state == STATE_FINISHED) {
 		message(L_FATAL, "syntax error in command line", 0);
-		exit(EXIT_FAILURE);
+		fail();
 	}
 	while (args->state < state || (state != STATE_NEG && args->state == state)) {
 		leave(args, 0);
@@ -212,7 +222,7 @@ static void finish(struct arguments * args)
 	while (args->top > 0) {
 		if (args->state == STATE_PAREN) {
 			message(L_FATAL, "missing ')' in command line", 0);
-			exit(EXIT_FAILURE);
+			fail();
 		}
 		leave(args, 0);
 	}
@@ -235,7 +245,7 @@ static struct atom * enter_atom(struct arguments * args)
 	}
 	if (args->p.num_atoms >= MAX_ATOMS) {
 		message(L_FATAL, "predicate is too complex", 0);
-		exit(EXIT_FAILURE);
+		fail();
 	}
 	ENTER(STATE_ATOM, I_PUSH(args->p.num_atoms));
 	rv = &args->p.atoms[args->p.num_atoms++];
@@ -255,12 +265,21 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	debug_message("parse_opt", 0);
 	switch (key) {
 	case 'B':
+#ifdef BANNER
 		banner(false);
+#else
+		fprintf(stderr, "Banner is disabled.\n");
+		fail();
+#endif
 	case 'v':
 		args->invert_match = true;
 		break;
 	case 'c':
 		args->count = true;
+		break;
+	case 'q': case OPT_SILENT:
+		debug_message("parse_opt: q", 0);
+		args->quiet = true;
 		break;
 	case 'n':
 		debug_message("parse_opt: n", 0);
@@ -289,7 +308,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		if (ll < 0)
 		{
 			message(L_FATAL, _("no such log level"), optarg);
-			exit(EXIT_FAILURE);
+			fail();
 		}
 		set_loglevel(ll);
 		debug_message("parse_opt: l", 0);
@@ -314,7 +333,12 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 'F':
 		debug_message("parse_opt: F", 0);
 		atom = ENTER_ATOM;
-		assert(atom->field_name == 0); /* FIXME */
+		if (atom->field_name != 0) {
+			message(L_FATAL, "multiple -F (or -P) options are "
+				" currently broken; workaround: --or", 0);
+			fail();
+		}
+//assert(atom->field_name == 0); /* FIXME */
 		atom->field_name = strdup(arg);
 		if (atom->field_name == 0) fatal_enomem(0);
 		break;
@@ -364,7 +388,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			while (args->state != STATE_PAREN) {
 				if (args->top == 0) {
 					message(L_FATAL, "unexpected ')' in command line", 0);
-					exit(EXIT_FAILURE);
+					fail();
 				}
 				leave(args, 0);
 			}
@@ -375,7 +399,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
 				message(L_FATAL, "too many file names", 0);
-				exit(EXIT_FAILURE);
+				fail();
 			}
 			s = strdup(arg);
 			if (s == 0) fatal_enomem(0);
@@ -421,7 +445,7 @@ static void dump_args(struct arguments * args)
 		printf("atoms[%zi].pat = %s\n", i, args->p.atoms[i].pat);
 	}
 	printf("proglen = %zi\n", args->p.proglen);
-	for (i = 0; i < args->p.proglen; i++) {	
+	for (i = 0; i < args->p.proglen; i++) {
 		int op = args->p.program[i];
 		printf("program[%zi] = ", i);
 		switch (op) {
@@ -450,36 +474,39 @@ int main (int argc, char * argv[])
 	init_predicate(&args.p);
 	description_inx = fieldtrie_insert(&args.p.trie, description);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
+#ifdef BANNER
 	banner(true);
+#endif
 
 	if (debug_optparse) { dump_args(&args); return 0; }
 
 	if (args.p.num_atoms == 0) {
 		message(L_FATAL, "a predicate is required", 0);
-		exit(EXIT_FAILURE);
+		fail();
 	}
-	
+
 	if (args.short_descr && !args.description_selected) {
 		if (args.num_show_fields >= MAX_FIELDS) {
 			message(L_FATAL, _("too many output fields"), 0);
-			exit(EXIT_FAILURE);
+			fail();
 		}
-		message(L_INFORMATIONAL, 
+		message(L_INFORMATIONAL,
 			_("Adding Description to selected output fields because of -d"),
-			0); 
+			0);
 		args.show_fields[args.num_show_fields].name = description;
 		args.show_fields[args.num_show_fields].inx = description_inx;
 		++args.num_show_fields;
-	}	
+	}
 
 	if (!args.show_field_name && args.num_show_fields == 0) {
 		message(L_FATAL,
 			_("cannot suppress field names when showing whole paragraphs"),
-			0);      
-		exit(EXIT_FAILURE);
+			0);
+		fail();
 	}
 
 	size_t count = 0;
+	bool found = false;
 	for (size_t i = 0; i < args.num_fnames || (i == 0 && args.num_fnames == 0); ++i) {
 		int fd;
 		const char * fname;
@@ -495,7 +522,7 @@ int main (int argc, char * argv[])
 		} else {
 			fname = args.fname[i];
 		}
-		
+
 		if (strcmp(fname, "-") == 0) {
 			fd = STDIN_FILENO;
 			fname = "stdin";
@@ -503,19 +530,49 @@ int main (int argc, char * argv[])
 			fd = open(fname, O_RDONLY);
 			if (fd == -1) {
 				fprintf(stderr, "%s: %s: %s\n", argv[0], fname, strerror(errno));
+				record_error();
+				break;
+			}
+		}
+
+		{
+			struct stat stat;
+			int r = fstat(fd, &stat);
+			mode_t m = stat.st_mode;
+			if (r == -1) {
+				fprintf(stderr, "%s: %s: cannot stat: %s\n",
+					argv[0], fname, strerror(errno));
+				record_error();
+				close(fd);
+				break;
+			}
+			if (!(S_ISREG(m) || S_ISCHR(m) || S_ISFIFO(m))) {
+				fprintf(stderr, "%s: %s: %s, skipping\n",
+					argv[0], fname,
+					S_ISDIR(m) ? "is a directory" :
+					S_ISBLK(m) ? "is a block device" :
+					S_ISLNK(m) ? "internal error" :
+					S_ISSOCK(m) ? "is a socket" :
+					"unknown file type");
+				record_error();
+				close(fd);
 				break;
 			}
 		}
 
 		FSAF * fp = fsaf_fdopen(fd);
 		para_t para;
-		for (para_init(&para, fp, &args.p.trie); 
-		     !para_eof(&para); 
+		for (para_init(&para, fp, &args.p.trie);
+		     !para_eof(&para);
 		     para_parse_next(&para)) {
 			if ((args.invert_match || !does_para_satisfy(&args.p, &para))
 			    && (!args.invert_match || does_para_satisfy(&args.p, &para))) {
 				continue;
 			}
+			if (args.quiet) {
+				exit(0);
+			}
+			found = true;
 			if (args.count) {
 				++count;
 				continue;
@@ -542,12 +599,11 @@ int main (int argc, char * argv[])
 				continue;
 			}
 			if (args.num_show_fields > 1) puts("");
-				
 		}
-		
+
 		if (fd != STDIN_FILENO) close(fd);
-	}      
+	}
 	if (count) printf("%d\n", count);
-	return 0;
+	return errors_reported() ? 2 : found ? 0 : 1;
 }
 
