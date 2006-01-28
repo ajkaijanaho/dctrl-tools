@@ -22,12 +22,12 @@
 void bundle_slurp(struct para_bundle * pb, struct ifile ifi)
 {
 	int fd = open_ifile(ifi);
-	if (fd == 0) {
+	if (fd == -1) {
 		record_error();
 		return;
 	}
 	
-	FSAF * f = fsaf_fdopen(fd);
+	FSAF * f = fsaf_fdopen(fd, ifi.s);
 	if (f == 0) fatal_enomem(0);
 
 	struct srcfile * sf = malloc(sizeof *sf);

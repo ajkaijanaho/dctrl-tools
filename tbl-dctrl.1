@@ -1,0 +1,203 @@
+.TH tbl\-dctrl 1 2005-07-21 "Debian Project" "Debian administrator's manual"
+\" Copyright (C) 2005  Antti-Juhani Kaijanaho <ajk@debian.org>
+\"      This program is free software; you can redistribute it and/or modify
+\"      it under the terms of the GNU General Public License as published by
+\"      the Free Software Foundation; either version 2 of the License, or
+\"      (at your option) any later version.
+\" 
+\"      This program is distributed in the hope that it will be useful,
+\"      but WITHOUT ANY WARRANTY; without even the implied warranty of
+\"      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+\"      GNU General Public License for more details. 
+\"  
+\"      You should have received a copy of the GNU General Public License
+\"      along with this program; see the file COPYING.  If not, write to
+\"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+\"      Boston, MA 02111-1307, USA.
+.SH NAME
+tbl\-dctrl \- generate tabular representations of data in dctrl format
+.SH SYNOPSIS
+.B tbl\-dctrl
+[
+.I options
+]
+.B \-c
+.IR column\-specification " ..."
+[
+.I filename
+] ...
+.sp
+.B tbl\-dctrl
+.B \-\-version
+.sp
+.B tbl\-dctrl
+.B \-\-help
+.SH DESCRIPTION
+.B tbl\-dctrl
+creates tabular representations of data given to it in Debian control
+file format.
+.PP
+By default,
+.B tbl\-dctrl
+reads the whole database, looking for the longest entry in each
+requested column; it then outputs a table, with borders and column
+titles, where each column is just wide enough to fit the longest
+entry.
+.
+Most of this behaviour can be customized as described below.
+.PP
+A column is requested by specifying the
+.BR \-c " (" \-\-column )
+switch with a column specification.
+.
+The simplest kind of a column specification consists solely of the name
+of a field.
+.
+In such a case,
+.B tbl\-dctrl
+will include in the output a column whose title is the literal column
+specification and whose data is drawn from fields with that name.
+.
+At least one column must be requested.
+.PP
+There are two optional additions one can make to a column
+specification.
+.
+Prefixing the field name with some text followed by an equality sign
+(for example,
+.BR "\-c 'Package name=Package'" )
+modifies the column in such a way that the text before the equality
+sign is used as the column title, while the text after the equality
+sign is used as the name of the field from which data is drawn.
+.
+One can also append a colon followed by a positive whole number to the
+field name.  In such a case, the number after the colon specifies the
+width of the column.
+.
+These two additions can be used separately or together.
+.
+If there are more than one colon, the last one is significant.
+.
+If there are more than one equals sign, the first one is significant.
+.
+Other colons and equals signs are used simply as data.
+.
+Note that the whole column specification must be given to
+.B tbl\-dctrl
+as one argument, so if it contains spaces, it must be quoted for the
+shell.
+.PP
+If all requested columns have a specified width,
+.B tbl\-dctrl
+will produce output immediately, not waiting for the whole input to be
+read in.
+.SH OPTIONS
+.TP
+.BI \-d " DELIMITER, " \-\-delimiter= DELIMITER
+Instead of drawing nice borders to the table, use the specified
+delimiter string to delimit columns in a row.
+.TP
+.BI \-l " LEVEL, " \-\-errorlevel= LEVEL
+Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
+"informational" and "debug", but the last may not be available,
+depending on the compile-time options.  These categories are given
+here in order; every message that is emitted when "fatal" is in
+effect, will be emitted in the "important" error level, and so on.
+The default is "important".
+.TP
+.BI \-V ", " \-\-version
+Print out version information.
+.TP
+.BI \-C ", " \-\-copying
+Print out the copyright license.  This produces much output; be sure
+to redirect or pipe it somewhere (such as your favourite pager).
+.TP
+.Bi \-h ", " \-\-help
+Print out a help summary.
+.SH OPERANDS
+.B tbl\-dctrl
+will read its input from the files named on the command line,
+in the specified order.
+.
+A file called
+.B \-
+represents the program's standard input stream.
+.
+If no files are named, the program behaves as if
+.B \-
+alone had been named, that is, input is read from the standard input
+stream.
+.SH STDIN
+The standard input stream may be used as input as specified above in
+the OPERANDS section.
+.SH "INPUT FILES"
+All input to
+.B tbl\-dctrl
+is in the format of a Debian control file.
+.PP
+A Debian control (dctrl) file is a semistructured single-table
+database stored in a machine-parseable text file.
+.
+Such a database consists of a set of records; each record is a mapping
+from field names to field content.
+.
+Textually, records are separated by empty lines, while each field is
+encoded as one or more nonempty lines inside a record.
+.
+A field starts with its name, followed by a colon, followed by the
+field content.
+.
+The colon must reside on the first line of the field, and the first
+line must start with no whitespace.
+.
+Subsequent lines, in contrast, always start with linear whitespace
+(one or more space or tab characters).
+.PP
+When input is read from multiple files, a record separator is implicit
+between two adjacent files.
+.SH "ENVIRONMENT VARIABLES"
+The standard locale environment, specifically its character set
+setting, affects the interpretation of input and output as character
+streams.
+.SH "ASYNCHRONOUS EVENTS"
+Standard Unix signals have their usual meaning.
+.SH STDOUT
+All output is sent to the standard output stream.
+.
+The output is a tabular representation of the input database restricted
+to the specified fields.  Logically, the output is a table; when the
+.B \-d
+option is used, this table is represented simply by separating columns
+in each row by the specified delimiter; when the option is not used, a
+frame is drawn around the table.  The order of the columns is the same
+as the order of the column specifications on the command line.
+.SH "OUTPUT FILES"
+There are no output files.
+.SH "EXIT STATUS"
+This utility exits with 0 when successful.  It uses a nonzero exit
+code inconsistently when an error is noticed (this is a bug).
+.SH "CONSEQUENCES OF ERRORS"
+In case of errors in the input, the output will be partially or
+completely garbage.  In case of errors in invocation, the program will
+refuse to fnction.
+.SH "EXAMPLES"
+The following command line pipe outputs a table of all packages, with
+their maintainer data, sorted by the maintainer data, that have no
+content:
+.nf
+% grep\-available \-FInstalled\-Size \-\-eq 0 | sort\-dctrl \-kMaintainer \- |
+  tbl\-dctrl \-cPackage \-cMaintainer
+.fi
+.SH "SEE ALSO"
+.BR ara (1),
+.BR apt\-cache (1),
+.BR dpkg (8),
+.BR dpkg\-awk (1),
+.BR dpkg\-query (1),
+.BR grep\-dctrl (1),
+.BR sort\-dctrl (1)
+.SH AUTHOR
+The
+.B tbl\-dctrl
+program and this manual page were written by Antti-Juhani Kaijanaho.
+

@@ -1,5 +1,5 @@
-.TH UPDATE-AVAIL 8 2004-07-11 "Debian Project" "Debian administrator's manual"
-\" Copyright (C) 2004  Antti-Juhani Kaijanaho <gaia@iki.fi>
+.TH SYNC\-AVAILABLE 8 2005-07-11 "Debian Project" "Debian administrator's manual"
+\" Copyright (C) 2004, 2005  Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
 \"      the Free Software Foundation; either version 2 of the License, or
@@ -15,30 +15,30 @@
 \"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 \"      Boston, MA 02111-1307, USA.
 .SH NAME
-update-avail \- sync dpkg's available database with apt's database
+sync\-available \- sync dpkg's available database with apt's database
 .SH SYNOPSIS
-.B update-avail
+.B sync\-available
 .sp
-.B update-avail --version
+.B sync\-available --version
 .sp
-.B update-avail --help
+.B sync\-available --help
 .SH DESCRIPTION
 This program updates the
 .BR dpkg (8)
 available database with the data in the
 .BR apt (8)
 package database.  This is required for
-.BR grep-available (1)
+.BR grep\-available (1)
 and other similar programs to give up-to-date results.
 .PP
 The same functionality is available through
 .BR dselect (8),
 when it is configured to use
 .BR apt (8)
-as its aquisition method.  However, this program does not require that
+as its acquisition method.  However, this program does not require that
 .BR dselect (8)
 is installed.
-.SH EXIT STATUS
+.SH "EXIT STATUS"
 The program exits with status code 0 if all went well, and a non-zero
 status code otherwise.
 .SH OPTIONS
@@ -57,4 +57,4 @@ Kaijanaho <ajk@debian.org>.
 .BR apt (8),
 .BR dpkg (8),
 .BR dselect (8),
-.BR grep-available (1)
+.BR grep\-available (1)

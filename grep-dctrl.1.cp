@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2005-06-08 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2005-07-11 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
@@ -191,7 +191,7 @@ option, if any, the last field being the default.
 .IP "\-n, \-\-no\-field\-names"
 Suppress field names when showing specified fields, only their bodies
 are shown.  Each field is printed in its original form without the
-field name, the colon after it and any whitespace predecing the start
+field name, the colon after it and any whitespace preceding the start
 of the body.
 .IP "\-v, \-\-invert\-match"
 Instead of showing all the paragraphs that match, show those paragraphs

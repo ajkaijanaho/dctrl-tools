@@ -58,7 +58,7 @@ do_msg(int severity)
 inline static char const *
 get_progname(void)
 {
-	extern const char progname [];
+	extern char progname [];
 	return progname;
 }
 

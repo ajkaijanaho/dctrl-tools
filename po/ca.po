@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2005-06-09 00:22+0300\n"
+"POT-Creation-Date: 2005-07-20 13:08+0300\n"
 "PO-Revision-Date: 2004-02-09 10:16+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -133,11 +133,11 @@ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 msgid "Show the testing banner."
 msgstr "Mostra l'avís de prova."
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "NIVELL"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36
+#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Estableix el nivell de depuració a NIVELL."
 
@@ -204,7 +204,7 @@ msgstr "Utilitza NOMFITXER com el fitxer de configuració."
 msgid "Do an exact match."
 msgstr "Fes una coincidència exacta."
 
-#: grep-dctrl.c:119 sort-dctrl.c:35
+#: grep-dctrl.c:119 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
@@ -246,6 +246,7 @@ msgid "Debug option parsing."
 msgstr "Depura l'anàlisi d'opcions."
 
 #: grep-dctrl.c:129 grep-dctrl.c:130 sort-dctrl.c:37 sort-dctrl.c:38
+#: tbl-dctrl.c:39 tbl-dctrl.c:40
 #, fuzzy
 msgid "Do no output to stdout."
 msgstr "No mostra res a l'eixida estàndard"
@@ -259,11 +260,11 @@ msgstr "el predicat és massa complex"
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:409 sort-dctrl.c:99
+#: grep-dctrl.c:409 sort-dctrl.c:99 tbl-dctrl.c:278
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:509 sort-dctrl.c:111
+#: grep-dctrl.c:509 sort-dctrl.c:111 tbl-dctrl.c:290
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
@@ -347,6 +348,39 @@ msgstr ""
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
+
+#: tbl-dctrl.c:35
+msgid "DELIM"
+msgstr ""
+
+#: tbl-dctrl.c:35
+msgid "Specify a delimiter."
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "SPEC"
+msgstr ""
+
+#: tbl-dctrl.c:36
+msgid "Append the specified column."
+msgstr ""
+
+#: tbl-dctrl.c:264
+msgid "invalid column length"
+msgstr ""
+
+#: tbl-dctrl.c:311
+#, fuzzy
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
+
+#: tbl-dctrl.c:325
+msgid "bad multibyte character"
+msgstr ""
+
+#, fuzzy
+#~ msgid "pretty-dctrl -- pretty-print Debian control files"
+#~ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
 #~ msgid "invalid numeric pattern"
 #~ msgstr "el patró numèric és invàlid"

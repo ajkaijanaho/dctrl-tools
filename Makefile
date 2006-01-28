@@ -19,7 +19,7 @@ libobj = misc.o msg.o predicate.o util.o fsaf.o paragraph.o \
          fieldtrie.o rc.o strutil.o getaline.o fnutil.o para_pool.o \
 	 ifile.o para_bundle.o sorter.o version.o
 
-obj = $(libobj) grep-dctrl.o sort-dctrl.o
+obj = $(libobj) grep-dctrl.o sort-dctrl.o tbl-dctrl.o
 src = $(obj:.o=.c)
 
 LDLIBS = -L. -ldctrl
@@ -27,7 +27,8 @@ LDLIBS = -L. -ldctrl
 # List of translated languages is given in langs.mk
 include langs.mk
 
-all : grep-dctrl sort-dctrl sync-available grep-dctrl.1 sort-dctrl.1 mo
+all :	grep-dctrl sort-dctrl tbl-dctrl sync-available \
+	grep-dctrl.1 sort-dctrl.1 mo
 
 pot : po/dctrl-tools.pot
 
@@ -38,6 +39,8 @@ mo : $(foreach f,$(langs),po/$(f).mo)
 grep-dctrl : grep-dctrl.o libdctrl.a
 
 sort-dctrl : sort-dctrl.o libdctrl.a
+
+tbl-dctrl : tbl-dctrl.o libdctrl.a
 
 % : %.o
 	$(CC) $(LDFLAGS) -o $@ $< $(LDLIBS)

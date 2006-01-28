@@ -26,6 +26,8 @@ Description: Command-line tools to process Debian package information
    grep-aptavail  - Grep the APT available database
  .
    sort-dctrl     - Sort dctrl-format files
+ .
+   tbl-dctrl      - Tabularize dctrl-format files
  . 
    sync-available - Sync the dpkg available database with
                     the apt database

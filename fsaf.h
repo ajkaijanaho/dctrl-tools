@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003 Antti-Juhani Kaijanaho
+    Copyright (C) 2003, 2005 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 /* FAST (MOSTLY) SEQUENTIAL-ACCESS FILE LAYER */
 
 struct fsaf_private {
+	char *fname;
 	int fd;
 	char * buf;
 	size_t buf_capacity;
@@ -44,7 +45,7 @@ typedef struct fsaf_private FSAF;
 
 /* Open a FSAF for the given fd. Only read access is supported for
  * now.  The whole file is initially valid.  */
-FSAF * fsaf_fdopen(int fd);
+FSAF * fsaf_fdopen(int fd, char const *fname);
 
 /* Close the given FSAF.  This DOES NOT close the underlying fd.  */
 void fsaf_close(FSAF *);
