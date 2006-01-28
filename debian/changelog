@@ -1,3 +1,11 @@
+grep-dctrl (1.102) unstable; urgency=low
+
+  * paragraph.c (para_parse_next) [case BODY_NEWLINE]: Do not declare eof
+    on reading -1.
+    Closes: #205933 (Silently ignores the last stanza if no trailing newline)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 25 Aug 2003 18:46:04 +0300
+
 grep-dctrl (1.101) unstable; urgency=low
 
   * fieldtrie.h (fieldtrie_count): New function.
