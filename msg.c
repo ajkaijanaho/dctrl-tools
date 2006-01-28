@@ -32,6 +32,10 @@
 
 #define MSG_C__
 
+#include <stdbool.h>
+
+bool errors = false;
+
 #include <assert.h>
 #include <string.h>
 #include "msg.h"
@@ -40,7 +44,7 @@ struct str2int_avec_t {
   const char * str;
   int integer;
 };
-    
+
 int
 within_interval (int n, int a, int b)
 {

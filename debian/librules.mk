@@ -1,6 +1,6 @@
 # librules.mk - a library of convenient rules and macros for debian/rules files
 #
-# Copyright © 1999, 2000, 2002, 2003 Antti-Juhani Kaijanaho.
+# Copyright © 1999, 2000, 2002, 2003, 2004 Antti-Juhani Kaijanaho.
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this file, to deal in this file without
@@ -29,6 +29,7 @@
 # 3.6.0.
 
 # Changes:
+#  2004-01-01 ajk  Install NEWS.Debian if it exists
 #  2003-08-10 ajk  Add $(etcdir)
 #  2002-10-16 ajk  Don't force installing the prerm/postinst scripts
 #                  Instead, install them if present.
@@ -145,7 +146,11 @@ define prebinary
 	$(install_dir) $(docdir)
 	$(install_nonex) debian/copyright $(docdir)
 	$(install_nonex) debian/changelog $(docdir)/$(librules_changelog)
-	$(gzip) $(docdir)/$(librules_changelog)
+	set -e ; if test -e debian/NEWS ; then \
+		$(install_nonex) debian/NEWS $(docdir)/NEWS.Debian ; \
+		$(gzip) $(docdir)/NEWS.Debian ; \
+	fi
+	$(gzip) $(docdir)/$(librules_changelog) 
 endef
 
 define postbinary

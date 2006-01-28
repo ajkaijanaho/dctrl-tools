@@ -1,3 +1,46 @@
+grep-dctrl (1.103) unstable; urgency=low
+
+  * grep_dctrl.c (banner, main, parse_option): Disable the banner.
+  * predicate.c (predicate_finish_atom): Don't bail out if the field name
+    is missing; instead, just don't add the missing field name to the
+    trie.  Thanks to Jeff King for diagnosis and patch.
+    Closes: #205998 (regex/eregex support produces no results)
+  * grep-dctrl.c (main): Track whether any matches were found and choose
+    exit status based on that.
+    Closes: #216549 (Return 0 for success, 1 for failure, like grep does)
+  * grep-dctrl.1.cp: Add grep-available and grep-status to NAME section
+    and mention them in the SYNOPSIS.
+    Closes: #199762 (mention grep-available in synopsys)
+  * grep-dctrl.1.cp: Add dpkg available and status files to FILES section.
+    Closes: #204781 (Add available and status file to FILES section on the
+    man page)
+  * Use the grep return value 2 for errors:
+    - msg.h (fail, errors_reported, record_error): New function.
+    - msg.h (line_message), msg.c (errors): Record any use of L_IMPORTANT 
+      or above
+    - Change exit(EXIT_FAILURE) to fail() everywhere.
+    - Add record_error invocations where appropriate.
+    Closes: #225806 (Return 2 for error, like grep does)
+  * grep-dctrl.c (main): Check the file type and fail if necessary.
+    Thanks to Tuomas Jormola.
+    Closes: #212939 (Segfaults if there are directories in the input file list)
+    Closes: #222461 (segfaults if given .* as the predicator)
+  * grep-dctrl.c (parse_option): Replace the multiple -F/-P assert with a
+    helpful error message.  
+    Closes: #215182 (some man page examples fail)
+  * grep-dctrl.1.cp (SEE ALSO): dpkg(1) -> dpkg(8), thanks to Frank
+    Lichtenheld.
+    Closes: #213297 (there is no dpkg(1) manpage, it's dpkg(8))
+  * debian/copyright: Added 2004 to copyright years and recoded to UTF-8.
+  * grep.dctrl.1.cp: Document the new -q | --quiet | --silent option
+    and the exit value semantics.
+  * debian/NEWS.Debian: New file.
+  * Get rid of the build-time dependency to publib-dev by incorporating
+    the required functions in grep-dctrl.  This is by request from Lars
+    Wirzenius, who wants to get rid of publib-dev.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu,  1 Jan 2004 23:19:54 +0200
+
 grep-dctrl (1.102) unstable; urgency=low
 
   * paragraph.c (para_parse_next) [case BODY_NEWLINE]: Do not declare eof

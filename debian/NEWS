@@ -1,0 +1,41 @@
+grep-dctrl (1.103) unstable; urgency=low
+
+    The annoying banner which was added in version 1.100 and which asked
+    for testing has been removed.  The banner logic used the dotfile
+    ~/.grep-dctrl-banner-shown, which can now be safely removed from all
+    home directories.  The banner logic only ever existed in unstable; it
+    was never in any version of grep-dctrl that was released with Debian
+    stable.
+  
+    Grep-dctrl now adheres to the same exit value conventions as grep(1).
+    It also supports grep's -q option.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu,  1 Jan 2004 20:44:10 +0200
+
+grep-dctrl (1.100) unstable; urgency=low
+
+    This version was a total rewrite of grep-dctrl.  This added several
+    new features, made it run generally faster and, of course, added some
+    bugs and regressions.
+  
+    The big new feature is support for boolean queries.  The new feature
+    allows combining searches arbitrarily using propositional connectives
+    (and, or and not).  The command line syntax has been extended to
+    support this feature, but all old invocations work the same (modulo
+    bugs and regressions).  See the manual page for more information.
+  
+    There are also several known regressions (presented here in order
+    of severity):
+      - The -Ffoo,bar,baz feature that allows searching in multiple fields
+      is not supported.  However, this is not that bad, as the same effect
+      can be obtained by using the new boolean query syntax (ie. instead of
+      saying -FPackage,Description foo, say -FPackage foo -o -FDescription
+      foo).
+    - There is no longer any internationalization support and hence no
+      translations of messages.
+  
+    This version added an annoying banner asking for testing.  It has been
+    later removed.
+  
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu,  1 Jan 2004 20:37:52 +0200
+

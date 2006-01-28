@@ -1,6 +1,6 @@
-.TH GREP-DCTRL 1 2003-08-10 "Debian Project" "Debian user's manual"
-\" Copyright (C) 1999, 2000, 2001, 2002, 2003 Antti-Juhani Kaijanaho
-\"   <gaia@iki.fi>
+.TH GREP-DCTRL 1 2004-01-01 "Debian Project" "Debian user's manual"
+\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
+\"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \" Permission is granted to make and distribute verbatim copies of
 \" this manual provided the copyright notice and this permission notice
 \" are preserved on all copies.
@@ -17,7 +17,7 @@
 \" the original English.
 \" 
 .SH NAME
-grep-dctrl \- grep Debian control files
+grep-dctrl, grep-status, grep-available \- grep Debian control files
 .SH SYNOPSIS
 .B grep-dctrl
 [options] predicate
@@ -25,7 +25,25 @@ grep-dctrl \- grep Debian control files
 .IR file " ..."
 ]
 .sp
+.B grep-status
+[options] predicate
+[
+.IR file " ..."
+]
+.sp
+.B grep-available
+[options] predicate
+[
+.IR file " ..."
+]
+.sp
 .B grep-dctrl
+--copying | --help | --version | -ChV
+.sp
+.B grep-status
+--copying | --help | --version | -ChV
+.sp
+.B grep-available
 --copying | --help | --version | -ChV
 .SH DESCRIPTION
 The grep-dctrl program can answer such questions as 
@@ -77,6 +95,17 @@ There is one exception to the above: if the program name is
 .BR grep-dctrl ,
 the default input source is always standard input; this cannot be
 overridden by the configuration file.
+.PP
+The programs
+.B grep-available
+and 
+.B grep-status
+are aliases of (actually, symbolic links to)
+.BR grep-dctrl .
+In the shipped configuration, these aliases use as their default input
+file the
+.BR dpkg (8)
+available and status files, respectively.
 .SH OPTIONS
 .SS Atomic predicate modifiers
 .IP "-F FIELD,FIELD,...; --field=FIELD,FIELD,..."
@@ -131,6 +160,9 @@ match.
 .IP "-c, --count"
 Instead of showing the paragraphs that match (or, with -v, that don't
 match), show the count of those paragraphs.
+.IP "-q, --quiet, --silent"
+Output nothing to the standard output stream.  Instead, exit
+immediately after finding the first match.
 .SS Miscellaneous
 .IP "--config-file=FNAME"
 Use FNAME as the config file instead of the defaults.
@@ -297,6 +329,13 @@ These examples cover a lot of typical uses of this utility, but not
 all possible uses.  Use your imagination!  The building blocks are
 there, and if something's missing, let me know.
 .SH DIAGNOSTICS
+In the absence of errors, the exit code 0 is used if at least one
+match was found, and the exit code 1 is used if no matches were found.
+If there were errors, the exit code is 2, with one exception.  If the
+-q, --quiet or --silent options are used, the exit code 0 is used when
+a match is found regardless of whether there have been non-fatal
+errors.
+.PP
 These messages are emitted in log levels "fatal" and "important".
 .B This list is out of date.
 .IP "you can only use -s once"
@@ -369,6 +408,14 @@ The format is line-based, with `#' introducing a comment that lasts to
 the end of the line.  Each line defines one association between a
 program name and a default input file.  These two things are listed in
 the line in order, separated by whitespace.  Empty lines are ignored.
+.IP /var/lib/dpkg/available
+The default input file of
+.B grep-available
+when the shipped configuration is in effect.
+.IP /var/lib/dpkg/status
+The default input file of
+.B grep-status
+when the shipped configuration is in effect.
 .SH AUTHOR
 The program and this manual page were written by Antti-Juhani
 Kaijanaho <gaia@iki.fi>.  Bill Allombert <ballombe@debian.org>
@@ -379,7 +426,7 @@ package packaging-manual.  Also available in the Debian website.  The
 Debian project, 2003.
 .PP
 .BR apt-cache (1),
-.BR dpkg (1),
+.BR dpkg (8),
 .BR dpkg-awk (1),
 .BR sgrep (1)
 \" Local variables:

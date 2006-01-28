@@ -19,9 +19,15 @@
 #ifndef MSG_H__
 #define MSG_H__
 
+#include <errno.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "i18n.h"
+
+static inline
+void fail(void) { exit(2); }
 
 /* log levels */
 #define L_FATAL 3
@@ -64,10 +70,11 @@ do_msg(int severity)
 inline static void
 line_message (int severity, const char * s, const char * fname, int line)
 {
-	if (do_msg(severity)) {
 #ifndef MSG_C__
-		extern const char progname [PROGNAME_MAXLEN];
+	extern const char progname [PROGNAME_MAXLEN];
+	extern bool errors;
 #endif
+	if (do_msg(severity)) {
       
 		if (fname == 0) {
 			fprintf (stderr,  "%s: %s.\n", progname, s);
@@ -78,6 +85,7 @@ line_message (int severity, const char * s, const char * fname, int line)
 				fprintf (stderr, "%s: %s: %s.\n", progname, fname, s);
 			}
 		}
+		if (severity >= L_IMPORTANT) errors = true;
 	}
 }
 
@@ -99,6 +107,12 @@ debug_message (const char * s, const char * fname)
 #endif
 }
 
+inline static void
+errno_msg(int severity, char const * fname)
+{
+	message(severity, strerror(errno), fname);
+}
+
 #define enomem_msg _("cannot find enough memory")
 
 inline static void
@@ -110,8 +124,8 @@ enomem (const char * fname)
 inline static void
 fatal_enomem (const char * fname)
 {
-  message (L_FATAL, enomem_msg, fname);
-  exit (EXIT_FAILURE);
+  message(L_FATAL, enomem_msg, fname);
+  fail();
 }
 
 #undef enomem_msg
@@ -129,5 +143,25 @@ set_loglevel (int ll);
 /* Set program name to pn. */
 void
 msg_set_progname (const char * pn);
+
+/* Return true iff loglevels IMPORTANT or FATAL have been used.  */
+static inline
+bool errors_reported(void)
+{
+#ifndef MSG_C__
+	extern bool errors;
+#endif
+	return errors;
+}
+
+static inline
+void record_error(void)
+{
+#ifndef MSG_C__
+	extern bool errors;
+#endif
+	errors = 1;
+}
+
 
 #endif /* MSG_H__ */
