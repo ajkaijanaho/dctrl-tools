@@ -1,3 +1,28 @@
+grep-dctrl (2.6.6) unstable; urgency=low
+
+  * Go to unstable again.
+  * Merge 2.1.10 and 2.1.11 (no po/ merge).
+  * po/fi.po: Sync translation with 2.1.11.
+  * Change numeric comparison to version number comparison.
+    Noteworthy individual changes:
+      + debian/control: Drop libgmp3-dev build-dependency.
+      + Makefile: No longer link with libgmp.
+      + grep-dctrl.1.cp: Document, remove earlier warnings.
+      + grep-dctrl.c: Document, remove earlier warnings (etc.)
+      + predicate.c: Replace numeric comparison with version
+        comparison.  Copy the actual comparison code from dpkg.
+      + paragraph.[ch]: No longer do a numeric parse.
+      + debian/copyright: Document dpkg copyright.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed,  8 Jun 2005 19:25:10 +0300
+
+grep-dctrl (2.6.5) experimental; urgency=low
+
+  * po/pt_BR.po: New translation by Mauricio Vieira.
+  * Merged 2.1.7, 2.1.8 and 2.1.9 (no po/ merge).
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 26 Mar 2005 06:04:19 +0200
+
 grep-dctrl (2.6.4) experimental; urgency=low
 
   * debian/control (Build-Depends): gcc (>= 3.0)
@@ -102,6 +127,61 @@ grep-dctrl (2.2) experimental; urgency=low
   * debian/control [Description]: Mention the specializations.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 16 Jan 2004 03:08:58 +0200
+
+grep-dctrl (2.1.11) unstable; urgency=medium
+
+  * po/fi.po: Fix encoding mistakes.
+    Closes: #310988 (bad char in Finnish translation)
+    [Reported by Lars Wirzenius <liw@iki.fi>]
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 27 May 2005 19:22:50 +0300
+
+grep-dctrl (2.1.10) unstable; urgency=medium
+
+  * grep-dctrl.1.cp: Reinsert COMPATIBILITY section, which seems to have
+    been removed accidentally just prior to 2.0.  Thanks to Ian Lynagh for
+    spotting this.
+  
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri,  8 Apr 2005 16:42:15 +0300
+
+grep-dctrl (2.1.9) unstable; urgency=low
+
+  * grep-dctrl.c: Allow atoms to share code, and use that
+    to build the common code when atoms are cloned.
+    Closes: #299597 (different search results based on order of field names)
+                     [Reported by Michael Koch]
+    (The older fix was only partial in that if more than two were
+     cloned, only the first two clones were honored.)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 26 Mar 2005 01:09:01 +0200
+
+grep-dctrl (2.1.8) unstable; urgency=low
+
+  * po/pt_BR.po: New translation by Mauricio Vieira.
+  * grep-dctrl.c (enter_atom, clone_atom): Add sizeof to mallocs.
+    Closes: #285439 (Fail with combined predicates)
+                    [Reported by Pierre THIERRY]
+  * Fix -Fxxx,yyy handling:
+    - grep-dctrl.c (clone_atom): The *old* atom must receive the 
+                                 compound predicate code.
+    - grep-dctrl.c (parse_prim): Actually *use* the atom's code
+                                 instead of just I_PUSH.
+    Closes: #285738 (grep-dctrl doesn't search all the -F fields somehow)
+                    [Reported by Gerfried Fuchs]
+  * msg.h (msg_get_progname): Fix progname type inconsistency.
+    Closes: #286912 (FTBFS (amd64/gcc-4.0): conflicting types for 'progname')
+                    [Reported by Andreas Jochens]
+  * grep-dctrl: Add a .args_doc field to argp, fixing the usage summary.
+    Closes: #287746 (usage message incorrect) [Reported by Branden Robinson]
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 31 Dec 2004 05:28:00 +0200
+
+grep-dctrl (2.1.7) unstable; urgency=low
+
+  * Apply patch by Andreas Metzler.  Closes: #265858 (Unescaped dashes in
+    manpage break searching or cut-and-paste with UTF-8 locale)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 16 Aug 2004 19:52:03 +0300 
 
 grep-dctrl (2.1.6) unstable; urgency=low
 

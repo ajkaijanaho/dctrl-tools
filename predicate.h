@@ -20,7 +20,6 @@
 #define PREDICATE_H
 
 #include <assert.h>
-#include <gmp.h>
 #include <regex.h>
 #include <stdint.h>
 #include "fieldtrie.h"
@@ -47,13 +46,13 @@ struct atom {
 		M_REGEX, /* POSIX regular expression match */
 		M_EREGEX, /* POSIX extended regular expression matching */
 		M_EXACT, /* exact string match */
-#define M_FIRST_NUMERIC M_NUM_EQ
-		M_NUM_EQ, /* numeric equality comparison */
-		M_NUM_LT, /* numeric < */
-		M_NUM_LE, /* numeric <= */
-		M_NUM_GT, /* numeric > */
-		M_NUM_GE, /* numeric >= */
-#define M_LAST_NUMERIC M_NUM_GE
+#define M_FIRST_VERSION M_VER_EQ
+		M_VER_EQ, /* numeric equality comparison */
+		M_VER_LT, /* numeric < */
+		M_VER_LE, /* numeric <= */
+		M_VER_GT, /* numeric > */
+		M_VER_GE, /* numeric >= */
+#define M_LAST_VERSION M_VER_GE
 	} mode;
 	/* Flag: should matching ignore case */
 	unsigned ignore_case;
@@ -61,8 +60,6 @@ struct atom {
 	 * depends on matching mode. Must be null-terminated and
 	 * patlen must equal strlen(pat).  */
 	char const * pat; size_t patlen;
-	/* A parsed value of an integer pattern */
-	mpz_t intpat;
 	/* A compiled version of pat; valid only when mode is M_REGEX
 	 * or M_EREGEX.  */
 	regex_t regex;

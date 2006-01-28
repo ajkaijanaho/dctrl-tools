@@ -44,6 +44,8 @@ size_t description_inx;
 
 static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 
+static char argsdoc [] = "PREDICATE [FILENAME...]";
+
 #define OPT_CONFIG 256
 #define OPT_OPTPARSE 257
 #define OPT_SILENT 258
@@ -52,10 +54,6 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 #define OPT_LE 261
 #define OPT_GT 262
 #define OPT_GE 263
-
-static bool num_comp_warning_shown = false;
-static char const num_comp_warning [] = 
-"%s: WARNING: the semantics of numeric comparison will change in the future\n";
 
 #undef BANNER
 
@@ -121,11 +119,11 @@ static struct argp_option options[] = {
 	{ "and",	    'a', 0,		    0, N_("Conjunct predicates.") },
 	{ "or",		    'o', 0,		    0, N_("Disjunct predicates.") },
 	{ "not",	    '!', 0,		    0, N_("Negate the following predicate.") },
-	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for numerical equality.") },
-	{ "lt",		    OPT_LT, 0,		    0, N_("Numerical test: <.") },
-	{ "le",		    OPT_LE, 0,		    0, N_("Numerical test: <=.") },
-	{ "gt",		    OPT_GT, 0,		    0, N_("Numerical test: >.") },
-	{ "ge",		    OPT_GE, 0,		    0, N_("Numerical test: >=.") },
+	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for version number equality.") },
+	{ "lt",		    OPT_LT, 0,		    0, N_("Version number comparison: <.") },
+	{ "le",		    OPT_LE, 0,		    0, N_("Version number comparison: <=.") },
+	{ "gt",		    OPT_GT, 0,		    0, N_("Version number comparison: >.") },
+	{ "ge",		    OPT_GE, 0,		    0, N_("Version number comparison: >=.") },
 	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
 	{ "quiet",	    'q', 0,		    0, N_("Do no output to stdout.") },
 	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
@@ -191,7 +189,7 @@ struct arguments {
 	struct atom_code {
 		size_t n;
 		int * routine;
-	} atom_code[MAX_ATOMS];
+	} *atom_code[MAX_ATOMS];
 	/* File names seen on the command line.  */
 	struct ifile fname[MAX_FNAMES];
 	/**/
@@ -219,18 +217,14 @@ struct atom * clone_atom(struct arguments * args)
 	rv->ignore_case = atom->ignore_case;
 	rv->pat = atom->pat;
 	rv->patlen = atom->patlen;
-	struct atom_code * oac = &args->atom_code[oa];
-	struct atom_code * nac = &args->atom_code[na];
-	assert(nac->n == 0);
-	assert(oac->n > 0);
-	nac->n = oac->n+2;
-	nac->routine = malloc(nac->n);
-	if (nac->routine == 0) fatal_enomem(0);
-	for (size_t i = 0; i < oac->n; i++) {
-		nac->routine[i] = oac->routine[i];
-	}
-	nac->routine[oac->n+0] = I_PUSH(na);
-	nac->routine[oac->n+1] = I_OR;
+	struct atom_code * ac = args->atom_code[oa];
+	args->atom_code[na] = ac;
+	assert(ac->n > 0);
+	ac->n += 2;
+	ac->routine = realloc(ac->routine, ac->n * sizeof *ac->routine);
+	if (ac->routine == 0) fatal_enomem(0);
+	ac->routine[ac->n-2] = I_PUSH(na);
+	ac->routine[ac->n-1] = I_OR;
 	return rv;
 }
 
@@ -323,13 +317,15 @@ static struct atom * enter_atom(struct arguments * args)
 		fail();
 	}
 	APPTOK(args->p.num_atoms + TOK_ATOM_BASE);
-	assert(args->atom_code[args->p.num_atoms].n == 0);
-	args->atom_code[args->p.num_atoms].n = 1;
-	args->atom_code[args->p.num_atoms].routine = malloc(1);
-	if (args->atom_code[args->p.num_atoms].routine == 0) {
+	args->atom_code[args->p.num_atoms] =
+		malloc(sizeof *args->atom_code[args->p.num_atoms]);
+	if (args->atom_code[args->p.num_atoms] == 0) fatal_enomem(0);
+	args->atom_code[args->p.num_atoms]->n = 1;
+	args->atom_code[args->p.num_atoms]->routine = malloc(1 * sizeof(int));
+	if (args->atom_code[args->p.num_atoms]->routine == 0) {
 		fatal_enomem(0);
 	}
-	args->atom_code[args->p.num_atoms].routine[0] 
+	args->atom_code[args->p.num_atoms]->routine[0] 
 		= I_PUSH(args->p.num_atoms);
 	rv = &args->p.atoms[args->p.num_atoms++];
 	rv->field_name = 0;
@@ -461,43 +457,23 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case OPT_EQ:
 		debug_message("parse_opt: eq", 0);
-		set_mode(M_NUM_EQ);
-		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
-			fprintf(stderr, num_comp_warning, get_progname());
-			num_comp_warning_shown = true;
-		}
+		set_mode(M_VER_EQ);
 		break;
 	case OPT_LT:
 		debug_message("parse_opt: lt", 0);
-		set_mode(M_NUM_LT);
-		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
-			fprintf(stderr, num_comp_warning, get_progname());
-			num_comp_warning_shown = true;
-		}
+		set_mode(M_VER_LT);
 		break;
 	case OPT_LE:
 		debug_message("parse_opt: le", 0);
-		set_mode(M_NUM_LE);
-		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
-			fprintf(stderr, num_comp_warning, get_progname());
-			num_comp_warning_shown = true;
-		}
+		set_mode(M_VER_LE);
 		break;
 	case OPT_GT:
 		debug_message("parse_opt: gt", 0);
-		set_mode(M_NUM_GT);
-		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
-			fprintf(stderr, num_comp_warning, get_progname());
-			num_comp_warning_shown = true;
-		}
+		set_mode(M_VER_GT);
 		break;
 	case OPT_GE:
 		debug_message("parse_opt: ge", 0);
-		set_mode(M_NUM_GE);
-		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
-			fprintf(stderr, num_comp_warning, get_progname());
-			num_comp_warning_shown = true;
-		}
+		set_mode(M_VER_GE);
 		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
@@ -754,7 +730,13 @@ static void parse_prim(struct arguments * args)
 	int atom = get_token(args) - TOK_ATOM_BASE;
 	assert(atom >= 0);
 	assert(atom < MAX_ATOMS);
+	struct atom_code *ac = args->atom_code[atom];
+	for (size_t i = 0; i < ac->n; i++) {
+		addinsn(&args->p, ac->routine[i]);
+	}
+/*
 	addinsn(&args->p, I_PUSH(atom));
+*/
 }
 
 static void parse_neg(struct arguments * args)
@@ -796,7 +778,10 @@ static void parse_predicate(struct arguments * args)
 	if (tok != TOK_EOD) unexpected(tok);
 }
 
-static struct argp argp = { options, parse_opt, 0, progdoc };
+static struct argp argp = { .options = options,
+			    .parser = parse_opt,
+			    .args_doc = argsdoc,
+			    .doc = progdoc };
 
 int main (int argc, char * argv[])
 {
