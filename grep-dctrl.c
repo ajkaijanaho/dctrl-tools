@@ -47,6 +47,34 @@ static char progdoc [] = "grep-dctrl -- grep Debian control files";
 
 #undef BANNER
 
+#define COPYING "/usr/share/common-licenses/GPL"
+
+/* Copy the file called fname to standard outuput stream.  Return zero
+   iff problems were encountered. */
+static int to_stdout (const char * fname)
+{
+	FILE * f;
+	int c;
+	int rv = 1;
+
+	f = fopen (fname, "r");
+	if (f == 0) {
+		message (L_FATAL, strerror (errno), COPYING);
+		return 0;
+	}
+
+	while ( ( c = getc (f)) != EOF) putchar (c);
+
+	if (ferror (f)) {
+		message (L_FATAL, strerror (errno), COPYING);
+		rv = 0;
+	}
+
+	fclose (f);
+
+	return rv;
+}
+
 #ifdef BANNER
 void banner(bool automatic)
 {
@@ -89,33 +117,35 @@ end:
 #endif
 
 static struct argp_option options[] = {
-	{ "banner",         'B', 0,                 0, "Show the testing banner." },
-	{ "errorlevel",     'l', "LEVEL",           0, "Set debugging level to LEVEL." },
-	{ "field",          'F', "FIELD,FIELD,...", 0, "Restrict  pattern  matching  to  the FIELDs given." },
-	{ 0,                'P', 0,                 0, "Shorthand for -FPackage" },
-	{ "show-field",     's', "FIELD,FIELD,...", 0, "Show only the body of these fields from the matching paragraphs." },
-	{ 0,                'd', 0,                 0, "Show only the first line of the Description field from the matching paragraphs." },
-	{ "no-field-names", 'n', 0,                 0, "Suppress field names when showing specified fields." },
-	{ "eregex",         'e', 0,                 0, "Regard the pattern as an extended POSIX regular expression." },
-	{ "regex",          'r', 0,                 0, "The pattern is a standard POSIX regular expression." },
-	{ "ignore-case",    'i', 0,                 0, "Ignore case when looking for a match." },
-	{ "invert-match",   'v', 0,                 0, "Show only paragraphs that do not match." },
-	{ "count",          'c', 0,                 0, "Show only the count of matching paragraphs." },
+#ifdef BANNER
+	{ "banner",	    'B', 0,		    0, "Show the testing banner." },
+#endif
+	{ "errorlevel",	    'l', "LEVEL",	    0, "Set debugging level to LEVEL." },
+	{ "field",	    'F', "FIELD,FIELD,...", 0, "Restrict  pattern  matching  to	 the FIELDs given." },
+	{ 0,		    'P', 0,		    0, "Shorthand for -FPackage" },
+	{ "show-field",	    's', "FIELD,FIELD,...", 0, "Show only the body of these fields from the matching paragraphs." },
+	{ 0,		    'd', 0,		    0, "Show only the first line of the Description field from the matching paragraphs." },
+	{ "no-field-names", 'n', 0,		    0, "Suppress field names when showing specified fields." },
+	{ "eregex",	    'e', 0,		    0, "Regard the pattern as an extended POSIX regular expression." },
+	{ "regex",	    'r', 0,		    0, "The pattern is a standard POSIX regular expression." },
+	{ "ignore-case",    'i', 0,		    0, "Ignore case when looking for a match." },
+	{ "invert-match",   'v', 0,		    0, "Show only paragraphs that do not match." },
+	{ "count",	    'c', 0,		    0, "Show only the count of matching paragraphs." },
 	{ "config-file",    OPT_CONFIG, "FNAME",    0, "Use FNAME as the config file." },
-	{ "exact-match",    'X', 0,                 0, "Do an exact match." },
-	{ "copying",        'C', 0,                 0, "Print out the copyright license." },
-	{ "and",            'a', 0,                 0, "Conjunct predicates." },
-	{ "or",             'o', 0,                 0, "Disjunct predicates." },
-	{ "not",            '!', 0,                 0, "Negate the following predicate." },
-	{ "debug-optparse", OPT_OPTPARSE, 0,        0, "Debug option parsing." },
-	{ "quiet",          'q', 0,                 0, "No output to stdout" },
-	{ "silent",         OPT_SILENT, 0,          0, "No output to stdout" },
+	{ "exact-match",    'X', 0,		    0, "Do an exact match." },
+	{ "copying",	    'C', 0,		    0, "Print out the copyright license." },
+	{ "and",	    'a', 0,		    0, "Conjunct predicates." },
+	{ "or",		    'o', 0,		    0, "Disjunct predicates." },
+	{ "not",	    '!', 0,		    0, "Negate the following predicate." },
+	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, "Debug option parsing." },
+	{ "quiet",	    'q', 0,		    0, "No output to stdout" },
+	{ "silent",	    OPT_SILENT, 0,	    0, "No output to stdout" },
 	{ 0 }
 };
 
 
-enum state { STATE_ATOM, STATE_NEG, STATE_CONJ, STATE_DISJ, STATE_PAREN, 
-	     STATE_START, STATE_FINISHED };
+enum state { STATE_ATOM,  STATE_NEG,   STATE_CONJ,     STATE_DISJ,
+	     STATE_PAREN, STATE_START, STATE_FINISHED };
 
 #define MAX_FNAMES 4096
 
@@ -130,6 +160,8 @@ struct arguments {
 	size_t num_fnames;
 	/**/
 	size_t num_show_fields;
+	/**/
+	size_t num_search_fields;
 	/* A machine-readable representation of the predicate.  */
 	struct predicate p;
 	/* Configuration file name */
@@ -147,9 +179,13 @@ struct arguments {
 	/* Invert match? */
 	bool invert_match;
 	/* Parser stack.  */
-	struct {
+	struct stack_elem {
 		enum state state;
-		int insn;
+		/* A linked list of instructions.  */
+		struct insn_node {
+			int insn;
+			struct insn_node * next;
+		} * insns_first, * insns_last;
 	} stack[MAX_OPS];
 	/* File names seen on the command line.  */
 	char const * fname[MAX_FNAMES];
@@ -158,7 +194,40 @@ struct arguments {
 		char const * name;
 		size_t inx;
 	} show_fields[MAX_FIELDS];
+	/* Search field names seen during current atom.  */
+	char * search_fields[MAX_FIELDS];
 };
+
+struct atom * clone_atom(struct arguments * args)
+{
+	if (args->p.num_atoms >= MAX_ATOMS) {
+		message(L_FATAL, "predicate is too complex", 0);
+		fail();
+	}
+	struct atom * atom = get_current_atom(&args->p);
+	int push_insn = I_PUSH(args->p.num_atoms);
+	struct atom * rv = &args->p.atoms[args->p.num_atoms++];
+	rv->field_name = atom->field_name;
+	rv->field_inx = atom->field_inx;
+	rv->mode = atom->mode;
+	rv->ignore_case = atom->ignore_case;
+	rv->pat = atom->pat;
+	rv->patlen = atom->patlen;
+	assert(args->top > 0);
+	struct stack_elem * selem = &args->stack[args->top-1];
+	assert(selem->insns_first != 0);
+	assert(selem->insns_last != 0);
+	struct insn_node * node1 = malloc(sizeof *node1);
+	struct insn_node * node2 = malloc(sizeof *node2);
+	if (node1 == 0 || node2  == 0) fatal_enomem(0);
+	node1->insn = push_insn;
+	node2->insn = I_OR;
+	node1->next = node2;
+	node2->next = 0;
+	selem->insns_last->next = node1;
+	selem->insns_last = node2;
+	return rv;
+}
 
 static void finish_atom(struct arguments * args)
 {
@@ -167,10 +236,14 @@ static void finish_atom(struct arguments * args)
 		message(L_FATAL, "A pattern is mandatory.", 0);
 		fail();
 	}
-	predicate_finish_atom(&args->p);
+	for (size_t i = 0; i < args->num_search_fields; i++) {
+		if (i > 0) atom = clone_atom(args);
+		atom->field_name = args->search_fields[i];
+		predicate_finish_atom(&args->p);
+	}
 }
 
-/* Pop off one stack state, inserting the associated instruction to
+/* Pop off one stack state, inserting the associated instructions to
  * the predicate program.  If paren is true, current state must be
  * STATE_PAREN, and if paren is false, it must not be STATE_PAREN. */
 static void leave(struct arguments * args, int paren)
@@ -180,7 +253,15 @@ static void leave(struct arguments * args, int paren)
 	if (args->state == STATE_ATOM) finish_atom(args);
 	assert(args->top > 0);
 	--args->top;
-	addinsn(&args->p, args->stack[args->top].insn);
+	for (struct insn_node * it = args->stack[args->top].insns_first;
+	     it != 0;) {
+		addinsn(&args->p, it->insn);
+		struct insn_node * next = it->next;
+		free(it);
+		it = next;
+	}
+	args->stack[args->top].insns_first = 0;
+	args->stack[args->top].insns_last = 0;
 	args->state = args->stack[args->top].state;
 }
 
@@ -192,7 +273,13 @@ static void prim_enter(struct arguments * args, const enum state state, const in
 		message(L_FATAL, "predicate is too complex", 0);
 		fail();
 	}
-	args->stack[args->top].insn = insn;
+//	args->stack[args->top].insn = insn;
+	struct insn_node * node = malloc(sizeof *node);
+	if (node == 0) fatal_enomem(0);
+	node->insn = insn;
+	node->next = 0;
+	args->stack[args->top].insns_first = node;
+	args->stack[args->top].insns_last = node;
 	args->stack[args->top].state = args->state;
 	++args->top;
 	args->state = state;
@@ -264,12 +351,12 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	struct atom * atom;
 	debug_message("parse_opt", 0);
 	switch (key) {
-	case 'B':
+	case 'C':
+		if (!to_stdout (COPYING)) fail();
+		exit(0);
 #ifdef BANNER
+	case 'B':
 		banner(false);
-#else
-		fprintf(stderr, "Banner is disabled.\n");
-		fail();
 #endif
 	case 'v':
 		args->invert_match = true;
@@ -291,8 +378,9 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 's': {
 		char * carg = strdup(arg);
 		if (carg == 0) fatal_enomem(0);
-		for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")) {
-			struct show_fields * sf = &args->show_fields[args->num_show_fields];
+		for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
+			struct show_fields * sf =
+				&args->show_fields[args->num_show_fields];
 			sf->name = strdup(s);
 			if (sf->name == 0) fatal_enomem(0);
 			sf->inx = fieldtrie_insert(&args->p.trie, s);
@@ -301,6 +389,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			}
 			++args->num_show_fields;
 		}
+		free(carg);
 	}
 		break;
 	case 'l': {
@@ -330,34 +419,43 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: P", 0);
 		arg = "Package";
 		/* pass through */
-	case 'F':
-		debug_message("parse_opt: F", 0);
+	case 'F': {
 		atom = ENTER_ATOM;
-		if (atom->field_name != 0) {
-			message(L_FATAL, "multiple -F (or -P) options are "
-				" currently broken; workaround: --or", 0);
-			fail();
+		char * carg = strdup(arg);
+		if (carg == 0) fatal_enomem(0);
+		for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
+			char * tmp = strdup(s);
+			if (tmp == 0) fatal_enomem(0);
+			args->search_fields[args->num_search_fields++] = tmp;
 		}
-//assert(atom->field_name == 0); /* FIXME */
-		atom->field_name = strdup(arg);
-		if (atom->field_name == 0) fatal_enomem(0);
+		free(carg);
+	}
 		break;
 	case 'X':
 		debug_message("parse_opt: X", 0);
 		atom = ENTER_ATOM;
-		assert(atom->mode == M_SUBSTR); /* FIXME */
+		if (atom->mode != M_SUBSTR) {
+			message(L_FATAL, "inconsistent atom modifiers", 0);
+			fail();
+		}
 		atom->mode = M_EXACT;
 		break;
 	case 'r':
 		debug_message("parse_opt: r", 0);
 		atom = ENTER_ATOM;
-		assert(atom->mode == M_SUBSTR); /* FIXME */
+		if (atom->mode != M_SUBSTR) {
+			message(L_FATAL, "inconsistent atom modifiers", 0);
+			fail();
+		}
 		atom->mode = M_REGEX;
 		break;
 	case 'e':
 		debug_message("parse_opt: e", 0);
 		atom = ENTER_ATOM;
-		assert(atom->mode == M_SUBSTR); /* FIXME */
+		if (atom->mode != M_SUBSTR) {
+			message(L_FATAL, "inconsistent atom modifiers", 0);
+			fail();
+		}
 		atom->mode = M_EREGEX;
 		break;
 	case 'i':
@@ -369,7 +467,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: optparse", 0);
 		debug_optparse = 1;
 		break;
-	case ARGP_KEY_ARG: 
+	case ARGP_KEY_ARG:
 		debug_message("parse_opt: argument", 0);
 	redo:
 		debug_message("!!!", 0);
@@ -384,7 +482,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			break;
 		}
 		if (strcmp(arg, ")") == 0) {
-			debug_message("parse_opt: )", 0);			
+			debug_message("parse_opt: )", 0);
 			while (args->state != STATE_PAREN) {
 				if (args->top == 0) {
 					message(L_FATAL, "unexpected ')' in command line", 0);
@@ -418,7 +516,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: end", 0);
 		if (args->state != STATE_FINISHED) FINISH;
 		break;
-	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS: 
+	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS:
 	case ARGP_KEY_ERROR: case ARGP_KEY_FINI: case ARGP_KEY_NO_ARGS:
 		debug_message("parse_opt: ignored", 0);
 		break;
@@ -449,10 +547,10 @@ static void dump_args(struct arguments * args)
 		int op = args->p.program[i];
 		printf("program[%zi] = ", i);
 		switch (op) {
-		case I_NOP: puts("NOP"); break;
-		case I_NEG: puts("NEG"); break;
-		case I_AND: puts("AND"); break;
-		case I_OR:  puts("OR"); break;
+		case I_NOP:  puts("NOP"); break;
+		case I_NEG:  puts("NEG"); break;
+		case I_AND:  puts("AND"); break;
+		case I_OR:   puts("OR"); break;
 		default:
 			printf("PUSH(%i)\n", op - I_PUSH(0));
 		}

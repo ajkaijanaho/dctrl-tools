@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2004-01-01 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2004-01-03 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \" Permission is granted to make and distribute verbatim copies of
@@ -109,9 +109,10 @@ available and status files, respectively.
 .SH OPTIONS
 .SS Atomic predicate modifiers
 .IP "-F FIELD,FIELD,...; --field=FIELD,FIELD,..."
-Restrict pattern matching to the FIELDs given.
-.B Multiple fields in one -F is broken currently.
-Use the -o option in the mean time.
+Restrict pattern matching to the FIELDs given.  Multiple field names
+in one -F option and multiple -F options in one atom are allowed; the
+search named by the atom will be performed (disjunctively) among all
+fields named.
 .IP -P
 Shorthand for "-FPackage".
 .IP "-e, --eregex"
@@ -166,6 +167,8 @@ immediately after finding the first match.
 .SS Miscellaneous
 .IP "--config-file=FNAME"
 Use FNAME as the config file instead of the defaults.
+.IP "--debug-optparse"
+Show how the current command line has been parsed. 
 .IP "-l LEVEL, --errorlevel=LEVEL"
 Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
 "informational" and "debug", but the last may not be available,

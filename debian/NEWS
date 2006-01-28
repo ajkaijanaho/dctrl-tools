@@ -1,3 +1,11 @@
+grep-dctrl (1.104) unstable; urgency=low
+
+    One of the documented regressions have been removed in this version:
+    multiple field names in -F and multiple -F options in one atom are
+    again supported.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat,  3 Jan 2004 20:09:06 +0200
+
 grep-dctrl (1.103) unstable; urgency=low
 
     The annoying banner which was added in version 1.100 and which asked

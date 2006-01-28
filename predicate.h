@@ -27,10 +27,10 @@
 #define MAX_OPS 4096
 #define MAX_ATOMS 4096
 
-#define I_NOP 0
-#define I_NEG 1 /* --not; 1-1 */
-#define I_AND 2 /* --and; 2-1 */
-#define I_OR  3 /* --or;  2-1 */
+#define I_NOP  0
+#define I_NEG  1 /* --not; 1-1 */
+#define I_AND  2 /* --and; 2-1 */
+#define I_OR   3 /* --or;  2-1 */
 #define I_PUSH(n) (4+(n)) /* push result of nth atomic proposition */
 
 /* An atomic predicate. */

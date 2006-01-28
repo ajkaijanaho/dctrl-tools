@@ -146,7 +146,7 @@ bool does_para_satisfy(struct predicate * p, para_t * para)
 	for (size_t i = 0; i < p->proglen; i++) {
 		switch (p->program[i]) {
 		case I_NOP: break;
-		case I_NEG: 
+		case I_NEG:
 			assert(sp >= 1);
 			stack[sp-1] = !stack[sp-1];
 			break;
@@ -160,7 +160,7 @@ bool does_para_satisfy(struct predicate * p, para_t * para)
 			stack[sp-2] = stack[sp-2] || stack[sp-1];
 			--sp;
 			break;
-		default: 
+		default:
 		{
 			int atom = p->program[i] - I_PUSH(0);
 			assert(atom <= p->num_atoms);

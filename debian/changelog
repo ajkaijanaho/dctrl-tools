@@ -1,3 +1,29 @@
+grep-dctrl (1.104) unstable; urgency=low
+
+  * grep-dctrl.c (parse_option [case 's']): free carg after use
+  * grep-dctrl.c (parse_option): Replace remaining FIXME-tagged asserts
+    with proper error checking
+  * Bring back support for multiple -F options in one atom and multiple
+    field names in one -F option:
+    - grep-dctrl.c (struct arguments, leave, prim_enter): Allow an
+      instruction sequence in the parser stack.
+    - grep-dctrl.c (clone_atom): New function.
+    - grep-dctrl.c (finish_atom, parse_option [case 'F']):
+      Handle multiple field names.
+    - grep-dctrl.1.cp: Remove note of the regression.
+    - debian/NEWS: Note this change.
+    This gets rid of one of the documented regressions.
+  * grep-dctrl.c (options): Make --banner existence contingent on the
+    BANNER #define.
+  * grep-dctrl.c, predicate.h, predicate.c, grep-dctrl.1.cp: Add a new
+    instruction, I_TRUE, and use it to implement --true.
+  * grep-dctrl.c (to_stdout, parse_option [case 'C']): Implement -C.
+    Closes: #207995 (grep-dctrl: -C: (PROGRAM ERROR) Option should have
+    been recognized!?)
+  * debian/control (Standards-Version): 3.6.1, no changes required.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat,  3 Jan 2004 20:54:36 +0200
+
 grep-dctrl (1.103) unstable; urgency=low
 
   * grep_dctrl.c (banner, main, parse_option): Disable the banner.
