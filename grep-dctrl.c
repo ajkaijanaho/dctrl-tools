@@ -244,6 +244,9 @@ static void finish_atom(struct arguments * args)
 		atom->field_name = args->search_fields[i];
 		predicate_finish_atom(&args->p);
 	}
+	// If there are no fields, we have not yet run this...
+	// ... but it must be done (especially with -r/-e atoms)
+	if (args->num_search_fields == 0) predicate_finish_atom(&args->p);
 	args->num_search_fields = 0;
 }
 
@@ -638,6 +641,7 @@ int main (int argc, char * argv[])
 				fname = "-";
 			} else {
 				fname = find_ifile_by_exename(argv0, args.rcname);
+				if (fname == 0) fname = "-";
 			}
 		} else {
 			fname = args.fname[i];

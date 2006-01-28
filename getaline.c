@@ -90,8 +90,10 @@ char * getaline (FILE * f)
 		return NULL;		/* nothing read (eof or error) */
 	}
 
+#if 0
 	if (buf[len - 1] == '\n')	/* remove newline, if there */
 		buf[--len] = '\0';
+#endif
 
 	if (size - len > mucho)	{ /* a plenitude of unused memory? */
 		p = realloc (buf, len + 1);

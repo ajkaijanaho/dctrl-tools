@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-02-09 10:18+0100\n"
+"POT-Creation-Date: 2004-03-03 21:11+0200\n"
 "PO-Revision-Date: 2004-02-09 10:20+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -116,7 +116,7 @@ msgstr "Depura l'anàlisi d'opcions."
 msgid "Do no output to stdout."
 msgstr "No mostra res a l'eixida estàndard."
 
-#: grep-dctrl.c:207 grep-dctrl.c:277 grep-dctrl.c:343 predicate.c:39
+#: grep-dctrl.c:207 grep-dctrl.c:280 grep-dctrl.c:346 predicate.c:39
 msgid "predicate is too complex"
 msgstr "el predicat és massa complex"
 
@@ -124,79 +124,79 @@ msgstr "el predicat és massa complex"
 msgid "A pattern is mandatory"
 msgstr "Es necessita un patró"
 
-#: grep-dctrl.c:298
+#: grep-dctrl.c:301
 msgid "syntax error in command line"
 msgstr "hi ha un error de sintaxi a la línia d'ordres"
 
-#: grep-dctrl.c:315
+#: grep-dctrl.c:318
 msgid "missing ')' in command line"
 msgstr "manca un «)» en la línia d'ordres"
 
-#: grep-dctrl.c:333
+#: grep-dctrl.c:336
 msgid "Unexpected atom in command line. Did you forget to use a connective?"
 msgstr ""
 "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
 "connector?"
 
-#: grep-dctrl.c:410
+#: grep-dctrl.c:413
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:449 grep-dctrl.c:458
+#: grep-dctrl.c:452 grep-dctrl.c:461
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:499
+#: grep-dctrl.c:502
 msgid "unexpected ')' in command line"
 msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:511
+#: grep-dctrl.c:514
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
-#: grep-dctrl.c:599
+#: grep-dctrl.c:602
 msgid "a predicate is required"
 msgstr "es requereix un predicat"
 
-#: grep-dctrl.c:604
+#: grep-dctrl.c:607
 msgid "malformed predicate"
 msgstr "el predicat és malformat"
 
-#: grep-dctrl.c:610
+#: grep-dctrl.c:613
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl.c:614
+#: grep-dctrl.c:617
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl.c:623
+#: grep-dctrl.c:626
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: grep-dctrl.c:663
+#: grep-dctrl.c:667
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: no es pot fer stat(): %s\n"
 
-#: grep-dctrl.c:672
+#: grep-dctrl.c:676
 msgid "is a directory, skipping"
 msgstr "és un directori, s'està ometent"
 
-#: grep-dctrl.c:673
+#: grep-dctrl.c:677
 msgid "is a block device, skipping"
 msgstr "és un dispositiu de bloc, s'està ometent"
 
-#: grep-dctrl.c:674
+#: grep-dctrl.c:678
 msgid "internal error"
 msgstr "s'ha produït un error intern"
 
-#: grep-dctrl.c:675
+#: grep-dctrl.c:679
 msgid "is a socket, skipping"
 msgstr "és un sòcol, s'està ometent"
 
-#: grep-dctrl.c:676
+#: grep-dctrl.c:680
 msgid "unknown file type, skipping"
 msgstr "el tipus de fitxer és desconegut, s'està ometent"
 
@@ -216,23 +216,23 @@ msgstr "s'està llegint el fitxer de configuració"
 msgid "read failure or out of memory"
 msgstr "ha fallat la lectura o la memòria s'ha exhaurit"
 
-#: rc.c:116
+#: rc.c:117
 msgid "syntax error: need a executable name"
 msgstr "error de sintaxi: es necessita un nom d'executable"
 
-#: rc.c:124
+#: rc.c:125
 msgid "syntax error: need an input file name"
 msgstr "error de sintaxi: es necessita un nom de fitxer d'entrada"
 
-#: rc.c:129
+#: rc.c:130
 msgid "considering executable name"
 msgstr "s'està considerant el nom de l'executable"
 
-#: rc.c:131
+#: rc.c:132
 msgid "yes, will use executable name"
 msgstr "sí, s'utilitzarà el nom d'executable"
 
-#: rc.c:133
+#: rc.c:134
 msgid "default input file"
 msgstr "fitxer d'entrada per defecte"
 
