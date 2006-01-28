@@ -150,6 +150,7 @@ bool check_predicate(struct predicate * p)
 			++sp;
 		}
 	}
+	if (sp != 1) return false;
 	return true;
 }
 

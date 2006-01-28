@@ -1,3 +1,11 @@
+grep-dctrl (2.1.4) unstable; urgency=low
+
+  * predicate.c (verify_atom): Check that the stack contains exactly
+    one element (the result) after simulated execution.
+    Closes: #241766 (segfault) [Reported by Joey Hess]
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 19 Jun 2004 16:49:24 +0300
+
 grep-dctrl (2.1.3) unstable; urgency=low
 
   * rc.c (find_ifile_by_exename): Fix EOF handling.
