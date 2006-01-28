@@ -747,10 +747,10 @@ int main (int argc, char * argv[])
 			} else {
 				fname = find_ifile_by_exename(argv0, args.rcname);
 				if (fname == 0) {
-					message(L_IMPORTANT,
-						_("warning: this command name "
-						  "is not configured; using "
-						  "standard input"), 0);
+					message(L_IMPORTANT, 
+						_("executable name not found; "
+						  "reading from standard input"),
+						0);
 					fname = "-";
 				}
 			}
