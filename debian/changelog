@@ -1,3 +1,16 @@
+grep-dctrl (2.6.3) experimental; urgency=low
+
+  * sync-available.cp, Makefile: Fix the goofup which made sync-available
+    not be generated from sync-available.cp.
+  * grep-dctrl.c, misc.[ch], Makefile: Backport from CVS HEAD the
+    following change:
+      * misc.c (to_stdout), misc.h, grep-dctrl.c (to_stdout):
+        Move to_stdout to a library object.
+      * misc.c (to_stdout): Use a pager if stdout is a tty.
+  * debian/NEWS: Uploads >= 2.2 were to experimental.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 12 Jul 2004 17:50:14 +0300
+
 grep-dctrl (2.6.2) experimental; urgency=low
 
   * sync-available: -ge 1, not -gt 1, when comparing the number of

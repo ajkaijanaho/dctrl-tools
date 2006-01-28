@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-04 20:23+0300\n"
+"POT-Creation-Date: 2004-07-12 17:51+0300\n"
 "PO-Revision-Date: 2004-07-05 13:41+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -15,241 +15,251 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: grep-dctrl.c:44
+#: grep-dctrl.c:45
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- grep Debian-Control-Dateien"
 
-#: grep-dctrl.c:128
+#: grep-dctrl.c:101
 msgid "Show the testing banner."
 msgstr "Zeigt den Testing-Banner."
 
-#: grep-dctrl.c:130
+#: grep-dctrl.c:103
 msgid "LEVEL"
 msgstr "EBENE"
 
-#: grep-dctrl.c:130
+#: grep-dctrl.c:103
 msgid "Set debugging level to LEVEL."
 msgstr "Setzt Debugging-Ebene auf EBENE."
 
-#: grep-dctrl.c:131 grep-dctrl.c:133
+#: grep-dctrl.c:104 grep-dctrl.c:106
 msgid "FIELD,FIELD,..."
 msgstr "FELD,FELD,..."
 
-#: grep-dctrl.c:131
+#: grep-dctrl.c:104
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Beschränkt die Musterprüfung auf die angegebenen FELDer."
 
-#: grep-dctrl.c:132
+#: grep-dctrl.c:105
 msgid "This is a shorthand for -FPackage."
 msgstr "Dies ist eine Kurzform für -FPackage."
 
-#: grep-dctrl.c:133
+#: grep-dctrl.c:106
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
 
-#: grep-dctrl.c:134
+#: grep-dctrl.c:107
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
 "Zeigt nur die erste Zeile des »Description«-Feldes des passenden Abschnitts."
 
-#: grep-dctrl.c:135
+#: grep-dctrl.c:108
 msgid "Suppress field names when showing specified fields."
 msgstr "Unterdrückt die Feldnamen beim Anzeigen der angegebenen Felder."
 
-#: grep-dctrl.c:136
+#: grep-dctrl.c:109
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
 
-#: grep-dctrl.c:137
+#: grep-dctrl.c:110
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Das Muster ist ein Standard-POSIX regulärer Ausdruck."
 
-#: grep-dctrl.c:138
+#: grep-dctrl.c:111
 msgid "Ignore case when looking for a match."
 msgstr "Ignoriert die Groß-/Kleinschreibung beim Suchen eines Treffers."
 
-#: grep-dctrl.c:139
+#: grep-dctrl.c:112
 msgid "Show only paragraphs that do not match."
 msgstr "Zeigt nur die Abschnitte, die nicht passen."
 
-#: grep-dctrl.c:140
+#: grep-dctrl.c:113
 msgid "Show only the count of matching paragraphs."
 msgstr "Zeigt nur die Anzahl der passenden Abschnitte."
 
-#: grep-dctrl.c:141
+#: grep-dctrl.c:114
 msgid "FNAME"
 msgstr "FNAME"
 
-#: grep-dctrl.c:141
+#: grep-dctrl.c:114
 msgid "Use FNAME as the config file."
 msgstr "Verwendet FNAME als Konfigurationsdatei."
 
-#: grep-dctrl.c:142
+#: grep-dctrl.c:115
 msgid "Do an exact match."
 msgstr "Führt eine exakte Übereinstimmung durch."
 
-#: grep-dctrl.c:143
+#: grep-dctrl.c:116
 msgid "Print out the copyright license."
 msgstr "Gibt die Copyright-Lizenz aus."
 
-#: grep-dctrl.c:144
+#: grep-dctrl.c:117
 msgid "Conjunct predicates."
 msgstr "UND-verknüpfte Eigenschaften."
 
-#: grep-dctrl.c:145
+#: grep-dctrl.c:118
 msgid "Disjunct predicates."
 msgstr "ODER-verknüpfte Eigenschaften."
 
-#: grep-dctrl.c:146
+#: grep-dctrl.c:119
 msgid "Negate the following predicate."
 msgstr "Negiert die folgende Eigenschaft."
 
-#: grep-dctrl.c:147
+#: grep-dctrl.c:120
 msgid "Test for numerical equality."
 msgstr "Test auf numerische Übereinstimmung."
 
-#: grep-dctrl.c:148
+#: grep-dctrl.c:121
 msgid "Numerical test: <."
 msgstr "Numerischer Test: <."
 
-#: grep-dctrl.c:149
+#: grep-dctrl.c:122
 msgid "Numerical test: <=."
 msgstr "Numerischer Test: <=."
 
-#: grep-dctrl.c:150
+#: grep-dctrl.c:123
 msgid "Numerical test: >."
 msgstr "Numerischer Test: >."
 
-#: grep-dctrl.c:151
+#: grep-dctrl.c:124
 msgid "Numerical test: >=."
 msgstr "Numerischer Test: >=."
 
-#: grep-dctrl.c:152
+#: grep-dctrl.c:125
 msgid "Debug option parsing."
 msgstr "Optionenverarbeitung debuggen."
 
-#: grep-dctrl.c:153 grep-dctrl.c:154
+#: grep-dctrl.c:126 grep-dctrl.c:127
 msgid "Do no output to stdout."
 msgstr "Keine Ausgabe auf die Standardausgabe."
 
-#: grep-dctrl.c:232 grep-dctrl.c:345 predicate.c:41
+#: grep-dctrl.c:205 grep-dctrl.c:318 predicate.c:41
 msgid "predicate is too complex"
 msgstr "Eigenschaft ist zu komplex"
 
-#: grep-dctrl.c:313
+#: grep-dctrl.c:286
 msgid "predicate is too long"
 msgstr "Eigenschaft ist zu lang"
 
-#: grep-dctrl.c:370
+#: grep-dctrl.c:343
 msgid "inconsistent atom modifiers"
 msgstr "Inkonsistener Atom-Modifikator"
 
-#: grep-dctrl.c:437
+#: grep-dctrl.c:410
 msgid "no such log level"
 msgstr "Keine solche Log-Ebene"
 
-#: grep-dctrl.c:537
+#: grep-dctrl.c:510
 msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
-#: grep-dctrl.c:618
+#: grep-dctrl.c:591
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
 
-#: grep-dctrl.c:627
+#: grep-dctrl.c:600
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
 
-#: grep-dctrl.c:665
+#: grep-dctrl.c:638
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
 
-#: grep-dctrl.c:719
+#: grep-dctrl.c:692
 msgid "unexpected end of predicate"
 msgstr "unerwartetes Eigenschaftsende"
 
-#: grep-dctrl.c:722
+#: grep-dctrl.c:695
 msgid "unexpected '!' in command line"
 msgstr "Unerwartetes »!« in der Befehlszeile"
 
-#: grep-dctrl.c:725
+#: grep-dctrl.c:698
 msgid "unexpected '-a' in command line"
 msgstr "Unerwartetes »-a« in der Befehlszeile"
 
-#: grep-dctrl.c:728
+#: grep-dctrl.c:701
 msgid "unexpected '-o' in command line"
 msgstr "Unerwartetes »-o« in der Befehlszeile"
 
-#: grep-dctrl.c:731
+#: grep-dctrl.c:704
 msgid "unexpected '(' in command line"
 msgstr "Unerwartete »(« in der Befehlszeile"
 
-#: grep-dctrl.c:734
+#: grep-dctrl.c:707
 msgid "unexpected ')' in command line"
 msgstr "Unerwartete »)« in der Befehlszeile"
 
-#: grep-dctrl.c:738
+#: grep-dctrl.c:711
 msgid "unexpected atom in command line"
 msgstr "Unerwartetes Atom in der Befehlszeile"
 
-#: grep-dctrl.c:751
+#: grep-dctrl.c:724
 msgid "missing ')' in command line"
 msgstr "Fehlende »)« in der Befehlszeile"
 
-#: grep-dctrl.c:823
+#: grep-dctrl.c:796
 msgid "A pattern is mandatory"
 msgstr "Ein Muster wird benötigt"
 
-#: grep-dctrl.c:830
+#: grep-dctrl.c:803
 msgid "a predicate is required"
 msgstr "Eine Eigenschaft wird benötigt"
 
-#: grep-dctrl.c:835
+#: grep-dctrl.c:808
 msgid "malformed predicate"
 msgstr "Missgebildete Eigenschaft"
 
-#: grep-dctrl.c:841
+#: grep-dctrl.c:814
 msgid "too many output fields"
 msgstr "Zu viele Ausgabefelder"
 
-#: grep-dctrl.c:845
+#: grep-dctrl.c:818
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
-#: grep-dctrl.c:854
+#: grep-dctrl.c:827
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
 
-#: grep-dctrl.c:888
+#: grep-dctrl.c:861
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat kann nicht durchgeführt werden: %s\n"
 
-#: grep-dctrl.c:897
+#: grep-dctrl.c:870
 msgid "is a directory, skipping"
 msgstr "ist ein Verzeichnis, wird übersprungen"
 
-#: grep-dctrl.c:898
+#: grep-dctrl.c:871
 msgid "is a block device, skipping"
 msgstr "ist ein Block-Gerät, wird übersprungen"
 
-#: grep-dctrl.c:899
+#: grep-dctrl.c:872
 msgid "internal error"
 msgstr "interner Fehler"
 
-#: grep-dctrl.c:900
+#: grep-dctrl.c:873
 msgid "is a socket, skipping"
 msgstr "ist ein Socket, wird übersprungen"
 
-#: grep-dctrl.c:901
+#: grep-dctrl.c:874
 msgid "unknown file type, skipping"
 msgstr "unbekannter Dateityp, wird übersprungen"
+
+#: misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr ""
+
+#: misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr ""
 
 #: predicate.c:79
 msgid "invalid numeric pattern"
