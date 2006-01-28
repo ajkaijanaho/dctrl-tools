@@ -1,279 +1,264 @@
-# Catalan translation of dctrl-tools.
-# Copyright © 2004 Antti-Juhani Kaijanaho.
+# German translation of dctrl-tools
+# Copyright © 2004 Gerfried Fuchs
 # This file is distributed under the same license as the dctrl-tools package.
-# Jordi Mallach <jordi@debian.org>, 2004.
+# Gerfried Fuchs <alfie@debian.org>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-02-09 10:18+0100\n"
-"PO-Revision-Date: 2004-02-09 10:20+0100\n"
-"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
-"Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"POT-Creation-Date: 2004-02-07 10:32+0200\n"
+"PO-Revision-Date: 2004-02-09 09:58+0100\n"
+"Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: grep-dctrl.c:43
 msgid "grep-dctrl -- grep Debian control files"
-msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
+msgstr "grep-dctrl -- grep Debian-Control-Dateien"
 
 #: grep-dctrl.c:122
 msgid "Show the testing banner."
-msgstr "Mostra l'avís de prova."
+msgstr "Zeigt den Testing-Banner."
 
 #: grep-dctrl.c:124
 msgid "LEVEL"
-msgstr "NIVELL"
+msgstr "EBENE"
 
 #: grep-dctrl.c:124
 msgid "Set debugging level to LEVEL."
-msgstr "Estableix el nivell de depuració a NIVELL."
+msgstr "Setzt Debugging-Ebene auf EBENE."
 
 #: grep-dctrl.c:125 grep-dctrl.c:127
 msgid "FIELD,FIELD,..."
-msgstr "CAMP,CAMP,..."
+msgstr "FELD,FELD,..."
 
 #: grep-dctrl.c:125
 msgid "Restrict pattern matching to the FIELDs given."
-msgstr "Restringeix la coincidència de patrons als CAMPs donats."
+msgstr "Beschränkt die Musterprüfung auf die angegebenen FELDer."
 
 #: grep-dctrl.c:126
 msgid "This is a shorthand for -FPackage."
-msgstr "Forma curta per a -FPackage."
+msgstr "Dies ist eine Kurzform für -FPackage."
 
 #: grep-dctrl.c:127
 msgid "Show only the body of these fields from the matching paragraphs."
-msgstr "Mostra només el cos d'aquests camps dels paràgrafs coincidents."
+msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
 
 #: grep-dctrl.c:128
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Mostra només la primera línia del camp «Description» dels paràgrafs "
-"coincidents."
+"Zeigt nur die erste Zeile des »Description«-Feldes des passenden Abschnitts."
 
 #: grep-dctrl.c:129
 msgid "Suppress field names when showing specified fields."
-msgstr "Suprimeix els noms dels camps quan mostra els camps especificats."
+msgstr "Unterdrückt die Feldnamen beim Anzeigen der angegebenen Felder."
 
 #: grep-dctrl.c:130
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Considera el patró com una expressió regular estesa POSIX."
+msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
 
 #: grep-dctrl.c:131
 msgid "The pattern is a standard POSIX regular expression."
-msgstr "El patró és una expressió regular estàndard POSIX."
+msgstr "Das Muster ist ein Standard-POSIX regulärer Ausdruck."
 
 #: grep-dctrl.c:132
 msgid "Ignore case when looking for a match."
-msgstr ""
-"No distigueixes entre majúscules i minúscules quan cerca una coincidència."
+msgstr "Ignoriert die Groß-/Kleinschreibung beim Suchen eines Treffers."
 
 #: grep-dctrl.c:133
 msgid "Show only paragraphs that do not match."
-msgstr "Mostra només els paràgrafs que no coincideixen."
+msgstr "Zeigt nur die Abschnitte, die nicht passen."
 
 #: grep-dctrl.c:134
 msgid "Show only the count of matching paragraphs."
-msgstr "Mostra només el compte de paràgrafs coincidents."
+msgstr "Zeigt nur die Anzahl der passenden Abschnitte."
 
 #: grep-dctrl.c:135
 msgid "FNAME"
-msgstr "NOMFITXER"
+msgstr "FNAME"
 
 #: grep-dctrl.c:135
 msgid "Use FNAME as the config file."
-msgstr "Utilitza NOMFITXER com el fitxer de configuració."
+msgstr "Verwendet FNAME als Konfigurationsdatei."
 
 #: grep-dctrl.c:136
 msgid "Do an exact match."
-msgstr "Fes una coincidència exacta."
+msgstr "Führt eine exakte Übereinstimmung durch."
 
 #: grep-dctrl.c:137
 msgid "Print out the copyright license."
-msgstr "Mostra la llicència del copyright."
+msgstr "Gibt die Copyright-Lizenz aus."
 
 #: grep-dctrl.c:138
 msgid "Conjunct predicates."
-msgstr "Predicats conjunts."
+msgstr "UND-verknüpfte Eigenschaften."
 
 #: grep-dctrl.c:139
 msgid "Disjunct predicates."
-msgstr "Predicats disjunts."
+msgstr "ODER-verknüpfte Eigenschaften."
 
 #: grep-dctrl.c:140
 msgid "Negate the following predicate."
-msgstr "Nega el següent predicat."
+msgstr "Negiert die folgende Eigenschaft."
 
 #: grep-dctrl.c:141
 msgid "Debug option parsing."
-msgstr "Depura l'anàlisi d'opcions."
+msgstr "Optionenverarbeitung debuggen."
 
 #: grep-dctrl.c:142 grep-dctrl.c:143
 msgid "Do no output to stdout."
-msgstr "No mostra res a l'eixida estàndard."
+msgstr "Keine Ausgabe auf die Standardausgabe."
 
 #: grep-dctrl.c:207 grep-dctrl.c:277 grep-dctrl.c:343 predicate.c:39
 msgid "predicate is too complex"
-msgstr "el predicat és massa complex"
+msgstr "Eigenschaft ist zu komplex"
 
 #: grep-dctrl.c:239
 msgid "A pattern is mandatory"
-msgstr "Es necessita un patró"
+msgstr "Ein Muster wird benötigt"
 
 #: grep-dctrl.c:298
 msgid "syntax error in command line"
-msgstr "hi ha un error de sintaxi a la línia d'ordres"
+msgstr "Syntax-Fehler in der Befehlszeile"
 
 #: grep-dctrl.c:315
 msgid "missing ')' in command line"
-msgstr "manca un «)» en la línia d'ordres"
+msgstr "Fehlende »)« in der Befehlszeile"
 
 #: grep-dctrl.c:333
 msgid "Unexpected atom in command line. Did you forget to use a connective?"
 msgstr ""
-"S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
-"connector?"
+"Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder vergessen?"
 
 #: grep-dctrl.c:410
 msgid "no such log level"
-msgstr "aquest nivell de registre no existeix"
+msgstr "Keine solche Log-Ebene"
 
 #: grep-dctrl.c:449 grep-dctrl.c:458
 msgid "inconsistent atom modifiers"
-msgstr "els modificadors d'àtom no són consistents"
+msgstr "Inkonsistener Atom-Modifikator"
 
 #: grep-dctrl.c:499
 msgid "unexpected ')' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+msgstr "Unerwartete »)« in der Befehlszeile"
 
 #: grep-dctrl.c:511
 msgid "too many file names"
-msgstr "hi ha massa noms de fitxers"
+msgstr "Zu viele Dateinamen"
 
 #: grep-dctrl.c:599
 msgid "a predicate is required"
-msgstr "es requereix un predicat"
+msgstr "Eine Eigenschaft wird benötigt"
 
 #: grep-dctrl.c:604
 msgid "malformed predicate"
-msgstr "el predicat és malformat"
+msgstr "Missgebildete Eigenschaft"
 
 #: grep-dctrl.c:610
 msgid "too many output fields"
-msgstr "hi ha massa camps d'eixida"
+msgstr "Zu viele Ausgabefelder"
 
 #: grep-dctrl.c:614
 msgid "Adding \"Description\" to selected output fields because of -d"
-msgstr ""
-"S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
+msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
 #: grep-dctrl.c:623
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
+msgstr ""
+"Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
 
 #: grep-dctrl.c:663
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
-msgstr "%s: %s: no es pot fer stat(): %s\n"
+msgstr "%s: %s: stat kann nicht durchgeführt werden: %s\n"
 
 #: grep-dctrl.c:672
 msgid "is a directory, skipping"
-msgstr "és un directori, s'està ometent"
+msgstr "ist ein Verzeichnis, wird übersprungen"
 
 #: grep-dctrl.c:673
 msgid "is a block device, skipping"
-msgstr "és un dispositiu de bloc, s'està ometent"
+msgstr "ist ein Block-Gerät, wird übersprungen"
 
 #: grep-dctrl.c:674
 msgid "internal error"
-msgstr "s'ha produït un error intern"
+msgstr "interner Fehler"
 
 #: grep-dctrl.c:675
 msgid "is a socket, skipping"
-msgstr "és un sòcol, s'està ometent"
+msgstr "ist ein Socket, wird übersprungen"
 
 #: grep-dctrl.c:676
 msgid "unknown file type, skipping"
-msgstr "el tipus de fitxer és desconegut, s'està ometent"
+msgstr "unbekannter Dateityp, wird übersprungen"
 
 #: paragraph.c:73 paragraph.c:98
 msgid "unexpected end of file"
-msgstr "s'ha trobat un final de fitxer inesperat"
+msgstr "unerwartetes Dateiende"
 
 #: paragraph.c:91
 msgid "unexpected end of line"
-msgstr "s'ha trobat un final de línia inesperat"
+msgstr "unerwartetes Zeilenende"
 
 #: rc.c:75
 msgid "reading config file"
-msgstr "s'està llegint el fitxer de configuració"
+msgstr "lese Konfigurationsdatei"
 
 #: rc.c:96
 msgid "read failure or out of memory"
-msgstr "ha fallat la lectura o la memòria s'ha exhaurit"
+msgstr "Lesefehler oder zuwenig Speicher verfügbar"
 
 #: rc.c:116
 msgid "syntax error: need a executable name"
-msgstr "error de sintaxi: es necessita un nom d'executable"
+msgstr "Syntax-Fehler: Benötige einen Programmnamen"
 
 #: rc.c:124
 msgid "syntax error: need an input file name"
-msgstr "error de sintaxi: es necessita un nom de fitxer d'entrada"
+msgstr "Syntax-Fehler: Benötige einen Eingabe-Dateinamen"
 
 #: rc.c:129
 msgid "considering executable name"
-msgstr "s'està considerant el nom de l'executable"
+msgstr "Programmname wird in Betracht gezogen"
 
 #: rc.c:131
 msgid "yes, will use executable name"
-msgstr "sí, s'utilitzarà el nom d'executable"
+msgstr "Ja, Programmname wird verwendet"
 
 #: rc.c:133
 msgid "default input file"
-msgstr "fitxer d'entrada per defecte"
+msgstr "Default-Eingabedatei"
 
 #~ msgid "Test for numerical equality."
-#~ msgstr "Comprova l'igualtat numèrica."
+#~ msgstr "Test auf numerische Übereinstimmung."
 
 #~ msgid "Numerical test: <."
-#~ msgstr "Comprovació numèrica: <."
+#~ msgstr "Numerischer Test: <."
 
 #~ msgid "Numerical test: <=."
-#~ msgstr "Comprovació numèrica: <=."
+#~ msgstr "Numerischer Test: <=."
 
 #~ msgid "Numerical test: >."
-#~ msgstr "Comprovació numèrica: >."
+#~ msgstr "Numerischer Test: >."
 
 #~ msgid "Numerical test: >=."
-#~ msgstr "Comprovació numèrica: >=."
+#~ msgstr "Numerischer Test: >=."
 
 #~ msgid "%s: command (%s) failed (exit status %d)\n"
-#~ msgstr "%s: l'ordre (%s) ha fallat (estat d'eixida %d)\n"
+#~ msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
 
 #~ msgid "%s: command (%s) was killed by signal %d\n"
-#~ msgstr "%s: l'ordre (%s) ha estat terminada pel senyal %d\n"
+#~ msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
 
 #~ msgid "%s (child): failed to exec /bin/sh: %s\n"
-#~ msgstr "%s (fill): no s'ha pogut executar /bin/sh: %s\n"
-
-#~ msgid "invalid numeric pattern"
-#~ msgstr "el patró numèric és invàlid"
-
-#~ msgid "parse of a numeric field failed"
-#~ msgstr "no s'ha pogut analitzar el camp numèric"
-
-#~ msgid "Malformed default input file name"
-#~ msgstr "El fitxer d'entrada per defecte és malformat"
+#~ msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
 
 #~ msgid "not owned by you or root, ignoring"
-#~ msgstr "el proprietari no sou vosaltres o el superusuari, s'omet"
+#~ msgstr "gehört nicht Ihnen oder root, wird ignoriert"
 
 #~ msgid "write permissions for group or others, ignoring"
-#~ msgstr "té permisos d'escriptura per al grup o altres, s'omet"
-
-#~ msgid "%s: %s: %s\n"
-#~ msgstr "%s: %s: %s\n"
+#~ msgstr "Schreibberechtigungen für die Gruppe oder andere, wird ignoriert"
