@@ -340,67 +340,54 @@ a match is found regardless of whether there have been non-fatal
 errors.
 .PP
 These messages are emitted in log levels "fatal" and "important".
-.B This list is out of date.
-.IP "you can only use -s once"
-You must give all fields to show in one -s command.  Usually many -s's
-are typos anyway, so heed this message: remove one of the -s's or
-merge all of them into one -s.
-.IP "no such log level"
-The argument to -l was invalid.
-.IP "cumulative field name exceeds maximum length"
-The combined length of the argument to all -F options given may not
-exceed 512 bytes.  Longer arguments cannot be used.
-.IP "too many fields to search in"
-Too many fields were specified for searchin in.  This number is
-limited to 256.
-.IP "output field spec exceeds maximum length"
-The argument to -s was too long; it is restricted to 512 bytes.
-Longer arguments cannot be used.
-.IP "too many output fields"
-The argument to -s had too many field names in it.  This number is
-limited to 256.
-.IP "do not use both -e and -r options"
-The pattern cannot be both a standard POSIX regular expression and an
-extended POSIX regular expression at the same time.  You must use at
-most one of the options -e and -r; using both does not make sense.
-.IP "I'm broken - please report this to <gaia@iki.fi>"
-An internal consistency check failed.  Please, report this bug.
+Additional messages may be provided by the system libraries.
 .IP "a pattern is mandatory"
-You must specify a pattern to be searched.
+You must specify a pattern to be searched for.
+.IP "a predicate is required"
+No predicate was specified, but one is required.
 .IP "cannot find enough memory"
 More memory was needed than was available.  This error may be
 transient, that is, if you try again, all may go well.
-.IP "don't know how to do an exact regex match"
-Currently you cannot do exact match searches with regular expressions.
 .IP "cannot suppress field names when showing whole paragraphs"
 When you do not use the -s switch,
 .B grep-dctrl
 just passes the matching paragraphs through, not touching them any
 way.  This means, for example, that you can only use -n when you use
 -s.
-.IP "need a file name to grep"
-For some reason no file name is available.  This means that the configuration
-file did not list a default file name for this name of the program, and no
-file name was given on the command line.
+.IP "inconsistent atom modifiers"
+Conflicting atom modifiers were used; for example, perhaps both -X and
+-e were specified for the same atom.
+.IP "missing ')' in command line"
+There were more opening than closing parentheses in the given
+predicate.
+.IP "no such log level"
+The argument to -l was invalid.
+.IP "unexpected ')' in command line"
+There was no opening parenthesis that would match some closing
+parenthesis in the command line.
+.IP "unexpected end of file"
+The input file is broken: it ends before it should.
+.IP "unexpected end of line"
+The input file is broken: a line ends before it should.
+.IP "predicate is too complex"
+The predicate's complexity (the number of atoms and connectives)
+exceed compile-time limits.
+.IP "read failure or out of memory"
+There was a problem reading the configuration file.  Maybe there was a
+transput error; maybe memory was exhausted.  This error may be
+transient, that is, if you try again, all may go well.
+.IP "syntax error in command line"
+There is a problem in the command line.  Look, and you shall find it.
 .IP "syntax error: need a executable name"
 There is a problem in the configuration file.  Look, and you shall find it.
 .IP "syntax error: need an input file name"
 There is a problem in the configuration file.  Look, and you shall find it.
-.SH COMPATIBILITY
-If you use grep-dctrl in a Debian package, you should depend on the
-grep-dctrl package and heed the following compatibility notes:
-.PP
-.IP "Always call only the \fBgrep-dctrl\fR executable."
-Although the \fBgrep-status\fR and \fBgrep-available\fR symlinks are installed
-by default, this may change in the future.  Those symlinks are meant
-for manual and not scripted use.
-.IP "Always specify an explicit file name"
-Don't rely on the implicit file name feature.  The system
-administrator may have changed the default file name.  You should
-always specify the "-" file, too.
-.IP "Not all features have been with us in every version"
-Check if any of the features you use is mentioned in the changelog.
-Use a versioned dependency on grep-dctrl, if it is necessary.
+.IP "too many file names"
+The number of file names specified in the command line exceeded a
+compile-time limit.
+.IP "too many output fields"
+The argument to -s had too many field names in it.  This number is
+limited to 256.
 .SH FILES
 .IP SYSCONF/grep-dctrl.rc
 See the next file.
@@ -428,6 +415,7 @@ Ian Jackson et al.: Debian Packaging Manual.  Published as the Debian
 package packaging-manual.  Also available in the Debian website.  The
 Debian project, 2003.
 .PP
+.BR ara (1),
 .BR apt-cache (1),
 .BR dpkg (8),
 .BR dpkg-awk (1),

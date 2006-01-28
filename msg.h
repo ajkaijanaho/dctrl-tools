@@ -54,14 +54,10 @@ do_msg(int severity)
 #endif
 
 #if defined(TEST_NODEBUG)
-  if (severity == L_DEBUG)
-    {
-      line_message (L_INFORMATIONAL, _("Got a L_DEBUG while TEST_NODEBUG "
-                                  "is defined"), 0, 0);
-      message (L_FATAL, _("I'm broken - please report this "
-                          "to <gaia@iki.fi>"), 0, 0);
-      abort ();
-    }
+  if (severity == L_DEBUG) {
+	  message (L_FATAL, _("I'm broken - please report this bug."), 0, 0);
+	  abort ();
+  }
 #endif
   
   return severity >= loglevel;

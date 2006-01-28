@@ -1,0 +1,1 @@
+langs = ca fi

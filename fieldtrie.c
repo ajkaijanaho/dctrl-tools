@@ -66,7 +66,7 @@ void fieldtrie_clear(fieldtrie_t * trie)
 		struct field_bucket * b = trie->fields[i];
 		while (b != 0) {
 			struct field_bucket * bn = b->next;
-		        free(b);
+			free(b);
 			b = bn;
 		}
 		trie->fields[i] = 0;
