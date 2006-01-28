@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.6\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-12 17:51+0300\n"
+"POT-Creation-Date: 2004-07-17 04:42+0300\n"
 "PO-Revision-Date: 2004-07-09 15:57+0300\n"
 "Last-Translator: Danilo Piazzalunga <danilopiazza@libero.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -21,39 +21,39 @@ msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- ricerca attraverso i file di controllo di Debian"
 
 # NdT: Sì, questa traduzione è appropriata ;-)
-#: grep-dctrl.c:101
+#: grep-dctrl.c:105
 msgid "Show the testing banner."
 msgstr "Mostra l'avviso fastidioso."
 
-#: grep-dctrl.c:103
+#: grep-dctrl.c:107
 msgid "LEVEL"
 msgstr "LIVELLO"
 
-#: grep-dctrl.c:103
+#: grep-dctrl.c:107
 msgid "Set debugging level to LEVEL."
 msgstr "Imposta il livello di debug a LIVELLO."
 
-#: grep-dctrl.c:104 grep-dctrl.c:106
+#: grep-dctrl.c:108 grep-dctrl.c:110
 msgid "FIELD,FIELD,..."
 msgstr "CAMPO,CAMPO,..."
 
 # Ndt: era msgstr "Restringe la ricerca dei modelli ai campi specificati."
-#: grep-dctrl.c:104
+#: grep-dctrl.c:108
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Cerca le corrispondenze solo all'interno dei campi specificati."
 
-#: grep-dctrl.c:105
+#: grep-dctrl.c:109
 msgid "This is a shorthand for -FPackage."
 msgstr "Questa è una forma abbreviata per «-FPackage»."
 
 # NdT: era msgstr "Mostra solo i campi specificati anziché l'intero "
 # "paragrafo corrispondente."
-#: grep-dctrl.c:106
+#: grep-dctrl.c:110
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr ""
 "Mostra solo il valore dei campi selezionati del paragrafo corrispondente."
 
-#: grep-dctrl.c:107
+#: grep-dctrl.c:111
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -61,205 +61,205 @@ msgstr ""
 "Mostra solo la prima riga del campo «Description» dei paragrafi "
 "corrispondenti."
 
-#: grep-dctrl.c:108
+#: grep-dctrl.c:112
 msgid "Suppress field names when showing specified fields."
 msgstr "Mostra solo il contenuto (e non il nome) dei campi specificati."
 
-#: grep-dctrl.c:109
+#: grep-dctrl.c:113
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Considera il modello come un'espressione regolare POSIX estesa."
 
-#: grep-dctrl.c:110
+#: grep-dctrl.c:114
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Considera il modello come un'espressione regolare POSIX standard."
 
-#: grep-dctrl.c:111
+#: grep-dctrl.c:115
 msgid "Ignore case when looking for a match."
 msgstr "Ignora maiuscole/minuscole durante il confronto."
 
-#: grep-dctrl.c:112
+#: grep-dctrl.c:116
 msgid "Show only paragraphs that do not match."
 msgstr "Mostra solo i paragrafi non corrispondenti."
 
 # Ndt: grep(1) usa «conto»; io preferisco «conteggio» o «numero».
-#: grep-dctrl.c:113
+#: grep-dctrl.c:117
 msgid "Show only the count of matching paragraphs."
 msgstr "Mostra solo il conteggio dei paragrafi corrispondenti."
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:118
 msgid "FNAME"
 msgstr "NOMEFILE"
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:118
 msgid "Use FNAME as the config file."
 msgstr "Usa NOMEFILE come file di configurazione."
 
-#: grep-dctrl.c:115
+#: grep-dctrl.c:119
 msgid "Do an exact match."
 msgstr "Cerca solo corrispondenze esatte."
 
-#: grep-dctrl.c:116
+#: grep-dctrl.c:120
 msgid "Print out the copyright license."
 msgstr "Mostra la licenza."
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:121
 msgid "Conjunct predicates."
 msgstr "Effettua la congiunzione di due predicati."
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:122
 msgid "Disjunct predicates."
 msgstr "Effettua la disgiunzione di due predicati."
 
-#: grep-dctrl.c:119
+#: grep-dctrl.c:123
 msgid "Negate the following predicate."
 msgstr "Negazione del predicato che lo segue."
 
-#: grep-dctrl.c:120
+#: grep-dctrl.c:124
 msgid "Test for numerical equality."
 msgstr "Controlla l'uguaglianza numerica."
 
-#: grep-dctrl.c:121
+#: grep-dctrl.c:125
 msgid "Numerical test: <."
 msgstr "Effettua il test numerico: <."
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:126
 msgid "Numerical test: <=."
 msgstr "Effettua il test numerico: <=."
 
-#: grep-dctrl.c:123
+#: grep-dctrl.c:127
 msgid "Numerical test: >."
 msgstr "Effettua il test numerico: >."
 
-#: grep-dctrl.c:124
+#: grep-dctrl.c:128
 msgid "Numerical test: >=."
 msgstr "Effettua il test numerico: >=."
 
-#: grep-dctrl.c:125
+#: grep-dctrl.c:129
 msgid "Debug option parsing."
 msgstr "Fa il debug dell'analisi delle opzioni."
 
-#: grep-dctrl.c:126 grep-dctrl.c:127
+#: grep-dctrl.c:130 grep-dctrl.c:131
 msgid "Do no output to stdout."
 msgstr "Non invia output verso stdout."
 
-#: grep-dctrl.c:205 grep-dctrl.c:318 predicate.c:41
+#: grep-dctrl.c:209 grep-dctrl.c:322 predicate.c:41
 msgid "predicate is too complex"
 msgstr "il predicato è troppo complesso"
 
-#: grep-dctrl.c:286
+#: grep-dctrl.c:290
 msgid "predicate is too long"
 msgstr "il predicato è troppo lungo"
 
 # Ndt: appare se si usano le opzioni per BRE, ERE o exact match tutte insieme.
-#: grep-dctrl.c:343
+#: grep-dctrl.c:347
 msgid "inconsistent atom modifiers"
 msgstr "modificatori di atomi incoerenti"
 
-#: grep-dctrl.c:410
+#: grep-dctrl.c:414
 msgid "no such log level"
 msgstr "livello di log inesistente"
 
-#: grep-dctrl.c:510
+#: grep-dctrl.c:534
 msgid "too many file names"
 msgstr "troppi nomi di file"
 
-#: grep-dctrl.c:591
+#: grep-dctrl.c:615
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: il comando (%s) non è riuscito (stato di uscita %d)\n"
 
-#: grep-dctrl.c:600
+#: grep-dctrl.c:624
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: il comando (%s) è stato ucciso dal segnale %d\n"
 
-#: grep-dctrl.c:638
+#: grep-dctrl.c:662
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (figlio): impossibile eseguire /bin/sh: %s\n"
 
-#: grep-dctrl.c:692
+#: grep-dctrl.c:716
 msgid "unexpected end of predicate"
 msgstr "improvvisa fine del predicato"
 
-#: grep-dctrl.c:695
+#: grep-dctrl.c:719
 msgid "unexpected '!' in command line"
 msgstr "«!» non previsto sulla riga di comando"
 
-#: grep-dctrl.c:698
+#: grep-dctrl.c:722
 msgid "unexpected '-a' in command line"
 msgstr "«-a» non previsto sulla riga di comando"
 
-#: grep-dctrl.c:701
+#: grep-dctrl.c:725
 msgid "unexpected '-o' in command line"
 msgstr "«-o» non previsto sulla riga di comando"
 
-#: grep-dctrl.c:704
+#: grep-dctrl.c:728
 msgid "unexpected '(' in command line"
 msgstr "«(» non prevista sulla riga di comando"
 
-#: grep-dctrl.c:707
+#: grep-dctrl.c:731
 msgid "unexpected ')' in command line"
 msgstr "«)» non prevista sulla riga di comando"
 
-#: grep-dctrl.c:711
+#: grep-dctrl.c:735
 msgid "unexpected atom in command line"
 msgstr "atomo non previsto sulla riga di comando"
 
-#: grep-dctrl.c:724
+#: grep-dctrl.c:748
 msgid "missing ')' in command line"
 msgstr "manca una «)» sulla riga di comando"
 
-#: grep-dctrl.c:796
+#: grep-dctrl.c:820
 msgid "A pattern is mandatory"
 msgstr "Bisogna specificare un modello di ricerca"
 
-#: grep-dctrl.c:803
+#: grep-dctrl.c:827
 msgid "a predicate is required"
 msgstr "bisogna specificare un predicato"
 
 # NdT: credo che il termine tecnico corretto sia
 # «well-formed» --> «ben formato».
-#: grep-dctrl.c:808
+#: grep-dctrl.c:832
 msgid "malformed predicate"
 msgstr "il predicato non è ben formato"
 
-#: grep-dctrl.c:814
+#: grep-dctrl.c:838
 msgid "too many output fields"
 msgstr "troppi campi da visualizzare"
 
-#: grep-dctrl.c:818
+#: grep-dctrl.c:842
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "È stato aggiunto «Description» ai campi da mostrare a causa di -d"
 
-#: grep-dctrl.c:827
+#: grep-dctrl.c:851
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "impossibile omettere i nomi dei campi quando si mostra l'intero paragrafo"
 
 # NdT: questa traduzione rispecchia quella di cp, mv, rm, etc.
-#: grep-dctrl.c:861
+#: grep-dctrl.c:885
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: impossibile fare stat di «%s»: %s\n"
 
-#: grep-dctrl.c:870
+#: grep-dctrl.c:894
 msgid "is a directory, skipping"
 msgstr "è una directory e viene ignorata"
 
-#: grep-dctrl.c:871
+#: grep-dctrl.c:895
 msgid "is a block device, skipping"
 msgstr "è un file speciale a blocchi e viene ignorato"
 
-#: grep-dctrl.c:872
+#: grep-dctrl.c:896
 msgid "internal error"
 msgstr "errore interno"
 
-#: grep-dctrl.c:873
+#: grep-dctrl.c:897
 msgid "is a socket, skipping"
 msgstr "è un socket e viene ignorato"
 
-#: grep-dctrl.c:874
+#: grep-dctrl.c:898
 msgid "unknown file type, skipping"
 msgstr "è un file di tipo sconosciuto e viene ignorato"
 

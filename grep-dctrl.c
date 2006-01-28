@@ -53,6 +53,10 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 #define OPT_GT 262
 #define OPT_GE 263
 
+static bool num_comp_warning_shown = false;
+static char const num_comp_warning [] = 
+"%s: WARNING: the semantics of numeric comparison will change in the future\n";
+
 #undef BANNER
 
 #ifdef BANNER
@@ -458,22 +462,42 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case OPT_EQ:
 		debug_message("parse_opt: eq", 0);
 		set_mode(M_NUM_EQ);
+		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
+			fprintf(stderr, num_comp_warning, get_progname());
+			num_comp_warning_shown = true;
+		}
 		break;
 	case OPT_LT:
 		debug_message("parse_opt: lt", 0);
 		set_mode(M_NUM_LT);
+		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
+			fprintf(stderr, num_comp_warning, get_progname());
+			num_comp_warning_shown = true;
+		}
 		break;
 	case OPT_LE:
 		debug_message("parse_opt: le", 0);
 		set_mode(M_NUM_LE);
+		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
+			fprintf(stderr, num_comp_warning, get_progname());
+			num_comp_warning_shown = true;
+		}
 		break;
 	case OPT_GT:
 		debug_message("parse_opt: gt", 0);
 		set_mode(M_NUM_GT);
+		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
+			fprintf(stderr, num_comp_warning, get_progname());
+			num_comp_warning_shown = true;
+		}
 		break;
 	case OPT_GE:
 		debug_message("parse_opt: ge", 0);
 		set_mode(M_NUM_GE);
+		if (!num_comp_warning_shown && do_msg(L_IMPORTANT)) {
+			fprintf(stderr, num_comp_warning, get_progname());
+			num_comp_warning_shown = true;
+		}
 		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
