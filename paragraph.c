@@ -45,6 +45,12 @@ void para_parse_next(para_t * para)
 	size_t field_start = 0;
 	struct field_data * field_data = 0;
 	while (state != END) {
+#               ifndef TEST_NODEBUG
+		static char * const stnm[] = { "START", "FIELD_NAME",
+					       "BODY", "BODY_NEWLINE",
+					       "BODY_SKIPBLANKS", "END" };
+		if (do_msg(L_DEBUG)) fprintf(stderr, "State: %s\n", stnm[state]);
+#               endif
 		int c = fsaf_getc(fp, pos++);
 		switch (state) {
 		case START:
@@ -106,7 +112,7 @@ void para_parse_next(para_t * para)
 		case BODY_NEWLINE:
 			switch (c) {
 			case -1: 
-				para->eof = true;
+				//para->eof = true;
 				/* pass through */
 			case '\n':
 				state = END;
