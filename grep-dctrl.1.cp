@@ -1,21 +1,20 @@
 .TH GREP-DCTRL 1 2004-01-19 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
-\" Permission is granted to make and distribute verbatim copies of
-\" this manual provided the copyright notice and this permission notice
-\" are preserved on all copies.
+\"      This program is free software; you can redistribute it and/or modify
+\"      it under the terms of the GNU General Public License as published by
+\"      the Free Software Foundation; either version 2 of the License, or
+\"      (at your option) any later version.
 \" 
-\" Permission is granted to copy and distribute modified versions of this
-\" manual under the conditions for verbatim copying, provided that the
-\" entire resulting derived work is distributed under the terms of a
-\" permission notice identical to this one.
-\" 
-\" Permission is granted to copy and distribute translations of this
-\" manual into another language, under the above conditions for modified
-\" versions, except that this permission notice may be included in
-\" translations approved by the authors of this manual instead of in
-\" the original English.
-\" 
+\"      This program is distributed in the hope that it will be useful,
+\"      but WITHOUT ANY WARRANTY; without even the implied warranty of
+\"      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+\"      GNU General Public License for more details. 
+\"  
+\"      You should have received a copy of the GNU General Public License
+\"      along with this program; see the file COPYING.  If not, write to
+\"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+\"      Boston, MA 02111-1307, USA.
 .SH NAME
 grep-dctrl, grep-status, grep-available, grep-aptavail \- grep Debian control files
 .SH SYNOPSIS

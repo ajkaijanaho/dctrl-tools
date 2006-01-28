@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2004-07-04 20:23+0300\n"
-"PO-Revision-Date: 2004-01-13 00:50+0200\n"
+"PO-Revision-Date: 2004-07-08 18:29+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +36,10 @@ msgid "FIELD,FIELD,..."
 msgstr "KENTTÄ,KENTT�,..."
 
 #: grep-dctrl.c:131
-#, fuzzy
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
 #: grep-dctrl.c:132
-#, fuzzy
 msgid "This is a shorthand for -FPackage."
 msgstr "Lyhyt muoto vivulle -FPackage"
 
@@ -110,30 +108,29 @@ msgstr "Negatoi seuraava predikaatti."
 
 #: grep-dctrl.c:147
 msgid "Test for numerical equality."
-msgstr ""
+msgstr "Testaa numeerista yhtäsuuruutta."
 
 #: grep-dctrl.c:148
 msgid "Numerical test: <."
-msgstr ""
+msgstr "Numeerinen testi: <."
 
 #: grep-dctrl.c:149
 msgid "Numerical test: <=."
-msgstr ""
+msgstr "Numeerinen testi: <=."
 
 #: grep-dctrl.c:150
 msgid "Numerical test: >."
-msgstr ""
+msgstr "Numeerinen testi: >."
 
 #: grep-dctrl.c:151
 msgid "Numerical test: >=."
-msgstr ""
+msgstr "Numeerinen testi: >=."
 
 #: grep-dctrl.c:152
 msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
 #: grep-dctrl.c:153 grep-dctrl.c:154
-#, fuzzy
 msgid "Do no output to stdout."
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
@@ -142,9 +139,8 @@ msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
 #: grep-dctrl.c:313
-#, fuzzy
 msgid "predicate is too long"
-msgstr "predikaatti on liian monimutkainen"
+msgstr "predikaatti on liian pitkä"
 
 #: grep-dctrl.c:370
 msgid "inconsistent atom modifiers"
@@ -161,58 +157,51 @@ msgstr "liikaa tiedostonimiä"
 #: grep-dctrl.c:618
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr ""
+msgstr "%s: komento (%s) epäonnistui (lopetuskoodi %d)\n"
 
 #: grep-dctrl.c:627
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
-msgstr ""
+msgstr "%s: komento (%s) kuoli signaalin %d vuoksi\n"
 
 #: grep-dctrl.c:665
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
-msgstr ""
+msgstr "%s (lapsi): /bin/sh ei käynnistynyt: %s\n"
 
 #: grep-dctrl.c:719
-#, fuzzy
 msgid "unexpected end of predicate"
-msgstr "odottamaton tiedoston loppu"
+msgstr "odottamaton predikaatin loppu"
 
 #: grep-dctrl.c:722
-#, fuzzy
 msgid "unexpected '!' in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton '!' komentorivillä"
 
 #: grep-dctrl.c:725
-#, fuzzy
 msgid "unexpected '-a' in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton '-a' komentorivill�"
 
 #: grep-dctrl.c:728
-#, fuzzy
 msgid "unexpected '-o' in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton '-o' komentorivill�"
 
 #: grep-dctrl.c:731
-#, fuzzy
 msgid "unexpected '(' in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton '(' komentorivill�"
 
 #: grep-dctrl.c:734
 msgid "unexpected ')' in command line"
 msgstr "odottamaton ')' komentorivill�"
 
 #: grep-dctrl.c:738
-#, fuzzy
 msgid "unexpected atom in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton atomi komentorivill�"
 
 #: grep-dctrl.c:751
 msgid "missing ')' in command line"
 msgstr "komentoriviltä puuttuu ')'"
 
 #: grep-dctrl.c:823
-#, fuzzy
 msgid "A pattern is mandatory"
 msgstr "Hakuehto on välttämätön."
 
@@ -222,7 +211,7 @@ msgstr "predikaatti on välttämätön"
 
 #: grep-dctrl.c:835
 msgid "malformed predicate"
-msgstr ""
+msgstr "rikkinäinen predikaatti"
 
 #: grep-dctrl.c:841
 msgid "too many output fields"
@@ -264,11 +253,11 @@ msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
 #: predicate.c:79
 msgid "invalid numeric pattern"
-msgstr ""
+msgstr "rikkinäinen lukuhakuehto"
 
 #: paragraph.c:38
 msgid "parse of a numeric field failed"
-msgstr ""
+msgstr "numeerisen kentän jäsennys epäonnistui"
 
 #: paragraph.c:98 paragraph.c:124
 msgid "unexpected end of file"
@@ -279,17 +268,16 @@ msgid "unexpected end of line"
 msgstr "odottamaton rivin loppu"
 
 #: rc.c:66
-#, fuzzy
 msgid "Malformed default input file name"
-msgstr "oletussyötetiedosto"
+msgstr "rikkinäinen oletussyötetiedoston nimi"
 
 #: rc.c:79
 msgid "not owned by you or root, ignoring"
-msgstr ""
+msgstr "tiedoston omistaja ei ole root etkä sinä, jätän huomiotta"
 
 #: rc.c:84
 msgid "write permissions for group or others, ignoring"
-msgstr ""
+msgstr "tiedostoon kirjoitusoikeudet ryhmällä ja muilla, jätän huomiotta"
 
 #: rc.c:124
 msgid "reading config file"
@@ -321,7 +309,7 @@ msgstr "oletussyötetiedosto"
 
 #: rc.c:201
 msgid "executable name not found; reading from standard input"
-msgstr ""
+msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
 
 #~ msgid "syntax error in command line"
 #~ msgstr "komentorivillä on syntaksivirhe"
