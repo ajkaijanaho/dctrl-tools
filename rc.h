@@ -19,12 +19,9 @@
 #ifndef RC_H__
 #define RC_H__
 
-extern char const * const ifile_modes[];
+#include "ifile.h"
 
-struct ifile {
-	enum ifile_mode { m_error, m_read, m_exec } mode;
-	char const * s;
-};
+extern char const * const ifile_modes[];
 
 /* Search for exename (only basename, though) in rcfname (or if it is
    null, in default rc files) and return the found corresponding

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright (C) 2004 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,28 +16,14 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#ifndef FIELDTRIE_H
-#define FIELDTRIE_H
+#include "para_pool.h"
 
-#include <limits.h>
-#include <stddef.h>
-#include <stdbool.h>
+void para_pool_fini(para_pool_t * pp)
+{
+	while (pp->curr_pages != 0) {
+		struct para_pages * pgs = pp->curr_pages->next;
+		free(pp->curr_pages);
+		pp->curr_pages = pgs;
+	}
+}
 
-struct field_attr {
-	bool valid;
-	size_t inx;
-};
-
-void fieldtrie_init(void);
-
-// case-insensitive
-size_t fieldtrie_insert(char const *);
-
-// case-insensitive
-struct field_attr fieldtrie_lookup(char const *, size_t n);
-
-//void fieldtrie_clear(void);
-
-size_t fieldtrie_count(void);
-
-#endif /* FIELDTRIE_H */

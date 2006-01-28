@@ -19,6 +19,7 @@
 #include <argp.h>
 #include <assert.h>
 #include <fcntl.h>
+#include <locale.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
@@ -173,8 +174,6 @@ struct arguments {
 	bool count;
 	/* Invert match? */
 	bool invert_match;
-	/* Token stream for the predicate parser. */
-	int toks[MAX_TOKS];
 	/* First unused position in toks.  */
 	size_t toks_np;
         /* Token read position. */
@@ -185,6 +184,8 @@ struct arguments {
 	bool in_atom;
 	/* Pattern error? */
 	bool pattern_error;
+	/* Token stream for the predicate parser. */
+	int toks[MAX_TOKS];
 	/* For each atom, give code with which it can be accessed.  */
 	struct atom_code {
 		size_t n;
@@ -393,8 +394,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				&args->show_fields[args->num_show_fields];
 			sf->name = strdup(s);
 			if (sf->name == 0) fatal_enomem(0);
-			struct field_attr fa = { .numeric = false };
-			sf->inx = fieldtrie_insert(&args->p.trie, s, fa);
+			sf->inx = fieldtrie_insert(s);
 			if (sf->inx == description_inx) {
 				args->description_selected = true;
 			}
@@ -403,8 +403,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		free(carg);
 	}
 		break;
-	case 'l': {
-		int ll = str2loglevel(optarg);
+	case 'l': {		int ll = str2loglevel(optarg);
 		if (ll < 0)
 		{
 			message(L_FATAL, _("no such log level"), optarg);
@@ -576,99 +575,6 @@ static void dump_args(struct arguments * args)
 	}
 }
 
-static void close_ifile(struct ifile f, int fd)
-{
-	close(fd);
-	if (f.mode == m_exec) {
-		int status;
-		int r = wait(&status);
-		if (r == -1) {
-			errno_msg(L_IMPORTANT, f.s);
-			return;
-		}
-		if (WIFEXITED(status)) {
-			if (WEXITSTATUS(status) == 0) return;
-			fprintf(stderr, _("%s: command (%s) failed "
-					  "(exit status %d)\n"),
-				get_progname(),
-				f.s,
-				WEXITSTATUS(status));
-			record_error();
-			return;
-		}
-		if (WIFSIGNALED(status)) {
-			fprintf(stderr, _("%s: command (%s) was killed "
-					  "by signal %d\n"),
-				get_progname(),
-				f.s,
-				WTERMSIG(status));
-			record_error();
-			return;
-		}
-	}
-}
-
-static int open_pipe(char const * s)
-{
-	int ps[2];
-	int r = pipe(ps);
-	if (r == -1) {
-		errno_msg(L_IMPORTANT, 0);
-		return -1;
-	}
-	pid_t pid = fork();
-	switch (pid) {
-	case -1:
-		errno_msg(L_IMPORTANT, 0);
-		close(ps[0]);
-		close(ps[1]);
-		return -1;
-	case 0:
-		// child
-		close(STDIN_FILENO);
-		r = dup2(ps[1], STDOUT_FILENO);
-		if (r == -1) {
-			fprintf(stderr, "%s (child): %s\n",
-				get_progname(), strerror(errno));
-			_exit(1);
-		}
-		close(ps[0]);
-		close(ps[1]);
-		execl("/bin/sh", "/bin/sh", "-c", s, 0);
-		fprintf(stderr, _("%s (child): failed to exec /bin/sh: %s\n"),
-			get_progname(), strerror(errno));
-		_exit(1);
-	}
-	// parent
-	close(ps[1]);
-	return ps[0];
-}
-
-static int open_ifile(struct ifile f)
-{
-	switch (f.mode) {
-	case m_read:
-		if (strcmp(f.s, "-") == 0) {
-			return STDIN_FILENO;
-		}
-		{
-			int fd = open(f.s, O_RDONLY);
-			if (fd == -1) {
-				fprintf(stderr, "%s: %s: %s\n",
-					get_progname(), f.s, strerror(errno));
-				record_error();
-				return -1;
-			}
-			return fd;
-		}
-	case m_exec:
-		return open_pipe(f.s);
-	case m_error:
-		abort();
-	}
-	abort();
-}
-
 static
 int peek_token(struct arguments const * args)
 {
@@ -789,13 +695,13 @@ int main (int argc, char * argv[])
 	bindtextdomain (PACKAGE, LOCALEDIR);
 	textdomain(PACKAGE);
 
+	fieldtrie_init();
 
 	static struct arguments args;
 	args.show_field_name = true;
 	msg_set_progname(argv[0]);
 	init_predicate(&args.p);
-	struct field_attr fa = { .numeric = false };
-	description_inx = fieldtrie_insert(&args.p.trie, description, fa);
+	description_inx = fieldtrie_insert(description);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 #ifdef BANNER
 	banner(true);
@@ -862,38 +768,20 @@ int main (int argc, char * argv[])
 		fd = open_ifile(fname);
 		if (fd == -1) break;
 
-		{
-			struct stat stat;
-			int r = fstat(fd, &stat);
-			mode_t m = stat.st_mode;
-			if (r == -1) {
-				fprintf(stderr, _("%s: %s: cannot stat: %s\n"),
-					argv[0], fname.s, strerror(errno));
-				record_error();
-				close_ifile(fname, fd);
-				break;
-			}
-			if (!(S_ISREG(m) || S_ISCHR(m) || S_ISFIFO(m))) {
-				fprintf(stderr, "%s: %s: %s\n",
-					argv[0], fname.s,
-					S_ISDIR(m) ? _("is a directory, skipping") :
-					S_ISBLK(m) ? _("is a block device, skipping") :
-					S_ISLNK(m) ? _("internal error") :
-					S_ISSOCK(m) ? _("is a socket, skipping") :
-					_("unknown file type, skipping"));
-				record_error();
-				close_ifile(fname, fd);
-				break;
-			}
-		}
+		if (!chk_ifile(fname, fd)) break;
 
 		FSAF * fp = fsaf_fdopen(fd);
+		para_parser_t pp;
+		para_parser_init(&pp, fp, true);
 		para_t para;
-		for (para_init(&para, fp, &args.p.trie);
-		     !para_eof(&para);
-		     para_parse_next(&para)) {
-			if ((args.invert_match || !does_para_satisfy(&args.p, &para))
-			    && (!args.invert_match || does_para_satisfy(&args.p, &para))) {
+		para_init(&pp, &para);
+		while (1) {
+			para_parse_next(&para);
+			if (para_eof(&pp)) break;
+			if ((args.invert_match 
+			     || !does_para_satisfy(&args.p, &para))
+			    && (!args.invert_match 
+				|| does_para_satisfy(&args.p, &para))) {
 				continue;
 			}
 			if (args.quiet) {
@@ -905,7 +793,7 @@ int main (int argc, char * argv[])
 				continue;
 			}
 			if (args.num_show_fields == 0) {
-				struct fsaf_read_rv r = fsaf_read(fp, para.start, para.end - para.start);
+				struct fsaf_read_rv r = get_whole_para(&para);
 				fwrite(r.b, 1, r.len, stdout);
 				putchar('\n');
 				continue;
@@ -914,8 +802,9 @@ int main (int argc, char * argv[])
 				if (args.show_field_name) {
 					printf("%s: ", args.show_fields[j].name);
 				}
-				struct field_data * fd = &para.fields[args.show_fields[j].inx];
-				struct fsaf_read_rv r = fsaf_read(fp, fd->start, fd->end - fd->start);
+				struct fsaf_read_rv r 
+					= get_field(&para, 
+						    args.show_fields[j].inx);
 				if (args.short_descr &&
 				    args.show_fields[j].inx == description_inx) {
 					char * nl = memchr(r.b, '\n', r.len);

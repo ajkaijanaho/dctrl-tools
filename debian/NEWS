@@ -1,3 +1,13 @@
+dctrl-tools (2.7) experimental; urgency=low
+
+    The grep-dctrl package has now been renamed to dctrl-tools.  The
+    reason is simple: there is now more than one tool in the package.
+  
+    The new tool is sort-dctrl, and it does what you might think.  See
+    the manual page for more information.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu,  9 Jun 2005 00:40:09 +0300
+
 grep-dctrl (2.6.6) unstable; urgency=low
 
     Version number comparisons are now supported.  This subsumes the

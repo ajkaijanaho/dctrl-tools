@@ -1,21 +1,23 @@
-grep-dctrl (2.6.7) unstable; urgency=low
+dctrl-tools (2.7) experimental; urgency=low
 
-  * fr.po: Update by Nicolas Bertolissio.
-    Closes: #314893 (French translation update of gettext debconf template)
-    (Nothing to do with debconf regardless of the bug title)
-  * msg.h: Fix progname type.
-    Closes: #314601 (FTBFS (amd64/gcc-4.0): conflicting types for 'progname')
-    [Reported by Andreas Jochens]
-  * grep-dctrl.1.cp: Fix "preceding" typo.
-    Closes: #311032 *'man grep-dctrl' typo: "predecing")
-    [Reported by A Costa]
-  * sync-available.8: Miscellaneous fixes.
-    Closes: #312630 (sync-available(8) thinks it is update-avail(8))
-    [Reported by Antti-Juhani Kaijanaho]
-    Closes: #312766 ('man sync-available' typo: "aquisition")
-    [Reported by A Costa]
+  * Merge 2.6.0.
+  * Merge 2.6.1.
+  * Merge 2.6.2.
+  * Merge 2.6.3.
+  * Merge 2.6.4.
+  * Merge 2.6.5.
+  * Merge 2.6.6.
+  * Rename source and binary package to dctrl-tools.
+  * debian/{rules,control}: Generate an empty transition package for
+    grep-dctrl.
+  * Makefile, debian/rules, sort-dctrl.c: New program sort-dctrl.
+  * Makefile: Rearrange build system so that most objects are
+    put in a static library, which the binaries are linked against.
+  * Refactor a lot to allow several programs share the backbone code.
+  * New program sort-dctrl.
+  * New manual page sort-dctrl(1).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 11 Jul 2005 18:26:46 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu,  9 Jun 2005 00:40:13 +0300
 
 grep-dctrl (2.6.6) unstable; urgency=low
 
