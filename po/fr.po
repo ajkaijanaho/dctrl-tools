@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.0\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-04 15:07+0300\n"
-"PO-Revision-Date: 2004-07-04 10:41+0200\n"
+"POT-Creation-Date: 2004-07-05 13:27+0300\n"
+"PO-Revision-Date: 2004-07-09 09:14+0200\n"
 "Last-Translator: Nicolas Bertolissio <nico.bertol@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -195,8 +195,8 @@ msgstr ""
 "paragraphes complets"
 
 #: grep-dctrl.c:751
-msgid "warning: this command name is not configured; using standard input"
-msgstr ""
+msgid "executable name not found; reading from standard input"
+msgstr "nom d'exécutable non trouvé ; lecture à partir de l'entrée standard"
 
 #: grep-dctrl.c:778
 #, c-format

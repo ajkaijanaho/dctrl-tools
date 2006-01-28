@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-04 15:07+0300\n"
-"PO-Revision-Date: 2004-07-04 15:06+0300\n"
+"POT-Creation-Date: 2004-07-05 13:27+0300\n"
+"PO-Revision-Date: 2004-07-05 13:36+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -192,8 +192,8 @@ msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
 #: grep-dctrl.c:751
-msgid "warning: this command name is not configured; using standard input"
-msgstr ""
+msgid "executable name not found; reading from standard input"
+msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
 
 #: grep-dctrl.c:778
 #, c-format

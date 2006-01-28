@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-04 15:07+0300\n"
-"PO-Revision-Date: 2004-02-09 09:58+0100\n"
+"POT-Creation-Date: 2004-07-05 13:27+0300\n"
+"PO-Revision-Date: 2004-07-05 13:36+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -119,9 +119,8 @@ msgid "predicate is too complex"
 msgstr "Eigenschaft ist zu komplex"
 
 #: grep-dctrl.c:302
-#, fuzzy
 msgid "predicate is too long"
-msgstr "Eigenschaft ist zu komplex"
+msgstr "Eigenschaft ist zu lang"
 
 #: grep-dctrl.c:416
 msgid "no such log level"
@@ -136,38 +135,32 @@ msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
 #: grep-dctrl.c:597
-#, fuzzy
 msgid "unexpected end of predicate"
-msgstr "unerwartetes Dateiende"
+msgstr "unerwartetes Eigenschaftsende"
 
 #: grep-dctrl.c:600
-#, fuzzy
 msgid "unexpected '!' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "Unerwartetes »!« in der Befehlszeile"
 
 #: grep-dctrl.c:603
-#, fuzzy
 msgid "unexpected '-a' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "Unerwartetes »-a« in der Befehlszeile"
 
 #: grep-dctrl.c:606
-#, fuzzy
 msgid "unexpected '-o' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "Unerwartetes »-o« in der Befehlszeile"
 
 #: grep-dctrl.c:609
-#, fuzzy
 msgid "unexpected '(' in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "Unerwartete »(« in der Befehlszeile"
 
 #: grep-dctrl.c:612
 msgid "unexpected ')' in command line"
 msgstr "Unerwartete »)« in der Befehlszeile"
 
 #: grep-dctrl.c:616
-#, fuzzy
 msgid "unexpected atom in command line"
-msgstr "Unerwartete »)« in der Befehlszeile"
+msgstr "Unerwartetes Atom in der Befehlszeile"
 
 #: grep-dctrl.c:629
 msgid "missing ')' in command line"
@@ -199,8 +192,8 @@ msgstr ""
 "Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
 
 #: grep-dctrl.c:751
-msgid "warning: this command name is not configured; using standard input"
-msgstr ""
+msgid "executable name not found; reading from standard input"
+msgstr "Programmname nicht gefunden; es wird von der Standardeingabe gelesen"
 
 #: grep-dctrl.c:778
 #, c-format
@@ -262,41 +255,3 @@ msgstr "Ja, Programmname wird verwendet"
 #: rc.c:134
 msgid "default input file"
 msgstr "Default-Eingabedatei"
-
-#~ msgid "syntax error in command line"
-#~ msgstr "Syntax-Fehler in der Befehlszeile"
-
-#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
-#~ msgstr ""
-#~ "Unerwartetes Atom in der Befehlszeile. Haben Sie einen Verbinder "
-#~ "vergessen?"
-
-#~ msgid "Test for numerical equality."
-#~ msgstr "Test auf numerische Übereinstimmung."
-
-#~ msgid "Numerical test: <."
-#~ msgstr "Numerischer Test: <."
-
-#~ msgid "Numerical test: <=."
-#~ msgstr "Numerischer Test: <=."
-
-#~ msgid "Numerical test: >."
-#~ msgstr "Numerischer Test: >."
-
-#~ msgid "Numerical test: >=."
-#~ msgstr "Numerischer Test: >=."
-
-#~ msgid "%s: command (%s) failed (exit status %d)\n"
-#~ msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
-
-#~ msgid "%s: command (%s) was killed by signal %d\n"
-#~ msgstr "%s: Befehl (%s) wurde von Signal %d abgebrochen\n"
-
-#~ msgid "%s (child): failed to exec /bin/sh: %s\n"
-#~ msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
-
-#~ msgid "not owned by you or root, ignoring"
-#~ msgstr "gehört nicht Ihnen oder root, wird ignoriert"
-
-#~ msgid "write permissions for group or others, ignoring"
-#~ msgstr "Schreibberechtigungen für die Gruppe oder andere, wird ignoriert"
