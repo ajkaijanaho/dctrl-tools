@@ -1,0 +1,23 @@
+1.100 - a total rewrite
+        new feature: boolean queries
+        known regressions:
+           + unacceptably slow search in full paragraph
+           + no -Ffoo,bar,baz (equivalent boolean q available)
+           + no internationalization
+
+1.11 - added the -s option
+
+1.10 - made -c synonymous with --count
+
+1.7 - allowed several -F options and comma-separated list of
+      fields as -F's argument
+
+1.6 - disabled the -c option
+
+1.3 - fixed a segfault related to the -c option
+      deprecated the short -c option (use the long option instead)
+
+1.2 - added the -v option (see manpage for details)
+      New documentation file Compatibility.
+
+1.0 - no news is good news

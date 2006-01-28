@@ -1,0 +1,282 @@
+grep-dctrl (1.100) unstable; urgency=low
+
+  * A (nearly) full rewrite (bumped minor version number to match)
+  * Includes an annoying one-time-per-user banner asking for testing (will
+    be removed in the future).
+  * debian/control [Standards-Version]: Upgrade to 3.6.0.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 10 Aug 2003 18:33:05 +0300
+
+grep-dctrl (1.12) unstable; urgency=low
+
+  * matcher.c (find_field): Simplify code (this seems
+    to be a bit faster, too).
+  * This version was never uploaded.
+  
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 22 Apr 2003 19:33:09 +0300
+
+grep-dctrl (1.11) unstable; urgency=low
+
+  * The four-year near-anniversary overhaul.
+  * debian/copyright: Add copyright years.
+  * debian/copyright: Fix my snailmail address.
+  * debian/{prerm,postinst}: Remove (they handled only the FHS transition).
+  * debian/rules: Rewrote using my modernish rules helper.  Closes: #164652.
+  * grep-dctrl.c: Don't use perror to report errors; instead use fprintf
+    and strerror so that the file name is reported.  Closes: #162072.
+  * grep-dctrl.1.cp: Fix manpage syntax error, thanks to Bill Allombert.
+    Closes: #160521.
+  * grep-dctrl.c, matcher.h, matcher.c, buffer.h, buffer.c:
+    Implement -d switch, suggested by Chris Waters.  Closes: #106175.
+  * po/fi.po: Updated
+  * matcher.c: Don't display a blank field when fields are selected, as
+    suggested by Horms.  Closes: #167365.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 16 Feb 2003 18:48:11 +0200
+
+grep-dctrl (1.10) unstable; urgency=low
+
+  * grep-dctrl.c, grep-dctrl.1.cp: Make -c synonymous with --count.
+  * grep-dctrl.1.cp: Add Bill Allombert's example.  Closes: #145301.
+  * debian/control [Standards-Version]: Upgrade to 3.5.6
+      + debian/rules: Implement debug & nostrip
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 25 Jul 2002 21:44:28 +0300
+
+grep-dctrl (1.9) unstable; urgency=low
+
+  * intl/Makefile.in: We don't have a ../config.h.  Closes: #106001
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 30 Jul 2001 20:09:18 +0300
+
+grep-dctrl (1.8) unstable; urgency=low
+
+  * Fix manpage, closes: #102021
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 19 Jul 2001 19:40:55 +0300
+
+grep-dctrl (1.7) unstable; urgency=low
+
+  * Added copyright blurb to some source files that missed it.
+  * grep-dctrl.c, matcher.[ch]: Implement multiple -F options,
+    allows search in several fields at once.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 20 May 2000 18:32:00 +0300
+
+grep-dctrl (1.6) unstable; urgency=low
+
+  * Disable the -c switch to allow its meaning to be changed
+    in woody+1.
+  * grep-dctrl.1.cp: Added COMPATIBILITY section, based on
+    the file Compatibility.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 10 May 2000 15:29:02 +0300
+
+grep-dctrl (1.5) unstable; urgency=low
+
+  * Incorporate bugfix release 1.3a into the development branch.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  5 Mar 2000 14:23:07 +0200
+
+grep-dctrl (1.4) unstable; urgency=low
+
+  * debian/control [Standards-Version]: 3.1.1
+     + debian/control [Build-Depends]: Added
+  * debian/control [Description]: Improved.
+  * debian/check-sourcedeps: Removed.
+  * debian/rules [debian/build-depends.stamp]: Removed.
+  * buffer.c, buffer.h: Make buffer_clear() an inline function.
+  * grep-dctrl.c (main), matcher.h (struct matcher_t),
+    matcher.c (grep_control): Implement the --count option
+    suggested by Dirk Eddelbuettel.
+  * configure.in, msg.h: Added a --enable-debug-level switch
+  * matcher.c (slurp_paragraph): Rewrote for speed.
+  * Versions 1.3 and 1.4 together closes: #57144.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  6 Feb 2000 21:42:30 +0200
+
+grep-dctrl (1.3a) frozen; urgency=low
+
+  * matcher.c (find_field): Unroll the first iteration of the first loop
+    and then remove the special-case p==s if in the loop body. 
+    Closes: bug#59455.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  5 Mar 2000 14:21:41 +0200
+
+grep-dctrl (1.3) frozen; urgency=low
+
+  * grep-dctrl.c (main): Add a colon after c in getopt's
+    argument, fixing the segfault in bug#57144.  This fix is meant
+    for frozen and is minimal; I will upload a more complicated fix
+    (but more correct in the long run) separately to unstable, since
+    the better fix requires feature changes.
+  * grep-dctrl.c (print_usage, main), grep-dctrl.1.cp, po/fi.po:
+    Deprecated short option "-c" to allow its meaning to be changed later
+    in woody.  Functionality is not changed in this version; only
+    messages about the deprecation have been added. This must go to
+    potato to allow a smooth transition to the better fix for bug#57144.
+  * debian/copyright: Updated copyright years (added 2000).
+  * debian/NEWS: documented this release's changes
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  6 Feb 2000 14:50:06 +0200
+
+grep-dctrl (1.2) unstable; urgency=low
+
+  * grep-dctrl.c (main), matcher.h (struct matcher_t), matcher.c
+    (grep_control): Implement the -v option suggested by David Coe.
+    Closes: #45115.
+  * debian/rules: Modernize.
+      + Factor install into a variable.
+      + Don't use install_gzip.
+      + Use stamp files.
+      + Split clean into {build,binary}-clean
+      + Use a separate target for the configure call.
+      + Don't test for rootness.
+      + Remove $(rootdir) at start of binary targets.
+  * grep-dctrl.1.cp: Documented the -v option.
+  * debian/{prerm,postinst,rules}: Implement the /usr/doc transition method.
+  * po/fi.po: Updated.
+  * Compatibility: New file.
+  * debian/rules: Install Compatibility.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 15 Sep 1999 20:06:20 +0300
+
+grep-dctrl (1.1) unstable; urgency=low
+
+  * matcher.c (grep_control): Only return on feof if the para is empty.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  2 Aug 1999 21:42:53 +0300
+
+grep-dctrl (1.0) unstable; urgency=low
+
+  * New major version.  No major changes, just polishing - we have
+    been converging to 1.0 for some time now.
+  * grep-dctrl.c (main): Don't allow -s to be used many times,
+    as it does not work in the obvious way.
+  * Updated the Finnish translation.
+  * grep-dctrl.1.cp: Updated the DIAGNOSTICS section.
+  * Added files TODO, NEWS and README to the source distribution.
+    Only README is not relevant to Debian users, so not installing it.
+  * configure.in: Check whether we have dpkg-parsechangelog, and
+    use a default dummy version number if we don't.  This allows
+    the package to build more easily on a non-Debian system.
+  * Unsymlink things that had symlinks outside the source.
+  * Added getopt source for the benefit of broken systems.
+  * configure.in: Use /usr/share/common-licenses/GPL as a default for
+    the copying file location.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 10 Jul 1999 20:58:46 +0300
+
+grep-dctrl (0.16) unstable; urgency=low
+
+  * Upgraded Standards-Version to 3.0.0.0, with necessary
+    changes to debian/rules and debian/copyright.
+  * configure.in: Added an anchor to the grep in the version number,
+    finder, and reran autoconf
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri,  2 Jul 1999 10:42:24 +0300
+
+grep-dctrl (0.15) unstable; urgency=low
+
+  * Removed the file called "1" from the source package.
+    Closes: bug#40358.
+  * debian/dpkg-sourcedeps: New file.
+  * debian/rules: Converted the source dependency check to use
+    debian/dpkg-sourcedeps
+  * grep-dctrl.1.cp: Wrote an EXAMPLES section.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 28 Jun 1999 18:02:36 +0300
+
+grep-dctrl (0.14) unstable; urgency=low
+
+  * matcher.c (grep_control): Test for EOF before a paragraph
+    is processed, not after.  This fixes an unreported bug
+    that caused grep-dctrl -sPackage '' output a spurious
+    empty Package: line.
+  * debian/rules: Added a simple source dependency check.
+  * debian/rules: Use -isp with dpkg-gencontrol.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 26 Jun 1999 03:21:20 +0300
+
+grep-dctrl (0.13) unstable; urgency=low
+
+  * buffer.c (buffer_trim): I had ">=" in the loop
+    condition, should be "<".  Corrected that; this
+    fixes bug #38047.
+  * Added debug_messages and asserts all over buffer.c
+    while hunting bug #38047.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 20 May 1999 21:47:31 +0300
+
+grep-dctrl (0.12) unstable; urgency=low
+
+  * Removed old-Makefile.in from the tarball.
+  * Updated Finnish translation.
+  * Made field name matching ignore case.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 18 May 1999 08:53:42 +0300
+
+grep-dctrl (0.11) unstable; urgency=low
+
+  * Added shorthand option -P.
+  * Fixed a typo in config file name in the manual page.
+  * grep_dctrl (set_match_field): New function.
+  * Fixed some -Wall warnings in matcher.c.
+  * rc.c, line 107: Had forgotten the `++' in front of lineno.
+    Corrected that.
+  * Added the option -n for suppressing the field names on output.
+  * Added a some informational messages to rcfile parsing.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri,  9 Apr 1999 20:24:30 +0300
+
+grep-dctrl (0.10) unstable; urgency=low
+
+  * Got rid of version.h.  The defines are now done on the
+    compiler command line.  This will avoid the harmful rebuild of
+    grep-dctrl.o in Makefile's install target. Fixes bug#35527.
+  * Added the generated manual page to CLEANFILES, so that the
+    manpage gets rebuilt.
+  * Clean off backup files on debian/rules clean.
+  * rc.c: Search user's rcfile first.
+  * rc.c: Upgrade the "reading config file" message from debug message 
+    to informational.
+  * Updated the Finnish translation.
+  * Prettified the long description in debian/control.
+  * matcher.c: Downgraded several messages to the debug level `debug' so that
+    the level `informational' becomes much less verbose.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  5 Apr 1999 23:35:39 +0300
+
+grep-dctrl (0.9) unstable; urgency=low
+
+  * Introduced a config file system for specifying default
+    input file names based on the base name of argv[0].
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 24 Mar 1999 22:02:49 +0200
+
+grep-dctrl (0.8) unstable; urgency=low
+
+  * Rewrote build system to use autoconf & automake.
+  * Internationalized.  Finnish translation is included.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 19 Mar 1999 11:07:15 +0200
+
+grep-dctrl (0.7) unstable; urgency=low
+
+  * Added an option for exact matches.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue,  9 Mar 1999 02:58:30 +0200
+
+grep-dctrl (0.6) unstable; urgency=low
+
+  * Strip whitespace at the start of a field body before searching in it.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  8 Mar 1999 22:28:23 +0200
+
+grep-dctrl (0.5) unstable; urgency=low
+
+  * First released version.
+  * This time the uploaded changes and .dsc are signed :-(
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  1 Mar 1999 22:10:01 +0200
+

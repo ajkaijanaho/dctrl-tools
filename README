@@ -1,0 +1,5 @@
+grep-dctrl is a command-line tool for searching and manipulating
+certain Debian-specific files.  It's not much use on other systems,
+but it should still compile on a non-Debian system.  You need Lars
+Wirzenius' publib library to compile it (you should be able to find it
+from the Debian distribution or at http://www.iki.fi/liw/programs/).
