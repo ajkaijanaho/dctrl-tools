@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-07-17 04:42+0300\n"
-"PO-Revision-Date: 2004-07-08 18:29+0300\n"
+"POT-Creation-Date: 2005-06-08 19:26+0300\n"
+"PO-Revision-Date: 2005-06-07 21:29+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,261 +19,254 @@ msgstr ""
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
-#: grep-dctrl.c:105
+#: grep-dctrl.c:103
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
 
-#: grep-dctrl.c:107
+#: grep-dctrl.c:105
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl.c:107
+#: grep-dctrl.c:105
 msgid "Set debugging level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
-#: grep-dctrl.c:108 grep-dctrl.c:110
+#: grep-dctrl.c:106 grep-dctrl.c:108
 msgid "FIELD,FIELD,..."
-msgstr "KENTTÄ,KENTT�,..."
+msgstr "KENTTÄ,KENTTÄ,..."
 
-#: grep-dctrl.c:108
+#: grep-dctrl.c:106
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
-#: grep-dctrl.c:109
+#: grep-dctrl.c:107
 msgid "This is a shorthand for -FPackage."
-msgstr "Lyhyt muoto vivulle -FPackage"
+msgstr "Lyhyt muoto vivulle -FPackage."
 
-#: grep-dctrl.c:110
+#: grep-dctrl.c:108
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Näytä vain näiden kenttien sisältö täsmäävissä tietueissa"
 
-#: grep-dctrl.c:111
+#: grep-dctrl.c:109
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
 "Näytä täsmäävien tietueiden \"Description\"-kentästä vain ensimmäinen rivi."
 
-#: grep-dctrl.c:112
+#: grep-dctrl.c:110
 msgid "Suppress field names when showing specified fields."
 msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
 
-#: grep-dctrl.c:113
+#: grep-dctrl.c:111
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:112
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
 
-#: grep-dctrl.c:115
+#: grep-dctrl.c:113
 msgid "Ignore case when looking for a match."
 msgstr "Jätä kirjainkoko huomiotta haussa."
 
-#: grep-dctrl.c:116
+#: grep-dctrl.c:114
 msgid "Show only paragraphs that do not match."
 msgstr "Näytä vain ne tietueet, jotka eivät täsmää."
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:115
 msgid "Show only the count of matching paragraphs."
 msgstr "Näytä vain täsmäävien tietueiden lukumäärä."
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:116
 msgid "FNAME"
 msgstr "TIEDNIMI"
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:116
 msgid "Use FNAME as the config file."
 msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
 
-#: grep-dctrl.c:119
+#: grep-dctrl.c:117
 msgid "Do an exact match."
 msgstr "Käytä täsmällistä hakua."
 
-#: grep-dctrl.c:120
+#: grep-dctrl.c:118
 msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
-#: grep-dctrl.c:121
+#: grep-dctrl.c:119
 msgid "Conjunct predicates."
 msgstr "Yhdistä predikaatit JA-konnektiivilla"
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:120
 msgid "Disjunct predicates."
 msgstr "Yhdistä predikaatit TAI-konnektiivilla"
 
-#: grep-dctrl.c:123
+#: grep-dctrl.c:121
 msgid "Negate the following predicate."
 msgstr "Negatoi seuraava predikaatti."
 
-#: grep-dctrl.c:124
-msgid "Test for numerical equality."
+#: grep-dctrl.c:122
+#, fuzzy
+msgid "Test for version number equality."
 msgstr "Testaa numeerista yhtäsuuruutta."
 
+#: grep-dctrl.c:123
+msgid "Version number comparison: <."
+msgstr ""
+
+#: grep-dctrl.c:124
+msgid "Version number comparison: <=."
+msgstr ""
+
 #: grep-dctrl.c:125
-msgid "Numerical test: <."
-msgstr "Numeerinen testi: <."
+msgid "Version number comparison: >."
+msgstr ""
 
 #: grep-dctrl.c:126
-msgid "Numerical test: <=."
-msgstr "Numeerinen testi: <=."
+msgid "Version number comparison: >=."
+msgstr ""
 
 #: grep-dctrl.c:127
-msgid "Numerical test: >."
-msgstr "Numeerinen testi: >."
-
-#: grep-dctrl.c:128
-msgid "Numerical test: >=."
-msgstr "Numeerinen testi: >=."
-
-#: grep-dctrl.c:129
 msgid "Debug option parsing."
-msgstr "Testaa valitsimien jäsennyst�."
+msgstr "Testaa valitsimien jäsennystä."
 
-#: grep-dctrl.c:130 grep-dctrl.c:131
+#: grep-dctrl.c:128 grep-dctrl.c:129
 msgid "Do no output to stdout."
-msgstr "Älä tulosta mitään vakiotulostevirtaan"
+msgstr "Älä tulosta mitään vakiotulostevirtaan."
 
-#: grep-dctrl.c:209 grep-dctrl.c:322 predicate.c:41
+#: grep-dctrl.c:207 grep-dctrl.c:316 predicate.c:68
 msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
-#: grep-dctrl.c:290
+#: grep-dctrl.c:284
 msgid "predicate is too long"
 msgstr "predikaatti on liian pitkä"
 
-#: grep-dctrl.c:347
+#: grep-dctrl.c:343
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:414
+#: grep-dctrl.c:410
 msgid "no such log level"
 msgstr "ei sellaista seurantatasoa ole"
 
-#: grep-dctrl.c:534
+#: grep-dctrl.c:510
 msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
-#: grep-dctrl.c:615
+#: grep-dctrl.c:591
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: komento (%s) epäonnistui (lopetuskoodi %d)\n"
 
-#: grep-dctrl.c:624
+#: grep-dctrl.c:600
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: komento (%s) kuoli signaalin %d vuoksi\n"
 
-#: grep-dctrl.c:662
+#: grep-dctrl.c:638
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (lapsi): /bin/sh ei käynnistynyt: %s\n"
 
-#: grep-dctrl.c:716
+#: grep-dctrl.c:692
 msgid "unexpected end of predicate"
 msgstr "odottamaton predikaatin loppu"
 
-#: grep-dctrl.c:719
+#: grep-dctrl.c:695
 msgid "unexpected '!' in command line"
 msgstr "odottamaton '!' komentorivillä"
 
-#: grep-dctrl.c:722
+#: grep-dctrl.c:698
 msgid "unexpected '-a' in command line"
-msgstr "odottamaton '-a' komentorivill�"
+msgstr "odottamaton '-a' komentorivillä"
 
-#: grep-dctrl.c:725
+#: grep-dctrl.c:701
 msgid "unexpected '-o' in command line"
-msgstr "odottamaton '-o' komentorivill�"
+msgstr "odottamaton '-o' komentorivillä"
 
-#: grep-dctrl.c:728
+#: grep-dctrl.c:704
 msgid "unexpected '(' in command line"
-msgstr "odottamaton '(' komentorivill�"
+msgstr "odottamaton '(' komentorivillä"
 
-#: grep-dctrl.c:731
+#: grep-dctrl.c:707
 msgid "unexpected ')' in command line"
-msgstr "odottamaton ')' komentorivill�"
+msgstr "odottamaton ')' komentorivillä"
 
-#: grep-dctrl.c:735
+#: grep-dctrl.c:711
 msgid "unexpected atom in command line"
-msgstr "odottamaton atomi komentorivill�"
+msgstr "odottamaton atomi komentorivillä"
 
-#: grep-dctrl.c:748
+#: grep-dctrl.c:724
 msgid "missing ')' in command line"
 msgstr "komentoriviltä puuttuu ')'"
 
-#: grep-dctrl.c:820
+#: grep-dctrl.c:805
 msgid "A pattern is mandatory"
-msgstr "Hakuehto on välttämätön."
+msgstr "Hakuehto on välttämätön"
 
-#: grep-dctrl.c:827
+#: grep-dctrl.c:812
 msgid "a predicate is required"
 msgstr "predikaatti on välttämätön"
 
-#: grep-dctrl.c:832
+#: grep-dctrl.c:817
 msgid "malformed predicate"
 msgstr "rikkinäinen predikaatti"
 
-#: grep-dctrl.c:838
+#: grep-dctrl.c:823
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:842
+#: grep-dctrl.c:827
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:851
+#: grep-dctrl.c:836
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: grep-dctrl.c:885
+#: grep-dctrl.c:870
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: grep-dctrl.c:894
+#: grep-dctrl.c:879
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: grep-dctrl.c:895
+#: grep-dctrl.c:880
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: grep-dctrl.c:896
+#: grep-dctrl.c:881
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: grep-dctrl.c:897
+#: grep-dctrl.c:882
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: grep-dctrl.c:898
+#: grep-dctrl.c:883
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
 #: misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr ""
+msgstr "%s: käytän sivutusohjelmaa `%s'\n"
 
 #: misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
-msgstr ""
+msgstr "%s: popen-systeemikutsu epäonnistui komennolla %s: %s\n"
 
-#: predicate.c:79
-msgid "invalid numeric pattern"
-msgstr "rikkinäinen lukuhakuehto"
-
-#: paragraph.c:38
-msgid "parse of a numeric field failed"
-msgstr "numeerisen kentän jäsennys epäonnistui"
-
-#: paragraph.c:98 paragraph.c:124
+#: paragraph.c:75 paragraph.c:101
 msgid "unexpected end of file"
 msgstr "odottamaton tiedoston loppu"
 
-#: paragraph.c:117
+#: paragraph.c:94
 msgid "unexpected end of line"
 msgstr "odottamaton rivin loppu"
 
@@ -320,6 +313,24 @@ msgstr "oletussyötetiedosto"
 #: rc.c:201
 msgid "executable name not found; reading from standard input"
 msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
+
+#~ msgid "Numerical test: <."
+#~ msgstr "Numeerinen testi: <."
+
+#~ msgid "Numerical test: <=."
+#~ msgstr "Numeerinen testi: <=."
+
+#~ msgid "Numerical test: >."
+#~ msgstr "Numeerinen testi: >."
+
+#~ msgid "Numerical test: >=."
+#~ msgstr "Numeerinen testi: >=."
+
+#~ msgid "parse of a numeric field failed"
+#~ msgstr "numeerisen kentän jäsennys epäonnistui"
+
+#~ msgid "invalid numeric pattern"
+#~ msgstr "rikkinäinen lukuhakuehto"
 
 #~ msgid "syntax error in command line"
 #~ msgstr "komentorivillä on syntaksivirhe"

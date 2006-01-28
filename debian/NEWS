@@ -1,3 +1,11 @@
+grep-dctrl (2.6.6) unstable; urgency=low
+
+    Version number comparisons are now supported.  This subsumes the
+    earlier support for numeric comparison, since the version comparison
+    routine handles it as a special case.
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed,  8 Jun 2005 19:26:56 +0300
+
 grep-dctrl (2.6.1) experimental; urgency=low
 
     This version introduces a new program, sync-available, whose function

@@ -13,7 +13,7 @@ CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
 #CFLAGS += -pg
 #LDFLAGS += -pg
 
-LDLIBS = -lgmp
+#LDLIBS = -lgmp
 
 obj = grep-dctrl.o misc.o msg.o predicate.o util.o fsaf.o paragraph.o \
       fieldtrie.o rc.o strutil.o getaline.o fnutil.o

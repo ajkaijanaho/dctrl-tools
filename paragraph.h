@@ -21,15 +21,12 @@
 
 #define MAX_FIELDS 100
 
-#include <gmp.h>
 #include <stddef.h>
 #include "fsaf.h"
 #include "fieldtrie.h"
 
 struct field_data {
 	size_t start, end; /* offsets to the file; [start,end) is the body */
-	bool int_valid;    /* whether .parsed is valid */
-	mpz_t parsed;   /* a parsed value for the data */
 };
 
 struct paragraph_private {
