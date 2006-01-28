@@ -1,0 +1,41 @@
+		     GUIDELINES FOR TRANSLATORS
+			      2004-01-12
+
+Policy
+------
+
+Please familiarize yourself with the Translation Project
+(http://www.iro.umontreal.ca/translation/HTML/index.html) and the
+practices of your particular language team, if you haven't already
+done that.  We do not use the Translation Project's mechanisms, but it
+is useful to standardize on terminology and style.
+
+Please consider signing and submitting a copyright disclaimer for your
+translations (see
+http://www.iro.umontreal.ca/translation/HTML/disclaim.html).  Note
+that the effect of a copyright disclaimer is that your translation
+work is effectively placed in the public domain.  It does NOT transfer
+your copyrights to the FSF or anyone else.  We do not require a
+copyright disclaimer at this time, but we do recommend it.
+
+Translators should subscribe to dctrl-tools-i18n
+(http://lists.alioth.debian.org/mailman/listinfo/dctrl-tools-i18n).
+It will contain requests for updates of the translations, and perhaps
+occasionally discussion related to internationalization.
+
+
+Technical stuff
+---------------
+
+You can get an up-to-date .pot file by saying "make pot" in the
+distribution root directory (the parent directory of this file).
+Running "make po" merges the new pot with the known po files (bringing
+the msgids up to date).  Do NOT commit the pot to CVS (it is a
+generated file and thus does not belong under version control).
+
+You need to add your language to ../langs.mk for the makefile magic to
+work.
+
+Do not touch the C sources without consulting AJK first.
+
+

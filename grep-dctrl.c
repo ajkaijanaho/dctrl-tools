@@ -155,6 +155,8 @@ static int debug_optparse = 0;
 struct arguments {
 	/* Parser state, used when parsing the predicate. */
 	enum state state;
+	/* Parser state flag: last token seen was ')' */
+	bool just_seen_cparen;
 	/* Top of the parser stack.  */
 	size_t top;
 	/* Number of file names seen.  */
@@ -319,14 +321,19 @@ static void finish(struct arguments * args)
 	args->state = STATE_FINISHED;
 }
 
-#define ENTER_ATOM (enter_atom((args)))
+#define ENTER_ATOM (enter_atom((args),(just_seen_cparen)))
 
 /* If necessary, enter STATE_ATOM and allocate a new atom, pushing
  * along with the old state a PUSH instruction for the new atom to the
  * parser stack.  If we are already in STATE_ATOM, reuse the current
  * atom. */
-static struct atom * enter_atom(struct arguments * args)
+static struct atom * enter_atom(struct arguments * args, bool just_seen_cparen)
 {
+	if (just_seen_cparen) {
+		message(L_FATAL, _("Unexpected atom in command line. "
+				   "Did you forget to use a connective?"), 0);
+		fail();
+	}
 	struct atom * rv;
 	if (args->state == STATE_ATOM || args->state == STATE_FINISHED) {
 		assert(args->p.num_atoms > 0);
@@ -350,6 +357,8 @@ static struct atom * enter_atom(struct arguments * args)
 static error_t parse_opt (int key, char * arg, struct argp_state * state)
 {
 	struct arguments * args = state->input;
+	bool just_seen_cparen = args->just_seen_cparen;
+	args->just_seen_cparen = false;
 	struct atom * atom;
 	debug_message("parse_opt", 0);
 	switch (key) {
@@ -493,6 +502,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				leave(args, 0);
 			}
 			leave(args, 1);
+			args->just_seen_cparen = true;
 			break;
 		}
 		if (args->state == STATE_FINISHED) {
@@ -506,7 +516,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			args->fname[args->num_fnames++] = s;
 			break;
 		}
-		if (strcmp(arg, "--") == 0) { FINISH; break; }
+		if (just_seen_cparen || strcmp(arg, "--") == 0) { FINISH; break; }
 		atom = ENTER_ATOM;
 		if (atom->pat != 0) { FINISH; goto redo; }
 		atom->patlen = strlen(arg);
@@ -708,7 +718,7 @@ int main (int argc, char * argv[])
 
 		if (fd != STDIN_FILENO) close(fd);
 	}
-	if (count) printf("%d\n", count);
+	if (count) printf("%zi\n", count);
 	return errors_reported() ? 2 : found ? 0 : 1;
 }
 

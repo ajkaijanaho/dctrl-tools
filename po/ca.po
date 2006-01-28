@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2004-01-06 20:55+0200\n"
-"PO-Revision-Date: 2004-01-06 16:37+0100\n"
+"POT-Creation-Date: 2004-01-13 00:47+0200\n"
+"PO-Revision-Date: 2004-01-13 13:31+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -116,77 +116,81 @@ msgstr "Depura l'anàlisi d'opcions."
 msgid "No output to stdout"
 msgstr "No mostra res a l'eixida estàndard"
 
-#: grep-dctrl.c:205 grep-dctrl.c:275 grep-dctrl.c:336 predicate.c:39
+#: grep-dctrl.c:207 grep-dctrl.c:277 grep-dctrl.c:343 predicate.c:39
 msgid "predicate is too complex"
 msgstr "el predicat és massa complex"
 
-#: grep-dctrl.c:237
+#: grep-dctrl.c:239
 msgid "A pattern is mandatory."
 msgstr "Es necessita un patró."
 
-#: grep-dctrl.c:296
+#: grep-dctrl.c:298
 msgid "syntax error in command line"
 msgstr "hi ha un error de sintaxi a la línia d'ordres"
 
-#: grep-dctrl.c:313
+#: grep-dctrl.c:315
 msgid "missing ')' in command line"
 msgstr "manca un «)» en la línia d'ordres"
 
-#: grep-dctrl.c:401
+#: grep-dctrl.c:333
+msgid "Unexpected atom in command line. Did you forget to use a connective?"
+msgstr "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un connector?"
+
+#: grep-dctrl.c:410
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:440 grep-dctrl.c:449
+#: grep-dctrl.c:449 grep-dctrl.c:458
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:490
+#: grep-dctrl.c:499
 msgid "unexpected ')' in command line"
 msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:501
+#: grep-dctrl.c:511
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
-#: grep-dctrl.c:589
+#: grep-dctrl.c:599
 msgid "a predicate is required"
 msgstr "es requereix un predicat"
 
-#: grep-dctrl.c:595
+#: grep-dctrl.c:605
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl.c:599
+#: grep-dctrl.c:609
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl.c:608
+#: grep-dctrl.c:618
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: grep-dctrl.c:648
+#: grep-dctrl.c:658
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: no es pot fer stat(): %s\n"
 
-#: grep-dctrl.c:657
+#: grep-dctrl.c:667
 msgid "is a directory, skipping"
 msgstr "és un directori, s'està ometent"
 
-#: grep-dctrl.c:658
+#: grep-dctrl.c:668
 msgid "is a block device, skipping"
 msgstr "és un dispositiu de bloc, s'està ometent"
 
-#: grep-dctrl.c:659
+#: grep-dctrl.c:669
 msgid "internal error"
 msgstr "s'ha produït un error intern"
 
-#: grep-dctrl.c:660
+#: grep-dctrl.c:670
 msgid "is a socket, skipping"
 msgstr "és un sòcol, s'està ometent"
 
-#: grep-dctrl.c:661
+#: grep-dctrl.c:671
 msgid "unknown file type, skipping"
 msgstr "el tipus de fitxer és desconegut, s'està ometent"
 

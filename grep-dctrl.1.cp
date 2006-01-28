@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2004-01-03 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2004-01-13 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \" Permission is granted to make and distribute verbatim copies of
@@ -362,13 +362,6 @@ There were more opening than closing parentheses in the given
 predicate.
 .IP "no such log level"
 The argument to -l was invalid.
-.IP "unexpected ')' in command line"
-There was no opening parenthesis that would match some closing
-parenthesis in the command line.
-.IP "unexpected end of file"
-The input file is broken: it ends before it should.
-.IP "unexpected end of line"
-The input file is broken: a line ends before it should.
 .IP "predicate is too complex"
 The predicate's complexity (the number of atoms and connectives)
 exceed compile-time limits.
@@ -388,6 +381,19 @@ compile-time limit.
 .IP "too many output fields"
 The argument to -s had too many field names in it.  This number is
 limited to 256.
+.IP "unexpected ')' in command line"
+There was no opening parenthesis that would match some closing
+parenthesis in the command line.
+.IP "unexpected end of file"
+The input file is broken: it ends before it should.
+.IP "unexpected end of line"
+The input file is broken: a line ends before it should.
+.IP "Unexpected atom in command line. Did you forget to use a connective?"
+There was an atom on the command line where there should not be any.
+The most likely reason is that an atom modifier option (such as -F)
+follows directly after a closing parenthesis.  Adding a connective
+(--and, --or) between the parenthesis and the option is often the
+correct solution.
 .SH FILES
 .IP SYSCONF/grep-dctrl.rc
 See the next file.
