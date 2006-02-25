@@ -43,6 +43,9 @@ struct fsaf_private {
 
 typedef struct fsaf_private FSAF;
 
+/* True if FSAF should not use mmap even if it is possible. */
+extern bool fsaf_mmap;
+
 /* Open a FSAF for the given fd. Only read access is supported for
  * now.  The whole file is initially valid.  */
 FSAF * fsaf_fdopen(int fd, char const *fname);

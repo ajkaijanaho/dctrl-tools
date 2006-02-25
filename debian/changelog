@@ -4,6 +4,15 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
     -q and --silent
     Closes: #326662 (tbl-dctrl --help output lies about options)
     Reported by Frank Lichtenheld <djpig@debian.org>.
+  * Closes: #348540 (grep-dctrl: stores whole input in memory)
+    Reported by Christoph Berg <myon@debian.org>.
+    - fsaf.c: Prefer reusing the current buffer instead of enlarging it,
+      when not using mmap(2).
+    - fsaf.h,fsaf.c: Fix invalidation for non-mmap buffers.
+  * fsaf.h,fsaf.c: Make it possible to turn off mmapping.
+  * fsaf.h,fsaf.c: Preallocate a 64KB buffer when not mmapping.
+  * grep-dctrl.c,sort-dctrl.c,tbl-dctrl.c:
+    Make mmap optional (defaults to no mmapping; new option --mmap).
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 
