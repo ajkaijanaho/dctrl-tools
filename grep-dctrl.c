@@ -55,6 +55,7 @@ static char argsdoc [] = "PREDICATE [FILENAME...]";
 #define OPT_LE 261
 #define OPT_GT 262
 #define OPT_GE 263
+#define OPT_MMAP 264
 
 #undef BANNER
 
@@ -128,6 +129,7 @@ static struct argp_option options[] = {
 	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
 	{ "quiet",	    'q', 0,		    0, N_("Do no output to stdout.") },
 	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
+	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
 	{ 0 }
 };
 
@@ -474,6 +476,10 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: ge", 0);
 		set_mode(M_VER_GE);
 		break;
+	case OPT_MMAP:
+		debug_message("parse_opt: mmap", 0);
+		fsaf_mmap = 1;
+		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
 		atom = ENTER_ATOM;
@@ -817,6 +823,7 @@ int main (int argc, char * argv[])
 			if (args.num_show_fields > 1) puts("");
 		}
 
+		fsaf_close(fp);
 		close_ifile(fname, fd);
 	}
 	if (count) printf("%zi\n", count);

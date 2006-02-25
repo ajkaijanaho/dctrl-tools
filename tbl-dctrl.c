@@ -27,6 +27,7 @@
 #include "sorter.h"
 
 #define OPT_SILENT 256
+#define OPT_MMAP 257
 
 const char * argp_program_version = "tbl-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;
@@ -36,6 +37,7 @@ static struct argp_option options[] = {
 	{ "column",            'c', N_("SPEC"),     0, N_("Append the specified column.") },
 	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
+	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files") },
 	{ 0 }
 };
 
@@ -293,6 +295,10 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			args->fname[args->num_fnames++] =
 				(struct ifile){ .mode = m_read, .s = s };
 		}
+		break;
+	case OPT_MMAP:
+		debug_message("parse_opt: mmap", 0);
+		fsaf_mmap = 1;
 		break;
 	case ARGP_KEY_END:
 	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS:

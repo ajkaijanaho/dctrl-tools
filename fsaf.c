@@ -35,6 +35,8 @@
 
 #define READAHEAD 1
 
+bool fsaf_mmap;
+
 FSAF * fsaf_fdopen(int fd, char const *fname)
 {
 	FSAF * rv = malloc(sizeof *rv);
@@ -61,20 +63,32 @@ FSAF * fsaf_fdopen(int fd, char const *fname)
 	if (S_ISREG(stat.st_mode)) {
 		rv->eof_mark = stat.st_size;
 #ifdef _POSIX_MAPPED_FILES
-		/* try mmapping, it is a regular file */
-		size_t eof_pagebound = pg_align(rv->eof_mark, true);
-		char * buf = mmap(0, eof_pagebound, PROT_READ, MAP_SHARED, fd, 0);
-		if (buf != MAP_FAILED) {
-			debug_message("mmapping", 0);
-			rv->mapped = 1;
-			rv->buf = buf;
-			rv->buf_capacity = eof_pagebound;
-			rv->buf_offset = 0;
-			rv->buf_size = rv->eof_mark;
-			//madvise(rv->buf, rv->buf_capacity, MADV_SEQUENTIAL);
-			return rv;
+		if (fsaf_mmap) {
+			/* try mmapping, it is a regular file */
+			size_t eof_pagebound = pg_align(rv->eof_mark, true);
+			char * buf = mmap(0, eof_pagebound, PROT_READ,
+					  MAP_SHARED, fd, 0);
+			if (buf != MAP_FAILED) {
+				debug_message("mmapping", 0);
+				rv->mapped = 1;
+				rv->buf = buf;
+				rv->buf_capacity = eof_pagebound;
+				rv->buf_offset = 0;
+				rv->buf_size = rv->eof_mark;
+				//madvise(rv->buf, rv->buf_capacity,
+				//	MADV_SEQUENTIAL);
+			}
 		}
 #endif
+	}
+
+#ifdef _POSIX_MAPPED_FILES
+	if (!rv->mapped)
+#endif
+	{
+		rv->buf_capacity = 65536;
+		rv->buf = malloc(rv->buf_capacity);
+		if (rv->buf == 0) rv->buf_capacity = 0;
 	}
 
 	return rv;
@@ -86,6 +100,7 @@ fail:
 void fsaf_close(FSAF * fp)
 {
 	assert(fp != 0);
+
 #if _POSIX_MAPPED_FILES
 	if (fp->mapped) {
 		munmap(fp->buf, fp->buf_capacity);
@@ -98,10 +113,25 @@ void fsaf_close(FSAF * fp)
 	free(fp);
 }
 
+
+static void slide(FSAF *fp)
+{
+	assert(fp->invalid_mark >= fp->buf_offset);
+	size_t delta = fp->invalid_mark - fp->buf_offset;
+	assert(fp->buf_capacity > delta);
+	if (delta == 0) return;
+	memmove(fp->buf, fp->buf + delta, fp->buf_size - delta);
+	fp->buf_offset += delta;
+	fp->buf_size -= delta;
+}
+
 static void slurp(FSAF * fp, size_t len)
 {
 	assert(fp != 0);
 	assert(len > 0);
+	if (fp->invalid_mark - fp->buf_offset > fp->buf_size / 2) {
+		slide(fp);
+	}
 	if (fp->buf_size + len > fp->buf_capacity) {
 		size_t nc = fp->buf_capacity;
 		if (nc == 0) nc = 256;
@@ -111,15 +141,10 @@ static void slurp(FSAF * fp, size_t len)
 			fp->buf = nb;
 			fp->buf_capacity = nc;
 		} else {
-			assert(fp->invalid_mark >= fp->buf_offset);
-			size_t delta = fp->invalid_mark - fp->buf_offset;
-			if (delta == 0) {
-				/* Cannot move needed stuff... */
-				fatal_enomem(0);
+			slide(fp);
+			if (fp->buf_size > fp->buf_capacity) {
+				fatal_enomem(fp->fname);
 			}
-			memmove(fp->buf, fp->buf + delta, fp->buf_size - delta);
-			fp->buf_offset += delta;
-			fp->buf_size -= delta;
 			if (fp->buf_size + len > fp->buf_capacity) {
 				len = fp->buf_capacity - fp->buf_size;
 			}
@@ -184,7 +209,8 @@ struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
 
 void fsaf_invalidate(FSAF * fp, size_t offset)
 {
-	if (fp->eof_mark >= offset) return;
+	assert(fp->eof_mark >= offset);
+	if (fp->invalid_mark >= offset) return;
 
 #ifdef _POSIX_MAPPED_FILES
 	if (fp->mapped) {
@@ -194,7 +220,7 @@ void fsaf_invalidate(FSAF * fp, size_t offset)
 	}
 #endif	
 
-	fp->eof_mark = offset;
+	fp->invalid_mark = offset;
 }
 
 #ifdef TESTMAIN
