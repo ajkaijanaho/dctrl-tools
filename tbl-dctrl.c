@@ -36,8 +36,6 @@ static struct argp_option options[] = {
 	{ "column",            'c', N_("SPEC"),     0, N_("Append the specified column.") },
 	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
-	{ "quiet",	       'q', 0,		    0, N_("Do no output to stdout.") },
-	{ "silent",	       OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
 	{ 0 }
 };
 

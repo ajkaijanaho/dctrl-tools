@@ -1,5 +1,9 @@
 dctrl-tools (2.8.1) UNRELEASED; urgency=low
 
+  * tbl-dctrl.c, sort-dctrl: Remove the useless (and broken) options
+    -q and --silent
+    Closes: #326662 (tbl-dctrl --help output lies about options)
+    Reported by Frank Lichtenheld <djpig@debian.org>.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 

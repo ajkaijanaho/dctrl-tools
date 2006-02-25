@@ -34,8 +34,6 @@ const char * argp_program_bug_address = MAINTAINER;
 static struct argp_option options[] = {
 	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
-	{ "quiet",	       'q', 0,		    0, N_("Do no output to stdout.") },
-	{ "silent",	       OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
 	{ "key-spec",          'k', N_("KEYSPEC"),  0, N_("Specify sort keys.") },
 	{ 0 }
 };
