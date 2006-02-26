@@ -23,6 +23,10 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
   * paragraph.[ch]: Track line numbers and improve error messages.
     Closes: #354471 (grep-dctrl should include file and line info in errors)
     Reported by Greg Ward <gward-debian@python.net>.
+  * grep-dctrl.1.cp: Some manual page simplifications following Manoj's
+    suggestions (probably still needs work, though)
+    See #325169 (grep-dctrl: Man page improvements)
+    Reported by Manoj Srivastava <srivasta@golden-gryphon.com>.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 

@@ -60,4 +60,7 @@ void bundle_slurp(struct para_bundle * pb, struct ifile ifi)
 		debug("pb->num_paras = %zi", pb->num_paras);
 		pb->paras[pb->num_paras++] = p;
 	}
+
+	fsaf_close(f);
+	close_ifile(ifi, fd);
 }
