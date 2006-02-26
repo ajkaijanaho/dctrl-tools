@@ -56,6 +56,7 @@ static char argsdoc [] = "PREDICATE [FILENAME...]";
 #define OPT_GT 262
 #define OPT_GE 263
 #define OPT_MMAP 264
+#define OPT_IGN_ERRS 265
 
 #undef BANNER
 
@@ -130,6 +131,7 @@ static struct argp_option options[] = {
 	{ "quiet",	    'q', 0,		    0, N_("Do no output to stdout.") },
 	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
 	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
+	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
 	{ 0 }
 };
 
@@ -164,6 +166,8 @@ struct arguments {
 	struct predicate p;
 	/* Configuration file name */
 	char const * rcname;
+	/* Ignore parse errors? */
+	bool ignore_errors;
 	/* Quiet operation? */
 	bool quiet;
 	/* Do show field names? */
@@ -490,6 +494,10 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: optparse", 0);
 		debug_optparse = 1;
 		break;
+	case OPT_IGN_ERRS:
+		debug_message("parse_opt: ignore-parse-errors", 0);
+		args->ignore_errors = 1;
+		break;
 	case ARGP_KEY_ARG:
 		debug_message("parse_opt: argument", 0);
 	redo:
@@ -779,7 +787,7 @@ int main (int argc, char * argv[])
 
 		FSAF * fp = fsaf_fdopen(fd, fname.s);
 		para_parser_t pp;
-		para_parser_init(&pp, fp, true);
+		para_parser_init(&pp, fp, true, args.ignore_errors);
 		para_t para;
 		para_init(&pp, &para);
 		while (1) {

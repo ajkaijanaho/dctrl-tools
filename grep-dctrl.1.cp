@@ -192,6 +192,10 @@ match), show the count of those paragraphs.
 Output nothing to the standard output stream.  Instead, exit
 immediately after finding the first match.
 .SS Miscellaneous
+.IP "\-\-ignore\-parse\-errors"
+Ignore errors in parsing input.  A paragraph which cannot be parsed
+is ignored in its entirety, and the next paragraph is assumed to start
+after the first newline since the location of the error.
 .IP "\-\-config\-file=FNAME"
 Use FNAME as the config file instead of the defaults.
 .IP "\-\-debug\-optparse"

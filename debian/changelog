@@ -27,6 +27,11 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
     suggestions (probably still needs work, though)
     See #325169 (grep-dctrl: Man page improvements)
     Reported by Manoj Srivastava <srivasta@golden-gryphon.com>.
+  * paragraph.[ch]: Make it possible to ignore paragraph parse errors.
+      + para_bundle.c, tbl-dctrl.c, grep-dctrl.c: related fixes
+  * grep-dctrl.c,grep-dctrl.1.cp: New option --ignore-parse-errors
+    Closes: #205044 (grep-dctrl parser is stricter than before)
+    Reported by Blars Blarson <blarson@blars.org>.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 

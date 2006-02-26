@@ -21,13 +21,15 @@
 #include "paragraph.h"
 #include "strutil.h"
 
-void para_parser_init(para_parser_t * pp, FSAF * fp, bool invalidate_p)
+void para_parser_init(para_parser_t * pp, FSAF * fp,
+		      bool invalidate_p, bool ignore_failing_paras)
 {
 	pp->fp = fp;
 	pp->eof = false;
 	pp->loc = 0;
 	pp->line = 1;
 	pp->invalidate_p = invalidate_p;
+	pp->ignore_broken_paras = ignore_failing_paras;
 }
 
 void para_init(para_parser_t * pp, para_t * para)
@@ -57,6 +59,7 @@ void para_finalize(para_t * para)
 
 void para_parse_next(para_t * para)
 {
+redo:
 	debug_message("para_parse_next", 0);
 	assert(para != 0);
 	para_parser_t * pp = para->common;
@@ -71,17 +74,18 @@ void para_parse_next(para_t * para)
 		fsaf_invalidate(pp->fp, para->start);
 	}
 	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
-			BODY_SKIPBLANKS, END } state = START;
+			BODY_SKIPBLANKS, END, FAIL } state = START;
 	register size_t pos = para->start;
 	register size_t line = para->line;
 	register FSAF * fp = pp->fp;
 	size_t field_start = 0;
 	struct field_data * field_data = 0;
-	while (state != END) {
+	while (state != END && state != FAIL) {
 #               ifndef TEST_NODEBUG
 		static char * const stnm[] = { "START", "FIELD_NAME",
 					       "BODY", "BODY_NEWLINE",
-					       "BODY_SKIPBLANKS", "END" };
+					       "BODY_SKIPBLANKS", "END",
+					       "FAIL" };
 		if (do_msg(L_DEBUG)) {
 			fprintf(stderr, "%s:%zu: state: %s\n",
 				fp->fname, line, stnm[state]);
@@ -106,11 +110,20 @@ void para_parse_next(para_t * para)
 			break;
 		case FIELD_NAME:
 			switch (c) {
-			case -1:
-				message(L_FATAL, _("unexpected end of file "
-						   "(expected a colon)"),
-					fp->fname);
-				fail();
+			case '\n': case -1:
+				if (pp->ignore_broken_paras) {
+					line_message(L_IMPORTANT,
+						     _("warning: "
+						       "expected a colon"),
+						     fp->fname, line);
+					state = FAIL;
+				} else {
+					line_message(L_FATAL,
+						     _("expected a colon"),
+						     fp->fname, line);
+					fail();
+				}
+				break;
 			case ':': {
 				size_t len = (pos-1) - field_start;
 				struct fsaf_read_rv r = fsaf_read(fp,
@@ -130,21 +143,10 @@ void para_parse_next(para_t * para)
 				state = BODY;
 			}
 				break;
-			case '\n':
-				line_message(L_FATAL,
-					     _("unexpected end of line "
-					       "(expected a colon)"),
-					     fp->fname, line);
-				fail();
 			}
 			break;
 		case BODY:
-			switch (c) {
-			case -1:
-				message(L_FATAL, _("unexpected end of file"),
-					fp->fname);
-				fail();
-			case '\n':
+			if (c == -1 || c == '\n') {
 				if (field_data != 0) {
 					field_data->end = pos-1;
 					while (field_data->start < field_data->end
@@ -154,9 +156,9 @@ void para_parse_next(para_t * para)
 					}
 				}
 				state = BODY_NEWLINE;
-				break;
 			}
-			break;
+			if (c != -1) break;
+			/* conditional passthrough */
 		case BODY_NEWLINE:
 			switch (c) {
 			case -1:
@@ -186,10 +188,20 @@ void para_parse_next(para_t * para)
 				state = BODY;
 			}
 			break;
-		case END: assert(0);
+		default: assert(0);
 		}
 	}
 	para->end = pos-1;
 	pp->loc = para->end;
 	pp->line = line;
+
+	if (state == FAIL) {
+		/* skip the rest of the broken line */
+		int c;
+		do {
+			c = fsaf_getc(fp, pp->loc++);
+			if (c == '\n') pp->line++;
+		} while (c != -1 && c != '\n');
+		goto redo;
+	}
 }
