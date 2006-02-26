@@ -405,10 +405,11 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		free(carg);
 	}
 		break;
-	case 'l': {		int ll = str2loglevel(optarg);
+	case 'l': {
+		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
-			message(L_FATAL, _("no such log level"), optarg);
+			message(L_FATAL, _("no such log level"), arg);
 			fail();
 		}
 		set_loglevel(ll);
