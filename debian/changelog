@@ -32,6 +32,7 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
   * grep-dctrl.c,grep-dctrl.1.cp: New option --ignore-parse-errors
     Closes: #205044 (grep-dctrl parser is stricter than before)
     Reported by Blars Blarson <blarson@blars.org>.
+  * po/ca.po: Update by Jordi Mallach <jordi@debian.org>, closes: #349507.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 
