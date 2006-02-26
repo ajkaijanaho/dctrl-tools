@@ -406,7 +406,7 @@ int main(int argc, char * argv[])
 
 			FSAF * fp = fsaf_fdopen(fd, fname.s);
 			para_parser_t pp;
-			para_parser_init(&pp, fp, true);
+			para_parser_init(&pp, fp, true, false);
 			para_t para;
 			para_init(&pp, &para);
 			while (1) {
