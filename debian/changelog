@@ -13,6 +13,10 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
   * fsaf.h,fsaf.c: Preallocate a 64KB buffer when not mmapping.
   * grep-dctrl.c,sort-dctrl.c,tbl-dctrl.c:
     Make mmap optional (defaults to no mmapping; new option --mmap).
+  * debian/{rules,postinst.grep-dctrl}: Remove an empty
+    /usr/share/doc/grep-dctrl directory at configure
+    Closes: #353533 (Empty /usr/share/doc/grep-dctrl directory)
+    Reported by: Martin Orr <martin@martinorr.name>.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 
