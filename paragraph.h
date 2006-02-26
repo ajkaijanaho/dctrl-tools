@@ -26,6 +26,7 @@
 #include "fieldtrie.h"
 
 struct field_data {
+	size_t line;
 	size_t start, end; /* offsets to the file; [start,end) is the body */
 };
 
@@ -34,9 +35,11 @@ struct paragraph_parser {
 	bool invalidate_p;
 	FSAF * fp;
 	size_t loc;
+	size_t line;
 };
 
 struct paragraph {
+	size_t line;
 	struct paragraph_parser * common;
 	size_t start, end; /* offsets to the file; [start,end) is the paragraph */
 	size_t nfields;
