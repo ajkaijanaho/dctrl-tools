@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.0\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2005-07-20 13:08+0300\n"
+"POT-Creation-Date: 2006-02-26 21:42+0200\n"
 "PO-Revision-Date: 2004-07-03 23:48+0200\n"
 "Last-Translator: Nicolas Bertolissio <nico.bertol@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -25,17 +25,19 @@ msgstr ""
 msgid "%s: popen failed for %s: %s\n"
 msgstr ""
 
-#: predicate.c:40 grep-dctrl.c:208 grep-dctrl.c:317
+#: predicate.c:40 grep-dctrl.c:214 grep-dctrl.c:323
 msgid "predicate is too complex"
 msgstr "le prédicat est trop complexe"
 
-#: paragraph.c:102 paragraph.c:130
-msgid "unexpected end of file"
-msgstr "fin de fichier inattendue"
+#: paragraph.c:116
+#, fuzzy
+msgid "warning: expected a colon"
+msgstr "« ) » inattendue sur la ligne de commande"
 
-#: paragraph.c:123
-msgid "unexpected end of line"
-msgstr "fin de ligne inattendue"
+#: paragraph.c:122
+#, fuzzy
+msgid "expected a colon"
+msgstr "« ) » inattendue sur la ligne de commande"
 
 #: rc.c:66
 msgid "Malformed default input file name"
@@ -129,35 +131,35 @@ msgstr ""
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
 
-#: grep-dctrl.c:104
+#: grep-dctrl.c:106
 msgid "Show the testing banner."
 msgstr "Afficher la bannière de test"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
 msgid "LEVEL"
 msgstr "NIVEAU"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
 msgid "Set debugging level to LEVEL."
 msgstr "Sélectionner le niveau de débogage NIVEAU"
 
-#: grep-dctrl.c:107 grep-dctrl.c:109
+#: grep-dctrl.c:109 grep-dctrl.c:111
 msgid "FIELD,FIELD,..."
 msgstr "CHAMP,CHAMP,..."
 
-#: grep-dctrl.c:107
+#: grep-dctrl.c:109
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Restreindre le motif de correspondance aux CHAMPS fournis"
 
-#: grep-dctrl.c:108
+#: grep-dctrl.c:110
 msgid "This is a shorthand for -FPackage."
 msgstr "Il s'agit d'un raccourci pour -FPackage."
 
-#: grep-dctrl.c:109
+#: grep-dctrl.c:111
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "N'afficher que le corps des champs des paragraphes qui correspondent"
 
-#: grep-dctrl.c:110
+#: grep-dctrl.c:112
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -165,175 +167,182 @@ msgstr ""
 "N'afficher que la première ligne du champ « Description » des paragraphes "
 "qui correspondent"
 
-#: grep-dctrl.c:111
+#: grep-dctrl.c:113
 msgid "Suppress field names when showing specified fields."
 msgstr "Supprimer les noms de champs lors de l'affichage des champs spécifiés"
 
-#: grep-dctrl.c:112
+#: grep-dctrl.c:114
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Considérer le motif comme une expression rationnelle POSIX étendue"
 
-#: grep-dctrl.c:113
+#: grep-dctrl.c:115
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Le motif est une expression rationnelle POSIX standard."
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:116
 msgid "Ignore case when looking for a match."
 msgstr "Ignorer la casse lors de la recherche d'un motif"
 
-#: grep-dctrl.c:115
+#: grep-dctrl.c:117
 msgid "Show only paragraphs that do not match."
 msgstr "N'afficher que les paragraphes qui ne correspondent pas"
 
-#: grep-dctrl.c:116
+#: grep-dctrl.c:118
 msgid "Show only the count of matching paragraphs."
 msgstr "N'afficher que le nombre de paragraphes qui correspondent"
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:119
 msgid "FNAME"
 msgstr "FICHIER"
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:119
 msgid "Use FNAME as the config file."
 msgstr "Utiliser FICHIER comme fichier de configuration"
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:120
 msgid "Do an exact match."
 msgstr "Rechercher une correspondance exacte"
 
-#: grep-dctrl.c:119 sort-dctrl.c:35 tbl-dctrl.c:37
+#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Print out the copyright license."
 msgstr "Afficher la licence"
 
-#: grep-dctrl.c:120
+#: grep-dctrl.c:122
 msgid "Conjunct predicates."
 msgstr "Associer les prédicats"
 
-#: grep-dctrl.c:121
+#: grep-dctrl.c:123
 msgid "Disjunct predicates."
 msgstr "Dissocier les prédicats"
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:124
 msgid "Negate the following predicate."
 msgstr "Inverser le prédicat suivant"
 
-#: grep-dctrl.c:123
+#: grep-dctrl.c:125
 #, fuzzy
 msgid "Test for version number equality."
 msgstr "Test d'égalité numérique"
 
-#: grep-dctrl.c:124
+#: grep-dctrl.c:126
 msgid "Version number comparison: <."
 msgstr ""
 
-#: grep-dctrl.c:125
+#: grep-dctrl.c:127
 msgid "Version number comparison: <=."
 msgstr ""
 
-#: grep-dctrl.c:126
+#: grep-dctrl.c:128
 msgid "Version number comparison: >."
 msgstr ""
 
-#: grep-dctrl.c:127
+#: grep-dctrl.c:129
 msgid "Version number comparison: >=."
 msgstr ""
 
-#: grep-dctrl.c:128
+#: grep-dctrl.c:130
 msgid "Debug option parsing."
 msgstr "Déboguer l'analyse des options"
 
-#: grep-dctrl.c:129 grep-dctrl.c:130 sort-dctrl.c:37 sort-dctrl.c:38
-#: tbl-dctrl.c:39 tbl-dctrl.c:40
+#: grep-dctrl.c:131 grep-dctrl.c:132
 msgid "Do no output to stdout."
 msgstr "Pas de sortie sur la sortie standard"
 
-#: grep-dctrl.c:285
+#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+msgid "Attempt mmapping input files"
+msgstr ""
+
+#: grep-dctrl.c:134
+msgid "Ignore parse errors"
+msgstr ""
+
+#: grep-dctrl.c:291
 #, fuzzy
 msgid "predicate is too long"
 msgstr "le prédicat est trop complexe"
 
-#: grep-dctrl.c:344
+#: grep-dctrl.c:350
 msgid "inconsistent atom modifiers"
 msgstr "modificateurs d'atome incohérents"
 
-#: grep-dctrl.c:409 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
 msgid "no such log level"
 msgstr "niveau de journalisation inexistant"
 
-#: grep-dctrl.c:509 sort-dctrl.c:111 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
 msgid "too many file names"
 msgstr "trop de noms de fichiers"
 
-#: grep-dctrl.c:598
+#: grep-dctrl.c:613
 #, fuzzy
 msgid "unexpected end of predicate"
 msgstr "fin de fichier inattendue"
 
-#: grep-dctrl.c:601
+#: grep-dctrl.c:616
 #, fuzzy
 msgid "unexpected '!' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:604
+#: grep-dctrl.c:619
 #, fuzzy
 msgid "unexpected '-a' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:607
+#: grep-dctrl.c:622
 #, fuzzy
 msgid "unexpected '-o' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:610
+#: grep-dctrl.c:625
 #, fuzzy
 msgid "unexpected '(' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:613
+#: grep-dctrl.c:628
 msgid "unexpected ')' in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:617
+#: grep-dctrl.c:632
 #, fuzzy
 msgid "unexpected atom in command line"
 msgstr "« ) » inattendue sur la ligne de commande"
 
-#: grep-dctrl.c:630
+#: grep-dctrl.c:645
 msgid "missing ')' in command line"
 msgstr "« ) » manquante sur la ligne de commande"
 
-#: grep-dctrl.c:711
+#: grep-dctrl.c:726
 msgid "A pattern is mandatory"
 msgstr "Un motif est nécessaire"
 
-#: grep-dctrl.c:718
+#: grep-dctrl.c:733
 msgid "a predicate is required"
 msgstr "un prédicat est nécessaire"
 
-#: grep-dctrl.c:723
+#: grep-dctrl.c:738
 msgid "malformed predicate"
 msgstr "prédicat mal formé"
 
-#: grep-dctrl.c:729
+#: grep-dctrl.c:744
 msgid "too many output fields"
 msgstr "trop de champs de sortie"
 
-#: grep-dctrl.c:733
+#: grep-dctrl.c:748
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "Ajout de « Description » aux champs de sortie sélectionnés à cause de -d"
 
-#: grep-dctrl.c:742
+#: grep-dctrl.c:757
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "impossible de supprimer les noms de champs lors de l'affichage des "
 "paragraphes complets"
 
-#: sort-dctrl.c:39
+#: sort-dctrl.c:38
 msgid "KEYSPEC"
 msgstr ""
 
-#: sort-dctrl.c:39
+#: sort-dctrl.c:38
 msgid "Specify sort keys."
 msgstr ""
 
@@ -341,24 +350,24 @@ msgstr ""
 msgid "invalid key flag"
 msgstr ""
 
-#: sort-dctrl.c:131
+#: sort-dctrl.c:135
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:36
 msgid "DELIM"
 msgstr ""
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:36
 msgid "Specify a delimiter."
 msgstr ""
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:37
 msgid "SPEC"
 msgstr ""
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:37
 msgid "Append the specified column."
 msgstr ""
 
@@ -366,14 +375,25 @@ msgstr ""
 msgid "invalid column length"
 msgstr ""
 
-#: tbl-dctrl.c:311
+#: tbl-dctrl.c:315
 #, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
 
-#: tbl-dctrl.c:325
+#: tbl-dctrl.c:329
 msgid "bad multibyte character"
 msgstr ""
+
+#, fuzzy
+#~ msgid "unexpected end of file (expected a colon)"
+#~ msgstr "fin de fichier inattendue"
+
+#, fuzzy
+#~ msgid "unexpected end of line (expected a colon)"
+#~ msgstr "fin de ligne inattendue"
+
+#~ msgid "unexpected end of file"
+#~ msgstr "fin de fichier inattendue"
 
 #, fuzzy
 #~ msgid "pretty-dctrl -- pretty-print Debian control files"
