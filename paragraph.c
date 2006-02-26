@@ -26,12 +26,14 @@ void para_parser_init(para_parser_t * pp, FSAF * fp, bool invalidate_p)
 	pp->fp = fp;
 	pp->eof = false;
 	pp->loc = 0;
+	pp->line = 1;
 	pp->invalidate_p = invalidate_p;
 }
 
 void para_init(para_parser_t * pp, para_t * para)
 {
 	para->common = pp;
+	para->line = pp->line;
 	para->start = 0;
 	para->end = 0;
 	para->fields = 0;
@@ -60,6 +62,7 @@ void para_parse_next(para_t * para)
 	para_parser_t * pp = para->common;
 	assert(para->nfields == fieldtrie_count());
 	para->start = pp->loc;
+	para->line = pp->line;
 	for (size_t i = 0; i < para->nfields; i++) {
 		para->fields[i].start = 0;
 		para->fields[i].end = 0;
@@ -70,6 +73,7 @@ void para_parse_next(para_t * para)
 	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
 			BODY_SKIPBLANKS, END } state = START;
 	register size_t pos = para->start;
+	register size_t line = para->line;
 	register FSAF * fp = pp->fp;
 	size_t field_start = 0;
 	struct field_data * field_data = 0;
@@ -78,9 +82,13 @@ void para_parse_next(para_t * para)
 		static char * const stnm[] = { "START", "FIELD_NAME",
 					       "BODY", "BODY_NEWLINE",
 					       "BODY_SKIPBLANKS", "END" };
-		if (do_msg(L_DEBUG)) fprintf(stderr, "State: %s\n", stnm[state]);
+		if (do_msg(L_DEBUG)) {
+			fprintf(stderr, "%s:%zu: state: %s\n",
+				fp->fname, line, stnm[state]);
+		}
 #               endif
 		int c = fsaf_getc(fp, pos++);
+		if (c == '\n') line++;
 		switch (state) {
 		case START:
 			switch (c) {
@@ -99,7 +107,9 @@ void para_parse_next(para_t * para)
 		case FIELD_NAME:
 			switch (c) {
 			case -1:
-				message(L_FATAL, _("unexpected end of file"), 0);
+				message(L_FATAL, _("unexpected end of file "
+						   "(expected a colon)"),
+					fp->fname);
 				fail();
 			case ':': {
 				size_t len = (pos-1) - field_start;
@@ -115,19 +125,24 @@ void para_parse_next(para_t * para)
 					assert(attr.inx < MAX_FIELDS);
 					field_data = &para->fields[attr.inx];
 					field_data->start = pos;
+					field_data->line = line;
 				}
 				state = BODY;
 			}
 				break;
 			case '\n':
-				message(L_FATAL, _("unexpected end of line"), 0);
+				line_message(L_FATAL,
+					     _("unexpected end of line "
+					       "(expected a colon)"),
+					     fp->fname, line);
 				fail();
 			}
 			break;
 		case BODY:
 			switch (c) {
 			case -1:
-				message(L_FATAL, _("unexpected end of file"), 0);
+				message(L_FATAL, _("unexpected end of file"),
+					fp->fname);
 				fail();
 			case '\n':
 				if (field_data != 0) {
@@ -176,4 +191,5 @@ void para_parse_next(para_t * para)
 	}
 	para->end = pos-1;
 	pp->loc = para->end;
+	pp->line = line;
 }

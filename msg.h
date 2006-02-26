@@ -78,10 +78,10 @@ line_message (int severity, const char * s, const char * fname, int line)
 			fprintf (stderr,  "%s: %s.\n", get_progname(), s);
 		} else {
 			if (line > 0) {
-				fprintf (stderr, "%s: %s: %i: %s.\n",
+				fprintf (stderr, "%s:%s:%i: %s.\n",
 					 get_progname(), fname, line, s);
 			} else {
-				fprintf (stderr, "%s: %s: %s.\n", 
+				fprintf (stderr, "%s:%s: %s.\n", 
 					 get_progname(), fname, s);
 			}
 		}

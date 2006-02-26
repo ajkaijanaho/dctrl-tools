@@ -20,6 +20,9 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
   * grep.dctrl.c,sort-dctrl.c: Use arg, not optarg in parse_opt.
     Closes: #344087 (grep-dctrl: segfaults with -l options)
     Reported (with patch) by: Vincent Fourmond <vincent.fourmond@9online.fr>.
+  * paragraph.[ch]: Track line numbers and improve error messages.
+    Closes: #354471 (grep-dctrl should include file and line info in errors)
+    Reported by Greg Ward <gward-debian@python.net>.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Feb 2006 20:49:17 +0200
 
