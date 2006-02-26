@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+set -x
+
+docdir=/usr/share/doc/grep-dctrl
+
+echo "$@"
+
+case $1 in
+        configure)
+                if [ -d $docdir ] ; then
+		    if rmdir $docdir ; then
+			ln -s dctrl-tools $docdir
+		    fi
+                fi
+                ;;
+esac
+
+exit 0

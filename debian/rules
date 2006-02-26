@@ -29,6 +29,7 @@ debian/stamp/binary/grep-dctrl: package=grep-dctrl
 debian/stamp/binary/grep-dctrl: debian/stamp/build
 	$(RM) -r $(rootdir)
 	$(install_dir) $(ctldir)
+	$(install_postinst)
 	$(install_dir) $(rootdir)/usr/share/doc
 	$(install_symlink) dctrl-tools $(docdir)
 	chmod -R g-s $(rootdir)
