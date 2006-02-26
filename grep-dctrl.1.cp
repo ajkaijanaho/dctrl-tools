@@ -1,5 +1,5 @@
-.TH GREP-DCTRL 1 2005-07-11 "Debian Project" "Debian user's manual"
-\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005
+.TH GREP-DCTRL 1 2006-02-26 "Debian Project" "Debian user's manual"
+\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
@@ -18,41 +18,20 @@
 .SH NAME
 grep\-dctrl, grep\-status, grep\-available, grep\-aptavail \- grep Debian control files
 .SH SYNOPSIS
-.B grep\-dctrl
-[options] predicate
-[
-.IR file " ..."
+.I command
+--copying|-C | --help|-h | --version|-V 
+.sp
+.I command
+[options] predicate [
+.IR file "..."
 ]
 .sp
-.B grep\-status
-[options] predicate
-[
-.IR file " ..."
-]
-.sp
-.B grep\-available
-[options] predicate
-[
-.IR file " ..."
-]
-.sp
-.B grep\-aptavail
-[options] predicate
-[
-.IR file " ..."
-]
-.sp
-.B grep\-dctrl
-\-\-copying | \-\-help | \-\-version | \-ChV
-.sp
-.B grep\-status
-\-\-copying | \-\-help | \-\-version | \-ChV
-.sp
-.B grep\-available
-\-\-copying | \-\-help | \-\-version | \-ChV
-.sp
-.B grep\-aptavail
-\-\-copying | \-\-help | \-\-version | \-ChV
+.I command
+is one of
+.BR grep\-dctrl ,
+.BR grep\-status ,
+.BR grep\-available and
+.BR grep\-aptavail .
 .SH DESCRIPTION
 The grep\-dctrl program can answer such questions as 
 .IR "What is the Debian package foo?" , 
@@ -64,30 +43,47 @@ and with some help,
 .IR "Who maintain the essential packages of a Debian system?" ,
 given a useful input file.
 .PP
-It is a specialised grep program that is meant for processing any file
+The programs
+.BR grep\-available,
+.B grep\-status
+and
+.B grep\-aptavail
+are aliases of (actually, symbolic links to)
+.BR grep\-dctrl .
+In the shipped configuration, these aliases use as their default input
+the
+.BR dpkg (8)
+available and status files and the apt\-cache dumpavail output,
+respectively.
+.PP
+.B grep\-dctrl
+is a specialised grep program that is meant for processing any file
 which has the general format of a Debian package control file, as
 described in the Debian Packaging Manual.  These include the dpkg
 available file, the dpkg status file, and the Packages files on a
 distribution medium (such as a Debian CD-ROM or an FTP site carrying
 Debian).
 .PP
-You must give a search predicate on the command line.  The predicate
-defines which kind of paragraphs (aka package records) are output.  An
-atomic predicate is a search pattern along with any options that
-modify it.  Possible modifiers are \-\-eregex, \-\-field, \-\-ignore\-case,
+You must give a filter expression on the command line.  The filter
+defines which kind of paragraphs (aka package records) are output.  A
+simple filter is a search pattern along with any options that modify
+it.  Possible modifiers are \-\-eregex, \-\-field, \-\-ignore\-case,
 \-P, \-\-regex and \-\-exact\-match, along with their single-letter
-equivalents.  An atomic predicate gives a pattern to search for.  By
+equivalents.   By
 default, the search is a case-sensitive fixed substring match on each
 paragraph (in other words, package record) in the input.  With
 suitable modifiers, this can be changed: the search can be
 case-insensitive and the pattern can be seen as an extended POSIX
-regular expression.  Predicates can be combined using the connectives
-\-\-and, \-\-or and \-\-not.  Predicates can be grouped using parentheses.
+regular expression. 
+.PP
+Filters can be combined to form more complex filters using the
+connectives \-\-and, \-\-or and \-\-not.  Parentheses (which usually
+need to be escaped for the shell) can be used for grouping.
 .PP
 By default, the full matching paragraphs are printed on the standard
 output; specific fields can be selected for output with the \-s option.
 .PP
-After the predicate comes zero or more file names.  If no file names
+After the filter expression comes zero or more file names.  If no file names
 are specified, the file name is searched in configuration files.  The
 input file from the first program name \- input file association with
 the correct program name is used.  The program names are matched with
@@ -103,38 +99,26 @@ There is one exception to the above: if the program name is
 .BR grep\-dctrl ,
 the default input source is always standard input; this cannot be
 overridden by the configuration file.
-.PP
-The programs
-.BR grep\-available,
-.B grep\-status
-and
-.B grep\-aptavail
-are aliases of (actually, symbolic links to)
-.BR grep\-dctrl .
-In the shipped configuration, these aliases use as their default input
-the
-.BR dpkg (8)
-available and status files and the apt\-cache dumpavail output,
-respectively.
 .SH OPTIONS
-.SS Atomic predicate modifiers
+.SS Modifiers of simple filters
 .IP "\-F FIELD,FIELD,...; \-\-field=FIELD,FIELD,..."
 Restrict pattern matching to the FIELDs given.  Multiple field names
-in one \-F option and multiple \-F options in one atom are allowed; the
-search named by the atom will be performed (disjunctively) among all
-fields named.
+in one \-F option and multiple \-F options in one simple filter are
+allowed. The search named by the filter will be performed
+among all the fields named, and as soon as any one of them matches, the
+whole simple filter is considered matching.
 .IP \-P
 Shorthand for "\-FPackage".
 .IP "\-e, \-\-eregex"
-Regard the pattern of the current atomic predicate as an extended
+Regard the pattern of the current simple filter as an extended
 POSIX regular expression
 .IP "\-r, \-\-regex"
-The pattern of the current atomic predicate is a standard POSIX regular expression.
+The pattern of the current simple filter is a standard POSIX regular expression.
 .IP "\-i, \-\-ignore\-case"
-Ignore case when looking for a match in the current atomic predicate.
+Ignore case when looking for a match in the current simple filter.
 .IP "\-X, \-\-exact\-match"
 Do an exact match (as opposed to a substring match) in the current
-atomic predicate.
+simple filter.
 .IP "\-\-eq"
 Do an equality comparison under the Debian version number system.  If
 the pattern or the field to be searched in is not a valid Debian
@@ -165,13 +149,16 @@ system.  If the pattern or the field to be searched in is not a valid
 Debian version number, the paragraph is regarded as not matching.  As
 a special case, this is capable of comparing simple nonnegative
 integers.
-.SS Predicate connectives
+.SS Combining filters
 .IP "\-!, \-\-not, !"
-Negate the following predicate.
+Match if the following filter does 
+.I not
+match.
 .IP "\-o, \-\-or"
-Disjunct the preceding and the following predicate.
+Match if either one or both of the preceding and following filters
+matches.
 .IP "\-a, \-\-and"
-Conjunct the preceding and the following predicate.
+Match if both the preceding and the following filter match.
 .IP "( ... )"
 Parentheses can be used for grouping.  Note that they need to be
 escaped for most shells.
