@@ -1,14 +1,14 @@
 # Catalan translation of dctrl-tools.
-# Copyright © 2004 Antti-Juhani Kaijanaho.
+# Copyright © 2004, 2006 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Jordi Mallach <jordi@debian.org>, 2004.
+# Jordi Mallach <jordi@debian.org>, 2004, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2005-07-20 13:08+0300\n"
-"PO-Revision-Date: 2004-02-09 10:16+0100\n"
+"POT-Creation-Date: 2006-02-26 22:59+0200\n"
+"PO-Revision-Date: 2006-01-23 14:02+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,23 +18,24 @@ msgstr ""
 #: misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr ""
+msgstr "%s: s'està usant «%s com a paginador\n"
 
 #: misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: popen ha fallat per a %s: %s\n"
+
+#: predicate.c:40 grep-dctrl.c:214 grep-dctrl.c:323
+msgid "predicate is too complex"
+msgstr "el predicat és massa complexe"
+
+#: paragraph.c:116
+msgid "warning: expected a colon"
 msgstr ""
 
-#: predicate.c:40 grep-dctrl.c:208 grep-dctrl.c:317
-msgid "predicate is too complex"
-msgstr "el predicat és massa complex"
-
-#: paragraph.c:102 paragraph.c:130
-msgid "unexpected end of file"
-msgstr "s'ha trobat un final de fitxer inesperat"
-
-#: paragraph.c:123
-msgid "unexpected end of line"
+#: paragraph.c:122
+#, fuzzy
+msgid "expected a colon"
 msgstr "s'ha trobat un final de línia inesperat"
 
 #: rc.c:66
@@ -80,6 +81,8 @@ msgstr "fitxer d'entrada per defecte"
 #: rc.c:201
 msgid "executable name not found; reading from standard input"
 msgstr ""
+"no s'ha trobat el nom de l'executable; s'està llegint des de l'entrada "
+"estàndard"
 
 #: ifile.c:54
 #, c-format
@@ -129,37 +132,35 @@ msgstr ""
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
-#: grep-dctrl.c:104
+#: grep-dctrl.c:106
 msgid "Show the testing banner."
 msgstr "Mostra l'avís de prova."
 
-#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
 msgid "LEVEL"
 msgstr "NIVELL"
 
-#: grep-dctrl.c:106 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
 msgid "Set debugging level to LEVEL."
 msgstr "Estableix el nivell de depuració a NIVELL."
 
-#: grep-dctrl.c:107 grep-dctrl.c:109
+#: grep-dctrl.c:109 grep-dctrl.c:111
 msgid "FIELD,FIELD,..."
 msgstr "CAMP,CAMP,..."
 
-#: grep-dctrl.c:107
-#, fuzzy
+#: grep-dctrl.c:109
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Restringeix la coincidència de patrons als CAMPs donats."
 
-#: grep-dctrl.c:108
-#, fuzzy
+#: grep-dctrl.c:110
 msgid "This is a shorthand for -FPackage."
-msgstr "Forma curta per a -FPackage"
+msgstr "Això és una forma curta per a -FPackage."
 
-#: grep-dctrl.c:109
+#: grep-dctrl.c:111
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Mostra només el cos d'aquests camps dels paràgrafs coincidents."
 
-#: grep-dctrl.c:110
+#: grep-dctrl.c:112
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -167,176 +168,173 @@ msgstr ""
 "Mostra només la primera línia del camp «Description» dels paràgrafs "
 "coincidents."
 
-#: grep-dctrl.c:111
+#: grep-dctrl.c:113
 msgid "Suppress field names when showing specified fields."
 msgstr "Suprimeix els noms dels camps quan mostra els camps especificats."
 
-#: grep-dctrl.c:112
+#: grep-dctrl.c:114
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Considera el patró com una expressió regular estesa POSIX."
 
-#: grep-dctrl.c:113
+#: grep-dctrl.c:115
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "El patró és una expressió regular estàndard POSIX."
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:116
 msgid "Ignore case when looking for a match."
 msgstr ""
 "No distigueixes entre majúscules i minúscules quan cerca una coincidència."
 
-#: grep-dctrl.c:115
+#: grep-dctrl.c:117
 msgid "Show only paragraphs that do not match."
 msgstr "Mostra només els paràgrafs que no coincideixen."
 
-#: grep-dctrl.c:116
+#: grep-dctrl.c:118
 msgid "Show only the count of matching paragraphs."
 msgstr "Mostra només el compte de paràgrafs coincidents."
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:119
 msgid "FNAME"
 msgstr "NOMFITXER"
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:119
 msgid "Use FNAME as the config file."
 msgstr "Utilitza NOMFITXER com el fitxer de configuració."
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:120
 msgid "Do an exact match."
 msgstr "Fes una coincidència exacta."
 
-#: grep-dctrl.c:119 sort-dctrl.c:35 tbl-dctrl.c:37
+#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
-#: grep-dctrl.c:120
+#: grep-dctrl.c:122
 msgid "Conjunct predicates."
 msgstr "Predicats conjunts."
 
-#: grep-dctrl.c:121
+#: grep-dctrl.c:123
 msgid "Disjunct predicates."
 msgstr "Predicats disjunts."
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:124
 msgid "Negate the following predicate."
 msgstr "Nega el següent predicat."
 
-#: grep-dctrl.c:123
-#, fuzzy
-msgid "Test for version number equality."
-msgstr "Comprova l'igualtat numèrica."
-
-#: grep-dctrl.c:124
-msgid "Version number comparison: <."
-msgstr ""
-
 #: grep-dctrl.c:125
-msgid "Version number comparison: <=."
-msgstr ""
+msgid "Test for version number equality."
+msgstr "Comprova la igualtat del número de versió."
 
 #: grep-dctrl.c:126
-msgid "Version number comparison: >."
-msgstr ""
+msgid "Version number comparison: <."
+msgstr "Comparació del número de versió: <."
 
 #: grep-dctrl.c:127
-msgid "Version number comparison: >=."
-msgstr ""
+msgid "Version number comparison: <=."
+msgstr "Comparació del número de versió: <=."
 
 #: grep-dctrl.c:128
+msgid "Version number comparison: >."
+msgstr "Comparació del número de versió: >."
+
+#: grep-dctrl.c:129
+msgid "Version number comparison: >=."
+msgstr "Comparació del número de versió: >=."
+
+#: grep-dctrl.c:130
 msgid "Debug option parsing."
 msgstr "Depura l'anàlisi d'opcions."
 
-#: grep-dctrl.c:129 grep-dctrl.c:130 sort-dctrl.c:37 sort-dctrl.c:38
-#: tbl-dctrl.c:39 tbl-dctrl.c:40
-#, fuzzy
+#: grep-dctrl.c:131 grep-dctrl.c:132
 msgid "Do no output to stdout."
-msgstr "No mostra res a l'eixida estàndard"
+msgstr "No mostres res a l'eixida estàndard."
 
-#: grep-dctrl.c:285
-#, fuzzy
+#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+msgid "Attempt mmapping input files"
+msgstr ""
+
+#: grep-dctrl.c:134
+msgid "Ignore parse errors"
+msgstr ""
+
+#: grep-dctrl.c:291
 msgid "predicate is too long"
-msgstr "el predicat és massa complex"
+msgstr "el predicat és massa llarg"
 
-#: grep-dctrl.c:344
+#: grep-dctrl.c:350
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:409 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:509 sort-dctrl.c:111 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
-#: grep-dctrl.c:598
-#, fuzzy
-msgid "unexpected end of predicate"
-msgstr "s'ha trobat un final de fitxer inesperat"
-
-#: grep-dctrl.c:601
-#, fuzzy
-msgid "unexpected '!' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
-
-#: grep-dctrl.c:604
-#, fuzzy
-msgid "unexpected '-a' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
-
-#: grep-dctrl.c:607
-#, fuzzy
-msgid "unexpected '-o' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
-
-#: grep-dctrl.c:610
-#, fuzzy
-msgid "unexpected '(' in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
-
 #: grep-dctrl.c:613
+msgid "unexpected end of predicate"
+msgstr "s'ha trobat un final del predicat inesperat"
+
+#: grep-dctrl.c:616
+msgid "unexpected '!' in command line"
+msgstr "s'ha trobat un «!» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:619
+msgid "unexpected '-a' in command line"
+msgstr "s'ha trobat un «-a» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:622
+msgid "unexpected '-o' in command line"
+msgstr "s'ha trobat un «-o» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:625
+msgid "unexpected '(' in command line"
+msgstr "s'ha trobat un «(» inesperat a la línia d'ordres"
+
+#: grep-dctrl.c:628
 msgid "unexpected ')' in command line"
 msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:617
-#, fuzzy
+#: grep-dctrl.c:632
 msgid "unexpected atom in command line"
-msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
+msgstr "s'ha trobat un àtom inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:630
+#: grep-dctrl.c:645
 msgid "missing ')' in command line"
 msgstr "manca un «)» en la línia d'ordres"
 
-#: grep-dctrl.c:711
-#, fuzzy
+#: grep-dctrl.c:726
 msgid "A pattern is mandatory"
-msgstr "Es necessita un patró."
+msgstr "Es requereix un patró"
 
-#: grep-dctrl.c:718
+#: grep-dctrl.c:733
 msgid "a predicate is required"
 msgstr "es requereix un predicat"
 
-#: grep-dctrl.c:723
+#: grep-dctrl.c:738
 msgid "malformed predicate"
-msgstr ""
+msgstr "predicat malformat"
 
-#: grep-dctrl.c:729
+#: grep-dctrl.c:744
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl.c:733
+#: grep-dctrl.c:748
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl.c:742
+#: grep-dctrl.c:757
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: sort-dctrl.c:39
+#: sort-dctrl.c:38
 msgid "KEYSPEC"
 msgstr ""
 
-#: sort-dctrl.c:39
+#: sort-dctrl.c:38
 msgid "Specify sort keys."
 msgstr ""
 
@@ -344,24 +342,24 @@ msgstr ""
 msgid "invalid key flag"
 msgstr ""
 
-#: sort-dctrl.c:131
+#: sort-dctrl.c:135
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:36
 msgid "DELIM"
 msgstr ""
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:36
 msgid "Specify a delimiter."
 msgstr ""
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:37
 msgid "SPEC"
 msgstr ""
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:37
 msgid "Append the specified column."
 msgstr ""
 
@@ -369,25 +367,17 @@ msgstr ""
 msgid "invalid column length"
 msgstr ""
 
-#: tbl-dctrl.c:311
+#: tbl-dctrl.c:315
 #, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
-#: tbl-dctrl.c:325
+#: tbl-dctrl.c:329
 msgid "bad multibyte character"
 msgstr ""
 
-#, fuzzy
-#~ msgid "pretty-dctrl -- pretty-print Debian control files"
-#~ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
-
-#~ msgid "invalid numeric pattern"
-#~ msgstr "el patró numèric és invàlid"
-
-#, fuzzy
-#~ msgid "parse of a field failed"
-#~ msgstr "no s'ha pogut analitzar el camp numèric"
+#~ msgid "unexpected end of file"
+#~ msgstr "s'ha trobat un final de fitxer inesperat"
 
 #~ msgid "Numerical test: <."
 #~ msgstr "Comprovació numèrica: <."
@@ -400,6 +390,12 @@ msgstr ""
 
 #~ msgid "Numerical test: >=."
 #~ msgstr "Comprovació numèrica: >=."
+
+#~ msgid "parse of a numeric field failed"
+#~ msgstr "no s'ha pogut analitzar el camp numèric"
+
+#~ msgid "invalid numeric pattern"
+#~ msgstr "el patró numèric és invàlid"
 
 #~ msgid "syntax error in command line"
 #~ msgstr "hi ha un error de sintaxi a la línia d'ordres"
