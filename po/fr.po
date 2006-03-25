@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.0\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-02-26 21:42+0200\n"
-"PO-Revision-Date: 2004-07-03 23:48+0200\n"
+"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"PO-Revision-Date: 2006-03-24 12:27+0000\n"
 "Last-Translator: Nicolas Bertolissio <nico.bertol@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,8 @@ msgstr ""
 
 #: grep-dctrl.c:113
 msgid "Suppress field names when showing specified fields."
-msgstr "Supprimer les noms de champs lors de l'affichage des champs spécifiés"
+msgstr ""
+"Supprimer les noms de champs lors de l'affichage des champs spécifiés"
 
 #: grep-dctrl.c:114
 msgid "Regard the pattern as an extended POSIX regular expression."
@@ -423,5 +424,5 @@ msgstr ""
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "Atome inattendu sur la ligne de commande. Auriez-vous oublié d'utiliser "
-#~ "un connecteur ?"
+#~ "Atome inattendu sur la ligne de commande. Auriez-vous oublié d'utiliser un "
+#~ "connecteur ?"

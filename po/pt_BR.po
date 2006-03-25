@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-02-26 21:42+0200\n"
-"PO-Revision-Date: 2005-01-15 22:23-0300\n"
+"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"PO-Revision-Date: 2006-03-24 21:17+0000\n"
 "Last-Translator: Mauricio Bomfim Cruz Vieira <mauricio.vieira@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
-"org>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-"
+"portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,19 +32,16 @@ msgid "predicate is too complex"
 msgstr "predicado é muito complexo"
 
 #: paragraph.c:116
-#, fuzzy
 msgid "warning: expected a colon"
-msgstr "'-a' inesperado na linha de comando"
+msgstr "aviso: dois-pontos esperado"
 
 #: paragraph.c:122
-#, fuzzy
 msgid "expected a colon"
-msgstr "'-a' inesperado na linha de comando"
+msgstr "dois-pontos esperado"
 
 #: rc.c:66
-#, fuzzy
 msgid "Malformed default input file name"
-msgstr "arquivo de entrada padrão"
+msgstr "Nome de arquivo de entrada padrão incorreto"
 
 #: rc.c:79
 msgid "not owned by you or root, ignoring"
@@ -89,7 +86,7 @@ msgstr "nome executável não encontrado; lendo da entrada padrão"
 #: ifile.c:54
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
-msgstr "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (filho): falha ao executar /bin/sh: %s\n"
 
 #: ifile.c:100
 #, c-format
@@ -127,8 +124,9 @@ msgid "unknown file type, skipping"
 msgstr "tipo de arquivo desconhecido, pulando"
 
 #: sorter.c:54
+#, fuzzy
 msgid "Parse error in field."
-msgstr ""
+msgstr "Erro de formatação no campo."
 
 #: grep-dctrl.c:46
 msgid "grep-dctrl -- grep Debian control files"
@@ -227,25 +225,24 @@ msgid "Negate the following predicate."
 msgstr "Nega o predicado que segue."
 
 #: grep-dctrl.c:125
-#, fuzzy
 msgid "Test for version number equality."
-msgstr "Testa igualdade numérica"
+msgstr "Testa igualdade numérica."
 
 #: grep-dctrl.c:126
 msgid "Version number comparison: <."
-msgstr ""
+msgstr "Comparação do número de versão: <."
 
 #: grep-dctrl.c:127
 msgid "Version number comparison: <=."
-msgstr ""
+msgstr "Comparação do número de versão: <=."
 
 #: grep-dctrl.c:128
 msgid "Version number comparison: >."
-msgstr ""
+msgstr "Comparação do número de versão: >."
 
 #: grep-dctrl.c:129
 msgid "Version number comparison: >=."
-msgstr ""
+msgstr "Comparação do número de versão: >=."
 
 #: grep-dctrl.c:130
 msgid "Debug option parsing."
@@ -256,12 +253,13 @@ msgid "Do no output to stdout."
 msgstr "Não imprime a saída na saída padrão."
 
 #: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+#, fuzzy
 msgid "Attempt mmapping input files"
-msgstr ""
+msgstr "Tentativa de mapear arquivos de entrada"
 
 #: grep-dctrl.c:134
 msgid "Ignore parse errors"
-msgstr ""
+msgstr "Ignorar erros de padrão."
 
 #: grep-dctrl.c:291
 msgid "predicate is too long"
@@ -340,11 +338,11 @@ msgstr ""
 
 #: sort-dctrl.c:38
 msgid "KEYSPEC"
-msgstr ""
+msgstr "KEYSPEC"
 
 #: sort-dctrl.c:38
 msgid "Specify sort keys."
-msgstr ""
+msgstr "Especificar chaves de ordenação."
 
 #: sort-dctrl.c:85
 msgid "invalid key flag"
@@ -358,23 +356,24 @@ msgstr ""
 
 #: tbl-dctrl.c:36
 msgid "DELIM"
-msgstr ""
+msgstr "DELIM"
 
 #: tbl-dctrl.c:36
 msgid "Specify a delimiter."
-msgstr ""
+msgstr "Especificar um delimitador"
 
 #: tbl-dctrl.c:37
+#, fuzzy
 msgid "SPEC"
-msgstr ""
+msgstr "SPEC"
 
 #: tbl-dctrl.c:37
 msgid "Append the specified column."
-msgstr ""
+msgstr "Anexar à coluna especificada."
 
 #: tbl-dctrl.c:264
 msgid "invalid column length"
-msgstr ""
+msgstr "tamanho de coluna inválido"
 
 #: tbl-dctrl.c:315
 #, fuzzy
@@ -383,8 +382,9 @@ msgstr ""
 "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
 
 #: tbl-dctrl.c:329
+#, fuzzy
 msgid "bad multibyte character"
-msgstr ""
+msgstr "caracter multibyte inválido"
 
 #, fuzzy
 #~ msgid "unexpected end of file (expected a colon)"
@@ -400,11 +400,10 @@ msgstr ""
 #, fuzzy
 #~ msgid "pretty-dctrl -- pretty-print Debian control files"
 #~ msgstr ""
-#~ "grep-dctrl -- busca por expressões regulares em arquivos de controle "
-#~ "Debian"
+#~ "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
 
 #~ msgid "invalid numeric pattern"
-#~ msgstr "padrão numérico invalido "
+#~ msgstr "padrão numérico invalido"
 
 #, fuzzy
 #~ msgid "parse of a field failed"

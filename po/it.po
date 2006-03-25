@@ -7,14 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.7\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-02-26 21:42+0200\n"
-"PO-Revision-Date: 2004-07-20 15:28+0200\n"
-"Last-Translator: Danilo Piazzalunga <danilopiazza@libero.it>\n"
+"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"PO-Revision-Date: 2006-03-24 12:27+0000\n"
+"Last-Translator: Danilo Piazzalunga <danilopiazza@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: misc.c:37
 #, c-format
@@ -99,7 +98,6 @@ msgstr "%s: il comando (%s) non è riuscito (stato di uscita %d)\n"
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: il comando (%s) è stato ucciso dal segnale %d\n"
 
-# NdT: questa traduzione rispecchia quella di cp, mv, rm, etc.
 #: ifile.c:127
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
@@ -133,7 +131,6 @@ msgstr ""
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- ricerca attraverso i file di controllo di Debian"
 
-# NdT: Sì, questa traduzione è appropriata ;-)
 #: grep-dctrl.c:106
 msgid "Show the testing banner."
 msgstr "Mostra l'avviso fastidioso."
@@ -150,7 +147,6 @@ msgstr "Imposta il livello di debug a LIVELLO."
 msgid "FIELD,FIELD,..."
 msgstr "CAMPO,CAMPO,..."
 
-# Ndt: era msgstr "Restringe la ricerca dei modelli ai campi specificati."
 #: grep-dctrl.c:109
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Cerca le corrispondenze solo all'interno dei campi specificati."
@@ -160,7 +156,6 @@ msgid "This is a shorthand for -FPackage."
 msgstr "Questa è una forma abbreviata per «-FPackage»."
 
 # NdT: era msgstr "Mostra solo i campi specificati anziché l'intero "
-# "paragrafo corrispondente."
 #: grep-dctrl.c:111
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr ""
@@ -194,7 +189,6 @@ msgstr "Ignora maiuscole/minuscole durante il confronto."
 msgid "Show only paragraphs that do not match."
 msgstr "Mostra solo i paragrafi non corrispondenti."
 
-# Ndt: grep(1) usa «conto»; io preferisco «conteggio» o «numero».
 #: grep-dctrl.c:118
 msgid "Show only the count of matching paragraphs."
 msgstr "Mostra solo il conteggio dei paragrafi corrispondenti."
@@ -268,7 +262,6 @@ msgstr ""
 msgid "predicate is too long"
 msgstr "il predicato è troppo lungo"
 
-# Ndt: appare se si usano le opzioni per BRE, ERE o exact match tutte insieme.
 #: grep-dctrl.c:350
 msgid "inconsistent atom modifiers"
 msgstr "modificatori di atomi incoerenti"
@@ -322,7 +315,6 @@ msgid "a predicate is required"
 msgstr "bisogna specificare un predicato"
 
 # NdT: credo che il termine tecnico corretto sia
-# «well-formed» --> «ben formato».
 #: grep-dctrl.c:738
 msgid "malformed predicate"
 msgstr "il predicato non è ben formato"
