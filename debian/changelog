@@ -42,8 +42,11 @@ dctrl-tools (2.8.1) unstable; urgency=low
      - Catalan by Jordi Mallach
      - Finnish by myself
      - Brazilian Portuguese by Mauricio Bomfim Cruz Vieira.
+  * debian/control [Standards-Version]: Upgrade to 3.6.2, no additional
+    changes required.
+  * debian/copyright: Update.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Mar 2006 11:04:00 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Mar 2006 11:34:07 +0200
 
 dctrl-tools (2.8) experimental; urgency=low
 
