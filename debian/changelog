@@ -1,5 +1,6 @@
-dctrl-tools (2.8.1) UNRELEASED; urgency=low
+dctrl-tools (2.8.1) unstable; urgency=low
 
+  * Move to unstable.
   * tbl-dctrl.c, sort-dctrl: Remove the useless (and broken) options
     -q and --silent
     Closes: #326662 (tbl-dctrl --help output lies about options)
