@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-02-26 22:59+0200\n"
-"PO-Revision-Date: 2006-01-23 14:02+0100\n"
-"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"PO-Revision-Date: 2006-03-24 17:08+0000\n"
+"Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +31,11 @@ msgstr "el predicat és massa complexe"
 
 #: paragraph.c:116
 msgid "warning: expected a colon"
-msgstr ""
+msgstr "avís: s'esperaven dos punts"
 
 #: paragraph.c:122
-#, fuzzy
 msgid "expected a colon"
-msgstr "s'ha trobat un final de línia inesperat"
+msgstr "s'esperaven dos punts"
 
 #: rc.c:66
 msgid "Malformed default input file name"
@@ -126,7 +125,7 @@ msgstr "el tipus de fitxer és desconegut, s'està ometent"
 
 #: sorter.c:54
 msgid "Parse error in field."
-msgstr ""
+msgstr "S'ha produït un error d'anàlisi al camp."
 
 #: grep-dctrl.c:46
 msgid "grep-dctrl -- grep Debian control files"
@@ -251,11 +250,11 @@ msgstr "No mostres res a l'eixida estàndard."
 
 #: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
 msgid "Attempt mmapping input files"
-msgstr ""
+msgstr "Intenta fer «mmap» dels fitxers d'entrada"
 
 #: grep-dctrl.c:134
 msgid "Ignore parse errors"
-msgstr ""
+msgstr "Descarta els errors d'anàlisi"
 
 #: grep-dctrl.c:291
 msgid "predicate is too long"
@@ -328,53 +327,52 @@ msgstr ""
 
 #: grep-dctrl.c:757
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
+msgstr ""
+"no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
 #: sort-dctrl.c:38
 msgid "KEYSPEC"
-msgstr ""
+msgstr "ESPECCLAU"
 
 #: sort-dctrl.c:38
 msgid "Specify sort keys."
-msgstr ""
+msgstr "Especifica les claus d'ordenació."
 
 #: sort-dctrl.c:85
 msgid "invalid key flag"
-msgstr ""
+msgstr "senyalador de clau invàlid"
 
 #: sort-dctrl.c:135
-#, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
-msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
+msgstr "sort-dctrl -- ordena fitxers de control de Debian"
 
 #: tbl-dctrl.c:36
 msgid "DELIM"
-msgstr ""
+msgstr "DELIM"
 
 #: tbl-dctrl.c:36
 msgid "Specify a delimiter."
-msgstr ""
+msgstr "Especifica un delimitador."
 
 #: tbl-dctrl.c:37
 msgid "SPEC"
-msgstr ""
+msgstr "ESPEC"
 
 #: tbl-dctrl.c:37
 msgid "Append the specified column."
-msgstr ""
+msgstr "Afegeix la columna especificada."
 
 #: tbl-dctrl.c:264
 msgid "invalid column length"
-msgstr ""
+msgstr "La longitud de la columna no és vàlida"
 
 #: tbl-dctrl.c:315
-#, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
-msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
+msgstr "tbl-dctrl -- tabula fitxers de control de Debian"
 
 #: tbl-dctrl.c:329
 msgid "bad multibyte character"
-msgstr ""
+msgstr "el caràcter multioctet és invàlid"
 
 #~ msgid "unexpected end of file"
 #~ msgstr "s'ha trobat un final de fitxer inesperat"
@@ -402,8 +400,8 @@ msgstr ""
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar "
-#~ "un connector?"
+#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
+#~ "connector?"
 
 #~ msgid "%s: %s: %s\n"
 #~ msgstr "%s: %s: %s\n"

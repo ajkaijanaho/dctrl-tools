@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-02-26 21:42+0200\n"
-"PO-Revision-Date: 2004-07-08 18:29+0300\n"
+"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"PO-Revision-Date: 2006-03-24 13:16+0000\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,12 +18,12 @@ msgstr ""
 #: misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr ""
+msgstr "%s: käytetään '%s':ää sivuttimena\n"
 
 #: misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
-msgstr ""
+msgstr "%s: popen-systeemikutsu epäonnistui '%s':lle: %s\n"
 
 #: predicate.c:40 grep-dctrl.c:214 grep-dctrl.c:323
 msgid "predicate is too complex"
@@ -125,7 +125,7 @@ msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
 #: sorter.c:54
 msgid "Parse error in field."
-msgstr ""
+msgstr "Jäsennysvirhe kentässä"
 
 #: grep-dctrl.c:46
 msgid "grep-dctrl -- grep Debian control files"
@@ -145,7 +145,7 @@ msgstr "Aseta vianetsintätasoksi TASO."
 
 #: grep-dctrl.c:109 grep-dctrl.c:111
 msgid "FIELD,FIELD,..."
-msgstr "KENTTÄ,KENTT�,..."
+msgstr "KENTTÄ,KENTTÄ,..."
 
 #: grep-dctrl.c:109
 msgid "Restrict pattern matching to the FIELDs given."
@@ -168,11 +168,13 @@ msgstr ""
 
 #: grep-dctrl.c:113
 msgid "Suppress field names when showing specified fields."
-msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
+msgstr ""
+"Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
 
 #: grep-dctrl.c:114
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
+msgstr ""
+"Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
 #: grep-dctrl.c:115
 msgid "The pattern is a standard POSIX regular expression."
@@ -225,19 +227,19 @@ msgstr "Testaa numeerista yhtäsuuruutta."
 
 #: grep-dctrl.c:126
 msgid "Version number comparison: <."
-msgstr ""
+msgstr "Versionumeron vertailu: <."
 
 #: grep-dctrl.c:127
 msgid "Version number comparison: <=."
-msgstr ""
+msgstr "Versionumeroiden vertailu: <=."
 
 #: grep-dctrl.c:128
 msgid "Version number comparison: >."
-msgstr ""
+msgstr "Versionumeroiden vertailu: >."
 
 #: grep-dctrl.c:129
 msgid "Version number comparison: >=."
-msgstr ""
+msgstr "Versionumeroiden vertailu: >=."
 
 #: grep-dctrl.c:130
 msgid "Debug option parsing."
@@ -249,11 +251,11 @@ msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
 #: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
 msgid "Attempt mmapping input files"
-msgstr ""
+msgstr "Yritä mmapata syöttetiedostot"
 
 #: grep-dctrl.c:134
 msgid "Ignore parse errors"
-msgstr ""
+msgstr "Ohita jäsennysvirheet"
 
 #: grep-dctrl.c:291
 msgid "predicate is too long"
@@ -330,15 +332,15 @@ msgstr ""
 
 #: sort-dctrl.c:38
 msgid "KEYSPEC"
-msgstr ""
+msgstr "AVAINMÄÄR"
 
 #: sort-dctrl.c:38
 msgid "Specify sort keys."
-msgstr ""
+msgstr "Anna järjestysavaimet."
 
 #: sort-dctrl.c:85
 msgid "invalid key flag"
-msgstr ""
+msgstr "sopimaton avainvalitsin"
 
 #: sort-dctrl.c:135
 #, fuzzy
@@ -347,7 +349,7 @@ msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
 #: tbl-dctrl.c:36
 msgid "DELIM"
-msgstr ""
+msgstr "VÄLIM"
 
 #: tbl-dctrl.c:36
 msgid "Specify a delimiter."
