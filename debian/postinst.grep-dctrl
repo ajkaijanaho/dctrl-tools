@@ -4,11 +4,9 @@ set -e
 
 docdir=/usr/share/doc/grep-dctrl
 
-echo "$@"
-
 case $1 in
         configure)
-                if [ -d $docdir ] ; then
+                if [ -d $docdir -a ! -L $docdir ] ; then
 		    if rmdir $docdir ; then
 			ln -s dctrl-tools $docdir
 		    fi
