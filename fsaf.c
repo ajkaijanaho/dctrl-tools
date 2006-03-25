@@ -169,6 +169,15 @@ struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
 {
 	struct fsaf_read_rv rv;
 
+        /* Reading nothing - since offset can be bogus in this
+         * situation, this could foul up our assumptions later, so
+         * return already here. */
+        if (len == 0) {
+                rv.b = "";
+                rv.len = 0;
+                return rv;
+        }
+
 	/* Make sure we don't read past the EOF mark.  */
 	if (offset + len > fp->eof_mark) len = fp->eof_mark - offset;
 
