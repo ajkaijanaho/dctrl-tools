@@ -35,8 +35,10 @@ dctrl-tools (2.8.1) UNRELEASED; urgency=low
   * po/ca.po: Update by Jordi Mallach <jordi@debian.org>, closes: #349507.
   * fsaf.c (fsaf_read): Return early if returning null. (Fixes assertion
     failures in cases where the field being searched is not present.)
+  * Makefile: Don't clean pot file when cleaning.
+  * Makefile: Add distclean and maintainer-clean targets.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Mar 2006 10:22:44 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 25 Mar 2006 10:28:12 +0200
 
 dctrl-tools (2.8) experimental; urgency=low
 

@@ -90,8 +90,13 @@ fsaf.test : fsaf.test.o msg.o
 
 clean :
 	$(RM) core grep-dctrl grep-dctrl.1 *.o so/*.o libdctrl.a libdctrl.so
-	$(RM) po/*.mo po/*.pot TAGS *.d
+	$(RM) po/*.mo TAGS *.d
 	$(RM) sync-available
+
+distclean : clean
+
+maintainer-clean : distclean
+	$(RM) po/*.pot
 
 tags :
 	etags *.[hc]
