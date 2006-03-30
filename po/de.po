@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2006-03-24 13:46+0200\n"
-"PO-Revision-Date: 2006-03-24 12:27+0000\n"
+"PO-Revision-Date: 2006-03-30 19:20+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,9 +35,8 @@ msgid "warning: expected a colon"
 msgstr "Unerwartetes »-a« in der Befehlszeile"
 
 #: paragraph.c:122
-#, fuzzy
 msgid "expected a colon"
-msgstr "Unerwartetes »-a« in der Befehlszeile"
+msgstr "Doppelpunkt wurde erwartet"
 
 #: rc.c:66
 msgid "Malformed default input file name"
