@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2006-03-24 13:46+0200\n"
-"PO-Revision-Date: 2006-03-30 19:20+0200\n"
+"PO-Revision-Date: 2006-03-30 20:53+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,8 @@ msgid "predicate is too complex"
 msgstr "Eigenschaft ist zu komplex"
 
 #: paragraph.c:116
-#, fuzzy
 msgid "warning: expected a colon"
-msgstr "Unerwartetes »-a« in der Befehlszeile"
+msgstr "Warnung: Doppelpunkt wurde erwartet"
 
 #: paragraph.c:122
 msgid "expected a colon"
@@ -124,7 +123,7 @@ msgstr "unbekannter Dateityp, wird übersprungen"
 
 #: sorter.c:54
 msgid "Parse error in field."
-msgstr ""
+msgstr "Analyse des Felds fehlgeschlagen."
 
 #: grep-dctrl.c:46
 msgid "grep-dctrl -- grep Debian control files"
@@ -218,25 +217,24 @@ msgid "Negate the following predicate."
 msgstr "Negiert die folgende Eigenschaft."
 
 #: grep-dctrl.c:125
-#, fuzzy
 msgid "Test for version number equality."
-msgstr "Test auf numerische Übereinstimmung."
+msgstr "Test auf Versionsnummern-Übereinstimmung."
 
 #: grep-dctrl.c:126
 msgid "Version number comparison: <."
-msgstr ""
+msgstr "Versiosnummern-Vergleich: <."
 
 #: grep-dctrl.c:127
 msgid "Version number comparison: <=."
-msgstr ""
+msgstr "Versiosnummern-Vergleich: <=."
 
 #: grep-dctrl.c:128
 msgid "Version number comparison: >."
-msgstr ""
+msgstr "Versionsnummern-Vergleich: >."
 
 #: grep-dctrl.c:129
 msgid "Version number comparison: >=."
-msgstr ""
+msgstr "Versionsnummern-Vergleich: >=."
 
 #: grep-dctrl.c:130
 msgid "Debug option parsing."
@@ -248,11 +246,11 @@ msgstr "Keine Ausgabe auf die Standardausgabe."
 
 #: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
 msgid "Attempt mmapping input files"
-msgstr ""
+msgstr "mmap der Eingabe-Dateien wird versucht"
 
 #: grep-dctrl.c:134
 msgid "Ignore parse errors"
-msgstr ""
+msgstr "Analyse-Fehler ignorieren"
 
 #: grep-dctrl.c:291
 msgid "predicate is too long"
@@ -329,15 +327,15 @@ msgstr ""
 
 #: sort-dctrl.c:38
 msgid "KEYSPEC"
-msgstr ""
+msgstr "SORTSCHL"
 
 #: sort-dctrl.c:38
 msgid "Specify sort keys."
-msgstr ""
+msgstr "Sortierungsschlüssel angeben."
 
 #: sort-dctrl.c:85
 msgid "invalid key flag"
-msgstr ""
+msgstr "Ungültiges Schlüssel-Flag"
 
 #: sort-dctrl.c:135
 msgid "sort-dctrl -- sort Debian control files"
@@ -345,63 +343,28 @@ msgstr "sort-dctrl -- sortiert Debian-Control-Dateien"
 
 #: tbl-dctrl.c:36
 msgid "DELIM"
-msgstr ""
+msgstr "TRENNER"
 
 #: tbl-dctrl.c:36
 msgid "Specify a delimiter."
-msgstr ""
+msgstr "Trennzeichen angeben."
 
 #: tbl-dctrl.c:37
 msgid "SPEC"
-msgstr ""
+msgstr "SPALTE"
 
 #: tbl-dctrl.c:37
 msgid "Append the specified column."
-msgstr ""
+msgstr "Die gegebene Spalte anhängen."
 
 #: tbl-dctrl.c:264
 msgid "invalid column length"
-msgstr ""
+msgstr "Ungültige Spaltenlänge"
 
 #: tbl-dctrl.c:315
-#, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
-msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
+msgstr "tbl-dctrl -- Debian-Control-Dateien als Tabelle"
 
 #: tbl-dctrl.c:329
 msgid "bad multibyte character"
-msgstr ""
-
-#, fuzzy
-#~ msgid "unexpected end of file (expected a colon)"
-#~ msgstr "unerwartetes Dateiende"
-
-#, fuzzy
-#~ msgid "unexpected end of line (expected a colon)"
-#~ msgstr "unerwartetes Zeilenende"
-
-#~ msgid "unexpected end of file"
-#~ msgstr "unerwartetes Dateiende"
-
-#, fuzzy
-#~ msgid "pretty-dctrl -- pretty-print Debian control files"
-#~ msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
-
-#~ msgid "invalid numeric pattern"
-#~ msgstr "Ungültiges numerisches Muster"
-
-#, fuzzy
-#~ msgid "parse of a field failed"
-#~ msgstr "Analyse eines numerischen Feldes fehlgeschlagen"
-
-#~ msgid "Numerical test: <."
-#~ msgstr "Numerischer Test: <."
-
-#~ msgid "Numerical test: <=."
-#~ msgstr "Numerischer Test: <=."
-
-#~ msgid "Numerical test: >."
-#~ msgstr "Numerischer Test: >."
-
-#~ msgid "Numerical test: >=."
-#~ msgstr "Numerischer Test: >=."
+msgstr "Falsches Multibyte-Zeichen"
