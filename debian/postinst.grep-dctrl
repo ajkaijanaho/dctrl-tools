@@ -6,7 +6,7 @@ docdir=/usr/share/doc/grep-dctrl
 
 case $1 in
         configure)
-                if [ -d $docdir -a ! -L $docdir ] ; then
+                if [ -d $docdir ] && [ ! -L $docdir ] ; then
 		    if rmdir $docdir ; then
 			ln -s dctrl-tools $docdir
 		    fi
