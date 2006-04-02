@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"POT-Creation-Date: 2006-04-02 18:04+0300\n"
 "PO-Revision-Date: 2006-03-24 21:17+0000\n"
 "Last-Translator: Mauricio Bomfim Cruz Vieira <mauricio.vieira@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <debian-l10n-"
-"portuguese@lists.debian.org>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -137,11 +137,11 @@ msgstr ""
 msgid "Show the testing banner."
 msgstr "Mostra a mensagem de aviso teste."
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "NÍVEL"
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Ajusta o nível de depuração para NÍVEL."
 
@@ -208,7 +208,7 @@ msgstr "Use ARQUIVO como o arquivo de configuração."
 msgid "Do an exact match."
 msgstr "Faz um casamento exato."
 
-#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:121 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Imprime a licença de copyright."
 
@@ -252,7 +252,7 @@ msgstr "Depura leitura das opções."
 msgid "Do no output to stdout."
 msgstr "Não imprime a saída na saída padrão."
 
-#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+#: grep-dctrl.c:133
 #, fuzzy
 msgid "Attempt mmapping input files"
 msgstr "Tentativa de mapear arquivos de entrada"
@@ -269,11 +269,11 @@ msgstr "predicado é muito longo"
 msgid "inconsistent atom modifiers"
 msgstr "modificadores atômicos inconsistentes"
 
-#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:97 tbl-dctrl.c:276
 msgid "no such log level"
 msgstr "não existe este nível de log"
 
-#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:109 tbl-dctrl.c:288
 msgid "too many file names"
 msgstr "muitos nomes de arquivos"
 
@@ -336,52 +336,52 @@ msgstr ""
 "não pode suprimir nomes dos campos quando estiver mostrando parágrafos "
 "completamente"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "KEYSPEC"
 msgstr "KEYSPEC"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "Specify sort keys."
 msgstr "Especificar chaves de ordenação."
 
-#: sort-dctrl.c:85
+#: sort-dctrl.c:83
 msgid "invalid key flag"
 msgstr ""
 
-#: sort-dctrl.c:135
+#: sort-dctrl.c:129
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr ""
 "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "DELIM"
 msgstr "DELIM"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "Specify a delimiter."
 msgstr "Especificar um delimitador"
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 #, fuzzy
 msgid "SPEC"
 msgstr "SPEC"
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "Append the specified column."
 msgstr "Anexar à coluna especificada."
 
-#: tbl-dctrl.c:264
+#: tbl-dctrl.c:262
 msgid "invalid column length"
 msgstr "tamanho de coluna inválido"
 
-#: tbl-dctrl.c:315
+#: tbl-dctrl.c:309
 #, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr ""
 "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
 
-#: tbl-dctrl.c:329
+#: tbl-dctrl.c:323
 #, fuzzy
 msgid "bad multibyte character"
 msgstr "caracter multibyte inválido"
@@ -400,7 +400,8 @@ msgstr "caracter multibyte inválido"
 #, fuzzy
 #~ msgid "pretty-dctrl -- pretty-print Debian control files"
 #~ msgstr ""
-#~ "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
+#~ "grep-dctrl -- busca por expressões regulares em arquivos de controle "
+#~ "Debian"
 
 #~ msgid "invalid numeric pattern"
 #~ msgstr "padrão numérico invalido"

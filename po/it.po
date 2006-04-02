@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.7\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"POT-Creation-Date: 2006-04-02 18:04+0300\n"
 "PO-Revision-Date: 2006-03-24 12:27+0000\n"
 "Last-Translator: Danilo Piazzalunga <danilopiazza@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -135,11 +135,11 @@ msgstr "grep-dctrl -- ricerca attraverso i file di controllo di Debian"
 msgid "Show the testing banner."
 msgstr "Mostra l'avviso fastidioso."
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "LIVELLO"
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Imposta il livello di debug a LIVELLO."
 
@@ -205,7 +205,7 @@ msgstr "Usa NOMEFILE come file di configurazione."
 msgid "Do an exact match."
 msgstr "Cerca solo corrispondenze esatte."
 
-#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:121 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Mostra la licenza."
 
@@ -250,7 +250,7 @@ msgstr "Fa il debug dell'analisi delle opzioni."
 msgid "Do no output to stdout."
 msgstr "Non invia output verso stdout."
 
-#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+#: grep-dctrl.c:133
 msgid "Attempt mmapping input files"
 msgstr ""
 
@@ -266,11 +266,11 @@ msgstr "il predicato è troppo lungo"
 msgid "inconsistent atom modifiers"
 msgstr "modificatori di atomi incoerenti"
 
-#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:97 tbl-dctrl.c:276
 msgid "no such log level"
 msgstr "livello di log inesistente"
 
-#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:109 tbl-dctrl.c:288
 msgid "too many file names"
 msgstr "troppi nomi di file"
 
@@ -332,48 +332,48 @@ msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "impossibile omettere i nomi dei campi quando si mostra l'intero paragrafo"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "KEYSPEC"
 msgstr ""
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "Specify sort keys."
 msgstr ""
 
-#: sort-dctrl.c:85
+#: sort-dctrl.c:83
 msgid "invalid key flag"
 msgstr ""
 
-#: sort-dctrl.c:135
+#: sort-dctrl.c:129
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- ordina i file di controllo di Debian"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "DELIM"
 msgstr ""
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "Specify a delimiter."
 msgstr ""
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "SPEC"
 msgstr ""
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "Append the specified column."
 msgstr ""
 
-#: tbl-dctrl.c:264
+#: tbl-dctrl.c:262
 msgid "invalid column length"
 msgstr ""
 
-#: tbl-dctrl.c:315
+#: tbl-dctrl.c:309
 #, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "grep-dctrl -- ricerca attraverso i file di controllo di Debian"
 
-#: tbl-dctrl.c:329
+#: tbl-dctrl.c:323
 msgid "bad multibyte character"
 msgstr ""
 
