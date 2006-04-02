@@ -115,6 +115,11 @@ in one \-F option and multiple \-F options in one simple filter are
 allowed. The search named by the filter will be performed
 among all the fields named, and as soon as any one of them matches, the
 whole simple filter is considered matching.
+.PP
+A FIELD specification can contain a colon. In such a case, the part
+up to the colon is taken as the name of the field to be searched in,
+and the part after the colon is taken as the name of the field whose
+content is to be used if the field to search in is empty.
 .IP \-P
 Shorthand for "\-FPackage".
 .IP "\-e, \-\-eregex"
@@ -176,6 +181,11 @@ Show only the body of these fields from the matching paragraphs.  The
 field names must not include any colons or commas.  Commas are used to
 delimit field names in the argument to this option.  The fields are
 shown in the order given here.
+.PP
+A FIELD specification can contain a colon. In such a case, the part
+up to the colon is taken as the name of the field to be shown, and the
+part after the colon is taken as the name of the field whose content
+is to be used if the field to be shown is empty.
 .IP "\-d"
 Show only the first line of the Description field from the matching
 paragraphs.  If no "\-s" option is specified, this option also effects

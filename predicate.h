@@ -40,6 +40,9 @@ struct atom {
 	 * field_name specifies the whole paragraph (in which case
 	 * field_inx is -1. */
 	char const * field_name; size_t field_inx;
+        /* The index to the field whose value is to be used when this
+         * field is empty. */
+        size_t repl_inx;
 	/* Matching mode */
 	enum matching_mode {
 		M_SUBSTR, /* substring matching */

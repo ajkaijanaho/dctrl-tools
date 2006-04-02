@@ -232,7 +232,7 @@ void handle_para(struct arguments *args, struct paragraph *para)
 {
 	struct fsaf_read_rv columns[args->num_columns];
 	for (size_t i = 0; i < args->num_columns; i++) {	
-		columns[i] = get_field(para, args->columns[i].field_inx);
+		columns[i] = get_field(para, args->columns[i].field_inx, -1);
 	}
 	print_line(args, columns);
 }
@@ -375,7 +375,7 @@ int main(int argc, char * argv[])
 			struct paragraph *p = pb.paras[i];
 			assert(p->nfields == n);
 			for (size_t j = 0; j < p->nfields; j++) {
-				struct fsaf_read_rv r = get_field(p, j);
+				struct fsaf_read_rv r = get_field(p, j, -1);
 				size_t len = mbs_len(r.b, r.len,
 						     p->common->fp->fname);
 				if (len > lens[j]) lens[j] = len;
