@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"POT-Creation-Date: 2006-04-02 18:04+0300\n"
 "PO-Revision-Date: 2006-03-24 17:08+0000\n"
 "Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -135,11 +135,11 @@ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 msgid "Show the testing banner."
 msgstr "Mostra l'avís de prova."
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "NIVELL"
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Estableix el nivell de depuració a NIVELL."
 
@@ -204,7 +204,7 @@ msgstr "Utilitza NOMFITXER com el fitxer de configuració."
 msgid "Do an exact match."
 msgstr "Fes una coincidència exacta."
 
-#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:121 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
@@ -248,7 +248,7 @@ msgstr "Depura l'anàlisi d'opcions."
 msgid "Do no output to stdout."
 msgstr "No mostres res a l'eixida estàndard."
 
-#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+#: grep-dctrl.c:133
 msgid "Attempt mmapping input files"
 msgstr "Intenta fer «mmap» dels fitxers d'entrada"
 
@@ -264,11 +264,11 @@ msgstr "el predicat és massa llarg"
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:97 tbl-dctrl.c:276
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:109 tbl-dctrl.c:288
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
@@ -327,50 +327,49 @@ msgstr ""
 
 #: grep-dctrl.c:757
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr ""
-"no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
+msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "KEYSPEC"
 msgstr "ESPECCLAU"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "Specify sort keys."
 msgstr "Especifica les claus d'ordenació."
 
-#: sort-dctrl.c:85
+#: sort-dctrl.c:83
 msgid "invalid key flag"
 msgstr "senyalador de clau invàlid"
 
-#: sort-dctrl.c:135
+#: sort-dctrl.c:129
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- ordena fitxers de control de Debian"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "DELIM"
 msgstr "DELIM"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "Specify a delimiter."
 msgstr "Especifica un delimitador."
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "SPEC"
 msgstr "ESPEC"
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "Append the specified column."
 msgstr "Afegeix la columna especificada."
 
-#: tbl-dctrl.c:264
+#: tbl-dctrl.c:262
 msgid "invalid column length"
 msgstr "La longitud de la columna no és vàlida"
 
-#: tbl-dctrl.c:315
+#: tbl-dctrl.c:309
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- tabula fitxers de control de Debian"
 
-#: tbl-dctrl.c:329
+#: tbl-dctrl.c:323
 msgid "bad multibyte character"
 msgstr "el caràcter multioctet és invàlid"
 
@@ -400,8 +399,8 @@ msgstr "el caràcter multioctet és invàlid"
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
-#~ "connector?"
+#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar "
+#~ "un connector?"
 
 #~ msgid "%s: %s: %s\n"
 #~ msgstr "%s: %s: %s\n"

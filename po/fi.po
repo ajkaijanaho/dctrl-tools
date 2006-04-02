@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-03-24 13:46+0200\n"
+"POT-Creation-Date: 2006-04-02 18:04+0300\n"
 "PO-Revision-Date: 2006-03-24 13:16+0000\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -135,11 +135,11 @@ msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl.c:108 sort-dctrl.c:37 tbl-dctrl.c:39
+#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
 msgid "Set debugging level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
@@ -168,13 +168,11 @@ msgstr ""
 
 #: grep-dctrl.c:113
 msgid "Suppress field names when showing specified fields."
-msgstr ""
-"Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
+msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
 
 #: grep-dctrl.c:114
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr ""
-"Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
+msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
 #: grep-dctrl.c:115
 msgid "The pattern is a standard POSIX regular expression."
@@ -204,7 +202,7 @@ msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
 msgid "Do an exact match."
 msgstr "Käytä täsmällistä hakua."
 
-#: grep-dctrl.c:121 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:121 sort-dctrl.c:35 tbl-dctrl.c:37
 msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
@@ -249,7 +247,7 @@ msgstr "Testaa valitsimien jäsennyst�."
 msgid "Do no output to stdout."
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
-#: grep-dctrl.c:133 sort-dctrl.c:39 tbl-dctrl.c:40
+#: grep-dctrl.c:133
 msgid "Attempt mmapping input files"
 msgstr "Yritä mmapata syöttetiedostot"
 
@@ -265,11 +263,11 @@ msgstr "predikaatti on liian pitkä"
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:416 sort-dctrl.c:99 tbl-dctrl.c:278
+#: grep-dctrl.c:416 sort-dctrl.c:97 tbl-dctrl.c:276
 msgid "no such log level"
 msgstr "ei sellaista seurantatasoa ole"
 
-#: grep-dctrl.c:524 sort-dctrl.c:115 tbl-dctrl.c:290
+#: grep-dctrl.c:524 sort-dctrl.c:109 tbl-dctrl.c:288
 msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
@@ -330,49 +328,49 @@ msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "KEYSPEC"
 msgstr "AVAINMÄÄR"
 
-#: sort-dctrl.c:38
+#: sort-dctrl.c:37
 msgid "Specify sort keys."
 msgstr "Anna järjestysavaimet."
 
-#: sort-dctrl.c:85
+#: sort-dctrl.c:83
 msgid "invalid key flag"
 msgstr "sopimaton avainvalitsin"
 
-#: sort-dctrl.c:135
+#: sort-dctrl.c:129
 #, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "DELIM"
 msgstr "VÄLIM"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:35
 msgid "Specify a delimiter."
 msgstr ""
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "SPEC"
 msgstr ""
 
-#: tbl-dctrl.c:37
+#: tbl-dctrl.c:36
 msgid "Append the specified column."
 msgstr ""
 
-#: tbl-dctrl.c:264
+#: tbl-dctrl.c:262
 msgid "invalid column length"
 msgstr ""
 
-#: tbl-dctrl.c:315
+#: tbl-dctrl.c:309
 #, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
-#: tbl-dctrl.c:329
+#: tbl-dctrl.c:323
 msgid "bad multibyte character"
 msgstr ""
 

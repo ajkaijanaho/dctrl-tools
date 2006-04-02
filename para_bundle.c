@@ -61,6 +61,7 @@ void bundle_slurp(struct para_bundle * pb, struct ifile ifi)
 		pb->paras[pb->num_paras++] = p;
 	}
 
-	fsaf_close(f);
+//      DO NOT CLOSE fsaf -- this makes the whole para_bundle useless!
+//	fsaf_close(f);
 	close_ifile(ifi, fd);
 }
