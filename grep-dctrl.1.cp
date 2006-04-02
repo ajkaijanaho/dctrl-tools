@@ -26,11 +26,13 @@ grep\-dctrl, grep\-status, grep\-available, grep\-aptavail \- grep Debian contro
 .IR file "..."
 ]
 .sp
+where
 .I command
 is one of
 .BR grep\-dctrl ,
 .BR grep\-status ,
-.BR grep\-available and
+.B grep\-available
+and
 .BR grep\-aptavail .
 .SH DESCRIPTION
 The grep\-dctrl program can answer such questions as 
