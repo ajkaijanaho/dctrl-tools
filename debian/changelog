@@ -1,8 +1,31 @@
-dctrl-tools (2.8.2) UNRELEASED; urgency=low
+dctrl-tools (2.9.0) unstable; urgency=low
 
-  * 
+  * grep-dctrl.c: Add switch -S as a shorthand for -FSource:Package
+    Closes: #278815 (Please provide -S = source)
+    Reported by Andreas Barth <aba@not.so.argh.org>
+  * Add the ability to specify "backup fields" in grep-dctrl
+    Closes: #355960 (please provide option to take values for missing fields
+    from other fields)
+    Reported by Adeodato Simó <dato@net.com.org.es>.
+  * Makefile: Split all target into all and all-no-mo
+  * tbl-dctrl.1: fix typo
+    Closes: #359165 ('man tbl-dctrl' typo: "fnction")
+    Reported by: A Costa <agcosta@gis.net>
+  * grep-dctrl.c: Add copyright years 2005, 2006
+  * grep-dctrl.1.cp: Clarify SYNOPSIS
+  * grep-dctrl.{c,1.cp}: Add the option '--pattern'
+    Closes: #359318 (Unable to specify a pattern that begins with '-')
+    Reported by James Vega <jamessan@debian.org>
+  * {grep,tbl,sort}-dctrl.c: convert OPT_* defines to an anonymous enum
+  * para_bundle.c (bundle_slurp): don't kill the fsaf
+    Closes: #360139 (sort-dctrl and tbl-dctrl junk the first line)
+    Reported by Gerfried Fuchs <alfie@debian.org>
+  * po/README.Translators: note Rosetta
+  * debian/postinst.grep-dctrl: remove the XSI-ism of -a in test.
+  * Add UNRELEASED 2.8.2 to changelog
+  * po/de.po: Update by Gerfried Fuchs <alfie@debian.org>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat,  1 Apr 2006 13:29:02 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  3 Apr 2006 00:38:56 +0300
 
 dctrl-tools (2.8.1) unstable; urgency=low
 
