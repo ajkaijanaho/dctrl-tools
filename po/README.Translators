@@ -23,6 +23,9 @@ Translators should subscribe to dctrl-tools-i18n
 It will contain requests for updates of the translations, and perhaps
 occasionally discussion related to internationalization.
 
+Alternatively, translators can use Canonical's Rosetta for translation; the
+translations are synched between Rosetta and darcs occasionally.
+
 
 Technical stuff
 ---------------
