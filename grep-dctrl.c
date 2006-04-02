@@ -112,6 +112,7 @@ static struct argp_option options[] = {
 	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set debugging level to LEVEL.") },
 	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
 	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
+	{ 0,		    'S', 0,		    0, N_("This is a shorthand for -FSource:Package.") },
 	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs.") },
 	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
 	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
@@ -446,10 +447,15 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		debug_message("parse_opt: o", 0);
 		APPTOK(I_OR);
 		break;
+        case 'S':
+                debug_message("parse_opt: S", 0);
+                arg = "Source:Package";
+                goto case_F;
 	case 'P':
 		debug_message("parse_opt: P", 0);
 		arg = "Package";
-		/* pass through */
+                goto case_F;
+        case_F:
 	case 'F': {
 		debug_message("parse_opt: Fv", 0);
 		atom = ENTER_ATOM;
