@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-04-02 18:04+0300\n"
+"POT-Creation-Date: 2006-04-03 00:40+0300\n"
 "PO-Revision-Date: 2006-03-24 17:08+0000\n"
 "Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -25,7 +25,7 @@ msgstr "%s: s'està usant «%s com a paginador\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen ha fallat per a %s: %s\n"
 
-#: predicate.c:40 grep-dctrl.c:214 grep-dctrl.c:323
+#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
 msgid "predicate is too complex"
 msgstr "el predicat és massa complexe"
 
@@ -127,39 +127,44 @@ msgstr "el tipus de fitxer és desconegut, s'està ometent"
 msgid "Parse error in field."
 msgstr "S'ha produït un error d'anàlisi al camp."
 
-#: grep-dctrl.c:46
+#: grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
-#: grep-dctrl.c:106
+#: grep-dctrl.c:110
 msgid "Show the testing banner."
 msgstr "Mostra l'avís de prova."
 
-#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
 msgid "LEVEL"
 msgstr "NIVELL"
 
-#: grep-dctrl.c:108 sort-dctrl.c:36 tbl-dctrl.c:38
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
 msgid "Set debugging level to LEVEL."
 msgstr "Estableix el nivell de depuració a NIVELL."
 
-#: grep-dctrl.c:109 grep-dctrl.c:111
+#: grep-dctrl.c:113 grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "CAMP,CAMP,..."
 
-#: grep-dctrl.c:109
+#: grep-dctrl.c:113
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Restringeix la coincidència de patrons als CAMPs donats."
 
-#: grep-dctrl.c:110
+#: grep-dctrl.c:114
 msgid "This is a shorthand for -FPackage."
 msgstr "Això és una forma curta per a -FPackage."
 
-#: grep-dctrl.c:111
+#: grep-dctrl.c:115
+#, fuzzy
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Això és una forma curta per a -FPackage."
+
+#: grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Mostra només el cos d'aquests camps dels paràgrafs coincidents."
 
-#: grep-dctrl.c:112
+#: grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -167,209 +172,221 @@ msgstr ""
 "Mostra només la primera línia del camp «Description» dels paràgrafs "
 "coincidents."
 
-#: grep-dctrl.c:113
+#: grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
 msgstr "Suprimeix els noms dels camps quan mostra els camps especificats."
 
-#: grep-dctrl.c:114
+#: grep-dctrl.c:119
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Considera el patró com una expressió regular estesa POSIX."
 
-#: grep-dctrl.c:115
+#: grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "El patró és una expressió regular estàndard POSIX."
 
-#: grep-dctrl.c:116
+#: grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
 msgstr ""
 "No distigueixes entre majúscules i minúscules quan cerca una coincidència."
 
-#: grep-dctrl.c:117
+#: grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
 msgstr "Mostra només els paràgrafs que no coincideixen."
 
-#: grep-dctrl.c:118
+#: grep-dctrl.c:123
 msgid "Show only the count of matching paragraphs."
 msgstr "Mostra només el compte de paràgrafs coincidents."
 
-#: grep-dctrl.c:119
+#: grep-dctrl.c:124
 msgid "FNAME"
 msgstr "NOMFITXER"
 
-#: grep-dctrl.c:119
+#: grep-dctrl.c:124
 msgid "Use FNAME as the config file."
 msgstr "Utilitza NOMFITXER com el fitxer de configuració."
 
-#: grep-dctrl.c:120
+#: grep-dctrl.c:125
 msgid "Do an exact match."
 msgstr "Fes una coincidència exacta."
 
-#: grep-dctrl.c:121 sort-dctrl.c:35 tbl-dctrl.c:37
+#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
 msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
-#: grep-dctrl.c:122
+#: grep-dctrl.c:127
 msgid "Conjunct predicates."
 msgstr "Predicats conjunts."
 
-#: grep-dctrl.c:123
+#: grep-dctrl.c:128
 msgid "Disjunct predicates."
 msgstr "Predicats disjunts."
 
-#: grep-dctrl.c:124
+#: grep-dctrl.c:129
 msgid "Negate the following predicate."
 msgstr "Nega el següent predicat."
 
-#: grep-dctrl.c:125
+#: grep-dctrl.c:130
 msgid "Test for version number equality."
 msgstr "Comprova la igualtat del número de versió."
 
-#: grep-dctrl.c:126
+#: grep-dctrl.c:131
 msgid "Version number comparison: <."
 msgstr "Comparació del número de versió: <."
 
-#: grep-dctrl.c:127
+#: grep-dctrl.c:132
 msgid "Version number comparison: <=."
 msgstr "Comparació del número de versió: <=."
 
-#: grep-dctrl.c:128
+#: grep-dctrl.c:133
 msgid "Version number comparison: >."
 msgstr "Comparació del número de versió: >."
 
-#: grep-dctrl.c:129
+#: grep-dctrl.c:134
 msgid "Version number comparison: >=."
 msgstr "Comparació del número de versió: >=."
 
-#: grep-dctrl.c:130
+#: grep-dctrl.c:135
 msgid "Debug option parsing."
 msgstr "Depura l'anàlisi d'opcions."
 
-#: grep-dctrl.c:131 grep-dctrl.c:132
+#: grep-dctrl.c:136 grep-dctrl.c:137
 msgid "Do no output to stdout."
 msgstr "No mostres res a l'eixida estàndard."
 
-#: grep-dctrl.c:133
+#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
 msgid "Attempt mmapping input files"
 msgstr "Intenta fer «mmap» dels fitxers d'entrada"
 
-#: grep-dctrl.c:134
+#: grep-dctrl.c:139
 msgid "Ignore parse errors"
 msgstr "Descarta els errors d'anàlisi"
 
-#: grep-dctrl.c:291
+#: grep-dctrl.c:140
+msgid "PATTERN"
+msgstr ""
+
+#: grep-dctrl.c:140
+msgid "Specify the pattern to search for"
+msgstr ""
+
+#: grep-dctrl.c:298
 msgid "predicate is too long"
 msgstr "el predicat és massa llarg"
 
-#: grep-dctrl.c:350
+#: grep-dctrl.c:357
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl.c:416 sort-dctrl.c:97 tbl-dctrl.c:276
+#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
 msgid "no such log level"
 msgstr "aquest nivell de registre no existeix"
 
-#: grep-dctrl.c:524 sort-dctrl.c:109 tbl-dctrl.c:288
+#: grep-dctrl.c:525
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr ""
+
+#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
-#: grep-dctrl.c:613
+#: grep-dctrl.c:646
 msgid "unexpected end of predicate"
 msgstr "s'ha trobat un final del predicat inesperat"
 
-#: grep-dctrl.c:616
+#: grep-dctrl.c:649
 msgid "unexpected '!' in command line"
 msgstr "s'ha trobat un «!» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:619
+#: grep-dctrl.c:652
 msgid "unexpected '-a' in command line"
 msgstr "s'ha trobat un «-a» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:622
+#: grep-dctrl.c:655
 msgid "unexpected '-o' in command line"
 msgstr "s'ha trobat un «-o» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:625
+#: grep-dctrl.c:658
 msgid "unexpected '(' in command line"
 msgstr "s'ha trobat un «(» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:628
+#: grep-dctrl.c:661
 msgid "unexpected ')' in command line"
 msgstr "s'ha trobat un «)» inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:632
+#: grep-dctrl.c:665
 msgid "unexpected atom in command line"
 msgstr "s'ha trobat un àtom inesperat a la línia d'ordres"
 
-#: grep-dctrl.c:645
+#: grep-dctrl.c:678
 msgid "missing ')' in command line"
 msgstr "manca un «)» en la línia d'ordres"
 
-#: grep-dctrl.c:726
+#: grep-dctrl.c:759
 msgid "A pattern is mandatory"
 msgstr "Es requereix un patró"
 
-#: grep-dctrl.c:733
+#: grep-dctrl.c:766
 msgid "a predicate is required"
 msgstr "es requereix un predicat"
 
-#: grep-dctrl.c:738
+#: grep-dctrl.c:771
 msgid "malformed predicate"
 msgstr "predicat malformat"
 
-#: grep-dctrl.c:744
+#: grep-dctrl.c:777
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl.c:748
+#: grep-dctrl.c:781
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl.c:757
+#: grep-dctrl.c:790
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
-#: sort-dctrl.c:37
+#: sort-dctrl.c:40
 msgid "KEYSPEC"
 msgstr "ESPECCLAU"
 
-#: sort-dctrl.c:37
+#: sort-dctrl.c:40
 msgid "Specify sort keys."
 msgstr "Especifica les claus d'ordenació."
 
-#: sort-dctrl.c:83
+#: sort-dctrl.c:87
 msgid "invalid key flag"
 msgstr "senyalador de clau invàlid"
 
-#: sort-dctrl.c:129
+#: sort-dctrl.c:137
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- ordena fitxers de control de Debian"
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:38
 msgid "DELIM"
 msgstr "DELIM"
 
-#: tbl-dctrl.c:35
+#: tbl-dctrl.c:38
 msgid "Specify a delimiter."
 msgstr "Especifica un delimitador."
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:39
 msgid "SPEC"
 msgstr "ESPEC"
 
-#: tbl-dctrl.c:36
+#: tbl-dctrl.c:39
 msgid "Append the specified column."
 msgstr "Afegeix la columna especificada."
 
-#: tbl-dctrl.c:262
+#: tbl-dctrl.c:266
 msgid "invalid column length"
 msgstr "La longitud de la columna no és vàlida"
 
-#: tbl-dctrl.c:309
+#: tbl-dctrl.c:317
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- tabula fitxers de control de Debian"
 
-#: tbl-dctrl.c:323
+#: tbl-dctrl.c:331
 msgid "bad multibyte character"
 msgstr "el caràcter multioctet és invàlid"
 
