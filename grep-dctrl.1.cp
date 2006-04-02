@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2006-02-26 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2006-04-02 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
@@ -100,6 +100,12 @@ There is one exception to the above: if the program name is
 the default input source is always standard input; this cannot be
 overridden by the configuration file.
 .SH OPTIONS
+.SS Specifying the search pattern
+.IP "\-\-pattern=PATTERN"
+Specify a pattern to be searched. This switch is not generally needed, as
+the pattern can be given by itself. However, patterns that start
+with a dash must be given using this switch, so that they wouldn't
+be mistaken for switches.
 .SS Modifiers of simple filters
 .IP "\-F FIELD,FIELD,...; \-\-field=FIELD,FIELD,..."
 Restrict pattern matching to the FIELDs given.  Multiple field names

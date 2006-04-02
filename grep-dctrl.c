@@ -57,7 +57,8 @@ enum {
         OPT_GT,
         OPT_GE,
         OPT_MMAP,
-        OPT_IGN_ERRS
+        OPT_IGN_ERRS,
+        OPT_PATTERN
 };
 
 #undef BANNER
@@ -134,6 +135,7 @@ static struct argp_option options[] = {
 	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do no output to stdout.") },
 	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
 	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
+        { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for") },
 	{ 0 }
 };
 
@@ -499,6 +501,19 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case OPT_IGN_ERRS:
 		debug_message("parse_opt: ignore-parse-errors", 0);
 		args->ignore_errors = 1;
+		break;
+        case OPT_PATTERN:
+                debug_message("parse_opt: pattern", 0);
+		atom = ENTER_ATOM;
+		if (atom->pat != 0) {
+                        message(L_FATAL, _("Multiple patterns for the same "
+                                           "atom are not allowed"), 0);
+                        fail();
+                }
+		atom->patlen = strlen(arg);
+		atom->pat = malloc(atom->patlen+1);
+		if (atom->pat == 0) fatal_enomem(0);
+		strcpy((char*)atom->pat, arg);
 		break;
 	case ARGP_KEY_ARG:
 		debug_message("parse_opt: argument", 0);
