@@ -27,8 +27,10 @@ LDLIBS = -L. -ldctrl
 # List of translated languages is given in langs.mk
 include langs.mk
 
-all :	grep-dctrl sort-dctrl tbl-dctrl sync-available \
-	grep-dctrl.1 sort-dctrl.1 mo
+all :	all-no-mo mo
+
+all-no-mo : 	grep-dctrl sort-dctrl tbl-dctrl sync-available \
+		grep-dctrl.1 sort-dctrl.1
 
 pot : po/dctrl-tools.pot
 
