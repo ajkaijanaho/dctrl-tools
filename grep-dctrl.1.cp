@@ -122,6 +122,8 @@ and the part after the colon is taken as the name of the field whose
 content is to be used if the field to search in is empty.
 .IP \-P
 Shorthand for "\-FPackage".
+.IP \-S
+Shorthand for "\-FSource:Package".
 .IP "\-e, \-\-eregex"
 Regard the pattern of the current simple filter as an extended
 POSIX regular expression
