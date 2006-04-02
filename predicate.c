@@ -48,6 +48,13 @@ void predicate_finish_atom(struct predicate * p)
 	struct atom * atom =  get_current_atom(p);
 	debug_message("predicate_finish_atom", 0);
 	if (atom->field_name != 0) {
+                char * repl = strchr(atom->field_name, ':');
+                if (repl != NULL) {
+                        *repl++ = '\0';
+                        atom->repl_inx = fieldtrie_insert(repl);
+                } else {
+                        atom->repl_inx = -1;
+                }
 		atom->field_inx = fieldtrie_insert(atom->field_name);
 	}
 
@@ -80,6 +87,9 @@ static bool verify_atom(struct atom * atom, para_t * para)
 	} else {
 		/* Take the field */
 		struct field_data * fd = &para->fields[atom->field_inx];
+                if (fd->start == fd->end && atom->repl_inx != (size_t)(-1)) {
+                        fd = &para->fields[atom->repl_inx];
+                }
 		start = fd->start;
 		end = fd->end;
 	}

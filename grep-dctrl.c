@@ -208,6 +208,7 @@ struct arguments {
 	struct show_fields {
 		char const * name;
 		size_t inx;
+                size_t repl; // the field to use if this is empty
 	} show_fields[MAX_FIELDS];
 	/* Search field names seen during current atom.  */
 	char * search_fields[MAX_FIELDS];
@@ -405,10 +406,18 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				&args->show_fields[args->num_show_fields];
 			sf->name = strdup(s);
 			if (sf->name == 0) fatal_enomem(0);
-			sf->inx = fieldtrie_insert(s);
+                        char * repl = strchr(sf->name, ':');
+                        if (repl != NULL) {
+                                *repl = '\0';
+                                ++repl;
+                        }
+			sf->inx = fieldtrie_insert(sf->name);
 			if (sf->inx == description_inx) {
 				args->description_selected = true;
 			}
+                        sf->repl = repl == NULL
+                                ? (size_t)(-1)
+                                : fieldtrie_insert(repl);
 			++args->num_show_fields;
 		}
 		free(carg);
@@ -837,7 +846,8 @@ int main (int argc, char * argv[])
 				}
 				struct fsaf_read_rv r 
 					= get_field(&para, 
-						    args.show_fields[j].inx);
+						    args.show_fields[j].inx,
+                                                    args.show_fields[j].repl);
 				if (args.short_descr &&
 				    args.show_fields[j].inx == description_inx) {
 					char * nl = memchr(r.b, '\n', r.len);

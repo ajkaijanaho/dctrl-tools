@@ -68,9 +68,12 @@ struct fsaf_read_rv get_whole_para(para_t * p)
 }
 
 static inline
-struct fsaf_read_rv get_field(para_t * p, size_t fld_inx)
+struct fsaf_read_rv get_field(para_t * p, size_t fld_inx, size_t repl_inx)
 {
 	struct field_data * fd = &p->fields[fld_inx];
+        if (fd->start == fd->end && repl_inx != (size_t)(-1)) {
+                 fd = &p->fields[repl_inx];
+        }
 	return fsaf_read(p->common->fp, fd->start, fd->end - fd->start);
 }
 
