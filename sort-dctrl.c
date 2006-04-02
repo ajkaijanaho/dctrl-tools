@@ -26,8 +26,10 @@
 #include "para_bundle.h"
 #include "sorter.h"
 
-#define OPT_SILENT 256
-#define OPT_MMAP 257
+enum {
+        OPT_SILENT = 256,
+        OPT_MMAP
+};
 
 const char * argp_program_version = "sort-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;

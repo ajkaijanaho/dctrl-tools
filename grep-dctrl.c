@@ -47,16 +47,18 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 
 static char argsdoc [] = "PREDICATE [FILENAME...]";
 
-#define OPT_CONFIG 256
-#define OPT_OPTPARSE 257
-#define OPT_SILENT 258
-#define OPT_EQ 259
-#define OPT_LT 260
-#define OPT_LE 261
-#define OPT_GT 262
-#define OPT_GE 263
-#define OPT_MMAP 264
-#define OPT_IGN_ERRS 265
+enum {
+        OPT_CONFIG=256,
+        OPT_OPTPARSE,
+        OPT_SILENT,
+        OPT_EQ,
+        OPT_LT,
+        OPT_LE,
+        OPT_GT,
+        OPT_GE,
+        OPT_MMAP,
+        OPT_IGN_ERRS
+};
 
 #undef BANNER
 
