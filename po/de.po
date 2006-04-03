@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2006-04-03 00:40+0300\n"
-"PO-Revision-Date: 2006-03-30 20:53+0200\n"
+"PO-Revision-Date: 2006-04-03 09:51+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -154,9 +154,8 @@ msgid "This is a shorthand for -FPackage."
 msgstr "Dies ist eine Kurzform für -FPackage."
 
 #: grep-dctrl.c:115
-#, fuzzy
 msgid "This is a shorthand for -FSource:Package."
-msgstr "Dies ist eine Kurzform für -FPackage."
+msgstr "Dies ist eine Kurzform für -FSource:Package."
 
 #: grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
@@ -259,11 +258,11 @@ msgstr "Analyse-Fehler ignorieren"
 
 #: grep-dctrl.c:140
 msgid "PATTERN"
-msgstr ""
+msgstr "MUSTER"
 
 #: grep-dctrl.c:140
 msgid "Specify the pattern to search for"
-msgstr ""
+msgstr "Gibt das zu suchende Muster an"
 
 #: grep-dctrl.c:298
 msgid "predicate is too long"
@@ -279,7 +278,7 @@ msgstr "Keine solche Log-Ebene"
 
 #: grep-dctrl.c:525
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr ""
+msgstr "Mehrfache Muster für das selbe Atom sind nicht erlaubt"
 
 #: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
 msgid "too many file names"
