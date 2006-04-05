@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2006-04-03 00:40+0300\n"
-"PO-Revision-Date: 2006-04-03 09:51+0200\n"
+"PO-Revision-Date: 2006-04-05 14:37+0200\n"
 "Last-Translator: Gerfried Fuchs <alfie@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -226,11 +226,11 @@ msgstr "Test auf Versionsnummern-Übereinstimmung."
 
 #: grep-dctrl.c:131
 msgid "Version number comparison: <."
-msgstr "Versiosnummern-Vergleich: <."
+msgstr "Versionsnummern-Vergleich: <."
 
 #: grep-dctrl.c:132
 msgid "Version number comparison: <=."
-msgstr "Versiosnummern-Vergleich: <=."
+msgstr "Versionsnummern-Vergleich: <=."
 
 #: grep-dctrl.c:133
 msgid "Version number comparison: >."
@@ -270,7 +270,7 @@ msgstr "Eigenschaft ist zu lang"
 
 #: grep-dctrl.c:357
 msgid "inconsistent atom modifiers"
-msgstr "Inkonsistener Atom-Modifikator"
+msgstr "Inkonsistenter Atom-Modifikator"
 
 #: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
 msgid "no such log level"
