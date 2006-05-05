@@ -70,7 +70,7 @@ You must give a filter expression on the command line.  The filter
 defines which kind of paragraphs (aka package records) are output.  A
 simple filter is a search pattern along with any options that modify
 it.  Possible modifiers are \-\-eregex, \-\-field, \-\-ignore\-case,
-\-P, \-\-regex and \-\-exact\-match, along with their single-letter
+\-\-regex and \-\-exact\-match, along with their single-letter
 equivalents.   By
 default, the search is a case-sensitive fixed substring match on each
 paragraph (in other words, package record) in the input.  With
