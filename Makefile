@@ -103,4 +103,9 @@ maintainer-clean : distclean
 tags :
 	etags *.[hc]
 
+ifeq ($(MAKECMDGOALS),clean)
+else ifeq ($(MAKECMDGOALS),distclean)
+else ifeq  ($(MAKECMDGOALS),maintainer-clean)
+else
 include $(obj:.o=.d)
+endif
