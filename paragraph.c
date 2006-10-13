@@ -115,12 +115,14 @@ redo:
 					line_message(L_IMPORTANT,
 						     _("warning: "
 						       "expected a colon"),
-						     fp->fname, line);
+						     fp->fname,
+                                                     c == '\n' ?line-1:line);
 					state = FAIL;
 				} else {
 					line_message(L_FATAL,
 						     _("expected a colon"),
-						     fp->fname, line);
+						     fp->fname,
+                                                     c == '\n' ?line-1:line);
 					fail();
 				}
 				break;
@@ -193,7 +195,7 @@ redo:
 	}
 	para->end = pos-1;
 	pp->loc = para->end;
-	pp->line = line;
+	pp->line = fsaf_getc(fp, pp->loc) == '\n' ? line-1 : line;
 
 	if (state == FAIL) {
 		/* skip the rest of the broken line */
