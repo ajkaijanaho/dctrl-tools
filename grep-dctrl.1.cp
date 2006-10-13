@@ -377,7 +377,7 @@ installed packages, sorted by their Installed\-Size.
 % grep\-status \-FStatus \-sInstalled\-Size,Package \-n \\
     "install ok installed" | paste \-sd "  \\n" | sort \-n             
 .fi
-Note that there should be exactly 2 spaces in the "  \n" string. 
+Note that there should be exactly 2 spaces in the "  \\n" string. 
 .PP
 These examples cover a lot of typical uses of this utility, but not
 all possible uses.  Use your imagination!  The building blocks are
