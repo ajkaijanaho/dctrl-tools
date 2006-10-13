@@ -1,0 +1,385 @@
+# Swedish translation for grep-dctrl
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the grep-dctrl package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: grep-dctrl\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2006-04-03 00:41+0300\n"
+"PO-Revision-Date: 2006-09-16 15:24+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: använder \"%s\" as visare\n"
+
+#: misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: popen misslyckades för %s: %s\n"
+
+#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
+msgid "predicate is too complex"
+msgstr "predikatet är för komplext"
+
+#: paragraph.c:116
+msgid "warning: expected a colon"
+msgstr "varning: förväntade ett kolon"
+
+#: paragraph.c:122
+msgid "expected a colon"
+msgstr "förväntade ett kolon"
+
+#: rc.c:66
+msgid "Malformed default input file name"
+msgstr "Felformulerat filnamn för standardinmatning"
+
+#: rc.c:79
+msgid "not owned by you or root, ignoring"
+msgstr "ägs inte av dig eller root, ignorerar"
+
+#: rc.c:84
+msgid "write permissions for group or others, ignoring"
+msgstr "skrivrättigheter för grupp eller övriga, ignorerar"
+
+#: rc.c:124
+msgid "reading config file"
+msgstr "läser konfigurationsfil"
+
+#: rc.c:151
+msgid "read failure or out of memory"
+msgstr "läsfel eller slut på minne"
+
+#: rc.c:173
+msgid "syntax error: need a executable name"
+msgstr "syntaxfel: behöver namn på körbar fil"
+
+#: rc.c:181
+msgid "syntax error: need an input file name"
+msgstr "syntaxfel: behöver ett filnamn för inmatning"
+
+#: rc.c:186
+msgid "considering executable name"
+msgstr ""
+
+#: rc.c:188
+msgid "yes, will use executable name"
+msgstr "ja, kommer att använda namn på körbar fil"
+
+#: rc.c:190
+msgid "default input file"
+msgstr "standardfil för inmatning"
+
+#: rc.c:201
+msgid "executable name not found; reading from standard input"
+msgstr ""
+
+#: ifile.c:54
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (barn): misslyckades med att köra /bin/sh: %s\n"
+
+#: ifile.c:100
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: kommandot (%s) misslyckades (felkod %d)\n"
+
+#: ifile.c:109
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: kommandot (%s) dödades av signalen %d\n"
+
+#: ifile.c:127
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: kan inte få status: %s\n"
+
+#: ifile.c:138
+msgid "is a directory, skipping"
+msgstr "är en katalog, hoppar över"
+
+#: ifile.c:139
+msgid "is a block device, skipping"
+msgstr "är en blockenhet, hoppar över"
+
+#: ifile.c:140
+msgid "internal error"
+msgstr "internt fel"
+
+#: ifile.c:141
+msgid "is a socket, skipping"
+msgstr "är ett uttag, hoppar över"
+
+#: ifile.c:142
+msgid "unknown file type, skipping"
+msgstr "okänd filtyp, hoppar över"
+
+#: sorter.c:54
+msgid "Parse error in field."
+msgstr "Tolkningsfel i fält."
+
+#: grep-dctrl.c:47
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- kör \"grep\" på Debians kontrollfiler"
+
+#: grep-dctrl.c:110
+msgid "Show the testing banner."
+msgstr ""
+
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+msgid "LEVEL"
+msgstr "NIVÅ"
+
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+msgid "Set debugging level to LEVEL."
+msgstr "Ställ in felsökningsnivå till NIVÅ."
+
+#: grep-dctrl.c:113 grep-dctrl.c:116
+msgid "FIELD,FIELD,..."
+msgstr "FÄLT,FÄLT,..."
+
+#: grep-dctrl.c:113
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Begränsa mönstermatchning till angivna FÄLT."
+
+#: grep-dctrl.c:114
+msgid "This is a shorthand for -FPackage."
+msgstr "Det här är en förkortning för -FPackage."
+
+#: grep-dctrl.c:115
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Det här är en förkortning för -FSource:Package."
+
+#: grep-dctrl.c:116
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr ""
+
+#: grep-dctrl.c:117
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+
+#: grep-dctrl.c:118
+msgid "Suppress field names when showing specified fields."
+msgstr ""
+
+#: grep-dctrl.c:119
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr ""
+
+#: grep-dctrl.c:120
+msgid "The pattern is a standard POSIX regular expression."
+msgstr ""
+
+#: grep-dctrl.c:121
+msgid "Ignore case when looking for a match."
+msgstr "Ignorera skiftläge vid sökning efter en träff."
+
+#: grep-dctrl.c:122
+msgid "Show only paragraphs that do not match."
+msgstr ""
+
+#: grep-dctrl.c:123
+msgid "Show only the count of matching paragraphs."
+msgstr ""
+
+#: grep-dctrl.c:124
+msgid "FNAME"
+msgstr "FNAMN"
+
+#: grep-dctrl.c:124
+msgid "Use FNAME as the config file."
+msgstr "Använd FNAMN som konfigurationsfil."
+
+#: grep-dctrl.c:125
+msgid "Do an exact match."
+msgstr "Gör en exakt matchning."
+
+#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
+msgid "Print out the copyright license."
+msgstr ""
+
+#: grep-dctrl.c:127
+msgid "Conjunct predicates."
+msgstr ""
+
+#: grep-dctrl.c:128
+msgid "Disjunct predicates."
+msgstr ""
+
+#: grep-dctrl.c:129
+msgid "Negate the following predicate."
+msgstr ""
+
+#: grep-dctrl.c:130
+msgid "Test for version number equality."
+msgstr ""
+
+#: grep-dctrl.c:131
+msgid "Version number comparison: <."
+msgstr ""
+
+#: grep-dctrl.c:132
+msgid "Version number comparison: <=."
+msgstr ""
+
+#: grep-dctrl.c:133
+msgid "Version number comparison: >."
+msgstr ""
+
+#: grep-dctrl.c:134
+msgid "Version number comparison: >=."
+msgstr ""
+
+#: grep-dctrl.c:135
+msgid "Debug option parsing."
+msgstr ""
+
+#: grep-dctrl.c:136 grep-dctrl.c:137
+msgid "Do no output to stdout."
+msgstr ""
+
+#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
+msgid "Attempt mmapping input files"
+msgstr ""
+
+#: grep-dctrl.c:139
+msgid "Ignore parse errors"
+msgstr "Ignorera tolkningsfel"
+
+#: grep-dctrl.c:140
+msgid "PATTERN"
+msgstr "MÖNSTER"
+
+#: grep-dctrl.c:140
+msgid "Specify the pattern to search for"
+msgstr "Ange mönstret att söka efter"
+
+#: grep-dctrl.c:298
+msgid "predicate is too long"
+msgstr ""
+
+#: grep-dctrl.c:357
+msgid "inconsistent atom modifiers"
+msgstr ""
+
+#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
+msgid "no such log level"
+msgstr "ingen sådan loggnivå"
+
+#: grep-dctrl.c:525
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr ""
+
+#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
+msgid "too many file names"
+msgstr "för många filnamn"
+
+#: grep-dctrl.c:646
+msgid "unexpected end of predicate"
+msgstr ""
+
+#: grep-dctrl.c:649
+msgid "unexpected '!' in command line"
+msgstr ""
+
+#: grep-dctrl.c:652
+msgid "unexpected '-a' in command line"
+msgstr ""
+
+#: grep-dctrl.c:655
+msgid "unexpected '-o' in command line"
+msgstr ""
+
+#: grep-dctrl.c:658
+msgid "unexpected '(' in command line"
+msgstr ""
+
+#: grep-dctrl.c:661
+msgid "unexpected ')' in command line"
+msgstr ""
+
+#: grep-dctrl.c:665
+msgid "unexpected atom in command line"
+msgstr ""
+
+#: grep-dctrl.c:678
+msgid "missing ')' in command line"
+msgstr ""
+
+#: grep-dctrl.c:759
+msgid "A pattern is mandatory"
+msgstr "Ett mönster är obligatoriskt"
+
+#: grep-dctrl.c:766
+msgid "a predicate is required"
+msgstr ""
+
+#: grep-dctrl.c:771
+msgid "malformed predicate"
+msgstr ""
+
+#: grep-dctrl.c:777
+msgid "too many output fields"
+msgstr "för många utmatningsfält"
+
+#: grep-dctrl.c:781
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr ""
+
+#: grep-dctrl.c:790
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr ""
+
+#: sort-dctrl.c:40
+msgid "KEYSPEC"
+msgstr ""
+
+#: sort-dctrl.c:40
+msgid "Specify sort keys."
+msgstr ""
+
+#: sort-dctrl.c:87
+msgid "invalid key flag"
+msgstr ""
+
+#: sort-dctrl.c:137
+msgid "sort-dctrl -- sort Debian control files"
+msgstr ""
+
+#: tbl-dctrl.c:38
+msgid "DELIM"
+msgstr ""
+
+#: tbl-dctrl.c:38
+msgid "Specify a delimiter."
+msgstr ""
+
+#: tbl-dctrl.c:39
+msgid "SPEC"
+msgstr ""
+
+#: tbl-dctrl.c:39
+msgid "Append the specified column."
+msgstr ""
+
+#: tbl-dctrl.c:266
+msgid "invalid column length"
+msgstr ""
+
+#: tbl-dctrl.c:317
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr ""
+
+#: tbl-dctrl.c:331
+msgid "bad multibyte character"
+msgstr ""
