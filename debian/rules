@@ -83,7 +83,9 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 #	Install config file information
 	$(install_nonex) debian/conffiles $(rootdir)/DEBIAN
 #	Get the shared library deps
-	dpkg-shlibdeps $(bindir)/grep-dctrl $(bindir)/sort-dctrl
+	dpkg-shlibdeps $(bindir)/grep-dctrl \
+		       $(bindir)/sort-dctrl \
+                       $(bindir)/tbl-dctrl
 	$(postbinary)
 	touch $@
 
