@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-04-03 00:40+0300\n"
-"PO-Revision-Date: 2006-03-24 17:08+0000\n"
+"POT-Creation-Date: 2006-04-03 00:41+0300\n"
+"PO-Revision-Date: 2006-04-03 17:23+0000\n"
 "Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -263,11 +263,11 @@ msgstr "Descarta els errors d'anàlisi"
 
 #: grep-dctrl.c:140
 msgid "PATTERN"
-msgstr ""
+msgstr "PATRÓ"
 
 #: grep-dctrl.c:140
 msgid "Specify the pattern to search for"
-msgstr ""
+msgstr "Especifiqueu el patró que voleu cercar"
 
 #: grep-dctrl.c:298
 msgid "predicate is too long"
@@ -283,7 +283,7 @@ msgstr "aquest nivell de registre no existeix"
 
 #: grep-dctrl.c:525
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr ""
+msgstr "No es permeten múltiples patrons per al mateix àtom"
 
 #: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
 msgid "too many file names"
@@ -344,7 +344,8 @@ msgstr ""
 
 #: grep-dctrl.c:790
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
+msgstr ""
+"no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
 
 #: sort-dctrl.c:40
 msgid "KEYSPEC"
@@ -416,8 +417,8 @@ msgstr "el caràcter multioctet és invàlid"
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar "
-#~ "un connector?"
+#~ "S'ha trobat un àtom inesperat en la línia d'ordres. Heu oblidat utilitzar un "
+#~ "connector?"
 
 #~ msgid "%s: %s: %s\n"
 #~ msgstr "%s: %s: %s\n"
