@@ -1,3 +1,35 @@
+dctrl-tools (2.9.1) unstable; urgency=low
+
+  [ Gerfried Fuchs ]  
+  * bring german po file up2date again
+  
+  [ Antti-Juhani Kaijanaho ]
+  * Makefile: don't include dependencies if cleaning
+  * grep-dctrl.1.cp: -P is not a modifier
+  * debian/control: grep-dctrl dependency on dctrl-tools need not be versioned
+    Thanks to Mark Hymers for pointing this out.
+  * debian/control: Correct typo in dctrl-tools description
+    Closes: #363230 (Spelling mistake in package description)
+    Reported by Simon Waters <simon@technocool.net>.
+  * grep-dctrl.1.cp: correct an escaping error
+    Closes: #377216 (grep-dctrl: manpage needs more escapting)
+    Reported by Justin Pryzby <justinpryzby@users.sourceforge.net>.
+  * po/fr.po: Updated by Frédéric Bothamy <frederic.bothamy@free.fr>
+    Closes: #361921 (French program translation update)
+    Reported by Frédéric Bothamy <frederic.bothamy@free.fr>
+  * paragraph.c (para_parse_next): Fix off-by-one errors in line numbers
+    Closes: #365795 (grep-dctrl miscounts lines in error messages)
+    Reported by Greg Ward <gward-debian@python.net>.
+  * Translation update from Rosetta:
+    - new partial Polish translation by Simek
+    - new partial Swedish translation by Daniel Nylander
+    - Catalan update by Jordi Mallach
+    - ignored French update by Nicolas Vein, preferring bug#361921
+  * debian/rules: run dpkg-shlibdeps on tbl-dctrl too
+  * debian/control (Standards-Version): 3.7.2, no changes required
+  
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 13 Oct 2006 21:44:15 +0300
+
 dctrl-tools (2.9.0) unstable; urgency=low
 
   * grep-dctrl.c: Add switch -S as a shorthand for -FSource:Package
