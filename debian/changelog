@@ -1,40 +1,8 @@
-dctrl-tools (2.9.3) unstable; urgency=low
+dctrl-tools (2.10) UNRELEASED; urgency=low
 
-  [ Antti-Juhani Kaijanaho ]
-  * debian/control: Add XS-Vcs-Darcs field
-  * Translation updates from Rosetta (etch branch)
-      - Catalan update by Jordi Mallach
-      - Brazilian Portuguese update by Mauricio Bomfim Cruz Vieira
-      - Swedish update by Daniel Nylander
-  * New Czech translation
-    Closes: #396994 (Czech translation of dctrl-tools)
-    Submitted by Miroslav Kure <kurem@upcase.inf.upol.cz>.
-  * New Spanish translation
-    Closes: #396807 (New spanish translation)
-    Submitted by Javier Fernández-Sanguino Peña <jfs@computer.org>
-  * New Russian translation
-    Closes: #396584 ([INTL:ru] Russian program translation)
-    Submitted by Yuri Kozlov <kozlov.y@gmail.com>.
-  * po/vi.po: New Vietnamese translation by Clytie Siddall
-    Closes: #396308 ([INTL:vi] Vietnamese program translation)
-    Reported by Clytie Siddall.
-  
-  [ Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp> ]
-  * Add Japanese translation.
+  * 
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon,  6 Nov 2006 11:49:16 +0200
-
-dctrl-tools (2.9.2) unstable; urgency=low
-
-  * po/fi.po: updated
-  * Translation update from Rosetta (Ubuntu Edgy branch)
-    - en_GB: new translation by Jeff Bailes
-    - pt_BR: merged in work by Washington Lins
-    - sv: merged in work by Daniel Nylander
-    Merge techique (msgcat --use-first) suggested by Jordi Mallach.
-  * delete  ./grep-dctrl-2.6.4-2.6.5.diff
-
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Oct 2006 21:42:20 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 26 Oct 2006 22:21:11 +0300
 
 dctrl-tools (2.9.1) unstable; urgency=low
 

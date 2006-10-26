@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2006-04-03 00:40+0300\n"
-"PO-Revision-Date: 2006-10-28 21:38+0300\n"
+"PO-Revision-Date: 2006-03-24 13:16+0000\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,12 +30,14 @@ msgid "predicate is too complex"
 msgstr "predikaatti on liian monimutkainen"
 
 #: paragraph.c:116
+#, fuzzy
 msgid "warning: expected a colon"
-msgstr "varoitus: kaksoispiste puuttuu"
+msgstr "odottamaton '-a' komentorivill�"
 
 #: paragraph.c:122
+#, fuzzy
 msgid "expected a colon"
-msgstr "kaksoispiste puuttuu"
+msgstr "odottamaton '-a' komentorivill�"
 
 #: rc.c:66
 msgid "Malformed default input file name"
@@ -154,8 +156,9 @@ msgid "This is a shorthand for -FPackage."
 msgstr "Lyhyt muoto vivulle -FPackage"
 
 #: grep-dctrl.c:115
+#, fuzzy
 msgid "This is a shorthand for -FSource:Package."
-msgstr "Lyhyt muoto vivulle -FSource:Package"
+msgstr "Lyhyt muoto vivulle -FPackage"
 
 #: grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
@@ -221,8 +224,9 @@ msgid "Negate the following predicate."
 msgstr "Negatoi seuraava predikaatti."
 
 #: grep-dctrl.c:130
+#, fuzzy
 msgid "Test for version number equality."
-msgstr "Testaa versionumeroiden yhtäsuuruutta."
+msgstr "Testaa numeerista yhtäsuuruutta."
 
 #: grep-dctrl.c:131
 msgid "Version number comparison: <."
@@ -258,11 +262,11 @@ msgstr "Ohita jäsennysvirheet"
 
 #: grep-dctrl.c:140
 msgid "PATTERN"
-msgstr "HAHMO"
+msgstr ""
 
 #: grep-dctrl.c:140
 msgid "Specify the pattern to search for"
-msgstr "Anna haussa käytettävä hahmo"
+msgstr ""
 
 #: grep-dctrl.c:298
 msgid "predicate is too long"
@@ -278,7 +282,7 @@ msgstr "ei sellaista seurantatasoa ole"
 
 #: grep-dctrl.c:525
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Samassa atomissa ei saa olla useita hahmoja"
+msgstr ""
 
 #: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
 msgid "too many file names"
@@ -354,8 +358,9 @@ msgid "invalid key flag"
 msgstr "sopimaton avainvalitsin"
 
 #: sort-dctrl.c:137
+#, fuzzy
 msgid "sort-dctrl -- sort Debian control files"
-msgstr "sort-dctrl -- järjestä Debianin kontrollitiedostoja"
+msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
 #: tbl-dctrl.c:38
 msgid "DELIM"
@@ -363,27 +368,28 @@ msgstr "VÄLIM"
 
 #: tbl-dctrl.c:38
 msgid "Specify a delimiter."
-msgstr "Anna erotinmerkki."
+msgstr ""
 
 #: tbl-dctrl.c:39
 msgid "SPEC"
-msgstr "MÄÄR"
+msgstr ""
 
 #: tbl-dctrl.c:39
 msgid "Append the specified column."
-msgstr "Lisää loppuun annettu sarake."
+msgstr ""
 
 #: tbl-dctrl.c:266
 msgid "invalid column length"
-msgstr "kelvoton sarakepituus"
+msgstr ""
 
 #: tbl-dctrl.c:317
+#, fuzzy
 msgid "tbl-dctrl -- tabularize Debian control files"
-msgstr "tbl-dctrl -- taulukoi Debianin kontrollitiedostoja"
+msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
 #: tbl-dctrl.c:331
 msgid "bad multibyte character"
-msgstr "rikkinäinen pitkä merkki"
+msgstr ""
 
 #, fuzzy
 #~ msgid "unexpected end of file (expected a colon)"
