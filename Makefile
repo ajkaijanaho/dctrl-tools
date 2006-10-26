@@ -4,7 +4,8 @@ localedir = /usr/share/locale
 version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
 
 CC = gcc -std=gnu99
-CFLAGS = -g -Wall -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
+CFLAGS = -g -Wall -Ilib \
+	 -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
          -DHAVE_GETTEXT -DPACKAGE=\"dctrl-tools\" -DLOCALEDIR=\"$(localedir)\" 
 
 CFLAGS += -DVERSION=\"$(version)\"
@@ -15,12 +16,17 @@ CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
 #CFLAGS += -pg
 #LDFLAGS += -pg
 
-libobj = misc.o msg.o predicate.o util.o fsaf.o paragraph.o \
-         fieldtrie.o rc.o strutil.o getaline.o fnutil.o para_pool.o \
-	 ifile.o para_bundle.o sorter.o version.o
+libsrc = $(wildcard lib/*.c)
+libobj = $(libsrc:.c=.o)
 
-obj = $(libobj) grep-dctrl.o sort-dctrl.o tbl-dctrl.o
-src = $(obj:.o=.c)
+src = $(libsrc) \
+      $(wildcard grep-dctrl/*.c) \
+      $(wildcard sort-dctrl/*.c) \
+      $(wildcard tbl-dctrl/*.c)
+
+exe =  	grep-dctrl/grep-dctrl \
+	sort-dctrl/sort-dctrl \
+	tbl-dctrl/tbl-dctrl 
 
 LDLIBS = -L. -ldctrl
 
@@ -29,8 +35,10 @@ include langs.mk
 
 all :	all-no-mo mo
 
-all-no-mo : 	grep-dctrl sort-dctrl tbl-dctrl sync-available \
-		grep-dctrl.1 sort-dctrl.1
+all-no-mo :	sync-available/sync-available \
+		man/grep-dctrl.1 \
+		man/sort-dctrl.1 \
+		$(exe)
 
 pot : po/dctrl-tools.pot
 
@@ -38,14 +46,14 @@ po : $(foreach f,$(langs),po/$(f).po)
 
 mo : $(foreach f,$(langs),po/$(f).mo)
 
-grep-dctrl : grep-dctrl.o libdctrl.a
+grep-dctrl/grep-dctrl : grep-dctrl/grep-dctrl.o grep-dctrl/rc.o libdctrl.a
 
-sort-dctrl : sort-dctrl.o libdctrl.a
+sort-dctrl/sort-dctrl : sort-dctrl/sort-dctrl.o libdctrl.a
 
-tbl-dctrl : tbl-dctrl.o libdctrl.a
+tbl-dctrl/tbl-dctrl : tbl-dctrl/tbl-dctrl.o libdctrl.a
 
 % : %.o
-	$(CC) $(LDFLAGS) -o $@ $< $(LDLIBS)
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 %.d: %.c
 	$(CC) -M $(CPPFLAGS) $< > $@.$$$$; \
@@ -71,7 +79,7 @@ so/%.o : %.c
 %.1 : %.1.cp
 	sed 's*SYSCONF*$(sysconf)*' $< > $@
 
-sync-available : sync-available.cp
+sync-available/sync-available : sync-available/sync-available.cp
 	sed 's*VERSION*$(version)*' $< > $@
 	chmod 755 $@
 
@@ -91,7 +99,7 @@ po/dctrl-tools.pot : $(src)
 fsaf.test : fsaf.test.o msg.o
 
 clean :
-	$(RM) core grep-dctrl grep-dctrl.1 *.o so/*.o libdctrl.a libdctrl.so
+	$(RM) core $(exe) grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
 	$(RM) po/*.mo TAGS *.d
 	$(RM) sync-available
 

@@ -46,27 +46,27 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 #	  mandir=$(mandir) install
 #	Install configuration file
 	$(install_dir) $(etcdir)
-	$(install_nonex) grep-dctrl.rc $(etcdir)
+	$(install_nonex) grep-dctrl/grep-dctrl.rc $(etcdir)
 #	Install the binaries.
 	$(install_dir) $(sbindir)
-	$(install_script) sync-available $(sbindir)
+	$(install_script) sync-available/sync-available $(sbindir)
 	$(install_dir) $(bindir)
-	$(install_exec) tbl-dctrl $(bindir)
-	$(install_exec) sort-dctrl $(bindir)
-	$(install_exec) grep-dctrl $(bindir)
+	$(install_exec) tbl-dctrl/tbl-dctrl $(bindir)
+	$(install_exec) sort-dctrl/sort-dctrl $(bindir)
+	$(install_exec) grep-dctrl/grep-dctrl $(bindir)
 	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
 	 done
 #	Install and zip the manual pages.
 	$(install_dir) $(man8dir)
-	$(install_nonex) sync-available.8 $(man8dir)/
+	$(install_nonex) man/sync-available.8 $(man8dir)/
 	$(gzip) $(man8dir)/sync-available.8
 	$(install_dir) $(man1dir)
-	$(install_nonex) sort-dctrl.1 $(man1dir)/
+	$(install_nonex) man/sort-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/sort-dctrl.1
-	$(install_nonex) tbl-dctrl.1 $(man1dir)/
+	$(install_nonex) man/tbl-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/tbl-dctrl.1
-	$(install_nonex) grep-dctrl.1 $(man1dir)/
+	$(install_nonex) man/grep-dctrl.1 $(man1dir)/
 	$(gzip) $(man1dir)/grep-dctrl.1
 	set -e ; for dest in $(aliases) ; do \
 	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
