@@ -388,3 +388,45 @@ msgstr "tbl-dctrl -- tabuler des fichiers de contrôle Debian"
 #: tbl-dctrl.c:331
 msgid "bad multibyte character"
 msgstr "caractère multioctets erroné"
+
+#, fuzzy
+#~ msgid "unexpected end of file (expected a colon)"
+#~ msgstr "fin de fichier inattendue"
+
+#, fuzzy
+#~ msgid "unexpected end of line (expected a colon)"
+#~ msgstr "fin de ligne inattendue"
+
+#~ msgid "unexpected end of file"
+#~ msgstr "fin de fichier inattendue"
+
+#, fuzzy
+#~ msgid "pretty-dctrl -- pretty-print Debian control files"
+#~ msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
+
+#~ msgid "invalid numeric pattern"
+#~ msgstr "motif numérique invalide"
+
+#, fuzzy
+#~ msgid "parse of a field failed"
+#~ msgstr "l'analyse d'un champ numérique a échoué"
+
+#~ msgid "Numerical test: <."
+#~ msgstr "Test numérique : <"
+
+#~ msgid "Numerical test: <=."
+#~ msgstr "Test numérique : <="
+
+#~ msgid "Numerical test: >."
+#~ msgstr "Test numérique : >"
+
+#~ msgid "Numerical test: >=."
+#~ msgstr "Test numérique : >="
+
+#~ msgid "syntax error in command line"
+#~ msgstr "erreur de syntaxe sur la ligne de commande"
+
+#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
+#~ msgstr ""
+#~ "Atome inattendu sur la ligne de commande. Auriez-vous oublié d'utiliser "
+#~ "un connecteur ?"
