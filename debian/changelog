@@ -4,6 +4,18 @@ dctrl-tools (2.10) UNRELEASED; urgency=low
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 26 Oct 2006 22:21:11 +0300
 
+dctrl-tools (2.9.2) unstable; urgency=low
+
+  * po/fi.po: updated
+  * Translation update from Rosetta (Ubuntu Edgy branch)
+    - en_GB: new translation by Jeff Bailes
+    - pt_BR: merged in work by Washington Lins
+    - sv: merged in work by Daniel Nylander
+    Merge techique (msgcat --use-first) suggested by Jordi Mallach.
+  * delete  ./grep-dctrl-2.6.4-2.6.5.diff
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Oct 2006 21:42:20 +0300
+
 dctrl-tools (2.9.1) unstable; urgency=low
 
   [ Gerfried Fuchs ]  

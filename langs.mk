@@ -1,1 +1,1 @@
-langs = ca de en_GB fi fr it pl pt_BR sv
+langs = ca de en_GB es fi fr it ja pl pt_BR ru sv vi
