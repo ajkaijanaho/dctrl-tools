@@ -1,0 +1,410 @@
+# dctrl-tools translation to spanish
+# Copyright (C) 2006 Software in the Public Interest, SPI Inc.
+# This file is distributed under the same license as the dctrl-tools package.
+#
+# Changes:
+# - Initial translation
+#       Javier Fernandez-Sanguino , 2006
+#
+#
+#  Traductores, si no conoce el formato PO, merece la pena leer la 
+#  documentación de gettext, especialmente las secciones dedicadas a este
+#  formato, por ejemplo ejecutando:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+# 
+# - El proyecto de traducción de Debian al español
+#   http://www.debian.org/intl/spanish/
+#   especialmente las notas y normas de traducción en
+#   http://www.debian.org/intl/spanish/notas
+#
+# - La guía de traducción de po's de debconf:
+#   /usr/share/doc/po-debconf/README-trans
+#   o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+# Si tiene dudas o consultas sobre esta traducción consulte con el último
+# traductor (campo Last-Translator) y ponga en copia a la lista de
+# traducción de Debian al español (<debian-l10n-spanish@lists.debian.org>)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2006-10-13 20:59+0300\n"
+"PO-Revision-Date: 2006-10-31 00:35+0100\n"
+"Last-Translator: Javier Fernandez-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: se utilizará «%s» como paginador\n"
+
+#: misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: falló «popen» para %s: %s\n"
+
+#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
+msgid "predicate is too complex"
+msgstr "el predicado es demasiado complejo"
+
+#: paragraph.c:116
+msgid "warning: expected a colon"
+msgstr "aviso: se esperaba un signo de dos puntos"
+
+#: paragraph.c:123
+msgid "expected a colon"
+msgstr "se esperaba un signo de dos puntos"
+
+#: rc.c:66
+msgid "Malformed default input file name"
+msgstr "Nombre del archivo de entrada predeterminado mal formado"
+
+#: rc.c:79
+msgid "not owned by you or root, ignoring"
+msgstr "no le pertenece a vd. ni a root, se ignorará"
+
+#: rc.c:84
+msgid "write permissions for group or others, ignoring"
+msgstr "permiso de escritura para el grupo y para los demás, se ignorará"
+
+#: rc.c:124
+msgid "reading config file"
+msgstr "leyendo el archivo de configuración"
+
+#: rc.c:151
+msgid "read failure or out of memory"
+msgstr "fallo en la lectura o memoria llena"
+
+#: rc.c:173
+msgid "syntax error: need a executable name"
+msgstr "error sintáctico: se necesita un nombre de ejecutable"
+
+#: rc.c:181
+msgid "syntax error: need an input file name"
+msgstr "error sintático: se necesita el nombre de un archivo de entrada"
+
+#: rc.c:186
+msgid "considering executable name"
+msgstr "analizando el nombre del ejecutable"
+
+#: rc.c:188
+msgid "yes, will use executable name"
+msgstr "sí, se utilizará el nombre del ejecutable"
+
+#: rc.c:190
+msgid "default input file"
+msgstr "archivo de entrada predeterminado"
+
+#: rc.c:201
+msgid "executable name not found; reading from standard input"
+msgstr "no se encontró el nombre del ejecutable, se leerá de la entrada estándar"
+
+#: ifile.c:54
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (hijo): se produjo un fallo al ejecutar /bin/sh: %s\n"
+
+#: ifile.c:100
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: falló la orden (%s) (error de salida %d)\n"
+
+#: ifile.c:109
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: la orden (%s) fue interrumpida por una señal %d\n"
+
+#: ifile.c:127
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: no se puede hacer «stat»: %s\n"
+
+#: ifile.c:138
+msgid "is a directory, skipping"
+msgstr "es un directorio, se omitirá"
+
+#: ifile.c:139
+msgid "is a block device, skipping"
+msgstr "es un dispositivo de bloques, se omitirá"
+
+#: ifile.c:140
+msgid "internal error"
+msgstr "error interno"
+
+#: ifile.c:141
+msgid "is a socket, skipping"
+msgstr "es un socket, se omitirá"
+
+#: ifile.c:142
+msgid "unknown file type, skipping"
+msgstr "tipo de archivo desconocido, se omitirá"
+
+#: sorter.c:54
+msgid "Parse error in field."
+msgstr "Error de interpretación en un campo."
+
+#: grep-dctrl.c:47
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- buscar en los archivos de control Debian"
+
+#: grep-dctrl.c:110
+msgid "Show the testing banner."
+msgstr "Mostrar el mensaje de pruebas."
+
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+msgid "LEVEL"
+msgstr "NIVEL"
+
+#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+msgid "Set debugging level to LEVEL."
+msgstr "Establecer el nivel de depuración a NIVEL."
+
+#: grep-dctrl.c:113 grep-dctrl.c:116
+msgid "FIELD,FIELD,..."
+msgstr "CAMPO, CAMPO, ..."
+
+#: grep-dctrl.c:113
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Restringe la búsqueda de patrones a los CAMPOs dados."
+
+#: grep-dctrl.c:114
+msgid "This is a shorthand for -FPackage."
+msgstr "Este es un atajo para -FPackage."
+
+#: grep-dctrl.c:115
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Este es un atajo para -FSource:Package."
+
+#: grep-dctrl.c:116
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Sólo muestra el contenido de estos campos dentro de los párrafos coincidentes."
+
+#: grep-dctrl.c:117
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr "Muestra sólo la primera línea del campo «Description» (Descripción) en los párrafos coincidentes."
+
+#: grep-dctrl.c:118
+msgid "Suppress field names when showing specified fields."
+msgstr "Omite los nombres de los campos cuando se muestran los campos especificados."
+
+#: grep-dctrl.c:119
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Trata el patrón como una expresión regular POSIX extendida."
+
+#: grep-dctrl.c:120
+msgid "The pattern is a standard POSIX regular expression."
+msgstr "El patrón es una expresión regular POSIX estándar."
+
+#: grep-dctrl.c:121
+msgid "Ignore case when looking for a match."
+msgstr "Ignora las mayúsculas o minúsculas al buscar coincidencias."
+
+#: grep-dctrl.c:122
+msgid "Show only paragraphs that do not match."
+msgstr "Muestra sólo los párrafos que no coinciden."
+
+#: grep-dctrl.c:123
+msgid "Show only the count of matching paragraphs."
+msgstr "Muestra sólo el número total de párrafos que coinciden."
+
+#: grep-dctrl.c:124
+msgid "FNAME"
+msgstr "NOMBRE"
+
+#: grep-dctrl.c:124
+msgid "Use FNAME as the config file."
+msgstr "Utiliza NOMBRE como archivo de configuración."
+
+#: grep-dctrl.c:125
+msgid "Do an exact match."
+msgstr "Hace una coincidencia exacta."
+
+#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
+msgid "Print out the copyright license."
+msgstr "Muestra la licencia de copia."
+
+#: grep-dctrl.c:127
+msgid "Conjunct predicates."
+msgstr "Predicados conjuntos."
+
+#: grep-dctrl.c:128
+msgid "Disjunct predicates."
+msgstr "Predicados disjuntos."
+
+#: grep-dctrl.c:129
+msgid "Negate the following predicate."
+msgstr "Negar el predicado siguiente."
+
+#: grep-dctrl.c:130
+msgid "Test for version number equality."
+msgstr "Sólo probar la igualdad en el número de versión."
+
+#: grep-dctrl.c:131
+msgid "Version number comparison: <."
+msgstr "Comparación del número de versión: <."
+
+#: grep-dctrl.c:132
+msgid "Version number comparison: <=."
+msgstr "Comparación del número de versión: <=."
+
+#: grep-dctrl.c:133
+msgid "Version number comparison: >."
+msgstr "Comparación del número de versión: >."
+
+#: grep-dctrl.c:134
+msgid "Version number comparison: >=."
+msgstr "Comparación del número de versión: >=."
+
+#: grep-dctrl.c:135
+msgid "Debug option parsing."
+msgstr "Depurar la interpretación de las opciones."
+
+#: grep-dctrl.c:136 grep-dctrl.c:137
+msgid "Do no output to stdout."
+msgstr "No sacar los mensajes por la salida estándar."
+
+#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
+msgid "Attempt mmapping input files"
+msgstr "Intentar mapear a memoria los archivos de entrada."
+
+#: grep-dctrl.c:139
+msgid "Ignore parse errors"
+msgstr "Ignorar los errores del intérprete"
+
+#: grep-dctrl.c:140
+msgid "PATTERN"
+msgstr "PATRÓN"
+
+#: grep-dctrl.c:140
+msgid "Specify the pattern to search for"
+msgstr "Especificar el patrón a utilizar en las búsquedas"
+
+#: grep-dctrl.c:298
+msgid "predicate is too long"
+msgstr "el predicado es demasiado largo"
+
+#: grep-dctrl.c:357
+msgid "inconsistent atom modifiers"
+msgstr "modificadores atómicos inconsistentes"
+
+#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
+msgid "no such log level"
+msgstr "no existe ese nivel de registro"
+
+#: grep-dctrl.c:525
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr "No se permite la utilización de múltiples patrones para el mismo átomo"
+
+#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
+msgid "too many file names"
+msgstr "demasiados nombres de archivo"
+
+#: grep-dctrl.c:646
+msgid "unexpected end of predicate"
+msgstr "fin de predicado inesperado"
+
+#: grep-dctrl.c:649
+msgid "unexpected '!' in command line"
+msgstr "no se esperaba un «!» en la línea de órdenes"
+
+#: grep-dctrl.c:652
+msgid "unexpected '-a' in command line"
+msgstr "no se esperaba un «-a» en la línea de órdenes"
+
+#: grep-dctrl.c:655
+msgid "unexpected '-o' in command line"
+msgstr "no se esperaba un «-o» en la línea de órdenes"
+
+#: grep-dctrl.c:658
+msgid "unexpected '(' in command line"
+msgstr "no se esperaba un «(» en la línea de órdenes"
+
+#: grep-dctrl.c:661
+msgid "unexpected ')' in command line"
+msgstr "no se esperaba un «)» en la línea de órdenes"
+
+#: grep-dctrl.c:665
+msgid "unexpected atom in command line"
+msgstr "no se esperaba un átomo en la línea de órdenes"
+
+#: grep-dctrl.c:678
+msgid "missing ')' in command line"
+msgstr "falta un «)» en la línea de órdenes"
+
+#: grep-dctrl.c:759
+msgid "A pattern is mandatory"
+msgstr "Es necesario un patrón"
+
+#: grep-dctrl.c:766
+msgid "a predicate is required"
+msgstr "es necesario un predicado"
+
+#: grep-dctrl.c:771
+msgid "malformed predicate"
+msgstr "predicado mal formado"
+
+#: grep-dctrl.c:777
+msgid "too many output fields"
+msgstr "demasiados campos de salida"
+
+#: grep-dctrl.c:781
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "Se añadirá el campo «Description» a los campos de salida porque se utilizó «-d»"
+
+#: grep-dctrl.c:790
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr "no se puede suprimir el nombre del campo cuando se muestran párrafos completos"
+
+#: sort-dctrl.c:40
+msgid "KEYSPEC"
+msgstr "SPECCLAVE"
+
+#: sort-dctrl.c:40
+msgid "Specify sort keys."
+msgstr "Indica las claves de ordenación."
+
+#: sort-dctrl.c:87
+msgid "invalid key flag"
+msgstr "indicador de clave inválido"
+
+#: sort-dctrl.c:137
+msgid "sort-dctrl -- sort Debian control files"
+msgstr "sort-dctrl -- ordena los archivos de control Debian"
+
+#: tbl-dctrl.c:38
+msgid "DELIM"
+msgstr "DELIM"
+
+#: tbl-dctrl.c:38
+msgid "Specify a delimiter."
+msgstr "Indica un delimitador."
+
+#: tbl-dctrl.c:39
+msgid "SPEC"
+msgstr "SPEC"
+
+#: tbl-dctrl.c:39
+msgid "Append the specified column."
+msgstr "Añade la columna indicada."
+
+#: tbl-dctrl.c:266
+msgid "invalid column length"
+msgstr "longitud de columna inválida"
+
+#: tbl-dctrl.c:317
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "tbl-dctrl -- tabula los archivos de control Debian"
+
+#: tbl-dctrl.c:331
+msgid "bad multibyte character"
+msgstr "carácter multibyte inválido"
