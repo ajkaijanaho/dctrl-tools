@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-04-03 00:41+0300\n"
-"PO-Revision-Date: 2006-04-03 17:23+0000\n"
+"POT-Creation-Date: 2006-10-28 21:45+0300\n"
+"PO-Revision-Date: 2006-10-30 14:38+0000\n"
 "Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "el predicat és massa complexe"
 msgid "warning: expected a colon"
 msgstr "avís: s'esperaven dos punts"
 
-#: paragraph.c:122
+#: paragraph.c:123
 msgid "expected a colon"
 msgstr "s'esperaven dos punts"
 
@@ -156,9 +156,8 @@ msgid "This is a shorthand for -FPackage."
 msgstr "Això és una forma curta per a -FPackage."
 
 #: grep-dctrl.c:115
-#, fuzzy
 msgid "This is a shorthand for -FSource:Package."
-msgstr "Això és una forma curta per a -FPackage."
+msgstr "Això és una forma curta per a -FSource:Package."
 
 #: grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
