@@ -10,8 +10,9 @@ Package: dctrl-tools
 Architecture: any
 Depends: ${shlibs:Depends}
 Suggests: apt
-Conflicts: grep-dctrl (<< 2.7)
-Replaces: grep-dctrl (<< 2.7)
+Conflicts: grep-dctrl
+Replaces: grep-dctrl
+Provides: grep-dctrl
 Description: Command-line tools to process Debian package information
  Debian package information is generally stored in files having a
  special file format, dubbed the Debian control file format (the dctrl
@@ -32,37 +33,3 @@ Description: Command-line tools to process Debian package information
  . 
    sync-available - Sync the dpkg available database with
                     the apt database
-
-Package: grep-dctrl
-Architecture: all
-Depends: dctrl-tools
-Description: Grep Debian package information - transition package
- The grep-dctrl program is provided by the dctrl-tools package.  This
- package is available to ease the transition.  You can safely remove
- this package when no other package depends on it.
- .
- The grep-dctrl program can answer such questions as
-   * "What is the Debian package foo?"
-   * "Which version of the Debian package bar is now current?"
-   * "Which Debian packages does John Doe maintain?"
-   * "Which Debian packages are somehow related to the Scheme
-      programming language?"
- and with some help
-   * "Who maintain the essential packages of a Debian system?"
- given a useful input file. 
- .
- It is a specialised grep program that is meant for processing any
- file which has the general format of a Debian package control file.
- These include the dpkg available file, the dpkg status file, and the
- Packages files on a distribution medium (such as a Debian CD-ROM or
- an FTP site carrying Debian).
- .
- The specializations grep-status, grep-available and grep-aptavail,
- which take their input by default from the dpkg status file, the dpkg
- available file (updated by dselect update, but see below) and the apt
- available database (updated by apt-get update), respectively.  The
- grep-available specialization is useful mainly to users of dselect or
- apt, while grep-aptavail only works if apt is installed.
- .
- A script, sync-available, which syncs the dpkg available file to the
- apt available database without requiring dselect, is provided.
