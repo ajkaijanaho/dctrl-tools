@@ -36,6 +36,7 @@ const char * argp_program_bug_address = MAINTAINER;
 
 static struct argp_option options[] = {
 	{ "delimiter",         'd', N_("DELIM"),    0, N_("Specify a delimiter.") },
+        { "no-heading",        'H', 0,              0, N_("Do not print a table heading") },
 	{ "column",            'c', N_("SPEC"),     0, N_("Append the specified column.") },
 	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
@@ -51,6 +52,8 @@ struct arguments {
 	/* True iff some column lengths are unknown and need to be
 	 * calculated. */
 	_Bool need_preprocessing;
+        /* True if no headings should be printed. */
+        _Bool no_heading;
 	/* Number of columns specified */
 	size_t num_columns;
 	/* Number of file names seen.  */
@@ -196,23 +199,26 @@ void print_head(struct arguments *args)
 		putchar('\n');
 	}
 		
-	struct fsaf_read_rv columns[args->num_columns];
-	for (size_t i = 0; i < args->num_columns; i++) {
-		columns[i].b = args->columns[i].heading;
-		columns[i].len = strlen(columns[i].b);
-	}
-	print_line(args, columns);
-
-	if (args->delim == NULL) {
-		for (size_t i = 0; i < args->num_columns; i++) {
-			putchar('+');
-			for (size_t j = 0; j < args->columns[i].column_width + 2; j++) {
-				putchar('-');
-			}
-		}
-		putchar('+');
-		putchar('\n');
-	}
+        if (!args->no_heading) {       
+                struct fsaf_read_rv columns[args->num_columns];
+                for (size_t i = 0; i < args->num_columns; i++) {
+                        columns[i].b = args->columns[i].heading;
+                        columns[i].len = strlen(columns[i].b);
+                }
+                print_line(args, columns);
+                if (args->delim == NULL) {
+                        for (size_t i = 0; i < args->num_columns; i++) {
+                                putchar('+');
+                                for (size_t j = 0;
+                                     j < args->columns[i].column_width + 2;
+                                     j++) {
+                                        putchar('-');
+                                }
+                        }
+                        putchar('+');
+                        putchar('\n');
+                }
+        }
 }
 
 void print_foot(struct arguments *args)
@@ -273,6 +279,9 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		args->delim = strdup(arg);
 		if (args->delim == NULL) fatal_enomem(NULL);
 		break;
+        case 'H':
+                args->no_heading = 1;
+                break;
 	case 'l': {
 		int ll = str2loglevel(arg);
 		if (ll < 0)
