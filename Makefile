@@ -98,6 +98,9 @@ po/dctrl-tools.pot : $(src)
 
 fsaf.test : fsaf.test.o msg.o
 
+test :	all
+	./tester.sh
+
 clean :
 	$(RM) core $(exe) grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
 	$(RM) po/*.mo TAGS *.d
