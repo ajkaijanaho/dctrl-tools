@@ -1,8 +1,39 @@
-dctrl-tools (2.10) UNRELEASED; urgency=low
+dctrl-tools (2.10) experimental; urgency=low
 
-  * 
+  * debian/changelog: merge in 2.9.3
+  * delete  ./grep-dctrl-2.6.4-2.6.5.diff
+  * create lib/, man/ and $(program)/
+  * GNUmakefile: miscellaneous fixes
+  * GNUmakefile. ifile.c: start using -Werror, fix one warning
+  * tests/0005: another simple test
+  * grep-dctrl: new option --invert-show (-I)
+    Closes: #144174 (please provide a --filter-fields option of some sort)
+    Reported by Yann Dirson <dirson@debian.org>
+    Merged with #264905 (show all fields except FIELD,FIELD,...)
+    Reported by Dan Jacobson <jidanni@jidanni.org>
+  * tests/0003.{sh,out}: another basic test
+  * tests/0002.{sh,out}: new basic test
+  * paragraph.c (para_parse_next): fix outdated assertion
+  * GNUmakefile (clean): fix reference to grep-dctrl.1
+  * man/sort-dctrl.1: make literal (previously generated)
+  * GNUmakefile: sysconf is now sysconfdir, fix a reference
+    Closes: #414979 (typo in manpage: reference to global config file is wrong)
+    Reported by Tomas Pospisek <tpo_deb@sourcepole.ch>
+  * Makefile: rename as GNUmakefile
+  * Makefile (clean): fix reference to sync-available
+  * tests/bug360139.{sh,out}: new test case
+  * begin a new test suite
+    - Makefile: new target 'test'
+    - tester.sh: new file
+    - tests: new directory
+    - tests/0001.*: new files - a simple basic test case
+    - debian/rules: run the test suite (ignoring any failures) at build time
+  * drop the transitional grep-dctrl package
+  * tbl-dctrl: new option '-H'
+    Closes: #326660 (Please add option to tbl-dctrl to not print any title)
+    Reported by Frank Lichtenheld <djpig@debian.org>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 26 Oct 2006 22:21:11 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun,  8 Apr 2007 19:06:18 +0300
 
 dctrl-tools (2.9.3) unstable; urgency=low
 
