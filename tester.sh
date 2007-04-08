@@ -23,7 +23,8 @@ trap "rm .testout .diffout 2>/dev/null" \
 
 GREP_DCTRL=$PWD/grep-dctrl/grep-dctrl
 SORT_DCTRL=$PWD/sort-dctrl/sort-dctrl
-export GREP_DCTRL SORT_DCTRL
+TBL_DCTRL=$PWD/tbl-dctrl/tbl-dctrl
+export GREP_DCTRL SORT_DCTRL TBL_DCTRL
 
 cd tests
 
