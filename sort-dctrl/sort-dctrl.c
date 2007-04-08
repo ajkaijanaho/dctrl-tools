@@ -72,7 +72,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				*(flags++) = '\0';
 			}
 			struct key key;
-			key.field_inx = fieldtrie_insert(carg);
+			key.field_inx = fieldtrie_insert(carg)->inx;
 			key.type = FT_STRING;
 			key.reverse = false;
 			for (char *p = flags; *p != '\0'; p++) {
@@ -152,7 +152,7 @@ int main(int argc, char * argv[])
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 
 	if (args.keys.nks == 0) {
-		size_t inx = fieldtrie_insert("Package");
+		size_t inx = fieldtrie_insert("Package")->inx;
 		keys_append(&args.keys, (struct key){ .field_inx = inx,
 						      .type = FT_STRING,
 						      .reverse = false });

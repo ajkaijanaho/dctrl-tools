@@ -259,7 +259,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		if (fn != NULL) *(fn++) = '\0';
 		struct column *col = &args->columns[args->num_columns];
 		col->heading = carg;
-		col->field_inx = fieldtrie_insert(fn == NULL ? carg : fn);
+		col->field_inx = fieldtrie_insert(fn == NULL ? carg : fn)->inx;
 		size_t n = 0;
 		_Bool err = 0;
 		for (char const *p = lens; *p != '\0'; p++) {
@@ -417,7 +417,7 @@ int main(int argc, char * argv[])
 
 			FSAF * fp = fsaf_fdopen(fd, fname.s);
 			para_parser_t pp;
-			para_parser_init(&pp, fp, true, false);
+			para_parser_init(&pp, fp, true, false, false);
 			para_t para;
 			para_init(&pp, &para);
 			while (1) {

@@ -51,11 +51,11 @@ void predicate_finish_atom(struct predicate * p)
                 char * repl = strchr(atom->field_name, ':');
                 if (repl != NULL) {
                         *repl++ = '\0';
-                        atom->repl_inx = fieldtrie_insert(repl);
+                        atom->repl_inx = fieldtrie_insert(repl)->inx;
                 } else {
                         atom->repl_inx = -1;
                 }
-		atom->field_inx = fieldtrie_insert(atom->field_name);
+		atom->field_inx = fieldtrie_insert(atom->field_name)->inx;
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {

@@ -23,8 +23,6 @@
 #include "msg.h"
 
 struct field_bucket {
-	char const * name;
-	size_t namelen;
 	struct field_attr attr;
 	struct field_bucket * next;
 };
@@ -34,6 +32,8 @@ struct fieldtrie_private {
 	/* A one-level trie listing all field names occurring in the
 	 * atomic predicates. */
 	struct field_bucket * fields[UCHAR_MAX];
+        /* An array mapping each field inx to its attributes */
+        struct field_attr * field_map[65536];
 };
 
 static struct fieldtrie_private trie;
@@ -46,39 +46,53 @@ void fieldtrie_init(void)
 	trie.nextfree = 0;
 }
 
-size_t fieldtrie_insert(char const * s)
+struct field_attr *fieldtrie_insert_n(char const * s, size_t slen)
 {
-	size_t slen = strlen(s);
-	struct field_attr l_attr = fieldtrie_lookup(s, slen);
-	if (l_attr.valid) return l_attr.inx;
+	struct field_attr *l_attr = fieldtrie_lookup(s, slen);
+	if (l_attr != 0) return l_attr;
 	struct field_bucket * b = malloc(sizeof *b);
 	if (b == 0) fatal_enomem(0);
-	b->name = malloc(slen+1);
-	if (b->name == 0) fatal_enomem(0);
-	strcpy((char*)b->name, s);
-	b->namelen = slen;
-	b->attr.inx = trie.nextfree++;
-	b->attr.valid = true;
-	unsigned char c = tolower((unsigned char)(b->name[0]));
+	char *name = malloc(slen+1);
+	if (name == 0) fatal_enomem(0);
+	strncpy(name, s, slen);
+        (name)[slen] = '\0';
+        *(char**)&b->attr.name = name;
+	*(size_t*)&b->attr.namelen = slen;
+        assert(trie.nextfree < sizeof trie.field_map / sizeof *trie.field_map);
+	*(size_t*)&b->attr.inx = trie.nextfree++;
+        b->attr.application_data = 0;
+	unsigned char c = tolower((unsigned char)(b->attr.name[0]));
 	b->next = trie.fields[c];
 	trie.fields[c] = b;
-	return b->attr.inx;
+        trie.field_map[b->attr.inx] = &b->attr;
+	return &b->attr;
 }
 
-struct field_attr fieldtrie_lookup(char const * s, size_t n)
+struct field_attr *fieldtrie_insert(char const * s)
+{
+        return fieldtrie_insert_n(s, strlen(s));
+}
+
+struct field_attr *fieldtrie_lookup(char const * s, size_t n)
 {
 	for (struct field_bucket * b = trie.fields[tolower((unsigned char)s[0])];
 	     b != 0;
 	     b = b->next) {
-		if (n == b->namelen &&
-		    strncasecmp(s, b->name, n) == 0) return b->attr;
+		if (n == b->attr.namelen &&
+		    strncasecmp(s, b->attr.name, n) == 0) return &b->attr;
 	}
-	return (struct field_attr){ .valid = false };
+	return NULL;
 }
 
 size_t fieldtrie_count(void)
 {
 	return trie.nextfree;
+}
+
+struct field_attr *fieldtrie_get(size_t inx)
+{
+        assert(inx < sizeof trie.field_map / sizeof *trie.field_map);
+        return trie.field_map[inx];
 }
 
 #if 0

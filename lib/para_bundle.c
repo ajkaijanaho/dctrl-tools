@@ -39,7 +39,7 @@ void bundle_slurp(struct para_bundle * pb, struct ifile ifi)
 	sf->next = pb->files;
 	pb->files = sf;
 
-	para_parser_init(&sf->pp, f, false, false);
+	para_parser_init(&sf->pp, f, false, false, false);
 	while (true) {
 		if (pb->num_paras == pb->max_num) {
 			size_t max_num = pb->max_num == 0 ? 256 :
