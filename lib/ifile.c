@@ -50,7 +50,7 @@ static int open_pipe(char const * s)
 		}
 		close(ps[0]);
 		close(ps[1]);
-		execl("/bin/sh", "/bin/sh", "-c", s, 0);
+		execl("/bin/sh", "/bin/sh", "-c", s, (char*)0);
 		fprintf(stderr, _("%s (child): failed to exec /bin/sh: %s\n"),
 			get_progname(), strerror(errno));
 		_exit(1);

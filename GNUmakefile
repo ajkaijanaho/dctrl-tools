@@ -4,7 +4,7 @@ localedir = /usr/share/locale
 version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
 
 CC = gcc -std=gnu99
-CFLAGS = -g -Wall -Ilib \
+CFLAGS = -g -Wall -Werror -Ilib \
 	 -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
          -DHAVE_GETTEXT -DPACKAGE=\"dctrl-tools\" -DLOCALEDIR=\"$(localedir)\" 
 
