@@ -101,7 +101,7 @@ test :	all
 	./tester.sh
 
 clean :
-	$(RM) core $(exe) grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
+	$(RM) core $(exe) man/grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
 	$(RM) po/*.mo TAGS *.d
 	$(RM) sync-available/sync-available
 
