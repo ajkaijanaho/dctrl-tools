@@ -21,8 +21,9 @@ set -e
 trap "rm .testout .diffout 2>/dev/null" \
     EXIT ABRT BUS FPE HUP ILL QUIT SEGV TERM
 
-GREP_DCTRL=`pwd`/grep-dctrl/grep-dctrl
-export GREP_DCTRL
+GREP_DCTRL=$PWD/grep-dctrl/grep-dctrl
+SORT_DCTRL=$PWD/sort-dctrl/sort-dctrl
+export GREP_DCTRL SORT_DCTRL
 
 cd tests
 
