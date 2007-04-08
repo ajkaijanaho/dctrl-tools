@@ -1,0 +1,10158 @@
+Package: dlint
+Version: 1.4.0-7
+
+Package: glotski
+Version: 0.2-4
+
+Package: remote-tty
+Version: 4.0-9
+
+Package: cl-infix
+Version: 19960628.2-3
+
+Package: lincredits
+Version: 0.6
+
+Package: xserver-xorg-input-vmmouse
+Version: 12.4.0-2
+
+Package: libgeant321-2-dev
+Version: 1:3.21.14.dfsg-4
+
+Package: gnumed-client-debug
+Version: 0.2.4.2-1
+
+Package: pclock
+Version: 0.13.1-4
+
+Package: gcdmaster
+Version: 1:1.2.2-6
+
+Package: libmalaga-dev
+Version: 7.8-4
+
+Package: locales-all
+Version: 2.3.6.ds1-13
+
+Package: libinventor0
+Version: 2.1.5-10-9
+
+Package: bibcursed
+Version: 2.0.0-5
+
+Package: libpgtcl-dev
+Version: 1:1.5-3
+
+Package: libgsl0-dev
+Version: 1.9-1
+
+Package: libpcap-dev
+Version: 0.7.2-7
+
+Package: kdenetwork
+Version: 4:3.5.5-5
+
+Package: libgtkhtml3.8-dev
+Version: 3.12.1-2
+
+Package: libjavascript-perl
+Version: 0.55-3
+
+Package: libvolume-id-dev
+Version: 0.105-4
+
+Package: linux-patch-lustre
+Version: 1.5.97-1
+
+Package: libxml-libxml-perl
+Version: 1.59-2
+
+Package: dict-gcide
+Version: 0.48-4.3
+
+Package: itk3
+Version: 3.2.1-3.1
+
+Package: xttitle
+Version: 1.0-5
+
+Package: iiimecf
+Version: 0.6-7
+
+Package: libsapdbc-java
+Version: 5567-1
+
+Package: libwine-gphoto2
+Version: 0.9.31-1
+
+Package: otags
+Version: 3.09.0-5
+
+Package: sailcut
+Version: 1.2.4-1
+
+Package: gstreamer0.8-vorbis
+Version: 0.8.12-6
+
+Package: festvox-suopuhe-lj
+Version: 1.0g-20051204-1
+
+Package: localization-config
+Version: 1.01
+
+Package: mpich-bin
+Version: 1.2.7-2
+
+Package: libostyle1c2
+Version: 1.4devel1-18
+
+Package: pnputils
+Version: 0.1-2
+
+Package: ices2
+Version: 2.0.1-5
+
+Package: kernel-patch-wrr
+Version: 20021019-6
+
+Package: libxbsql-bin
+Version: 0.11-6
+
+Package: linux-patch-evms
+Version: 2.5.5-20
+
+Package: mailtextbody
+Version: 0.1.1-6
+
+Package: search-ccsb
+Version: 0.5-2
+
+Package: libhk-classes15
+Version: 0.8.2-2
+
+Package: r-cran-latticeextra
+Version: 0.1.4-1
+
+Package: wammu
+Version: 0.19-1
+
+Package: gnuvd-gnome
+Version: 1.0.3-1
+
+Package: compface
+Version: 1:1.5.2-4
+
+Package: module-assistant
+Version: 0.10.11
+
+Package: openafs-krb5
+Version: 1.4.2-6
+
+Package: acm4
+Version: 4.7-17
+
+Package: libgalago-gtk1.0-cil
+Version: 0.5.0-1
+
+Package: geki3
+Version: 1.0.3-7
+
+Package: junior-typing
+Version: 1.3
+
+Package: xmms2-client-medialib-updater
+Version: 0.2DrHouse-3.1
+
+Package: geki2
+Version: 2.0.3-7
+
+Package: libgtkspell0
+Version: 2.0.10-3+b1
+
+Package: libxmlrpc++0
+Version: 0.7+cvs20040713-2
+
+Package: sbox-dtc
+Version: 1.07-8
+
+Package: ttv
+Version: 3.95.dfsg.1-2
+
+Package: uniconfd
+Version: 4.2.2-2.2
+
+Package: libgcj7-jar
+Version: 4.1.1-20
+
+Package: stopmotion
+Version: 0.6.0-1
+
+Package: libtolua-dev
+Version: 4.0a-3
+
+Package: mlterm-common
+Version: 2.9.3-5
+
+Package: samidare
+Version: 0.3-1
+
+Package: ttt
+Version: 1.7-3.1
+
+Package: admesh
+Version: 0.95-7
+
+Package: firefox-locale-ja
+Version: 1.99+2.0b2-2
+
+Package: jacal
+Version: 1b7-2
+
+Package: openmpi-dev
+Version: 1.1-2.3
+
+Package: libpja-java
+Version: 2.5-4
+
+Package: tcpd
+Version: 7.6.dbs-13
+
+Package: libobby-0.4-0-dbg
+Version: 0.4.1-2
+
+Package: libmail-imapclient-perl
+Version: 2.2.9+deb-5
+
+Package: libdbd-csv-perl
+Version: 0.2200-3
+
+Package: libranlip-dev
+Version: 1.0-4
+
+Package: sparsehash
+Version: 0.4-1
+
+Package: ttf-larabie-deco
+Version: 1:20011216-1.1
+
+Package: acl2-infix-source
+Version: 3.1-1
+
+Package: cl-plus
+Version: 1.0-2
+
+Package: med-physics
+Version: 0.12
+
+Package: weechat-curses
+Version: 0.2.3-1
+
+Package: clipbook.app
+Version: 0.8.3-2
+
+Package: libdb3-ruby1.9
+Version: 0.5.8-1
+
+Package: python-pylibacl
+Version: 0.2.2-1
+
+Package: libdb3-ruby1.8
+Version: 0.5.8-1
+
+Package: pconf-detect
+Version: 0.5-8.1
+
+Package: libdbi0-dev
+Version: 0.7.2-1
+
+Package: libgenders0
+Version: 1.4-1-1
+
+Package: kid3
+Version: 0.7-3
+
+Package: libflash-dev
+Version: 0.4.13-9
+
+Package: libmlpcap-ocaml-dev
+Version: 0.9-9
+
+Package: libbsf-java
+Version: 1:2.3.0+cvs20050308a-2
+
+Package: grandfatherclock
+Version: 1.0.2-4
+
+Package: mozilla-thunderbird-dev
+Version: 1.5.0.10.dfsg1-2
+
+Package: nitpic
+Version: 0.1-11
+
+Package: obexfs
+Version: 0.10-3+b1
+
+Package: python-twisted-conch
+Version: 1:0.7.0-1
+
+Package: wmusic
+Version: 1.5.0-2
+
+Package: zope-zwiki
+Version: 0.58.0-1
+
+Package: gdeb
+Version: 0.4.9-1.1
+
+Package: xfce4-battery-plugin
+Version: 0.4.90.3-1
+
+Package: hybrid-dev
+Version: 1:7.2.2.dfsg.2-3
+
+Package: gauche-gl
+Version: 0.4.3-1
+
+Package: hp2xx
+Version: 3.4.4-5
+
+Package: gpe-shield
+Version: 0.9-1
+
+Package: libsepol1-dev
+Version: 1.14-3
+
+Package: rexima
+Version: 1.4-1
+
+Package: libgsf0.0-cil
+Version: 0.8-1
+
+Package: libsds-dev
+Version: 0.5.2.1.ds-1.1
+
+Package: bfilter-gui
+Version: 1.0.9-1
+
+Package: liblog-loglite-perl
+Version: 0.82-4
+
+Package: linuxdoc-tools-info
+Version: 0.9.21-0.5
+
+Package: libimage-base-bundle-perl
+Version: 1.0.7-2
+
+Package: kdeadmin
+Version: 4:3.5.5-4
+
+Package: simgear-dev
+Version: 0.3.10-2
+
+Package: xpdf-utils
+Version: 3.01-9
+
+Package: libpam-unix2
+Version: 1.25-1.1
+
+Package: gnat-gdb
+Version: 6.4+2006-2
+
+Package: libace-qtreactor5.4.7c2a
+Version: 5.4.7-12
+
+Package: libbonoboui2-0
+Version: 2.14.0-6
+
+Package: libgpiv2
+Version: 0.3.3-1
+
+Package: kde-icons-mono
+Version: 4:3.5.5-2
+
+Package: xserver-xorg-input-mutouch
+Version: 1:1.1.0-1
+
+Package: parmetis-test
+Version: 3.1-4
+
+Package: fortunes-es-off
+Version: 1.25
+
+Package: libavformat-dev
+Version: 0.cvs20060823-8
+
+Package: bazaar
+Version: 1.4.2-5.3
+
+Package: doc-linux-nonfree-text
+Version: 2006.09-1
+
+Package: aspectc++
+Version: 0.99+1.0pre3-2
+
+Package: itk3.1-doc
+Version: 3.1.0-7.1
+
+Package: libmono-npgsql2.0-cil
+Version: 1.2.2.1-2
+
+Package: sylpheed-claws-gtk2-vcalendar-plugin
+Version: 2.6.0-1
+
+Package: libnotify-bin
+Version: 0.4.4-1
+
+Package: pari-gp2c
+Version: 0.0.5pl2-1
+
+Package: bibtex2html
+Version: 1.85-1
+
+Package: kplato
+Version: 1:1.6.1-2
+
+Package: liblogger-syslog-perl
+Version: 1.0-1
+
+Package: perlindex
+Version: 1.502-2
+
+Package: python-pyx-doc
+Version: 0.9-4
+
+Package: libapache-mod-auth-mysql
+Version: 4.3.9-3
+
+Package: jtex-base
+Version: 1.9.1-6
+
+Package: curves
+Version: 0.8.19
+
+Package: kino
+Version: 0.92-3
+
+Package: gocr
+Version: 0.41-1
+
+Package: slashem-sdl
+Version: 0.0.7E7F2-3
+
+Package: slurm
+Version: 0.3.2-1
+
+Package: libsvn-perl
+Version: 1.4.2dfsg1-2
+
+Package: cipe-source
+Version: 1.5.4free-12
+
+Package: libactiveldap-ruby
+Version: 0.7.4-1
+
+Package: libtext-wrapi18n-perl
+Version: 0.06-5
+
+Package: libwmf-dev
+Version: 0.2.8.4-4
+
+Package: records-xemacs
+Version: 1.4.9-4.1
+
+Package: sane-utils
+Version: 1.0.18-6
+
+Package: mlmmj
+Version: 1.2.11-7.1
+
+Package: foff
+Version: 0.99.5-2
+
+Package: freedoom
+Version: 0.5-1
+
+Package: pccts
+Version: 1.33MR33-3
+
+Package: couriergraph
+Version: 0.25-3.1
+
+Package: libghc6-edison-api-dev
+Version: 1.2.0.1-5
+
+Package: php5-interbase
+Version: 5.2.0-10
+
+Package: heimdal-clients
+Version: 0.7.2.dfsg.1-10
+
+Package: hello-dbs
+Version: 1.3-4
+
+Package: imgtex
+Version: 0.20050123-4
+
+Package: language-env
+Version: 0.68
+
+Package: libgpod-common
+Version: 0.3.2-1.1
+
+Package: chromium
+Version: 0.9.12-12
+
+Package: hwb
+Version: 1:040412-2
+
+Package: linux-patch-debianlogo
+Version: 1.6
+
+Package: phpgroupware-nntp
+Version: 0.9.16.011-3
+
+Package: python-imaging-doc
+Version: 1.1.5-11
+
+Package: libsndfile1-dev
+Version: 1.0.16-1
+
+Package: emacs21-bin-common
+Version: 21.4a+1-5
+
+Package: dpkg-cross
+Version: 1.35
+
+Package: aspell-gl-minimos
+Version: 0.5-23
+
+Package: prosper
+Version: 1.00.4+cvs.2006.10.22-1.1
+
+Package: php-cache-lite
+Version: 1.7.2-2
+
+Package: tclcurl
+Version: 0.15.3-3
+
+Package: libgammu1
+Version: 1.10.0-2
+
+Package: conglomerate
+Version: 0.9.1-3
+
+Package: vacation
+Version: 3.3.0-0.2
+
+Package: katomic
+Version: 4:3.5.5-1
+
+Package: leksbot
+Version: 1.2-9
+
+Package: rvm-tools
+Version: 1.13+debian-1
+
+Package: tix-dev
+Version: 8.4.0-6
+
+Package: libxcb-shm0-dbg
+Version: 1.0-1.1
+
+Package: alsaplayer-esd
+Version: 0.99.76-9
+
+Package: buoh
+Version: 0.8.1-2
+
+Package: calcoo
+Version: 1.3.16-1
+
+Package: libzzip-dev
+Version: 0.12.83-8
+
+Package: sope4.4-libxmlsaxdriver
+Version: 4.4rc.2-3.1
+
+Package: cryptmount
+Version: 1.2-2
+
+Package: cpulimit
+Version: 1.1-10
+
+Package: g77-2.95-doc
+Version: 1:2.95.4-27
+
+Package: java-common
+Version: 0.25
+
+Package: tinysnmp-module-dvb
+Version: 0.8.4
+
+Package: libhk-classes-mysql
+Version: 0.8.2-2
+
+Package: orgadoc
+Version: 0.8-4
+
+Package: pilot
+Version: 0.83+dfsg-2
+
+Package: python-lxml
+Version: 1.1.2-1
+
+Package: parrot-doc
+Version: 0.4.6-1
+
+Package: shogun-octave
+Version: 0.3.2-1
+
+Package: xfdesktop4
+Version: 4.3.99.2-1
+
+Package: iozone3
+Version: 279-1
+
+Package: magma-plugin-sm
+Version: 1.03.00-2
+
+Package: libsyncml0
+Version: 0.4.1-1
+
+Package: fortunes
+Version: 1:1.99.1-3
+
+Package: hwdata
+Version: 0.191-1
+
+Package: libfile-which-perl
+Version: 0.05-7
+
+Package: python-forgethtml
+Version: 0.0.20031008-9
+
+Package: libggi2-dev
+Version: 1:2.2.1-5
+
+Package: nfdump
+Version: 1.5.2-6
+
+Package: koffice-i18n-hu
+Version: 1.6.1-2
+
+Package: geda
+Version: 20060123-1
+
+Package: maxima
+Version: 5.10.0-6
+
+Package: php4-xapian
+Version: 0.9.9-1.1
+
+Package: libgdome2-xslt-ocaml-dev
+Version: 0.0.7-5
+
+Package: cycle
+Version: 0.3.1-6
+
+Package: libwv2-1c2
+Version: 0.2.3-1
+
+Package: tao-idl
+Version: 5.4.7-12
+
+Package: libdbus-java-doc
+Version: 1.12-1
+
+Package: xpdf-korean
+Version: 1:20040727-1
+
+Package: cracklib2
+Version: 2.7-19
+
+Package: darkice
+Version: 0.17.1-3
+
+Package: libtemplates-parser-dev
+Version: 10.0+20060522-5
+
+Package: ecj-bootstrap-gcj
+Version: 3.2.1-6
+
+Package: dbacl
+Version: 1.12-1
+
+Package: digikam-doc
+Version: 0.8.2-r1-1
+
+Package: wondershaper
+Version: 1.1a-4
+
+Package: gspca-modules-2.6.18-4-amd64
+Version: 2.6.18+01.00.12-8
+
+Package: windowlab
+Version: 1.33-4
+
+Package: xdeview
+Version: 0.5.20-3
+
+Package: wml
+Version: 2.0.11-1
+
+Package: wlassistant
+Version: 0.5.6-1
+
+Package: chiark-scripts
+Version: 4.1.10
+
+Package: libaudio-wav-perl
+Version: 0.05-1
+
+Package: libmoose-perl
+Version: 0.17-1
+
+Package: libgenders0-dev
+Version: 1.4-1-1
+
+Package: gtkdiskfree
+Version: 1.9.3-6
+
+Package: wmf
+Version: 1.0.5-6
+
+Package: libboost-thread1.33.1
+Version: 1.33.1-10
+
+Package: libow-util-ant-tasks-java
+Version: 1.3-4
+
+Package: libpostproc-dev
+Version: 0.cvs20060823-8
+
+Package: libclanlib2c2a
+Version: 0.6.5-1-4
+
+Package: pitivi
+Version: 0.10.1-2
+
+Package: gtk2-engines-wonderland
+Version: 1.0-3
+
+Package: ipppd
+Version: 1:3.9.20060704-3+b1
+
+Package: libparams-util-perl
+Version: 0.22-1
+
+Package: policyd-weight
+Version: 0.1.14-beta-6
+
+Package: libio-stringy-perl
+Version: 2.110-2
+
+Package: libpam-openafs-kaserver
+Version: 1.4.2-6
+
+Package: googlizer
+Version: 0.3-3
+
+Package: kimagemapeditor
+Version: 4:3.5.5-1
+
+Package: jfsutils
+Version: 1.1.11-1
+
+Package: dfontmgr
+Version: 0.11.10-0.1
+
+Package: openmpi-common
+Version: 1.1-2.3
+
+Package: w3mmee-img
+Version: 0.3.p24.20-3
+
+Package: debconf
+Version: 1.5.13
+
+Package: libdjvulibre15
+Version: 3.5.19-1
+
+Package: libttf2
+Version: 1.4pre.20050518-0.5
+
+Package: libpth20
+Version: 2.0.7-6
+
+Package: festvox-czech-ph
+Version: 0.1-1
+
+Package: ocamlcvs
+Version: 1.9.13-2
+
+Package: dstat
+Version: 0.6.3-2
+
+Package: libpanel-applet2-doc
+Version: 2.14.3-5
+
+Package: sks-ecc-doc
+Version: 0.92b-1
+
+Package: exim4-config
+Version: 4.63-17
+
+Package: avida-base
+Version: 2.0b7-4
+
+Package: unzoo
+Version: 4.4-6
+
+Package: python-pygresql
+Version: 1:3.8.1-1
+
+Package: libgfccore-2.0-0c2a
+Version: 2.3.1-6
+
+Package: openscenegraph-doc
+Version: 1.2.0-2
+
+Package: chalow
+Version: 0.99+1.0rc6-3
+
+Package: libxft2-dbg
+Version: 2.1.8.2-8
+
+Package: med-imaging
+Version: 0.12
+
+Package: vim-vimoutliner
+Version: 0.3.4-7
+
+Package: zope-genericsetup
+Version: 1.6.2-1
+
+Package: librecode0
+Version: 3.6-13
+
+Package: libace-tmcast-dev
+Version: 5.4.7-12
+
+Package: libfile-rsyncp-perl
+Version: 0.68-1
+
+Package: myspell-ca
+Version: 0.5-3
+
+Package: kuickshow
+Version: 4:3.5.5-3
+
+Package: xfonts-efont-unicode
+Version: 0.4.0-4.1
+
+Package: ladspa-sdk
+Version: 1.1-4.1
+
+Package: kaudiocreator
+Version: 4:3.5.5-2
+
+Package: liblog4j1.2-java
+Version: 1.2.13-3
+
+Package: libspeechd-dev
+Version: 0.6.1-2
+
+Package: maxdb-webtools
+Version: 7.5.00.34-7
+
+Package: crafty-books-small
+Version: 1.0-2.1
+
+Package: gfortran-4.2-doc
+Version: 4.2-20070307-1
+
+Package: libmng-dev
+Version: 1.0.9-1
+
+Package: gforge-shell-postgresql
+Version: 4.5.14-22
+
+Package: xmhtml1-dev
+Version: 1.1.7-14
+
+Package: libjaxp1.3-java
+Version: 1.3.03-5
+
+Package: libnjb5
+Version: 2.2.5-4.1
+
+Package: interchange-ui
+Version: 5.4.2-1
+
+Package: gtk2-engines-mist
+Version: 1:2.8.2-1
+
+Package: wirish
+Version: 2.0-16
+
+Package: libmodxslt0
+Version: 2005072700-2.2
+
+Package: ctrlproxy-dev
+Version: 3.0.1-1
+
+Package: mcrypt
+Version: 2.6.4-3.2
+
+Package: libparse-mediawikidump-perl
+Version: 0.40-2
+
+Package: libhugs-haxml
+Version: 1.13.2-5
+
+Package: libnjb1
+Version: 1.1-2
+
+Package: typespeed
+Version: 0.4.4-10
+
+Package: gpe-othello
+Version: 0.2-1
+
+Package: imediff2
+Version: 1.1.1-1
+
+Package: em8300
+Version: 0.16.0-2
+
+Package: xclass-common
+Version: 0.9.2-2
+
+Package: libxcb-screensaver0
+Version: 1.0-1.1
+
+Package: ttf-dzongkha
+Version: 0.2-4
+
+Package: dome
+Version: 4.80-3
+
+Package: gnome-photo-printer
+Version: 0.7.0-1
+
+Package: libsword-dev
+Version: 1.5.9-3
+
+Package: kdepasswd
+Version: 4:3.5.5a.dfsg.1-6
+
+Package: hexer
+Version: 0.1.4c-2
+
+Package: wordnet-dev
+Version: 1:2.1-5
+
+Package: hddtemp
+Version: 0.3-beta15-36
+
+Package: kreversi
+Version: 4:3.5.5-1
+
+Package: libextractor-dev
+Version: 0.5.18-1
+
+Package: libglademm-2.4-dev
+Version: 2.6.2-2
+
+Package: firebird2-super-server
+Version: 1.5.3.4870-12
+
+Package: mgetty-docs
+Version: 1.1.35-3
+
+Package: libgraphicsmagick++1-dev
+Version: 1.1.7-13
+
+Package: libchipcard2-data
+Version: 2.1.9-2
+
+Package: bglibs-dev
+Version: 1.041-2
+
+Package: libelf1
+Version: 0.123-3
+
+Package: velocity-doc
+Version: 1.4-5
+
+Package: libwhisker-perl
+Version: 1.8-1
+
+Package: memtest86+
+Version: 1.65-1
+
+Package: loco
+Version: 0.32-3
+
+Package: php4-ming
+Version: 1:0.3.0-11
+
+Package: cl-sdl
+Version: 1:0.2.2-4
+
+Package: swi-prolog-doc
+Version: 5.6.17-1
+
+Package: cuetools
+Version: 1.3.1-1
+
+Package: xiterm+thai
+Version: 1.06.cvs20060109-1
+
+Package: biabam
+Version: 0.9.7-4
+
+Package: phpgroupware-ftp
+Version: 0.9.16.011-3
+
+Package: vrms
+Version: 1.12-0.1
+
+Package: xtermset
+Version: 0.5.1-1
+
+Package: libcurl4-dbg
+Version: 7.16.1-1
+
+Package: dash
+Version: 0.5.3-7
+
+Package: debian-installer
+Version: 20070308
+
+Package: libhtml-wikiconverter-perl
+Version: 0.40-1
+
+Package: vim-latexsuite
+Version: 20060325-3
+
+Package: distmp3
+Version: 0.1.9.ds1-4.2
+
+Package: beid-tools
+Version: 2.5.9-7
+
+Package: spfquery
+Version: 1.2.5.dfsg-1
+
+Package: ytnef
+Version: 2.6-1
+
+Package: cl-cil
+Version: 1:20050701-3
+
+Package: libwxgtk2.4-dev
+Version: 2.4.5.1.1
+
+Package: gimp
+Version: 2.2.13-1
+
+Package: libdiscover-dev
+Version: 2.1.1-2.1
+
+Package: libfile-chdir-perl
+Version: 0.06-2
+
+Package: lifelines-reports
+Version: 3.0.50-2
+
+Package: libghc6-hslogger-dev
+Version: 1.0.2
+
+Package: systemimager-boot-i386-standard
+Version: 3.6.3dfsg1-3
+
+Package: python-gnome2
+Version: 2.12.4-6
+
+Package: libcomplearn0
+Version: 0.9.7-2
+
+Package: lsscsi
+Version: 0.19-1
+
+Package: pyroman
+Version: 0.4.2-1
+
+Package: wpolish
+Version: 20060618-2
+
+Package: aqualung
+Version: 0.9~beta7.1-1
+
+Package: bluetooth-alsa
+Version: 0.5cvs20060124-1
+
+Package: swish++
+Version: 6.1.4-1
+
+Package: drip
+Version: 0.9.0-3
+
+Package: ldapdiff
+Version: 0.9.2-1
+
+Package: gnat-gps
+Version: 4.0.1-3
+
+Package: cgdb
+Version: 0.6.3-1
+
+Package: koffice-i18n-fr
+Version: 1.6.1-2
+
+Package: libtest-pod-perl
+Version: 1.24-1
+
+Package: perdition-mysql
+Version: 1.17-7
+
+Package: hoichess
+Version: 0.8.0-1
+
+Package: texlive-lang-mongolian
+Version: 2005.dfsg.2-5
+
+Package: cdrecord
+Version: 9:1.1.4-1
+
+Package: mono-runtime
+Version: 1.2.2.1-2
+
+Package: moosic
+Version: 1.5.2-2
+
+Package: kbarcode
+Version: 2.0.5-1
+
+Package: dict-freedict-eng-cro
+Version: 1.3-3
+
+Package: xevil
+Version: 2.02r2-6
+
+Package: xmms-osd-plugin
+Version: 2.2.14-1.3
+
+Package: dpatch
+Version: 2.0.21
+
+Package: libapache2-mod-mime-xattr
+Version: 0.3-2
+
+Package: kde-i18n-bn
+Version: 4:3.5.6-1
+
+Package: libcpan-distnameinfo-perl
+Version: 0.06-1
+
+Package: r-cran-vgam
+Version: 0.7-2-1
+
+Package: libcrypt-blowfish-perl
+Version: 2.10-1
+
+Package: libavahi-qt4-dev
+Version: 0.6.16-5
+
+Package: sudoku
+Version: 1.0.1-1
+
+Package: ucspi-unix
+Version: 0.36-3
+
+Package: kpackage
+Version: 4:3.5.5-4
+
+Package: libsocket6-perl
+Version: 0.19-1
+
+Package: nxtvepg
+Version: 2.7.6-1
+
+Package: chdrvfont
+Version: 1.0-6
+
+Package: xfingerd
+Version: 0.6-5.1
+
+Package: ohphone-basic
+Version: 1:1.4.5+20060204-2
+
+Package: xtux
+Version: 0.2.030306-10
+
+Package: php-log
+Version: 1.9.8-1
+
+Package: fbpager
+Version: 0.1.4-5
+
+Package: nss-updatedb
+Version: 7-1
+
+Package: jackd
+Version: 0.101.1-2
+
+Package: cvssuck
+Version: 0.3.cvs20020108-1
+
+Package: libonig2-dbg
+Version: 5.5.2-1
+
+Package: libwxgtk2.6-dev
+Version: 2.6.3.2.1.5
+
+Package: xzgv
+Version: 0.8-5.1
+
+Package: kde-i18n-bg
+Version: 4:3.5.6-1
+
+Package: libapache-mod-dav
+Version: 1.0.3-10
+
+Package: libaddresses0
+Version: 0.4.6-8
+
+Package: libcherokee-client0-dev
+Version: 0.5.6-1
+
+Package: linux-igd
+Version: 0.cvs20060201-2
+
+Package: php5-tidy
+Version: 5.2.0-10
+
+Package: libsendmail-pmilter-perl
+Version: 0.95-1
+
+Package: playground-dev
+Version: 0.3-2
+
+Package: slirp
+Version: 1:1.0.17-1
+
+Package: vdccm
+Version: 0.9.3-1
+
+Package: libart-2.0-2
+Version: 2.3.17-1
+
+Package: libwww-ssl-dev
+Version: 5.4.0-11
+
+Package: libgcj7-dbg
+Version: 4.1.1-20
+
+Package: slice2cpp
+Version: 3.2.0-3
+
+Package: regina-normal
+Version: 4.3.1-3
+
+Package: libthai-doc
+Version: 0.1.6-1
+
+Package: vlan
+Version: 1.9-2
+
+Package: librudiments-doc
+Version: 0.30-1
+
+Package: pork
+Version: 0.99.8.1-1
+
+Package: rdeliver
+Version: 0.12-2
+
+Package: libdumbnet-dev
+Version: 1.8-1.5
+
+Package: libstat-lsmode-perl
+Version: 0.50-4
+
+Package: libnunit2.2.6-cil
+Version: 2.2.8-1
+
+Package: scanlogd
+Version: 2.2.5-2
+
+Package: wmaker
+Version: 0.92.0-6.1
+
+Package: koffice-i18n-fi
+Version: 1.6.1-2
+
+Package: firebird2-utils-super
+Version: 1.5.3.4870-12
+
+Package: karbon
+Version: 1:1.6.1-2
+
+Package: texmacs
+Version: 1:1.0.6-11
+
+Package: gpe-question
+Version: 0.04-1
+
+Package: kde-i18n-bs
+Version: 4:3.5.6-1
+
+Package: latexmk
+Version: 307a-2
+
+Package: librrdp-perl
+Version: 1.2.19-1
+
+Package: kde-i18n-br
+Version: 4:3.5.6-1
+
+Package: libcinepaint-dev
+Version: 0.20-1-1.3
+
+Package: seccure
+Version: 0.3-1
+
+Package: geda-gsymcheck
+Version: 20061020-2
+
+Package: euro-support
+Version: 1.38
+
+Package: gretl-common
+Version: 1.6.2-1
+
+Package: wm2
+Version: 4-9
+
+Package: doc-rfc-fyi-bcp
+Version: 20030621-1
+
+Package: mpeg3-utils
+Version: 1.5.4-5
+
+Package: r-cran-rodbc
+Version: 1.1.8-1
+
+Package: netpanzer
+Version: 0.8+svn20060319-2
+
+Package: ikvm
+Version: 0.28.0.0-1
+
+Package: xmms-speex
+Version: 0.9.2b-1
+
+Package: kipi-plugins
+Version: 0.1.2-3
+
+Package: libapache-mod-tsunami
+Version: 3.0-1.1
+
+Package: xfonts-bitmap-mule
+Version: 8.5+0.20030825.0433-4
+
+Package: drgeo-doc
+Version: 1.5-2.1
+
+Package: libhdf5-doc
+Version: 1.6.5-3
+
+Package: mktemp
+Version: 1.5-2
+
+Package: cvsgraph
+Version: 1.6.0-1
+
+Package: libuniversal-moniker-perl
+Version: 0.08-4
+
+Package: pdl
+Version: 1:2.4.3-3
+
+Package: rolo
+Version: 011.dfsg.1-3
+
+Package: libocamlnet-ocaml-bin
+Version: 2.2.4-1
+
+Package: link-grammar-dictionaries-en
+Version: 4.2.2-4
+
+Package: kst-plugins
+Version: 1.3.1-1
+
+Package: libmono-cscompmgd7.0-cil
+Version: 1.2.2.1-2
+
+Package: zope-tinytableplus
+Version: 0.9-16
+
+Package: sylpheed-claws-ghostscript-viewer
+Version: 0.8-7
+
+Package: libgtk1.2-common
+Version: 1.2.10-18
+
+Package: mozilla-firefox-locale-pl-pl
+Version: 2.0.0.3+debian-1
+
+Package: tecnoballz
+Version: 0.91cvs20060616-2
+
+Package: xmame-common
+Version: 0.106-2
+
+Package: dict-freedict-wel-eng
+Version: 1.3-3
+
+Package: libcdk5
+Version: 5.0.20050424-2
+
+Package: libxml-easyobj-perl
+Version: 1.12-2
+
+Package: wily
+Version: 0.13.41-7
+
+Package: crank
+Version: 0.1.4-3
+
+Package: libcatalyst-modules-perl
+Version: 15
+
+Package: libboost-iostreams-dev
+Version: 1.33.1-10
+
+Package: cenon.app
+Version: 3.82-1
+
+Package: mhc-utils
+Version: 0.25.1+20050120-5
+
+Package: nadoka
+Version: 0.6.4-1
+
+Package: email-reminder
+Version: 0.5.6-1
+
+Package: libio-prompt-perl
+Version: 0.99.4-3
+
+Package: libchart-perl
+Version: 2.4.1-4
+
+Package: libdbix-password-perl
+Version: 1.8-10
+
+Package: pike7.6-odbc
+Version: 7.6.93-3
+
+Package: libots0
+Version: 0.4.2+cvs.2004.02.20-1.1
+
+Package: libtext-format-ruby-doc
+Version: 1.0.0-1
+
+Package: wmii2-doc
+Version: 1-3
+
+Package: cl-salza
+Version: 0.7.2-1
+
+Package: libxml-rss-perl
+Version: 1.05-1
+
+Package: nethack-gnome
+Version: 3.4.3-10.1
+
+Package: shared-mime-info
+Version: 0.19-2
+
+Package: mlmmj-php-web-admin
+Version: 1.2.11-7.1
+
+Package: libgdbm-ruby
+Version: 1.8.2-1
+
+Package: libsundials-serial0
+Version: 2.2.0-3
+
+Package: libgoffice-0-common
+Version: 0.3.7-2
+
+Package: nexuiz
+Version: 2.2.3-1
+
+Package: libgts-dev
+Version: 0.7.6-1.1
+
+Package: r-cran-foreign
+Version: 0.8.18-1
+
+Package: libt1-5
+Version: 5.1.0-2
+
+Package: quick-reference-pl
+Version: 1.11
+
+Package: mirrormagic-data
+Version: 2.0.2.0deb1-6
+
+Package: gnuplot-doc
+Version: 4.0.0-5
+
+Package: emil
+Version: 2.1.0-beta9.dfsg-1
+
+Package: kphotobymail
+Version: 0.4-2
+
+Package: kuvert
+Version: 1.1.10
+
+Package: liblinux-kernelsort-perl
+Version: 0.01-1
+
+Package: mdbtools
+Version: 0.5.99.0.6pre1.0.20051109-3.1
+
+Package: cl-lml
+Version: 2.5.4-1
+
+Package: enigmail-locale-nl
+Version: 0.9x-20061010-1
+
+Package: libpq5
+Version: 8.2.3-1
+
+Package: xlaby
+Version: 2.0.1-9
+
+Package: phpdoc
+Version: 20061001-1
+
+Package: libpq4
+Version: 8.1.8-1
+
+Package: remstats-doc
+Version: 1.0.13a-6.3
+
+Package: libgnome-speech3
+Version: 1:0.3.10-2
+
+Package: xdesktopwaves
+Version: 1.3-1
+
+Package: dvorak7min
+Version: 1.6.1-5
+
+Package: hol88-library
+Version: 2.02.19940316-5
+
+Package: libsyck0-dev
+Version: 0.55-3.3+b1
+
+Package: magpierss
+Version: 0.72-2
+
+Package: libxcb-xf86dri0-dev
+Version: 1.0-1.1
+
+Package: kregexpeditor
+Version: 4:3.5.5-3
+
+Package: beep-media-player-scrobbler
+Version: 0.3.8.1-4
+
+Package: libhugs-uulib
+Version: 0.9.2-6
+
+Package: robodoc
+Version: 4.0.18-1
+
+Package: picon-news
+Version: 2006.06.12-1
+
+Package: ncbi-epcr-data
+Version: 1.2.0-3
+
+Package: python-beagle
+Version: 0.2.16.3-1
+
+Package: libsane-extras
+Version: 1.0.18.5
+
+Package: doscan
+Version: 0.3.1-2
+
+Package: easyh10
+Version: 1.5-1
+
+Package: libjaxen-java
+Version: 1.1~beta11-1
+
+Package: planets
+Version: 0.1.12-7
+
+Package: pilot-link
+Version: 0.12.2-9
+
+Package: abiword-gnome
+Version: 2.4.6-1.1
+
+Package: jmpost
+Version: 3.1.10~beta3+0.04b-2.2
+
+Package: dog
+Version: 1.7-8
+
+Package: enigmail-locale-nb
+Version: 0.9x-20061010-1
+
+Package: gaim-dev
+Version: 1:2.0.0+beta5-11
+
+Package: libxdmcp6
+Version: 1:1.0.1-2
+
+Package: libkwnn-dev
+Version: 1.1.0+1.1.1-a021-1.1
+
+Package: cl-umlisp
+Version: 4.1.0-2
+
+Package: libxcbxf86dri0-dev
+Version: 0.9-3
+
+Package: fv
+Version: 3.0-16
+
+Package: php5-clamavlib
+Version: 0.12a-4
+
+Package: bjam
+Version: 3.1.13-1
+
+Package: libnss-mysql
+Version: 1.0-4
+
+Package: ftpwatch
+Version: 1.20
+
+Package: opensaml-schemas
+Version: 1.1a-2
+
+Package: wesnoth-server
+Version: 1.2-1
+
+Package: fish
+Version: 1.22.1-2
+
+Package: libgstreamer0.10-dev
+Version: 0.10.10-4
+
+Package: icedove-gnome-support
+Version: 1.5.0.10.dfsg1-2
+
+Package: tcl8.3-dev
+Version: 8.3.5-5
+
+Package: kaffeine-mozilla
+Version: 0.4.3.1.dfsg-0.1
+
+Package: mapnik-utils
+Version: 0.4.0-1
+
+Package: python-tables
+Version: 1.3.2-2
+
+Package: songwrite
+Version: 0.14-2
+
+Package: cdcat
+Version: 1.01b-1
+
+Package: libhdf5-serial-dev
+Version: 1.6.5-3
+
+Package: libisccc0
+Version: 1:9.3.4-2
+
+Package: libgl1-mesa-dri
+Version: 6.5.1-0.6
+
+Package: libxml-simpleobject-perl
+Version: 0.53-1
+
+Package: bhl
+Version: 1.7.3-1
+
+Package: libggi-target-terminfo
+Version: 1:2.2.1-5
+
+Package: ivtv-utils
+Version: 0.8.2-2
+
+Package: wmtv
+Version: 0.6.5-16
+
+Package: elvis-tools
+Version: 2.2.0-8
+
+Package: wmspaceweather
+Version: 1.04-18
+
+Package: opalmod
+Version: 0.1.14
+
+Package: libzipios++0c2a
+Version: 0.1.5.9+cvs.2004.02.07-3.4
+
+Package: wyg
+Version: 1.1.3.0.debian.1-5
+
+Package: t1-cyrillic
+Version: 4.10-0.1
+
+Package: diogenes
+Version: 0.9.20-1
+
+Package: fai-client
+Version: 3.1.8
+
+Package: tnftp
+Version: 20050625-0.2
+
+Package: wmtz
+Version: 0.7-7
+
+Package: sysutils
+Version: 2.0.1
+
+Package: zope-plonecollectorng
+Version: 1.2.9-3
+
+Package: liblog-dispatch-perl
+Version: 2.16-1
+
+Package: zeroc-ice-manual
+Version: 3.2.0-1
+
+Package: libxml-parser-ruby1.8
+Version: 0.6.8-2
+
+Package: pngquant
+Version: 1.0-3
+
+Package: libtheora-dev
+Version: 0.0.0.alpha7.dfsg-2
+
+Package: sigma-align
+Version: 1.0-1
+
+Package: libroxen-thumbnail
+Version: 1.4-10
+
+Package: cli-common-dev
+Version: 0.4.6
+
+Package: libscw-0.1-2
+Version: 0.4.3-1
+
+Package: ninix-aya
+Version: 3.9.3-2
+
+Package: modconf
+Version: 0.3.1
+
+Package: texlive-lang-finnish
+Version: 2005.dfsg.2-5
+
+Package: geda-gschem
+Version: 20061020-2
+
+Package: regina-normal-doc
+Version: 4.3.1-3
+
+Package: esound-common
+Version: 0.2.36-3
+
+Package: libroxen-safequote
+Version: 1.7-6
+
+Package: libapache2-modxslt
+Version: 2005072700-2.2
+
+Package: libpqxx-2.6.8
+Version: 2.6.8-1
+
+Package: libvorbisidec-dev
+Version: 1.0.2+svn12153-1
+
+Package: stunnel4
+Version: 3:4.20-1
+
+Package: sql-editor
+Version: 0.17
+
+Package: arts
+Version: 1.5.5-1
+
+Package: libapache2-modbt-perl
+Version: 0.0.19+p4.2296-1
+
+Package: libpqxx-2.6.9
+Version: 2.6.9-1
+
+Package: ndiswrapper-common
+Version: 1.38-1
+
+Package: libmono-system-data2.0-cil
+Version: 1.2.2.1-2
+
+Package: kaffe-jthreads
+Version: 2:1.1.7-4
+
+Package: libatk1.0-dev
+Version: 1.12.4-3
+
+Package: opensyncutils
+Version: 0.19-1.2
+
+Package: python-ply-doc
+Version: 2.2-1
+
+Package: timer-applet
+Version: 1.3.1-1
+
+Package: txt2pdbdoc
+Version: 1.4.4-6
+
+Package: libgbf-1-0-dbg
+Version: 0.1.5-1
+
+Package: libintl-xs-perl
+Version: 1.16-1
+
+Package: c++-annotations-contrib
+Version: 6.5.0-1
+
+Package: dxpc
+Version: 3.9.0-2
+
+Package: liblingua-en-numbers-ordinate-perl
+Version: 1.02-3
+
+Package: scli
+Version: 0.2.12-2.2
+
+Package: geda-gattrib
+Version: 20061020-2
+
+Package: thunderbird-locale-he
+Version: 1:1.5.0.8-1
+
+Package: libnmz7-dev
+Version: 2.0.17-1
+
+Package: plib-doc
+Version: 1.8.4-2
+
+Package: dict-gazetteer2k-zips
+Version: 1.0.0-5
+
+Package: eclipse-rcp-common
+Version: 3.1.2-3
+
+Package: xspecs
+Version: 1:1.2+git20061105-3
+
+Package: xserver-xephyr
+Version: 2:1.1.1-20
+
+Package: libprinterconf0c2a
+Version: 0.5-8.1
+
+Package: rtorrent
+Version: 0.7.1-1
+
+Package: tightvnc-java
+Version: 1.2.7-4
+
+Package: wget-el
+Version: 0.5.0-3
+
+Package: zoem-doc
+Version: 06-234-1
+
+Package: loop-aes-testsuite
+Version: 3.1d-13
+
+Package: tdiary-mode
+Version: 2.0.2+20060303-5
+
+Package: pdsh
+Version: 2.10-3
+
+Package: libdatetime-format-mysql-perl
+Version: 0.04-2
+
+Package: libnuclient
+Version: 2.0.16-1
+
+Package: lsmbox
+Version: 2.1.0-2
+
+Package: logtool
+Version: 1.2.8-6
+
+Package: libskstream-0.3-4-dbg
+Version: 0.3.6-1
+
+Package: bacula-sd-sqlite
+Version: 2.0.3-2
+
+Package: pdns-recursor
+Version: 3.1.4-3
+
+Package: xfce4-cpugraph-plugin
+Version: 0.3-1
+
+Package: coreutils
+Version: 5.97-5.3
+
+Package: epwutil
+Version: 1.1-6
+
+Package: libdb4.4-java
+Version: 4.4.20-8
+
+Package: libapache-mod-chroot
+Version: 0.5-6
+
+Package: pisg
+Version: 0.71-1
+
+Package: dbus-1-doc
+Version: 1.0.2-1
+
+Package: pessulus
+Version: 0.10.4-2
+
+Package: povray-doc
+Version: 1:3.6.1-6
+
+Package: libdballe-msg3
+Version: 3.1-1
+
+Package: gij-4.1
+Version: 4.1.1-20
+
+Package: thunderbird-locale-hu
+Version: 1:1.5.0.8-1
+
+Package: libaa-bin
+Version: 1.4p5-31
+
+Package: libdb4.4-tcl
+Version: 4.4.20-8
+
+Package: post-faq
+Version: 0.10-17
+
+Package: scim-canna
+Version: 1.0.0-2
+
+Package: gnome-randr-applet
+Version: 0.2-2
+
+Package: gij-4.2
+Version: 4.2-20070210-1
+
+Package: ez-ipupdate
+Version: 3.0.11b8-13
+
+Package: uim-anthy
+Version: 1:1.2.1-9
+
+Package: libconfig-tiny-perl
+Version: 2.08-1
+
+Package: dict-freedict-eng-rus
+Version: 1.3-3
+
+Package: libevtlog0-dbg
+Version: 0.2.5-1
+
+Package: nunit-console
+Version: 2.2.8-1
+
+Package: xtermcontrol
+Version: 2.7-1
+
+Package: libopts25
+Version: 1:5.8.8-2
+
+Package: heimdal-clients-x
+Version: 0.7.2.dfsg.1-10
+
+Package: mountpy
+Version: 0.7
+
+Package: telepathy-inspector
+Version: 0.5.0-1
+
+Package: gnome-dev-doc
+Version: 1.4.2-35
+
+Package: libmdc2
+Version: 0.9.9.4-1
+
+Package: kexi
+Version: 1:1.6.1-2
+
+Package: libsablevm-native1
+Version: 1.13-2
+
+Package: php-html-template-it
+Version: 1.10-3
+
+Package: libxpm-dev
+Version: 1:3.5.5-2
+
+Package: kjumpingcube
+Version: 4:3.5.5-1
+
+Package: multitee
+Version: 3.0-3
+
+Package: enigmail-locale-de
+Version: 0.9x-20061010-1
+
+Package: kdeutils-dev
+Version: 4:3.5.5-3
+
+Package: libgtkimreg-dev
+Version: 0.1.3-7
+
+Package: ntlmaps
+Version: 0.9.9.0.1-6
+
+Package: specter-mysql
+Version: 1.4-2
+
+Package: tdiary-plugin
+Version: 2.0.2+20060303-5
+
+Package: zenirc
+Version: 2.112.dfsg-0.1
+
+Package: libxcbglx0-dev
+Version: 0.9-3
+
+Package: libsane
+Version: 1.0.18-6
+
+Package: aspell-ukr
+Version: 1.3.1-1
+
+Package: chiark-rwbuffer
+Version: 4.1.10
+
+Package: adept-notifier
+Version: 2.1.2
+
+Package: koffice-i18n-ru
+Version: 1.6.1-2
+
+Package: libtext-querysql-perl
+Version: 0.07-6
+
+Package: firmware-ipw3945
+Version: 0.4
+
+Package: libnetwork-ipv4addr-perl
+Version: 0.10-1.1
+
+Package: fonty-dev
+Version: 1.0-23.6
+
+Package: libcairo-ruby1.8
+Version: 1.2.0-1
+
+Package: mecab-ipadic
+Version: 2.7.0+20060707-1
+
+Package: drawtiming
+Version: 0.5-4
+
+Package: libcairo-ruby1.9
+Version: 1.2.0-1
+
+Package: libjgoodies-forms-java-doc
+Version: 1.0.5-5
+
+Package: bcron
+Version: 0.09-7
+
+Package: python-gpod
+Version: 0.3.2-1.1
+
+Package: bomberclone-data
+Version: 0.11.7-1
+
+Package: libhesiod-dev
+Version: 3.0.2-18.1
+
+Package: xcompmgr
+Version: 1.1.1+cvs.20051218-1
+
+Package: libktoblzcheck1c2a
+Version: 1.11-1
+
+Package: lsh-server
+Version: 2.0.2-1.1
+
+Package: tvtime
+Version: 1.0.2-0.2
+
+Package: sudo
+Version: 1.6.8p12-5
+
+Package: gnomoradio
+Version: 0.15.1-5+b1
+
+Package: libst-dev
+Version: 1.7-1
+
+Package: python-omniorb2
+Version: 2.6-3.3
+
+Package: sawfish-data
+Version: 1:1.3+cvs20061004-1
+
+Package: playground
+Version: 0.3-2
+
+Package: libfreetype6
+Version: 2.2.1-5
+
+Package: eql
+Version: 1.2-7
+
+Package: libnetfilter-queue1-dbg
+Version: 0.0.12-1
+
+Package: wmcliphist
+Version: 0.6-3
+
+Package: python-django
+Version: 0.95.1-1
+
+Package: debianutils
+Version: 2.18
+
+Package: gap-trans-groups
+Version: 4r4p8-1
+
+Package: sdf-doc
+Version: 2.001-8
+
+Package: xsel
+Version: 0.9.6-1.1
+
+Package: gnubik
+Version: 2.2-7
+
+Package: libicepatch2-32
+Version: 3.2.0-3
+
+Package: m17n-lib-bin
+Version: 1.3.1-1.1
+
+Package: kdepim-doc
+Version: 4:3.5.5.dfsg.1-6
+
+Package: libtse3-dev
+Version: 0.3.1-4
+
+Package: proxychains
+Version: 2.1-5
+
+Package: libsysfs2
+Version: 2.1.0-1
+
+Package: ocaml-ulex
+Version: 0.8-6
+
+Package: re2c
+Version: 0.9.12-2
+
+Package: sgml2x
+Version: 1.0.0-11
+
+Package: libranlip1c2
+Version: 1.0-4
+
+Package: kmahjongg
+Version: 4:3.5.5-1
+
+Package: mozilla-locale-fr
+Version: 3:1.0.7-3
+
+Package: biococoa.app
+Version: 1.6.0-3
+
+Package: junior-system
+Version: 1.4
+
+Package: libpt-dev
+Version: 1.10.2-2
+
+Package: tcl8.3-doc
+Version: 8.3.5-5
+
+Package: gosa-help-fr
+Version: 2.5.9-1
+
+Package: madbomber-data
+Version: 0.2.5-1
+
+Package: xsensors
+Version: 0.50-1
+
+Package: libapache2-mod-auth-kerb
+Version: 5.3-1
+
+Package: libgconf-bridge0
+Version: 0.1-1
+
+Package: libxml-handler-yawriter-perl
+Version: 0.23-5
+
+Package: libfoundation-data
+Version: 1.0.84-1
+
+Package: libroxen-graphicalcounter
+Version: 1.10-9
+
+Package: ingo1
+Version: 1.1.2-1
+
+Package: intel2gas
+Version: 1.3.3-8
+
+Package: libphysfs-1.0-0
+Version: 1.0.0-5
+
+Package: bash-static
+Version: 3.1dfsg-8
+
+Package: iripdb
+Version: 0.1.3b-1.1
+
+Package: wmakerconf-data
+Version: 0.90.0.0-3
+
+Package: ilithuanian
+Version: 1.1+cvs20060719-1
+
+Package: modxslt-tools
+Version: 2005072700-2.2
+
+Package: openoffice.org
+Version: 2.0.4.dfsg.2-6
+
+Package: liboggflac++-dev
+Version: 1.1.2-6
+
+Package: kdesdk-scripts
+Version: 4:3.5.5-3
+
+Package: libkipi0-dev
+Version: 0.1.5-2
+
+Package: pxe
+Version: 1.4.2-7
+
+Package: libmimedir0
+Version: 0.4-4
+
+Package: netmask
+Version: 2.3.9
+
+Package: jikes-sun
+Version: 0.10
+
+Package: php5-odbc
+Version: 5.2.0-10
+
+Package: mimms
+Version: 2.0.1-1
+
+Package: xmove
+Version: 2.0beta2-8
+
+Package: cl-ftp
+Version: 1.3.3-1
+
+Package: multimix
+Version: 19981218-10
+
+Package: pulseaudio-module-x11
+Version: 0.9.5-7
+
+Package: samba
+Version: 3.0.24-6
+
+Package: cl-sql-postgresql-socket
+Version: 3.8.2-1
+
+Package: libdb4.5++-dev
+Version: 4.5.20-1
+
+Package: tendra-doc
+Version: 4.1.2-8
+
+Package: waimea
+Version: 0.4.0-7
+
+Package: sun-java6-fonts
+Version: 6-00-2
+
+Package: gbase
+Version: 0.5-2.1
+
+Package: xpad
+Version: 2.12-1
+
+Package: zope3-sandbox
+Version: 3.3.1-1
+
+Package: dealer
+Version: 0.20040530-2
+
+Package: libdbi-perl
+Version: 1.54-1
+
+Package: libwww-doc
+Version: 0.20060330
+
+Package: libstring-approx-perl
+Version: 3.25-1
+
+Package: libgtksourceview2.0-cil
+Version: 0.10-3.1
+
+Package: xjewel
+Version: 1.6-21
+
+Package: debroster
+Version: 1.15
+
+Package: guile-www
+Version: 1.1.1-3
+
+Package: nload
+Version: 0.6.0-3
+
+Package: swisswatch
+Version: 0.6-12
+
+Package: finger
+Version: 0.17-11
+
+Package: debian-zh-faq-s
+Version: 1.10
+
+Package: libxcb-shm0
+Version: 1.0-1.1
+
+Package: ttf-alee
+Version: 11.2
+
+Package: postgresql-contrib
+Version: 7.5.22
+
+Package: libunicode-string-perl
+Version: 2.09-1
+
+Package: debian-zh-faq-t
+Version: 1.10
+
+Package: libapache-ruby1.8
+Version: 1.2.6-1.1
+
+Package: libxml-parser-perl
+Version: 2.34-4.2
+
+Package: foobillard
+Version: 3.0a-2
+
+Package: libsablevm1-dev
+Version: 1.13-1.1
+
+Package: libgtk2-trayicon-perl
+Version: 0.04-1
+
+Package: quick-reference-de
+Version: 1.11
+
+Package: drac-dev
+Version: 1.12-4
+
+Package: libwww-dev
+Version: 5.4.0-11
+
+Package: libmikmod2-dev
+Version: 3.1.11-a-6
+
+Package: ledcontrol
+Version: 0.5.2-8
+
+Package: pythoncard
+Version: 0.8.1-8.1
+
+Package: libclass-accessor-perl
+Version: 0.30-1
+
+Package: qpopper-drac
+Version: 4.0.5.dfsg-0.1
+
+Package: libxmuu1
+Version: 1:1.0.2-2
+
+Package: lout
+Version: 3.34-1
+
+Package: manedit
+Version: 0.7.1-1
+
+Package: clamassassin
+Version: 1.2.3-2
+
+Package: disc-cover
+Version: 1.5.4-3
+
+Package: shogun-readline
+Version: 0.3.2-1
+
+Package: libkrb5-17-heimdal
+Version: 0.7.2.dfsg.1-10
+
+Package: multi-gnome-terminal-doc
+Version: 1.6.2-13
+
+Package: einstein
+Version: 2.0.dfsg.2-3
+
+Package: linneighborhood
+Version: 0.6.5-4
+
+Package: xfonts-bolkhov-isocyr-misc
+Version: 1.1.20001007-6
+
+Package: byacc
+Version: 20050813-1
+
+Package: gstreamer-editor
+Version: 0.8.0-1+b2
+
+Package: libdb4.2-java
+Version: 4.2.52+dfsg-2
+
+Package: libgss0
+Version: 0.0.18-2
+
+Package: libhighline-ruby1.8
+Version: 1.2.2-1
+
+Package: libpar-perl
+Version: 0.952-1
+
+Package: powermanga
+Version: 0.80-dfsg-1
+
+Package: bookmark-merge
+Version: 0.9-2
+
+Package: libenet-dev
+Version: 1.0-2
+
+Package: dict-freedict-eng-fra
+Version: 1.3-3
+
+Package: httrack
+Version: 3.41.20-1
+
+Package: libthai-dev
+Version: 0.1.6-1
+
+Package: libdaemonize-ruby
+Version: 0.1.2-2
+
+Package: spl-xml
+Version: 1.0~pre3-1
+
+Package: bastille
+Version: 1:2.1.1-13
+
+Package: bridge-utils
+Version: 1.2-1
+
+Package: icedove-locale-ru
+Version: 1:1.5.0.8-1
+
+Package: iceweasel-l10n-roa-es-val
+Version: 2.0.0.3+debian-1
+
+Package: libtunepimp-dev
+Version: 0.5.3-1
+
+Package: faust
+Version: 0.9.8-1
+
+Package: libhk-classes-sqlite
+Version: 0.8.2-2
+
+Package: gnome-terminal
+Version: 2.14.2-2
+
+Package: boxes
+Version: 1.0.1a-2.2
+
+Package: postfix-pgsql
+Version: 2.3.8-2
+
+Package: libsasl2-modules-gssapi-heimdal
+Version: 2.1.22.dfsg1-8
+
+Package: eclipse-rcp-gcj
+Version: 3.2.1-6
+
+Package: sabayon
+Version: 2.12.4-4
+
+Package: xgraph
+Version: 12.1-6
+
+Package: pcsx-i18n
+Version: 1:1.699df-rc3-1
+
+Package: pdns-backend-ldap
+Version: 2.9.20-8
+
+Package: xfce4-messenger-plugin
+Version: 0.1.0-2+b1
+
+Package: xfishtank
+Version: 2.2-24
+
+Package: duplicity
+Version: 0.4.2-10.1
+
+Package: gchempaint
+Version: 0.6.6-3
+
+Package: gnunit
+Version: 1.1.17-1
+
+Package: libdb1-compat
+Version: 2.1.3-9
+
+Package: libtest-pod-coverage-perl
+Version: 1.08-2
+
+Package: libclass-trait-perl
+Version: 0.22-2
+
+Package: libterm-query-perl
+Version: 2.0-8
+
+Package: metamail
+Version: 2.7-52
+
+Package: libvlc0-dev
+Version: 0.8.6.a.debian-6
+
+Package: b2evolution
+Version: 0.9.2-3
+
+Package: libtie-dxhash-perl
+Version: 0.93-1
+
+Package: skribe-doc
+Version: 1.2g-2
+
+Package: php4-kadm5
+Version: 0.2.4-4.1+b1
+
+Package: python-dballe
+Version: 3.1-1
+
+Package: hashalot
+Version: 0.3-4
+
+Package: gkrellweather
+Version: 2.0.7-2
+
+Package: libicestorm32
+Version: 3.2.0-3
+
+Package: libsdl1.2-dev
+Version: 1.2.11-8
+
+Package: mydns-mysql
+Version: 1:1.1.0-7
+
+Package: libzorpll-dev
+Version: 3.0.6.4.2
+
+Package: antigravitaattori
+Version: 0.0.2-4
+
+Package: ksimus-boolean
+Version: 0.3.6-11
+
+Package: java2html
+Version: 0.9.2-4
+
+Package: whatsnewfm
+Version: 0.6.6-1
+
+Package: wmakerconf
+Version: 2.11-5
+
+Package: libgetenv-java
+Version: 1.0-6
+
+Package: kphotoalbum
+Version: 2.2-2+b1
+
+Package: libjs0
+Version: 0.2.5-8
+
+Package: libstlport5.1-dbg
+Version: 5.1.2-1
+
+Package: shapelib
+Version: 1.2.10-3
+
+Package: ocrad
+Version: 0.16-1
+
+Package: circuslinux
+Version: 1.0.3-19
+
+Package: wipl-client-java
+Version: 20020601-11.1
+
+Package: gnome-icon-theme-dlg-neu
+Version: 0.5-2
+
+Package: libapache2-mod-log-sql
+Version: 1.100-8
+
+Package: tkgate
+Version: 1.8.6-2
+
+Package: python-4suite-xml
+Version: 1.0~rc4cvs20061016-1+b1
+
+Package: python-pqueue
+Version: 0.2-7
+
+Package: gdb
+Version: 6.6.dfsg-1
+
+Package: menu
+Version: 2.1.33
+
+Package: libmysql-ocaml-dev
+Version: 1.0.4-2
+
+Package: gdm
+Version: 2.16.4-1.1
+
+Package: libconvert-units-perl
+Version: 1:0.43-1
+
+Package: python-twisted-bin
+Version: 2.4.0-3
+
+Package: libsaml5
+Version: 1.1a-2
+
+Package: libusb++-0.1-4c2
+Version: 2:0.1.12-6
+
+Package: geximon
+Version: 0.7.5-1
+
+Package: kdeedu-dbg
+Version: 4:3.5.5-1
+
+Package: orbit
+Version: 0.5.17-11.1
+
+Package: wcanadian
+Version: 6-2
+
+Package: libmathlib2-dev
+Version: 2005.dfsg-5
+
+Package: festival-mr
+Version: 0.1-1
+
+Package: phpgroupware
+Version: 0.9.16.011-3
+
+Package: ipv6calc
+Version: 0.61.0-1
+
+Package: libjts-java
+Version: 1.6-2
+
+Package: ri-li
+Version: 2.0.0-2
+
+Package: eclipse-pde-gcj
+Version: 3.2.1-6
+
+Package: openoffice.org-l10n-fr
+Version: 2.0.4.dfsg.2-6
+
+Package: python-diacanvas2
+Version: 0.14.4-4
+
+Package: gradm
+Version: 1.9.15-2.1
+
+Package: libgbf-1-common
+Version: 0.1.5-1
+
+Package: libtk-histentry-perl
+Version: 0.43-1
+
+Package: rwho
+Version: 0.17-8
+
+Package: sendip
+Version: 2.5-2
+
+Package: x11proto-input-dev
+Version: 1.3.2-4
+
+Package: libclass-multimethods-perl
+Version: 1.70-4
+
+Package: libmeanwhile-dev
+Version: 1.0.2-2
+
+Package: quicklist
+Version: 0.8.6-12
+
+Package: worker
+Version: 2.11.1-2
+
+Package: initramfs-tools
+Version: 0.85g
+
+Package: knmap
+Version: 2.1-1
+
+Package: pubtal
+Version: 3.2.0-1
+
+Package: makedev
+Version: 2.3.1-83
+
+Package: texlive-context
+Version: 2005.dfsg.3-1
+
+Package: libclass-dbi-pg-perl
+Version: 0.09-2
+
+Package: systemimager-boot-ia64-standard
+Version: 3.6.3dfsg1-3
+
+Package: xpdf-reader
+Version: 3.01-9
+
+Package: rwalld
+Version: 0.17-6
+
+Package: libmail-pop3client-perl
+Version: 2.17-1
+
+Package: libextutils-autoinstall-perl
+Version: 0.61-1.1
+
+Package: saydate
+Version: 0.3.0-10
+
+Package: debaux-debconf
+Version: 0.1.9-1
+
+Package: newbiedoc
+Version: 0.6.0-3
+
+Package: node
+Version: 0.3.2-4
+
+Package: gpsim-logic
+Version: 0.22.0~rc3-2
+
+Package: libobjc-lf2-dev
+Version: 2.95.3r115-1
+
+Package: libarchive-ar-perl
+Version: 1.13b-1
+
+Package: clusterssh
+Version: 3.19.1-4
+
+Package: hat-ghc6
+Version: 2.05+rerolled-1
+
+Package: gtktrain
+Version: 0.9b-9.2
+
+Package: libsds0
+Version: 0.5.2.1.ds-1.1
+
+Package: gtk2-engines-thingeramik
+Version: 0.26-2.1
+
+Package: slice2java
+Version: 3.2.0-3
+
+Package: php4-snmp
+Version: 6:4.4.4-9
+
+Package: libneon26-gnutls-dev
+Version: 0.26.3-1
+
+Package: xblast-tnt-models
+Version: 20050106-1
+
+Package: cl-rfc2388
+Version: 1.1.dfsg-1
+
+Package: epos
+Version: 1:2.5.37-5
+
+Package: thunderbird-locale-tr
+Version: 1:1.5.0.8-1
+
+Package: wmmand
+Version: 1.3.1-1
+
+Package: rancid-installer
+Version: 2.3.1-4
+
+Package: ipsvd
+Version: 0.12.1-1
+
+Package: ccze
+Version: 0.2.1-1.2
+
+Package: kommander
+Version: 4:3.5.5-1
+
+Package: kicad-doc-de
+Version: 0.0.20060829-2
+
+Package: libproc-syncexec-perl
+Version: 1.01-1
+
+Package: dcc-common
+Version: 1.3.42-4
+
+Package: libitext-java
+Version: 1.4.5-1
+
+Package: scottfree
+Version: 1.14-8
+
+Package: zope-statusmessages
+Version: 2.0.1-1
+
+Package: kdelibs
+Version: 4:3.5.5a.dfsg.1-7
+
+Package: laptop-detect
+Version: 0.12.1-0.1
+
+Package: uim-viqr
+Version: 1:1.4.1-1
+
+Package: bbrun
+Version: 1.6-4
+
+Package: postgresql-7.4
+Version: 1:7.4.16-1
+
+Package: openoffice.org-l10n-fa
+Version: 2.0.4.dfsg.2-6
+
+Package: libnet-cidr-perl
+Version: 0.11-1
+
+Package: most
+Version: 4.10.2-4
+
+Package: nxml-mode
+Version: 20041004-6
+
+Package: prboom
+Version: 2:2.4.6+dfsg-1
+
+Package: mozilla-dev
+Version: 2:1.8+1.0.8-4
+
+Package: kvirc2-dev
+Version: 2.1.3-6
+
+Package: asterisk-doc
+Version: 1:1.2.16~dfsg-1
+
+Package: libetpan-dev
+Version: 0.48-3
+
+Package: libfreecell-solver-dev
+Version: 2.8.10-1
+
+Package: libgdal1-1.3.2-grass
+Version: 1.3.2-1
+
+Package: libglade-gnome0-dev
+Version: 1:0.17-8
+
+Package: randtype
+Version: 1.13-4
+
+Package: babygimp
+Version: 0.42-5
+
+Package: kdeadmin-dbg
+Version: 4:3.5.5-4
+
+Package: openoffice.org-l10n-fi
+Version: 2.0.4.dfsg.2-7
+
+Package: netselect
+Version: 0.3.ds1-10
+
+Package: libauthen-smb-perl
+Version: 0.91-3
+
+Package: rungetty
+Version: 1.2-10
+
+Package: cups-pdf
+Version: 2.4.2-3
+
+Package: libfoundation1.0
+Version: 1.0.84-1
+
+Package: htmldoc
+Version: 1.8.27-2
+
+Package: wavesurfer
+Version: 1.8.5-2
+
+Package: libxml2
+Version: 2.6.27.dfsg-1
+
+Package: gstreamer0.10-plugins-base-apps
+Version: 0.10.10-4
+
+Package: nqc
+Version: 2.5.r3-5
+
+Package: pv
+Version: 0.9.6-1
+
+Package: libxml1
+Version: 1:1.8.17-14
+
+Package: libapache-admin-config-perl
+Version: 0.94-1
+
+Package: ttyd
+Version: 3.3-9
+
+Package: expat
+Version: 1.95.8-3.4
+
+Package: ncbi-epcr
+Version: 1.2.0-3
+
+Package: console-tools-dev
+Version: 1:0.2.3dbs-65
+
+Package: kmousetool
+Version: 4:3.5.5-2
+
+Package: hinfo
+Version: 1.02-3.1
+
+Package: libfile-find-rule-perl
+Version: 0.30-2
+
+Package: libdns-zoneparse-perl
+Version: 0.95-1
+
+Package: rbot
+Version: 0.9.10-1
+
+Package: cmus
+Version: 2.1.0-1
+
+Package: libgts-doc
+Version: 0.7.6-1.1
+
+Package: latex209-base
+Version: 25.mar.1992-10
+
+Package: python-simpletal
+Version: 4.1-6
+
+Package: dime
+Version: 0.20030921-2
+
+Package: libxml-light-ocaml-dev
+Version: 2.2-6
+
+Package: kmobiletools
+Version: 0.4.3.2-2
+
+Package: pi
+Version: 1.1.13-2
+
+Package: rrdcollect
+Version: 0.2.3-2
+
+Package: itrans-fonts
+Version: 5.3-3.1
+
+Package: libapache-mod-rpaf
+Version: 0.5-2.1
+
+Package: ttf-arphic-gbsn00lp
+Version: 2.11-6.1
+
+Package: telnet
+Version: 0.17-35
+
+Package: php5-apache2-mod-bt
+Version: 0.0.19+p4.2296-1
+
+Package: kooka
+Version: 4:3.5.5-3
+
+Package: lxr
+Version: 0.3.1-5
+
+Package: antennavis
+Version: 0.3-2
+
+Package: buffy
+Version: 0.11.3-1
+
+Package: enigmail-locale-pl
+Version: 0.9x-20061010-1
+
+Package: gspca-modules-2.6.18-4-xen-amd64
+Version: 2.6.18+01.00.12-8
+
+Package: login
+Version: 1:4.0.18.1-7
+
+Package: bbe
+Version: 0.1.9-1
+
+Package: pilot-manager
+Version: 1.107.0pre108-5
+
+Package: wmmount
+Version: 1.0beta2-7
+
+Package: picon-usenix
+Version: 1995.04.13-8
+
+Package: texlive-base
+Version: 2005.dfsg.3-1
+
+Package: diff-doc
+Version: 2.8.1-9
+
+Package: apt-howto-de
+Version: 2.0.2-2
+
+Package: clamav-dbg
+Version: 0.90.1-2
+
+Package: gstreamer-tools
+Version: 0.10.10-4
+
+Package: meterbridge
+Version: 0.9.2-6
+
+Package: xen-linux-system-2.6.18-4-xen-amd64
+Version: 2.6.18.dfsg.1-12
+
+Package: kdelibs4c2a
+Version: 4:3.5.5a.dfsg.1-8
+
+Package: sgcontrol
+Version: 0.3cvs-6
+
+Package: xfprint4
+Version: 4.3.99.1-1
+
+Package: qt3-qtconfig
+Version: 3:3.3.7-3
+
+Package: gpgv
+Version: 1.4.6-2
+
+Package: libgii1-target-x
+Version: 1:1.0.1-3
+
+Package: telak
+Version: 0.5-1
+
+Package: gpgp
+Version: 0.4-12
+
+Package: iwatch
+Version: 0.0.12-3
+
+Package: desktop-file-utils
+Version: 0.11-1
+
+Package: addressmanager.app
+Version: 0.4.6-8
+
+Package: libqgis0
+Version: 0.7.4-5
+
+Package: xserver-xorg-input-summa
+Version: 1:1.1.0-1
+
+Package: gocr-doc
+Version: 0.41-1
+
+Package: firestarter
+Version: 1.0.3-2
+
+Package: librpcsecgss3
+Version: 0.14-2
+
+Package: icedove-locale-fi
+Version: 1:1.5.0.8-1
+
+Package: libocamlgraph-ocaml-dev
+Version: 0.98-1
+
+Package: openmsx
+Version: 0.6.1-5
+
+Package: renattach
+Version: 1.2.3-1
+
+Package: shapetools
+Version: 1.4pl6-9
+
+Package: ucspi-proxy
+Version: 0.96-1
+
+Package: ucspi-tcp-src
+Version: 0.88-13
+
+Package: svn-buildpackage
+Version: 0.6.16
+
+Package: rox-filer
+Version: 2.5-1
+
+Package: libogre-dev
+Version: 1.0.6-1.4
+
+Package: debsecan
+Version: 0.4.7
+
+Package: since
+Version: 0.5-4
+
+Package: wmavgload
+Version: 0.7.0-6.1+b1
+
+Package: libzipios++-dev
+Version: 0.1.5.9+cvs.2004.02.07-3.4
+
+Package: netwag
+Version: 5.35.0-1
+
+Package: gnurobots
+Version: 1:1.0D-7
+
+Package: xfonts-cronyx-koi8u-misc
+Version: 2.3.8-6
+
+Package: icedove-locale-fr
+Version: 1:1.5.0.8-1
+
+Package: libxcbxfixes0-dev
+Version: 0.9-3
+
+Package: libaddresses-dev
+Version: 0.4.6-8
+
+Package: mines.app
+Version: 0.1.0-2
+
+Package: liblink-grammar4-dev
+Version: 4.2.2-4
+
+Package: gambit
+Version: 0.2006.01.20-2
+
+Package: grepcidr
+Version: 1.3-1
+
+Package: libautounit-dev
+Version: 0.20.1-2
+
+Package: libdate-simple-perl
+Version: 3.01-1
+
+Package: s3270
+Version: 3.3.4p6-3.3
+
+Package: kugar
+Version: 1:1.6.1-2
+
+Package: lisaac
+Version: 0.84-3
+
+Package: wbritish-small
+Version: 6-2
+
+Package: xmms-finespectrum
+Version: 1.0.1a-6
+
+Package: xmpuzzles
+Version: 7.2.4-1
+
+Package: doc-iana
+Version: 20070301-1
+
+Package: ssh
+Version: 1:4.3p2-9
+
+Package: ganglia-monitor
+Version: 2.5.7-3.1
+
+Package: phpgroupware-stocks
+Version: 0.9.16.011-3
+
+Package: array-info
+Version: 0.13-1
+
+Package: giblib-dev
+Version: 1.2.4-4
+
+Package: xmlsec1
+Version: 1.2.9-5
+
+Package: dvi2ps-fontdata-n2a
+Version: 1.0.1-2
+
+Package: openoffice.org-l10n-as-in
+Version: 2.0.4.dfsg.2-6
+
+Package: libxplc0.3.13
+Version: 0.3.13-1
+
+Package: libhk-classes-dev
+Version: 0.8.2-2
+
+Package: tkps
+Version: 1.18
+
+Package: isdnvboxclient
+Version: 1:3.9.20060704-3+b1
+
+Package: pdmenu
+Version: 1.2.89
+
+Package: xmms-oggre
+Version: 0.3-3
+
+Package: libopensc2
+Version: 0.11.1-3
+
+Package: foomatic-gui
+Version: 0.7.7
+
+Package: esvn-doc
+Version: 0.6.11+1-2
+
+Package: gbdfed
+Version: 1.2-3
+
+Package: libsdl-pango-dev
+Version: 0.1.2-1
+
+Package: catdoc
+Version: 0.94.2-1
+
+Package: gkrellm-bfm
+Version: 0.6.4-3
+
+Package: libpango1.0-0-dbg
+Version: 1.14.8-5
+
+Package: rcalc
+Version: 0.5.0-1.1
+
+Package: tinywm
+Version: 1.3-4
+
+Package: jpilot
+Version: 0.99.9.4-2
+
+Package: gstreamer0.8-gnomevfs
+Version: 0.8.12-6
+
+Package: ksimus-floatingpoint
+Version: 0.3.6-11
+
+Package: libapache2-mod-rpaf
+Version: 0.5-2.1
+
+Package: audiolink
+Version: 0.05-1
+
+Package: bbppp
+Version: 0.2.5-5
+
+Package: cl-png
+Version: 0.4-2
+
+Package: qliss3d
+Version: 1.3.2-3
+
+Package: groovy-doc
+Version: 0.1.0beta10-3
+
+Package: apachetop
+Version: 0.12.6-5
+
+Package: haskell-filepath-doc
+Version: 0.11-3
+
+Package: cbm
+Version: 0.1-1
+
+Package: zephyr-server
+Version: 2.1.20010518.SNAPSHOT-17.1
+
+Package: aspell-uz
+Version: 0.6.0-1
+
+Package: libnm-util-dev
+Version: 0.6.4-6
+
+Package: sylpheed-claws-gtk2-multi-notifier
+Version: 2.6.0-1
+
+Package: libgmp3c2
+Version: 2:4.2.1+dfsg-4
+
+Package: libmagick++9-dev
+Version: 7:6.2.4.5.dfsg1-0.14
+
+Package: gnome-applets-dbg
+Version: 2.14.3-6
+
+Package: kluppe
+Version: 0.6.8-1
+
+Package: libbusiness-onlinepayment-authorizenet-perl
+Version: 3.16-1
+
+Package: libzvbi-common
+Version: 0.2.25-1
+
+Package: libpt-plugins-avc
+Version: 1.10.2-2
+
+Package: libdbus-1-3
+Version: 1.0.2-1
+
+Package: dibbler-relay
+Version: 0.4.2.dfsg-2
+
+Package: egroupware-sambaadmin
+Version: 1.2.106-2.dfsg-2
+
+Package: babel-0.10.2-doc
+Version: 0.10.2-2.1
+
+Package: alleyoop
+Version: 0.9.0-6
+
+Package: elib
+Version: 1.0-11.1
+
+Package: epic4-help
+Version: 1:2.0+20050315-1
+
+Package: harden-tools
+Version: 0.1.31
+
+Package: libsilc-1.0-2-dev
+Version: 0.9.12-6
+
+Package: trigger-data
+Version: 0.5.2-1
+
+Package: gnome-user-guide
+Version: 2.14.2-2
+
+Package: elvis
+Version: 2.2.0-8
+
+Package: libvrb0
+Version: 0.5.1-4
+
+Package: libtext-glob-perl
+Version: 0.07-1
+
+Package: gmsh
+Version: 2.0.5-1
+
+Package: vim-spellfiles-uk
+Version: 20060604-1
+
+Package: bacula-director-sqlite3
+Version: 2.0.3-2
+
+Package: cl-sql-odbc
+Version: 3.8.2-1
+
+Package: qmail-qfilter
+Version: 1.5-3
+
+Package: array-util
+Version: 1.9-2
+
+Package: gnome-swallow-applet
+Version: 1.2-3
+
+Package: libcolor-calc-perl
+Version: 1.00-1
+
+Package: libbackport-util-concurrent-java
+Version: 2.2+dfsg-1
+
+Package: mpb-doc
+Version: 1.4.2-10
+
+Package: libmimedir-gnome0.3
+Version: 0.3.1-1
+
+Package: libjcode-pm-perl
+Version: 2.06-1
+
+Package: php-net-sieve
+Version: 1.1.3-1
+
+Package: libdbd-anydata-perl
+Version: 0.08+d040419-2
+
+Package: libx86-dev
+Version: 0.99-1.2
+
+Package: manpages-ru
+Version: 0.98-4
+
+Package: uim-prime
+Version: 1:1.2.1-9
+
+Package: dvi2tty
+Version: 5.3.1-3
+
+Package: libmidi-perl
+Version: 0.80-3
+
+Package: yada-doc
+Version: 0.52
+
+Package: libapache-mod-auth-useragent
+Version: 1.0-9
+
+Package: irssi-text
+Version: 0.8.10-2
+
+Package: kdeaddons-dbg
+Version: 4:3.5.5-1
+
+Package: vdr-plugin-prefermenu
+Version: 0.6.6-5
+
+Package: gnome-peercast
+Version: 0.5.4-1.1
+
+Package: upstart-logd
+Version: 0.3.8-1
+
+Package: kdevelop-doc
+Version: 4:3.4.0-2
+
+Package: canoe
+Version: 0.1.0-2
+
+Package: librlog-dev
+Version: 1.3.7-1
+
+Package: festival
+Version: 1.4.3-17.2
+
+Package: libflac7
+Version: 1.1.2-6
+
+Package: aspell-uk
+Version: 1.3.1-1
+
+Package: docbook-slides-demo
+Version: 3.3.1-1
+
+Package: jython-doc
+Version: 2.1.0-23
+
+Package: libmaypole-plugin-upload-perl
+Version: 0.02-2
+
+Package: ratmenu
+Version: 2.3.14
+
+Package: texlive-doc-uk
+Version: 2005.dfsg.2-1
+
+Package: llvm-examples
+Version: 1.8b-1
+
+Package: yacas-doc
+Version: 1.0.57-2.4
+
+Package: smail
+Version: 3.2.0.115-7.1
+
+Package: libvorbisfile3
+Version: 1.1.2.dfsg-1.2
+
+Package: kdesdk
+Version: 4:3.5.5-3
+
+Package: gpsman
+Version: 6.3.1-1
+
+Package: libgnomeprint-data
+Version: 0.37-13
+
+Package: libapache2-mod-python-doc
+Version: 3.2.10-4
+
+Package: gettext-base
+Version: 0.16.1-1
+
+Package: kernel-patch-debianlogo
+Version: 1.5
+
+Package: beepcore-c0
+Version: 0.2+cvs20030603-1
+
+Package: xmms-status-plugin
+Version: 1.0.0-3
+
+Package: libvorbis-dev
+Version: 1.1.2.dfsg-1.2
+
+Package: exim-doc
+Version: 3.20-1
+
+Package: libruby
+Version: 1.8.2-1
+
+Package: gambas-doc
+Version: 1.0.15-1.2
+
+Package: guile-1.8-dev
+Version: 1.8.1+1-5
+
+Package: php4-spplus
+Version: 1.0-10+b1
+
+Package: librsvg2-bin
+Version: 2.14.4-2
+
+Package: binfmtc
+Version: 0.13-1
+
+Package: libpam-passwdqc
+Version: 0.7.5-1
+
+Package: njplot
+Version: 0.20060606-3
+
+Package: ruby-prof
+Version: 0.4.1-2
+
+Package: courier-authlib-ldap
+Version: 0.58-5
+
+Package: fwanalog
+Version: 0.6.9-4
+
+Package: libnet-whois-raw-perl
+Version: 1.20-1
+
+Package: libpoe-filter-ircd-perl
+Version: 2.0-1
+
+Package: chktex
+Version: 1.6.3-2
+
+Package: module-init-tools
+Version: 3.3-pre4-2
+
+Package: libgraphite2
+Version: 1:2.1-1
+
+Package: libgamin0
+Version: 0.1.8-2
+
+Package: liblwp-authen-wsse-perl
+Version: 0.04-1
+
+Package: liboping-dev
+Version: 0.3.4-1
+
+Package: s48-refman
+Version: 1-3
+
+Package: ipw2100-modules-2.6-xen-amd64
+Version: 2:2.6.18-5
+
+Package: banshee
+Version: 0.11.3+dfsg-2
+
+Package: checkpw
+Version: 1.01-1
+
+Package: libenca0
+Version: 1.9-1
+
+Package: libaqbanking-doc
+Version: 2.2.3-4
+
+Package: libccs-dev
+Version: 1.03.00-2
+
+Package: libpcre++-dev
+Version: 0.9.5-2
+
+Package: rhyme
+Version: 0.9-6
+
+Package: maint-guide-es
+Version: 1.2.11
+
+Package: libffi4
+Version: 4.1.1-21
+
+Package: libiddev-dev
+Version: 1.03.00-2
+
+Package: pilot-qof
+Version: 0.1.2-1
+
+Package: nanourl
+Version: 0.1-7
+
+Package: libihelp-ruby1.8
+Version: 0.3.1-3
+
+Package: libtifiles0-dev
+Version: 0.6.6-2
+
+Package: man-db
+Version: 2.4.3-6
+
+Package: doc-rfc-experimental
+Version: 20030621-1
+
+Package: libpt-doc
+Version: 1.10.2-2
+
+Package: libtext-header-perl
+Version: 1.03-2
+
+Package: xchat-gnome
+Version: 1:0.13-1+b1
+
+Package: criticalmass-data
+Version: 1:1.0.0-1
+
+Package: eximon
+Version: 3.36-18.2
+
+Package: libtcltk-ruby
+Version: 1.8.2-1
+
+Package: openoffice.org-l10n-ru
+Version: 2.0.4.dfsg.2-6
+
+Package: source-highlight
+Version: 2.4-5
+
+Package: myspell-en-au
+Version: 2.1-3
+
+Package: openoffice.org-l10n-rw
+Version: 2.0.4.dfsg.2-6
+
+Package: dpsyco-mysql
+Version: 1.0.34
+
+Package: libgraphics-colordeficiency-perl
+Version: 0.05-3
+
+Package: memstat
+Version: 0.4.0.0.1
+
+Package: r-cran-multcomp
+Version: 0.991-9-1
+
+Package: wterm-ml
+Version: 6.2.9-8
+
+Package: vim-gtk
+Version: 1:7.0-219+1
+
+Package: rasqal-utils
+Version: 0.9.13-1
+
+Package: picprog
+Version: 1.8.3-1
+
+Package: wmpomme
+Version: 1.2~dfsg-1
+
+Package: scheme48-doc
+Version: 1.3-8
+
+Package: udo-doc-en
+Version: 6.4.1-1
+
+Package: pythoncard-doc
+Version: 0.8.1-8.1
+
+Package: hanzim
+Version: 1:1.3-1.1
+
+Package: phpgroupware-img
+Version: 0.9.16.011-3
+
+Package: cl-cffi
+Version: 20061013-1
+
+Package: libmissinglib-ocaml-dev
+Version: 0.4.10.debian-2+b1
+
+Package: wmibam
+Version: 0.0.1-2
+
+Package: libgphoto2-2-dev
+Version: 2.2.1-16
+
+Package: sufary
+Version: 2.1.1-7.1
+
+Package: rails-scgi
+Version: 0.4.3-1
+
+Package: libgda2-ruby
+Version: 0.15.0-1.1
+
+Package: stx2any
+Version: 1.56-2
+
+Package: wipl-client-exec
+Version: 20020601-11.1
+
+Package: scim-tables-zh
+Version: 0.5.6-2
+
+Package: librainbow0c2
+Version: 0.15.1-5+b1
+
+Package: atomix-data
+Version: 2.14.0-1
+
+Package: driconf
+Version: 0.9.0-2
+
+Package: libxcb-shape0-dev
+Version: 1.0-1.1
+
+Package: pike7.7
+Version: 7.7.24-1
+
+Package: liblttoolbox-1.0-0
+Version: 1.0.3-1
+
+Package: pike7.6
+Version: 7.6.93-3
+
+Package: privoxy
+Version: 3.0.6-2
+
+Package: floppyd
+Version: 3.9.10.ds1-3
+
+Package: python-pgsql
+Version: 2.5.1-2
+
+Package: gyrus
+Version: 0.3.6-1
+
+Package: metar
+Version: 20060405.1-1
+
+Package: libneon25-dev
+Version: 0.25.5.dfsg-6
+
+Package: squirrelmail
+Version: 2:1.4.9a-1
+
+Package: libgnustep-gui0.11-dbg
+Version: 0.11.0-2
+
+Package: libmdbodbc
+Version: 0.5.99.0.6pre1.0.20051109-3.1
+
+Package: monodoc-ipod-manual
+Version: 0.6.2-1
+
+Package: usbview
+Version: 1.0-7
+
+Package: zsh30-doc
+Version: 3.0.8-14
+
+Package: libcairo2
+Version: 1.2.4-4
+
+Package: libesd-alsa0
+Version: 0.2.36-3
+
+Package: dvdisaster
+Version: 0.70.4-2
+
+Package: fftw-docs
+Version: 2.1.3-20
+
+Package: geoip-bin
+Version: 1.3.17-1.1
+
+Package: liballegro4.1-plugin-arts
+Version: 2:4.1.15-6
+
+Package: libgtkglarea-perl
+Version: 0.7009-12
+
+Package: monotone-viz
+Version: 0.15-1
+
+Package: nethack-qt
+Version: 3.4.3-10.1
+
+Package: openafs-dbserver
+Version: 1.4.2-6
+
+Package: php-compat
+Version: 1.5.0-1
+
+Package: prime-el
+Version: 1.5.1.3-2
+
+Package: request-tracker3.4
+Version: 3.4.5-2
+
+Package: scim-bridge-client-qt
+Version: 0.4.10-1
+
+Package: libhtml-format-perl
+Version: 2.04-1
+
+Package: kvirc2-data
+Version: 2.1.3-6
+
+Package: eclipse-pydev
+Version: 1.2.5-2
+
+Package: zblast-x11
+Version: 1.3-2.1
+
+Package: libxmp2
+Version: 2.0.4d-11
+
+Package: request-tracker3.6
+Version: 3.6.1-4
+
+Package: userv
+Version: 1.0.5
+
+Package: openoffice.org-evolution
+Version: 2.0.4.dfsg.2-6
+
+Package: pulseaudio-utils
+Version: 0.9.5-7
+
+Package: gap-small-groups
+Version: 4r4p8-1
+
+Package: libdb4.4++-dev
+Version: 4.4.20-8
+
+Package: gtml
+Version: 3.5.4-2
+
+Package: lcdf-typetools
+Version: 2.45-1
+
+Package: sfs-server
+Version: 1:0.8-0+pre20060720.1-1
+
+Package: vrflash
+Version: 0.24-4
+
+Package: libxcb-record0
+Version: 1.0-1.1
+
+Package: libdime-dev
+Version: 0.20030921-2
+
+Package: libnet-xmpp-perl
+Version: 1.0-2
+
+Package: libgdbm3
+Version: 1.8.3-3
+
+Package: python2.4-doc
+Version: 2.4.4-2
+
+Package: libexif12
+Version: 0.6.13-5
+
+Package: gretl
+Version: 1.6.2-1
+
+Package: icedove-locale-lt
+Version: 1:1.5.0.8-1
+
+Package: libshib-target5
+Version: 1.3f.dfsg1-2
+
+Package: libqwt5-qt4-dev
+Version: 5.0.1-2
+
+Package: childsplay-lfc-names-nl
+Version: 0.1-2
+
+Package: sharutils
+Version: 1:4.2.1-15
+
+Package: gpe-soundserver
+Version: 0.4-1
+
+Package: ifenslave-2.6
+Version: 1.1.0-6
+
+Package: heartbeat-2-gui
+Version: 2.0.8-1
+
+Package: ia32-libs-gtk
+Version: 1.0
+
+Package: remotedesk.app
+Version: 0.1-1
+
+Package: libxine-dev
+Version: 1.1.2+dfsg-4
+
+Package: mbmon
+Version: 2.05-4
+
+Package: libqt3-mt-odbc
+Version: 3:3.3.7-3
+
+Package: gcompris-sound-ptbr
+Version: 8.2.2-1
+
+Package: original-awk
+Version: 2005-04-24-1
+
+Package: zaptel
+Version: 1:1.2.16~dfsg-1
+
+Package: enscript
+Version: 1.6.4-11
+
+Package: r-cran-mcmcpack
+Version: 0.8-1-1
+
+Package: xprobe
+Version: 0.3-1
+
+Package: cmuscheme48-el
+Version: 1.3-8
+
+Package: latex-source2e-doc
+Version: 3.0.dfsg.2-1
+
+Package: sqlrelay-odbc
+Version: 1:0.38-2
+
+Package: yudit-doc
+Version: 2.8.1-2
+
+Package: oo-browser
+Version: 4.08-3
+
+Package: xserver-xorg-video-v4l
+Version: 0.1.1-3
+
+Package: libi18n-charset-perl
+Version: 1.379-1
+
+Package: subtitleeditor
+Version: 0.13.2-1
+
+Package: vdr-plugin-games
+Version: 0.6.3-5
+
+Package: tamil-gtk2im
+Version: 2.2-4.3
+
+Package: epiphany-browser-dev
+Version: 2.14.3-6
+
+Package: libupnp0
+Version: 1.2.1-2
+
+Package: libetpan-doc
+Version: 0.48-3
+
+Package: sword-dict-strongs-greek
+Version: 1.2-2
+
+Package: xcall
+Version: 0.18-1
+
+Package: eclipse-common-nls
+Version: 3.2.1-3
+
+Package: liblazy-dev
+Version: 0.1-1
+
+Package: picon-misc
+Version: 2006.01.02-2
+
+Package: libtie-ixhash-perl
+Version: 1.21-2
+
+Package: librdf-ruby
+Version: 1.0.4.1-3
+
+Package: libgcrypt11
+Version: 1.2.3-2
+
+Package: dict-gazetteer2k
+Version: 1.0.0-5
+
+Package: hsqldb-server
+Version: 1.8.0.7-1
+
+Package: shishi-kdc
+Version: 0.0.30-2
+
+Package: libastro-fits-cfitsio-perl
+Version: 1.05-1
+
+Package: xoo
+Version: 0.7-2
+
+Package: rest2web
+Version: 0.5.0.svn-r227-1
+
+Package: libgoffice-1-dev
+Version: 0.2.1-4
+
+Package: file-rc
+Version: 0.8.10
+
+Package: libcurl4-gnutls
+Version: 7.16.1-1
+
+Package: liblingua-en-words2nums-perl
+Version: 0.14
+
+Package: plucker
+Version: 1.8-20
+
+Package: zope-cmfformcontroller
+Version: 2.0.6-1
+
+Package: libogg-dev
+Version: 1.1.3-2
+
+Package: openoffice.org-l10n-hu
+Version: 2.0.4.dfsg.2-6
+
+Package: openoffice.org-l10n-hr
+Version: 2.0.4.dfsg.2-6
+
+Package: gputils
+Version: 0.13.4-1
+
+Package: drbd0.7-module-source
+Version: 0.7.21-4
+
+Package: libwps-0.1-1
+Version: 0.1.0-3
+
+Package: scribble
+Version: 1.10-2
+
+Package: gnuplot-mode
+Version: 1:0.6.0-2.1
+
+Package: libxfcegui4-dev
+Version: 4.3.99.2-1
+
+Package: necpp
+Version: 1.2.4+cvs20060601-1
+
+Package: realtimebattle-common
+Version: 1.0.8-2
+
+Package: xcursor-themes
+Version: 1.0.1-5
+
+Package: isync
+Version: 1.0.3-3
+
+Package: selinux-utils
+Version: 1.32-3
+
+Package: xpdf-japanese
+Version: 1:20040727-1
+
+Package: libroxen-explaindir
+Version: 0.93-11
+
+Package: simpleopal
+Version: 2.2.3.dfsg-3
+
+Package: xmms-singit
+Version: 0.1.28+dfsg-1
+
+Package: libgwenhywfar-doc
+Version: 2.4.0-1
+
+Package: libmoe-dev
+Version: 1.5.7-1
+
+Package: sgb
+Version: 1:20050409-2
+
+Package: libstrutilsxx-0.7c2a
+Version: 0.7.2-1.2
+
+Package: manpages-nl
+Version: 20051127-2
+
+Package: compiz-kde
+Version: 0.3.6-1
+
+Package: guile-1.8-doc
+Version: 1.8.1+1-5
+
+Package: phpgroupware-comic
+Version: 0.9.16.011-3
+
+Package: libbeecrypt6
+Version: 4.1.2-6
+
+Package: icecast2
+Version: 2.3.1-5
+
+Package: libxmlsec1
+Version: 1.2.9-5
+
+Package: python-twisted
+Version: 2.4.0-3
+
+Package: python-dbus
+Version: 0.71-3
+
+Package: libnewt-pic
+Version: 0.52.2-10
+
+Package: buffer
+Version: 1.19-9
+
+Package: desktop-base
+Version: 4.0.1
+
+Package: conquest-libs
+Version: 8.2-3
+
+Package: gnucap
+Version: 1:0.35-1
+
+Package: libclass-dbi-plugin-perl
+Version: 0.03-4
+
+Package: overgod
+Version: 1.0-1
+
+Package: flumotion
+Version: 0.2.2-6
+
+Package: gnudip
+Version: 2.1.1-3
+
+Package: milter-greylist
+Version: 3.0-2
+
+Package: openoffice.org-l10n-he
+Version: 2.0.4.dfsg.2-6
+
+Package: php-image-graph
+Version: 0.7.1-1
+
+Package: xserver-xorg-input-tek4957
+Version: 1:1.1.0-2
+
+Package: firefox-locale-sv-se
+Version: 1.99+2.0b2-2
+
+Package: libtelepathy-dev
+Version: 0.0.51-3
+
+Package: redhat-cluster-modules-2.6-xen-amd64
+Version: 2:2.6.18-8
+
+Package: libsrs2-dev
+Version: 1.0.18-2
+
+Package: pwsafe
+Version: 0.2.0-2
+
+Package: workrave
+Version: 1.8.4-1
+
+Package: doc-linux-text-pt
+Version: 1999-12-5.1
+
+Package: qalculate-gtk
+Version: 0.9.4-2+b1
+
+Package: kdesvn-kio-plugins
+Version: 0.11.2-1
+
+Package: cvm
+Version: 0.76-2
+
+Package: libghc6-happs-dev
+Version: 0.8.4.dfsg1-1
+
+Package: lighttpd-mod-trigger-b4-dl
+Version: 1.4.13-10
+
+Package: libxcb-xtest0-dev
+Version: 1.0-1.1
+
+Package: mozilla-thunderbird-locale-ko
+Version: 1:1.5.0.8-1
+
+Package: libusb-dev
+Version: 2:0.1.12-6
+
+Package: beepcore-c-dev
+Version: 0.2+cvs20030603-1
+
+Package: krecipes
+Version: 1.0~beta1-1
+
+Package: xmms-xmmplayer
+Version: 0.3.3-1
+
+Package: libqdbm14
+Version: 1.8.74-1.1
+
+Package: cl-iterate
+Version: 1.4.2-2
+
+Package: libgtkhex0
+Version: 2.8.2-3
+
+Package: kicad-doc-ru
+Version: 0.0.20060829-2
+
+Package: elvis-console
+Version: 2.2.0-8
+
+Package: rt3.4-clients
+Version: 3.4.5-2
+
+Package: libapache-mod-ssl
+Version: 2.8.25-2
+
+Package: libfcgi-perl
+Version: 0.67-2
+
+Package: asterisk-prompt-es-co
+Version: 0.20061027-1
+
+Package: libcapsinetwork-dev
+Version: 0.3.0-2
+
+Package: libgnomecanvas2-ruby
+Version: 0.15.0-1.1
+
+Package: openoffice.org-l10n-hi
+Version: 2.0.4.dfsg.2-6
+
+Package: plplot-bin
+Version: 5.6.1-10
+
+Package: libgda2-doc
+Version: 1.2.3-5
+
+Package: muine-plugin-inotify
+Version: 0.8.7-1
+
+Package: xstow
+Version: 0.5.1-3
+
+Package: libmono-microsoft8.0-cil
+Version: 1.2.2.1-2
+
+Package: cvs
+Version: 1:1.12.13-8
+
+Package: libnjb-examples
+Version: 2.2.5-4.1
+
+Package: libxmlsec1-gnutls
+Version: 1.2.9-5
+
+Package: liferea
+Version: 1.0.27-2
+
+Package: dist
+Version: 3.70-31
+
+Package: fastlink
+Version: 4.1P-fix92-1
+
+Package: liblog4net1.2-cil
+Version: 1.2.8+1.2.9beta-1
+
+Package: xmms-mp4
+Version: 2.5-2
+
+Package: astyle
+Version: 1.18-1
+
+Package: libboost-serialization-dev
+Version: 1.33.1-10
+
+Package: libfile-type-perl
+Version: 0.22-1
+
+Package: perlsgml
+Version: 1:19970918-12.2
+
+Package: complearn-tools
+Version: 0.9.7-2
+
+Package: kontact
+Version: 4:3.5.5.dfsg.1-6
+
+Package: cpp-2.95-doc
+Version: 1:2.95.4-27
+
+Package: aspell-ar
+Version: 0.0.20060329-3
+
+Package: eb-doc
+Version: 4.3-3
+
+Package: nkf
+Version: 2.07-1
+
+Package: libevolution2.0-cil
+Version: 0.11.1-3
+
+Package: cipe-common
+Version: 1.5.4free-12
+
+Package: xaralx-examples
+Version: 0.7r1692-2
+
+Package: libjackasyn-dev
+Version: 0.11-2
+
+Package: python-kinterbasdb
+Version: 3.1.2-0.3
+
+Package: libggiwmh0-target-x
+Version: 0.3.1-2
+
+Package: libswt-gnome-gtk-3.2-jni
+Version: 3.2.1-5
+
+Package: xserver-xorg-video-sis
+Version: 1:0.9.1-4
+
+Package: webauth-weblogin
+Version: 3.5.3-2
+
+Package: mpage
+Version: 2.5.4-2
+
+Package: libclass-dbi-fromcgi-perl
+Version: 1.00-2
+
+Package: librapi2-dev
+Version: 0.9.3-3
+
+Package: vlc-plugin-ggi
+Version: 0.8.6.a.debian-6
+
+Package: kget
+Version: 4:3.5.5-5
+
+Package: python-tk
+Version: 2.4.4-1
+
+Package: gimp-help-de
+Version: 2+0.10-2
+
+Package: libxcbrecord0-dbg
+Version: 0.9-3
+
+Package: libdnsres0
+Version: 0.1a-4
+
+Package: libphp-phpmailer
+Version: 1.73-3
+
+Package: parchive
+Version: 1.1-4
+
+Package: mutt-ng
+Version: 0.0+20060429-2
+
+Package: libconfuse0
+Version: 2.5-3
+
+Package: pingus-data
+Version: 0.6.0-8.4
+
+Package: tcpquota
+Version: 1.6.15-12
+
+Package: libxklavier11-dev
+Version: 3.1-2
+
+Package: libxml-sax-expat-incremental-perl
+Version: 0.04-1
+
+Package: libtermios-ruby
+Version: 0.9.4-7
+
+Package: pinball-data
+Version: 0.3.1-7
+
+Package: pympd
+Version: 0.07-1.1
+
+Package: xmms-scrobbler
+Version: 0.3.8.1-4
+
+Package: xfstt
+Version: 1.7-3
+
+Package: libdbd-sqlite
+Version: 0.7.1-3.1
+
+Package: libgnomeui-doc
+Version: 2.14.1-3
+
+Package: osgcal-doc
+Version: 0.1.44-3
+
+Package: eog
+Version: 2.16.3-3
+
+Package: inetutils-inetd
+Version: 2:1.5.dfsg.1-4
+
+Package: libforms-bin
+Version: 1.0-7
+
+Package: libmthca1-dbg
+Version: 1.0.3-1
+
+Package: sword-comm-scofield
+Version: 1.0-2
+
+Package: xfonts-bolkhov-cp1251-75dpi
+Version: 1.1.20001007-6
+
+Package: asclock
+Version: 2.0.12-8.1
+
+Package: inetutils-ftpd
+Version: 2:1.5.dfsg.1-4
+
+Package: cscope
+Version: 15.6-2
+
+Package: libjcommon-java-doc
+Version: 1.0.6-1
+
+Package: discus
+Version: 0.2.9-3
+
+Package: runit
+Version: 1.7.2-1
+
+Package: ipython
+Version: 0.7.3-2
+
+Package: kball
+Version: 0.0.20041216-4
+
+Package: mantis
+Version: 1.0.6+dfsg-4.1
+
+Package: libpisync0
+Version: 0.12.2-9
+
+Package: heartbeat
+Version: 1.2.5-3
+
+Package: libgsmme-dev
+Version: 1.10-10
+
+Package: libc6-dbg
+Version: 2.3.6.ds1-13
+
+Package: libcegui-mk2-0c2a-dbg
+Version: 0.5.0-1
+
+Package: meep-mpi
+Version: 0.10-2
+
+Package: python-tz
+Version: 2006p-0.1
+
+Package: libtifiles0
+Version: 0.6.6-2
+
+Package: uswsusp
+Version: 0.6~cvs20070202-1
+
+Package: slrnpull
+Version: 0.9.8.1pl1-28
+
+Package: ttf-telugu-fonts
+Version: 1:0.4.8
+
+Package: num-utils
+Version: 0.5-7
+
+Package: python-musicbrainz2
+Version: 0.4.1-1
+
+Package: libirman-dev
+Version: 0.4.4-1
+
+Package: biff
+Version: 1:0.17.pre20000412-3
+
+Package: libvte-doc
+Version: 1:0.12.2-5
+
+Package: python-poker-engine
+Version: 1.0.24-1
+
+Package: sic
+Version: 0.9-1
+
+Package: posixtestsuite
+Version: 1.5.1-1
+
+Package: xqf
+Version: 1.0.5-1
+
+Package: emile
+Version: 0.10-1
+
+Package: koffice-dbg
+Version: 1:1.6.1-2
+
+Package: libfilesys-diskspace-perl
+Version: 0.05-10
+
+Package: phpbb2-languages
+Version: 2.0.21-6
+
+Package: evolution-data-server-common
+Version: 1.6.3-5
+
+Package: libg2c0-dev
+Version: 1:3.4.6-5
+
+Package: libsexymm-dev
+Version: 0.1.9-2
+
+Package: sim
+Version: 0.9.4.2-1
+
+Package: php4-recode
+Version: 6:4.4.4-9
+
+Package: vstream
+Version: 0.4.5-4
+
+Package: libenchant-dev
+Version: 1.3.0-2
+
+Package: genparse
+Version: 0.5.2-11
+
+Package: siproxd
+Version: 1:0.5.13-1
+
+Package: libsdl1.2debian
+Version: 1.2.11-8
+
+Package: axyl-lucene
+Version: 2.1.9
+
+Package: tessa
+Version: 0.3.1-4
+
+Package: icatalan
+Version: 0.5-3
+
+Package: docbook-doc
+Version: 30d10-8
+
+Package: libjasper-1.701-dev
+Version: 1.701.0-2
+
+Package: libsofia-sip-ua0
+Version: 1.12.4-1
+
+Package: mimedecode
+Version: 1.9-4
+
+Package: libxinerama1
+Version: 1:1.0.1-4.1
+
+Package: lzma
+Version: 4.43-5
+
+Package: aboot-base
+Version: 0.9b-3
+
+Package: bochs-term
+Version: 2.3-2
+
+Package: icedove-locale-es-ar
+Version: 1:1.5.0.8-1
+
+Package: lbreakout2-data
+Version: 2.5.2-2.1
+
+Package: wakeonlan
+Version: 0.41-9
+
+Package: ruby1.8-elisp
+Version: 1.8.6-1
+
+Package: libnl1-pre6
+Version: 1.0~pre6-4
+
+Package: python-slides
+Version: 1.0.1-11
+
+Package: cpp-4.2-doc
+Version: 4.2-20070307-1
+
+Package: aime-doc
+Version: 0.60-1.2
+
+Package: kpsk
+Version: 1.0.1-4.1
+
+Package: klash
+Version: 0.7.2-1
+
+Package: omega-rpg
+Version: 1:0.90-pa9-13
+
+Package: proofgeneral-misc
+Version: 3.5-4.1
+
+Package: wmgtemp
+Version: 0.7-1
+
+Package: sope4.4-versitsaxdriver
+Version: 4.4rc.2-3.1
+
+Package: cl-xlunit
+Version: 0.6.2-1
+
+Package: libxslt1-dbg
+Version: 1.1.19-1
+
+Package: gnome-system-monitor
+Version: 2.14.5-1
+
+Package: nagios-plugins-standard
+Version: 1.4.5-2
+
+Package: zope-securemailhost
+Version: 1.0.4-2
+
+Package: upstreamdev
+Version: 0.1.0-2
+
+Package: python-ctypes
+Version: 1.0.1-1
+
+Package: cracklib2-dev
+Version: 2.7-19
+
+Package: tuxpaint
+Version: 1:0.9.16-1
+
+Package: liballegro4.2-dev
+Version: 2:4.2.0-5
+
+Package: manpages-de
+Version: 0.5-2
+
+Package: fop
+Version: 1:0.20.5-8
+
+Package: ieee80211-headers-2.6.17-2
+Version: 1.1.14-1
+
+Package: regionset
+Version: 0.1-3
+
+Package: libuuid1
+Version: 1.39+1.40-WIP-2006.11.14+dfsg-2
+
+Package: libfile-sync-perl
+Version: 0.09-4
+
+Package: gri-el
+Version: 2.12.14-1
+
+Package: python-cxx-dev
+Version: 5.3.6-1
+
+Package: libsfs0c2
+Version: 1:0.8-0+pre20060720.1-1
+
+Package: libgtop2-common
+Version: 2.14.4-3
+
+Package: dirdiff
+Version: 2.1-1
+
+Package: liblua5.1-expat0
+Version: 1.0.2-3
+
+Package: iceweasel-l10n-uk-ua
+Version: 2.0.0.3+debian-1
+
+Package: libnewmat10
+Version: 1.10.4-2
+
+Package: vflib2-misc
+Version: 2.25.1-20
+
+Package: vim-spellfiles-ca
+Version: 20060604-1
+
+Package: php4-pspell
+Version: 6:4.4.4-9
+
+Package: vpnc
+Version: 0.4.0-2
+
+Package: installation-guide-i386
+Version: 20070319
+
+Package: libgtk2.0-cil
+Version: 2.8.3-2
+
+Package: xchat-xsys
+Version: 2.0.9-1
+
+Package: liwc
+Version: 1.20-5
+
+Package: libflash0c2
+Version: 0.4.13-9
+
+Package: libfilesys-smbclient-perl
+Version: 3.1-1
+
+Package: libio-zlib-perl
+Version: 1.04-1
+
+Package: gawk-doc
+Version: 3.1.5-1
+
+Package: lwresd
+Version: 1:9.3.4-2
+
+Package: mozilla-locale-ptbr
+Version: 1.7.12-3
+
+Package: tablix2
+Version: 0.3.3-1
+
+Package: konsole
+Version: 4:3.5.5a.dfsg.1-6
+
+Package: libraw1394-doc
+Version: 1.2.1-2
+
+Package: libqbanking4
+Version: 2.2.3-4
+
+Package: xabacus
+Version: 7.1.7-1
+
+Package: libroxen-switch
+Version: 1.2-12
+
+Package: poppass-cgi
+Version: 3-4
+
+Package: mozilla-dom-inspector
+Version: 2:1.8+1.0.8-4
+
+Package: libauthen-simple-perl
+Version: 0.4-2
+
+Package: vsound
+Version: 0.6-4.1
+
+Package: loki-doc
+Version: 2.4.7.4-1
+
+Package: thunderbird-locale-zh-cn
+Version: 1:1.5.0.8-1
+
+Package: stumpwm
+Version: 1:20060930-3
+
+Package: systemimager-common
+Version: 3.6.3dfsg1-3
+
+Package: kexi-mdb-plugin
+Version: 1.1.0-1
+
+Package: libumfpack4-doc
+Version: 4.4-3
+
+Package: pyqonsole
+Version: 0.2.0-2+b1
+
+Package: libsort-versions-perl
+Version: 1.5-3
+
+Package: clips
+Version: 6.21-6.2
+
+Package: ocaml-book-en
+Version: 1.0-4
+
+Package: libgtk-cil
+Version: 1:1.0.10-5
+
+Package: wmwork
+Version: 0.2.5-1
+
+Package: apache2-doc
+Version: 2.2.3-3.3
+
+Package: libaio1
+Version: 0.3.106-4
+
+Package: vim-spellfiles-cs
+Version: 20060604-1
+
+Package: debian-edu-install
+Version: 0.662
+
+Package: kiss
+Version: 0.21-14
+
+Package: scorched3d
+Version: 40.1d.dfsg-1
+
+Package: unpaper
+Version: 0.2-1
+
+Package: bash-minimal
+Version: 3.1dfsg-8
+
+Package: mathwar
+Version: 0.2.4-4
+
+Package: libspiffy-perl
+Version: 0.29-1
+
+Package: sillypoker
+Version: 0.25.5-5
+
+Package: korn
+Version: 4:3.5.5.dfsg.1-6
+
+Package: gda2-mysql
+Version: 1.2.3-5
+
+Package: jack
+Version: 3.1.1+cvs20050801-14
+
+Package: libbitcollider-dev
+Version: 0.4.0-3.3
+
+Package: directory-administrator
+Version: 1.7.1-1
+
+Package: libavahi-client-dev
+Version: 0.6.16-5
+
+Package: libdiscover1-pic
+Version: 1.7.20
+
+Package: sdcc-ucsim
+Version: 2.6.0-5
+
+Package: colorgcc
+Version: 1.3.2.0-4
+
+Package: libinstrudeo0
+Version: 0.1.4-4
+
+Package: noteedit-data
+Version: 2.8.1-2
+
+Package: atlc-examples
+Version: 4.6.0-1
+
+Package: vegastrike-music
+Version: 0.4.3-1
+
+Package: tuxpaint-config
+Version: 0.0.7-1
+
+Package: heroes-ggi
+Version: 0.21-7
+
+Package: libunicode-japanese-perl
+Version: 0.23-1
+
+Package: dates
+Version: 0.3.1-1
+
+Package: libstk0c2a
+Version: 4.2.0-9
+
+Package: libspandsp1
+Version: 0.0.2pre26-1
+
+Package: python-pyparsing
+Version: 1.4.2-1.1
+
+Package: kwavecontrol
+Version: 0.4.2-2
+
+Package: spl-opengl
+Version: 1.0~pre3-1
+
+Package: bumprace-data
+Version: 1.5.3-1
+
+Package: libunicode0
+Version: 0.4.0-5
+
+Package: lprof
+Version: 1.11.4.dfsg+1.11.4.1-2
+
+Package: libspandsp2
+Version: 0.0.3pre27-2
+
+Package: openoffice.org-l10n-pt-br
+Version: 2.0.4.dfsg.2-6
+
+Package: libgdk-pixbuf-dev
+Version: 0.22.0-11
+
+Package: mueller7-mova
+Version: 2002.02.27-5
+
+Package: libedata-cal1.2-dev
+Version: 1.6.3-4
+
+Package: units
+Version: 1.85-3
+
+Package: gnomekiss
+Version: 2.0-1
+
+Package: smbnetfs
+Version: 0.3.8-1
+
+Package: libmlpcap-ocaml
+Version: 0.9-9
+
+Package: r-cran-fmultivar
+Version: 240.10068-1
+
+Package: liblcms1-dev
+Version: 1.15-1
+
+Package: achilles
+Version: 2-7
+
+Package: eboard-extras-pack1
+Version: 2-1.1
+
+Package: fb-music-low
+Version: 2.1.0-1
+
+Package: texlive-lang-tibetan
+Version: 2005.dfsg.2-5
+
+Package: glut-doc
+Version: 3.7-25
+
+Package: bandwidthd-pgsql
+Version: 2.0.1+cvs20050208-10
+
+Package: libapache2-mod-annodex
+Version: 0.2.2-5
+
+Package: ospics
+Version: 0.72d-9
+
+Package: xblast
+Version: 1:2.6.1-12
+
+Package: libwebauth1-dev
+Version: 3.5.3-2
+
+Package: libgfcui-dev
+Version: 2.3.1-7
+
+Package: libindex0-dev
+Version: 4:3.5.5.dfsg.1-6
+
+Package: libgnomesupport0
+Version: 1.4.2-35
+
+Package: libgd2-xpm
+Version: 2.0.34~rc1-2
+
+Package: mkcue
+Version: 1-2
+
+Package: debmirror
+Version: 20070123
+
+Package: shisen.app
+Version: 1.2.0-4
+
+Package: libavl1
+Version: 0.3.5-2
+
+Package: libhk-classes-postgres
+Version: 0.8.2-2
+
+Package: linux-modules-2.6.18-4-xen-amd64
+Version: 2.6.18.dfsg.1-12
+
+Package: bximage
+Version: 2.3-2
+
+Package: libdcmtk1
+Version: 3.5.4-2
+
+Package: xed
+Version: 0.9.1-9
+
+Package: fwbuilder-doc
+Version: 2.1.8-1
+
+Package: x10-automate
+Version: 1.00-8
+
+Package: libtest-simple-perl
+Version: 0.62-1
+
+Package: libsdl-ocaml-dev
+Version: 0.7.2-6
+
+Package: libkernlib1
+Version: 2005.dfsg-5
+
+Package: routeplanner
+Version: 0.19
+
+Package: horae
+Version: 064-1
+
+Package: gnatsweb
+Version: 4.00-1
+
+Package: randomplay
+Version: 0.60
+
+Package: collectd-hddtemp
+Version: 3.10.4-1
+
+Package: infon-viewer
+Version: 0~r139-1
+
+Package: libwxbase2.4-1
+Version: 2.4.5.1.1
+
+Package: libmd5-perl
+Version: 2.03-1
+
+Package: tk8.4
+Version: 8.4.12-1
+
+Package: rdist
+Version: 6.1.5-12
+
+Package: libhamlib2-perl
+Version: 1.2.6.1-1
+
+Package: libromkan-ruby1.8
+Version: 0.4-5
+
+Package: t-prot
+Version: 2.4-1
+
+Package: childsplay-alphabet-sounds-it
+Version: 0.4.2-1
+
+Package: monodoc-gtk2.0-manual
+Version: 2.8.3-2
+
+Package: poc-streamer
+Version: 0.4.2-3
+
+Package: gconf-editor
+Version: 2.16.0-2
+
+Package: cmap-adobe-japan1
+Version: 0+20060504-2
+
+Package: libxcb-sync0-dev
+Version: 1.0-1.1
+
+Package: libssl-ocaml
+Version: 0.4.0-1
+
+Package: libhamlib-doc
+Version: 1.2.6.1-1
+
+Package: tart
+Version: 3.07-1
+
+Package: xdmx
+Version: 2:1.1.1-20
+
+Package: cmap-adobe-japan2
+Version: 0+20020208-1
+
+Package: mkisofs
+Version: 9:1.1.4-1
+
+Package: cuyo
+Version: 1.8.6-1
+
+Package: gspca-modules-2.6-amd64
+Version: 2:2.6.18-8
+
+Package: texmaker
+Version: 1.5-1
+
+Package: tk8.3
+Version: 8.3.5-6
+
+Package: xscorch
+Version: 0.2.0-4
+
+Package: xtrlock
+Version: 2.0-12
+
+Package: libqdbm-perl
+Version: 1.8.74-1.1
+
+Package: libstring-escape-perl
+Version: 2002.001-7
+
+Package: ctrlproxy
+Version: 3.0.1-1
+
+Package: ams
+Version: 1.8.7-5
+
+Package: phalanx
+Version: 22+d051004-4
+
+Package: kdirstat
+Version: 2.4.4-3
+
+Package: dhcp-helper
+Version: 0.7-1
+
+Package: mozilla-firefox-locale-de-de
+Version: 2.0.0.3+debian-1
+
+Package: lingoteach-sound-german
+Version: 0.3.9-4
+
+Package: python-pyvtk
+Version: 0.4.74-1
+
+Package: sysprofile
+Version: 0.3.8
+
+Package: xdms
+Version: 1.3.2-2
+
+Package: libytnef0
+Version: 1.5-1
+
+Package: egroupware-wiki
+Version: 1.2.106-2.dfsg-2
+
+Package: libgtk-directfb-2.0-dev
+Version: 2.8.20-7
+
+Package: fet
+Version: 3.18.2-1
+
+Package: stroq
+Version: 0.2-3
+
+Package: libsaxon-java-doc
+Version: 1:6.5.5-1
+
+Package: dlocate
+Version: 0.5-0.3
+
+Package: libexif-gtk5
+Version: 0.3.5-3
+
+Package: libentity-dev
+Version: 1.0.1-9
+
+Package: linux-image-2.6-amd64
+Version: 2.6.18+6
+
+Package: openafs-client
+Version: 1.4.2-6
+
+Package: feh
+Version: 1.3.4-2
+
+Package: gdesklets
+Version: 0.35.3-4+b1
+
+Package: libtao-xtresource1.4.7c2a
+Version: 5.4.7-12
+
+Package: sylpheed-claws-gtk2-newmail-plugin
+Version: 2.6.0-1
+
+Package: libtasn1-3
+Version: 0.3.6-2
+
+Package: cl-qbook
+Version: 1:20061003-1
+
+Package: lsb-base
+Version: 3.1-23.1
+
+Package: libcurl3-gnutls
+Version: 7.15.5-1
+
+Package: modemp3d
+Version: 0.1-7
+
+Package: kdesdk-kfile-plugins
+Version: 4:3.5.5-3
+
+Package: squid3-common
+Version: 3.0.PRE5-5
+
+Package: libgnustep-gui0.11
+Version: 0.11.0-2
+
+Package: hugin-data
+Version: 0.6.1-1
+
+Package: libosmesa6-dev
+Version: 6.5.1-0.6
+
+Package: libtulip-ogl-2.0c2a
+Version: 2.0.6-4
+
+Package: debian-reference
+Version: 1.11
+
+Package: epix1
+Version: 1.0.19-1
+
+Package: fontconfig
+Version: 2.4.2-1.2
+
+Package: libjline-java
+Version: 0.9.5-2
+
+Package: libstdc++6-4.1-doc
+Version: 4.1.1-21
+
+Package: libaprutil1-dbg
+Version: 1.2.7+dfsg-2
+
+Package: libghc6-hunit-dev
+Version: 1.1-3
+
+Package: liblockdev1-dev
+Version: 1.0.3-1.2
+
+Package: crystalspace-data
+Version: 0.98-20040623-1
+
+Package: kspaceduel
+Version: 4:3.5.5-1
+
+Package: libconfig-yaml-perl
+Version: 1.42-1
+
+Package: mp3check
+Version: 0.8.0-4.1
+
+Package: python-vobject
+Version: 0.4.4-1.1
+
+Package: xfce4-datetime-plugin
+Version: 0.4.0-1
+
+Package: cwebx
+Version: 3.04-8
+
+Package: grub-splashimages
+Version: 1.0.0
+
+Package: ami
+Version: 1.2.3-3
+
+Package: compiz
+Version: 0.2.2-1
+
+Package: openoffice.org-help-ja
+Version: 2.0.4.dfsg.2-6
+
+Package: libharminv2
+Version: 1.3.1-1
+
+Package: libhtml-tagcloud-perl
+Version: 0.32-1
+
+Package: sylpheed-claws-trayicon
+Version: 1.0.5-5.1
+
+Package: crashme
+Version: 2.4-9
+
+Package: happydigger
+Version: 2.1-1
+
+Package: libprinterconf-dev
+Version: 0.5-8.1
+
+Package: wordplay
+Version: 7.22-17
+
+Package: libzeroc-ice32
+Version: 3.2.0-3
+
+Package: gtalk
+Version: 0.99.10-11
+
+Package: kon2
+Version: 0.3.9b-19
+
+Package: teapop-mysql
+Version: 0.3.7-5
+
+Package: openoffice.org-help-en-us
+Version: 2.0.4.dfsg.2-7
+
+Package: halibut
+Version: 0.9+svn20050729-1
+
+Package: php4-ps
+Version: 1.3.4-3
+
+Package: crossfire-maps-small
+Version: 1.5.0-3
+
+Package: mozilla-firefox-locale-es-ar
+Version: 2.0.0.3+debian-1
+
+Package: libgsl0-dbg
+Version: 1.9-1
+
+Package: libwww-freshmeat-perl
+Version: 0.01-3
+
+Package: libx500-dn-perl
+Version: 0.28-1
+
+Package: t-coffee
+Version: 2.50-1
+
+Package: libjpeg62
+Version: 6b-13
+
+Package: slib
+Version: 3a4-4
+
+Package: mh-book
+Version: 200605-1
+
+Package: odt2txt
+Version: 0.2+git20070106-2
+
+Package: sg-utils
+Version: 1.02-3.1
+
+Package: alexandria
+Version: 0.6.1-1
+
+Package: libcommons-beanutils-java-doc
+Version: 1.7.0-4
+
+Package: renaissance
+Version: 0.8.0-10
+
+Package: python-impacket
+Version: 0.9.6.0-2
+
+Package: syncekonnector-dev
+Version: 0.3.2-3
+
+Package: openoffice.org-help-pt-br
+Version: 2.0.4.dfsg.2-6
+
+Package: zope-marshall
+Version: 1.4.2-1
+
+Package: vmware-package
+Version: 0.4
+
+Package: liballegro4.1-plugin-jack
+Version: 2:4.1.15-6
+
+Package: qmail-src
+Version: 1.03-44
+
+Package: mlock
+Version: 7:2002edebian1-13.1
+
+Package: apcupsd-doc
+Version: 3.14.0-2
+
+Package: libk3b2
+Version: 0.12.17-9
+
+Package: libapache2-mod-apreq2
+Version: 2.08-4
+
+Package: librenaissance0-dev
+Version: 0.8.0-10
+
+Package: gtklp
+Version: 1.2.2-1
+
+Package: libglibmm-2.4-dev
+Version: 2.12.7-1
+
+Package: dict-freedict-eng-hin
+Version: 1.3-3
+
+Package: nip2
+Version: 7.10.21-1
+
+Package: kdebase-data
+Version: 4:3.5.5a.dfsg.1-6
+
+Package: atop
+Version: 1.16-2
+
+Package: libsgutils1
+Version: 1.21-2.1
+
+Package: libopenssl-ruby1.8
+Version: 1.8.6-1
+
+Package: libhamlib-dev
+Version: 1.2.6.1-1
+
+Package: libchipcard2-dev
+Version: 2.1.9-2
+
+Package: libopenssl-ruby1.9
+Version: 1.9.0+20060609-1
+
+Package: mu-cite
+Version: 8.1+0.20050706-2
+
+Package: psk31lx
+Version: 2.1+2.2beta1-7
+
+Package: libxinerama-dev
+Version: 1:1.0.1-4.1
+
+Package: openoffice.org-gnome
+Version: 2.0.4.dfsg.2-6
+
+Package: price.app
+Version: 0.8.0-2
+
+Package: prcs-visualtree
+Version: 1.3.3-8
+
+Package: fractxtra
+Version: 6-7
+
+Package: metacity
+Version: 1:2.14.5-4
+
+Package: libxml-dom-perl
+Version: 1.43-4
+
+Package: aspell-ku
+Version: 0.20-0-3
+
+Package: libbuffy-dev
+Version: 0.9-1
+
+Package: libqt4-gui
+Version: 4.2.2-1
+
+Package: libmono-system-ldap2.0-cil
+Version: 1.2.2.1-2
+
+Package: xdiskusage
+Version: 1.48-7
+
+Package: dhcping
+Version: 1.2-3
+
+Package: focalinux-text
+Version: 2006-07-1
+
+Package: libdrb-ruby
+Version: 2.0.4+ruby1.8.2-1
+
+Package: mpb
+Version: 1.4.2-10
+
+Package: sendpage-server
+Version: 0.9.14.dfsg-0.2
+
+Package: mpc
+Version: 0.11.2-2
+
+Package: pfb2t1c2pfb
+Version: 0.3-3
+
+Package: eldav
+Version: 0.8.1-2
+
+Package: kdeaccessibility-doc-html
+Version: 4:3.5.5-2
+
+Package: cpp-4.1
+Version: 4.1.1-21
+
+Package: subversion-tools
+Version: 1.4.2dfsg1-2
+
+Package: docbook-utils
+Version: 0.6.14-1
+
+Package: libkdegames1
+Version: 4:3.5.5-1
+
+Package: texlive-generic-recommended
+Version: 2005.dfsg.3-1
+
+Package: libdbh1.0-dev
+Version: 1.0.24-2
+
+Package: mpd
+Version: 0.12.1-1.1
+
+Package: kpercentage
+Version: 4:3.5.5-1
+
+Package: gaim-thinklight
+Version: 0.6-1
+
+Package: nessus
+Version: 2.2.8-4
+
+Package: libslang2-pic
+Version: 2.0.6-4
+
+Package: ttf2pt1
+Version: 3.4.4-1.3
+
+Package: pootle
+Version: 0.10.1-1
+
+Package: cpp-4.2
+Version: 4.2-20070307-1
+
+Package: slashem-common
+Version: 0.0.7E7F2-3
+
+Package: libcurl4-openssl
+Version: 7.16.1-1
+
+Package: lookup
+Version: 1.08b-10
+
+Package: innfeed
+Version: 0.10.1.7-8
+
+Package: python-pyasn1
+Version: 0.0.5a-2
+
+Package: liboil0.3-dev
+Version: 0.3.10-1.1
+
+Package: libvanessa-adt0
+Version: 0.0.7-2
+
+Package: bombermaze
+Version: 0.6.6-16
+
+Package: libgsl-ruby-doc
+Version: 1.8.3-1
+
+Package: wfinnish
+Version: 0.7-17
+
+Package: festvox-kdlpc16k
+Version: 1.4.0-5
+
+Package: mutt
+Version: 1.5.13-3
+
+Package: artist
+Version: 1.2.6-3
+
+Package: libbeecrypt6-dev
+Version: 4.1.2-6
+
+Package: python-geoip
+Version: 1.2.1-2
+
+Package: krusader
+Version: 1.70.1-1
+
+Package: openhpi
+Version: 2.6.2-3
+
+Package: gcompris-sound-hu
+Version: 8.2.2-1
+
+Package: libcatalyst-modules-extra-perl
+Version: 3
+
+Package: libnet-rawip-perl
+Version: 0.20-2
+
+Package: libtime-period-perl
+Version: 1.20-8
+
+Package: kspread
+Version: 1:1.6.1-2
+
+Package: egnome
+Version: 0.cvs20020302-4
+
+Package: python-opencv
+Version: 0.9.7-4
+
+Package: gnuplot-nox
+Version: 4.0.0-5
+
+Package: texi2html
+Version: 1.76-4
+
+Package: user-setup
+Version: 1.11
+
+Package: debian-reference-common
+Version: 1.11
+
+Package: libmtp-dev
+Version: 0.1.4-1
+
+Package: dict-freedict-jpn-deu
+Version: 1.3-3
+
+Package: liblscp
+Version: 0.3.1-1
+
+Package: gpsim-dev
+Version: 0.22.0-1
+
+Package: quicksynergy
+Version: 0.3.2.1-1
+
+Package: spfqtool
+Version: 0.999-1.0.0-p3-3
+
+Package: krdc
+Version: 4:3.5.5-5
+
+Package: dwww
+Version: 1.10.3
+
+Package: libiodbc2
+Version: 3.52.4-5
+
+Package: libsablot0-dev
+Version: 1.0.3-1
+
+Package: mutt-vc-query
+Version: 002-3
+
+Package: developers-reference
+Version: 3.3.8
+
+Package: installation-guide-hppa
+Version: 20070319
+
+Package: libhugs-hslogger
+Version: 1.0.2
+
+Package: liboggz1-dbg
+Version: 0.9.5-4
+
+Package: procps
+Version: 1:3.2.7-3
+
+Package: libf2c2-dev
+Version: 20050501-2
+
+Package: krb5-ftpd
+Version: 1.4.4-7
+
+Package: libclan2c2a-jpeg
+Version: 0.6.5-1-4
+
+Package: libeditline0
+Version: 1.12-5
+
+Package: libform-validator-ruby1.8
+Version: 0.1.4-5
+
+Package: gok-doc
+Version: 1.2.3-1
+
+Package: egoboo
+Version: 2.22-28
+
+Package: libgcrypt11-dbg
+Version: 1.2.3-2
+
+Package: gnome-cards-data
+Version: 1:2.16.3-1
+
+Package: g++-4.2
+Version: 4.2-20070307-1
+
+Package: exdbm
+Version: 1.0b2-15
+
+Package: g++-4.1
+Version: 4.1.1-21
+
+Package: myspell-fr-gut
+Version: 1:1.0-19
+
+Package: libgdamm1.3-dev
+Version: 1.3.7-1
+
+Package: libintl-gettext-ruby
+Version: 0.11-9
+
+Package: xapian-omega
+Version: 0.9.9-1
+
+Package: libasm-java-doc
+Version: 1.5.3-4
+
+Package: starttls
+Version: 0.10-3
+
+Package: libqca2-dev
+Version: 2.0~beta2-1
+
+Package: libroxen-linkif
+Version: 1.0-10
+
+Package: witalian
+Version: 1.7.3-0.1
+
+Package: libsilc-1.0-2
+Version: 0.9.12-6
+
+Package: aptitude-doc-fr
+Version: 0.4.4-4
+
+Package: libvformat1-dev
+Version: 1.13-4
+
+Package: mksh
+Version: 28.0-2
+
+Package: ndoc-console
+Version: 1.3.1-2
+
+Package: lib32gcj8
+Version: 4.2-20070105-1
+
+Package: libg2-dev
+Version: 0.70-1.2
+
+Package: alamin-mysql
+Version: 0.3.7-2
+
+Package: firefox-locale-ar
+Version: 1.99+2.0b2-2
+
+Package: micro-proxy
+Version: 20021030+debian-3
+
+Package: tagcoll
+Version: 2.0.4-1
+
+Package: debiandoc-sgml
+Version: 1.1.101
+
+Package: zope-cmfcalendar1.6
+Version: 1.6.2-1
+
+Package: libxcb-render0-dbg
+Version: 1.0-1.1
+
+Package: wpasupplicant
+Version: 0.5.5-4
+
+Package: jabber-dev
+Version: 1.4.3-3.3
+
+Package: koules
+Version: 1.4-15
+
+Package: libjabberoo0c2a-dbg
+Version: 1.9.4+cvs20040709-8
+
+Package: libwvstreams4.2-doc
+Version: 4.2.2-2.2
+
+Package: libfile-scan-perl
+Version: 1.43-1
+
+Package: libcunit1
+Version: 2.1-0.dfsg-3
+
+Package: php4-xslt
+Version: 6:4.4.4-9
+
+Package: deluge-torrent
+Version: 0.5.0-2
+
+Package: linkchecker
+Version: 4.6-1
+
+Package: libamrita-ruby1.8
+Version: 1.0.2-4
+
+Package: libdbd-sqlite3-ruby1.8
+Version: 0.1.1-4
+
+Package: libxerces-java
+Version: 1.4.4-2
+
+Package: openmovieeditor
+Version: 0.0.20061221-2+b1
+
+Package: education-desktop-gnome
+Version: 0.813
+
+Package: libvte-cil
+Version: 1:1.0.10-5
+
+Package: epic4-script-hienoa
+Version: 0.53-1
+
+Package: gnue-forms
+Version: 0.5.13-1
+
+Package: iceweasel-l10n-pt-br
+Version: 2.0.0.3+debian-1
+
+Package: oprofile
+Version: 0.9.2-4
+
+Package: kernel-image-2.6-amd64-generic
+Version: 1:2.6.18+6
+
+Package: python-pyxmpp-doc
+Version: 1.0.0-4
+
+Package: ksensors
+Version: 0.7.3-13
+
+Package: oftc-hybrid
+Version: 1.5.5.dfsg-1
+
+Package: galago-eds-feed
+Version: 0.5.0-3
+
+Package: gmemusage
+Version: 0.2-10
+
+Package: m17n-docs
+Version: 1.2.0-3
+
+Package: libcairo-ocaml-dev
+Version: 20060517-1
+
+Package: cook-doc
+Version: 2.26-1
+
+Package: cpad-kernel-dev
+Version: 0.10-3
+
+Package: libgig3c2
+Version: 2.0.d2-2
+
+Package: libaqbanking16
+Version: 2.2.3-4
+
+Package: italc-client
+Version: 0.9.6.2-3
+
+Package: pcproxy
+Version: 1.1.1-2
+
+Package: beep
+Version: 1.2.2-19
+
+Package: smartcard
+Version: 0.1.7-3
+
+Package: python-ipod
+Version: 0.1.2-1.1
+
+Package: aptitude-doc-fi
+Version: 0.4.4-4
+
+Package: libgnomeui-dev
+Version: 2.14.1-3
+
+Package: poster
+Version: 1:19990428-8
+
+Package: libpcap-ruby1.8
+Version: 0.6-6
+
+Package: starvoyager-data
+Version: 0.4.4-5
+
+Package: moagg-data
+Version: 0.18-2
+
+Package: libmodxslt0-dev
+Version: 2005072700-2.2
+
+Package: libsope-ical4.4
+Version: 4.4rc.2-3.1
+
+Package: liblog4cxx9-dev
+Version: 0.9.7-6
+
+Package: libruli4-dev
+Version: 0.33-1
+
+Package: libaio-dev
+Version: 0.3.106-4
+
+Package: libsidl0.10.2-java
+Version: 0.10.2-2.1
+
+Package: ledit
+Version: 1.11-8
+
+Package: adduser-plugin-eximconf
+Version: 0.1.2-2
+
+Package: bse-alsa
+Version: 0.6.6-5
+
+Package: libasedrive-usb
+Version: 3.4-1
+
+Package: geant321-data
+Version: 1:3.21.14.dfsg-4
+
+Package: libenv-ps1-perl
+Version: 0.05-1
+
+Package: libhttp-ocaml-dev
+Version: 0.1.3-2
+
+Package: liblingoteach4
+Version: 0.2.3+cvs20050512-1
+
+Package: libgeoip1
+Version: 1.3.17-1.1
+
+Package: pdbv
+Version: 2.0.11-0.2
+
+Package: libxcbcomposite0-dbg
+Version: 0.9-3
+
+Package: dnsutils
+Version: 1:9.3.4-2
+
+Package: licq
+Version: 1.3.4-2
+
+Package: libclassworlds-java
+Version: 1.0.1-1.1
+
+Package: kde-icons-crystalclear
+Version: 0.0.20050623.dfsg.1-2
+
+Package: libfile-rsync-perl
+Version: 0.42-1
+
+Package: zope-plonepas
+Version: 2.2-1
+
+Package: libnotify-dev
+Version: 0.4.4-1
+
+Package: openoffice.org-thesaurus-sk
+Version: 1:2.0.4~rc1-3
+
+Package: pkf
+Version: 2.1-4
+
+Package: skkdic-cdb
+Version: 20061130-1
+
+Package: tkmixer
+Version: 1.0-15
+
+Package: treecc
+Version: 0.3.8-1
+
+Package: kinoplus
+Version: 0.3.5-3
+
+Package: binfmt-support
+Version: 1.2.8
+
+Package: beef
+Version: 0.0.5-1
+
+Package: libksba-dev
+Version: 1.0.0-1
+
+Package: linux-image-2.6-amd64-k8
+Version: 2.6.18+6
+
+Package: libqof-backend-sqlite0
+Version: 0.7.2-1
+
+Package: ttf-kochi-mincho
+Version: 1.0.20030809-4
+
+Package: libpango1-ruby
+Version: 0.15.0-1.1
+
+Package: liborange0
+Version: 0.3-2
+
+Package: koffice-i18n-cy
+Version: 1.6.1-2
+
+Package: pocketpc-gas
+Version: 2.13.2.1-1
+
+Package: uruk
+Version: 20051129-1
+
+Package: libpod-simple-perl
+Version: 3.04-1
+
+Package: aa3d
+Version: 1.0-5
+
+Package: libsidplay2-dev
+Version: 2.1.1-5
+
+Package: libseaudit-dev
+Version: 2.4-3
+
+Package: libsuperlu3
+Version: 3.0-5
+
+Package: kde-i18n-ar
+Version: 4:3.5.6-1
+
+Package: libelfg0-dev
+Version: 0.8.6-3
+
+Package: limo
+Version: 0.3.2-3.1
+
+Package: koffice-i18n-cs
+Version: 1.6.1-2
+
+Package: pysol-sounds
+Version: 4.82.1-4.1
+
+Package: perl-ifeffit
+Version: 1:1.3.0-4
+
+Package: lib32ssp0
+Version: 4.1.1-21
+
+Package: gkrellmms
+Version: 2.1.22-1
+
+Package: libmarc-lint-perl
+Version: 1.42-2
+
+Package: libxkbui1-dbg
+Version: 1:1.0.2-2
+
+Package: mtd-tools
+Version: 20061007-1
+
+Package: dmachinemon-servent
+Version: 0.32.5-5
+
+Package: libavcodec-dev
+Version: 0.cvs20060823-8
+
+Package: libeurodec1-dev
+Version: 2005.dfsg-2
+
+Package: libisajet758-2-dev
+Version: 2005.dfsg-2
+
+Package: kdetoys-dbg
+Version: 4:3.5.5-3
+
+Package: kde-i18n-az
+Version: 4:3.5.6-1
+
+Package: libwine-arts
+Version: 0.9.31-1
+
+Package: logwatch
+Version: 7.3.1-5
+
+Package: libconfig0-dev
+Version: 0.1.5
+
+Package: libflac++5
+Version: 1.1.2-6
+
+Package: festvox-rablpc16k
+Version: 1.4.0-2
+
+Package: xutils-dev
+Version: 1:7.1.ds-6
+
+Package: xplanet
+Version: 1.2.0-2
+
+Package: minc-tools
+Version: 1.5-1
+
+Package: cl-clue
+Version: 20050523-1
+
+Package: ttysnoop
+Version: 0.12d-3
+
+Package: libapache2-mod-geoip
+Version: 1.1.8-2
+
+Package: libphp-pclzip
+Version: 2.5-1
+
+Package: libglade-gnome0
+Version: 1:0.17-8
+
+Package: python-pyode
+Version: 1.1.0-1
+
+Package: rt2400
+Version: 1.2.2+cvs20070219-2
+
+Package: ion3-scripts
+Version: 20061214-2
+
+Package: gnome-panel-dbg
+Version: 2.16.3-1
+
+Package: libxfce4mcs-dev
+Version: 4.3.99.2-1
+
+Package: libjcommon-java
+Version: 1.0.6-1
+
+Package: gems
+Version: 1.1-3
+
+Package: wzdftpd-mod-tcl
+Version: 0.8.1-1
+
+Package: empire
+Version: 1.7-3
+
+Package: koffice-i18n-ca
+Version: 1.6.1-2
+
+Package: kde-i18n-af
+Version: 4:3.5.6-1
+
+Package: aspell-pt-br
+Version: 20070206-1
+
+Package: picon-unknown
+Version: 2006.01.02-2
+
+Package: hebcal
+Version: 3.5-1
+
+Package: libview2
+Version: 0.5.6-2
+
+Package: shogun-r
+Version: 0.3.2-1
+
+Package: python-biopython-doc
+Version: 1.42-2
+
+Package: mozilla-thunderbird-inspector
+Version: 1.5.0.10.dfsg1-2
+
+Package: klic
+Version: 3.003-gm1-4.1
+
+Package: libformsgl-dev
+Version: 1.0-7
+
+Package: sharutils-doc
+Version: 1:4.2.1-15
+
+Package: ttf-baekmuk
+Version: 2.2-1
+
+Package: libapache2-mod-ruby
+Version: 1.2.6-1.1
+
+Package: kst
+Version: 1.3.1-1
+
+Package: laptop-net-doc
+Version: 2.26-8
+
+Package: gniall
+Version: 0.7.1-7
+
+Package: wdm
+Version: 1.28-2.2
+
+Package: asn1c
+Version: 0.9.21-2
+
+Package: libxmmsclient-ruby
+Version: 0.2DrHouse-3.1
+
+Package: rubrica
+Version: 1.0.15-1
+
+Package: python-pmock
+Version: 0.3-5.1
+
+Package: cl-xmls
+Version: 1.2-1
+
+Package: ipmitool
+Version: 1.8.8-2
+
+Package: fweb
+Version: 1.62-11
+
+Package: libtemplate-multilingual-perl
+Version: 0.07-1
+
+Package: liblog-agent-logger-perl
+Version: 0.1.1-5
+
+Package: ddccontrol
+Version: 0.4.2-1+b1
+
+Package: libapache-singleton-perl
+Version: 0.07-1
+
+Package: libsnmp9-dev
+Version: 5.2.3-7
+
+Package: yate-mysql
+Version: 1.1.0-1.dfsg-1
+
+Package: libtool
+Version: 1.5.22-4
+
+Package: libcppopt-dev
+Version: 0.0.2-6
+
+Package: libexiv2-doc
+Version: 0.12-1
+
+Package: lsb-cxx
+Version: 3.1-23.1
+
+Package: libdns22
+Version: 1:9.3.4-2
+
+Package: dcmtk-www
+Version: 3.5.4-2
+
+Package: libroxen-photoalbum
+Version: 1.11-11
+
+Package: oggfwd
+Version: 0.2-3
+
+Package: robotour
+Version: 3.2.1-3
+
+Package: gnome-hearts
+Version: 0.1.3-2
+
+Package: sidplay-base
+Version: 1.0.9-5
+
+Package: bld-postfix
+Version: 0.3.2-3
+
+Package: bulmafact
+Version: 0.5.9+svn20061021+20061210-1
+
+Package: ksh
+Version: 93r-1
+
+Package: gtkglarea5-dev
+Version: 1.2.3-2.2
+
+Package: libio-all-perl
+Version: 0.33-3.1
+
+Package: libfilter-template-perl
+Version: 1.02-1
+
+Package: libnl-dev
+Version: 1.0~pre6-4
+
+Package: libremctl-dev
+Version: 2.2-3
+
+Package: php4-syck
+Version: 0.55-3.3+b1
+
+Package: nas-bin
+Version: 1.8-4
+
+Package: libadasockets-dev
+Version: 1.8.4.7-5
+
+Package: libdiscover1-dev
+Version: 1.7.20
+
+Package: r-cran-gmodels
+Version: 2.13.2-1
+
+Package: ri1.9
+Version: 1.9.0+20060609-1
+
+Package: vbuf
+Version: 0.5.1-4
+
+Package: libnspr4-dev
+Version: 1.8.0.11-1
+
+Package: ri1.8
+Version: 1.8.6-1
+
+Package: a2ps
+Version: 1:4.13b.dfsg.1-1
+
+Package: asmon
+Version: 0.70-3
+
+Package: gsumi
+Version: 1.1.0-7
+
+Package: libtunepimp3-dev
+Version: 0.4.2-4.1
+
+Package: ksimus
+Version: 0.3.6-2-12
+
+Package: libhd13
+Version: 13.28-1
+
+Package: linux-patch-exec-shield
+Version: 1:2.6.20-1
+
+Package: libtest-mockmodule-perl
+Version: 0.05-1
+
+Package: pdns-backend-pgsql
+Version: 2.9.20-8
+
+Package: xmms-rplay
+Version: 1.0.3-2
+
+Package: ffmpeg2theora
+Version: 0.16-2+b1
+
+Package: thunderbird-locale-es-es
+Version: 1:1.5.0.8-1
+
+Package: libhugs-magic
+Version: 1.0.5
+
+Package: mrtg-ping-probe
+Version: 2.1.0-1.1
+
+Package: xmms-flac
+Version: 1.1.2-6
+
+Package: advi
+Version: 1.6.0-12
+
+Package: libghc6-uulib-dev
+Version: 0.9.2-6
+
+Package: liferea-mozilla
+Version: 1.0.27-2
+
+Package: madman
+Version: 0.94beta1.20060611-2
+
+Package: libdata-random-perl
+Version: 0.05-1
+
+Package: gcc-3.3
+Version: 1:3.3.6-15
+
+Package: libspeex1
+Version: 1.1.12-3
+
+Package: xfonts-a12k12
+Version: 1-8
+
+Package: uim-utils
+Version: 1:1.2.1-9
+
+Package: gcc-3.4
+Version: 3.4.6-5
+
+Package: libgeography-nationalgrid-perl
+Version: 1.6-6
+
+Package: php5-pgsql
+Version: 5.2.0-10
+
+Package: gpe-contacts
+Version: 0.44-1+b1
+
+Package: fdclone
+Version: 2.06c-1.1
+
+Package: liblinux-aio-perl
+Version: 1.9-1
+
+Package: php5-json
+Version: 1.2.1-3.2
+
+Package: icc-profiles
+Version: 1.0.1-3
+
+Package: libapr1-dbg
+Version: 1.2.7-8.2
+
+Package: maxdb-server
+Version: 7.5.00.34-7
+
+Package: kdegraphics
+Version: 4:3.5.5-3
+
+Package: anydbm-doc
+Version: 1.0.1
+
+Package: cl-tbnl
+Version: 0.9.10-1
+
+Package: python-pyorbit-omg
+Version: 2.0.1-5
+
+Package: gwave
+Version: 20031224-3
+
+Package: scrollkeeper
+Version: 0.3.14-13
+
+Package: alien
+Version: 8.66
+
+Package: libpcre++0
+Version: 0.9.5-2
+
+Package: liblo10k1-0
+Version: 1.0.13-1
+
+Package: libio-socket-multicast-perl
+Version: 1.05-2
+
+Package: pound
+Version: 2.0-1.1
+
+Package: libdevel-stacktrace-perl
+Version: 1.11-1
+
+Package: libguilegtk-1.2-0
+Version: 0.31-5.1
+
+Package: cl-trivial-gray-streams
+Version: 20060914-1
+
+Package: cl-screamer
+Version: 3.24.2-2
+
+Package: xmms-cdread
+Version: 0.14a-13
+
+Package: gaim-dbg
+Version: 1:2.0.0+beta5-11
+
+Package: phpgroupware-news-admin
+Version: 0.9.16.011-3
+
+Package: kftgtd
+Version: 1.12-2
+
+Package: mscompress
+Version: 0.3-2
+
+Package: tmispell-voikko
+Version: 0.6.1-1
+
+Package: cl-defsystem3
+Version: 3.6i+2006.03.13-2
+
+Package: libmodule-pluggable-fast-perl
+Version: 0.18-1
+
+Package: hindent
+Version: 1.1.2-5
+
+Package: libalps-sgl1
+Version: 1.2.2-2
+
+Package: xblast-tnt
+Version: 2.10.4-2
+
+Package: python-minimal
+Version: 2.4.4-2
+
+Package: liblua5.1-graph0
+Version: 1.0.2+dfsg-1
+
+Package: wswedish
+Version: 1.4.4
+
+Package: dspam-webfrontend
+Version: 3.6.8-5
+
+Package: fortunes-mario
+Version: 0.20-4
+
+Package: levee
+Version: 3.4o-7
+
+Package: keep
+Version: 0.4.0-1
+
+Package: pstotext
+Version: 1.9-4
+
+Package: lxdoom
+Version: 1.4.4main-0.1
+
+Package: typo3
+Version: 4.0.5+debian-1
+
+Package: console-tools
+Version: 1:0.2.3dbs-65
+
+Package: zope-textindexng2
+Version: 1:2.2.0-5
+
+Package: clex
+Version: 3.15-1
+
+Package: libenca-dev
+Version: 1.9-1
+
+Package: rsnapshot
+Version: 1.2.9-1
+
+Package: libgcj7-dev
+Version: 4.1.1-20
+
+Package: libdvdread3
+Version: 0.9.7-3
+
+Package: debdelta
+Version: 0.19
+
+Package: kde-i18n-ko
+Version: 4:3.5.6-1
+
+Package: lessdisks-cloner-terminal
+Version: 0.5.3cvs.20040906-17
+
+Package: libtest-reporter-perl
+Version: 1.27-3
+
+Package: ldap-haskell-doc
+Version: 0.6.0
+
+Package: libpoppler0c2-qt
+Version: 0.4.5-5.1
+
+Package: jython
+Version: 2.1.0-23
+
+Package: ice-slice
+Version: 3.2.0-3
+
+Package: kde-i18n-km
+Version: 4:3.5.6-1
+
+Package: libwbxml2-utils
+Version: 0.9.2-3
+
+Package: tar-doc
+Version: 1.16-2
+
+Package: brutefir
+Version: 1.0f-1
+
+Package: kxstitch
+Version: 0.7-2
+
+Package: libsigcperl1c2a
+Version: 0.2.0-4
+
+Package: vrfy
+Version: 990522-4
+
+Package: xml2rfc
+Version: 1.32.dfsg-1
+
+Package: netselect-apt
+Version: 0.3.ds1-10
+
+Package: gtk-im-libthai
+Version: 0.1.4-1
+
+Package: libapache-mod-random
+Version: 1.4-10
+
+Package: sylpheed-claws-gtk2-feeds-reader
+Version: 2.6.0-1
+
+Package: atmel-firmware
+Version: 1.3-2
+
+Package: hspell
+Version: 1.0-2
+
+Package: libfuse2
+Version: 2.6.3-2
+
+Package: psad
+Version: 2.0.4-1
+
+Package: aewan
+Version: 1.0.01-1
+
+Package: jsmath
+Version: 3.3g-4
+
+Package: libyaml-perl
+Version: 0.62-1
+
+Package: ghc6-libsrc
+Version: 6.6-3
+
+Package: hocr-gtk
+Version: 0.8.2-2+b1
+
+Package: libossp-sa12
+Version: 1.2.4-1
+
+Package: libossp-uuid15
+Version: 1.5.1-1
+
+Package: libexporter-lite-perl
+Version: 0.01-9
+
+Package: sylpheed-claws-gtk2-etpan-privacy
+Version: 2.6.0-1
+
+Package: libxcb1-dbg
+Version: 1.0-1.1
+
+Package: libk3b-dev
+Version: 0.12.17-9
+
+Package: monodoc-njb-manual
+Version: 0.3.0-1
+
+Package: lib32asound2
+Version: 1.0.13-2
+
+Package: am-utils
+Version: 6.1.5-5
+
+Package: cpad-kernel-source
+Version: 0.10-3
+
+Package: rsrce
+Version: 0.2.2
+
+Package: krusader-dbg
+Version: 1.80.0~beta1-1
+
+Package: yaz-doc
+Version: 2.1.18-2
+
+Package: libsidplay1-dev
+Version: 1.36.59-4
+
+Package: freecraft
+Version: 1:1.18-2.3
+
+Package: mp3blaster
+Version: 1:3.2.3-3
+
+Package: cdcontrol
+Version: 1.90-1.1
+
+Package: kamefu-data
+Version: 0.1.1-1
+
+Package: libdatetime-calendar-discordian-perl
+Version: 0.9.4-1
+
+Package: libgetopt-argvfile-perl
+Version: 1.10-3
+
+Package: thunderbird-locale-el
+Version: 1:1.5.0.8-1
+
+Package: mesa-utils
+Version: 6.3.2-2.1
+
+Package: cupsys-pt
+Version: 1.2.4-3+b1
+
+Package: linux-wlan-ng-firmware
+Version: 0.2.7+dfsg-2
+
+Package: dwm-tools
+Version: 20-1
+
+Package: libjfreechart-java-doc
+Version: 1.0.2-2
+
+Package: libytnef0-dev
+Version: 1.5-1
+
+Package: teamspeak-server
+Version: 2.0.20.1-2
+
+Package: apt-rpm-repository
+Version: 0.5.15lorg3.2-1
+
+Package: libcvaux0.9.7-0
+Version: 0.9.7-4
+
+Package: kcheckgmail
+Version: 0.5.5-2
+
+Package: psp-samples
+Version: 0.5.5-3
+
+Package: xmms2-plugin-modplug
+Version: 0.2DrHouse-3.1
+
+Package: whois
+Version: 4.7.21
+
+Package: dag2html
+Version: 1.01-2
+
+Package: libjinglep2p0.3-dev
+Version: 0.3.9-1
+
+Package: maxdb-buildtools
+Version: 562049-4
+
+Package: tao-load
+Version: 5.4.7-12
+
+Package: ipw2100-modules-2.6.18-4-xen-amd64
+Version: 2.6.18+1.2.2-5
+
+Package: libmimelib1-dev
+Version: 4:3.5.5.dfsg.1-6
+
+Package: libpvm3
+Version: 3.4.5-9
+
+Package: proftpd
+Version: 1.3.0-21
+
+Package: jadetex
+Version: 3.13-7.1
+
+Package: tss
+Version: 0.8.1-1
+
+Package: gwhois
+Version: 20070222
+
+Package: libpgeasy
+Version: 1:3.0.4-2
+
+Package: libwww-topica-perl
+Version: 0.6-2
+
+Package: debian-keyring
+Version: 2005.05.28
+
+Package: python-webpy
+Version: 0.200-1
+
+Package: bake
+Version: 1.0-7
+
+Package: libdancer-xml0-dev
+Version: 0.8.2.1-3
+
+Package: smtp-refuser
+Version: 1.0.5.0.1
+
+Package: gnome-blog
+Version: 0.9.1-3
+
+Package: illuminator-demo
+Version: 0.10.0-4
+
+Package: adplug-utils
+Version: 2.0.1-4
+
+Package: pulseaudio-module-lirc
+Version: 0.9.5-7
+
+Package: tk8.3-dev
+Version: 8.3.5-6
+
+Package: codeine
+Version: 1.0.1-3.dfsg-2
+
+Package: jered
+Version: 1.6.8-2
+
+Package: kde-style-serenity
+Version: 1.4-1
+
+Package: parprouted
+Version: 0.63-2
+
+Package: vile-common
+Version: 9.5-i1
+
+Package: libxcb-xv0-dev
+Version: 1.0-1.1
+
+Package: indi
+Version: 4:3.5.5-1
+
+Package: scalapack-lam-dev
+Version: 1.7.4-2
+
+Package: texlive-doc-base
+Version: 2005.dfsg.2-1
+
+Package: libjdom1-java
+Version: 1.0-4
+
+Package: education-services
+Version: 0.813
+
+Package: splat
+Version: 1.2.0-1
+
+Package: kgeography-data
+Version: 4:3.5.5-1
+
+Package: thunderbird-locale-eu
+Version: 1:1.5.0.8-1
+
+Package: ktimetrace
+Version: 0.2.36-4.1+b2
+
+Package: ipkungfu
+Version: 0.6.1-3
+
+Package: libnet-tclink-perl
+Version: 3.4.0-4
+
+Package: libqhull5
+Version: 2003.1-2
+
+Package: libstruts1.2-java
+Version: 1.2.9-1
+
+Package: libxml-commons-resolver1.1-java
+Version: 1.1-7
+
+Package: libglitz-glx1
+Version: 0.5.6-1
+
+Package: bincimap-run
+Version: 0.2.3
+
+Package: gobjc
+Version: 4:4.1.1-15
+
+Package: libaunit-dev
+Version: 1.03-2
+
+Package: libnet6-1.3-dev
+Version: 1:1.3.1-3
+
+Package: ttyrec
+Version: 1.0.6-1
+
+Package: caps
+Version: 0.3.0-3
+
+Package: r-cran-nlme
+Version: 3.1.79-1
+
+Package: marble-data
+Version: 0.3-1
+
+Package: boxshade
+Version: 3.3.1-1
+
+Package: courier-authdaemon
+Version: 0.58-5
+
+Package: geotoad
+Version: 3.9.0-4
+
+Package: libprelude-perl
+Version: 0.9.13.1-1
+
+Package: tcl8.4
+Version: 8.4.12-1.1
+
+Package: libstatistics-descriptive-perl
+Version: 2.6-3
+
+Package: dpkg-repack
+Version: 1.26
+
+Package: postfix-ldap
+Version: 2.3.8-2
+
+Package: kdelibs4-doc
+Version: 4:3.5.5a.dfsg.1-7
+
+Package: libgetargs-long-perl
+Version: 1.1001-2
+
+Package: libxmlsec1-dev
+Version: 1.2.9-5
+
+Package: libgl1-mesa-swx11-dbg
+Version: 6.5.1-0.6
+
+Package: tao-event
+Version: 5.4.7-12
+
+Package: libgnatvsn4.1
+Version: 4.1.1-22
+
+Package: libphp-phplot
+Version: 4.4.6+5.0rc1.dfsg-0.1
+
+Package: libiconv-ruby
+Version: 1.8.2-1
+
+Package: libzeroc-ice-java
+Version: 3.2.0-1
+
+Package: kdegames-dbg
+Version: 4:3.5.5-1
+
+Package: libbonobouimm1.3-dev
+Version: 1.3.7-4
+
+Package: libfusefs-ruby1.8
+Version: 0.6.0-1+b2
+
+Package: xa65
+Version: 2.3.0-2
+
+Package: enigmail
+Version: 2:0.94.2-1
+
+Package: libgnome2.0-cil
+Version: 2.8.3-2
+
+Package: ncurses-base
+Version: 5.5-5
+
+Package: wamerican
+Version: 6-2
+
+Package: expect
+Version: 5.43.0-8
+
+Package: mono-xsp2
+Version: 1.2.1-2
+
+Package: ao40tlmview
+Version: 1.03-2
+
+Package: libosmesa6
+Version: 6.5.1-0.6
+
+Package: cl-aima
+Version: 20020509-1
+
+Package: unixcw-dev
+Version: 2.3-5
+
+Package: runit-run
+Version: 0.8.1
+
+Package: postgresql-pltcl-7.4
+Version: 1:7.4.16-1
+
+Package: tcl8.3
+Version: 8.3.5-5
+
+Package: libcanna1g-dev
+Version: 3.7p3-6
+
+Package: yum
+Version: 2.4.0-3.1
+
+Package: linux-uvc-tools
+Version: 0.1.0.svn54-5
+
+Package: libnet-ident-perl
+Version: 1.20-4
+
+Package: texmacs-extra-fonts
+Version: 0.2
+
+Package: dtc
+Version: 0.25.2-1
+
+Package: texlive-lang-armenian
+Version: 2005.dfsg.2-5
+
+Package: alamin-server
+Version: 0.3.7-2
+
+Package: big-cursor
+Version: 3.6
+
+Package: yui
+Version: 0.12.2-1
+
+Package: libauthen-sasl-perl
+Version: 2.10-1
+
+Package: libcommons-digester-java
+Version: 1.7-2
+
+Package: cl-integrate
+Version: 20021107.3-2
+
+Package: libloki0.1.5-dbg
+Version: 0.1.5-3
+
+Package: tetradraw
+Version: 2.0.3-3
+
+Package: wpp
+Version: 2.13.1.35-3
+
+Package: chuck
+Version: 1.2.0.7.dfsg-1
+
+Package: dict-freedict-eng-por
+Version: 1.3-3
+
+Package: lurker
+Version: 2.1-7
+
+Package: gnomeicu
+Version: 0.99.12-2
+
+Package: iiimf-dev
+Version: 12.3.91-3
+
+Package: kde-i18n-ptbr
+Version: 4:3.5.6-1
+
+Package: libxml-filter-xslt-perl
+Version: 0.03-7
+
+Package: tinysnmp-tools
+Version: 0.8.4
+
+Package: stepbill.app
+Version: 2.4-2
+
+Package: pysol
+Version: 4.82.1-4.1
+
+Package: joystick
+Version: 20051019-1
+
+Package: nemerle
+Version: 0.9.3+dfsg-1
+
+Package: dtaus
+Version: 0.7-2
+
+Package: python-openid
+Version: 1.2.0-1
+
+Package: libopal-2.2.0
+Version: 2.2.3.dfsg-3
+
+Package: arrayprobe
+Version: 2.0-2
+
+Package: libbcprov-java
+Version: 1.33-4
+
+Package: libgss-dev
+Version: 0.0.18-2
+
+Package: libsablot0
+Version: 1.0.3-1
+
+Package: gspca-source
+Version: 01.00.12-1
+
+Package: mixer.app
+Version: 1.8.0-2
+
+Package: tkpaint
+Version: 1.5.4-7
+
+Package: docbook2x
+Version: 0.8.3-1
+
+Package: libxcb-composite0-dbg
+Version: 1.0-1.1
+
+Package: python-reportlab
+Version: 2.0dfsg-1
+
+Package: libgtkada-glade-2.8
+Version: 2.8.1-5
+
+Package: firefox-sage
+Version: 1.3.6-5
+
+Package: libxcbxf86dri0-dbg
+Version: 0.9-3
+
+Package: libflac-dev
+Version: 1.1.2-6
+
+Package: libnl-doc
+Version: 1.0~pre6-4
+
+Package: gnustep-tutorial-html
+Version: 1.0-1
+
+Package: libesmtp-dev
+Version: 1.0.3-1.1
+
+Package: libgloox-dev
+Version: 0.8.6~sic-1
+
+Package: libhugs-haxml-bundled
+Version: 98.200609.21-4
+
+Package: inn2
+Version: 2.4.3-1
+
+Package: ipw3945-modules-2.6.18-4-amd64
+Version: 2.6.18+1.1.3-5
+
+Package: libcvsservice0
+Version: 4:3.5.5-3
+
+Package: tuareg-mode
+Version: 1:1.45.4-2
+
+Package: gnuift
+Version: 0.1.14-6.2
+
+Package: gforge-shell-ldap
+Version: 4.5.14-22
+
+Package: libshp-dev
+Version: 1.2.10-3
+
+Package: gnumed-client
+Version: 0.2.4.2-1
+
+Package: alsa-tools-gui
+Version: 1.0.13-1
+
+Package: crossfire-client-sounds
+Version: 1.9.1-1
+
+Package: libnautilus-extension-dev
+Version: 2.14.3-11+b1
+
+Package: imview
+Version: 1.1.8-6
+
+Package: obexpushd
+Version: 0.4+svn10-2
+
+Package: libicessl32
+Version: 3.2.0-3
+
+Package: libpopt0
+Version: 1.10-3
+
+Package: apsfilter
+Version: 7.2.6-1.1
+
+Package: libhfsp0
+Version: 1.0.4-12
+
+Package: cxref-doc
+Version: 1.6a-1.1
+
+Package: moreutils
+Version: 0.20
+
+Package: xemeraldia
+Version: 0.4.1-3
+
+Package: libxmlsec1-openssl
+Version: 1.2.9-5
+
+Package: xpilot-ng-utils
+Version: 1:4.7.2-4
+
+Package: ipw2200-modules-2.6.18-4-xen-vserver-amd64
+Version: 2.6.18+1.2.1-5
+
+Package: ekg2
+Version: 20070305+1821-1
+
+Package: gstreamer0.8-plugins
+Version: 0.8.12-6
+
+Package: fai-nfsroot
+Version: 3.1.8
+
+Package: lua5.1
+Version: 5.1.1-2
+
+Package: mathopd
+Version: 1.5p5-1
+
+Package: dirmngr
+Version: 0.9.6-1+b1
+
+Package: kteatime
+Version: 4:3.5.5-3
+
+Package: libapache-mod-lisp
+Version: 2.43-2
+
+Package: libdianewcanvas2-dev
+Version: 0.6.10-5.1
+
+Package: sylpheed-claws-gtk2-pgpinline
+Version: 2.6.0-1.1
+
+Package: trustedqsl
+Version: 1.11-4
+
+Package: libvips10c2a
+Version: 7.10.21-1
+
+Package: k3dsurf
+Version: 0.6.1-1
+
+Package: usermode
+Version: 1.81-3.1
+
+Package: xfce4
+Version: 4.3.99.2
+
+Package: kthesaurus
+Version: 1:1.6.1-2
+
+Package: libpam0g
+Version: 0.79-4
+
+Package: libterm-size-perl
+Version: 0.2-3
+
+Package: creox
+Version: 0.2.2rc2-3
+
+Package: procinfo
+Version: 18-2
+
+Package: liblo0
+Version: 0.23-2.1
+
+Package: docbook-html-forms
+Version: 1.1.0-3
+
+Package: libssh2-0-dbg
+Version: 0.14+20070102-1
+
+Package: libxml-sax-perl
+Version: 0.14-0.1
+
+Package: libstlport5.1
+Version: 5.1.2-1
+
+Package: dnswalk
+Version: 2.0.2-8
+
+Package: haskell98-tutorial
+Version: 200006-2-1
+
+Package: libapache-csacek
+Version: 2.1.9-4
+
+Package: libcamelbones0
+Version: 0.2.3.cvs20040220-2.1
+
+Package: libfuse-perl
+Version: 0.08-1
+
+Package: libstlport5.0
+Version: 5.0.3-1
+
+Package: libxvmc1-dbg
+Version: 1:1.0.2-2
+
+Package: tailor
+Version: 0.9.27-1
+
+Package: xsane-common
+Version: 0.99+0.991-2
+
+Package: libsigc++-dev
+Version: 1.0.4-9.1
+
+Package: netstat-nat
+Version: 1.4.7-1
+
+Package: libgengameng-dev
+Version: 4.1-7+b1
+
+Package: muine-plugin-serpentine
+Version: 0.7-4
+
+Package: libxcb-randr0
+Version: 1.0-1.1
+
+Package: libchm-bin
+Version: 2:0.39-2
+
+Package: libplexus-utils
+Version: 1.0alpha1-3
+
+Package: sgmltools-lite
+Version: 3.0.3.0.cvs.20010909-13
+
+Package: libxml-rsslite-perl
+Version: 0.11-1
+
+Package: libmagic-dev
+Version: 4.20-1
+
+Package: gromacs-doc
+Version: 3.3.1-4
+
+Package: qc-usb-source
+Version: 0.6.6-1
+
+Package: glade-gnome
+Version: 2.12.1-7
+
+Package: libooc-xml
+Version: 3.2.0-2
+
+Package: libxxf86dga1-dbg
+Version: 2:1.0.1-2
+
+Package: zec
+Version: 0.11.1-1
+
+Package: hpijs
+Version: 2.6.10+1.6.10-3
+
+Package: divxcomp
+Version: 0.1-3
+
+Package: c2n
+Version: 1.1.4-2
+
+Package: installation-guide-mips
+Version: 20070319
+
+Package: calife
+Version: 3.0pre6-1
+
+Package: enigmail-locale-es-es
+Version: 0.9x-20061010-1
+
+Package: libpci2
+Version: 2:2.1.11-3
+
+Package: xfonts-terminus
+Version: 4.20-5.1
+
+Package: libginac1.3c2a-dbg
+Version: 1.3.5-3
+
+Package: monotone-doc
+Version: 0.31-8
+
+Package: kde-icons-korilla
+Version: 1.3.5-1
+
+Package: libhamlib2-tcl
+Version: 1.2.6.1-1
+
+Package: libpci1
+Version: 1:2.1.11-11
+
+Package: pload
+Version: 0.9.5-3.3
+
+Package: avida-qt-viewer
+Version: 2.0b7-4
+
+Package: dav-text
+Version: 0.8.5-5
+
+Package: harden-environment
+Version: 0.1.31
+
+Package: ipcalc
+Version: 0.41-1
+
+Package: packagesearch
+Version: 2.2.5
+
+Package: libapache2-mod-perl2-doc
+Version: 2.0.2-2.3
+
+Package: libppd-dev
+Version: 2:0.10-4
+
+Package: capplets-data
+Version: 1:2.14.2-7
+
+Package: wzdftpd
+Version: 0.8.1-1
+
+Package: tk8.3-doc
+Version: 8.3.5-6
+
+Package: renrot
+Version: 0.25-1
+
+Package: libxml-filter-reindent-perl
+Version: 0.03-6
+
+Package: apt-howto
+Version: 2.0.2-2
+
+Package: lemon
+Version: 3.3.8-1.1
+
+Package: monodoc-dbus-1-manual
+Version: 0.63.git.20060719-4
+
+Package: sdic-eijiro
+Version: 2.1.3-13
+
+Package: kword
+Version: 1:1.6.1-2
+
+Package: firebird2.0-dev
+Version: 2.0.1.12855.ds1-2
+
+Package: kayak
+Version: 0.1.0-2
+
+Package: libportmidi0
+Version: 20041117-1
+
+Package: acl2-infix
+Version: 3.1-1
+
+Package: libpcsc-perl
+Version: 1.4.6-1
+
+Package: libghc6-edison-core-dev
+Version: 1.2.0.1-5
+
+Package: krecipes-data
+Version: 1.0~beta1-1
+
+Package: tdiary
+Version: 2.0.2+20060303-5
+
+Package: fftw3-doc
+Version: 3.1.2-1
+
+Package: ulogd
+Version: 1.23-8
+
+Package: pop3browser
+Version: 0.4.1-1
+
+Package: gaupol
+Version: 0.7.2-2
+
+Package: itk3.1
+Version: 3.1.0-7.1
+
+Package: libapache2-mod-log-sql-dbi
+Version: 1.100-8
+
+Package: rkward
+Version: 0.4.2-2
+
+Package: oprofile-gui
+Version: 0.9.2-4
+
+Package: asc-music
+Version: 1.3-1
+
+Package: python-metakit
+Version: 2.4.9.3-6.2
+
+Package: autotools-dev
+Version: 20060920.1
+
+Package: xlockmore
+Version: 1:5.22-1.2
+
+Package: kfouleggs
+Version: 4:3.5.5-1
+
+Package: libshout3-dev
+Version: 2.2.2-1
+
+Package: tkusr
+Version: 0.82
+
+Package: mgetty-viewfax
+Version: 1.1.35-3
+
+Package: libgl1-mesa-swx11
+Version: 6.5.1-0.6
+
+Package: libexif-dev
+Version: 0.6.13-5
+
+Package: jnettop
+Version: 0.12.0-2
+
+Package: suspend2-userui
+Version: 0.7.0-1
+
+Package: fontforge-doc
+Version: 0.0.20061019-1
+
+Package: dossizola
+Version: 1.0-8.2
+
+Package: koffice-i18n-uk
+Version: 1.6.1-2
+
+Package: torrus-common
+Version: 1.0.4-1
+
+Package: gpomme
+Version: 1.2~dfsg-1
+
+Package: libcompress-bzip2-perl
+Version: 2.09-1
+
+Package: cl-md5
+Version: 1:1.8-1
+
+Package: libgef-java
+Version: 0.11.999.0.11.3M10-1
+
+Package: libmysql-ruby
+Version: 2.7.3-1
+
+Package: lpc-mode
+Version: 0.15-1
+
+Package: xipmsg
+Version: 0.8088-2
+
+Package: jlint
+Version: 3.0-4.1
+
+Package: libkeynote-dev
+Version: 2.3-11
+
+Package: pas2html
+Version: 0.9.2-1
+
+Package: cdbs
+Version: 0.4.48
+
+Package: gnustep-core-doc
+Version: 5.2
+
+Package: pngnq
+Version: 0.4.1-1
+
+Package: libxfixes-dev
+Version: 1:4.0.1-5
+
+Package: automake1.8-doc
+Version: 1.8.5-1
+
+Package: libxml-handler-trees-perl
+Version: 0.02-5
+
+Package: nautilus-cd-burner
+Version: 2.14.3-8+b1
+
+Package: ocaml-base
+Version: 3.09.2-9
+
+Package: libdate-leapyear-perl
+Version: 1.71-1
+
+Package: alamin-doc
+Version: 0.3.7-2
+
+Package: libdjbdns1
+Version: 1.05-4
+
+Package: firebird1.5-super
+Version: 1.5.4.4910rel-3
+
+Package: flexloader
+Version: 0.03-1
+
+Package: gnome-find
+Version: 1.0.2-1.1
+
+Package: libusb-0.1-4
+Version: 2:0.1.12-6
+
+Package: angband
+Version: 1:3.0.6-4
+
+Package: libproducer4
+Version: 1.2.0-2
+
+Package: wmtune
+Version: 1.1-3
+
+Package: libavc1394-0
+Version: 0.5.3-1+b1
+
+Package: x-face-el
+Version: 1.3.6.24-9
+
+Package: kdelibs-dbg
+Version: 4:3.5.5a.dfsg.1-6
+
+Package: libtime-duration-perl
+Version: 1.02-1
+
+Package: xfonts-baekmuk
+Version: 2.2-2.1
+
+Package: libcli-dev
+Version: 1.8.6-1
+
+Package: libsqlite3-ruby
+Version: 1.1.0-4
+
+Package: printop
+Version: 1.12-8
+
+Package: libgpepimc0
+Version: 0.6-1
+
+Package: chora2
+Version: 2.0.1-2
+
+Package: libgpg-error0
+Version: 1.4-2
+
+Package: dlume
+Version: 0.2.4-5
+
+Package: gcompris-data
+Version: 8.2.2-1
+
+Package: gkermit
+Version: 1.0-5
+
+Package: iceweasel-l10n-ku
+Version: 2.0.0.3+debian-1
+
+Package: psmisc
+Version: 22.3-1
+
+Package: dhcp-relay
+Version: 2.0pl5-19.5
+
+Package: ogle-gui
+Version: 0.9.2-4
+
+Package: libbind-confparser-perl
+Version: 0.95-3
+
+Package: snappea-dev
+Version: 3.0d3-19
+
+Package: doodle
+Version: 0.6.6-3
+
+Package: libcarp-assert-perl
+Version: 0.18-2
+
+Package: libcdio-paranoia-dev
+Version: 0.76-1
+
+Package: libnotify-doc
+Version: 0.4.4-1
+
+Package: swig1.3
+Version: 1.3.31-1
+
+Package: microcode.ctl
+Version: 1.16-1
+
+Package: kaffe-common
+Version: 2:1.1.7-4
+
+Package: xbindkeys
+Version: 1.7.1-1.1
+
+Package: dguitar
+Version: 0.5.5-2
+
+Package: libjinglep2p0.3-0
+Version: 0.3.9-1
+
+Package: xara-gtk-byte
+Version: 1.0.17
+
+Package: jgraph
+Version: 83-22
+
+Package: kdemultimedia-kio-plugins
+Version: 4:3.5.5-2
+
+Package: libmozjs-dev
+Version: 1.8.0.11-1
+
+Package: dolphin
+Version: 0.8.2-1
+
+Package: krb5-admin-server
+Version: 1.4.4-7
+
+Package: sylpheed-doc
+Version: 20030309-2
+
+Package: x-window-system-core
+Version: 1:7.1.0-18
+
+Package: tftpd
+Version: 0.17-15
+
+Package: henplus
+Version: 0.9.5-cvs20051003+2
+
+Package: iceweasel-l10n-en-gb
+Version: 2.0.0.3+debian-1
+
+Package: librd-html-ext-ruby1.8
+Version: 0.1.4-1
+
+Package: maint-guide-ru
+Version: 1.2.11
+
+Package: mozart-stdlib
+Version: 20060615-2
+
+Package: netmaze
+Version: 0.81+jpg0.82-12
+
+Package: openoffice.org-thesaurus-en-au
+Version: 2.1-3
+
+Package: gpsim
+Version: 0.22.0-1
+
+Package: samba-doc
+Version: 3.0.24-6
+
+Package: libjargs-java
+Version: 1.0.0-1
+
+Package: libnetpbm9-dev
+Version: 2:10.0-11
+
+Package: solid-pop3d
+Version: 0.15-18
+
+Package: away
+Version: 0.9.5-3
+
+Package: liblasso3
+Version: 0.6.5-3+b1
+
+Package: tiemu-skinedit
+Version: 1.26-4
+
+Package: transcalc
+Version: 0.13-2
+
+Package: wmdonkeymon
+Version: 0.91-3
+
+Package: xnetload
+Version: 1.11.0-4.1
+
+Package: libgsnmp0-dev
+Version: 0.2.0-1
+
+Package: libxcb-dpms0-dbg
+Version: 1.0-1.1
+
+Package: klic-doc
+Version: 3.003-gm1-4.1
+
+Package: keylookup
+Version: 3.0-0.4.9-1
+
+Package: python-bibtex
+Version: 1.2.2-3
+
+Package: apache2-mpm-event
+Version: 2.2.3-3.3
+
+Package: ucf
+Version: 2.0020
+
+Package: axiom-test
+Version: 20050901-9
+
+Package: fragrouter
+Version: 1.6-2.2
+
+Package: libgtkxmhtml-dev
+Version: 1.4.2-35
+
+Package: libxp-dev
+Version: 1:1.0.0.xsf1-1
+
+Package: libjgoodies-looks-java-doc
+Version: 2.1.3-1
+
+Package: libstlport5.1-dev
+Version: 5.1.2-1
+
+Package: python-pylons
+Version: 0.9.3-2
+
+Package: vtk-doc
+Version: 5.0.2.dfsg-1
+
+Package: speech-dispatcher-festival
+Version: 0.6.1-2
+
+Package: avahi-utils
+Version: 0.6.16-5
+
+Package: gnu-smalltalk-doc
+Version: 2.1.8-2.1
+
+Package: iceweasel-l10n-zh-cn
+Version: 2.0.0.3+debian-1
+
+Package: omniidl4-python
+Version: 2.6-3.3
+
+Package: python-gdchart2
+Version: 0.beta1-3.3
+
+Package: ntp-doc
+Version: 1:4.2.2.p4+dfsg-2
+
+Package: libmeep-dev
+Version: 0.10-2
+
+Package: arping
+Version: 2.05-2
+
+Package: bitchx-gtk
+Version: 1:1.1-4
+
+Package: briquolo
+Version: 0.5.5-1
+
+Package: libsexymm2-dbg
+Version: 0.1.9-2
+
+Package: mozilla-firefox-locale-en-gb
+Version: 2.0.0.3+debian-1
+
+Package: defrag
+Version: 0.73pjm1-8
+
+Package: mpdscribble
+Version: 0.2.12-2
+
+Package: libcojets2-dev
+Version: 2005.dfsg-2
+
+Package: iceweasel-l10n-ka
+Version: 2.0.0.3+debian-1
+
+Package: inetutils-ftp
+Version: 2:1.5.dfsg.1-4
+
+Package: lftp
+Version: 3.5.9-1
+
+Package: libwxgtk2.4-dbg
+Version: 2.4.5.1.1
+
+Package: jabberd2-ldap-bdb
+Version: 2.0s11-1
+
+Package: viewglob
+Version: 2.0.4-1
+
+Package: iceweasel-l10n-ko
+Version: 2.0.0.3+debian-1
+
+Package: libcurl4-openssl-dev
+Version: 7.16.1-1
+
+Package: tomcat5.5
+Version: 5.5.20-4
+
+Package: dovecot-common
+Version: 1.0.rc28-1
+
+Package: gsynaptics
+Version: 0.9.7-3
+
+Package: libgnash0
+Version: 0.7.2-1
+
+Package: eb-utils
+Version: 4.3-3
+
+Package: libgnome2-doc
+Version: 2.16.0-2
+
+Package: enlightenment-theme-brushedmetal
+Version: 1:0.16.7.2-5
+
+Package: knowledgeroot
+Version: 0.9.7.3-2
+
+Package: libjunitperf-java
+Version: 1.9.1-5
+
+Package: liblineak-dev
+Version: 1:0.9-3
+
+Package: python-numarray-ext
+Version: 1.5.2-2.2
+
+Package: perl-modules
+Version: 5.8.8-7
+
+Package: python-deb822
+Version: 0.2
+
+Package: sqlrelay-dev
+Version: 1:0.38-2
+
+Package: cccc
+Version: 3.pre84-2
+
+Package: icepatch2
+Version: 3.2.0-3
+
+Package: bsdutils
+Version: 1:2.12r-19
+
+Package: graveman
+Version: 0.3.12-5-1
+
+Package: mozilla-firefox-locale-nl-nl
+Version: 2.0.0.3+debian-1
+
+Package: nut-dev
+Version: 2.0.5-3
+
+Package: anjuta-common
+Version: 1:1.2.4a-5
+
+Package: enigmail-locale-sv
+Version: 0.9x-20061010-1
+
+Package: xmms-volnorm
+Version: 0.8.3-1
+
+Package: pidentd-des
+Version: 3.0.19.ds1-1
+
+Package: wmctrl
+Version: 1.07-5
+
+Package: libgl1-mesa-dev
+Version: 6.5.1-0.6
+
+Package: cccd
+Version: 0.3beta4-6
+
+Package: apbs
+Version: 0.4.0-2
+
+Package: libconvert-binhex-perl
+Version: 1.119+pristine-1
+
+Package: dpkg-sig
+Version: 0.13.1
+
+Package: enigmail-locale-sk
+Version: 0.9x-20061010-1
+
+Package: jpeginfo
+Version: 1.6.0-4
+
+Package: libswt3.2-gtk-gcj
+Version: 3.2.1-6
+
+Package: enigmail-locale-sl
+Version: 0.9x-20061010-1
+
+Package: sortmail
+Version: 1:2.4-1
+
+Package: xbase-clients
+Version: 1:7.1.ds1-2
+
+Package: gnome-chess
+Version: 0.3.3-6
+
+Package: yics
+Version: 0.1.2-3
+
+Package: wireshark
+Version: 0.99.4-6
+
+Package: montecarlo-base
+Version: 2005.dfsg-2
+
+Package: xmbdfed
+Version: 1:4.7
+
+Package: bayonne-prompts-sys
+Version: 1.2.16-6
+
+Package: rpld
+Version: 1.8beta1-8
+
+Package: tinysnmp-module-resources
+Version: 0.8.4
+
+Package: libwine
+Version: 0.9.31-1
+
+Package: libdisplaymigration0-dev
+Version: 0.28-4
+
+Package: ydpdict
+Version: 0.66-1
+
+Package: libfirestring-dev
+Version: 0.9.12-7
+
+Package: python-roman
+Version: 0.4-4
+
+Package: r-cran-lme4
+Version: 0.9975-13-1
+
+Package: xserver-xorg-video-apm
+Version: 1:1.1.1-3
+
+Package: libjmagick6-java
+Version: 6.2.4-1-1
+
+Package: thailatex
+Version: 0.4.0-1
+
+Package: w3-url-lisp
+Version: 2005.10.23-5
+
+Package: camorama
+Version: 0.17-5
+
+Package: mozilla-plugin-gnash
+Version: 0.7.2-1
+
+Package: openam
+Version: 1.1.18+20050304-3
+
+Package: xfonts-tipa
+Version: 2:1.3-5
+
+Package: slime
+Version: 1:20061201-2
+
+Package: arb-common
+Version: 0.0.20050526-7
+
+Package: libgcj8-awt-qt
+Version: 4.2-20070105-1
+
+Package: gedit-common
+Version: 2.14.4-9
+
+Package: seahorse
+Version: 0.9.10-2
+
+Package: potracegui
+Version: 1.3-2.2
+
+Package: dvipdfmx
+Version: 1:20061211-2
+
+Package: ccmalloc
+Version: 0.4.0-7
+
+Package: libsybdb5
+Version: 0.63-3.2
+
+Package: cpufrequtils
+Version: 002-2
+
+Package: libfltk1.1-dev
+Version: 1.1.7-3
+
+Package: gnokii-smsd-mysql
+Version: 0.6.14-3
+
+Package: libkmime2
+Version: 4:3.5.5.dfsg.1-6
+
+Package: cl-gd
+Version: 0.5.1-1etch
+
+Package: libxcb-xf86dri0-dbg
+Version: 1.0-1.1
+
+Package: kandy
+Version: 4:3.5.5.dfsg.1-6
+
+Package: plplot9-driver-xwin
+Version: 5.6.1-10
+
+Package: uuid
+Version: 1.5.1-1
+
+Package: freewnn-common
+Version: 1.1.0+1.1.1-a021-1.1
+
+Package: gforge-plugin-scmcvs
+Version: 4.5.14-5
+
+Package: libclass-inner-perl
+Version: 0.1-4
+
+Package: hanterm-xf
+Version: 1:3.3.1p18-10
+
+Package: libdevel-corestack-perl
+Version: 1.3-1
+
+Package: perl-debug
+Version: 5.8.8-7
+
+Package: python-elementtidy
+Version: 1.0-4
+
+Package: gmt-tutorial-pdf
+Version: 4.1.2-1.1
+
+Package: loop-aes-modules-2.6-amd64
+Version: 3.1d-13
+
+Package: libparmetis3.1
+Version: 3.1-4
+
+Package: id-utils
+Version: 3.2d-11
+
+Package: newt-tcl
+Version: 0.52.2-10
+
+Package: smbldap-tools
+Version: 0.9.2-3
+
+Package: cedet-common
+Version: 1:1.0pre3-6
+
+Package: libicecc-dev
+Version: 0.7.14-4
+
+Package: ogamesim-www
+Version: 0.30-2
+
+Package: squid-prefetch
+Version: 1.1-2
+
+Package: libapache-mod-auth-shadow
+Version: 1.4-2
+
+Package: libneon26-gnutls-dbg
+Version: 0.26.3-1
+
+Package: libnet-jabber-loudmouth-perl
+Version: 0.07-1
+
+Package: libnet-ssh-ruby1.8
+Version: 1.0.10-1
+
+Package: mono-gac
+Version: 1.2.2.1-2
+
+Package: libapache-session-perl
+Version: 1.82-1
+
+Package: r-cran-xml
+Version: 1.6-0-1
+
+Package: kdepim-dbg
+Version: 4:3.5.5.dfsg.1-6
+
+Package: ii
+Version: 1+fixed-2
+
+Package: maint-guide
+Version: 1.2.11
+
+Package: python2.5-doc
+Version: 2.5-4
+
+Package: xwatch
+Version: 2.11-12
+
+Package: xmess-sdl
+Version: 0.106-2
+
+Package: desklaunch
+Version: 1.1.5
+
+Package: xfmail
+Version: 1.5.5-4
+
+Package: luasocket-dev
+Version: 2.0.1-2
+
+Package: zope-ldapmultiplugins
+Version: 1.4-1
+
+Package: kcemirror
+Version: 0.1.5-1
+
+Package: libalps-pvm1
+Version: 1.2.2-2
+
+Package: ivtv-source
+Version: 0.8.2-2
+
+Package: libgail-dbg
+Version: 1.8.11-4
+
+Package: im
+Version: 1:148-6
+
+Package: libskstream-0.3-3-dbg
+Version: 0.3.5-1
+
+Package: squashfs-modules-2.6-xen-amd64
+Version: 2:2.6.18-8
+
+Package: gri-ps-doc
+Version: 2.12.14-1
+
+Package: wims-extra
+Version: 3.60-1
+
+Package: igaelic
+Version: 0.50-5
+
+Package: mrtg-rrd
+Version: 0.7-1
+
+Package: python-mysqldb
+Version: 1.2.1-p2-4
+
+Package: libnetaddr-ip-perl
+Version: 3.14-2
+
+Package: python-pysnmp-common
+Version: 4.1.6a-1
+
+Package: kdegames-doc-html
+Version: 4:3.5.5-1
+
+Package: libfile-homedir-perl
+Version: 0.64-1
+
+Package: glfer
+Version: 0.3.4-3
+
+Package: openhackware
+Version: 0.4.1-2
+
+Package: pentanet-doc
+Version: 2.3.1-5
+
+Package: perspic
+Version: 1.5-5.1
+
+Package: wp2x
+Version: 2.5-mhi-9
+
+Package: myspell-th
+Version: 1:2.0.4~rc1-3
+
+Package: purity-off
+Version: 0-3
+
+Package: truc
+Version: 1.0.7-5
+
+Package: libhamlib++-dev
+Version: 1.2.6.1-1
+
+Package: imapfilter
+Version: 1:1.2.2-1
+
+Package: libdcop3-java
+Version: 4:3.5.5-1
+
+Package: xmms-kjofol
+Version: 0.95.0debian3-4
+
+Package: gnome-core
+Version: 1:2.14.3.6
+
+Package: kfloppy
+Version: 4:3.5.5-3
+
+Package: libmusicbrainz-ruby1.8
+Version: 0.2.1-1
+
+Package: ticker.app
+Version: 0.5.0-5.1
+
+Package: tirc
+Version: 1.2-11
+
+Package: libxsettings-client0
+Version: 0.17-1
+
+Package: gromacs-lam
+Version: 3.3.1-4
+
+Package: lrzsz
+Version: 0.12.21-4.1
+
+Package: stow
+Version: 1.3.3-2.1
+
+Package: mailto
+Version: 1.3.2-2
+
+Package: simba
+Version: 0.8.4-4
+
+Package: adept-common
+Version: 2.1.2
+
+Package: enigmail-locale-it
+Version: 0.9x-20061010-1
+
+Package: gimp-resynthesizer
+Version: 0.15-1
+
+Package: python-mako
+Version: 0.1.4-1
+
+Package: python-rrd
+Version: 1.2.19-1
+
+Package: motv
+Version: 3.95-1
+
+Package: libapache2-mod-auth-sys-group
+Version: 1.1.1-6.1
+
+Package: libezv24-dev
+Version: 0.1.1-1
+
+Package: libverbiste0-dev
+Version: 0.1.14-1.2
+
+Package: nighthawk
+Version: 1.0-15.1
+
+Package: postgresql-plpython-8.2
+Version: 8.2.3-1
+
+Package: libghc6-ldap-dev
+Version: 0.6.0
+
+Package: postgresql-plpython-8.1
+Version: 8.1.8-1
+
+Package: libchipcard2-libgwenhywfar38-plugins
+Version: 2.1.9-2
+
+Package: libghc6-missingh-dev
+Version: 0.18.3
+
+Package: libggi-target-monotext
+Version: 1:2.2.1-5
+
+Package: kwartz
+Version: 1:3.1.2-1
+
+Package: libgtksourceview-doc
+Version: 1.8.5-1
+
+Package: csync2
+Version: 1.33-2
+
+Package: libwebauth1
+Version: 3.5.3-2
+
+Package: libcameleon-ocaml-dev
+Version: 1.9.13-2
+
+Package: ipx
+Version: 2.2.6-4
+
+Package: libmono2.0-cil
+Version: 1.2.2.1-2
+
+Package: horde-sam
+Version: 0.1-1
+
+Package: libghc6-uulib-prof
+Version: 0.9.2-6
+
+Package: icewm-themes
+Version: 1.2.26-1
+
+Package: libfishsound1-dev
+Version: 0.7.0-2.1
+
+Package: libswish-api-common-perl
+Version: 0.03-1
+
+Package: snappea
+Version: 3.0d3-19
+
+Package: paul-doc
+Version: 0.1.1-6
+
+Package: libxbsql0c2
+Version: 0.11-6
+
+Package: ipe
+Version: 6.0pre28-2
+
+Package: xawtv
+Version: 3.95.dfsg.1-2
+
+Package: aladin
+Version: 1.19-7.1
+
+Package: amanda-client
+Version: 1:2.5.1p3-2
+
+Package: asp.net2-examples
+Version: 1.2.1-2
+
+Package: pgadmin3
+Version: 1.4.3-2
+
+Package: cvsdelta
+Version: 1.7.0-3
+
+Package: libapache-mod-layout
+Version: 3.2.1-2
+
+Package: nzb
+Version: 0.1.7-1
+
+Package: searchmonkey
+Version: 0.8.1-2
+
+Package: hwinfo
+Version: 13.28-1
+
+Package: xflip
+Version: 1.01-24
+
+Package: kvirc2
+Version: 2.1.3-6
+
+Package: sqlite3
+Version: 3.3.8-1.1
+
+Package: epiphany
+Version: 0.5.1-4
+
+Package: lustre-utils
+Version: 1.5.97-1
+
+Package: revtex
+Version: 3.1-12
+
+Package: php4-maxdb
+Version: 7.6.00.18-1+b2
+
+Package: ri-li-data
+Version: 2.0.0-2
+
+Package: libtext-unaccent-perl
+Version: 1.08-1
+
+Package: pyro-doc
+Version: 3.5-1.2
+
+Package: asis-doc
+Version: 2005-3
+
+Package: texlive-fonts-recommended
+Version: 2005.dfsg.3-1
+
+Package: libcdaudio1
+Version: 0.99.12p2-2
+
+Package: doctorj
+Version: 5.0.0-3
+
+Package: e16menuedit
+Version: 0.1.3-2
+
+Package: hylafax-doc
+Version: 2:4.3.3-1
+
+Package: libparrot0.4.6
+Version: 0.4.6-1+b1
+
+Package: postgresql-8.1-slony1
+Version: 1.2.8-1
+
+Package: scribus-template
+Version: 1.2.4.1-2
+
+Package: clips-common
+Version: 6.21-6.2
+
+Package: conspy
+Version: 1.4-1
+
+Package: defendguin
+Version: 0.0.11-3
+
+Package: keyjnote
+Version: 0.9.1-1
+
+Package: libclan2c2a-gui
+Version: 0.6.5-1-4
+
+Package: namazu2
+Version: 2.0.17-1
+
+Package: gxemul-doc
+Version: 0.4.3-1
+
+Package: libxml-dt-perl
+Version: 0.3-1
+
+Package: libgdome2-cpp-smart0c2a
+Version: 0.2.4-3
+
+Package: libwbxml2-dev
+Version: 0.9.2-3
+
+Package: gambit-doc
+Version: 0.97.0-1
+
+Package: linuxtrade
+Version: 3.65-8
+
+Package: zonecheck
+Version: 2.0.4-6
+
+Package: yorick-data
+Version: 2.1.01cvs20060706-1
+
+Package: stardict-english-czech
+Version: 20070301-1
+
+Package: ggz-kde-client
+Version: 0.0.13-3
+
+Package: flite1-dev
+Version: 1.2-release-2.2
+
+Package: libgimp2.0-dev
+Version: 2.2.13-1
+
+Package: libwn6
+Version: 6.0-17
+
+Package: libroxen-thumbview
+Version: 1.1-5
+
+Package: neutrino
+Version: 0.8.4-7
+
+Package: hicolor-icon-theme
+Version: 0.10-1
+
+Package: mnemo2
+Version: 2.1.1-1
+
+Package: seq24
+Version: 0.8.7-1
+
+Package: xpdf-chinese-traditional
+Version: 1:20040727-1
+
+Package: aolserver4-nsopenssl
+Version: 3.0beta22-3
+
+Package: cvsweb
+Version: 3:3.0.6-1
+
+Package: kimwitu++
+Version: 2.3.10-1
+
+Package: libkarma-cil
+Version: 0.0.6-2
+
+Package: pbzip2
+Version: 0.9.6-2
+
+Package: urlscan
+Version: 0.5.6
+
+Package: libapache-mod-ruby
+Version: 1.2.6-1.1
+
+Package: liballegro4.2-plugin-jack
+Version: 2:4.2.0-5
+
+Package: libgalago-gtk1
+Version: 0.5.0-2
+
+Package: gitk
+Version: 1:1.5.0.3-1
+
+Package: libfox1.4-dev
+Version: 1.4.34-1
+
+Package: libhugs-hdbc
+Version: 1.0.1.2
+
+Package: ttf-bpg-georgian-fonts
+Version: 0.3
+
+Package: ctie
+Version: 1.1.debian.1
+
+Package: rdoc
+Version: 1.8.2-1
+
+Package: libgksuui1.0-dev
+Version: 1.0.7-2
+
+Package: rtpproxy
+Version: 0.3-2
+
+Package: libecal1.2-dev
+Version: 1.6.3-4
+
+Package: libgtkmm1.2-0c2a
+Version: 1.2.10-8
+
+Package: xfce4-verve-plugin
+Version: 0.3.4-1+b1
+
+Package: gnustep-gui-runtime
+Version: 0.11.0-2
+
+Package: tclx8.3
+Version: 8.3.5-6
+
+Package: xournal
+Version: 0.3.3-1
+
+Package: tclx8.4
+Version: 8.4.0-1
+
+Package: python-gtk2-tutorial
+Version: 2.4-1
+
+Package: wterm
+Version: 6.2.9-8
+
+Package: xmame-gl
+Version: 0.106-2
+
+Package: ksysv
+Version: 4:3.5.5-4
+
+Package: caudium-dev
+Version: 2:1.4.9.1-3
+
+Package: fortune-zh
+Version: 1.6
+
+Package: texlive-base-bin
+Version: 2005.dfsg.2-12
+
+Package: wmifs
+Version: 1.3b1-16
+
+Package: latex2html
+Version: 2002-2-1-20050114-5
+
+Package: libsimage20
+Version: 1.6.1-2
+
+Package: gnustep-games
+Version: 5.2
+
+Package: libfont-ttf-perl
+Version: 0.40-1
+
+Package: latex-xcolor
+Version: 2.09-1
+
+Package: gstreamer0.8-cdparanoia
+Version: 0.8.12-6
+
+Package: liblua5.1-graph-dev
+Version: 1.0.2+dfsg-1
+
+Package: londonlaw
+Version: 0.2.1-7
+
+Package: education-mathematics
+Version: 0.813
+
+Package: gri-html-doc
+Version: 2.12.14-1
+
+Package: ajaxterm
+Version: 0.9-2
+
+Package: xtoolwait
+Version: 1.3-6.1
+
+Package: maint-guide-fr
+Version: 1.2.11
+
+Package: ipip
+Version: 1.1.6
+
+Package: rekall
+Version: 2.2.6-6
+
+Package: libhttp-body-perl
+Version: 0.6-2
+
+Package: tetex-doc-nonfree
+Version: 1.1
+
+Package: libident
+Version: 0.22-3
+
+Package: libsp-gxmlcpp-dev
+Version: 1.0.20040603-1.2+b1
+
+Package: openoffice.org-thesaurus-en-us
+Version: 1:2.0.4~rc1-3
+
+Package: uwm
+Version: 0.2.9b-2.2
+
+Package: libvips-doc
+Version: 7.10.21-1
+
+Package: kde-style-lipstik
+Version: 2.2.1-2
+
+Package: c++-annotations-dvi
+Version: 6.5.0-1
+
+Package: kerry
+Version: 0.2-1
+
+Package: libxmltv-perl
+Version: 0.5.45-2
+
+Package: texlive-pictures
+Version: 2005.dfsg.3-1
+
+Package: fatresize
+Version: 1.0.2-2
+
+Package: phpgedview
+Version: 4.0.2.dfsg-2
+
+Package: xdelta
+Version: 1.1.3-7
+
+Package: diveintopython
+Version: 5.4-2
+
+Package: python-libgmail
+Version: 0.1.5.1+cvs20070102-2
+
+Package: gup
+Version: 0.5.11
+
+Package: liblog4cpp-doc
+Version: 0.3.5-rc3-1
+
+Package: libsident0-dev
+Version: 3.6-2
+
+Package: libswidgets-java
+Version: 0.1.4-1
+
+Package: mpqc-support
+Version: 2.3.1-1
+
+Package: ttf-larabie-uncommon
+Version: 1:20011216-1.1
+
+Package: python-imaging-doc-html
+Version: 1.1.2-1.1
+
+Package: libgnomecups1.0-dev
+Version: 0.2.2-5
+
+Package: mailliststat
+Version: 1.3-4
+
+Package: dvd+rw-tools
+Version: 7.0-7
+
+Package: libxsharp0
+Version: 0.7.4-1
+
+Package: printconf
+Version: 0.7.7
+
+Package: r-cran-its
+Version: 1.1.5-1
+
+Package: softgun
+Version: 0.14-1
+
+Package: mozilla-chatzilla
+Version: 2:1.8+1.0.8-4
+
+Package: libclass-dbi-loader-relationship-perl
+Version: 1.3-1
+
+Package: libxcb-res0
+Version: 1.0-1.1
+
+Package: xfonts-intl-chinese-big
+Version: 1.2.1-6
+
+Package: c2man
+Version: 2.41-17
+
+Package: svtools
+Version: 0.5-3
+
+Package: gjdoc
+Version: 0.7.7-7
+
+Package: icmpinfo
+Version: 1.11-6
+
+Package: libgcj8-dev
+Version: 4.2-20070210-1
+
+Package: libexpat1-dev
+Version: 1.95.8-3.4
+
+Package: libgdbm-dev
+Version: 1.8.3-3
+
+Package: xmltv
+Version: 0.5.45-2
+
+Package: videolink
+Version: 1.0-1
+
+Package: phpgroupware-dj
+Version: 0.9.16.011-3
+
+Package: libgwrap-runtime0
+Version: 1.9.6-3.1
+
+Package: csmash-data
+Version: 0.6.6-6.3
+
+Package: djbdoc2man
+Version: 1.1-2
+
+Package: libpgp-sign-perl
+Version: 0.19-4
+
+Package: moto4lin
+Version: 0.3+svn20060819-1
+
+Package: knotes
+Version: 4:3.5.5.dfsg.1-6
+
+Package: holotz-castle-milanb
+Version: 0.0.20050210-1
+
+Package: qbankmanager
+Version: 0.9.38-2
+
+Package: postgresql-plruby
+Version: 0.5.0-1
+
+Package: libhttp-access2-ruby1.8
+Version: 2.0.6-3
+
+Package: fibusql
+Version: 0.4.1-3
+
+Package: mozilla-locale-eu
+Version: 1.7+0.6-1
+
+Package: zsync
+Version: 0.5-1
+
+Package: zoo
+Version: 2.10-18
+
+Package: abntex
+Version: 0.9~beta2-2
+
+Package: gnome-osd
+Version: 0.11.3-1
+
+Package: libgstreamer-perl
+Version: 0.09-1
+
+Package: octave-sp
+Version: 1:2003-4
+
+Package: xmlto
+Version: 0.0.18-5.1
+
+Package: ipset
+Version: 2.2.9a-1
+
+Package: gnome-commander
+Version: 1.2.3-1
+
+Package: plib1.8.4-dev
+Version: 1.8.4-6
+
+Package: ttf-sil-abyssinica
+Version: 1.0-1
+
+Package: libcurses-ruby
+Version: 1.8.2-1
+
+Package: python-qt4-sql
+Version: 4.0.1-5
+
+Package: jless
+Version: 382-iso262-1
+
+Package: mpg123-nas
+Version: 0.61-5
+
+Package: libnet6-1.3-0-dbg
+Version: 1:1.3.1-3
+
+Package: vlc-plugin-esd
+Version: 0.8.6.a.debian-6
+
+Package: xserver-xorg-video-voodoo
+Version: 1:1.1.0-4
+
+Package: prc-tools
+Version: 2.3-1.1
+
+Package: dballe-common
+Version: 3.1-1
+
+Package: vncserver
+Version: 3.3.7-14
+
+Package: libaqdtaus3
+Version: 2.2.3-4
+
+Package: libgtksourceview-dev
+Version: 1.8.5-1
+
+Package: elscreen
+Version: 1.4.3-1
+
+Package: libfox1.4-doc
+Version: 1.4.34-1
+
+Package: vimhelp-fr
+Version: 6.3.013-2
+
+Package: libwxgtk2.6-0
+Version: 2.6.3.2.1.5
+
+Package: xfonts-cronyx-koi8r-misc
+Version: 2.3.8-6
+
+Package: libio-interface-perl
+Version: 1.02-1
+
+Package: ickle-common
+Version: 0.3.2-6
+
+Package: libarpack++2-dev
+Version: 2.2-9
+
+Package: med-pharmacy
+Version: 0.12
+
+Package: haskell-uulib-doc
+Version: 0.9.2-6
+
+Package: libsigc++-2.0-dev
+Version: 2.0.17-2
+
+Package: debiandoc-sgml-doc-pt-br
+Version: 1.1.10
+
+Package: python-sip4-dev
+Version: 4.4.5-4
+
+Package: x11proto-gl-dev
+Version: 1.4.8-1
+
+Package: libstylebook-java
+Version: 1.0~b3~svn20061109-1
+
+Package: cl-memoization
+Version: 20060126
+
+Package: mozilla-locale-el
+Version: 2:1.7.3-1
+
+Package: ivtv-modules-2.6.18-4-vserver-amd64
+Version: 2.6.18+0.8.2-5
+
+Package: libmysql-java
+Version: 5.0.4+dfsg-2
+
+Package: cortado
+Version: 0.2.2-1
+
+Package: sun-java5-demo
+Version: 1.5.0-11-1
+
+Package: libcurl3-gnutls-dev
+Version: 7.15.5-1
+
+Package: eclipse
+Version: 3.2.1-6
+
+Package: libpcap0.7-dev
+Version: 0.7.2-7
+
+Package: uim-fep
+Version: 1:1.2.1-9
+
+Package: gaim-autoprofile
+Version: 2.14-2
+
+Package: usrp
+Version: 3.0.2-2
+
+Package: libsufary-perl
+Version: 2.1.1-7.1
+
+Package: libapache-mod-ngobjweb
+Version: 4.4rc.2-3.1
+
+Package: libburn-1
+Version: 0.2-2
+
+Package: python-pytils
+Version: 0.2.1-1
+
+Package: ruby-yarv
+Version: 0.4.1-1
+
+Package: cbmlink-cbmc2n
+Version: 0.9.6-2
+
+Package: gnome-breakout
+Version: 0.5.2-5
+
+Package: libhighline-ruby
+Version: 1.2.2-1
+
+Package: gdb-doc
+Version: 6.6-1
+
+Package: ocaml-native-compilers
+Version: 3.09.2-9
+
+Package: cl-statistics
+Version: 20050224-3
+
+Package: libiksemel-utils
+Version: 1.2-3
+
+Package: strongswan
+Version: 2.8.3-1
+
+Package: forutil
+Version: 0.62-4
+
+Package: mozilla-livehttpheaders
+Version: 0.13.1-3
+
+Package: python-f2py
+Version: 2.45.241+1926-5
+
+Package: libpacklib1-dev
+Version: 2005.dfsg-5
+
+Package: qemu
+Version: 0.8.2-5
+
+Package: ttf-sazanami-mincho
+Version: 0.0.1.20040629-3
+
+Package: libmapnik-dev
+Version: 0.4.0-1
+
+Package: libwiki-toolkit-perl
+Version: 0.73-1
+
+Package: linux-uvc-source
+Version: 0.1.0.svn54-5
+
+Package: dcmtk
+Version: 3.5.4-2
+
+Package: kfocus
+Version: 1.0.2-16
+
+Package: libalps-light1
+Version: 1.2.2-2
+
+Package: mn-fit-dev
+Version: 5.13-4+b1
+
+Package: rhino-doc
+Version: 1.6.R5-1
+
+Package: synergy
+Version: 1.3.1-2
+
+Package: erc
+Version: 5.1.4-4
+
+Package: libfnlib0
+Version: 0.5-13
+
+Package: courierpasswd
+Version: 1.1.2-1
+
+Package: libpoker-eval
+Version: 133.0-1
+
+Package: ipw2200-modules-2.6-xen-amd64
+Version: 2:2.6.18-5
+
+Package: playground-plugin-xmms
+Version: 0.3-2
+
+Package: cheops-ng
+Version: 0.2.3-4
+
+Package: tint
+Version: 0.03b
+
+Package: libmail-mboxparser-perl
+Version: 0.54-1
+
+Package: xfce4-weather-plugin
+Version: 0.5.99.1-2
+
+Package: garlic
+Version: 1.5-2
+
+Package: iceweasel-l10n-eu
+Version: 2.0.0.3+debian-1
+
+Package: pmake
+Version: 1.111-1
+
+Package: user-he
+Version: 1.0.13
+
+Package: libdbd-pg-ruby1.8
+Version: 0.1.1-4
+
+Package: rzip
+Version: 2.1-1
+
+Package: pygmy
+Version: 0.48-2
+
+Package: libloudmouth1-0
+Version: 1.1.4-2
+
+Package: maildrop
+Version: 2.0.3-1
+
+Package: glademm
+Version: 2.6.0-1.3
+
+Package: libaudacious4
+Version: 1.2.2-4
+
+Package: kdissert
+Version: 1.0.6.c-2
+
+Package: libgcu0
+Version: 0.6.3-3
+
+Package: mod-musicindex-common
+Version: 1.1.5-2
+
+Package: pike7.6-public.parser.xml2
+Version: 1.38-4
+
+Package: libdecoration0-dev
+Version: 0.3.6-1
+
+Package: python-sqlobject
+Version: 0.8.1-1
+
+Package: libflite1
+Version: 1.2-release-2.2
+
+Package: iceweasel-l10n-el
+Version: 2.0.0.3+debian-1
+
+Package: tinc
+Version: 1.0.7-1
+
+Package: unace
+Version: 1.2b-4
+
+Package: libqca2
+Version: 2.0~beta2-1
+
+Package: derivations
+Version: 0.4.20060920-2
+
+Package: libebl-dev
+Version: 0.123-3
+
+Package: openoffice.org-l10n-or-in
+Version: 2.0.4.dfsg.2-6
+
+Package: pylint
+Version: 0.12.1-1
+
+Package: xpdf
+Version: 3.01-9
+
+Package: djplay
+Version: 0.5.0-1
+
+Package: openoffice.org-l10n-uk
+Version: 2.0.4.dfsg.2-6
+
+Package: tina
+Version: 0.1.10
+
+Package: libcore++1c2
+Version: 1.7-7
+
+Package: libfilesys-statvfs-perl
+Version: 0.82-1
+
+Package: ttf-xfree86-nonfree
+Version: 4.2.1-3
+
+Package: wmppp.app
+Version: 1.3.0-8
+
+Package: libboost-filesystem-dev
+Version: 1.33.1-10
+
+Package: openoffice.org-qa-api-tests
+Version: 2.0.4.dfsg.2-6
+
+Package: libxss1
+Version: 1:1.1.0-1
+
+Package: amaya-data
+Version: 9.54~dfsg.0-1
+
+Package: libfile-basedir-perl
+Version: 0.02-1
+
+Package: libwfmath-doc
+Version: 0.3.4-4
+
+Package: netpipe-tcp
+Version: 3.6.2-2
+
+Package: python-pyepl
+Version: 1.0.28-1
+
+Package: gcc-snapshot
+Version: 20061022-1
+
+Package: libxdelta2-dev
+Version: 1.1.3-7
+
+Package: quodlibet-ext
+Version: 0.23.1-1
+
+Package: libxext-dev
+Version: 1:1.0.1-2
+
+Package: rubyfilter-doc
+Version: 0.12-2
+
+Package: peercast-servent
+Version: 0.1217.toots.20060314-1
+
+Package: gimp-dcraw
+Version: 1.27-2
+
+Package: libgnujmi-java
+Version: 0.0cvs20050116-2
+
+Package: libxalan2-java-gcj
+Version: 2.7.0-4
+
+Package: debian-reference-ja
+Version: 1.11
+
+Package: luasocket-doc
+Version: 2.0.1-2
+
+Package: timidity
+Version: 2.13.2-9
+
+Package: eciadsl
+Version: 0.11-3.1
+
+Package: libmsgcat-perl
+Version: 1.03-3
+
+Package: libxml-checker-perl
+Version: 0.13-4
+
+Package: gnome-pilot-conduits
+Version: 2.0.15-1
+
+Package: cernlib
+Version: 2005.dfsg-5
+
+Package: gkrellm-leds
+Version: 0.8.0-1.1
+
+Package: libgail-gnome-dev
+Version: 1.1.3-3
+
+Package: pentanet-dev
+Version: 2.3.1-5
+
+Package: photon
+Version: 0.4.4-1
+
+Package: libsscm1
+Version: 0.7.4-1
+
+Package: atlas3-test
+Version: 3.6.0-20.6
+
+Package: hedgewars-data
+Version: 0.9.0-6
+
+Package: idjc
+Version: 0.6.10-1
+
+Package: beagle-backend-evolution
+Version: 0.2.12-1
+
+Package: libgdl-gnome-1-0-dbg
+Version: 0.7.2-1
+
+Package: libqwt5-doc
+Version: 5.0.1-2
+
+Package: libhugs-cabal-bundled
+Version: 98.200609.21-4
+
+Package: libclutter-0.2-dbg
+Version: 0.2.2-1
+
+Package: socket
+Version: 1.1-8
+
+Package: postgresql-server-dev-8.2
+Version: 8.2.3-1
+
+Package: semi
+Version: 1.14.6+0.20061202-1
+
+Package: libxkbfile1
+Version: 1:1.0.3-2
+
+Package: nfsboot
+Version: 0.0.13
+
+Package: postgresql-server-dev-8.1
+Version: 8.1.8-1
+
+Package: openoffice.org-gtk-gnome
+Version: 2.0.4.dfsg.2-6
+
+Package: minpack-dev
+Version: 19961126-11
+
+Package: libgtksourceviewmm-1.0-dev
+Version: 0.2.0-1
+
+Package: polyxmass-data
+Version: 0.8.7-1
+
+Package: libgpod0
+Version: 0.3.2-1.1
+
+Package: lsb-release
+Version: 3.1-23.1
+
+Package: xfce4-panel
+Version: 4.3.99.2-2
+
+Package: mahoro-ruby
+Version: 0.1-1
+
+Package: hol88-contrib-help
+Version: 2.02.19940316-5
+
+Package: php4-apache2-mod-bt
+Version: 0.0.19+p4.2296-1
+
+Package: snort-doc
+Version: 2.3.3-13
+
+Package: ttf-arabeyes
+Version: 1.1-8
+
+Package: libobject-realize-later-perl
+Version: 0.15-3
+
+Package: libvanessa-logger-dev
+Version: 0.0.7-2
+
+Package: libgpod1
+Version: 0.4.2-1
+
+Package: phpgroupware-preferences
+Version: 0.9.16.011-3
+
+Package: c++-annotations-latex
+Version: 6.5.0-1
+
+Package: libdatetime-format-pg-perl
+Version: 0.13-1
+
+Package: sendmail-base
+Version: 8.13.8-3
+
+Package: python2.5-dev
+Version: 2.5-5
+
+Package: classpath-gtkpeer
+Version: 2:0.92-4
+
+Package: rhythmbox-applet
+Version: 0.9.2-3
+
+Package: egoboo-data
+Version: 2.220-1
+
+Package: pconsole
+Version: 1.0-7.1
+
+Package: siege
+Version: 2.65-4
+
+Package: libtime-stopwatch-perl
+Version: 1.00-2
+
+Package: libmail-listdetector-perl
+Version: 0.34+dfsg-1
+
+Package: python-twisted-web
+Version: 0.6.0-1
+
+Package: autobook
+Version: 1.4.4-unofficial-4
+
+Package: libsident0
+Version: 3.6-2
+
+Package: freebirth
+Version: 0.3.2-8
+
+Package: pdftohtml
+Version: 0.36-14
+
+Package: stardict-xmlittre
+Version: 1:1.0-1
+
+Package: cl-metering
+Version: 19940125b-2
+
+Package: freeradius-dialupadmin
+Version: 1.1.3-3
+
+Package: grouch.app
+Version: 0.0.20061002-1
+
+Package: proguard
+Version: 3.7-1
+
+Package: debhelper
+Version: 5.0.42
+
+Package: libapache-mod-repository
+Version: 0.3-11
+
+Package: liborbit2-dev
+Version: 1:2.14.4-1
+
+Package: fhist
+Version: 1.16-1
+
+Package: dancer-services
+Version: 1.8.0.6.3-4
+
+Package: libpreludedb-dev
+Version: 0.9.12-1
+
+Package: php4-pgsql
+Version: 6:4.4.4-9
+
+Package: gpe-gallery
+Version: 0.97-2
+
+Package: xmms2-dev
+Version: 0.2DrHouse-3.1
+
+Package: phpgroupware-chat
+Version: 0.9.16.011-3
+
+Package: sc
+Version: 7.16-2
+
+Package: sl
+Version: 3.03-14
+
+Package: texlive-doc-fi
+Version: 2005.dfsg.2-1
+
+Package: katoob
+Version: 0.5.6-3
+
+Package: update-inetd
+Version: 4.27-0.5
+
+Package: stars
+Version: 0.12+1-3
+
+Package: libhdf4g-run
+Version: 4.1r4-19
+
+Package: sn
+Version: 0.3.8-6.1
+
+Package: cyrus-sasl2-dbg
+Version: 2.1.22.dfsg1-8
+
+Package: kinput2-canna
+Version: 3.1-10
+
+Package: libapache-mod-musicindex
+Version: 1.1.5-2
+
+Package: juman-dic
+Version: 5.1-2
+
+Package: libestraier-java
+Version: 1.4.9-1.1
+
+Package: openoffice.org-l10n-cy
+Version: 2.0.4.dfsg.2-6
+
+Package: xen-docs-3.0
+Version: 3.0.3-0-2
+
+Package: php-image-canvas
+Version: 0.2.2-1
+
+Package: erlang-mode
+Version: 1:11.b.2-4
+
+Package: libtest-www-mechanize-perl
+Version: 1.12-2
+
+Package: magnus
+Version: 20060324-3
+
+Package: apt-build
+Version: 0.12.27
+
+Package: ffproxy
+Version: 1.6-3
+
+Package: trayer
+Version: 1.0-1
+
+Package: hol88-library-source
+Version: 2.02.19940316-5
+
+Package: apache2-src
+Version: 2.2.3-3.3
+
+Package: fp-units-rtl
+Version: 2.0.4-5
+
+Package: gauche-doc
+Version: 0.8.8-2
+
+Package: libboost-filesystem1.33.1
+Version: 1.33.1-10
+
+Package: unixodbc-bin
+Version: 2.2.11-13
+
+Package: mailsync
+Version: 5.2.2-1
+
+Package: zope-cmfcore1.6
+Version: 1.6.2-1
+
+Package: ktechlab
+Version: 0.3-5
+
+Package: openoffice.org-l10n-cs
+Version: 2.0.4.dfsg.2-6
+
+Package: sp
+Version: 1.3.4-1.2.1-47
+
+Package: sng
+Version: 1.0.2-5
+
+Package: ulog-acctd
+Version: 0.4.3-2
+
+Package: ifeffit-doc
+Version: 1:1.3.0-4
+
+Package: libcommons-io-java
+Version: 1.0-3
+
+Package: snd
+Version: 7.18-2
+
+Package: libgtk-canvas1
+Version: 0.1.1-8
+
+Package: gimp-help-cs
+Version: 2+0.10-2
+
+Package: libwerken.xpath-java
+Version: 0.9.4-9
+
+Package: python-mlmmjadmd
+Version: 0.4-1.1
+
+Package: clamav-data
+Version: 20070320.040600.2879
+
+Package: libroxen-guestbook
+Version: 1.4-11
+
+Package: elvis-common
+Version: 2.2.0-8
+
+Package: synopsis
+Version: 0.8.0-5
+
+Package: gap
+Version: 4r4p9-1
+
+Package: avahi-discover
+Version: 0.6.16-5
+
+Package: libocamlgsl-ocaml
+Version: 0.5.2-2
+
+Package: aplus-fsf-doc
+Version: 4.20.2-5
+
+Package: postfix-gld
+Version: 1.7-1
+
+Package: postgresql-7.4-plruby
+Version: 0.5.0-1
+
+Package: gav
+Version: 0.9.0-1
+
+Package: kpsion
+Version: 0.15-2
+
+Package: john
+Version: 1.6-40.1
+
+Package: erlang-src
+Version: 1:11.b.2-4
+
+Package: gforge
+Version: 4.5.14-22
+
+Package: lsparisc
+Version: 0.2
+
+Package: tama
+Version: 1.2.0-3
+
+Package: texlive-doc-fr
+Version: 2005.dfsg.2-1
+
+Package: libx11-xcb-dev
+Version: 2:1.1.1-1
+
+Package: libopenexr2c2a
+Version: 1.2.2-4.3
+
+Package: libxcrypt1
+Version: 2.3-1
+
+Package: ssl-cert
+Version: 1.0.14
+
+Package: yale
+Version: 1.0-12
+
+Package: libhighgui0.9.7-0
+Version: 0.9.7-4
+
+Package: libgnome2-print-perl
+Version: 0.95.1-1
+
+Package: libmono-system-messaging1.0-cil
+Version: 1.2.2.1-2
+
+Package: postgresql-plperl-8.2
+Version: 8.2.3-1
+
+Package: jlha-utils
+Version: 0.1.5-1
+
+Package: ser2net
+Version: 2.3-1
+
+Package: libqt3-mt
+Version: 3:3.3.7-4
+
+Package: libsdl-sound1.2
+Version: 1.0.1-12
+
+Package: nut-nutrition
+Version: 12.3-1
+
+Package: amoeba
+Version: 1.1-17
+
+Package: postgresql-plperl-8.1
+Version: 8.1.8-1
+
+Package: dpkg-dev
+Version: 1.13.25
+
+Package: cl-closer-mop
+Version: 1:0.4-2
+
+Package: kannel-extras
+Version: 1.4.1-2
+
+Package: oss-preserve
+Version: 1.1-4
+
+Package: openoffice.org-l10n-ca
+Version: 2.0.4.dfsg.2-6
+
+Package: xshisen
+Version: 1:1.51-3
+
+Package: dillo
+Version: 0.8.5-4.1
+
+Package: lam4-dev
+Version: 7.1.2-1
+
+Package: jspwiki
+Version: 2.2.33.ds1-1
+
+Package: maxdb-dbmcli
+Version: 7.5.00.34-7
+
+Package: recoverjpeg
+Version: 1.1.1-1
+
+Package: alex
+Version: 2.1.0~rc1-1
+
+Package: sunclock
+Version: 3.56-2
+
+Package: libklibc-dev
+Version: 1.4.34-1
+
+Package: pymacs
+Version: 0.22-6
+
+Package: gpsk31
+Version: 0.3-1
+
+Package: libcorelinuxc2a
+Version: 0.4.32-7.2
+
+Package: swscanner
+Version: 0.2.2-2
+
+Package: user-euro-es
+Version: 0.37
+
+Package: enigma-doc
+Version: 1.00-2
+
+Package: evms-cli
+Version: 2.5.5-20
+
+Package: libxosd-dev
+Version: 2.2.14-1.3
+
+Package: python-soappy
+Version: 0.11.3-1.8
+
+Package: changetrack
+Version: 4.3-3
+
+Package: libsdl-mixer1.2-dev
+Version: 1.2.6-2
+
+Package: ext2resize
+Version: 1.1.19-9
+
+Package: librmail-ruby-doc
+Version: 0.17-1
+
+Package: openoffice.org-l10n-pa-in
+Version: 2.0.4.dfsg.2-6
+
+Package: euler-doc
+Version: 1.61.0-1
+
+Package: gtk2-engines-magicchicken
+Version: 1.1.1-7
+
+Package: libdshconfig1-dev
+Version: 0.20.12-2
+
+Package: libhsqldb-java-doc
+Version: 1.8.0.7-1
+
+Package: libuniconf4.2
+Version: 4.2.2-2.2
+
+Package: apollon
+Version: 1.0.2.1-2
+
+Package: easypg
+Version: 0.0.10-1
+
+Package: scponly
+Version: 4.6-1
+
+Package: libxml-xpath-perl
+Version: 1.13-6
+
+Package: selinux-policy-refpolicy-strict
+Version: 0.0.20061018-5
+
+Package: libnet-nbname-perl
+Version: 0.26-1
+
+Package: uim-qt
+Version: 1:1.2.1-9
+
+Package: libgnatprj-dev
+Version: 4.1.1-22
+
+Package: gaim-xmms-remote
+Version: 1.9~b3-1
+
+Package: musixtex-slurps
+Version: 92a-5
+
+Package: xserver-xorg-input-penmount
+Version: 1:1.2.0-1
+
+Package: refblas3-doc
+Version: 1.2-8
+
+Package: tinycdb
+Version: 0.76
+
+Package: mtp-tools
+Version: 0.1.4-1
+
+Package: latex-xft-fonts
+Version: 0.1-6
+
+Package: cook
+Version: 2.26-1
+
+Package: monodoc-nunit-manual
+Version: 1.1.18-1
+
+Package: python-selinux
+Version: 1.32-3
+
+Package: vim-gui-common
+Version: 1:7.0-219+1
+
+Package: libkst1c2
+Version: 1.3.1-1
+
+Package: qdbm-doc
+Version: 1.8.74-1.1
+
+Package: gamazons
+Version: 0.83-2
+
+Package: gentoo
+Version: 0.11.55-1.1
+
+Package: libihelp-ruby
+Version: 0.3.1-3
+
+Package: libjlha-java-doc-ja
+Version: 0.0.20050504-6
+
+Package: libzip-ruby1.8
+Version: 0.9.1-1
+
+Package: tmda
+Version: 1.0.3-1
+
+Package: dctrl-tools
+Version: 2.10
+
+Package: doc-linux-ja-text
+Version: 2006.05.25-1
+
