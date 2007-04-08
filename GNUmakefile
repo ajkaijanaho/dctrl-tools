@@ -77,7 +77,7 @@ so/%.o : %.c
 	$(CC) -fPIC $(CFLAGS) -c $< -o $@
 
 %.1 : %.1.cp
-	sed 's*SYSCONF*$(sysconf)*' $< > $@
+	sed 's*SYSCONF*$(sysconfdir)*' $< > $@
 
 sync-available/sync-available : sync-available/sync-available.cp
 	sed 's*VERSION*$(version)*' $< > $@
