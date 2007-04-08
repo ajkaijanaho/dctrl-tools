@@ -182,7 +182,12 @@ escaped for most shells.
 Show only the body of these fields from the matching paragraphs.  The
 field names must not include any colons or commas.  Commas are used to
 delimit field names in the argument to this option.  The fields are
-shown in the order given here.
+shown in the order given here.  See also the option \-I.
+.IP "\-I; \-\-invert\-show"
+Invert the meaning of option \-s: show only the fields that have
+.B not
+been named using a \-s option.  As an artefact of the implementation,
+the order of the fields in the original paragraph is not preserved.
 .PP
 A FIELD specification can contain a colon. In such a case, the part
 up to the colon is taken as the name of the field to be shown, and the

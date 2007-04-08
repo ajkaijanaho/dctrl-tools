@@ -22,7 +22,8 @@
 #include "strutil.h"
 
 void para_parser_init(para_parser_t * pp, FSAF * fp,
-		      bool invalidate_p, bool ignore_failing_paras)
+		      bool invalidate_p, bool ignore_failing_paras,
+                      bool register_unknown_fields)
 {
 	pp->fp = fp;
 	pp->eof = false;
@@ -30,6 +31,7 @@ void para_parser_init(para_parser_t * pp, FSAF * fp,
 	pp->line = 1;
 	pp->invalidate_p = invalidate_p;
 	pp->ignore_broken_paras = ignore_failing_paras;
+        pp->register_unknown_fields = register_unknown_fields;
 }
 
 void para_init(para_parser_t * pp, para_t * para)
@@ -57,13 +59,28 @@ void para_finalize(para_t * para)
 	para->fields = 0;
 }
 
+static struct field_data * register_field(para_t * para,
+                                          char const * s, size_t slen)
+{
+        size_t inx = fieldtrie_insert_n(s, slen)->inx;
+        if (inx >= para->nfields) {
+                assert(para->nfields > 0);
+                para->nfields = para->nfields * 2;
+                para->fields = realloc(para->fields,
+                                       para->nfields * sizeof(para->fields[0])
+                                      );
+                if (para->fields == 0) fatal_enomem(0);
+        }
+        struct field_data *field_data = &para->fields[inx];
+        return field_data;
+}
+
 void para_parse_next(para_t * para)
 {
 redo:
 	debug_message("para_parse_next", 0);
 	assert(para != 0);
 	para_parser_t * pp = para->common;
-	assert(para->nfields == fieldtrie_count());
 	para->start = pp->loc;
 	para->line = pp->line;
 	for (size_t i = 0; i < para->nfields; i++) {
@@ -132,13 +149,23 @@ redo:
 								  field_start,
 								  len);
 				assert(r.len == len);
-				struct field_attr attr =
+				struct field_attr *attr =
 					fieldtrie_lookup(r.b, len);
-				if (!attr.valid) {
-					field_data = 0;
+				if (attr == NULL) {
+                                        if (para->common->
+                                            register_unknown_fields) {
+                                                field_data =
+                                                        register_field(para,
+                                                                       r.b,
+                                                                       len);
+                                        } else {
+                                                field_data = 0;
+                                        }
 				} else {
-					assert(attr.inx < para->nfields);
-					field_data = &para->fields[attr.inx];
+					assert(attr->inx < para->nfields);
+					field_data = &para->fields[attr->inx];
+                                }
+                                if (field_data != NULL) {
 					field_data->start = pos;
 					field_data->line = line;
 				}

@@ -38,6 +38,7 @@ struct paragraph_parser {
 	size_t line;
 
 	bool ignore_broken_paras;
+        bool register_unknown_fields;
 };
 
 struct paragraph {
@@ -54,7 +55,8 @@ typedef struct paragraph para_t;
 
 /* Initialize the given para_parser_t, associating with it the given FSAF. */
 void para_parser_init(para_parser_t *, FSAF *,
-		      bool invalidate_p, bool ignore_broken_paras);
+		      bool invalidate_p, bool ignore_broken_paras,
+                      bool register_unknown_fields);
 
 /* Initialize the given para_t for the given parser. */
 void para_init(para_parser_t *, para_t *);

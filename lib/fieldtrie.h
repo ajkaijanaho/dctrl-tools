@@ -24,17 +24,22 @@
 #include <stdbool.h>
 
 struct field_attr {
-	bool valid;
-	size_t inx;
+	char const *const name;
+	const size_t namelen;
+	const size_t inx;
+        unsigned application_data;
 };
 
 void fieldtrie_init(void);
 
 // case-insensitive
-size_t fieldtrie_insert(char const *);
+struct field_attr *fieldtrie_insert(char const *);
+struct field_attr *fieldtrie_insert_n(char const * s, size_t slen);
 
 // case-insensitive
-struct field_attr fieldtrie_lookup(char const *, size_t n);
+struct field_attr *fieldtrie_lookup(char const *, size_t n);
+
+struct field_attr *fieldtrie_get(size_t inx);
 
 //void fieldtrie_clear(void);
 

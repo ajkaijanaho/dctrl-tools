@@ -42,7 +42,7 @@ const char * argp_program_version = "grep-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;
 
 const char description [] = "Description";
-size_t description_inx;
+struct field_attr *description_attr;
 
 static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 
@@ -120,6 +120,7 @@ static struct argp_option options[] = {
 	{ "regex",	    'r', 0,		    0, N_("The pattern is a standard POSIX regular expression.") },
 	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match.") },
 	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match.") },
+        { "invert-show",    'I', 0,                 0, N_("Show those fields that have NOT been selected with -s") },
 	{ "count",	    'c', 0,		    0, N_("Show only the count of matching paragraphs.") },
 	{ "config-file",    OPT_CONFIG, N_("FNAME"),0, N_("Use FNAME as the config file.") },
 	{ "exact-match",    'X', 0,		    0, N_("Do an exact match.") },
@@ -186,6 +187,8 @@ struct arguments {
 	bool count;
 	/* Invert match? */
 	bool invert_match;
+        /* Show fields that are NOT listed? */
+        bool invert_show;
 	/* First unused position in toks.  */
 	size_t toks_np;
         /* Token read position. */
@@ -205,15 +208,18 @@ struct arguments {
 	} *atom_code[MAX_ATOMS];
 	/* File names seen on the command line.  */
 	struct ifile fname[MAX_FNAMES];
-	/**/
-	struct show_fields {
-		char const * name;
-		size_t inx;
-                size_t repl; // the field to use if this is empty
-	} show_fields[MAX_FIELDS];
+        /**/
+        size_t show_fields[MAX_FIELDS];
 	/* Search field names seen during current atom.  */
 	char * search_fields[MAX_FIELDS];
 };
+
+#define IS_SHOW_FIELD(field_app_data) ((field_app_data) & 1)
+#define SET_SHOW_FIELD(field_app_data,val) \
+  ((field_app_data) = ((field_app_data & ~1) | val))
+#define GET_BACKUP_FIELD(field_app_data) ((field_app_data) >> 1)
+#define SET_BACKUP_FIELD(field_app_data,val) \
+  ((field_app_data) = (((field_app_data)&1) | (val<<1)))
 
 struct atom * clone_atom(struct arguments * args)
 {
@@ -399,26 +405,35 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 'd':
 		args->short_descr = true;
 		break;
+        case 'I':
+                args->invert_show = true;
+                break;
 	case 's': {
 		char * carg = strdup(arg);
 		if (carg == 0) fatal_enomem(0);
 		for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
-			struct show_fields * sf =
-				&args->show_fields[args->num_show_fields];
-			sf->name = strdup(s);
-			if (sf->name == 0) fatal_enomem(0);
-                        char * repl = strchr(sf->name, ':');
+                        char * repl = strchr(s, ':');
                         if (repl != NULL) {
                                 *repl = '\0';
                                 ++repl;
                         }
-			sf->inx = fieldtrie_insert(sf->name);
-			if (sf->inx == description_inx) {
-				args->description_selected = true;
-			}
-                        sf->repl = repl == NULL
+                        struct field_attr *fa = fieldtrie_insert(s);
+                        if (args->num_show_fields >= MAX_FIELDS) {
+                                message(L_FATAL, _("too many output fields"), 0);
+                                fail();
+                        }
+                        args->show_fields[args->num_show_fields] = fa->inx;
+                        if (fa == description_attr) {
+                                args->description_selected = true;
+                        }
+                        SET_SHOW_FIELD(fa->application_data, true);
+
+                        size_t repl_inx = repl == NULL
                                 ? (size_t)(-1)
-                                : fieldtrie_insert(repl);
+                                : fieldtrie_insert(repl)->inx;
+
+                        SET_BACKUP_FIELD(fa->application_data, repl_inx);
+
 			++args->num_show_fields;
 		}
 		free(carg);
@@ -732,6 +747,27 @@ static void parse_predicate(struct arguments * args)
 	if (tok != TOK_EOD) unexpected(tok);
 }
 
+static void show_field(struct arguments *args,
+                       struct paragraph *para,
+                       struct field_attr *fa)
+{
+        if (args->show_field_name) {
+                printf("%s: ", fa->name);
+        }
+        struct fsaf_read_rv r 
+                = get_field(para, 
+                            fa->inx,
+                            GET_BACKUP_FIELD(fa->application_data));
+        
+        if (args->short_descr &&
+            fa == description_attr) {
+                char * nl = memchr(r.b, '\n', r.len);
+                if (nl != 0) r.len = nl - r.b;
+        }
+        fwrite(r.b, 1, r.len, stdout);
+        puts("");
+}
+
 static struct argp argp = { .options = options,
 			    .parser = parse_opt,
 			    .args_doc = argsdoc,
@@ -749,7 +785,7 @@ int main (int argc, char * argv[])
 	args.show_field_name = true;
 	msg_set_progname(argv[0]);
 	init_predicate(&args.p);
-	description_inx = fieldtrie_insert(description);
+	description_attr = fieldtrie_insert(description);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 #ifdef BANNER
 	banner(true);
@@ -780,10 +816,16 @@ int main (int argc, char * argv[])
 		message(L_INFORMATIONAL,
 			_("Adding \"Description\" to selected output fields because of -d"),
 			0);
-		args.show_fields[args.num_show_fields].name = description;
-		args.show_fields[args.num_show_fields].inx = description_inx;
+                SET_SHOW_FIELD(description_attr->application_data, 1);
+                args.show_fields[args.num_show_fields] = description_attr->inx;
 		++args.num_show_fields;
 	}
+
+        if (args.invert_show && args.num_show_fields == 0) {
+                message(L_FATAL,
+                        _("-I requires at least one instance of -s"), 0);
+                fail();
+        }
 
 	if (!args.show_field_name && args.num_show_fields == 0) {
 		message(L_FATAL,
@@ -820,7 +862,8 @@ int main (int argc, char * argv[])
 
 		FSAF * fp = fsaf_fdopen(fd, fname.s);
 		para_parser_t pp;
-		para_parser_init(&pp, fp, true, args.ignore_errors);
+		para_parser_init(&pp, fp, true, args.ignore_errors,
+                                 args.invert_show);
 		para_t para;
 		para_init(&pp, &para);
 		while (1) {
@@ -846,23 +889,29 @@ int main (int argc, char * argv[])
 				putchar('\n');
 				continue;
 			}
-			for (size_t j = 0; j < args.num_show_fields; j++) {
-				if (args.show_field_name) {
-					printf("%s: ", args.show_fields[j].name);
-				}
-				struct fsaf_read_rv r 
-					= get_field(&para, 
-						    args.show_fields[j].inx,
-                                                    args.show_fields[j].repl);
-				if (args.short_descr &&
-				    args.show_fields[j].inx == description_inx) {
-					char * nl = memchr(r.b, '\n', r.len);
-					if (nl != 0) r.len = nl - r.b;
-				}
-				fwrite(r.b, 1, r.len, stdout);
-				puts("");
-				continue;
-			}
+                        if (args.invert_show) {
+                                for (size_t j = 0;
+                                     j < fieldtrie_count() &&
+                                             j < para.nfields; 
+                                     j++) {
+                                        struct field_attr *fa = 
+                                                fieldtrie_get(j);
+                                        if (IS_SHOW_FIELD(fa->application_data)) {
+                                                continue;
+                                        }
+                                        show_field(&args, &para, fa);
+                                }
+                        } else {
+                                for (size_t j = 0;
+                                     j < args.num_show_fields; j++) {
+                                        size_t inx = args.show_fields[j];
+                                        struct field_attr *fa = 
+                                                fieldtrie_get(inx);
+                                        assert(IS_SHOW_FIELD
+                                               (fa->application_data));
+                                        show_field(&args, &para, fa);
+                                }
+                        }
 			if (args.num_show_fields > 1) puts("");
 		}
 
