@@ -137,7 +137,7 @@ redo:
 				if (!attr.valid) {
 					field_data = 0;
 				} else {
-					assert(attr.inx < MAX_FIELDS);
+					assert(attr.inx < para->nfields);
 					field_data = &para->fields[attr.inx];
 					field_data->start = pos;
 					field_data->line = line;
