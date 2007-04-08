@@ -24,6 +24,8 @@ src = $(libsrc) \
       $(wildcard sort-dctrl/*.c) \
       $(wildcard tbl-dctrl/*.c)
 
+obj = $(src:.c=.o)
+
 exe =  	grep-dctrl/grep-dctrl \
 	sort-dctrl/sort-dctrl \
 	tbl-dctrl/tbl-dctrl 
@@ -55,7 +57,7 @@ tbl-dctrl/tbl-dctrl : tbl-dctrl/tbl-dctrl.o libdctrl.a
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 %.d: %.c
-	$(CC) -M $(CPPFLAGS) $< > $@.$$$$; \
+	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
 	   sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
 	   rm -f $@.$$$$
 
@@ -97,7 +99,7 @@ po/dctrl-tools.pot : $(src)
 
 fsaf.test : fsaf.test.o msg.o
 
-test :	all
+test :	all-no-mo
 	./tester.sh
 
 clean :
