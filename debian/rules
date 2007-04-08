@@ -10,6 +10,7 @@ include langs.mk
 
 debian/stamp/build: #debian/stamp/build-configure
 	$(MAKE)
+	-$(MAKE) test
 	touch $@
 
 #debian/stamp/build-configure:
