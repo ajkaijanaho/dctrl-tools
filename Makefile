@@ -104,7 +104,7 @@ test :	all
 clean :
 	$(RM) core $(exe) grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
 	$(RM) po/*.mo TAGS *.d
-	$(RM) sync-available
+	$(RM) sync-available/sync-available
 
 distclean : clean
 
