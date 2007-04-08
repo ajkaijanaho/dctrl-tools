@@ -37,7 +37,6 @@ all :	all-no-mo mo
 
 all-no-mo :	sync-available/sync-available \
 		man/grep-dctrl.1 \
-		man/sort-dctrl.1 \
 		$(exe)
 
 pot : po/dctrl-tools.pot
