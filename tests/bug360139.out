@@ -1,0 +1,40 @@
+Package: spl-xml
+Installed-Size: 48
+Description: SPL Programming Language -- XML adapter
+
+Package: rungetty
+Installed-Size: 80
+Description: minimal console getty that can run any process
+
+Package: spl-opengl
+Installed-Size: 112
+Description: SPL Programming Language -- OpenGL adapter
+
+Package: beep
+Installed-Size: 112
+Description: advanced pc-speaker beeper
+
+Package: t-prot
+Installed-Size: 216
+Description: display filter for RFC822 messages
+
+Package: xblast
+Installed-Size: 448
+Description: Multi player blast-the-others game inspired by Dynablaster
+
+Package: python-metakit
+Installed-Size: 504
+Description: Metakit bindings for python
+
+Package: tetradraw
+Installed-Size: 600
+Description: ANSI drawing and viewing utility
+
+Package: xblast-tnt
+Installed-Size: 1656
+Description: multiplayer blast-the-others game inspired by Dynablaster
+
+Package: xblast-tnt-models
+Installed-Size: 8868
+Description: player models for xblast-tnt
+
