@@ -100,7 +100,7 @@ po/dctrl-tools.pot : $(src)
 fsaf.test : fsaf.test.o msg.o
 
 test :	all-no-mo
-	./tester.sh
+	sh ./tester.sh
 
 clean :
 	$(RM) core $(exe) man/grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
