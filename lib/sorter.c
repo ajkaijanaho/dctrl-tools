@@ -28,17 +28,12 @@
 
 static keys_t *keys;
 
-static
-int para_compare(const void * av, const void * bv)
+int para_compare(keys_t *keys, const para_t *a, const para_t *b)
 {
-	debug("cmp: av = %p, bv = %p", av, bv);
-	para_t ** a = (para_t **)av;
-	para_t ** b = (para_t **)bv;
-
 	int r = 0;
 	for (size_t i = 0; i < keys->nks; i++) {
-		char * af = get_field_as(*a, keys->keys[i].field_inx);
-		char * bf = get_field_as(*b, keys->keys[i].field_inx);
+		char * af = get_field_as(a, keys->keys[i].field_inx);
+		char * bf = get_field_as(b, keys->keys[i].field_inx);
 		if (af == 0 || bf == 0) fatal_enomem(0);
 		switch (keys->keys[i].type) {
 		case FT_STRING:
@@ -69,6 +64,16 @@ int para_compare(const void * av, const void * bv)
 	return r;
 }
 
+static
+int compare(const void * av, const void * bv)
+{
+	debug("cmp: av = %p, bv = %p", av, bv);
+	para_t ** a = (para_t **)av;
+	para_t ** b = (para_t **)bv;
+
+        return para_compare(keys, *a, *b);
+}
+
 void sort_bundle(keys_t * ks, struct para_bundle * pb)
 {
 	size_t num_paras = bundle_size(pb);
@@ -81,5 +86,5 @@ void sort_bundle(keys_t * ks, struct para_bundle * pb)
 	debug("sort_bundle: paras = %p, paras+num_paras*sizeof *paras = %p",
 	      paras, paras+num_paras*sizeof *paras);
 
-	qsort(paras, num_paras, sizeof *paras, para_compare);
+	qsort(paras, num_paras, sizeof *paras,  compare);
 }
