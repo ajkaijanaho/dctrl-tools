@@ -69,9 +69,12 @@ void keys_fini(keys_t * ks)
 	ks->keys = 0;
 }
 
+int para_compare(keys_t *, const para_t *, const para_t *);
+
 /*
   Note that this function is NOT reentrant!
 */
 void sort_bundle(keys_t *, struct para_bundle *);
+
 
 #endif /* SORTER_H */

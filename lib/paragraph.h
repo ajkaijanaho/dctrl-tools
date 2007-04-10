@@ -80,7 +80,7 @@ struct fsaf_read_rv get_field(para_t * p, size_t fld_inx, size_t repl_inx)
 }
 
 static inline
-char * get_field_as(para_t * p, size_t fld_inx)
+char * get_field_as(const para_t * p, size_t fld_inx)
 {
 	struct field_data * fd = &p->fields[fld_inx];
 	return fsaf_getas(p->common->fp, fd->start, fd->end - fd->start);
