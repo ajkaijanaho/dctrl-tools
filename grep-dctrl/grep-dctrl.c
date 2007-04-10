@@ -217,7 +217,7 @@ struct arguments {
 #define IS_SHOW_FIELD(field_app_data) ((field_app_data) & 1)
 #define SET_SHOW_FIELD(field_app_data,val) \
   ((field_app_data) = ((field_app_data & ~1) | val))
-#define GET_BACKUP_FIELD(field_app_data) ((field_app_data) >> 1)
+#define GET_BACKUP_FIELD(field_app_data) (((field_app_data & ~0)) == (unsigned)-1 ? (size_t)-1 : (size_t)(field_app_data) >> 1)
 #define SET_BACKUP_FIELD(field_app_data,val) \
   ((field_app_data) = (((field_app_data)&1) | (val<<1)))
 
