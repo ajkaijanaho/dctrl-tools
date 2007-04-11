@@ -1,0 +1,636 @@
+Package: 3270-common
+Priority: optional
+Section: net
+Installed-Size: 96
+Maintainer: Bastian Blank <waldi@debian.org>
+Architecture: amd64
+Source: ibm-3270
+Version: 3.3.4p6-3.3
+Depends: libc6 (>= 2.3.5-1)
+Recommends: x3270 (= 3.3.4p6-3.3) | c3270 (= 3.3.4p6-3.3), pr3287 (= 3.3.4p6-3.3)
+Filename: pool/main/i/ibm-3270/3270-common_3.3.4p6-3.3_amd64.deb
+Size: 22174
+MD5sum: 1513ef12493413803f79f8410326a1ee
+SHA1: 1a44908e770f64c039e087dca37d3130acaf56cc
+SHA256: c1957cbd6ca1d3e1f2a78449446a35386c88b635628ea2d1b1c82625e10d9268
+Description: Common files for IBM 3270 emulators and pr3287
+ 3270-common contains files referenced in other 3270 packages
+
+Package: 3dchess
+Priority: optional
+Section: games
+Installed-Size: 144
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: amd64
+Version: 0.8.1-12
+Depends: libc6 (>= 2.3.5-1), libx11-6, libxext6, libxmu6, libxpm4, libxt6, xaw3dg (>= 1.5+E-1)
+Filename: pool/main/3/3dchess/3dchess_0.8.1-12_amd64.deb
+Size: 35526
+MD5sum: 40f3e6e9b7f8a131bc5690ecf6b8949d
+SHA1: 84f308bc0b12d5d487c6224fcaaeaf5bc9582409
+SHA256: 464a3d6da71abc0bd2f8d44eb6a5ff2f61e9e984dbcf218685f89278aadaa1d2
+Description: 3D chess for X11
+ 3 dimensional Chess game for X11R6.  There are three boards, stacked
+ vertically; 96 pieces of which most are the traditional chess pieces with
+ just a couple of additions; 26 possible directions in which to move.  The
+ AI isn't wonderful, but provides a challenging enough game to all but the
+ most highly skilled players.
+Tag: game::board:chess, interface::3d, use::gameplaying, x11::application
+
+Package: 3ddesktop
+Priority: optional
+Section: utils
+Installed-Size: 448
+Maintainer: Pierre Habouzit <madcoder@debian.org>
+Architecture: amd64
+Version: 0.2.9-6
+Depends: libc6 (>= 2.3.5-1), libgcc1 (>= 1:4.1.1-12), libgl1-mesa-glx | libgl1, libglu1-mesa | libglu1, libimlib2, libstdc++6 (>= 4.1.1-12), libx11-6, libxxf86vm1
+Suggests: xbindkeys
+Filename: pool/main/3/3ddesktop/3ddesktop_0.2.9-6_amd64.deb
+Size: 80458
+MD5sum: f05ac262ef0fc9b086084cd378bd91d1
+SHA1: cc2e9c201f666516e2bb2069e06fc91cb03eeb2a
+SHA256: 5e4cab5e38e33f2f6192cc31781cc9767a24c93d4ec72d3c48d5f6702a522e90
+Description: "Three-dimensional" desktop switcher
+ 3D-Desktop is an OpenGL program for switching virtual desktops in
+ a seamless 3-dimensional manner.  The current desktop is mapped into a
+ fullscreen 3D environment where you may choose other screens.  Several
+ different visualization modes are available.  A window manager
+ compatible with the GNOME pager standard is required.
+ .
+ The transition from working desktop to fullscreen 3D environment is
+ seamless: when the pager activates you see your current desktop appear
+ to zoom out to a point in space where you can see your other virtual
+ desktops allowing you to select another.
+ .
+ The program is rather memory-hungry and it is CPU intensive, but it's
+ accessible from the command line, which makes it perfect for show
+ floors and impressing your non-UN*X-using friends.
+Tag: game::toys, interface::3d, role::program, scope::utility, use::viewing, x11::applet
+
+Package: 6tunnel
+Priority: optional
+Section: net
+Installed-Size: 72
+Maintainer: Thomas Seyrat <tomasera@debian.org>
+Architecture: amd64
+Version: 0.11rc2-2
+Depends: libc6 (>= 2.3.5-1)
+Filename: pool/main/6/6tunnel/6tunnel_0.11rc2-2_amd64.deb
+Size: 13480
+MD5sum: 2625b28629440edf54a9c061c6496e32
+SHA1: ee717f58a479c9bccc21e892b5f8143ce335cec8
+SHA256: fa1d1cc29ed5e5f01f4a6b0561aabe227b7ea86a0a1b4a3e15af0ad889f108c4
+Description: TCP proxy for non-IPv6 applications
+ 6tunnel allows you to use services provided by IPv6 hosts with
+ IPv4-only applications and vice versa. It can bind to any of your IPv4
+ or IPv6 addresses and forward all data to IPv4 or IPv6 host.
+ .
+ It can be used for example as an IPv6-capable IRC proxy.
+Tag: interface::daemon, network::server, network::vpn, protocol::ipv6, role::program, use::proxying, use::routing
+
+Package: 915resolution
+Priority: extra
+Section: x11
+Installed-Size: 112
+Maintainer: Steffen Joeris <steffen.joeris@skolelinux.de>
+Architecture: amd64
+Version: 0.5.2-9
+Replaces: 855resolution
+Provides: 855resolution
+Depends: libc6 (>= 2.3.5-1), vbetool (>= 0.6.1)
+Conflicts: 855resolution
+Filename: pool/main/9/915resolution/915resolution_0.5.2-9_amd64.deb
+Size: 14258
+MD5sum: b6a18ead8143d7d8bb958304f656ec84
+SHA1: 0ac52cceaad599660cf8b3c1316739b31a229f4d
+SHA256: 0ef5765b9412010a8d31c5bb813d2cc8bf68e800bb7a5e3330b8297057513ff0
+Description: resolution modification tool for Intel graphic chipset
+ 915resolution is a tool to modify the video BIOS of the 800
+ and 900 series Intel graphics chipsets. This includes the 845G,
+ 855G, and 865G chipsets, as well as 915G, 915GM, and 945G chipsets.
+ This modification is necessary to allow the display of certain
+ graphics resolutions for an Xorg or XFree86 graphics server.
+ .
+ 915resolution's modifications of the BIOS are transient.
+ There is no risk of permanent modification of the BIOS.
+ This also means that 915resolution must be run every time the
+ computer boots in order for its changes to take effect.
+ If you want to automatically set the resolution on each boot
+ and before X is launched, see /usr/share/doc/915resolution/README.Debian
+ for information about configuring the provided initscript.
+ .
+  Homepage: http://www.geocities.com/stomljen/
+Tag: admin::configuring, admin::hardware, hardware::video, interface::commandline
+
+Package: 9base
+Priority: optional
+Section: utils
+Installed-Size: 1360
+Maintainer: Daniel Baumann <daniel@debian.org>
+Architecture: amd64
+Version: 2-3
+Depends: libc6 (>= 2.3.5-1)
+Suggests: wmii2 (>= 2.5)
+Filename: pool/main/9/9base/9base_2-3_amd64.deb
+Size: 446914
+MD5sum: 9b142e6507dc05f296a36aff01535586
+SHA1: a181c16718992bf2d4976f3ab24482902d592d97
+SHA256: 22de260c171ccc5674fe6b41db0af420941a1ead55855ee9bf350dcb7d7a77f9
+Description: Plan 9 userland tools
+ 9base is a port of following original Plan 9 userland tools to Unix:
+ awk, basename, bc, cat, cleanname, date, dc, echo, grep, mk, rc, sed, seq,
+ sleep, sort, tee, test, touch, tr, uniq, and yacc.
+ .
+ 9base is currently only used by wmii2 (window manager improved, version 2).
+Tag: admin::configuring, interface::commandline, role::program, scope::utility
+
+Package: 9menu
+Priority: optional
+Section: x11
+Installed-Size: 80
+Maintainer: Andrew Stribblehill <ads@debian.org>
+Architecture: amd64
+Version: 1.8-1.1
+Depends: libc6 (>= 2.3.5-1), libx11-6, libxext6
+Filename: pool/main/9/9menu/9menu_1.8-1.1_amd64.deb
+Size: 15150
+MD5sum: 1a84d9c9c3a57552433d3bdf9f859d42
+SHA1: 9ea6b5782bfbd385505ca8513826f37be3dde6cb
+SHA256: 7bf3848621c431225ad8408455ce18c589810f3cca3f74e106a0cc95c93081fa
+Description: Creates X menus from the shell
+ This is a simple program that allows you to create X menus from
+ the shell, where each menu item will run a command. 9menu is intended
+ for use with 9wm, but can be used with any other window manager.
+Tag: interface::x11, role::program, scope::utility, x11::application
+
+Package: 9wm
+Priority: optional
+Section: x11
+Installed-Size: 116
+Maintainer: Decklin Foster <decklin@red-bean.com>
+Architecture: amd64
+Version: 1.2-7
+Provides: x-window-manager
+Depends: libc6 (>= 2.3.5-1), libx11-6, libxext6
+Filename: pool/main/9/9wm/9wm_1.2-7_amd64.deb
+Size: 27328
+MD5sum: 0a821c74ddd7fa30363a1ef347cd1666
+SHA1: 617715aa1e4d6e8f9a92ff55f17e022022448454
+SHA256: 0c59ccfec84a162cec5e7af63ecaba8150a35920738c10f547e1f6fd11e71970
+Description: emulation of the Plan 9 window manager 8-1/2
+ 9wm is an X window manager which attempts to emulate the Plan 9 window
+ manager 8-1/2 as far as possible within the constraints imposed by X.
+ .
+ It provides a simple yet comfortable user interface, without garish
+ decorations or title-bars. Or icons. And it's click-to-type.
+Tag: interface::x11, network::server, role::program, x11::window-manager
+
+Package: a2ps
+Priority: optional
+Section: text
+Installed-Size: 3148
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Version: 1:4.13b.dfsg.1-1
+Depends: libc6 (>= 2.3.5-1), libpaper1
+Recommends: bzip2, lpr | cupsys-client, psutils, wdiff
+Suggests: emacsen-common, groff, gs-common, gv, html2ps, imagemagick, tetex-bin, t1-cyrillic
+Filename: pool/main/a/a2ps/a2ps_4.13b.dfsg.1-1_amd64.deb
+Size: 769512
+MD5sum: 97adb68b700bc99a7523f61d25f3fc16
+SHA1: f2f1766bf73eeba4c8bb8404fd7b876dd6d96fbf
+SHA256: 2d10b04a072bad89d4b87df488d5dcd3c27c7522d8d10192c29d016af6a40044
+Description: GNU a2ps - 'Anything to PostScript' converter and pretty-printer
+ GNU a2ps converts files into PostScript for printing or viewing. It uses a
+ nice default format, usually two pages on each physical page, borders
+ surrounding pages, headers with useful information (page number, printing
+ date, file name or supplied header), line numbering, symbol substitution
+ as well as pretty printing for a wide range of programming languages.
+ .
+ Historically, a2ps started as a text to PostScript converter, but thanks
+ to powerful delegations it is able to let you use it for any kind of files,
+ ie it can also digest manual pages, dvi files, texinfo, ....
+ .
+ Among the other most noticeable features of a2ps are:
+  - various encodings (all the Latins and others),
+  - various fonts (automatic font down loading),
+  - various medias,
+  - various printer interfaces,
+  - various output styles,
+  - various programming languages,
+  - various helping applications,
+  - and various spoken languages.
+Tag: devel::prettyprint, interface::commandline, role::program, scope::utility, use::converting, use::printing, works-with::text, works-with-format::postscript
+
+Package: a2ps-perl-ja
+Priority: optional
+Section: perl
+Installed-Size: 84
+Maintainer: Ryuichi Arafune <arafune@debian.org>
+Architecture: all
+Version: 1.45-4
+Depends: perl
+Conflicts: a2ps-ja
+Filename: pool/main/a/a2ps-perl-ja/a2ps-perl-ja_1.45-4_all.deb
+Size: 14922
+MD5sum: 82996daa4b6bbd4aa48ce23461034cf5
+SHA1: 0616e771923858bbaf073ffbd0ad69b3141f4c3d
+SHA256: bf550af3925651fd844f253e1df7c8e49e686cdb766e94596f8c0c002ce644c0
+Description: perl version of Miguel Santana's a2ps (supports KANJI)
+ This program is perl version of Miguel Santana's a2ps.  Postscript
+ kanji enhancement was done by Naoki Kanazawa <kanazawa@sra.co.jp>.
+ Converted to perl and enhanced by Kazumasa Utashiro.  B4 support
+ and punchmark was contributed by Masami Ueno
+Tag: culture::japanese, implemented-in::perl, interface::commandline, role::program, scope::utility, use::converting, use::printing, works-with::text, works-with-format::postscript
+
+Package: aa3d
+Priority: optional
+Section: graphics
+Installed-Size: 76
+Maintainer: Uwe Hermann <uwe@debian.org>
+Architecture: amd64
+Version: 1.0-5
+Depends: libc6 (>= 2.3.5-1)
+Filename: pool/main/a/aa3d/aa3d_1.0-5_amd64.deb
+Size: 9300
+MD5sum: e9a8ebbae0634a20a6900008c7f9fd44
+SHA1: 49413c2008ee6112fa03effe21e042a490d53121
+SHA256: dac2336d5c34e0e08046243764e6234f97cf2a44f26fead73fa485ad146ac1da
+Description: ASCII art stereogram generator
+ This program generates the well-known and popular random dot stereograms
+ in ASCII art.
+Tag: game::toys, interface::commandline, role::program, scope::utility, use::viewing
+
+Package: aap
+Priority: optional
+Section: devel
+Installed-Size: 1060
+Maintainer: Cory Dodt <corydodt@twistedmatrix.com>
+Architecture: all
+Version: 1.072-1.1
+Depends: python (>= 2.2), python-support (>= 0.2)
+Suggests: aap-doc
+Filename: pool/main/a/aap/aap_1.072-1.1_all.deb
+Size: 214016
+MD5sum: c4b5b859d3f4c120ca731a1c870c3439
+SHA1: 63bf72a28b009a888ad61805f7afc1712d75d239
+SHA256: a567d79e13b8a6bec78cb1161e5fcef7cb3c44f77c07d6d6f52dd4ae976a6b92
+Description: make-like "expert system" for building software
+ A-A-P is a dependency rule-based software build system like make.  It
+ eliminates many of the warts of GNU Make and can evaluate Python code
+ embedded in the scripts.
+Tag: devel::buildtools, implemented-in::python, interface::commandline, role::program, scope::utility, works-with::software:source
+
+Package: aap-doc
+Priority: optional
+Section: doc
+Installed-Size: 1912
+Maintainer: Cory Dodt <corydodt@twistedmatrix.com>
+Architecture: all
+Source: aap
+Version: 1.072-1.1
+Filename: pool/main/a/aap/aap-doc_1.072-1.1_all.deb
+Size: 676966
+MD5sum: 20506b367c82499f874dbad73c87b727
+SHA1: c5645e3be20bc6d7ef7b028c9dd5139e1d4616b6
+SHA256: 029e40831422f97a049a7ce5deddb68af0d8743fd6bad955801e374a7edd02f3
+Description: make-like "expert system" for building software (documentation)
+ A-A-P is a dependency rule-based software build system like make.  It
+ eliminates many of the warts of GNU Make and can evaluate Python code
+ embedded in the scripts.
+ .
+ This package contains the documentation in HTML and PDF format.
+Tag: devel::{buildtools,doc,lang:python}, made-of::data:html, made-of::data:pdf, role::documentation, works-with::software:source
+
+Package: aatv
+Priority: optional
+Section: graphics
+Installed-Size: 112
+Maintainer: Uwe Hermann <uwe@debian.org>
+Architecture: amd64
+Version: 0.3-3
+Depends: libaa1 (>= 1.2), libc6 (>= 2.3.5-1)
+Filename: pool/main/a/aatv/aatv_0.3-3_amd64.deb
+Size: 16526
+MD5sum: 914c43f84c736429396aad7c6b6c413a
+SHA1: d1112d8f7f939ee1a554222a1e543d238b4319bd
+SHA256: 42b6437244768697706685a172d16f1cf1b151595a82045be0b82db2cba7cd1a
+Description: A program to watch TV in a text-based console
+ aatv is a program which allows you to watch TV in a text-based
+ console, i.e. in a virtual console or in an xterm.
+Tag: hardware::video, interface::commandline, role::program, scope::utility, use::viewing, works-with::video
+
+Package: abakus
+Priority: optional
+Section: kde
+Installed-Size: 768
+Maintainer: Steffen Joeris <steffen.joeris@skolelinux.de>
+Architecture: amd64
+Version: 0.91-1
+Depends: kdelibs4c2a (>= 4:3.5.4-1), libc6 (>= 2.3.5-1), libgcc1 (>= 1:4.1.0), libqt3-mt (>= 3:3.3.6), libstdc++6 (>= 4.1.0)
+Filename: pool/main/a/abakus/abakus_0.91-1_amd64.deb
+Size: 371838
+MD5sum: 322f48eec06703d0886ee2811f461d85
+SHA1: bfd0762065d0a801dc590241ed8199b07f528a45
+SHA256: 265deee135ec463e12dd15abcf1b63a732275da80a7aecf59b2826e331af963b
+Description: calculator for KDE
+ AbaKus is a complex calculator, which provides
+ many different kinds of calculations.
+ Think of it as bc (the command-line calculator) with a nice GUI.
+ It also gives information about mathematical variables and
+ has the user-friendly menu options of a normal KDE application.
+ .
+ Web site: http://grammarian.homelinux.net/abakus/
+Tag: field::mathematics, interface::x11, role::program, scope::utility, suite::kde, uitoolkit::qt, x11::application
+
+Package: abcde
+Priority: optional
+Section: sound
+Installed-Size: 308
+Maintainer: Jesus Climent <jesus.climent@hispalinux.es>
+Architecture: all
+Version: 2.3.99.6-1
+Depends: cd-discid, wget, cdparanoia | cdda2wav, vorbis-tools (>= 1.0beta4-1) | lame | flac | bladeenc | speex
+Suggests: eject, distmp3, id3 (>= 0.12), id3v2, eyed3, normalize-audio, vorbisgain, mkcue, mp3gain, python-musicbrainz
+Filename: pool/main/a/abcde/abcde_2.3.99.6-1_all.deb
+Size: 110802
+MD5sum: cc561b7e10589b9a1877de58a0793e02
+SHA1: ca884f1d50ebdad8763e77471c209ebc50a130e4
+SHA256: fdbeb376277a23048c5041a89db80c3f143ab4890f896618682cb823beb11a48
+Description: A Better CD Encoder
+ A frontend program to cdparanoia, wget, cd-discid, id3, and your favorite
+ Ogg/Vorbis, MP3, FLAC, Ogg/Speex and/or MPP/MP+(Musepack) encoder (defaults
+ to oggenc). Grabs an entire CD and converts each track to the specified
+ formats and then comments or ID3-tags each file, with one command.
+ .
+ With abcde you can encode several formats with one single command, using a
+ single CD read operation. It also allows you to read and encode while not
+ on the internet, and later query a CDDB server to tag your files.
+Tag: hardware::storage, hardware::storage:cd, interface::commandline, role::program, scope::utility, use::converting, use::storing, works-with::audio, works-with-format::{mp3,oggvorbis,wav}
+
+Package: abcm2ps
+Priority: optional
+Section: text
+Installed-Size: 388
+Maintainer: Anselm Lingnau <lingnau@debian.org>
+Architecture: amd64
+Version: 4.12.18-1
+Depends: libc6 (>= 2.3.5-1)
+Filename: pool/main/a/abcm2ps/abcm2ps_4.12.18-1_amd64.deb
+Size: 172484
+MD5sum: 8a54a373b0a839d271e8d25e77259348
+SHA1: 5671799830f715728ecf8230bdfdc1181fdd9cb2
+SHA256: 4ecf559fb0de0741fcc1a18a83018a6e16c8ca0d5a1aa5d3a96eea77297edc58
+Description: Translates ABC music description files to PostScript
+ This is the Debian port of the abcm2ps program by Jean-François Moine.
+ The program translates tunes written in the ABC format to PostScript,
+ which can then be viewed using Ghostview et al. or printed on a
+ PostScript printer or through Ghostscript. It supports various
+ semi-standard extensions to the ABC standard, such as multiple
+ voices and staves.
+ .
+ This program is a vastly improved spin-off from Michael Methfessel's
+ abc2ps, which continues to be available for the time being. In particular,
+ it contains a lot of extensions to help typeset classical music.
+Tag: field::arts, interface::commandline, role::program, scope::utility, use::converting, works-with::music-notation, works-with::text, works-with-format::postscript
+
+Package: abcmidi
+Priority: optional
+Section: sound
+Installed-Size: 436
+Maintainer: Anselm Lingnau <lingnau@debian.org>
+Architecture: amd64
+Version: 20060422-1
+Depends: libc6 (>= 2.3.5-1)
+Suggests: abcmidi-yaps | abcm2ps | abc2ps, timidity | pmidi | playmidi
+Filename: pool/main/a/abcmidi/abcmidi_20060422-1_amd64.deb
+Size: 233240
+MD5sum: 58674e8a1f2ee7552ba3295d95fa388a
+SHA1: f391f279cbb4ab99ad9b0a387b3bd591bd0e03f8
+SHA256: 8ed27146439d4b8bed8e9e43a8abd796c6f2023f41aa52a87e9ceda633ba7084
+Description: converter from ABC to MIDI format and back
+ This package contains the programs `abc2midi' and `midi2abc',  which
+ convert from the abc musical notation format to standard MIDI format
+ and vice-versa. They can generate accompaniment from guitar chords
+ in the abc file, as well as insert various MIDI events; the
+ MIDI-to-abc translation tries to figure out bars, triplets and
+ accidentals on its own.
+ .
+ The package also contains `abc2abc' (an abc prettyprinter/transposer),
+ `mftext' (a program that dumps a MIDI file as text), and `midicopy'
+ (a program that extracts specific tracks, channels or time intervals
+ from a MIDI file).
+ .
+ The programs in this package are based on the `midifilelib'
+ distribution available from http://www.harmony-central.com/MIDI/.
+Tag: interface::commandline, role::program, scope::utility, sound::midi, use::converting, use::playing, works-with::audio, works-with::music-notation
+
+Package: abcmidi-yaps
+Priority: extra
+Section: sound
+Installed-Size: 276
+Maintainer: Anselm Lingnau <lingnau@debian.org>
+Architecture: amd64
+Source: abcmidi
+Version: 20060422-1
+Depends: libc6 (>= 2.3.5-1)
+Suggests: postscript-viewer, abcmidi
+Filename: pool/main/a/abcmidi/abcmidi-yaps_20060422-1_amd64.deb
+Size: 137084
+MD5sum: 93d90a7aacc934e04f9f6a835f44b8f8
+SHA1: 993907542b5aa0df0267c3f69ef594892d561491
+SHA256: c104c9aafe9a7d4abea7d4dbb9540b0c0cfe39974040bc8f1abd9fbdcd2ce1d7
+Description: yet another ABC to PostScript converter
+ This program translates tunes written in the ABC format to PostScript,
+ which can then be viewed on screen or printed. It is essentially a
+ (non-exclusive) alternative to abc2ps, being based on the abc2ps
+ PostScript code together with the ABC parser from the abcmidi package.
+ .
+ People interested in this kind of software should also check out the
+ abcm2ps package, which contains a similar program that has lots of
+ additional features.
+Tag: field::arts, interface::commandline, role::program, scope::utility, use::converting, works-with::music-notation, works-with::text, works-with-format::postscript
+
+Package: abicheck
+Priority: optional
+Section: libs
+Installed-Size: 148
+Maintainer: Thom May <thom@debian.org>
+Architecture: all
+Version: 1.2-2
+Depends: perl
+Filename: pool/main/a/abicheck/abicheck_1.2-2_all.deb
+Size: 34038
+MD5sum: 8b0c9960a15d74b0f3c2361311414b77
+SHA1: 7490b88be5147cb789a277a6d7627852464b42b7
+SHA256: 815eacf18a1f8c5ac0b4930a1a10be1716b984cd6b6f8c80f62f87283af9681f
+Description: binary compatibility checking tool
+ ABIcheck is a tool for checking an application's compliance with a
+ library's defined Application Binary Interface (ABI). It relies on
+ ABI definition information contained in the library. Example
+ definitions are given for GNOME and glibc.
+Tag: devel::testing-qa, implemented-in::perl, interface::commandline, role::program, scope::utility, use::checking
+
+Package: abiword
+Priority: optional
+Section: editors
+Installed-Size: 7796
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Version: 2.4.6-1.1
+Replaces: abiword-common (<< 2.0.14-1), abiword-gtk, abiword-gnome
+Depends: libart-2.0-2 (>= 2.3.16), libatk1.0-0 (>= 1.12.2), libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libenchant1c2a, libfontconfig1 (>= 2.4.0), libfreetype6 (>= 2.2), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgnomecanvas2-0 (>= 2.11.1), libgnomeprint2.2-0 (>= 2.12.1), libgnomeprintui2.2-0 (>= 2.12.1), libgtk2.0-0 (>= 2.8.0), libpango1.0-0 (>= 1.14.8), libperl5.8 (>= 5.8.8), libpng12-0 (>= 1.2.15~beta5), libpopt0 (>= 1.10), libstdc++6 (>= 4.1.1-12), libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Recommends: abiword-plugins
+Conflicts: abiword-gtk, abiword-gnome
+Filename: pool/main/a/abiword/abiword_2.4.6-1.1_amd64.deb
+Size: 2691596
+MD5sum: cc7a52987d7fad18196815b52d9dc665
+SHA1: 261dd6454b6797cb86c2777168fb05000841f0cd
+SHA256: 135931ebaa7b04da7a4345f4da0bc1ee2d367a33c7525ff8a719ad2d1321a573
+Description: WYSIWYG word processor based on GTK2
+ AbiWord is the first application of a complete, open source office
+ suite. The upstream source includes cross-platform support for Win32,
+ BeOS, and QNX as well as GTK+ on Unix.
+ .
+ This package contains the AbiWord binary built with GTK2.
+Tag: interface::x11, role::program, scope::application, uitoolkit::gtk, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex, x11::application
+
+Package: abiword-common
+Priority: optional
+Section: editors
+Installed-Size: 7600
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: abiword
+Version: 2.4.6-1.1
+Replaces: abiword-doc (<< 2.0.0), xfonts-abi (<< 2.0.0), abiword (<< 2.0.14-1), abiword-gnome (<< 2.0.14-1)
+Depends: gsfonts
+Recommends: abiword-help, aspell-en | aspell6-dictionary, abiword-gnome | abiword
+Conflicts: abiword-doc (<< 2.0.0), abiword-plugins (<< 1.1.3), xfonts-abi (<< 2.0.0)
+Filename: pool/main/a/abiword/abiword-common_2.4.6-1.1_all.deb
+Size: 1845778
+MD5sum: fa5c1c70ef19bcbbb61938a51b1735c1
+SHA1: cc75138800bd951242720508eea10d4d705f58d8
+SHA256: cbdadf1cf06b1e2ddea6b5266223feab6cb2c9bfd6ccc133738cf66f9bd1b6e4
+Description: WYSIWYG word processor based on GTK2
+ AbiWord is the first application of a complete, open source office
+ suite. The upstream source includes cross-platform support for Win32,
+ BeOS, and QNX as well as GTK+ on Unix.
+ .
+ AbiWord is still being developed. It's quite usable but not yet full-
+ featured or polished. For many applications, however, it should prove
+ effective and efficient.
+ .
+ This program includes support for reading Microsoft Word files,
+ RTF files, and many other foreign file formats. Natively, it uses a
+ custom XML-based file format.
+Tag: interface::x11, role::app-data, special::auto-inst-parts, uitoolkit::gtk, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex, x11::application
+
+Package: abiword-gnome
+Priority: optional
+Section: gnome
+Installed-Size: 7872
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Source: abiword
+Version: 2.4.6-1.1
+Replaces: abiword-common (<< 2.0.14-1), abiword
+Depends: libart-2.0-2 (>= 2.3.16), libatk1.0-0 (>= 1.12.2), libbonobo2-0 (>= 2.13.0), libbonoboui2-0 (>= 2.5.4), libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libenchant1c2a, libfontconfig1 (>= 2.4.0), libfreetype6 (>= 2.2), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libgconf2-4 (>= 2.13.5), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgnome-keyring0 (>= 0.6.0), libgnome2-0 (>= 2.14.1), libgnomecanvas2-0 (>= 2.11.1), libgnomeprint2.2-0 (>= 2.12.1), libgnomeprintui2.2-0 (>= 2.12.1), libgnomeui-0 (>= 2.13.0), libgnomevfs2-0 (>= 2.13.92), libgtk2.0-0 (>= 2.8.0), libgucharmap4, libice6 (>= 1:1.0.0), liborbit2 (>= 1:2.14.1), libpango1.0-0 (>= 1.14.8), libperl5.8 (>= 5.8.8), libpng12-0 (>= 1.2.15~beta5), libpopt0 (>= 1.10), libsm6, libstdc++6 (>= 4.1.1-12), libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Recommends: abiword-plugins-gnome
+Conflicts: abiword
+Filename: pool/main/a/abiword/abiword-gnome_2.4.6-1.1_amd64.deb
+Size: 2652872
+MD5sum: 696862602909c26d42482e86af9980b0
+SHA1: 0f9d19ec96876d4338f523c5a6cf2b5703d4000b
+SHA256: ac02b227e6c7c937ef69380417196715aac37ed71f101c510a5648ffc6410d1b
+Description: WYSIWYG word processor based on GTK2/GNOME2
+ AbiWord is the first application of a complete, open source office
+ suite. The upstream source includes cross-platform support for Win32,
+ BeOS, and QNX as well as GTK+ on Unix.
+ .
+ This package contains the AbiWord binary built with GTK2/GNOME2.
+Tag: interface::x11, role::program, scope::application, suite::gnome, uitoolkit::gtk, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex, x11::application
+
+Package: abiword-help
+Priority: optional
+Section: doc
+Installed-Size: 1476
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: abiword
+Version: 2.4.6-1.1
+Depends: abiword-common (>= 2.4.1)
+Recommends: doc-base
+Filename: pool/main/a/abiword/abiword-help_2.4.6-1.1_all.deb
+Size: 589580
+MD5sum: ec41a4393dfe1b0ecdd7f5ea183e628b
+SHA1: f11a5d54b6fd1ff7a5ee63838c0ff3440a068666
+SHA256: 903fa525ca48681953cb49701a19806ae9535a075a066cddff57efffd1dce217
+Description: online help for AbiWord
+ AbiWord is the first of a complete, open source office suite. The
+ upstream source includes cross-platform support for Win32, BeOS, and
+ QNX as well as GTK+ on Unix.
+ .
+ This package contains online help files (in HTML format) for AbiWord.
+Tag: interface::web, made-of::data:html, role::documentation, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex
+
+Package: abiword-plugins
+Priority: optional
+Section: editors
+Installed-Size: 2356
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Source: abiword
+Version: 2.4.6-1.1
+Replaces: abiword-plugins-gnome (<< 2.4.6)
+Depends: libaiksaurus-1.2-0c2a (>= 1.2.1+dev-0.12), libaiksaurusgtk-1.2-0c2a (>= 1.2.1+dev-0.12), libatk1.0-0 (>= 1.12.2), libbz2-1.0, libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libexpat1 (>= 1.95.8), libfontconfig1 (>= 2.4.0), libfreetype6 (>= 2.2), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgsf-1-114 (>= 1.14.3), libgtk2.0-0 (>= 2.8.0), libgtkmathview0c2a, libjpeg62, liblink-grammar4, libncurses5 (>= 5.4-5), libots0, libpango1.0-0 (>= 1.14.8), libpng12-0 (>= 1.2.15~beta5), libpoppler0c2 (>= 0.4.2), libreadline5 (>= 5.2), librsvg2-2 (>= 2.12.7), libstdc++6 (>= 4.1.1-12), libt1-5 (>= 5.0.2), libwmf0.2-7 (>= 0.2.8.4), libwpd-stream8c2a, libwpd8c2a, libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Recommends: latex-xft-fonts
+Suggests: gimp
+Filename: pool/main/a/abiword/abiword-plugins_2.4.6-1.1_amd64.deb
+Size: 690924
+MD5sum: 2aad0cfdfdf1f13a4a9c7c714e7e8162
+SHA1: 265dca6b300a97c726682cff10f2122c2e827bec
+SHA256: e772eea050a3473c7c4a7b3b17d6d4c88c4d7857cf958ed402b7ae1b8da15df3
+Description: plugins for AbiWord
+ AbiWord is the first of a complete, open source office suite. The
+ upstream source includes cross-platform support for Win32, BeOS, and
+ QNX as well as GTK+ on Unix.
+ .
+ This package contains several plugins shipped with AbiWord.
+ They enable the user to do different stuff from within Abiword:
+ Run commands, edit images with gimp, use several web services
+ (like Babelfish, Wikipedia), let the computer read the text, etc.
+ .
+ Several plugins are omitted for various reasons.  See README.Debian of
+ abiword-common package for detail.
+Tag: interface::text-mode, interface::x11, role::plugin, role::shared-lib, uitoolkit::gtk, uitoolkit::ncurses, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex, x11::application
+
+Package: abiword-plugins-gnome
+Priority: optional
+Section: gnome
+Installed-Size: 124
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Source: abiword
+Version: 2.4.6-1.1
+Replaces: abiword-plugins (<< 2.0.10)
+Depends: libart-2.0-2 (>= 2.3.16), libatk1.0-0 (>= 1.12.2), libbz2-1.0, libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libfontconfig1 (>= 2.4.0), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgnomeprint2.2-0 (>= 2.12.1), libgoffice-1-2 (>= 0.2.1), libgsf-1-114 (>= 1.14.3), libgtk2.0-0 (>= 2.8.0), libpango1.0-0 (>= 1.14.8), libstdc++6 (>= 4.1.1-12), libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Suggests: gimp
+Conflicts: abiword-plugins (<< 2.0.10)
+Filename: pool/main/a/abiword/abiword-plugins-gnome_2.4.6-1.1_amd64.deb
+Size: 42958
+MD5sum: 94ff3c4d13bf33d5bfdeaa4ebd85ff8e
+SHA1: a411a1c092778927116f6890c33c6795a308690d
+SHA256: 0fcb5e8eec6f42c584b001f30e6dd1a32919d852009d4ab6e15c93fdf15f42f7
+Description: plugins for AbiWord (with GNOME dependency)
+ AbiWord is the first of a complete, open source office suite. The
+ upstream source includes cross-platform support for Win32, BeOS, and
+ QNX as well as GTK+ on Unix.
+ .
+ This package used to contain several plugins for AbiWord which require
+ GNOME libraries. However, at this time, only the Gnome Office plugin
+ that manages communication between Gnome Office-supporting programs
+ is included.
+Tag: interface::text-mode, interface::x11, role::plugin, suite::gnome, uitoolkit::gtk, uitoolkit::ncurses, use::editing, use::text-formatting, works-with::text, works-with-format::html, works-with-format::tex, x11::application
+

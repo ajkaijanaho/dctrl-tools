@@ -1,0 +1,109 @@
+Package: aalib1
+Status: deinstall ok config-files
+Priority: optional
+Section: libs
+Installed-Size: 172
+Maintainer: Joey Hess <joeyh@debian.org>
+Architecture: amd64
+Source: aalib
+Version: 1.4p5-22
+Config-Version: 1.4p5-22
+Depends: libc6 (>= 2.3.2.ds1-4), libgpmg1 (>= 1.19.6-1), libncurses5 (>= 5.4-1), slang1 (>> 1.4.9dbs-4)
+Description: ascii art library
+ AAlib is a portable ascii art graphics library. Internally, it works like
+ a graphics display, but the output is rendered into gorgeous platform
+ independent ascii graphics.
+
+Package: abiword
+Status: install ok installed
+Priority: optional
+Section: editors
+Installed-Size: 7796
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Version: 2.4.6-1.1
+Replaces: abiword-common (<< 2.0.14-1), abiword-gtk, abiword-gnome
+Depends: libart-2.0-2 (>= 2.3.16), libatk1.0-0 (>= 1.12.2), libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libenchant1c2a, libfontconfig1 (>= 2.4.0), libfreetype6 (>= 2.2), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgnomecanvas2-0 (>= 2.11.1), libgnomeprint2.2-0 (>= 2.12.1), libgnomeprintui2.2-0 (>= 2.12.1), libgtk2.0-0 (>= 2.8.0), libpango1.0-0 (>= 1.14.8), libperl5.8 (>= 5.8.8), libpng12-0 (>= 1.2.15~beta5), libpopt0 (>= 1.10), libstdc++6 (>= 4.1.1-12), libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Recommends: abiword-plugins
+Conflicts: abiword-gtk, abiword-gnome
+Description: WYSIWYG word processor based on GTK2
+ AbiWord is the first application of a complete, open source office
+ suite. The upstream source includes cross-platform support for Win32,
+ BeOS, and QNX as well as GTK+ on Unix.
+ .
+ This package contains the AbiWord binary built with GTK2.
+
+Package: abiword-common
+Status: install ok installed
+Priority: optional
+Section: editors
+Installed-Size: 7600
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: abiword
+Version: 2.4.6-1.1
+Replaces: abiword-doc (<< 2.0.0), xfonts-abi (<< 2.0.0), abiword (<< 2.0.14-1), abiword-gnome (<< 2.0.14-1)
+Depends: gsfonts
+Recommends: abiword-help, aspell-en | aspell6-dictionary, abiword-gnome | abiword
+Conflicts: abiword-doc (<< 2.0.0), abiword-plugins (<< 1.1.3), xfonts-abi (<< 2.0.0)
+Description: WYSIWYG word processor based on GTK2
+ AbiWord is the first application of a complete, open source office
+ suite. The upstream source includes cross-platform support for Win32,
+ BeOS, and QNX as well as GTK+ on Unix.
+ .
+ AbiWord is still being developed. It's quite usable but not yet full-
+ featured or polished. For many applications, however, it should prove
+ effective and efficient.
+ .
+ This program includes support for reading Microsoft Word files,
+ RTF files, and many other foreign file formats. Natively, it uses a
+ custom XML-based file format.
+
+Package: abiword-help
+Status: install ok installed
+Priority: optional
+Section: doc
+Installed-Size: 1476
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: abiword
+Version: 2.4.6-1.1
+Depends: abiword-common (>= 2.4.1)
+Recommends: doc-base
+Description: online help for AbiWord
+ AbiWord is the first of a complete, open source office suite. The
+ upstream source includes cross-platform support for Win32, BeOS, and
+ QNX as well as GTK+ on Unix.
+ .
+ This package contains online help files (in HTML format) for AbiWord.
+
+Package: abiword-plugins
+Status: install ok installed
+Priority: optional
+Section: editors
+Installed-Size: 2356
+Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: amd64
+Source: abiword
+Version: 2.4.6-0
+Replaces: abiword-plugins-gnome (<< 2.4.6)
+Depends: libaiksaurus-1.2-0c2a (>= 1.2.1+dev-0.12), libaiksaurusgtk-1.2-0c2a (>= 1.2.1+dev-0.12), libatk1.0-0 (>= 1.12.2), libbz2-1.0, libc6 (>= 2.3.5-1), libcairo2 (>= 1.2.4), libexpat1 (>= 1.95.8), libfontconfig1 (>= 2.4.0), libfreetype6 (>= 2.2), libfribidi0 (>= 0.10.7), libgcc1 (>= 1:4.1.1-12), libglade2-0 (>= 1:2.5.1), libglib2.0-0 (>= 2.12.0), libgsf-1-114 (>= 1.14.3), libgtk2.0-0 (>= 2.8.0), libgtkmathview0c2a, libjpeg62, liblink-grammar4, libncurses5 (>= 5.4-5), libots0, libpango1.0-0 (>= 1.14.8), libpng12-0 (>= 1.2.15~beta5), libpoppler0c2 (>= 0.4.2), libreadline5 (>= 5.2), librsvg2-2 (>= 2.12.7), libstdc++6 (>= 4.1.1-12), libt1-5 (>= 5.0.2), libwmf0.2-7 (>= 0.2.8.4), libwpd-stream8c2a, libwpd8c2a, libx11-6, libxcursor1 (>> 1.1.2), libxext6, libxfixes3 (>= 1:4.0.1), libxft2 (>> 2.1.1), libxi6, libxinerama1, libxml2 (>= 2.6.27), libxrandr2, libxrender1, zlib1g (>= 1:1.2.1), abiword-common (>= 2.4.1)
+Recommends: latex-xft-fonts
+Suggests: gimp
+Description: plugins for AbiWord
+ AbiWord is the first of a complete, open source office suite. The
+ upstream source includes cross-platform support for Win32, BeOS, and
+ QNX as well as GTK+ on Unix.
+ .
+ This package contains several plugins shipped with AbiWord.
+ They enable the user to do different stuff from within Abiword:
+ Run commands, edit images with gimp, use several web services
+ (like Babelfish, Wikipedia), let the computer read the text, etc.
+ .
+ Several plugins are omitted for various reasons.  See README.Debian of
+ abiword-common package for detail.
+
+Package: abiword-plugins-gnome
+Status: purge ok not-installed
+Priority: optional
+Section: gnome

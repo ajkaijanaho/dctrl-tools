@@ -1,0 +1,20 @@
+Package: abiword
+Old-Version: 2.4.6-1.1
+New-Version: 2.4.6-1.1
+
+Package: abiword-common
+Old-Version: 2.4.6-1.1
+New-Version: 2.4.6-1.1
+
+Package: abiword-help
+Old-Version: 2.4.6-1.1
+New-Version: 2.4.6-1.1
+
+Package: abiword-plugins
+Old-Version: 2.4.6-0
+New-Version: 2.4.6-1.1
+
+Package: abiword-plugins-gnome
+Old-Version: 
+New-Version: 2.4.6-1.1
+

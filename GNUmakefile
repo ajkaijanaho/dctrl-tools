@@ -22,13 +22,15 @@ libobj = $(libsrc:.c=.o)
 src = $(libsrc) \
       $(wildcard grep-dctrl/*.c) \
       $(wildcard sort-dctrl/*.c) \
-      $(wildcard tbl-dctrl/*.c)
+      $(wildcard tbl-dctrl/*.c) \
+      $(wildcard join-dctrl/*.c)
 
 obj = $(src:.c=.o)
 
 exe =  	grep-dctrl/grep-dctrl \
 	sort-dctrl/sort-dctrl \
-	tbl-dctrl/tbl-dctrl 
+	tbl-dctrl/tbl-dctrl \
+	join-dctrl/join-dctrl
 
 LDLIBS = -L. -ldctrl
 
@@ -52,6 +54,8 @@ grep-dctrl/grep-dctrl : grep-dctrl/grep-dctrl.o grep-dctrl/rc.o libdctrl.a
 sort-dctrl/sort-dctrl : sort-dctrl/sort-dctrl.o libdctrl.a
 
 tbl-dctrl/tbl-dctrl : tbl-dctrl/tbl-dctrl.o libdctrl.a
+
+join-dctrl/join-dctrl : join-dctrl/join-dctrl.o libdctrl.a
 
 % : %.o
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)

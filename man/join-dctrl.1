@@ -1,0 +1,217 @@
+.TH join\-dctrl 1
+\" Copyright © 2007  Antti-Juhani Kaijanaho <ajk@debian.org>
+\"      This program is free software; you can redistribute it and/or modify
+\"      it under the terms of the GNU General Public License as published by
+\"      the Free Software Foundation; either version 2 of the License, or
+\"      (at your option) any later version.
+\" 
+\"      This program is distributed in the hope that it will be useful,
+\"      but WITHOUT ANY WARRANTY; without even the implied warranty of
+\"      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+\"      GNU General Public License for more details. 
+\"  
+\"      You should have received a copy of the GNU General Public License
+\"      along with this program; see the file COPYING.  If not, write to
+\"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+\"      Boston, MA 02111-1307, USA.
+.SH NAME
+join\-dctrl \- perform relational join on data in dctrl format
+.SH SYNOPSIS
+.B join\-dctrl
+[
+.I options
+]
+.I filename
+.I filename
+.sp
+.B join\-dctrl
+.B \-\-version
+.sp
+.B join\-dctrl
+.B \-\-help
+.SH DESCRIPTION
+.B join\-dctrl
+performs a relational join operation on data given to it in Debian control
+file format.
+.PP
+A
+.I "join field"
+must be specified using either the switches \-1 and \-2 or the switch
+\-j.
+.
+Conceptually, the program creates all ordered pairs of records
+that can be formed by having a record from the first file as the first
+member of the pair and having a record from the second file as the
+second member of the pair; and then it deletes all such pairs where
+the join fields are not equal.
+.
+Effectively, each of the input files is treated as a relational database table.
+.PP
+Every input file must be in ascending order on its join field; this
+allows the program to work fast.
+.
+The
+.BR sort\-dctrl (1)
+program can be used to make it so.
+.SH OPTIONS
+.TP
+.BI \-1 " FIELD, " \-\-1st\-join\-field= FIELD
+Specify the join field of the first input file.
+.TP
+.BI \-2 " FIELD, " \-\-2nd\-join\-field= FIELD
+Specify the join field of the second input file.
+.TP
+.BI \-j " FIELD, " \-\-join\-field= FIELD
+Specify a common join field for all files.
+.TP
+.BI \-o " FIELDSPEC, " \-\-output\-fields= FIELDSPEC
+Specify which fields are included in the output.
+.
+Fields are separated by commas (more than one \-o option can be used,
+too).
+.
+Each field is specified in the format
+.IB fileno . field 
+in which
+.I fileno
+is the ordinal number of the input file from which the field is drawn
+(either 1 or 2), and
+.I field
+gives the name of the field to use.
+.
+As a special case, simple
+.B 0
+can be used instead of
+.IB fileno . field
+to refer to the common value of the join fields.
+.IP
+The name of the field (not including the file number) is used in the
+output as the name of the field.
+.
+However, a different name for output purposes can be specified by
+suffixing the field specification by a colon and the preferred visible
+name.
+.IP
+For example, the option
+.B \-o 0,1.Version:Old-Version,2.Version
+specifies that the first field in any output record should be the join field,
+the second field should be
+.B Old-Version
+drawing its data from the
+.B Version
+field of the first input file, and the third field should be
+.B Version
+drawing its data from the field with the same name in the second input
+file, and these are the only fields in an output record.
+.IP
+If no \-o option is given, all fields of all the records being joined
+are included in the output.
+.TP
+.BI \-l " LEVEL, " \-\-errorlevel= LEVEL
+Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
+"informational" and "debug", but the last may not be available,
+depending on the compile-time options.  These categories are given
+here in order; every message that is emitted when "fatal" is in
+effect, will be emitted in the "important" error level, and so on.
+The default is "important".
+.TP
+.BI \-V ", " \-\-version
+Print out version information.
+.TP
+.BI \-C ", " \-\-copying
+Print out the copyright license.  This produces much output; be sure
+to redirect or pipe it somewhere (such as your favourite pager).
+.TP
+.Bi \-h ", " \-\-help
+Print out a help summary.
+.SH OPERANDS
+.B join\-dctrl
+will treat each file named on the command line as a relational
+database table.
+.
+A file called
+.B \-
+represents the program's standard input stream.
+.
+Currently, exactly two files must be named.
+.SH STDIN
+The standard input stream may be used as input as specified above in
+the OPERANDS section.
+.SH "INPUT FILES"
+All input to
+.B join\-dctrl
+is in the format of a Debian control file.
+.PP
+A Debian control (dctrl) file is a single table of a semistructured
+database stored in a machine-parseable text file.
+.
+Such a table consists of a set of records; each record is a mapping
+from field names to field content.
+.
+Textually, records are separated by empty lines, while each field is
+encoded as one or more nonempty lines inside a record.
+.
+A field starts with its name, followed by a colon, followed by the
+field content.
+.
+The colon must reside on the first line of the field, and the first
+line must start with no whitespace.
+.
+Subsequent lines, in contrast, always start with linear whitespace
+(one or more space or tab characters).
+.PP
+Each input file must be in the ascending order of its join field.
+.SH "ENVIRONMENT VARIABLES"
+The standard locale environment, specifically its character set
+setting, affects the interpretation of input and output as character
+streams.
+.SH "ASYNCHRONOUS EVENTS"
+Standard Unix signals have their usual meaning.
+.SH STDOUT
+All output is sent to the standard output stream.
+.
+The output is in the format of a Debian control file, described above
+in the
+.B "INPUT FILES"
+section.
+.
+The output will be in the ascending order of the join field, if that
+field is included in the output.
+.SH "OUTPUT FILES"
+There are no output files.
+.SH "EXIT STATUS"
+This utility exits with 0 when successful.  It uses a nonzero exit
+code inconsistently when an error is noticed (this is a bug).
+.SH "CONSEQUENCES OF ERRORS"
+In case of errors in the input, the output will be partially or
+completely garbage.  In case of errors in invocation, the program will
+refuse to function.
+.SH "EXAMPLES"
+Suppose that a file containing data about binary packages for the
+AMD64 architecture contained in the Debian etch (4.0) release, section
+main, is in the current directory and named Packages.
+.
+Suppose that we are currently on a Debian system.
+.
+Suppose further that the current directory does not contain files named
+stat and pkg.
+.
+The following commands gives, for each package currently installed and
+available in Debian etch (4.0), its currently installed version (as
+Old-Version) and the version in etch (as New-Version):
+.nf
+$ sort-dctrl -kPackage /var/lib/dpkg/status > stat
+$ sort-dctrl -kPackage Packages > pkg
+$ join-dctrl -j Package \\
+  -o 0,1.Version:Old-Version,2.Version:New-Version \\
+  stat pkg
+.fi
+.SH "SEE ALSO"
+.BR grep\-dctrl (1),
+.BR sort\-dctrl (1),
+.BR tbl\-dctrl (1)
+.SH AUTHOR
+The
+.B join\-dctrl
+program and this manual page were written by Antti-Juhani Kaijanaho.
+
