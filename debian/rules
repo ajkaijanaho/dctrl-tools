@@ -61,7 +61,7 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
 	 done
 #	Install the supporting documentation.
-	$(install_nonex) TODO Compatibility $(docdir)
+	$(install_nonex) TODO $(docdi)
 	$(install_nonex) debian/README $(docdir)/README.Debian
 #	Install message catalogues
 	set -e ; for lang in $(langs) ; do \
