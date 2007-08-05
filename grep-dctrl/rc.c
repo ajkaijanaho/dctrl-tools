@@ -1,5 +1,5 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright (C) 1999, 2003, 2004  Antti-Juhani Kaijanaho
+     Copyright © 1999, 2003, 2004  Antti-Juhani Kaijanaho
 
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -15,17 +15,6 @@
      along with this program; see the file COPYING.  If not, write to
      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
      Boston, MA 02111-1307, USA.
-
-     The author can be reached via mail at (ISO 8859-1 charset for the city)
-        Antti-Juhani Kaijanaho
-        Helokantie 1 A 16
-        FIN-40640 JYVÄSKYLÄ
-        FINLAND
-        EUROPE
-     and via electronic mail from
-        gaia@iki.fi
-     If you have a choice, use the email address; it is more likely to
-     stay current.
 
 */
 
