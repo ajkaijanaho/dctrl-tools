@@ -39,6 +39,7 @@ static struct argp_option options[] = {
         { "1st-join-field",    '1', N_("FIELD"),    0, N_("Specify the join field to use for the first file") },
         { "2nd-join-field",    '2', N_("FIELD"),    0, N_("Specify the join field to use for the second file") },
         { "join-field",        'j', N_("FIELD"),    0, N_("Specify the common join field") },
+        { "unpairable-from",   'a', N_("FIELDNO"),  0, N_("Print unpairable records from the indicated file (either 1 or 2)") },
         { "output-fields",     'o', N_("FIELDSPEC"),0, N_("Specify the format of the output file") },
 	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
@@ -49,6 +50,11 @@ static struct argp_option options[] = {
 #define MAX_FNAMES 2
 
 struct arguments {
+        int unpairables; /* Print unpairable paragraphs from ...
+                            0 nowhere,
+                            1 the first file
+                            2 the second file 
+                         */
         struct field_attr *join_field[MAX_FNAMES];
         size_t num_fnames;
         struct ifile fname[MAX_FNAMES];
@@ -66,6 +72,16 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 {
 	struct arguments * args = state->input;
 	switch (key) {
+        case 'a':
+                if (arg[0] == '1' && arg[1] == '\0') {
+                        args->unpairables = 1;
+                } else if (arg[1] == '2' && arg[1] == '\0') {
+                        args->unpairables = 2;
+                } else {
+                        message(L_FATAL, _("malformed argument to '-a'"), 0);
+                        fail();
+                }
+                break;
         case '1': case '2': case 'j': {
                 static const char the_other_key[] = { '2', '1' };
                 static const char *errmsg[] = {
@@ -184,6 +200,53 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	return 0;
 }
 
+/* Print the paragraph configuration in "para" (just just_this, if in
+ * range). */
+void print_para_config(struct arguments *args, para_t para[], size_t just_this)
+{
+        if (args->num_show_fields == 0) {
+                assert(false); // unimplemented as of yet
+                return;
+        }
+        for (size_t i = 0; i < args->num_show_fields; i++) {
+                struct show_field *sf = &args->show_fields[i];
+                struct fsaf_read_rv body = { .b = "", .len = 0 };
+                const char *showname;
+                if (sf->file_inx == -1) {
+                        for (size_t j = 0;
+                             body.len == 0 && j < args->num_fnames;
+                             j++) {
+                                if (just_this < args->num_fnames &&
+                                    j != just_this) {
+                                        continue;
+                                }
+                                body = get_field(&para[j],
+                                                 args->join_field[j]->inx,
+                                                 -1);
+
+                                showname = args->join_field[j]->name;
+                        }
+                } else {
+                        if (just_this < args->num_fnames &&
+                            sf->file_inx != just_this) {
+                                continue;
+                        }
+                        body = get_field(&para[sf->file_inx],
+                                         sf->field->inx,
+                                         -1);
+                        showname = sf->showname == NULL
+                                ? sf->field->name
+                                : sf->showname;
+                }
+                fputs(showname, stdout);
+                fputs(": ", stdout);
+                fwrite(body.b, 1, body.len, stdout);
+                putchar('\n');
+        }
+        putchar('\n');
+}
+
+
 static char progdoc [] = N_("join-dctrl -- join two Debian control files");
 
 static struct argp argp = { options, parse_opt, 0, progdoc };
@@ -239,8 +302,10 @@ int main(int argc, char * argv[])
                 struct fsaf_read_rv a;
         again:
                 a = get_field(&para[0], args.join_field[0]->inx, -1);
+                _Bool did_work = 0;
                 for (size_t i = 1; i < args.num_fnames; i++) {
-                        if (para_eof(&pp[i]) || para_eof(&pp[i-1])) goto done;
+                        if (para_eof(&pp[i]) || para_eof(&pp[i-1])) continue;
+                        did_work = 1;
                         struct fsaf_read_rv b =
                                 get_field(&para[i],
                                           args.join_field[i]->inx, -1);
@@ -261,58 +326,38 @@ int main(int argc, char * argv[])
                                 fprintf(stderr, "%d\n", r);
                         }
 #endif
+                        if (r == 0) {
+                                a = b;
+                                continue;
+                        }
+
+                        size_t k;
                         if (r < 0) {
-                                para_parse_next(&para[i-1]);
-                                goto again;
+                                k = i - 1;
+                        } else if (r > 0) {
+                                k = i;
                         }
-                        if (r > 0) {
-                                para_parse_next(&para[i]);
-                                goto again;
+
+                        if (args.unpairables == k + 1) {
+                                print_para_config(&args, para,
+                                                  args.unpairables-1);
                         }
-                        a = b;
+
+                        para_parse_next(&para[k]);
+                        goto again;
                 }
+                if (!did_work) goto done;
 #ifdef INCLUDE_DEBUG_MSGS
-                        if (do_msg(L_DEBUG)) {
-                                fprintf(stderr, "join-show!\n");
-                        }
+                if (do_msg(L_DEBUG)) {
+                        fprintf(stderr, "join-show!\n");
+                }
 #endif
                 /* now all paras should be in a join configuration;
                    let's print out the result */
-                if (args.num_show_fields == 0) {
-                        assert(false); // unimplemented as of yet
-                        continue;
-                }
-                for (size_t i = 0; i < args.num_show_fields; i++) {
-                        struct show_field *sf = &args.show_fields[i];
-                        struct fsaf_read_rv body = { .b = "", .len = 0 };
-                        const char *showname;
-                        if (sf->file_inx == -1) {
-                                for (size_t j = 0;
-                                     body.len == 0 && j < args.num_fnames;
-                                     j++) {
-                                        body = get_field(&para[j],
-                                                         args.join_field[j]->inx,
-                                                         -1);
-                                        showname = args.join_field[j]->name;
-                                }
-                        } else {
-                                body = get_field(&para[sf->file_inx],
-                                                 sf->field->inx,
-                                                 -1);
-                                showname = sf->showname == NULL
-                                        ? sf->field->name
-                                        : sf->showname;
-                        }
-                        fputs(showname, stdout);
-                        fputs(": ", stdout);
-                        fwrite(body.b, 1, body.len, stdout);
-                        putchar('\n');
-                }
-                putchar('\n');
+                print_para_config(&args, para, (size_t)(-1));
                 para_parse_next(&para[0]);
         }
 done:
-
 	return errors_reported() ? 2 : 0;
 }
 
