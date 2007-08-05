@@ -1,8 +1,22 @@
-dctrl-tools (2.11) UNRELEASED; urgency=low
+dctrl-tools (2.11) unstable; urgency=low
 
-  * 
+  * new program join-dctrl
+    Closes: #136097 (grep-dctrl: Merging status and available would be helpful)
+    Requested by Ben Armstrong <synrg@sanctuary.nslug.ns.ca>.
+  * Update copyright lines
+  * debian/rules: typo fix
+  * Compatibility: remove (out of date, duplicates manpage information)
+  * NEWS: delete (out of date)
+  * README: delete (out of date and useless)
+  * AUTHORS: delete (out of date and hard to keep up to date)
+  * debian/README: update
+  * debian/changelog: start 2.11
+  * grep-dctrl/grep-dctrl.c: fix GET_BACKUP_FIELD for (size_t)-1
+    on machines where sizeof(int) != sizeof(size_t)
+  * export para_compare from lib/sorter.[ch]
+  * GNUmakefile (test): call tester.sh using sh explicitly
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 11 Apr 2007 01:36:15 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 05 Aug 2007 21:06:22 +0300
 
 dctrl-tools (2.10) experimental; urgency=low
 
