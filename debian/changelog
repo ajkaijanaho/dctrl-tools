@@ -1,8 +1,11 @@
 dctrl-tools (2.12) UNRELEASED; urgency=low
 
   * Switched to git for source control.
+  * make sort-dctrl read stdin if no file arguments are given
+    Closes: #440348 (sort-dctrl outputs nothing if input is a pipe)
+    Reported by Antti-Juhani Kaijanaho <ajk@debian.org>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 27 Oct 2007 16:53:22 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 27 Oct 2007 20:45:12 +0300
 
 dctrl-tools (2.11) unstable; urgency=low
 

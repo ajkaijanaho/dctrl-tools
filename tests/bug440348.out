@@ -1,0 +1,5 @@
+Package: abiword-plugins-gnome
+Status: purge ok not-installed
+Priority: optional
+Section: gnome
+
