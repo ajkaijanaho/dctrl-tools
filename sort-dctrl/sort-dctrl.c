@@ -158,6 +158,13 @@ int main(int argc, char * argv[])
 						      .reverse = false });
 	}
 
+        if (args.num_fnames == 0) {
+                args.fname[args.num_fnames++] = (struct ifile){
+                        .mode = m_read,
+                        .s = "-" 
+                };
+        }
+
 	struct para_bundle pb;
 	bundle_init(&pb);
 
