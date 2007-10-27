@@ -1,5 +1,5 @@
-.TH GREP-DCTRL 1 2006-04-02 "Debian Project" "Debian user's manual"
-\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+.TH GREP-DCTRL 1 2007-10-27 "Debian Project" "Debian user's manual"
+\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 \"      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 \"      Boston, MA 02111-1307, USA.
 .SH NAME
-grep\-dctrl, grep\-status, grep\-available, grep\-aptavail \- grep Debian control files
+grep\-dctrl, grep\-status, grep\-available, grep\-aptavail, grep\-debtags \- grep Debian control files
 .SH SYNOPSIS
 .I command
 --copying|-C | --help|-h | --version|-V 
@@ -31,9 +31,10 @@ where
 is one of
 .BR grep\-dctrl ,
 .BR grep\-status ,
-.B grep\-available
+.BR grep\-available ,
+.B grep\-aptavail 
 and
-.BR grep\-aptavail .
+.BR grep\-debtags .
 .SH DESCRIPTION
 The grep\-dctrl program can answer such questions as 
 .IR "What is the Debian package foo?" , 
@@ -47,15 +48,17 @@ given a useful input file.
 .PP
 The programs
 .BR grep\-available,
-.B grep\-status
+.BR grep\-status ,
+.B grep\-aptavail 
 and
-.B grep\-aptavail
+.B grep\-debtags
 are aliases of (actually, symbolic links to)
 .BR grep\-dctrl .
 In the shipped configuration, these aliases use as their default input
 the
 .BR dpkg (8)
-available and status files and the apt\-cache dumpavail output,
+available and status files, the apt\-cache dumpavail output
+and the debtags dumpavail output,
 respectively.
 .PP
 .B grep\-dctrl

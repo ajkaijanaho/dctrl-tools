@@ -22,7 +22,7 @@ clean-build:
 
 debian/stamp/binary/arch: debian/stamp/binary/dctrl-tools
 
-aliases = grep-status grep-available grep-aptavail
+aliases = grep-status grep-available grep-aptavail grep-debtags
 
 debian/stamp/binary/dctrl-tools: package=dctrl-tools
 debian/stamp/binary/dctrl-tools: debian/stamp/build

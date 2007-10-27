@@ -5,8 +5,12 @@ dctrl-tools (2.12) UNRELEASED; urgency=low
     Closes: #440348 (sort-dctrl outputs nothing if input is a pipe)
     Reported by Antti-Juhani Kaijanaho <ajk@debian.org>.
   * French translation update, closes: #442330
+  * Provide a grep-debtags alias that sources debtags dumpavail.
+    Closes: #423375
+    (Add a grep-tags or grep-debtags that gets data from debtags dumpavail)
+    Reported by Enrico Zini <enrico@debian.org>
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 27 Oct 2007 21:12:46 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 27 Oct 2007 22:03:40 +0300
 
 dctrl-tools (2.11) unstable; urgency=low
 
