@@ -10,8 +10,9 @@ dctrl-tools (2.12) UNRELEASED; urgency=low
     (Add a grep-tags or grep-debtags that gets data from debtags dumpavail)
     Reported by Enrico Zini <enrico@debian.org>
   * po/README.Translators: Rosetta is not an option
+  * po/README.Translators: misc fixes
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 28 Oct 2007 00:06:12 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 28 Oct 2007 00:07:09 +0300
 
 dctrl-tools (2.11) unstable; urgency=low
 
