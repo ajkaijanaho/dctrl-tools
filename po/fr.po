@@ -2,392 +2,478 @@
 # Copyright (C) YEAR Antti-Juhani Kaijanaho
 # This file is distributed under the same license as the dctrl-tools package.
 # Nicolas Bertolissio <nico.bertol@free.fr>, 2004, 2005.
-# Frédéric Bothamy <frederic.bothamy@free.fr>, 2006.
+# FrÃ©dÃ©ric Bothamy <frederic.bothamy@free.fr>, 2006, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.9.0\n"
+"Project-Id-Version: dctrl-tools 2.11\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-04-11 11:14+0200\n"
-"PO-Revision-Date: 2006-04-11 11:28+0200\n"
-"Last-Translator: Frédéric Bothamy <frederic.bothamy@free.fr>\n"
+"POT-Creation-Date: 2007-08-05 21:20+0300\n"
+"PO-Revision-Date: 2007-08-06 15:42+0200\n"
+"Last-Translator: FrÃ©dÃ©ric Bothamy <frederic.bothamy@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: misc.c:37
-#, c-format
-msgid "%s: using `%s' as pager\n"
-msgstr "%s: utilisation de « %s » comme paginateur\n"
-
-#: misc.c:47
-#, c-format
-msgid "%s: popen failed for %s: %s\n"
-msgstr "%s: échec de popen pour %s : %s\n"
-
-#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
-msgid "predicate is too complex"
-msgstr "le prédicat est trop complexe"
-
-#: paragraph.c:116
-msgid "warning: expected a colon"
-msgstr "avertissement : deux-points (« : ») attendus"
-
-#: paragraph.c:122
-msgid "expected a colon"
-msgstr "deux-points (« : ») attendus"
-
-#: rc.c:66
-msgid "Malformed default input file name"
-msgstr "nom de fichier d'entrée par défaut mal formé"
-
-#: rc.c:79
-msgid "not owned by you or root, ignoring"
-msgstr "détenu ni par vous ni par le superutilisateur, ignoré"
-
-#: rc.c:84
-msgid "write permissions for group or others, ignoring"
-msgstr "droits d'écriture pour le groupe ou le reste du monde, ignoré"
-
-#: rc.c:124
-msgid "reading config file"
-msgstr "lecture du fichier de configuration"
-
-#: rc.c:151
-msgid "read failure or out of memory"
-msgstr "erreur de lecture ou manque de mémoire"
-
-#: rc.c:173
-msgid "syntax error: need a executable name"
-msgstr "erreur de syntaxe : nécessite un nom d'exécutable"
-
-#: rc.c:181
-msgid "syntax error: need an input file name"
-msgstr "erreur de syntaxe : nécessite un nom de fichier d'entrée"
-
-#: rc.c:186
-msgid "considering executable name"
-msgstr "étude de l'exécutable nommé"
-
-#: rc.c:188
-msgid "yes, will use executable name"
-msgstr "utilise l'exécutable nommé"
-
-#: rc.c:190
-msgid "default input file"
-msgstr "fichier d'entrée par défaut"
-
-#: rc.c:201
-msgid "executable name not found; reading from standard input"
-msgstr "nom d'exécutable non trouvé ; lecture depuis l'entrée standard"
-
-#: ifile.c:54
+#: lib/ifile.c:54
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
-msgstr "%s (enfant) : échec d'exécution de /bin/sh : %s\n"
+msgstr "%s (enfant)Â : Ã©chec d'exÃ©cution de /bin/shÂ : %s\n"
 
-#: ifile.c:100
+#: lib/ifile.c:100
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr "%s : la commande (%s) a échoué (état de sortie %d)\n"
+msgstr "%sÂ : la commande (%s) a Ã©chouÃ© (Ã©tat de sortie %d)\n"
 
-#: ifile.c:109
+#: lib/ifile.c:109
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
-msgstr "%s : la commande (%s) a été tuée par le signal %d\n"
+msgstr "%sÂ : la commande (%s) a Ã©tÃ© tuÃ©e par le signal %d\n"
 
-#: ifile.c:127
+#: lib/ifile.c:127
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
-msgstr "%s : impossible d'analyser « %s » : %s\n"
+msgstr "%sÂ : impossible d'analyser Â«Â %sÂ Â»Â : %s\n"
 
-#: ifile.c:138
+#: lib/ifile.c:138
 msgid "is a directory, skipping"
-msgstr "est un répertoire, ignoré"
+msgstr "est un rÃ©pertoire, ignorÃ©"
 
-#: ifile.c:139
+#: lib/ifile.c:139
 msgid "is a block device, skipping"
-msgstr "est un périphérique bloc, ignoré"
+msgstr "est un pÃ©riphÃ©rique bloc, ignorÃ©"
 
-#: ifile.c:140
+#: lib/ifile.c:140
 msgid "internal error"
 msgstr "erreur interne"
 
-#: ifile.c:141
+#: lib/ifile.c:141
 msgid "is a socket, skipping"
-msgstr "est une socket, ignorée"
+msgstr "est une socket, ignorÃ©e"
 
-#: ifile.c:142
+#: lib/ifile.c:142
 msgid "unknown file type, skipping"
-msgstr "type de fichier inconnu, ignoré"
+msgstr "type de fichier inconnu, ignorÃ©"
 
-#: sorter.c:54
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: utilisation de Â«Â %sÂ Â» comme paginateur\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: Ã©chec de popen pour %sÂ : %s\n"
+
+#: lib/paragraph.c:133
+msgid "warning: expected a colon"
+msgstr "avertissementÂ : deux-points (Â«Â :Â Â») attendus"
+
+#: lib/paragraph.c:140
+msgid "expected a colon"
+msgstr "deux-points (Â«Â :Â Â») attendus"
+
+#: lib/predicate.c:40 grep-dctrl/grep-dctrl.c:227 grep-dctrl/grep-dctrl.c:336
+msgid "predicate is too complex"
+msgstr "le prÃ©dicat est trop complexe"
+
+#: lib/sorter.c:49
 msgid "Parse error in field."
-msgstr "Échec d'analyse syntaxique dans le champ."
+msgstr "Ã‰chec d'analyse syntaxique dans le champ."
 
-#: grep-dctrl.c:47
+#: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
-msgstr "grep-dctrl -- sélectionner dans des fichiers de contrôle Debian"
+msgstr "grep-dctrl -- sÃ©lectionner dans des fichiers de contrÃ´le Debian"
 
-#: grep-dctrl.c:110
+#: grep-dctrl/grep-dctrl.c:110
 msgid "Show the testing banner."
-msgstr "Afficher la bannière de test."
+msgstr "Afficher la banniÃ¨re de test."
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "NIVEAU"
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
-msgstr "Sélectionner le niveau de débogage NIVEAU."
+msgstr "SÃ©lectionner le niveau de dÃ©bogage NIVEAU."
 
-#: grep-dctrl.c:113 grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "CHAMP,CHAMP,..."
 
-#: grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:113
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Restreindre le motif de correspondance aux CHAMPS fournis."
 
-#: grep-dctrl.c:114
+#: grep-dctrl/grep-dctrl.c:114
 msgid "This is a shorthand for -FPackage."
 msgstr "Il s'agit d'un raccourci pour -FPackage."
 
-#: grep-dctrl.c:115
+#: grep-dctrl/grep-dctrl.c:115
 msgid "This is a shorthand for -FSource:Package."
 msgstr "Il s'agit d'un raccourci pour -FSource:Package."
 
-#: grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "N'afficher que le corps des champs des paragraphes qui correspondent."
 
-#: grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"N'afficher que la première ligne du champ « Description » des paragraphes "
+"N'afficher que la premiÃ¨re ligne du champ Â«Â DescriptionÂ Â» des paragraphes "
 "qui correspondent."
 
-#: grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
-msgstr "Supprimer les noms de champs lors de l'affichage des champs spécifiés."
+msgstr "Supprimer les noms de champs lors de l'affichage des champs spÃ©cifiÃ©s."
 
-#: grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:119
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Considérer le motif comme une expression rationnelle POSIX étendue."
+msgstr "ConsidÃ©rer le motif comme une expression rationnelle POSIX Ã©tendue."
 
-#: grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Le motif est une expression rationnelle POSIX standard."
 
-#: grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
 msgstr "Ignorer la casse lors de la recherche d'un motif."
 
-#: grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
 msgstr "N'afficher que les paragraphes qui ne correspondent pas."
 
-#: grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:123
+msgid "Show those fields that have NOT been selected with -s"
+msgstr "Afficher les champs qui n'ont PAS Ã©tÃ© sÃ©lectionnÃ©s avec -s."
+
+#: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
 msgstr "N'afficher que le nombre de paragraphes qui correspondent."
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "FNAME"
 msgstr "FICHIER"
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "Use FNAME as the config file."
 msgstr "Utiliser FICHIER comme fichier de configuration."
 
-#: grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:126
 msgid "Do an exact match."
 msgstr "Rechercher une correspondance exacte."
 
-#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
+#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Afficher la licence."
 
-#: grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:128
 msgid "Conjunct predicates."
-msgstr "Associer les prédicats."
+msgstr "Associer les prÃ©dicats."
 
-#: grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:129
 msgid "Disjunct predicates."
-msgstr "Dissocier les prédicats."
+msgstr "Dissocier les prÃ©dicats."
 
-#: grep-dctrl.c:129
+#: grep-dctrl/grep-dctrl.c:130
 msgid "Negate the following predicate."
-msgstr "Inverser le prédicat suivant."
+msgstr "Inverser le prÃ©dicat suivant."
 
-#: grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:131
 msgid "Test for version number equality."
-msgstr "Test d'égalité de numéro de version."
+msgstr "Test d'Ã©galitÃ© de numÃ©ro de version."
 
-#: grep-dctrl.c:131
+#: grep-dctrl/grep-dctrl.c:132
 msgid "Version number comparison: <."
-msgstr "Comparaison de numéro de version : <."
+msgstr "Comparaison de numÃ©ro de versionÂ : <."
 
-#: grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:133
 msgid "Version number comparison: <=."
-msgstr "Comparaison de numéro de version : <=."
+msgstr "Comparaison de numÃ©ro de versionÂ : <=."
 
-#: grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:134
 msgid "Version number comparison: >."
-msgstr "Comparaison de numéro de version : >."
+msgstr "Comparaison de numÃ©ro de versionÂ : >."
 
-#: grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:135
 msgid "Version number comparison: >=."
-msgstr "Comparaison de numéro de version : >=."
+msgstr "Comparaison de numÃ©ro de versionÂ : >=."
 
-#: grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:136
 msgid "Debug option parsing."
-msgstr "Déboguer l'analyse des options"
+msgstr "DÃ©boguer l'analyse des options"
 
-#: grep-dctrl.c:136 grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
-msgstr "Pas de sortie sur la sortie standard"
+msgstr "Pas d'affichage sur la sortie standard"
 
-#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
+#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
-msgstr "Tentative de mmap des fichiers d'entrées"
+msgstr "Tentative de mmap des fichiers d'entrÃ©es"
 
-#: grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:140
 msgid "Ignore parse errors"
 msgstr "Ne pas tenir compte des erreurs d'analyse syntaxique"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "PATTERN"
 msgstr "MOTIF"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "Specify the pattern to search for"
-msgstr "Spécifier le motif de recherche"
+msgstr "SpÃ©cifier le motif de recherche"
 
-#: grep-dctrl.c:298
+#: grep-dctrl/grep-dctrl.c:304
 msgid "predicate is too long"
-msgstr "le prédicat est trop long"
+msgstr "le prÃ©dicat est trop long"
 
-#: grep-dctrl.c:357
+#: grep-dctrl/grep-dctrl.c:363
 msgid "inconsistent atom modifiers"
-msgstr "modificateurs d'atome incohérents"
+msgstr "modificateurs d'atome incohÃ©rents"
 
-#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
-msgid "no such log level"
-msgstr "niveau de journalisation inexistant"
-
-#: grep-dctrl.c:525
-msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Des motifs multiples pour le même atome ne sont pas autorisés"
-
-#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
-msgid "too many file names"
-msgstr "trop de noms de fichiers"
-
-#: grep-dctrl.c:646
-msgid "unexpected end of predicate"
-msgstr "fin de prédicat inattendue"
-
-#: grep-dctrl.c:649
-msgid "unexpected '!' in command line"
-msgstr "« ! » inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:652
-msgid "unexpected '-a' in command line"
-msgstr "« -a » inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:655
-msgid "unexpected '-o' in command line"
-msgstr "« -o » inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:658
-msgid "unexpected '(' in command line"
-msgstr "« ( » inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:661
-msgid "unexpected ')' in command line"
-msgstr "« ) » inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:665
-msgid "unexpected atom in command line"
-msgstr "atome inattendu sur la ligne de commande"
-
-#: grep-dctrl.c:678
-msgid "missing ')' in command line"
-msgstr "« ) » manquante sur la ligne de commande"
-
-#: grep-dctrl.c:759
-msgid "A pattern is mandatory"
-msgstr "Un motif est nécessaire"
-
-#: grep-dctrl.c:766
-msgid "a predicate is required"
-msgstr "un prédicat est nécessaire"
-
-#: grep-dctrl.c:771
-msgid "malformed predicate"
-msgstr "prédicat mal formé"
-
-#: grep-dctrl.c:777
+#: grep-dctrl/grep-dctrl.c:422 grep-dctrl/grep-dctrl.c:813
+#: join-dctrl/join-dctrl.c:112
 msgid "too many output fields"
 msgstr "trop de champs de sortie"
 
-#: grep-dctrl.c:781
+#: grep-dctrl/grep-dctrl.c:446 sort-dctrl/sort-dctrl.c:101
+#: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:167
+msgid "no such log level"
+msgstr "niveau de journalisation inexistant"
+
+#: grep-dctrl/grep-dctrl.c:540
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr "Des motifs multiples pour le mÃªme atome ne sont pas autorisÃ©s"
+
+#: grep-dctrl/grep-dctrl.c:572 sort-dctrl/sort-dctrl.c:117
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:179
+msgid "too many file names"
+msgstr "trop de noms de fichiers"
+
+#: grep-dctrl/grep-dctrl.c:661
+msgid "unexpected end of predicate"
+msgstr "fin de prÃ©dicat inattendue"
+
+#: grep-dctrl/grep-dctrl.c:664
+msgid "unexpected '!' in command line"
+msgstr "Â«Â !Â Â» inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:667
+msgid "unexpected '-a' in command line"
+msgstr "Â«Â -aÂ Â» inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:670
+msgid "unexpected '-o' in command line"
+msgstr "Â«Â -oÂ Â» inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:673
+msgid "unexpected '(' in command line"
+msgstr "Â«Â (Â Â» inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:676
+msgid "unexpected ')' in command line"
+msgstr "Â«Â )Â Â» inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:680
+msgid "unexpected atom in command line"
+msgstr "atome inattendu sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:693
+msgid "missing ')' in command line"
+msgstr "Â«Â )Â Â» manquante sur la ligne de commande"
+
+#: grep-dctrl/grep-dctrl.c:795
+msgid "A pattern is mandatory"
+msgstr "Un motif est nÃ©cessaire"
+
+#: grep-dctrl/grep-dctrl.c:802
+msgid "a predicate is required"
+msgstr "un prÃ©dicat est nÃ©cessaire"
+
+#: grep-dctrl/grep-dctrl.c:807
+msgid "malformed predicate"
+msgstr "prÃ©dicat mal formÃ©"
+
+#: grep-dctrl/grep-dctrl.c:817
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
-"Ajout de « Description » aux champs de sortie sélectionnés à cause de -d"
+"Ajout de Â«Â DescriptionÂ Â» aux champs de sortie sÃ©lectionnÃ©s Ã  cause de -d"
 
-#: grep-dctrl.c:790
+#: grep-dctrl/grep-dctrl.c:826
+msgid "-I requires at least one instance of -s"
+msgstr "-I nÃ©cessite au moins une instance de -s"
+
+#: grep-dctrl/grep-dctrl.c:832
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "impossible de supprimer les noms de champs lors de l'affichage des "
 "paragraphes complets"
 
-#: sort-dctrl.c:40
+#: grep-dctrl/rc.c:55
+msgid "Malformed default input file name"
+msgstr "nom de fichier d'entrÃ©e par dÃ©faut mal formÃ©"
+
+#: grep-dctrl/rc.c:68
+msgid "not owned by you or root, ignoring"
+msgstr "dÃ©tenu ni par vous ni par le superutilisateur, ignorÃ©"
+
+#: grep-dctrl/rc.c:73
+msgid "write permissions for group or others, ignoring"
+msgstr "droits d'Ã©criture pour le groupe ou les autres utilisateurs, ignorÃ©"
+
+#: grep-dctrl/rc.c:113
+msgid "reading config file"
+msgstr "lecture du fichier de configuration"
+
+#: grep-dctrl/rc.c:140
+msgid "read failure or out of memory"
+msgstr "erreur de lecture ou manque de mÃ©moire"
+
+#: grep-dctrl/rc.c:162
+msgid "syntax error: need a executable name"
+msgstr "erreur de syntaxeÂ : nÃ©cessite un nom d'exÃ©cutable"
+
+#: grep-dctrl/rc.c:170
+msgid "syntax error: need an input file name"
+msgstr "erreur de syntaxeÂ : nÃ©cessite un nom de fichier d'entrÃ©e"
+
+#: grep-dctrl/rc.c:175
+msgid "considering executable name"
+msgstr "Ã©tude de l'exÃ©cutable nommÃ©"
+
+#: grep-dctrl/rc.c:177
+msgid "yes, will use executable name"
+msgstr "utilise l'exÃ©cutable nommÃ©"
+
+#: grep-dctrl/rc.c:179
+msgid "default input file"
+msgstr "fichier d'entrÃ©e par dÃ©faut"
+
+#: grep-dctrl/rc.c:190
+msgid "executable name not found; reading from standard input"
+msgstr "nom d'exÃ©cutable non trouvÃ©Â ; lecture depuis l'entrÃ©e standard"
+
+#: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
 msgstr "KEYSPEC"
 
-#: sort-dctrl.c:40
+#: sort-dctrl/sort-dctrl.c:40
 msgid "Specify sort keys."
-msgstr "Spécifier les clés de tri."
+msgstr "SpÃ©cifier les clÃ©s de tri."
 
-#: sort-dctrl.c:87
+#: sort-dctrl/sort-dctrl.c:87
 msgid "invalid key flag"
-msgstr "drapeau de clé invalide"
+msgstr "drapeau de clÃ© non valable"
 
-#: sort-dctrl.c:137
+#: sort-dctrl/sort-dctrl.c:137
 msgid "sort-dctrl -- sort Debian control files"
-msgstr "sort-dctrl -- trier des fichiers de contrôle Debian"
+msgstr "sort-dctrl -- trier des fichiers de contrÃ´le Debian"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "DELIM"
 msgstr "DELIM"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "Specify a delimiter."
-msgstr "Spécifier un délimiteur."
+msgstr "SpÃ©cifier un dÃ©limiteur."
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr "Ne pas afficher d'entÃªte de table"
+
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
 msgstr "SPEC"
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "Append the specified column."
-msgstr "Ajouter la colonne spécifiée."
+msgstr "Ajouter la colonne spÃ©cifiÃ©e."
 
-#: tbl-dctrl.c:266
+#: tbl-dctrl/tbl-dctrl.c:272
 msgid "invalid column length"
 msgstr "taille de colonne invalide"
 
-#: tbl-dctrl.c:317
+#: tbl-dctrl/tbl-dctrl.c:326
 msgid "tbl-dctrl -- tabularize Debian control files"
-msgstr "tbl-dctrl -- tabuler des fichiers de contrôle Debian"
+msgstr "tbl-dctrl -- tabuler des fichiers de contrÃ´le Debian"
 
-#: tbl-dctrl.c:331
+#: tbl-dctrl/tbl-dctrl.c:340
 msgid "bad multibyte character"
-msgstr "caractère multioctets erroné"
+msgstr "caractÃ¨re multioctets erronÃ©"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr "CHAMP"
+
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr "SpÃ©cifier le champ de jointure Ã  utiliser pour le premier fichier"
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr "SpÃ©cifier le champ de jointure Ã  utiliser pour le second fichier"
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr "SpÃ©cifier le champ de jointure commun"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr "NUM_CHAMP"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr ""
+"Afficher les enregistrements ne pouvant Ãªtre appariÃ©s Ã  partir du fichier "
+"indiquÃ© (soit 1, soit 2)"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "FIELDSPEC"
+msgstr "SPEC_CHAMP"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr "SpÃ©cifier le format du fichier de sortie"
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr "paramÃ¨tre mal formÃ© pour Â«Â -aÂ Â»"
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr "le champ de jointure du premier fichier a dÃ©jÃ  Ã©tÃ© spÃ©cifiÃ©"
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr "le champ de jointure pour le second fichier a dÃ©jÃ  Ã©tÃ© spÃ©cifiÃ©"
+
+#: join-dctrl/join-dctrl.c:127
+msgid "missing '.' in output field specification"
+msgstr "Â«Â .Â Â» absent dans la spÃ©cification du champ de sortie"
+
+#: join-dctrl/join-dctrl.c:144
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr "Â«Â 1.Â Â» ou Â«Â 2.Â Â» attendu au dÃ©but de la spÃ©cification du champ"
+
+#: join-dctrl/join-dctrl.c:250
+msgid "join-dctrl -- join two Debian control files"
+msgstr "join-dctrl -- fusionner deux fichiers de contrÃ´le Debian"
+
+#: join-dctrl/join-dctrl.c:269
+msgid "need exactly two input files"
+msgstr "nÃ©cessite d'exactement deux fichiers d'entrÃ©e"
+
+#: join-dctrl/join-dctrl.c:294
+msgid "cannot join a stream with itself"
+msgstr "impossible de fusionner un flux avec lui-mÃªme"
 
 #, fuzzy
 #~ msgid "unexpected end of file (expected a colon)"
@@ -402,31 +488,31 @@ msgstr "caractère multioctets erroné"
 
 #, fuzzy
 #~ msgid "pretty-dctrl -- pretty-print Debian control files"
-#~ msgstr "grep-dctrl -- sélection dans des fichiers de contrôle Debian"
+#~ msgstr "grep-dctrl -- sÃ©lection dans des fichiers de contrÃ´le Debian"
 
 #~ msgid "invalid numeric pattern"
-#~ msgstr "motif numérique invalide"
+#~ msgstr "motif numÃ©rique invalide"
 
 #, fuzzy
 #~ msgid "parse of a field failed"
-#~ msgstr "l'analyse d'un champ numérique a échoué"
+#~ msgstr "l'analyse d'un champ numÃ©rique a Ã©chouÃ©"
 
 #~ msgid "Numerical test: <."
-#~ msgstr "Test numérique : <"
+#~ msgstr "Test numÃ©riqueÂ : <"
 
 #~ msgid "Numerical test: <=."
-#~ msgstr "Test numérique : <="
+#~ msgstr "Test numÃ©riqueÂ : <="
 
 #~ msgid "Numerical test: >."
-#~ msgstr "Test numérique : >"
+#~ msgstr "Test numÃ©riqueÂ : >"
 
 #~ msgid "Numerical test: >=."
-#~ msgstr "Test numérique : >="
+#~ msgstr "Test numÃ©riqueÂ : >="
 
 #~ msgid "syntax error in command line"
 #~ msgstr "erreur de syntaxe sur la ligne de commande"
 
 #~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
 #~ msgstr ""
-#~ "Atome inattendu sur la ligne de commande. Auriez-vous oublié d'utiliser "
-#~ "un connecteur ?"
+#~ "Atome inattendu sur la ligne de commande. Auriez-vous oubliÃ© d'utiliser "
+#~ "un connecteurÂ ?"
