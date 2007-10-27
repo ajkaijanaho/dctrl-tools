@@ -24,3 +24,6 @@ grep-available  /var/lib/dpkg/available
 
 # A new feature: grepping apt's available information
 grep-aptavail	@exec apt-cache dumpavail
+
+# A new feature: grepping debtags' information
+grep-debtags    @exec debtags dumpavail
