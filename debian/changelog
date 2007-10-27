@@ -1,4 +1,4 @@
-dctrl-tools (2.12) UNRELEASED; urgency=low
+dctrl-tools (2.12) unstable; urgency=low
 
   * Switched to git for source control.
   * make sort-dctrl read stdin if no file arguments are given
@@ -12,7 +12,7 @@ dctrl-tools (2.12) UNRELEASED; urgency=low
   * po/README.Translators: Rosetta is not an option
   * po/README.Translators: misc fixes
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 28 Oct 2007 00:07:09 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 28 Oct 2007 00:17:47 +0300
 
 dctrl-tools (2.11) unstable; urgency=low
 
