@@ -34,12 +34,11 @@ Technical stuff
 You can get an up-to-date .pot file by saying "make pot" in the
 distribution root directory (the parent directory of this file).
 Running "make po" merges the new pot with the known po files (bringing
-the msgids up to date).  Do NOT commit the pot to CVS (it is a
+the msgids up to date).  Do NOT commit the pot to Git (it is a
 generated file and thus does not belong under version control).
 
 You need to add your language to ../langs.mk for the makefile magic to
 work.
 
-Please, do not touch the C sources without consulting AJK first.
 
 
