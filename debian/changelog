@@ -1,8 +1,8 @@
 dctrl-tools (2.12) UNRELEASED; urgency=low
 
-  * 
+  * Switched to git for source control.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 05 Aug 2007 21:30:57 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 27 Oct 2007 16:53:22 +0300
 
 dctrl-tools (2.11) unstable; urgency=low
 
