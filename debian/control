@@ -10,7 +10,7 @@ XS-Vcs-Browser: http://git.debian.org/?p=collab-maint/dctrl-tools.git;a=summary
 Package: dctrl-tools
 Architecture: any
 Depends: ${shlibs:Depends}
-Suggests: apt
+Suggests: apt, debtags
 Conflicts: grep-dctrl
 Replaces: grep-dctrl
 Provides: grep-dctrl
@@ -27,6 +27,7 @@ Description: Command-line tools to process Debian package information
    grep-available - Grep the DPKG available database
    grep-status    - Grep the DPKG status database
    grep-aptavail  - Grep the APT available database
+   grep-debtags   - Grep the Debtags package database
  .
    sort-dctrl     - Sort dctrl-format files
  .
