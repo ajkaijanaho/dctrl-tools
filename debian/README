@@ -51,6 +51,20 @@ Rules of conduct for people with push access to the repository:
     least on the committer or merger's development machine; use topic
     branches for instable development.
 
+  - Topic branches in the collab-maint repository should be named
+    USERNAME/DESCRIPTIVE-NAME, where USERNAME is the Alioth username
+    of the user creating the topic branch, and DESCRIPTIVE-NAME is a
+    something descriptive to distinguish the branch from the user's
+    other topic branches.  A topic branch is owned by the user whose
+    username is encoded in the branch name.
+
+  - Topic branches may (and should) be rebased at will by the branch
+    owner while it hasn't been merged to any other public branch.  New
+    public branches should never be forked off a topic branch, and
+    only the owner of the branch should merge the branch to master
+    (after review, if possible).  A topic branch that is no longer
+    needed should be deleted.
+
   - Include an update of debian/changelog in your commits.  One-line
     summary of the commit is sufficient, as you can elaborate in the
     commit log and in comments you might add to the source.
