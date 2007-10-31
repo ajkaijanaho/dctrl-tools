@@ -3,13 +3,14 @@ sysconfdir = /etc
 localedir = /usr/share/locale
 version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
 
-CC = gcc -std=gnu99
-CFLAGS = -g -Wall -Werror -Ilib \
+CC = gcc 
+CFLAGS = -g -Wall -Werror
+ALL_CFLAGS = $(CFLAGS) -std=gnu99 -Ilib \
 	 -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
          -DHAVE_GETTEXT -DPACKAGE=\"dctrl-tools\" -DLOCALEDIR=\"$(localedir)\" 
 
-CFLAGS += -DVERSION=\"$(version)\"
-CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
+ALL_CFLAGS += -DVERSION=\"$(version)\"
+ALL_CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
 
 #CFLAGS += -DNDEBUG
 
@@ -60,8 +61,11 @@ join-dctrl/join-dctrl : join-dctrl/join-dctrl.o libdctrl.a
 % : %.o
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
+%.o : %.c
+	$(CC) $(ALL_CFLAGS) -c -o $@ $<
+
 %.d: %.c
-	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
+	$(CC) -M $(ALL_CFLAGS) $< > $@.$$$$; \
 	   sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
 	   rm -f $@.$$$$
 

@@ -9,7 +9,7 @@ include debian/librules.mk
 include langs.mk
 
 debian/stamp/build: #debian/stamp/build-configure
-	$(MAKE)
+	$(MAKE) CC=gcc CFLAGS="-O2 -g -Wall"
 	-$(MAKE) test
 	touch $@
 
