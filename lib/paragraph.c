@@ -78,7 +78,6 @@ static struct field_data * register_field(para_t * para,
 void para_parse_next(para_t * para)
 {
 redo:
-	debug_message("para_parse_next", 0);
 	assert(para != 0);
 	para_parser_t * pp = para->common;
 	para->start = pp->loc;
@@ -90,147 +89,139 @@ redo:
 	if (pp->invalidate_p) {
 		fsaf_invalidate(pp->fp, para->start);
 	}
-	register enum { START, FIELD_NAME, BODY, BODY_NEWLINE,
-			BODY_SKIPBLANKS, END, FAIL } state = START;
+
 	register size_t pos = para->start;
 	register size_t line = para->line;
 	register FSAF * fp = pp->fp;
 	size_t field_start = 0;
 	struct field_data * field_data = 0;
-	while (state != END && state != FAIL) {
-#               ifndef TEST_NODEBUG
-		static char * const stnm[] = { "START", "FIELD_NAME",
-					       "BODY", "BODY_NEWLINE",
-					       "BODY_SKIPBLANKS", "END",
-					       "FAIL" };
-		if (do_msg(L_DEBUG)) {
-			fprintf(stderr, "%s:%zu: state: %s\n",
-				fp->fname, line, stnm[state]);
-		}
-#               endif
-		int c = fsaf_getc(fp, pos++);
-		if (c == '\n') line++;
-		switch (state) {
-		case START:
-			switch (c) {
-			case -1:
-				pp->eof = true;
-				state = END;
-				break;
-			case '\n':
-				para->start++;
-				break;
-			default:
-				field_start = --pos;
-				state = FIELD_NAME;
-			}
-			break;
-		case FIELD_NAME:
-			switch (c) {
-			case '\n': case -1:
-				if (pp->ignore_broken_paras) {
-					line_message(L_IMPORTANT,
-						     _("warning: "
-						       "expected a colon"),
-						     fp->fname,
-                                                     c == '\n' ?line-1:line);
-					state = FAIL;
-				} else {
-					line_message(L_FATAL,
-						     _("expected a colon"),
-						     fp->fname,
-                                                     c == '\n' ?line-1:line);
-					fail();
-				}
-				break;
-			case ':': {
-				size_t len = (pos-1) - field_start;
-				struct fsaf_read_rv r = fsaf_read(fp,
-								  field_start,
-								  len);
-				assert(r.len == len);
-				struct field_attr *attr =
-					fieldtrie_lookup(r.b, len);
-				if (attr == NULL) {
-                                        if (para->common->
-                                            register_unknown_fields) {
-                                                field_data =
-                                                        register_field(para,
-                                                                       r.b,
-                                                                       len);
-                                        } else {
-                                                field_data = 0;
-                                        }
-				} else {
-					assert(attr->inx < para->nfields);
-					field_data = &para->fields[attr->inx];
-                                }
-                                if (field_data != NULL) {
-					field_data->start = pos;
-					field_data->line = line;
-				}
-				state = BODY;
-			}
-				break;
-			}
-			break;
-		case BODY:
-			if (c == -1 || c == '\n') {
-				if (field_data != 0) {
-					field_data->end = pos-1;
-					while (field_data->start < field_data->end
-					       && fsaf_getc(fp, field_data->start)
-					       == ' ') {
-						++field_data->start;
-					}
-				}
-				state = BODY_NEWLINE;
-			}
-			if (c != -1) break;
-			/* conditional passthrough */
-		case BODY_NEWLINE:
-			switch (c) {
-			case -1:
-				//para->eof = true;
-				/* pass through */
-			case '\n':
-				state = END;
-				break;
-			case ' ': case '\t':
-				state = BODY_SKIPBLANKS;
-				break;
-			default:
-				field_start = --pos;
-				state = FIELD_NAME;
-			}
-			break;
-		case BODY_SKIPBLANKS:
-			switch (c) {
-			case -1:
-				/* pass through */
-			case '\n':
-				state = END;
-				break;
-			case ' ': case '\t':
-				break;
-			default:
-				state = BODY;
-			}
-			break;
-		default: assert(0);
-		}
-	}
+
+#define GETC (c = fsaf_getc(fp, pos++), c == '\n' ? line++ : line)
+        int c;
+START:
+        GETC;
+        switch (c) {
+        case -1:
+                pp->eof = true;
+                goto END;
+        case '\n':
+                para->start++;
+                goto START;
+        default:
+                field_start = --pos;
+                goto FIELD_NAME;
+        }
+        assert(0);
+
+FIELD_NAME:
+        GETC;
+        switch (c) {
+        case '\n': case -1:
+                if (pp->ignore_broken_paras) {
+                        line_message(L_IMPORTANT,
+                                     _("warning: expected a colon"),
+                                     fp->fname,
+                                     c == '\n' ?line-1:line);
+                        goto FAIL;
+                } else {
+                        line_message(L_FATAL,
+                                     _("expected a colon"),
+                                     fp->fname,
+                                     c == '\n' ?line-1:line);
+                        fail();
+                }
+                break;
+        case ':': {
+                size_t len = (pos-1) - field_start;
+                struct fsaf_read_rv r = fsaf_read(fp,
+                                                  field_start,
+                                                  len);
+                assert(r.len == len);
+                struct field_attr *attr =
+                        fieldtrie_lookup(r.b, len);
+                if (attr == NULL) {
+                        if (para->common->
+                            register_unknown_fields) {
+                                field_data =
+                                        register_field(para,
+                                                       r.b,
+                                                       len);
+                        } else {
+                                field_data = 0;
+                        }
+                } else {
+                        assert(attr->inx < para->nfields);
+                        field_data = &para->fields[attr->inx];
+                }
+                if (field_data != NULL) {
+                        field_data->start = pos;
+                        field_data->line = line;
+                }
+                goto BODY;
+        }
+        default:
+                goto FIELD_NAME;
+        }
+        assert(0);
+
+BODY:
+        GETC;
+        if (c == -1 || c == '\n') {
+                if (field_data != 0) {
+                        field_data->end = pos-1;
+                        while (field_data->start < field_data->end
+                               && fsaf_getc(fp, field_data->start)
+                               == ' ') {
+                                ++field_data->start;
+                        }
+                }
+                goto BODY_NEWLINE;
+        }
+        if (c != -1) goto BODY; else goto BODY_NEWLINE;
+        assert(0);
+
+BODY_NEWLINE:
+        GETC;
+        switch (c) {
+        case -1:
+                //para->eof = true;
+                /* pass through */
+        case '\n':
+                goto END;
+        case ' ': case '\t':
+                goto BODY_SKIPBLANKS;
+        default:
+                field_start = --pos;
+		goto FIELD_NAME;
+        }
+        assert(0);
+
+BODY_SKIPBLANKS:
+        GETC;
+        switch (c) {
+        case -1:
+                /* pass through */
+        case '\n':
+                goto END;
+                break;
+        case ' ': case '\t':
+                goto BODY_SKIPBLANKS;
+        default:
+                goto BODY;
+        }
+        assert(0);
+
+#undef GETC
+
+FAIL:
+        do {
+                c = fsaf_getc(fp, pp->loc++);
+                if (c == '\n') pp->line++;
+        } while (c != -1 && c != '\n');
+        goto redo;
+
+END:
 	para->end = pos-1;
 	pp->loc = para->end;
 	pp->line = fsaf_getc(fp, pp->loc) == '\n' ? line-1 : line;
-
-	if (state == FAIL) {
-		/* skip the rest of the broken line */
-		int c;
-		do {
-			c = fsaf_getc(fp, pp->loc++);
-			if (c == '\n') pp->line++;
-		} while (c != -1 && c != '\n');
-		goto redo;
-	}
 }
