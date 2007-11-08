@@ -2,8 +2,10 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
 
   * debian/control: suggest debtags, note grep-debtags in description
   * lib/paragraph (para_parse_next): Performance improvements.
+  * debian/control: Rename XS-Vcs-{Git,Browser} fields to Vcs-{Git,Browser};
+    also use the Git protocol instead of HTTP
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 03 Nov 2007 10:03:29 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 08 Nov 2007 14:42:05 +0200
 
 dctrl-tools (2.12) unstable; urgency=low
 

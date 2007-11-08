@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
 Standards-Version: 3.7.2
 Build-Depends: gettext (>= 0.11-0), gcc (>= 3.0)
-XS-Vcs-Git: http://git.debian.org/git/collab-maint/dctrl-tools.git
-XS-Vcs-Browser: http://git.debian.org/?p=collab-maint/dctrl-tools.git;a=summary
+Vcs-Git: git://git.debian.org/git/collab-maint/dctrl-tools.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/dctrl-tools.git;a=summary
 
 Package: dctrl-tools
 Architecture: any
