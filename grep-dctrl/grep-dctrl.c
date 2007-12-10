@@ -751,9 +751,6 @@ static void show_field(struct arguments *args,
                        struct paragraph *para,
                        struct field_attr *fa)
 {
-        if (args->show_field_name) {
-                printf("%s: ", fa->name);
-        }
         struct fsaf_read_rv r 
                 = get_field(para, 
                             fa->inx,
@@ -764,6 +761,16 @@ static void show_field(struct arguments *args,
                 char * nl = memchr(r.b, '\n', r.len);
                 if (nl != 0) r.len = nl - r.b;
         }
+
+        if (r.len == 0) {
+                /* don't display a field with an empty value */
+                return;
+        }
+
+        if (args->show_field_name) {
+                printf("%s: ", fa->name);
+        }
+
         fwrite(r.b, 1, r.len, stdout);
         puts("");
 }

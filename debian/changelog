@@ -1,3 +1,12 @@
+dctrl-tools (2.14) UNRELEASED; urgency=low
+
+  * grep-dctrl/grep-dctrl.c: don't display a field with an empty value,
+    closes: #264907
+  * tests/0006.out: remove "Version: ", no output is expected with the above
+    change.
+
+ -- Jon Bernard <jbernard@debian.org>  Fri, 07 Dec 2007 10:55:13 -0500
+
 dctrl-tools (2.13) UNRELEASED; urgency=low
 
   * debian/control: suggest debtags, note grep-debtags in description
