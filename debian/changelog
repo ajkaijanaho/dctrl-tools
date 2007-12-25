@@ -11,8 +11,11 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
   * lib/paragraph (para_parse_next): Performance improvements.
   * debian/control: Rename XS-Vcs-{Git,Browser} fields to Vcs-{Git,Browser};
     also use the Git protocol instead of HTTP
+  * sync-available/sync-available.cp: Use id -u, not $EUID, which is a bashism
+    closes: #457788 (error in sync-available when /bin/sh links to /bin/dash)
+    Reported by arno renevier <arenevier@fdn.fr>
 
- -- Jon Bernard <jbernard@debian.org>  Fri, 07 Dec 2007 10:55:13 -0500
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 25 Dec 2007 21:02:06 +0200
 
 dctrl-tools (2.12) unstable; urgency=low
 

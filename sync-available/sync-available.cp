@@ -34,7 +34,7 @@ then
     exit 0
 fi
 
-if [ "$EUID" -ne "0" ]
+if [ `id -u` -ne "0" ]
 then
     echo "$0: root privileges are required"
     exit 1
