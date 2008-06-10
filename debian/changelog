@@ -15,6 +15,9 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
     closes: #457788 (error in sync-available when /bin/sh links to /bin/dash)
     Reported by arno renevier <arenevier@fdn.fr>
 
+  [ Gerfried Fuchs ]  
+  * german po file update
+
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 25 Dec 2007 21:02:06 +0200
 
 dctrl-tools (2.12) unstable; urgency=low
