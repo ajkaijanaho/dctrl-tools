@@ -8,6 +8,8 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * debian/control: suggest debtags, note grep-debtags in description
+    closes: #488292 (add debtags to Suggests)
+    Reported by jidanni@jidanni.org.
   * lib/paragraph (para_parse_next): Performance improvements.
   * debian/control: Rename XS-Vcs-{Git,Browser} fields to Vcs-{Git,Browser};
     also use the Git protocol instead of HTTP
