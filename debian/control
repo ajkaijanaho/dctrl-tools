@@ -1,7 +1,8 @@
 Source: dctrl-tools
 Section: utils
 Priority: optional
-Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
+Maintainer: dctrl-tools developers <dctrl-tools-devel@lists.alioth.debian.org>
+Uploaders: Antti-Juhani Kaijanaho <ajk@debian.org>, Jon Bernard <jbernard@debian.org>
 Standards-Version: 3.7.2
 Build-Depends: gettext (>= 0.11-0), gcc (>= 3.0)
 Vcs-Git: git://git.debian.org/git/collab-maint/dctrl-tools.git
