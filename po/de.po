@@ -1,14 +1,15 @@
 # German translation of dctrl-tools
 # Copyright © 2004, 2006, 2008 by Gerfried Fuchs <rhonda@debian.at>
 # This file is distributed under the same license as the dctrl-tools package.
-# Gerfried Fuchs <alfie@debian.org>, 2004, 2006, 2008.
+#
+# Gerfried Fuchs <rhonda@debian.at>, 2004, 2006, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2008-01-30 12:50+0100\n"
-"PO-Revision-Date: 2008-01-31 14:36+0100\n"
+"POT-Creation-Date: 2008-07-03 23:51+0200\n"
+"PO-Revision-Date: 2008-07-03 23:59+0200\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -306,7 +307,7 @@ msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
 #: grep-dctrl/grep-dctrl.c:833
 msgid "-I requires at least one instance of -s"
-msgstr ""
+msgstr "-I benötigt zumindest eine Verwendung von -s"
 
 #: grep-dctrl/grep-dctrl.c:839
 msgid "cannot suppress field names when showing whole paragraphs"
@@ -412,15 +413,15 @@ msgstr "FELD"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr ""
+msgstr "Gibt das Verbindungs-Feld der ersten Datei an"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
-msgstr ""
+msgstr "Gibt das Verbindungs-Feld der zweiten Datei an"
 
 #: join-dctrl/join-dctrl.c:41
 msgid "Specify the common join field"
-msgstr ""
+msgstr "Gibt das gemeinsame Verbindungs-Feld an"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "FIELDNO"
@@ -429,6 +430,7 @@ msgstr "FELDNR"
 #: join-dctrl/join-dctrl.c:42
 msgid "Print unpairable records from the indicated file (either 1 or 2)"
 msgstr ""
+"Gibt die unverknüpfbaren Einträge der gegebenen Datei (entweder 1 oder 2) aus"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "FIELDSPEC"
@@ -444,11 +446,11 @@ msgstr "Missgebildetes Argument für »-a«"
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
-msgstr ""
+msgstr "das Verbindungs-Feld der ersten Datei wurde bereits angegeben"
 
 #: join-dctrl/join-dctrl.c:89
 msgid "the join field of the second file has already been specified"
-msgstr ""
+msgstr "das Verbindungs-Feld der zweiten Datei wurde bereits angegeben"
 
 #: join-dctrl/join-dctrl.c:127
 msgid "missing '.' in output field specification"
@@ -468,4 +470,4 @@ msgstr "exakt zwei Eingabedateien werden benötigt"
 
 #: join-dctrl/join-dctrl.c:294
 msgid "cannot join a stream with itself"
-msgstr ""
+msgstr "ein Datenstrom kann nicht mit sich selbst verbunden werden"
