@@ -39,9 +39,8 @@ Rules of conduct for people with push access to the repository:
     Git repository that contains it by the command git-cat-file blob
     c930ac94c745efafe5a6fb4bbe12def76b3af994
 
-  - The maintainer reserves the right to veto changes; it is good form
-    to discuss nontrivial changes on the mailing list (see above) before
-    pushing so no reverts have to be made.
+  - It is good form to discuss nontrivial changes on the mailing list
+    (see above) before pushing so no reverts have to be made.
 
   - Simple bugfixes and translation updates may be pushed by anybody
     at any time.
