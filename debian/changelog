@@ -19,6 +19,7 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
   * debian/control: Make team maintenance official.
   * debian/README: Remove my veto from procedures.
   * po/fi.po: Update
+  * man/{join,tbl}-dctrl.1: Fix man syntax errors.
   
   [ Gerfried Fuchs ]  
   * german po file update
