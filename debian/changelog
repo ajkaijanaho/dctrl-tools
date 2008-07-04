@@ -1,4 +1,4 @@
-dctrl-tools (2.13) UNRELEASED; urgency=low
+dctrl-tools (2.13.0) unstable; urgency=low
 
   [ Jon Bernard ]
   * grep-dctrl/grep-dctrl.c: don't display a field with an empty value,
@@ -26,7 +26,7 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
   [ Gerfried Fuchs ]  
   * german po file update
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 25 Dec 2007 21:02:06 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 04 Jul 2008 19:12:08 +0300
 
 dctrl-tools (2.12) unstable; urgency=low
 
