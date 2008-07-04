@@ -21,6 +21,7 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
   * po/fi.po: Update
   * man/{join,tbl}-dctrl.1: Fix man syntax errors.
   * debian/control [Standards-Version]: Now 3.8.0.
+  * debian/rules [clean-build]: Do not ignore make clean errors.
   
   [ Gerfried Fuchs ]  
   * german po file update

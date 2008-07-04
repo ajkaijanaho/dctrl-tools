@@ -18,7 +18,7 @@ debian/stamp/build: #debian/stamp/build-configure
 #	touch $@
 
 clean-build:
-	-$(MAKE) clean
+	$(MAKE) clean
 
 debian/stamp/binary/arch: debian/stamp/binary/dctrl-tools
 
