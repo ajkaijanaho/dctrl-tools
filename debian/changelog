@@ -18,6 +18,7 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
     Reported by arno renevier <arenevier@fdn.fr>
   * debian/control: Make team maintenance official.
   * debian/README: Remove my veto from procedures.
+  * po/fi.po: Update
   
   [ Gerfried Fuchs ]  
   * german po file update

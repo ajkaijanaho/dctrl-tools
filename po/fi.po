@@ -7,383 +7,467 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-04-03 00:40+0300\n"
-"PO-Revision-Date: 2006-10-28 21:38+0300\n"
+"POT-Creation-Date: 2008-07-04 18:21+0300\n"
+"PO-Revision-Date: 2008-07-04 18:34+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: misc.c:37
-#, c-format
-msgid "%s: using `%s' as pager\n"
-msgstr "%s: käytetään '%s':ää sivuttimena\n"
-
-#: misc.c:47
-#, c-format
-msgid "%s: popen failed for %s: %s\n"
-msgstr "%s: popen-systeemikutsu epäonnistui '%s':lle: %s\n"
-
-#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
-msgid "predicate is too complex"
-msgstr "predikaatti on liian monimutkainen"
-
-#: paragraph.c:116
-msgid "warning: expected a colon"
-msgstr "varoitus: kaksoispiste puuttuu"
-
-#: paragraph.c:122
-msgid "expected a colon"
-msgstr "kaksoispiste puuttuu"
-
-#: rc.c:66
-msgid "Malformed default input file name"
-msgstr "rikkinäinen oletussyötetiedoston nimi"
-
-#: rc.c:79
-msgid "not owned by you or root, ignoring"
-msgstr "tiedoston omistaja ei ole root etkä sinä, jätän huomiotta"
-
-#: rc.c:84
-msgid "write permissions for group or others, ignoring"
-msgstr "tiedostoon kirjoitusoikeudet ryhmällä ja muilla, jätän huomiotta"
-
-#: rc.c:124
-msgid "reading config file"
-msgstr "luen asetustiedostoa"
-
-#: rc.c:151
-msgid "read failure or out of memory"
-msgstr "lukeminen epäonnistui tai muisti loppui"
-
-#: rc.c:173
-msgid "syntax error: need a executable name"
-msgstr "syntaksivirhe: tarvitsen ohjelmannimen"
-
-#: rc.c:181
-msgid "syntax error: need an input file name"
-msgstr "syntaksivirhe: tarvitsen syötetiedoston nimen"
-
-#: rc.c:186
-msgid "considering executable name"
-msgstr "harkitsen ohjelmannimeä"
-
-#: rc.c:188
-msgid "yes, will use executable name"
-msgstr "kyllä, käytän ohjelmannimeä"
-
-#: rc.c:190
-msgid "default input file"
-msgstr "oletussyötetiedosto"
-
-#: rc.c:201
-msgid "executable name not found; reading from standard input"
-msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
-
-#: ifile.c:54
+#: lib/ifile.c:54
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (lapsi): /bin/sh ei käynnistynyt: %s\n"
 
-#: ifile.c:100
+#: lib/ifile.c:100
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: komento (%s) epäonnistui (lopetuskoodi %d)\n"
 
-#: ifile.c:109
+#: lib/ifile.c:109
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: komento (%s) kuoli signaalin %d vuoksi\n"
 
-#: ifile.c:127
+#: lib/ifile.c:127
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat-kutsu epäonnistui: %s\n"
 
-#: ifile.c:138
+#: lib/ifile.c:138
 msgid "is a directory, skipping"
 msgstr "on hakemisto, jätän huomiotta"
 
-#: ifile.c:139
+#: lib/ifile.c:139
 msgid "is a block device, skipping"
 msgstr "on lohkolaite, jätän huomiotta"
 
-#: ifile.c:140
+#: lib/ifile.c:140
 msgid "internal error"
 msgstr "ohjelman oma virhe"
 
-#: ifile.c:141
+#: lib/ifile.c:141
 msgid "is a socket, skipping"
 msgstr "on pistoke, jätän huomiotta"
 
-#: ifile.c:142
+#: lib/ifile.c:142
 msgid "unknown file type, skipping"
 msgstr "tuntematon tiedostotyyppi, jätän huomiotta"
 
-#: sorter.c:54
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: käytetään '%s':ää sivuttimena\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: popen-systeemikutsu epäonnistui '%s':lle: %s\n"
+
+#: lib/paragraph.c:122
+msgid "warning: expected a colon"
+msgstr "varoitus: kaksoispiste puuttuu"
+
+#: lib/paragraph.c:128
+msgid "expected a colon"
+msgstr "kaksoispiste puuttuu"
+
+#: lib/predicate.c:40 grep-dctrl/grep-dctrl.c:227 grep-dctrl/grep-dctrl.c:336
+msgid "predicate is too complex"
+msgstr "predikaatti on liian monimutkainen"
+
+#: lib/sorter.c:49
 msgid "Parse error in field."
 msgstr "Jäsennysvirhe kentässä"
 
-#: grep-dctrl.c:47
+#: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
-#: grep-dctrl.c:110
+#: grep-dctrl/grep-dctrl.c:110
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
-#: grep-dctrl.c:113 grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "KENTTÄ,KENTTÄ,..."
 
-#: grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:113
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Rajoita haku annettuihin KENTTIIN."
 
-#: grep-dctrl.c:114
+#: grep-dctrl/grep-dctrl.c:114
 msgid "This is a shorthand for -FPackage."
 msgstr "Lyhyt muoto vivulle -FPackage"
 
-#: grep-dctrl.c:115
+#: grep-dctrl/grep-dctrl.c:115
 msgid "This is a shorthand for -FSource:Package."
 msgstr "Lyhyt muoto vivulle -FSource:Package"
 
-#: grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Näytä vain näiden kenttien sisältö täsmäävissä tietueissa"
 
-#: grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
 "Näytä täsmäävien tietueiden \"Description\"-kentästä vain ensimmäinen rivi."
 
-#: grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
 msgstr "Älä näytä kenttien nimiä silloin kun haetaan vain tietyistä kentistä."
 
-#: grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:119
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
-#: grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
 
-#: grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
 msgstr "Jätä kirjainkoko huomiotta haussa."
 
-#: grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
 msgstr "Näytä vain ne tietueet, jotka eivät täsmää."
 
-#: grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:123
+msgid "Show those fields that have NOT been selected with -s"
+msgstr "Näytä ne kentät, joita EI ole valittu -s:llä"
+
+#: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
 msgstr "Näytä vain täsmäävien tietueiden lukumäärä."
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "FNAME"
 msgstr "TIEDNIMI"
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "Use FNAME as the config file."
 msgstr "Käytä TIEDNIMI-tiedostoa asetustiedostona."
 
-#: grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:126
 msgid "Do an exact match."
 msgstr "Käytä täsmällistä hakua."
 
-#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
+#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
-#: grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:128
 msgid "Conjunct predicates."
 msgstr "Yhdistä predikaatit JA-konnektiivilla"
 
-#: grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:129
 msgid "Disjunct predicates."
 msgstr "Yhdistä predikaatit TAI-konnektiivilla"
 
-#: grep-dctrl.c:129
+#: grep-dctrl/grep-dctrl.c:130
 msgid "Negate the following predicate."
 msgstr "Negatoi seuraava predikaatti."
 
-#: grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:131
 msgid "Test for version number equality."
 msgstr "Testaa versionumeroiden yhtäsuuruutta."
 
-#: grep-dctrl.c:131
+#: grep-dctrl/grep-dctrl.c:132
 msgid "Version number comparison: <."
 msgstr "Versionumeron vertailu: <."
 
-#: grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:133
 msgid "Version number comparison: <=."
 msgstr "Versionumeroiden vertailu: <=."
 
-#: grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:134
 msgid "Version number comparison: >."
 msgstr "Versionumeroiden vertailu: >."
 
-#: grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:135
 msgid "Version number comparison: >=."
 msgstr "Versionumeroiden vertailu: >=."
 
-#: grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:136
 msgid "Debug option parsing."
 msgstr "Testaa valitsimien jäsennyst�."
 
-#: grep-dctrl.c:136 grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
 msgstr "Älä tulosta mitään vakiotulostevirtaan"
 
-#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
+#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Yritä mmapata syöttetiedostot"
 
-#: grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:140
 msgid "Ignore parse errors"
 msgstr "Ohita jäsennysvirheet"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "PATTERN"
 msgstr "HAHMO"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "Specify the pattern to search for"
 msgstr "Anna haussa käytettävä hahmo"
 
-#: grep-dctrl.c:298
+#: grep-dctrl/grep-dctrl.c:304
 msgid "predicate is too long"
 msgstr "predikaatti on liian pitkä"
 
-#: grep-dctrl.c:357
+#: grep-dctrl/grep-dctrl.c:363
 msgid "inconsistent atom modifiers"
 msgstr "ristitiitaiset atomin määritteet"
 
-#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
-msgid "no such log level"
-msgstr "ei sellaista seurantatasoa ole"
-
-#: grep-dctrl.c:525
-msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Samassa atomissa ei saa olla useita hahmoja"
-
-#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
-msgid "too many file names"
-msgstr "liikaa tiedostonimiä"
-
-#: grep-dctrl.c:646
-msgid "unexpected end of predicate"
-msgstr "odottamaton predikaatin loppu"
-
-#: grep-dctrl.c:649
-msgid "unexpected '!' in command line"
-msgstr "odottamaton '!' komentorivillä"
-
-#: grep-dctrl.c:652
-msgid "unexpected '-a' in command line"
-msgstr "odottamaton '-a' komentorivill�"
-
-#: grep-dctrl.c:655
-msgid "unexpected '-o' in command line"
-msgstr "odottamaton '-o' komentorivill�"
-
-#: grep-dctrl.c:658
-msgid "unexpected '(' in command line"
-msgstr "odottamaton '(' komentorivill�"
-
-#: grep-dctrl.c:661
-msgid "unexpected ')' in command line"
-msgstr "odottamaton ')' komentorivill�"
-
-#: grep-dctrl.c:665
-msgid "unexpected atom in command line"
-msgstr "odottamaton atomi komentorivill�"
-
-#: grep-dctrl.c:678
-msgid "missing ')' in command line"
-msgstr "komentoriviltä puuttuu ')'"
-
-#: grep-dctrl.c:759
-msgid "A pattern is mandatory"
-msgstr "Hakuehto on välttämätön."
-
-#: grep-dctrl.c:766
-msgid "a predicate is required"
-msgstr "predikaatti on välttämätön"
-
-#: grep-dctrl.c:771
-msgid "malformed predicate"
-msgstr "rikkinäinen predikaatti"
-
-#: grep-dctrl.c:777
+#: grep-dctrl/grep-dctrl.c:422 grep-dctrl/grep-dctrl.c:820
+#: join-dctrl/join-dctrl.c:112
 msgid "too many output fields"
 msgstr "liikaa tulostettavia kenttiä"
 
-#: grep-dctrl.c:781
+#: grep-dctrl/grep-dctrl.c:446 sort-dctrl/sort-dctrl.c:101
+#: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:167
+msgid "no such log level"
+msgstr "ei sellaista seurantatasoa ole"
+
+#: grep-dctrl/grep-dctrl.c:540
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr "Samassa atomissa ei saa olla useita hahmoja"
+
+#: grep-dctrl/grep-dctrl.c:572 sort-dctrl/sort-dctrl.c:117
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:179
+msgid "too many file names"
+msgstr "liikaa tiedostonimiä"
+
+#: grep-dctrl/grep-dctrl.c:661
+msgid "unexpected end of predicate"
+msgstr "odottamaton predikaatin loppu"
+
+#: grep-dctrl/grep-dctrl.c:664
+msgid "unexpected '!' in command line"
+msgstr "odottamaton '!' komentorivillä"
+
+#: grep-dctrl/grep-dctrl.c:667
+msgid "unexpected '-a' in command line"
+msgstr "odottamaton '-a' komentorivill�"
+
+#: grep-dctrl/grep-dctrl.c:670
+msgid "unexpected '-o' in command line"
+msgstr "odottamaton '-o' komentorivill�"
+
+#: grep-dctrl/grep-dctrl.c:673
+msgid "unexpected '(' in command line"
+msgstr "odottamaton '(' komentorivill�"
+
+#: grep-dctrl/grep-dctrl.c:676
+msgid "unexpected ')' in command line"
+msgstr "odottamaton ')' komentorivill�"
+
+#: grep-dctrl/grep-dctrl.c:680
+msgid "unexpected atom in command line"
+msgstr "odottamaton atomi komentorivill�"
+
+#: grep-dctrl/grep-dctrl.c:693
+msgid "missing ')' in command line"
+msgstr "komentoriviltä puuttuu ')'"
+
+#: grep-dctrl/grep-dctrl.c:802
+msgid "A pattern is mandatory"
+msgstr "Hakuehto on välttämätön."
+
+#: grep-dctrl/grep-dctrl.c:809
+msgid "a predicate is required"
+msgstr "predikaatti on välttämätön"
+
+#: grep-dctrl/grep-dctrl.c:814
+msgid "malformed predicate"
+msgstr "rikkinäinen predikaatti"
+
+#: grep-dctrl/grep-dctrl.c:824
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Merkitsen \"Description\"-kentän tulostettavaksi -d-valitsimen takia"
 
-#: grep-dctrl.c:790
+#: grep-dctrl/grep-dctrl.c:833
+msgid "-I requires at least one instance of -s"
+msgstr "-I vaatii ainakin yhden -s:n"
+
+#: grep-dctrl/grep-dctrl.c:839
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "en voi jättää näyttämättä kenttien nimiä, kun näytän kokonaisia tietueita"
 
-#: sort-dctrl.c:40
+#: grep-dctrl/rc.c:55
+msgid "Malformed default input file name"
+msgstr "rikkinäinen oletussyötetiedoston nimi"
+
+#: grep-dctrl/rc.c:68
+msgid "not owned by you or root, ignoring"
+msgstr "tiedoston omistaja ei ole root etkä sinä, jätän huomiotta"
+
+#: grep-dctrl/rc.c:73
+msgid "write permissions for group or others, ignoring"
+msgstr "tiedostoon kirjoitusoikeudet ryhmällä ja muilla, jätän huomiotta"
+
+#: grep-dctrl/rc.c:113
+msgid "reading config file"
+msgstr "luen asetustiedostoa"
+
+#: grep-dctrl/rc.c:140
+msgid "read failure or out of memory"
+msgstr "lukeminen epäonnistui tai muisti loppui"
+
+#: grep-dctrl/rc.c:162
+msgid "syntax error: need a executable name"
+msgstr "syntaksivirhe: tarvitsen ohjelmannimen"
+
+#: grep-dctrl/rc.c:170
+msgid "syntax error: need an input file name"
+msgstr "syntaksivirhe: tarvitsen syötetiedoston nimen"
+
+#: grep-dctrl/rc.c:175
+msgid "considering executable name"
+msgstr "harkitsen ohjelmannimeä"
+
+#: grep-dctrl/rc.c:177
+msgid "yes, will use executable name"
+msgstr "kyllä, käytän ohjelmannimeä"
+
+#: grep-dctrl/rc.c:179
+msgid "default input file"
+msgstr "oletussyötetiedosto"
+
+#: grep-dctrl/rc.c:190
+msgid "executable name not found; reading from standard input"
+msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
+
+#: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
 msgstr "AVAINMÄÄR"
 
-#: sort-dctrl.c:40
+#: sort-dctrl/sort-dctrl.c:40
 msgid "Specify sort keys."
 msgstr "Anna järjestysavaimet."
 
-#: sort-dctrl.c:87
+#: sort-dctrl/sort-dctrl.c:87
 msgid "invalid key flag"
 msgstr "sopimaton avainvalitsin"
 
-#: sort-dctrl.c:137
+#: sort-dctrl/sort-dctrl.c:137
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- järjestä Debianin kontrollitiedostoja"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "DELIM"
 msgstr "VÄLIM"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "Specify a delimiter."
 msgstr "Anna erotinmerkki."
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr "Älä tulosta taulukon otsikoita"
+
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
 msgstr "MÄÄR"
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "Append the specified column."
 msgstr "Lisää loppuun annettu sarake."
 
-#: tbl-dctrl.c:266
+#: tbl-dctrl/tbl-dctrl.c:272
 msgid "invalid column length"
 msgstr "kelvoton sarakepituus"
 
-#: tbl-dctrl.c:317
+#: tbl-dctrl/tbl-dctrl.c:326
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- taulukoi Debianin kontrollitiedostoja"
 
-#: tbl-dctrl.c:331
+#: tbl-dctrl/tbl-dctrl.c:340
 msgid "bad multibyte character"
 msgstr "rikkinäinen pitkä merkki"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr "KENTTÄ"
+
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr "Anna ensimmäisessä tiedostossa käytettävä liitoskenttä"
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr "Anna toisessa tiedostossa käytettävä liitoskenttä"
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr "Anna yhteinen liitoskenttä"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr "KENTTÄNRO"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr "Tulosta pariutumattomat tietueet tästä (joko 1 tai 2) tiedostosta"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "FIELDSPEC"
+msgstr "AVAINMÄÄR"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr "Anna tulostiedoston muoto"
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr "'-a':n argumentti on viallinen"
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr "ensimmäisen tiedoston liitoskenttä on jo annettu"
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr "toisen tiedoston liitoskenttä on jo annettu"
+
+#: join-dctrl/join-dctrl.c:127
+msgid "missing '.' in output field specification"
+msgstr "tuloskentän määrittelystä puuttuu '.'"
+
+#: join-dctrl/join-dctrl.c:144
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr "joko '1.' tai '2.' tarvitaan kenttämäärityksen alussa"
+
+#: join-dctrl/join-dctrl.c:250
+msgid "join-dctrl -- join two Debian control files"
+msgstr "join-dctrl -- liitä yhteen kaksi Debianin kontrollitiedostoa"
+
+#: join-dctrl/join-dctrl.c:269
+msgid "need exactly two input files"
+msgstr "tarvitaan täsmälleen kaksi syötetiedostoa"
+
+#: join-dctrl/join-dctrl.c:294
+msgid "cannot join a stream with itself"
+msgstr "virtaa ei voi liittää yhteen itsensä kanssa"
 
 #, fuzzy
 #~ msgid "unexpected end of file (expected a colon)"
