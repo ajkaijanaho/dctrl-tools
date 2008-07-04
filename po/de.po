@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2008-07-03 23:51+0200\n"
-"PO-Revision-Date: 2008-07-03 23:59+0200\n"
+"PO-Revision-Date: 2008-07-04 12:35+0200\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "%s (Kindprozess): Konnte /bin/sh nicht ausführen: %s\n"
 #: lib/ifile.c:100
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr "%s: Befehl (%s) fehlgeschlagen (Rückgabewert %d)\n"
+msgstr "%s: Befehl (%s) schlug fehl (Rückgabewert %d)\n"
 
 #: lib/ifile.c:109
 #, c-format
@@ -65,7 +65,7 @@ msgstr "%s: »%s« wird als Pager verwendet\n"
 #: lib/misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
-msgstr "%s: popen für %s fehlgeschlagen: %s\n"
+msgstr "%s: popen für %s schlug fehl: %s\n"
 
 #: lib/paragraph.c:122
 msgid "warning: expected a colon"
@@ -81,7 +81,7 @@ msgstr "Eigenschaft ist zu komplex"
 
 #: lib/sorter.c:49
 msgid "Parse error in field."
-msgstr "Analyse des Felds fehlgeschlagen."
+msgstr "Analyse des Felds schlug fehl."
 
 #: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
@@ -119,14 +119,14 @@ msgstr "Dies ist eine Kurzform für -FSource:Package."
 
 #: grep-dctrl/grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
-msgstr "Zeigt nur den Inhalt dieser Felder aus dem passenden Abschnitt."
+msgstr "Zeigt nur den Inhalt dieser Felder aus den passenden Abschnitten."
 
 #: grep-dctrl/grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Zeigt nur die erste Zeile des »Description«-Feldes des passenden Abschnitts."
+"Zeigt nur die erste Zeile des »Description«-Feldes der passenden Abschnitte."
 
 #: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
@@ -138,7 +138,7 @@ msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
 
 #: grep-dctrl/grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
-msgstr "Das Muster ist ein Standard-POSIX regulärer Ausdruck."
+msgstr "Das Muster ist ein Standard-POSIX-regulärer Ausdruck."
 
 #: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
@@ -250,7 +250,7 @@ msgstr "Keine solche Log-Ebene"
 
 #: grep-dctrl/grep-dctrl.c:540
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Mehrfache Muster für das selbe Atom sind nicht erlaubt"
+msgstr "Mehrere Muster für das selbe Atom sind nicht erlaubt"
 
 #: grep-dctrl/grep-dctrl.c:572 sort-dctrl/sort-dctrl.c:117
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:179
@@ -316,7 +316,7 @@ msgstr ""
 
 #: grep-dctrl/rc.c:55
 msgid "Malformed default input file name"
-msgstr "Missgebildeter Default-Eingabedatei-Name"
+msgstr "Missgebildeter Standard-Eingabedatei-Name"
 
 #: grep-dctrl/rc.c:68
 msgid "not owned by you or root, ignoring"
@@ -336,11 +336,11 @@ msgstr "Lesefehler oder zuwenig Speicher verfügbar"
 
 #: grep-dctrl/rc.c:162
 msgid "syntax error: need a executable name"
-msgstr "Syntax-Fehler: Benötige einen Programmnamen"
+msgstr "Syntaxfehler: Benötige einen Programmnamen"
 
 #: grep-dctrl/rc.c:170
 msgid "syntax error: need an input file name"
-msgstr "Syntax-Fehler: Benötige einen Eingabe-Dateinamen"
+msgstr "Syntaxfehler: Benötige einen Eingabedatei-Namen"
 
 #: grep-dctrl/rc.c:175
 msgid "considering executable name"
@@ -352,7 +352,7 @@ msgstr "Ja, Programmname wird verwendet"
 
 #: grep-dctrl/rc.c:179
 msgid "default input file"
-msgstr "Default-Eingabedatei"
+msgstr "Standard-Eingabedatei"
 
 #: grep-dctrl/rc.c:190
 msgid "executable name not found; reading from standard input"
@@ -392,7 +392,7 @@ msgstr "SPALTE"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "Append the specified column."
-msgstr "Die gegebene Spalte anhängen."
+msgstr "Die angegebene Spalte anhängen."
 
 #: tbl-dctrl/tbl-dctrl.c:272
 msgid "invalid column length"
@@ -413,7 +413,7 @@ msgstr "FELD"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr "Gibt das Verbindungs-Feld der ersten Datei an"
+msgstr "Gibt das Verbindungsfeld der ersten Datei an"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
@@ -454,11 +454,11 @@ msgstr "das Verbindungs-Feld der zweiten Datei wurde bereits angegeben"
 
 #: join-dctrl/join-dctrl.c:127
 msgid "missing '.' in output field specification"
-msgstr "Fehlender '.' in der Ausgabefeldspezifikation"
+msgstr "Fehlender ».« in der Ausgabefeldspezifikation"
 
 #: join-dctrl/join-dctrl.c:144
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr "Entweder »1.« oder »2.« am Anfang der Feld-Spezifikation erwartet"
+msgstr "Entweder »1.« oder »2.« am Anfang der Feld-Spezifikation wurde erwartet"
 
 #: join-dctrl/join-dctrl.c:250
 msgid "join-dctrl -- join two Debian control files"
