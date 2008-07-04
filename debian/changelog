@@ -20,6 +20,7 @@ dctrl-tools (2.13) UNRELEASED; urgency=low
   * debian/README: Remove my veto from procedures.
   * po/fi.po: Update
   * man/{join,tbl}-dctrl.1: Fix man syntax errors.
+  * debian/control [Standards-Version]: Now 3.8.0.
   
   [ Gerfried Fuchs ]  
   * german po file update
