@@ -16,10 +16,10 @@
      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
      Boston, MA 02111-1307, USA.
   
-     The author can be reached via mail at (ISO 8859-1 charset for the city)
+     The author can be reached via mail at (UTF-8 charset for the city)
         Antti-Juhani Kaijanaho
         Helokantie 1 A 16
-        FIN-40640 JYVÄSKYLÄ
+        FIN-40640 JYVÃ„SKYLÃ„
         FINLAND
         EUROPE
      and via electronic mail from
