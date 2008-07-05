@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright (C) 1999 Antti-Juhani Kaijanaho
+    Copyright © 1999 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

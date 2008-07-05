@@ -1,8 +1,8 @@
 /* getaline.c -- read arbitrarily long line from file
    (Originally from Lars Wirzenius' publib.)
 
-   Copyright (c) 1994 Lars Wirzenius.  All rights reserved.
-   Copyright (C) 2004 Antti-Juhani Kaijanaho.  All rights reserved.
+   Copyright © 1994 Lars Wirzenius.  All rights reserved.
+   Copyright © 2004 Antti-Juhani Kaijanaho.  All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions

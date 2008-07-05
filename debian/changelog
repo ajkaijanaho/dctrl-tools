@@ -3,6 +3,7 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
   [ Antti-Juhani Kaijanaho ]
   * grep-dctrl/rc.c, lib/msg.c: Recode to UTF-8
   * lib/msg.c: Remove (obsolete) snail mail and email addresses for me.
+  * */*.[ch]: Use the copyright symbol instead of (c) or (C).
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 04 Jul 2008 19:35:16 +0300
 
