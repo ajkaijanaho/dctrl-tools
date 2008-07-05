@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2005, 2006, 2007 Antti-Juhani Kaijanaho
+    Copyright © 2005, 2006, 2007, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -269,7 +269,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			}
 			n = n * 10 + (*p - '0');
 		}
-		if (err) message(L_IMPORTANT, _("invalid column length"), NULL);
+		if (err) message(L_IMPORTANT, 0, _("invalid column length"));
 		col->column_width = n > 0 ? n : -1;
 		if (n == 0) args->need_preprocessing = 1;
 		args->num_columns++;
@@ -286,7 +286,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
-			message(L_FATAL, _("no such log level"), arg);
+			message(L_FATAL, 0, _("no such log level '%s'"), arg);
 			fail();
 		}
 		set_loglevel(ll);
@@ -298,7 +298,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		{
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, _("too many file names"), 0);
+				message(L_FATAL, 0, _("too many file names"));
 				fail();
 			}
 			s = strdup(arg);
@@ -337,8 +337,8 @@ static size_t mbs_len(char const *mbs, size_t n, char const *fname)
 		len++;
 		int delta = mblen(mbs + k, n - k);
 		if (delta <= 0) {
-			message(L_IMPORTANT, _("bad multibyte character"),
-				fname);
+			message(L_IMPORTANT, fname, 
+                                _("bad multibyte character"));
 			k++;
 		} else {
 			k += delta;

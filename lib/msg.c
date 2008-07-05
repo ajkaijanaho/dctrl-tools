@@ -1,5 +1,5 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright © 1999, 2004  Antti-Juhani Kaijanaho
+     Copyright © 1999, 2004, 2008  Antti-Juhani Kaijanaho
   
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -88,4 +88,18 @@ str2loglevel (const char * s)
     if (strcasecmp (avec [i].str, s) == 0)
       return avec[i].integer;
   return -1;
+}
+
+void
+msg_primitive(const char *fname, int line, const char *fmt, va_list ap)
+{
+        if (fname == 0) {
+                fprintf(stderr,  "%s: ", get_progname());
+        } else if (line > 0) {
+                fprintf(stderr, "%s: %s:%i: ", get_progname(), fname, line);
+        } else {
+                fprintf(stderr, "%s: %s: ", get_progname(), fname);
+        }
+        vfprintf(stderr, fmt, ap);
+        fputs("\n.", stderr);
 }

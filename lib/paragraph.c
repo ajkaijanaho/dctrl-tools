@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -118,16 +118,14 @@ FIELD_NAME:
         switch (c) {
         case '\n': case -1:
                 if (pp->ignore_broken_paras) {
-                        line_message(L_IMPORTANT,
-                                     _("warning: expected a colon"),
-                                     fp->fname,
-                                     c == '\n' ?line-1:line);
+                        line_message(L_IMPORTANT, fp->fname, 
+                                     c == '\n' ?line-1:line,
+                                     _("warning: expected a colon"));
                         goto FAIL;
                 } else {
-                        line_message(L_FATAL,
-                                     _("expected a colon"),
-                                     fp->fname,
-                                     c == '\n' ?line-1:line);
+                        line_message(L_FATAL, fp->fname,
+                                     c == '\n' ?line-1:line,
+                                     _("expected a colon"));
                         fail();
                 }
                 break;

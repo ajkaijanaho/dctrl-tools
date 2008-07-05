@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004, 2005, 2006, 2007 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2005, 2006, 2007, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -84,8 +84,8 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 					key.type = FT_VERSION;
 					break;
 				default:
-					message(L_FATAL, _("invalid key flag"),
-						0);
+					message(L_FATAL, 0, 
+                                                _("invalid key flag"));
 					fail();
 				}
 			}
@@ -98,7 +98,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
-			message(L_FATAL, _("no such log level"), arg);
+			message(L_FATAL, 0, _("no such log level '%s'"), arg);
 			fail();
 		}
 		set_loglevel(ll);
@@ -114,7 +114,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		{
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, _("too many file names"), 0);
+				message(L_FATAL, 0, _("too many file names"));
 				fail();
 			}
 			s = strdup(arg);

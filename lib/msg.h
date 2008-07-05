@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 1999 Antti-Juhani Kaijanaho
+    Copyright © 1999, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -69,30 +69,39 @@ void record_error(void)
 	errors = 1;
 }
 
+void
+msg_primitive(const char *fname, int line, const char *fmt, va_list ap);
+
+static void
+line_message(int severity, const char *fname, int line, const char *fmt, ...)
+        __attribute__((format(printf,4,5)));
+
 inline static void
-line_message (int severity, const char * s, const char * fname, int line)
+line_message(int severity, const char *fname, int line, const char *fmt, ...)
 {
 	if (do_msg(severity)) {
-      
-		if (fname == 0) {
-			fprintf (stderr,  "%s: %s.\n", get_progname(), s);
-		} else {
-			if (line > 0) {
-				fprintf (stderr, "%s: %s:%i: %s.\n",
-					 get_progname(), fname, line, s);
-			} else {
-				fprintf (stderr, "%s: %s: %s.\n", 
-					 get_progname(), fname, s);
-			}
-		}
+                va_list ap;
+                va_start(ap, fmt);
+                msg_primitive(fname, line, fmt, ap);
+                va_end(ap);
 		if (severity >= L_IMPORTANT) record_error();
 	}
 }
 
+static void
+message (int severity, const char * fname, const char * s, ...)
+        __attribute__((format(printf,3,4)));
+
 inline static void
-message (int severity, const char * s, const char * fname)
+message (int severity, const char * fname, const char * fmt, ...)
 {
-  line_message (severity, s, fname, 0);
+	if (do_msg(severity)) {
+                va_list ap;
+                va_start(ap, fmt);
+                msg_primitive(fname, 0, fmt, ap);
+                va_end(ap);
+		if (severity >= L_IMPORTANT) record_error();
+	}
 }
 
 #ifndef MSG_C__

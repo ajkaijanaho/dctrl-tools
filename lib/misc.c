@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -51,14 +51,14 @@ int to_stdout (const char * fname)
 
 	f = fopen (fname, "r");
 	if (f == 0) {
-		message (L_FATAL, strerror (errno), COPYING);
+		message(L_FATAL, COPYING, "%s", strerror (errno));
 		return 0;
 	}
 
 	while ( ( c = getc (f)) != EOF) putc(c, t);
 
 	if (ferror (f)) {
-		message (L_FATAL, strerror (errno), COPYING);
+		message(L_FATAL, COPYING, "%s", strerror(errno));
 		rv = 0;
 	}
 

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007
+    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -224,7 +224,7 @@ struct arguments {
 struct atom * clone_atom(struct arguments * args)
 {
 	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, _("predicate is too complex"), 0);
+		message(L_FATAL, 0, _("predicate is too complex"));
 		fail();
 	}
 	int oa = args->p.num_atoms-1;
@@ -301,7 +301,7 @@ static void apptok(struct arguments * args, const int tok)
 		finish_atom(args);
 	}
 	if (args->toks_np >= MAX_TOKS) {
-		message(L_FATAL, _("predicate is too long"), 0);
+		message(L_FATAL, 0, _("predicate is too long"));
 		fail();
 	}
 	args->toks[args->toks_np++] = tok;
@@ -333,7 +333,7 @@ static struct atom * enter_atom(struct arguments * args)
 	}
 	args->in_atom = true;
 	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, _("predicate is too complex"), 0);
+		message(L_FATAL, 0, _("predicate is too complex"));
 		fail();
 	}
 	APPTOK(args->p.num_atoms + TOK_ATOM_BASE);
@@ -360,7 +360,7 @@ static struct atom * enter_atom(struct arguments * args)
 #define set_mode(nmode) do { \
 	atom = ENTER_ATOM; \
 	if (atom->mode != M_SUBSTR) { \
-		message(L_FATAL, _("inconsistent atom modifiers"), 0); \
+		message(L_FATAL, 0, _("inconsistent atom modifiers")); \
 		fail(); \
 	} \
 	atom->mode = (nmode); \
@@ -419,7 +419,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         }
                         struct field_attr *fa = fieldtrie_insert(s);
                         if (args->num_show_fields >= MAX_FIELDS) {
-                                message(L_FATAL, _("too many output fields"), 0);
+                                message(L_FATAL, 0, _("too many output fields"));
                                 fail();
                         }
                         args->show_fields[args->num_show_fields] = fa->inx;
@@ -443,7 +443,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
-			message(L_FATAL, _("no such log level"), arg);
+			message(L_FATAL, 0, _("no such log level '%s'"), arg);
 			fail();
 		}
 		set_loglevel(ll);
@@ -537,8 +537,8 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 debug_message("parse_opt: pattern", 0);
 		atom = ENTER_ATOM;
 		if (atom->pat != 0) {
-                        message(L_FATAL, _("Multiple patterns for the same "
-                                           "atom are not allowed"), 0);
+                        message(L_FATAL, 0, _("Multiple patterns for the same "
+                                              "atom are not allowed"));
                         fail();
                 }
 		atom->patlen = strlen(arg);
@@ -569,7 +569,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		if (args->finished) {
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, _("too many file names"), 0);
+				message(L_FATAL, 0, _("too many file names"));
 				fail();
 			}
 			s = strdup(arg);
@@ -658,26 +658,26 @@ static void unexpected(int tok)
 {
 	switch (tok) {
 	case TOK_EOD:
-		message(L_FATAL, _("unexpected end of predicate"), 0);
+		message(L_FATAL, 0, _("unexpected end of predicate"));
 		fail();
 	case TOK_NOT: 
-		message(L_FATAL, _("unexpected '!' in command line"), 0);
+		message(L_FATAL, 0, _("unexpected '!' in command line"));
 		fail();
 	case TOK_AND:
-		message(L_FATAL, _("unexpected '-a' in command line"), 0);
+		message(L_FATAL, 0, _("unexpected '-a' in command line"));
 		fail();
 	case TOK_OR : 
-		message(L_FATAL, _("unexpected '-o' in command line"), 0);
+		message(L_FATAL, 0, _("unexpected '-o' in command line"));
 		fail();
 	case TOK_LP :
-		message(L_FATAL, _("unexpected '(' in command line"), 0);
+		message(L_FATAL, 0, _("unexpected '(' in command line"));
 		fail();
 	case TOK_RP :
-		message(L_FATAL, _("unexpected ')' in command line"), 0);
+		message(L_FATAL, 0, _("unexpected ')' in command line"));
 		fail();
 	default:
 		assert(tok >=TOK_ATOM_BASE);
-		message(L_FATAL, _("unexpected atom in command line"), 0);
+		message(L_FATAL, 0, _("unexpected atom in command line"));
 		fail();
 	}
 }
@@ -690,7 +690,7 @@ static void parse_prim(struct arguments * args)
 		get_token(args);
 		parse_conj(args);
 		if (get_token(args) != TOK_RP) {
-			message(L_FATAL, _("missing ')' in command line"), 0);
+			message(L_FATAL, 0, _("missing ')' in command line"));
 			fail();
 		}
 		return;
@@ -799,45 +799,43 @@ int main (int argc, char * argv[])
 #endif
 	parse_predicate(&args);
 	if (args.pattern_error) {
-		message(L_FATAL, _("A pattern is mandatory"), 0);
+		message(L_FATAL, 0, _("A pattern is mandatory"));
 		fail();
 	}
 
 	if (debug_optparse) { dump_args(&args); return 0; }
 
 	if (args.p.num_atoms == 0) {
-		message(L_FATAL, _("a predicate is required"), 0);
+		message(L_FATAL, 0, _("a predicate is required"));
 		fail();
 	}
 
 	if (!check_predicate(&args.p)) {
-		message(L_FATAL, _("malformed predicate"), 0);
+		message(L_FATAL, 0, _("malformed predicate"));
 		fail();
 	}
 
 	if (args.short_descr && !args.description_selected) {
 		if (args.num_show_fields >= MAX_FIELDS) {
-			message(L_FATAL, _("too many output fields"), 0);
+			message(L_FATAL, 0, _("too many output fields"));
 			fail();
 		}
-		message(L_INFORMATIONAL,
-			_("Adding \"Description\" to selected output fields because of -d"),
-			0);
+		message(L_INFORMATIONAL, 0,
+			_("Adding \"Description\" to selected output fields because of -d"));
                 SET_SHOW_FIELD(description_attr->application_data, 1);
                 args.show_fields[args.num_show_fields] = description_attr->inx;
 		++args.num_show_fields;
 	}
 
         if (args.invert_show && args.num_show_fields == 0) {
-                message(L_FATAL,
-                        _("-I requires at least one instance of -s"), 0);
+                message(L_FATAL, 0,
+                        _("-I requires at least one instance of -s"));
                 fail();
         }
 
 	if (!args.show_field_name && args.num_show_fields == 0) {
-		message(L_FATAL,
-			_("cannot suppress field names when showing whole paragraphs"),
-			0);
+		message(L_FATAL, 0,
+			_("cannot suppress field names when showing whole paragraphs"));
 		fail();
 	}
 

@@ -1,5 +1,5 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright © 1999, 2003, 2004  Antti-Juhani Kaijanaho
+     Copyright © 1999, 2003, 2004, 2008  Antti-Juhani Kaijanaho
 
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -158,25 +158,27 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 
 		line_exe = strtok(line, " \t");
 		if (line_exe == 0) {
-			line_message(L_IMPORTANT,
-				     _("syntax error: need a executable name"),
-				     fname, lineno);
+			line_message(L_IMPORTANT, fname, lineno,
+				     _("syntax error: need a executable name")
+                                );
 			continue;
 		}
 
 		line_ifile = strtok(0, "\n\t");
 		if (line_ifile == 0) {
-			line_message(L_IMPORTANT,
-				     _("syntax error: need an input file name"),
-				     fname, lineno);
+			line_message(L_IMPORTANT, fname, lineno,
+				     _("syntax error: need an input file name")
+                                );
 			continue;
 		}
 
-		message(L_INFORMATIONAL, _("considering executable name"), line_exe);
+		message(L_INFORMATIONAL, line_exe, 
+                        _("considering executable name"));
 		if (strcmp (exename, line_exe) == 0) {
-			message(L_INFORMATIONAL, _("yes, will use executable name"), line_exe);
+			message(L_INFORMATIONAL, line_exe,
+                                _("yes, will use executable name"));
 			rv = line_ifile;
-			message(L_INFORMATIONAL, _("default input file"), rv);
+			message(L_INFORMATIONAL, rv, _("default input file"));
 			break;
 		}
 	}
@@ -187,8 +189,9 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 	if (rv != 0) {
 		return parse(rv);
 	} else {
-		message(L_IMPORTANT, _("executable name not found; "
-				       "reading from standard input"), 0);
+		message(L_IMPORTANT, 0,
+                        _("executable name not found; "
+                          "reading from standard input"));
 		return (struct ifile) { .mode = m_read, .s = "-" };
 	}
 }

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004, 2005 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2005, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -45,8 +45,8 @@ int para_compare(keys_t *keys, const para_t *a, const para_t *b)
 			bool aok = parse_version(&ar, af, strlen(af));
 			bool bok = parse_version(&br, bf, strlen(bf));
 			if (!aok || !bok) {
-				message(L_IMPORTANT,
-					_("Parse error in field."), 0);
+				message(L_IMPORTANT, 0,
+					_("Parse error in field."));
 				free(af);
 				free(bf);
 				return aok ? (bok ? 0 : 1) : (bok ? -1 : 0);

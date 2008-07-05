@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2007 Antti-Juhani Kaijanaho
+    Copyright © 2007, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 } else if (arg[1] == '2' && arg[1] == '\0') {
                         args->unpairables = 2;
                 } else {
-                        message(L_FATAL, _("malformed argument to '-a'"), 0);
+                        message(L_FATAL, 0, _("malformed argument to '-a'"));
                         fail();
                 }
                 break;
@@ -91,7 +91,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 for (size_t i = 0; i < 2; i++) {
                         if (key == the_other_key[i]) continue;
                         if (args->join_field[0] != NULL) {
-                                message(L_FATAL, gettext(errmsg[i]), 0);
+                                message(L_FATAL, 0, gettext(errmsg[i]));
                                 fail();
                         }
                 }
@@ -109,8 +109,8 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 if (carg == 0) fatal_enomem(0);
                 for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
                         if (args->num_show_fields >= MAX_FIELDS) {
-                                message(L_FATAL, _("too many output fields"), 
-                                        0);
+                                message(L_FATAL, 0, 
+                                        _("too many output fields"));
                                 fail();
                         }
                         struct show_field *of =
@@ -124,8 +124,9 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         }
                         char * fld = strchr(s, '.');
                         if (fld == NULL) {
-                                message(L_FATAL, _("missing '.' in output "
-                                                   "field specification"), 0);
+                                message(L_FATAL, 0, 
+                                        _("missing '.' in output "
+                                          "field specification"));
                                 fail();
                         }
                         *fld = '\0';
@@ -141,10 +142,10 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         } else if (s[0] == '2' && s[1] == '\0') {
                                 file_inx = 1;
                         } else {
-                                message(L_FATAL, _("expected either '1.' or "
-                                                   "'2.' at the start of the "
-                                                   "field specification"), 
-                                        0);
+                                message(L_FATAL, 0, 
+                                        _("expected either '1.' or "
+                                          "'2.' at the start of the "
+                                          "field specification"));
                                         fail();
                         }
                         of->file_inx = file_inx;
@@ -164,7 +165,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
-			message(L_FATAL, _("no such log level"), arg);
+			message(L_FATAL, 0, _("no such log level '%s'"), arg);
 			fail();
 		}
 		set_loglevel(ll);
@@ -176,7 +177,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		{
 			char const * s;
 			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, _("too many file names"), 0);
+				message(L_FATAL, 0, _("too many file names"));
 				fail();
 			}
 			s = strdup(arg);
@@ -266,7 +267,7 @@ int main(int argc, char * argv[])
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 
         if (args.num_fnames != 2) {
-                message(L_FATAL, _("need exactly two input files"), 0);
+                message(L_FATAL, 0, _("need exactly two input files"));
                 fail();
         }
 
@@ -290,9 +291,8 @@ int main(int argc, char * argv[])
         for (size_t i = 0; i < args.num_fnames; i++) {
                 for (size_t j = i+1; j < args.num_fnames; j++) {
                         if (fd[i] == fd[j]) {
-                                message(L_FATAL, 
-                                        _("cannot join a stream with itself"),
-                                        0);
+                                message(L_FATAL,  0,
+                                        _("cannot join a stream with itself"));
                                 fail();
                         }
                 } 

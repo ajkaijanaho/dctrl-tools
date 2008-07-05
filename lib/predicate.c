@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ void addinsn(struct predicate * p, int insn)
 {
 	if (insn == I_NOP) return;
 	if (p->proglen >= MAX_OPS) {
-		message(L_FATAL, _("predicate is too complex"), 0);
+		message(L_FATAL, 0, _("predicate is too complex"));
 		fail();
 	}
 	p->program[p->proglen++] = insn;
@@ -69,7 +69,7 @@ void predicate_finish_atom(struct predicate * p)
 			char * s;
 			s = get_regerror(rerr, &atom->regex);
 			if (s == 0) fatal_enomem(0);
-			message(L_FATAL, s, 0);
+			message(L_FATAL, 0, "%s", s);
 			free(s);
 			fail();
 		}
@@ -136,7 +136,7 @@ static bool verify_atom(struct atom * atom, para_t * para)
 		assert(regex_errcode != 0 && regex_errcode != REG_NOMATCH);
 		s = get_regerror (regex_errcode, &atom->regex);
 		if (s == 0) { enomem (0); return false; }
-		message(L_IMPORTANT, s, 0);
+		message(L_IMPORTANT, 0, "%s", s);
 		free(s);
 		return false;
 	}
