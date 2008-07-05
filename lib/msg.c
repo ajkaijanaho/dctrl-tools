@@ -16,17 +16,6 @@
      the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
      Boston, MA 02111-1307, USA.
   
-     The author can be reached via mail at (UTF-8 charset for the city)
-        Antti-Juhani Kaijanaho
-        Helokantie 1 A 16
-        FIN-40640 JYVÄSKYLÄ
-        FINLAND
-        EUROPE
-     and via electronic mail from
-        gaia@iki.fi
-     If you have a choice, use the email address; it is more likely to
-     stay current.
-
 */
 
 
