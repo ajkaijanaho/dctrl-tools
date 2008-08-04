@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2008-07-27 21:43+0200\n"
-"PO-Revision-Date: 2008-07-26 09:18-0700\n"
+"PO-Revision-Date: 2008-08-04 11:22-0300\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -243,9 +243,8 @@ msgstr "příliš mnoho výstupních polí"
 
 #: grep-dctrl/grep-dctrl.c:446 sort-dctrl/sort-dctrl.c:101
 #: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:167
-#, fuzzy
 msgid "no such log level"
-msgstr "taková úroveň logování neexistuje „%s“"
+msgstr "taková úroveň logování neexistuje"
 
 #: grep-dctrl/grep-dctrl.c:540
 msgid "Multiple patterns for the same atom are not allowed"
