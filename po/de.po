@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2008-07-03 23:51+0200\n"
-"PO-Revision-Date: 2008-07-04 12:35+0200\n"
+"POT-Creation-Date: 2008-09-02 15:44+0200\n"
+"PO-Revision-Date: 2008-09-02 15:44+0200\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "%s: »%s« wird als Pager verwendet\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen für %s schlug fehl: %s\n"
 
-#: lib/paragraph.c:122
+#: lib/paragraph.c:123
 msgid "warning: expected a colon"
 msgstr "Warnung: Doppelpunkt wurde erwartet"
 
@@ -239,21 +239,22 @@ msgid "inconsistent atom modifiers"
 msgstr "Inkonsistenter Atom-Modifikator"
 
 #: grep-dctrl/grep-dctrl.c:422 grep-dctrl/grep-dctrl.c:820
-#: join-dctrl/join-dctrl.c:112
+#: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "Zu viele Ausgabefelder"
 
 #: grep-dctrl/grep-dctrl.c:446 sort-dctrl/sort-dctrl.c:101
-#: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:167
-msgid "no such log level"
-msgstr "Keine solche Log-Ebene"
+#: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:168
+#, c-format
+msgid "no such log level '%s'"
+msgstr "Keine Log-Ebene »%s«"
 
 #: grep-dctrl/grep-dctrl.c:540
 msgid "Multiple patterns for the same atom are not allowed"
 msgstr "Mehrere Muster für das selbe Atom sind nicht erlaubt"
 
 #: grep-dctrl/grep-dctrl.c:572 sort-dctrl/sort-dctrl.c:117
-#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:179
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
@@ -305,11 +306,11 @@ msgstr "Missgebildete Eigenschaft"
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
-#: grep-dctrl/grep-dctrl.c:833
+#: grep-dctrl/grep-dctrl.c:832
 msgid "-I requires at least one instance of -s"
 msgstr "-I benötigt zumindest eine Verwendung von -s"
 
-#: grep-dctrl/grep-dctrl.c:839
+#: grep-dctrl/grep-dctrl.c:838
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"
@@ -342,19 +343,19 @@ msgstr "Syntaxfehler: Benötige einen Programmnamen"
 msgid "syntax error: need an input file name"
 msgstr "Syntaxfehler: Benötige einen Eingabedatei-Namen"
 
-#: grep-dctrl/rc.c:175
+#: grep-dctrl/rc.c:176
 msgid "considering executable name"
 msgstr "Programmname wird in Betracht gezogen"
 
-#: grep-dctrl/rc.c:177
+#: grep-dctrl/rc.c:179
 msgid "yes, will use executable name"
 msgstr "Ja, Programmname wird verwendet"
 
-#: grep-dctrl/rc.c:179
+#: grep-dctrl/rc.c:181
 msgid "default input file"
 msgstr "Standard-Eingabedatei"
 
-#: grep-dctrl/rc.c:190
+#: grep-dctrl/rc.c:193
 msgid "executable name not found; reading from standard input"
 msgstr "Programmname nicht gefunden; es wird von der Standardeingabe gelesen"
 
@@ -366,7 +367,7 @@ msgstr "SORTSCHL"
 msgid "Specify sort keys."
 msgstr "Sortierungsschlüssel angeben."
 
-#: sort-dctrl/sort-dctrl.c:87
+#: sort-dctrl/sort-dctrl.c:88
 msgid "invalid key flag"
 msgstr "Ungültiges Schlüssel-Flag"
 
@@ -402,7 +403,7 @@ msgstr "Ungültige Spaltenlänge"
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- Debian-Control-Dateien als Tabelle"
 
-#: tbl-dctrl/tbl-dctrl.c:340
+#: tbl-dctrl/tbl-dctrl.c:341
 msgid "bad multibyte character"
 msgstr "Falsches Multibyte-Zeichen"
 
@@ -452,22 +453,22 @@ msgstr "das Verbindungs-Feld der ersten Datei wurde bereits angegeben"
 msgid "the join field of the second file has already been specified"
 msgstr "das Verbindungs-Feld der zweiten Datei wurde bereits angegeben"
 
-#: join-dctrl/join-dctrl.c:127
+#: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
 msgstr "Fehlender ».« in der Ausgabefeldspezifikation"
 
-#: join-dctrl/join-dctrl.c:144
+#: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
 msgstr "Entweder »1.« oder »2.« am Anfang der Feld-Spezifikation wurde erwartet"
 
-#: join-dctrl/join-dctrl.c:250
+#: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"
 msgstr "join-dctrl -- verbindet zwei Debian-Control-Dateien"
 
-#: join-dctrl/join-dctrl.c:269
+#: join-dctrl/join-dctrl.c:270
 msgid "need exactly two input files"
 msgstr "exakt zwei Eingabedateien werden benötigt"
 
-#: join-dctrl/join-dctrl.c:294
+#: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "ein Datenstrom kann nicht mit sich selbst verbunden werden"
