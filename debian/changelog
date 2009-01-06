@@ -6,8 +6,12 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
   * */*.[ch]: Use the copyright symbol instead of (c) or (C).
   * msg.[ch] (and others): allow the message functions to handle format strings
   * tbl-dctrl.c [linewrap]: Clarify.
+  * tbl-dctrl.c [linewrap]: Do not include the breakpoint in the next line.
+    Closes: #508953 (when greping through source packages, 
+                     tbl-control can't list Files
+    Reported by Gerfried Fuchs <rhonda@debian.at>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 06 Jan 2009 19:45:11 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 06 Jan 2009 19:49:31 +0200
 
 dctrl-tools (2.13.0) unstable; urgency=low
 

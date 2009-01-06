@@ -106,7 +106,7 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 				assert(bpr < len);
 				len = bpr;
 				assert(bpo < i);
-				i = bpo; 
+				i = bpo + 1; 
 			}
 			ll = 0;
 			INSERT('\n');
