@@ -1,9 +1,9 @@
-dctrl-tools (2.13.1) UNRELEASED; urgency=low
+dctrl-tools (2.13.1) unstable; urgency=low
 
   [ Gerfried Fuchs ]  
   * Czech translation update received from Miroslav Kure, thanks.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 04 Jul 2008 19:31:49 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 06 Jan 2009 16:19:48 +0200
 
 dctrl-tools (2.13.0) unstable; urgency=low
 
