@@ -297,6 +297,11 @@ static void leave(struct arguments * args, int paren)
 static void apptok(struct arguments * args, const int tok)
 {
 	debug_message("apptok", 0);
+        if (args->finished) {
+                message(L_FATAL, 0,
+                        _("file names are not allowed within the predicate"));
+                fail();
+        }
 	if (args->in_atom && tok < TOK_ATOM_BASE) {
 		finish_atom(args);
 	}
