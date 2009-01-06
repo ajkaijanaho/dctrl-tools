@@ -68,6 +68,16 @@ struct arguments {
 	struct ifile fname[MAX_FNAMES];
 };
 
+size_t linewrap(char **res, char const *orig, size_t orig_len,
+		size_t col_width)
+{
+	assert(col_width > 0);
+
+        // these are primarily manipulated by the INSERT macro below
+	size_t max = 16;        // the capacity of rv
+	char *rv = malloc(max); // the prospective return value
+	size_t len = 0;         // length of the string in rv
+
 #define INSERT(c) do { \
 	if (len >= max) { \
 		max *= 2; \
@@ -77,17 +87,12 @@ struct arguments {
 	rv[len++] = (c); \
 } while (0)
 
-size_t linewrap(char **res, char const *orig, size_t orig_len,
-		size_t col_width)
-{
-	assert(col_width > 0);
+	size_t ll = 0;          // the length of the current line, so far
 
-	size_t max = 16;
-	char *rv = malloc(max);
-	size_t len = 0;
-
-	size_t ll = 0;
-	size_t bpo = 0, bpr = 0;
+        // the following two record the location of the closest
+        // breakpoint so far
+	size_t bpo = 0;        // indexes orig
+        size_t bpr = 0;        // indexes rv
 
 	size_t num_lines = 1;
 
@@ -101,7 +106,7 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 				assert(bpr < len);
 				len = bpr;
 				assert(bpo < i);
-				i = bpo;
+				i = bpo; 
 			}
 			ll = 0;
 			INSERT('\n');
@@ -122,8 +127,8 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 	INSERT('\0');
 	*res = rv;
 	return num_lines;
+#undef INSERT
 }
-
 
 void print_line(struct arguments *args,
 		struct fsaf_read_rv const columns[/*args->num_columns*/])

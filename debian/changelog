@@ -5,8 +5,9 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
   * lib/msg.c: Remove (obsolete) snail mail and email addresses for me.
   * */*.[ch]: Use the copyright symbol instead of (c) or (C).
   * msg.[ch] (and others): allow the message functions to handle format strings
+  * tbl-dctrl.c [linewrap]: Clarify.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 04 Jul 2008 19:35:16 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 06 Jan 2009 19:45:11 +0200
 
 dctrl-tools (2.13.0) unstable; urgency=low
 
