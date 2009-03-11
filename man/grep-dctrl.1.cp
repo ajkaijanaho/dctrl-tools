@@ -391,7 +391,13 @@ installed packages, sorted by their Installed\-Size.
 % grep\-status \-FStatus \-sInstalled\-Size,Package \-n \\
     "install ok installed" | paste \-sd "  \\n" | sort \-n             
 .fi
-Note that there should be exactly 2 spaces in the "  \\n" string. 
+Note that there should be exactly 2 spaces in the "  \\n" string.
+.PP
+Another usual use-case is looking for packages that have another one as
+build dependency:
+.nf
+% grep\-dctrl \-s Package \-F Build\-Depends,Build\-Depends\-Indep quilt /var/lib/apt/lists/*Sources
+.fi
 .PP
 These examples cover a lot of typical uses of this utility, but not
 all possible uses.  Use your imagination!  The building blocks are
