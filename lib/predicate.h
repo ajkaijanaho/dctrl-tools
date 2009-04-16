@@ -66,6 +66,8 @@ struct atom {
 	/* A compiled version of pat; valid only when mode is M_REGEX
 	 * or M_EREGEX.  */
 	regex_t regex;
+	/* Flag: (extended) regex should match whole package names */
+	unsigned whole_pkg;
 };
 
 /* A predicate is represented as a set of atomic predicates and a

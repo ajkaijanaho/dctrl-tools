@@ -137,6 +137,12 @@ Ignore case when looking for a match in the current simple filter.
 .IP "\-X, \-\-exact\-match"
 Do an exact match (as opposed to a substring match) in the current
 simple filter.
+.IP "\-w, \-\-whole\-pkg"
+Do an extended regular expression match on whole package names,
+assuming the syntax of inter-package relationship fields such as
+Depends, Recommends, ... When this flag is given you should not worry
+about sub-package names such as "libpcre3" also matching
+"libpcre3-dev". This flag implies (and is incompatible with) \-e.
 .IP "\-\-eq"
 Do an equality comparison under the Debian version number system.  If
 the pattern or the field to be searched in is not a valid Debian

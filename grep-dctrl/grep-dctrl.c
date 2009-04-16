@@ -139,6 +139,7 @@ static struct argp_option options[] = {
 	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
 	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
         { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for") },
+	{ "whole-pkg",	    'w', 0,                 0, N_("Do (eregex) matching on whole package names") },
 	{ 0 }
 };
 
@@ -235,6 +236,7 @@ struct atom * clone_atom(struct arguments * args)
 	rv->field_inx = atom->field_inx;
 	rv->mode = atom->mode;
 	rv->ignore_case = atom->ignore_case;
+	rv->whole_pkg = atom->whole_pkg;
 	rv->pat = atom->pat;
 	rv->patlen = atom->patlen;
 	struct atom_code * ac = args->atom_code[oa];
@@ -357,6 +359,7 @@ static struct atom * enter_atom(struct arguments * args)
 	rv->field_inx = -1;
 	rv->mode = M_SUBSTR;
 	rv->ignore_case = 0;
+	rv->whole_pkg = 0;
 	rv->pat = 0;
 	rv->patlen = 0;
 	return rv;
@@ -551,6 +554,12 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		if (atom->pat == 0) fatal_enomem(0);
 		strcpy((char*)atom->pat, arg);
 		break;
+	case 'w':
+		debug_message("parse_opt: whole-pkg", 0);
+		atom = ENTER_ATOM;
+		atom->whole_pkg = 1;
+		set_mode(M_EREGEX);
+		break;
 	case ARGP_KEY_ARG:
 		debug_message("parse_opt: argument", 0);
 	redo:
@@ -620,6 +629,7 @@ static void dump_args(struct arguments * args)
 		printf("atoms[%zi].field_name = %s\n", i, args->p.atoms[i].field_name);
 		printf("atoms[%zi].mode = %i\n", i, args->p.atoms[i].mode);
 		printf("atoms[%zi].ignore_case = %i\n", i, args->p.atoms[i].ignore_case);
+		printf("atoms[%zi].whole_pkg = %i\n", i, args->p.atoms[i].whole_pkg);
 		printf("atoms[%zi].pat = %s\n", i, args->p.atoms[i].pat);
 	}
 	printf("proglen = %zi\n", args->p.proglen);

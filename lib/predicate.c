@@ -27,6 +27,9 @@
 #include "strutil.h"
 #include "version.h"
 
+#define RE_PKG_BEGIN	"(^| )"
+#define RE_PKG_END	"([, \\(]|$)"
+
 void init_predicate(struct predicate * p)
 {
 	p->num_atoms = 0;
@@ -46,6 +49,9 @@ void addinsn(struct predicate * p, int insn)
 void predicate_finish_atom(struct predicate * p)
 {
 	struct atom * atom =  get_current_atom(p);
+	char * regex_pat = NULL;
+	int regex_patlen = atom->patlen + strlen(RE_PKG_BEGIN)
+				+ strlen(RE_PKG_END) + 1;
 	debug_message("predicate_finish_atom", 0);
 	if (atom->field_name != 0) {
                 char * repl = strchr(atom->field_name, ':');
@@ -59,12 +65,20 @@ void predicate_finish_atom(struct predicate * p)
 	}
 
 	if (atom->mode == M_REGEX || atom->mode == M_EREGEX) {
+		regex_pat = calloc(1, regex_patlen);	/* rely on mem 0-ing */
+		if (regex_pat == 0)  fatal_enomem(0);
+		if (atom->whole_pkg)
+			strncat(regex_pat, RE_PKG_BEGIN, strlen(RE_PKG_BEGIN));
+		strncat(regex_pat, atom->pat, atom->patlen);
+		if (atom->whole_pkg)
+			strncat(regex_pat, RE_PKG_END, strlen(RE_PKG_END));
 		debug_message("compiling:", 0);
-		debug_message(atom->pat, 0);
-		int rerr = regcomp(&atom->regex, atom->pat,
+		debug_message(regex_pat, 0);
+		int rerr = regcomp(&atom->regex, regex_pat,
 				   (atom->mode == M_EREGEX ? REG_EXTENDED : 0)
 				   | REG_NOSUB
 				   | (atom->ignore_case ? REG_ICASE : 0));
+		free(regex_pat);
 		if (rerr != 0) {
 			char * s;
 			s = get_regerror(rerr, &atom->regex);
