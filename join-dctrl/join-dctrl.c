@@ -212,7 +212,7 @@ void print_para_config(struct arguments *args, para_t para[], size_t just_this)
         for (size_t i = 0; i < args->num_show_fields; i++) {
                 struct show_field *sf = &args->show_fields[i];
                 struct fsaf_read_rv body = { .b = "", .len = 0 };
-                const char *showname;
+                const char *showname = NULL;
                 if (sf->file_inx == -1) {
                         for (size_t j = 0;
                              body.len == 0 && j < args->num_fnames;
