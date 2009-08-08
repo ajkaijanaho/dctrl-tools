@@ -219,7 +219,7 @@ FAIL:
         goto redo;
 
 END:
-	para->end = pos-1;
+	para->end = pos-2;
 	pp->loc = para->end;
 	pp->line = fsaf_getc(fp, pp->loc) == '\n' ? line-1 : line;
 }

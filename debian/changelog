@@ -17,13 +17,18 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
     Reported by Marco Túlio Gontijo e Silva <marcot@holoscopio.com>.
   * join-dctrl/join-dctrl.c: Avoid a compiler warning by initializing
     a local variable.
+  * lib/paragraph.c, grep-dctrl/grep-dctrl.c, sort-dctrl/sort-dctrl.c,
+    tests/bug511022.{sh.in,out}:
+    The whole paragraph no longer includes the final newline.
+    Closes: #511022 (the full paragraph should not include its final newline)
+    Reported by: Loïc Minier <lool@dooz.org>
   
   [ Stefano Zacchiroli ]
   * grep-dctrl: add new matching mode --whole-pkg/-w: it is an improved -e
     matching exact package names, i.e., no sub-string matching on package
     names. Closes: #383921
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 08 Aug 2009 11:40:34 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 08 Aug 2009 12:07:57 +0300
 
 dctrl-tools (2.13.0) unstable; urgency=low
 

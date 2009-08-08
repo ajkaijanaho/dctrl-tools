@@ -179,6 +179,7 @@ int main(int argc, char * argv[])
 		struct fsaf_read_rv r = get_whole_para(paras[i]);
 		fwrite(r.b, 1, r.len, stdout);
 		putchar('\n');
+		putchar('\n');
 	}
 	return 0;
 }

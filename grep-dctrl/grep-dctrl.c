@@ -907,6 +907,7 @@ int main (int argc, char * argv[])
 				struct fsaf_read_rv r = get_whole_para(&para);
 				fwrite(r.b, 1, r.len, stdout);
 				putchar('\n');
+				putchar('\n');
 				continue;
 			}
                         if (args.invert_show) {
