@@ -80,4 +80,4 @@ debian/stamp/binary/dctrl-tools: debian/stamp/build
 	touch $@
 
 clean-binary:
-	$(RM) *~
+	$(RM) *~ */*~

@@ -112,7 +112,7 @@ test :	all-no-mo
 
 clean :
 	$(RM) core $(exe) man/grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
-	$(RM) po/*.mo TAGS *.d
+	$(RM) po/*.mo TAGS *.d */*.d
 	$(RM) sync-available/sync-available
 
 distclean : clean
