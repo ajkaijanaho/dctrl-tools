@@ -29,13 +29,16 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
     key...)
     Closes: #559543 (doesn't take into account secondary sorting criteria)
     Reported by: Ryan Niebur <ryan@debian.org>
+  * lib/paragraph.c (para_parse_next): parse comment lines that start with
+    unindented '#'-characters (they are not removed semantically, though)
+    Closes: #521006 (support #-comments)
   
   [ Stefano Zacchiroli ]
   * grep-dctrl: add new matching mode --whole-pkg/-w: it is an improved -e
     matching exact package names, i.e., no sub-string matching on package
     names. Closes: #383921
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 12:32:47 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 12:41:52 +0200
 
 dctrl-tools (2.13.0) unstable; urgency=low
 

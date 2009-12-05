@@ -107,11 +107,28 @@ START:
         case '\n':
                 para->start++;
                 goto START;
+        case '#':
+                para->start++;
+                goto START_SKIPCOMMENT;
         default:
                 field_start = --pos;
                 goto FIELD_NAME;
         }
         assert(0);
+
+START_SKIPCOMMENT:
+        GETC;
+        switch (c) {
+        case -1:
+                pp->eof = true;
+                goto END;
+        case '\n':
+                para->start++;
+                goto START;
+        default:
+                para->start++;
+                goto START_SKIPCOMMENT;
+        }
 
 FIELD_NAME:
         GETC;
@@ -188,6 +205,8 @@ BODY_NEWLINE:
                 goto END;
         case ' ': case '\t':
                 goto BODY_SKIPBLANKS;
+        case '#':
+                goto BODY_SKIPCOMMENT;
         default:
                 field_start = --pos;
 		goto FIELD_NAME;
@@ -208,6 +227,17 @@ BODY_SKIPBLANKS:
                 goto BODY;
         }
         assert(0);
+
+BODY_SKIPCOMMENT:
+        GETC;
+        switch (c) {
+        case -1:
+                /* pass through */
+        case '\n':
+                goto BODY_NEWLINE;
+        default:
+                goto BODY_SKIPCOMMENT;
+        }
 
 #undef GETC
 
