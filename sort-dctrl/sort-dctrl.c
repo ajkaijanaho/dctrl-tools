@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004, 2005, 2006, 2007, 2008 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2005, 2006, 2007, 2008, 2009 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 				*(flags++) = '\0';
 			}
 			struct key key;
-			key.field_inx = fieldtrie_insert(carg)->inx;
+			key.field_inx = fieldtrie_insert(s)->inx;
 			key.type = FT_STRING;
 			key.reverse = false;
 			for (char *p = flags; *p != '\0'; p++) {
@@ -89,9 +89,12 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 					fail();
 				}
 			}
+                        debug("parse_opt: append key %d %d %d",
+                              key.field_inx, key.type, key.reverse);
 			keys_append(&args->keys, key);
 		}
-		break;
+                debug_message("parse_opt: k", 0);
+                break;
 	}
 	case 'l': 
 	{
@@ -150,6 +153,8 @@ int main(int argc, char * argv[])
 	keys_init(&args.keys);
 	msg_set_progname(argv[0]);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
+        
+        debug("number of keys: %zu", args.keys.nks);
 
 	if (args.keys.nks == 0) {
 		size_t inx = fieldtrie_insert("Package")->inx;

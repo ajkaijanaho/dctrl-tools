@@ -25,13 +25,17 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
   * GNUmakefile, debian/rules: clean backup files and .d files in subdirs too
     Closes: #511081 (.d files do not belong in the source package)
     Reported by: Adeodato Simó
+  * sort-dctrl/sort-dctrl: Fix -k parsing bug (don't just repeat the first
+    key...)
+    Closes: #559543 (doesn't take into account secondary sorting criteria)
+    Reported by: Ryan Niebur <ryan@debian.org>
   
   [ Stefano Zacchiroli ]
   * grep-dctrl: add new matching mode --whole-pkg/-w: it is an improved -e
     matching exact package names, i.e., no sub-string matching on package
     names. Closes: #383921
 
- --
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 12:32:47 +0200
 
 dctrl-tools (2.13.0) unstable; urgency=low
 
