@@ -1,7 +1,8 @@
-dctrl-tools (2.14) UNRELEASED; urgency=low
+dctrl-tools (2.14) unstable; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * Merge  2.13.1.
+  * Update standards-version to 3.8.3.  No related changes.
   * grep-dctrl/rc.c, lib/msg.c: Recode to UTF-8
   * lib/msg.c: Remove (obsolete) snail mail and email addresses for me.
   * */*.[ch]: Use the copyright symbol instead of (c) or (C).
@@ -39,7 +40,7 @@ dctrl-tools (2.14) UNRELEASED; urgency=low
     matching exact package names, i.e., no sub-string matching on package
     names. Closes: #383921
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 12:47:41 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 13:22:03 +0200
 
 dctrl-tools (2.13.1) unstable; urgency=low
 
