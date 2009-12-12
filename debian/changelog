@@ -1,8 +1,9 @@
 dctrl-tools (2.15) UNRELEASED; urgency=low
 
-  * 
+  * tbl-dctrl: Fix field line length detection for multi-line fields
+    - Reported by Gerfried Fuchs <rhonda@debian.at> out of band.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 05 Dec 2009 16:33:12 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 12 Dec 2009 15:06:14 +0200
 
 dctrl-tools (2.14) unstable; urgency=low
 

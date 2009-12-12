@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2005, 2006, 2007, 2008 Antti-Juhani Kaijanaho
+    Copyright © 2005, 2006, 2007, 2008, 2009 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -335,10 +335,16 @@ static struct argp argp = { options, parse_opt, 0, progdoc };
 static size_t mbs_len(char const *mbs, size_t n, char const *fname)
 {
 	if (n == (size_t)(-1)) n = strlen(mbs);
+        size_t mlen = 0;
 	size_t len = 0;
 	mblen(NULL, 0);
 	for (size_t k = 0; k < n;/**/) {
-		if (mbs[k] == '\n') break;
+		if (mbs[k] == '\n') {
+                        if (len > mlen) mlen = len;
+                        len = 0;
+                        k++;
+                        continue;
+                }
 		len++;
 		int delta = mblen(mbs + k, n - k);
 		if (delta <= 0) {
@@ -349,7 +355,7 @@ static size_t mbs_len(char const *mbs, size_t n, char const *fname)
 			k += delta;
 		}
 	}
-	return len;
+	return len > mlen ? len : mlen;
 }
 
 int main(int argc, char * argv[])
