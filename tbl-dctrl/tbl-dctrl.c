@@ -98,6 +98,13 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 
 	mblen(NULL, 0);
 	for (size_t i = 0; i < orig_len; /**/) {
+                if (orig[i] == '\n') {
+                        i++;
+                        ll = 0;
+                        INSERT('\n');
+                        num_lines++;
+                        continue;
+                }
 		if (ll == col_width) {
 			if (rv[bpr] == '\n') {
 				// no suitable breakpoint on this line,
