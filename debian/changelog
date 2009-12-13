@@ -8,7 +8,7 @@ dctrl-tools (2.15) UNRELEASED; urgency=low
   * debian/copyright: Update copyright years
 
   [ Cyril Brulebois ]
-  * Add Build-Depends/Build-Depends-Indep search example.
+  * Add Build-Depends/Build-Depends-Indep search example (closes: #339380)
 
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
