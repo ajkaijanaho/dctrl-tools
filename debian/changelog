@@ -1,8 +1,9 @@
 dctrl-tools (2.14.1) UNRELEASED; urgency=low
 
-  * 
+  [ Gerfried Fuchs ]
+  * Russian translation updated by Yuri Kozlov (closes: #513026)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 08 Aug 2010 12:38:18 +0300
+ -- Gerfried Fuchs <rhonda@debian.at>  Sun, 13 Dec 2009 17:45:04 +0100
 
 dctrl-tools (2.14) unstable; urgency=low
 
