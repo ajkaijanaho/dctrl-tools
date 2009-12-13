@@ -1,12 +1,16 @@
 dctrl-tools (2.15) UNRELEASED; urgency=low
 
+  [ Antti-Juhani Kaijanaho ]
   * tbl-dctrl: Fix field line length detection for multi-line fields
     - Reported by Gerfried Fuchs <rhonda@debian.at> out of band.
   * tbl-dctrl (linewrap): Force a line break where the field has one.
   * Update FSF address in license blurbs all over the source tree.
   * debian/copyright: Update copyright years
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 12 Dec 2009 15:42:10 +0200
+  [ Cyril Brulebois ]
+  * Add Build-Depends/Build-Depends-Indep search example.
+
+ -- Gerfried Fuchs <rhonda@debian.at>  Sun, 13 Dec 2009 17:41:50 +0100
 
 dctrl-tools (2.14) unstable; urgency=low
 
