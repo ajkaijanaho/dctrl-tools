@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -139,7 +139,7 @@ static struct argp_option options[] = {
 	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
 	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
         { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for") },
-	{ "whole-pkg",	    'w', 0,                 0, N_("Do (eregex) matching on whole package names") },
+	{ "whole-pkg",	    'w', 0,                 0, N_("Match only whole package names (this implies -e)") },
 	{ 0 }
 };
 
