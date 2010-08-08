@@ -1,9 +1,12 @@
 dctrl-tools (2.14.1) UNRELEASED; urgency=low
 
+  [ Antti-Juhani Kaijanaho ]
+  * grep-dctrl: Make a help string more comprehensible
+
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
 
- -- Gerfried Fuchs <rhonda@debian.at>  Sun, 13 Dec 2009 17:45:04 +0100
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 08 Aug 2010 12:28:01 +0300
 
 dctrl-tools (2.14) unstable; urgency=low
 
