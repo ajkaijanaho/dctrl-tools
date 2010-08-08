@@ -6,6 +6,7 @@ dctrl-tools (2.14.1) UNRELEASED; urgency=low
   
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
+  * German translation updated by myself.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 08 Aug 2010 12:28:01 +0300
 
