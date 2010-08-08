@@ -2,7 +2,8 @@ dctrl-tools (2.14.1) UNRELEASED; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * grep-dctrl: Make a help string more comprehensible
-
+  * po/fi.po: Updated translation.
+  
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
 

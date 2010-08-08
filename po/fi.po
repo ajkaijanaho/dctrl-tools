@@ -1,14 +1,14 @@
 # Finnish translation of dctrl-tools
-# Copyright (C) 2004 Antti-Juhani Kaijanaho
+# Copyright (C) 2004-2010 Antti-Juhani Kaijanaho
 # This file is distributed under the same license as the dctrl-tools package.
-# Antti-Juhani Kaijanaho <ajk@debian.org>, 2004.
+# Antti-Juhani Kaijanaho <ajk@debian.org>, 2004-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2008-07-04 18:34+0300\n"
+"PO-Revision-Date: 2010-08-08 12:19+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "Language: fi\n"
@@ -231,11 +231,11 @@ msgstr "Anna haussa käytettävä hahmo"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Etsi vain kokonaisilla paketinnimillä (tämä kääntää päälle myös -e:n)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "tiedostonimiä ei sallita predikaatin sisällä"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -252,9 +252,9 @@ msgstr "liikaa tulostettavia kenttiä"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#, c-format
 msgid "no such log level '%s'"
-msgstr "ei sellaista seurantatasoa ole"
+msgstr "ei sellaista seurantatasoa kuin '%s' ole"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
@@ -478,43 +478,3 @@ msgstr "tarvitaan täsmälleen kaksi syötetiedostoa"
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "virtaa ei voi liittää yhteen itsensä kanssa"
-
-#, fuzzy
-#~ msgid "unexpected end of file (expected a colon)"
-#~ msgstr "odottamaton tiedoston loppu"
-
-#, fuzzy
-#~ msgid "unexpected end of line (expected a colon)"
-#~ msgstr "odottamaton rivin loppu"
-
-#~ msgid "unexpected end of file"
-#~ msgstr "odottamaton tiedoston loppu"
-
-#, fuzzy
-#~ msgid "pretty-dctrl -- pretty-print Debian control files"
-#~ msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
-
-#~ msgid "invalid numeric pattern"
-#~ msgstr "rikkinäinen lukuhakuehto"
-
-#, fuzzy
-#~ msgid "parse of a field failed"
-#~ msgstr "numeerisen kentän jäsennys epäonnistui"
-
-#~ msgid "Numerical test: <."
-#~ msgstr "Numeerinen testi: <."
-
-#~ msgid "Numerical test: <=."
-#~ msgstr "Numeerinen testi: <=."
-
-#~ msgid "Numerical test: >."
-#~ msgstr "Numeerinen testi: >."
-
-#~ msgid "Numerical test: >=."
-#~ msgstr "Numeerinen testi: >=."
-
-#~ msgid "syntax error in command line"
-#~ msgstr "komentorivillä on syntaksivirhe"
-
-#~ msgid "Unexpected atom in command line. Did you forget to use a connective?"
-#~ msgstr "Odottamaton atomi komentorivillä.  Unohditko konnektiivin jostain?"
