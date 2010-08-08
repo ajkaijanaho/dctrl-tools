@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.11\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2007-08-05 21:20+0300\n"
+"POT-Creation-Date: 2010-08-08 12:45+0300\n"
 "PO-Revision-Date: 2007-08-06 15:42+0200\n"
 "Last-Translator: Frédéric Bothamy <frederic.bothamy@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,15 +67,15 @@ msgstr "%s: utilisation de « %s » comme paginateur\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: échec de popen pour %s : %s\n"
 
-#: lib/paragraph.c:133
+#: lib/paragraph.c:140
 msgid "warning: expected a colon"
 msgstr "avertissement : deux-points (« : ») attendus"
 
-#: lib/paragraph.c:140
+#: lib/paragraph.c:145
 msgid "expected a colon"
 msgstr "deux-points (« : ») attendus"
 
-#: lib/predicate.c:40 grep-dctrl/grep-dctrl.c:227 grep-dctrl/grep-dctrl.c:336
+#: lib/predicate.c:43 grep-dctrl/grep-dctrl.c:228 grep-dctrl/grep-dctrl.c:343
 msgid "predicate is too complex"
 msgstr "le prédicat est trop complexe"
 
@@ -230,87 +231,96 @@ msgstr "MOTIF"
 msgid "Specify the pattern to search for"
 msgstr "Spécifier le motif de recherche"
 
+#: grep-dctrl/grep-dctrl.c:142
+msgid "Match only whole package names (this implies -e)"
+msgstr ""
+
 #: grep-dctrl/grep-dctrl.c:304
+msgid "file names are not allowed within the predicate"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
 msgstr "le prédicat est trop long"
 
-#: grep-dctrl/grep-dctrl.c:363
+#: grep-dctrl/grep-dctrl.c:371
 msgid "inconsistent atom modifiers"
 msgstr "modificateurs d'atome incohérents"
 
-#: grep-dctrl/grep-dctrl.c:422 grep-dctrl/grep-dctrl.c:813
-#: join-dctrl/join-dctrl.c:112
+#: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
+#: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "trop de champs de sortie"
 
-#: grep-dctrl/grep-dctrl.c:446 sort-dctrl/sort-dctrl.c:101
-#: tbl-dctrl/tbl-dctrl.c:289 join-dctrl/join-dctrl.c:167
-msgid "no such log level"
+#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
+#, fuzzy, c-format
+msgid "no such log level '%s'"
 msgstr "niveau de journalisation inexistant"
 
-#: grep-dctrl/grep-dctrl.c:540
+#: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
 msgstr "Des motifs multiples pour le même atome ne sont pas autorisés"
 
-#: grep-dctrl/grep-dctrl.c:572 sort-dctrl/sort-dctrl.c:117
-#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:179
+#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "trop de noms de fichiers"
 
-#: grep-dctrl/grep-dctrl.c:661
+#: grep-dctrl/grep-dctrl.c:676
 msgid "unexpected end of predicate"
 msgstr "fin de prédicat inattendue"
 
-#: grep-dctrl/grep-dctrl.c:664
+#: grep-dctrl/grep-dctrl.c:679
 msgid "unexpected '!' in command line"
 msgstr "« ! » inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:667
+#: grep-dctrl/grep-dctrl.c:682
 msgid "unexpected '-a' in command line"
 msgstr "« -a » inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:670
+#: grep-dctrl/grep-dctrl.c:685
 msgid "unexpected '-o' in command line"
 msgstr "« -o » inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:673
+#: grep-dctrl/grep-dctrl.c:688
 msgid "unexpected '(' in command line"
 msgstr "« ( » inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:676
+#: grep-dctrl/grep-dctrl.c:691
 msgid "unexpected ')' in command line"
 msgstr "« ) » inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:680
+#: grep-dctrl/grep-dctrl.c:695
 msgid "unexpected atom in command line"
 msgstr "atome inattendu sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:693
+#: grep-dctrl/grep-dctrl.c:708
 msgid "missing ')' in command line"
 msgstr "« ) » manquante sur la ligne de commande"
 
-#: grep-dctrl/grep-dctrl.c:795
+#: grep-dctrl/grep-dctrl.c:817
 msgid "A pattern is mandatory"
 msgstr "Un motif est nécessaire"
 
-#: grep-dctrl/grep-dctrl.c:802
+#: grep-dctrl/grep-dctrl.c:824
 msgid "a predicate is required"
 msgstr "un prédicat est nécessaire"
 
-#: grep-dctrl/grep-dctrl.c:807
+#: grep-dctrl/grep-dctrl.c:829
 msgid "malformed predicate"
 msgstr "prédicat mal formé"
 
-#: grep-dctrl/grep-dctrl.c:817
+#: grep-dctrl/grep-dctrl.c:839
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "Ajout de « Description » aux champs de sortie sélectionnés à cause de -d"
 
-#: grep-dctrl/grep-dctrl.c:826
+#: grep-dctrl/grep-dctrl.c:847
 msgid "-I requires at least one instance of -s"
 msgstr "-I nécessite au moins une instance de -s"
 
-#: grep-dctrl/grep-dctrl.c:832
+#: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "impossible de supprimer les noms de champs lors de l'affichage des "
@@ -344,19 +354,19 @@ msgstr "erreur de syntaxe : nécessite un nom d'exécutable"
 msgid "syntax error: need an input file name"
 msgstr "erreur de syntaxe : nécessite un nom de fichier d'entrée"
 
-#: grep-dctrl/rc.c:175
+#: grep-dctrl/rc.c:176
 msgid "considering executable name"
 msgstr "étude de l'exécutable nommé"
 
-#: grep-dctrl/rc.c:177
+#: grep-dctrl/rc.c:179
 msgid "yes, will use executable name"
 msgstr "utilise l'exécutable nommé"
 
-#: grep-dctrl/rc.c:179
+#: grep-dctrl/rc.c:181
 msgid "default input file"
 msgstr "fichier d'entrée par défaut"
 
-#: grep-dctrl/rc.c:190
+#: grep-dctrl/rc.c:193
 msgid "executable name not found; reading from standard input"
 msgstr "nom d'exécutable non trouvé ; lecture depuis l'entrée standard"
 
@@ -368,11 +378,11 @@ msgstr "KEYSPEC"
 msgid "Specify sort keys."
 msgstr "Spécifier les clés de tri."
 
-#: sort-dctrl/sort-dctrl.c:87
+#: sort-dctrl/sort-dctrl.c:88
 msgid "invalid key flag"
 msgstr "drapeau de clé non valable"
 
-#: sort-dctrl/sort-dctrl.c:137
+#: sort-dctrl/sort-dctrl.c:140
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- trier des fichiers de contrôle Debian"
 
@@ -396,15 +406,15 @@ msgstr "SPEC"
 msgid "Append the specified column."
 msgstr "Ajouter la colonne spécifiée."
 
-#: tbl-dctrl/tbl-dctrl.c:272
+#: tbl-dctrl/tbl-dctrl.c:277
 msgid "invalid column length"
 msgstr "taille de colonne invalide"
 
-#: tbl-dctrl/tbl-dctrl.c:326
+#: tbl-dctrl/tbl-dctrl.c:331
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- tabuler des fichiers de contrôle Debian"
 
-#: tbl-dctrl/tbl-dctrl.c:340
+#: tbl-dctrl/tbl-dctrl.c:346
 msgid "bad multibyte character"
 msgstr "caractère multioctets erroné"
 
@@ -455,23 +465,23 @@ msgstr "le champ de jointure du premier fichier a déjà été spécifié"
 msgid "the join field of the second file has already been specified"
 msgstr "le champ de jointure pour le second fichier a déjà été spécifié"
 
-#: join-dctrl/join-dctrl.c:127
+#: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
 msgstr "« . » absent dans la spécification du champ de sortie"
 
-#: join-dctrl/join-dctrl.c:144
+#: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
 msgstr "« 1. » ou « 2. » attendu au début de la spécification du champ"
 
-#: join-dctrl/join-dctrl.c:250
+#: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"
 msgstr "join-dctrl -- fusionner deux fichiers de contrôle Debian"
 
-#: join-dctrl/join-dctrl.c:269
+#: join-dctrl/join-dctrl.c:270
 msgid "need exactly two input files"
 msgstr "nécessite d'exactement deux fichiers d'entrée"
 
-#: join-dctrl/join-dctrl.c:294
+#: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "impossible de fusionner un flux avec lui-même"
 

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2009-10-20 20:07+0200\n"
+"POT-Creation-Date: 2010-08-08 12:45+0300\n"
 "PO-Revision-Date: 2009-10-20 20:12+0200\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,11 +68,11 @@ msgstr "%s: »%s« wird als Pager verwendet\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen für %s schlug fehl: %s\n"
 
-#: lib/paragraph.c:123
+#: lib/paragraph.c:140
 msgid "warning: expected a colon"
 msgstr "Warnung: Doppelpunkt wurde erwartet"
 
-#: lib/paragraph.c:128
+#: lib/paragraph.c:145
 msgid "expected a colon"
 msgstr "Doppelpunkt wurde erwartet"
 
@@ -231,8 +232,8 @@ msgid "Specify the pattern to search for"
 msgstr "Gibt das zu suchende Muster an"
 
 #: grep-dctrl/grep-dctrl.c:142
-msgid "Do (eregex) matching on whole package names"
-msgstr "Führt eine (eregex-)Prüfung auf den gesamten Paketnamen durch"
+msgid "Match only whole package names (this implies -e)"
+msgstr ""
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
@@ -251,7 +252,7 @@ msgstr "Inkonsistenter Atom-Modifikator"
 msgid "too many output fields"
 msgstr "Zu viele Ausgabefelder"
 
-#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:101
+#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
@@ -261,7 +262,7 @@ msgstr "Keine Log-Ebene »%s«"
 msgid "Multiple patterns for the same atom are not allowed"
 msgstr "Mehrere Muster für das selbe Atom sind nicht erlaubt"
 
-#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "Zu viele Dateinamen"
@@ -379,7 +380,7 @@ msgstr "Sortierungsschlüssel angeben."
 msgid "invalid key flag"
 msgstr "Ungültiges Schlüssel-Flag"
 
-#: sort-dctrl/sort-dctrl.c:137
+#: sort-dctrl/sort-dctrl.c:140
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- sortiert Debian-Control-Dateien"
 
@@ -467,7 +468,8 @@ msgstr "Fehlender ».« in der Ausgabefeldspezifikation"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr "Entweder »1.« oder »2.« am Anfang der Feld-Spezifikation wurde erwartet"
+msgstr ""
+"Entweder »1.« oder »2.« am Anfang der Feld-Spezifikation wurde erwartet"
 
 #: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"
@@ -480,3 +482,6 @@ msgstr "exakt zwei Eingabedateien werden benötigt"
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "ein Datenstrom kann nicht mit sich selbst verbunden werden"
+
+#~ msgid "Do (eregex) matching on whole package names"
+#~ msgstr "Führt eine (eregex-)Prüfung auf den gesamten Paketnamen durch"

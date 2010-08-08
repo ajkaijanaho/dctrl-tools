@@ -8,162 +8,121 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.9.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2006-10-13 20:59+0300\n"
+"POT-Creation-Date: 2010-08-08 12:45+0300\n"
 "PO-Revision-Date: 2006-10-30 23:27+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: misc.c:37
-#, c-format
-msgid "%s: using `%s' as pager\n"
-msgstr "%s: ページャとして `%s' を使用します\n"
-
-#: misc.c:47
-#, c-format
-msgid "%s: popen failed for %s: %s\n"
-msgstr "%s: %s の popen に失敗しました: %s\n"
-
-#: predicate.c:40 grep-dctrl.c:221 grep-dctrl.c:330
-msgid "predicate is too complex"
-msgstr "述部が複雑すぎます"
-
-#: paragraph.c:116
-msgid "warning: expected a colon"
-msgstr "警告: コロンを期待しました"
-
-#: paragraph.c:123
-msgid "expected a colon"
-msgstr "コロンを期待しました"
-
-#: rc.c:66
-msgid "Malformed default input file name"
-msgstr "デフォルトの入力ファイル名が不正です"
-
-#: rc.c:79
-msgid "not owned by you or root, ignoring"
-msgstr "所持者があなたでも root でもないので無視します"
-
-#: rc.c:84
-msgid "write permissions for group or others, ignoring"
-msgstr "グループや他人に書き込み権限があるので無視します"
-
-#: rc.c:124
-msgid "reading config file"
-msgstr "設定ファイルを読み込んでいます"
-
-#: rc.c:151
-msgid "read failure or out of memory"
-msgstr "読み込みが失敗したか、またはメモリが不足しています"
-
-#: rc.c:173
-msgid "syntax error: need a executable name"
-msgstr "構文エラー: 実行ファイル名が必要です"
-
-#: rc.c:181
-msgid "syntax error: need an input file name"
-msgstr "構文エラー: 入力ファイル名が必要です"
-
-#: rc.c:186
-msgid "considering executable name"
-msgstr "実行ファイル名を検討中です"
-
-#: rc.c:188
-msgid "yes, will use executable name"
-msgstr "はい、実行ファイル名を使用します"
-
-#: rc.c:190
-msgid "default input file"
-msgstr "デフォルトの入力ファイル"
-
-#: rc.c:201
-msgid "executable name not found; reading from standard input"
-msgstr "実行ファイル名が見つかりません。標準入力から読み込みます"
-
-#: ifile.c:54
+#: lib/ifile.c:54
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (子プロセス): /bin/sh の実行に失敗しました: %s\n"
 
-#: ifile.c:100
+#: lib/ifile.c:100
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: コマンド (%s) が失敗しました (終了ステータス %d)\n"
 
-#: ifile.c:109
+#: lib/ifile.c:109
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: コマンド (%s) がシグナル %d によって kill されました\n"
 
-#: ifile.c:127
+#: lib/ifile.c:127
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat できません: %s\n"
 
-#: ifile.c:138
+#: lib/ifile.c:138
 msgid "is a directory, skipping"
 msgstr "ディレクトリなので飛ばします"
 
-#: ifile.c:139
+#: lib/ifile.c:139
 msgid "is a block device, skipping"
 msgstr "ブロックデバイスなので飛ばします"
 
-#: ifile.c:140
+#: lib/ifile.c:140
 msgid "internal error"
 msgstr "内部エラーです"
 
-#: ifile.c:141
+#: lib/ifile.c:141
 msgid "is a socket, skipping"
 msgstr "ソケットなので飛ばします"
 
-#: ifile.c:142
+#: lib/ifile.c:142
 msgid "unknown file type, skipping"
 msgstr "ファイル形式が不明なので飛ばします"
 
-#: sorter.c:54
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: ページャとして `%s' を使用します\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: %s の popen に失敗しました: %s\n"
+
+#: lib/paragraph.c:140
+msgid "warning: expected a colon"
+msgstr "警告: コロンを期待しました"
+
+#: lib/paragraph.c:145
+msgid "expected a colon"
+msgstr "コロンを期待しました"
+
+#: lib/predicate.c:43 grep-dctrl/grep-dctrl.c:228 grep-dctrl/grep-dctrl.c:343
+msgid "predicate is too complex"
+msgstr "述部が複雑すぎます"
+
+#: lib/sorter.c:49
 msgid "Parse error in field."
 msgstr "フィールドのパース中にエラーが発生しました。"
 
-#: grep-dctrl.c:47
+#: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- Debian control ファイルを grep します"
 
-#: grep-dctrl.c:110
+#: grep-dctrl/grep-dctrl.c:110
 msgid "Show the testing banner."
 msgstr "テスト用のバナーを表示します。"
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "<レベル>"
 
-#: grep-dctrl.c:112 sort-dctrl.c:39 tbl-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
 msgstr "デバッグレベルを <レベル> に設定します。"
 
-#: grep-dctrl.c:113 grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "<フィールド>,<フィールド>,..."
 
-#: grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:113
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "パターンマッチの対象を指定のフィールドに制限します。"
 
-#: grep-dctrl.c:114
+#: grep-dctrl/grep-dctrl.c:114
 msgid "This is a shorthand for -FPackage."
 msgstr "これは -FPackage の省略表現です。"
 
-#: grep-dctrl.c:115
+#: grep-dctrl/grep-dctrl.c:115
 msgid "This is a shorthand for -FSource:Package."
 msgstr "これは -FSource:Package の省略表現です。"
 
-#: grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "マッチするパラグラフの、これらのフィールドの中身のみを表示します。"
 
-#: grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -171,220 +130,358 @@ msgstr ""
 "マッチするパラグラフの、\"Description\" (パッケージ説明) フィールドの 1 行目"
 "のみを表示します。"
 
-#: grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
 msgstr "指定のフィールドを表示する際にフィールド名を表示しません。"
 
-#: grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:119
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "パターンを POSIX 拡張正規表現と見なします。"
 
-#: grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "パターンは POSIX 標準正規表現です。"
 
-#: grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
 msgstr "マッチするものを探す際に大文字・小文字を区別しません。"
 
-#: grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
 msgstr "マッチしないパラグラフのみ表示します。"
 
-#: grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:123
+msgid "Show those fields that have NOT been selected with -s"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
 msgstr "マッチするパラグラフの数のみ表示します。"
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "FNAME"
 msgstr "<ファイル名>"
 
-#: grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:125
 msgid "Use FNAME as the config file."
 msgstr "設定ファイルとして <ファイル名> を使用します。"
 
-#: grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:126
 msgid "Do an exact match."
 msgstr "正確なマッチを行います。"
 
-#: grep-dctrl.c:126 sort-dctrl.c:38 tbl-dctrl.c:40
+#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "著作権使用許諾を表示します。"
 
-#: grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:128
 msgid "Conjunct predicates."
 msgstr "述部を結合します。"
 
-#: grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:129
 msgid "Disjunct predicates."
 msgstr "述部を分離します。"
 
-#: grep-dctrl.c:129
+#: grep-dctrl/grep-dctrl.c:130
 msgid "Negate the following predicate."
 msgstr "以降の述部を否定します。"
 
-#: grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:131
 msgid "Test for version number equality."
 msgstr "バージョン番号が等しいかをテストします。"
 
-#: grep-dctrl.c:131
+#: grep-dctrl/grep-dctrl.c:132
 msgid "Version number comparison: <."
 msgstr "バージョン番号の比較: <。"
 
-#: grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:133
 msgid "Version number comparison: <=."
 msgstr "バージョン番号の比較: <=。"
 
-#: grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:134
 msgid "Version number comparison: >."
 msgstr "バージョン番号の比較: >。"
 
-#: grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:135
 msgid "Version number comparison: >=."
 msgstr "バージョン番号の比較: >=。"
 
-#: grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:136
 msgid "Debug option parsing."
 msgstr "デバッグオプションをパースします。"
 
-#: grep-dctrl.c:136 grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
 msgstr "標準出力に出力しません。"
 
-#: grep-dctrl.c:138 sort-dctrl.c:41 tbl-dctrl.c:42
+#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "mmap 用入力ファイルを試します"
 
-#: grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:140
 msgid "Ignore parse errors"
 msgstr "パースエラーを無視します"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "PATTERN"
 msgstr "<パターン>"
 
-#: grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:141
 msgid "Specify the pattern to search for"
 msgstr "検索に用いるパターンを指定します"
 
-#: grep-dctrl.c:298
+#: grep-dctrl/grep-dctrl.c:142
+msgid "Match only whole package names (this implies -e)"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:304
+msgid "file names are not allowed within the predicate"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
 msgstr "述部が長すぎます"
 
-#: grep-dctrl.c:357
+#: grep-dctrl/grep-dctrl.c:371
 msgid "inconsistent atom modifiers"
 msgstr "単位修飾子が矛盾しています"
 
-#: grep-dctrl.c:431 sort-dctrl.c:101 tbl-dctrl.c:280
-msgid "no such log level"
-msgstr "そのようなログレベルはありません"
-
-#: grep-dctrl.c:525
-msgid "Multiple patterns for the same atom are not allowed"
-msgstr "同じ単位に複数のパターンを使用することはできません"
-
-#: grep-dctrl.c:557 sort-dctrl.c:117 tbl-dctrl.c:292
-msgid "too many file names"
-msgstr "ファイル名が多すぎます"
-
-#: grep-dctrl.c:646
-msgid "unexpected end of predicate"
-msgstr "述部が突然途切れました"
-
-#: grep-dctrl.c:649
-msgid "unexpected '!' in command line"
-msgstr "コマンドラインに想定外の '!' が含まれています"
-
-#: grep-dctrl.c:652
-msgid "unexpected '-a' in command line"
-msgstr "コマンドラインに想定外の '-a' が含まれています"
-
-#: grep-dctrl.c:655
-msgid "unexpected '-o' in command line"
-msgstr "コマンドラインに想定外の '-o' が含まれています"
-
-#: grep-dctrl.c:658
-msgid "unexpected '(' in command line"
-msgstr "コマンドラインに想定外の '(' が含まれています"
-
-#: grep-dctrl.c:661
-msgid "unexpected ')' in command line"
-msgstr "コマンドラインに想定外の ')' が含まれています"
-
-#: grep-dctrl.c:665
-msgid "unexpected atom in command line"
-msgstr "コマンドラインに想定外の単位が含まれています"
-
-#: grep-dctrl.c:678
-msgid "missing ')' in command line"
-msgstr "コマンドラインに ')' が含まれていません"
-
-#: grep-dctrl.c:759
-msgid "A pattern is mandatory"
-msgstr "パターンが必須です"
-
-#: grep-dctrl.c:766
-msgid "a predicate is required"
-msgstr "述部が必要です"
-
-#: grep-dctrl.c:771
-msgid "malformed predicate"
-msgstr "述部が不正です"
-
-#: grep-dctrl.c:777
+#: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
+#: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "出力フィールドが多すぎます"
 
-#: grep-dctrl.c:781
+#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
+#, fuzzy, c-format
+msgid "no such log level '%s'"
+msgstr "そのようなログレベルはありません"
+
+#: grep-dctrl/grep-dctrl.c:548
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr "同じ単位に複数のパターンを使用することはできません"
+
+#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
+msgid "too many file names"
+msgstr "ファイル名が多すぎます"
+
+#: grep-dctrl/grep-dctrl.c:676
+msgid "unexpected end of predicate"
+msgstr "述部が突然途切れました"
+
+#: grep-dctrl/grep-dctrl.c:679
+msgid "unexpected '!' in command line"
+msgstr "コマンドラインに想定外の '!' が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:682
+msgid "unexpected '-a' in command line"
+msgstr "コマンドラインに想定外の '-a' が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:685
+msgid "unexpected '-o' in command line"
+msgstr "コマンドラインに想定外の '-o' が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:688
+msgid "unexpected '(' in command line"
+msgstr "コマンドラインに想定外の '(' が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:691
+msgid "unexpected ')' in command line"
+msgstr "コマンドラインに想定外の ')' が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:695
+msgid "unexpected atom in command line"
+msgstr "コマンドラインに想定外の単位が含まれています"
+
+#: grep-dctrl/grep-dctrl.c:708
+msgid "missing ')' in command line"
+msgstr "コマンドラインに ')' が含まれていません"
+
+#: grep-dctrl/grep-dctrl.c:817
+msgid "A pattern is mandatory"
+msgstr "パターンが必須です"
+
+#: grep-dctrl/grep-dctrl.c:824
+msgid "a predicate is required"
+msgstr "述部が必要です"
+
+#: grep-dctrl/grep-dctrl.c:829
+msgid "malformed predicate"
+msgstr "述部が不正です"
+
+#: grep-dctrl/grep-dctrl.c:839
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "-d がついているので選択された出力フィールドに \"Description\" (パッケージ説"
 "明) を追加します。"
 
-#: grep-dctrl.c:790
+#: grep-dctrl/grep-dctrl.c:847
+msgid "-I requires at least one instance of -s"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "パラグラフ全体を表示する際にフィールド名を表示しないようにできません"
 
-#: sort-dctrl.c:40
+#: grep-dctrl/rc.c:55
+msgid "Malformed default input file name"
+msgstr "デフォルトの入力ファイル名が不正です"
+
+#: grep-dctrl/rc.c:68
+msgid "not owned by you or root, ignoring"
+msgstr "所持者があなたでも root でもないので無視します"
+
+#: grep-dctrl/rc.c:73
+msgid "write permissions for group or others, ignoring"
+msgstr "グループや他人に書き込み権限があるので無視します"
+
+#: grep-dctrl/rc.c:113
+msgid "reading config file"
+msgstr "設定ファイルを読み込んでいます"
+
+#: grep-dctrl/rc.c:140
+msgid "read failure or out of memory"
+msgstr "読み込みが失敗したか、またはメモリが不足しています"
+
+#: grep-dctrl/rc.c:162
+msgid "syntax error: need a executable name"
+msgstr "構文エラー: 実行ファイル名が必要です"
+
+#: grep-dctrl/rc.c:170
+msgid "syntax error: need an input file name"
+msgstr "構文エラー: 入力ファイル名が必要です"
+
+#: grep-dctrl/rc.c:176
+msgid "considering executable name"
+msgstr "実行ファイル名を検討中です"
+
+#: grep-dctrl/rc.c:179
+msgid "yes, will use executable name"
+msgstr "はい、実行ファイル名を使用します"
+
+#: grep-dctrl/rc.c:181
+msgid "default input file"
+msgstr "デフォルトの入力ファイル"
+
+#: grep-dctrl/rc.c:193
+msgid "executable name not found; reading from standard input"
+msgstr "実行ファイル名が見つかりません。標準入力から読み込みます"
+
+#: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
 msgstr "<キー指定>"
 
-#: sort-dctrl.c:40
+#: sort-dctrl/sort-dctrl.c:40
 msgid "Specify sort keys."
 msgstr "ソートフラグを指定します。"
 
-#: sort-dctrl.c:87
+#: sort-dctrl/sort-dctrl.c:88
 msgid "invalid key flag"
 msgstr "不正なキーフラグです"
 
-#: sort-dctrl.c:137
+#: sort-dctrl/sort-dctrl.c:140
 msgid "sort-dctrl -- sort Debian control files"
 msgstr "sort-dctrl -- Debian control ファイルをソートします"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "DELIM"
 msgstr "<デリミタ>"
 
-#: tbl-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:38
 msgid "Specify a delimiter."
 msgstr "デリミタを指定します。"
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr ""
+
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
 msgstr "<指定>"
 
-#: tbl-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:40
 msgid "Append the specified column."
 msgstr "指定のカラムを追加します。"
 
-#: tbl-dctrl.c:266
+#: tbl-dctrl/tbl-dctrl.c:277
 msgid "invalid column length"
 msgstr "カラムの長さが不正です"
 
-#: tbl-dctrl.c:317
+#: tbl-dctrl/tbl-dctrl.c:331
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- Debian control ファイルを集計して表にします"
 
-#: tbl-dctrl.c:331
+#: tbl-dctrl/tbl-dctrl.c:346
 msgid "bad multibyte character"
 msgstr "マルチバイト文字が不正です"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:43
+#, fuzzy
+msgid "FIELDSPEC"
+msgstr "<キー指定>"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:128
+msgid "missing '.' in output field specification"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:146
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr ""
+
+#: join-dctrl/join-dctrl.c:251
+#, fuzzy
+msgid "join-dctrl -- join two Debian control files"
+msgstr "sort-dctrl -- Debian control ファイルをソートします"
+
+#: join-dctrl/join-dctrl.c:270
+#, fuzzy
+msgid "need exactly two input files"
+msgstr "デフォルトの入力ファイル"
+
+#: join-dctrl/join-dctrl.c:295
+msgid "cannot join a stream with itself"
+msgstr ""
