@@ -1,15 +1,15 @@
 # German translation of dctrl-tools
-# Copyright © 2004, 2006, 2008, 2009 by Gerfried Fuchs <rhonda@debian.at>
+# Copyright © 2004, 2006, 2008, 2009, 2010 by Gerfried Fuchs <rhonda@debian.at>
 # This file is distributed under the same license as the dctrl-tools package.
 #
-# Gerfried Fuchs <rhonda@debian.at>, 2004, 2006, 2008, 2009.
+# Gerfried Fuchs <rhonda@debian.at>, 2004, 2006, 2008, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2009-10-20 20:12+0200\n"
+"PO-Revision-Date: 2010-08-08 12:39+0200\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -233,7 +233,7 @@ msgstr "Gibt das zu suchende Muster an"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Nur auf komplett passende Paketnamen prüfen (impliziert -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
@@ -482,6 +482,3 @@ msgstr "exakt zwei Eingabedateien werden benötigt"
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "ein Datenstrom kann nicht mit sich selbst verbunden werden"
-
-#~ msgid "Do (eregex) matching on whole package names"
-#~ msgstr "Führt eine (eregex-)Prüfung auf den gesamten Paketnamen durch"
