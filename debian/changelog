@@ -4,12 +4,13 @@ dctrl-tools (2.14.1) UNRELEASED; urgency=low
   * grep-dctrl: Make a help string more comprehensible
   * po/fi.po: Updated translation.
   * Further Russian translation update from Yuri Kozlov (closes: #593240)
+  * French translation updated by David Prévot (closes: #593990)
   
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
   * German translation updated by myself.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 16 Aug 2010 18:27:52 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 20:38:54 +0300
 
 dctrl-tools (2.14) unstable; urgency=low
 

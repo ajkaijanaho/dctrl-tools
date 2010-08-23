@@ -1,26 +1,29 @@
 # French translation for dctrl-tools
-# Copyright (C) YEAR Antti-Juhani Kaijanaho
+# Copyright (C) 2004-2007, 2010 Debian French l10n team <debian-l10n-french@lists.debian.org>
 # This file is distributed under the same license as the dctrl-tools package.
+#
 # Nicolas Bertolissio <nico.bertol@free.fr>, 2004, 2005.
 # Frédéric Bothamy <frederic.bothamy@free.fr>, 2006, 2007.
-#
+# David Prévot <david@tilapin.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.11\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2007-08-06 15:42+0200\n"
-"Last-Translator: Frédéric Bothamy <frederic.bothamy@free.fr>\n"
+"PO-Revision-Date: 2010-08-13 15:30-0400\n"
+"Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: lib/ifile.c:54
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
-msgstr "%s (enfant) : échec d'exécution de /bin/sh : %s\n"
+msgstr "%s (enfant) : échec de l'exécution de /bin/sh : %s\n"
 
 #: lib/ifile.c:100
 #, c-format
@@ -85,7 +88,7 @@ msgstr "Échec d'analyse syntaxique dans le champ."
 
 #: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
-msgstr "grep-dctrl -- sélectionner dans des fichiers de contrôle Debian"
+msgstr "grep-dctrl -- recherche dans des fichiers de contrôle Debian"
 
 #: grep-dctrl/grep-dctrl.c:110
 msgid "Show the testing banner."
@@ -99,7 +102,7 @@ msgstr "NIVEAU"
 #: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
-msgstr "Sélectionner le niveau de débogage NIVEAU."
+msgstr "Choisir le niveau de débogage NIVEAU."
 
 #: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
@@ -155,7 +158,7 @@ msgstr "Afficher les champs qui n'ont PAS été sélectionnés avec -s."
 
 #: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
-msgstr "N'afficher que le nombre de paragraphes qui correspondent."
+msgstr "N'afficher que le décompte de paragraphes qui correspondent."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "FNAME"
@@ -233,11 +236,11 @@ msgstr "Spécifier le motif de recherche"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Correspond seulement aux noms complets du paquet (cela implique -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "les noms de fichiers ne sont pas autorisés dans le prédicat"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -254,9 +257,9 @@ msgstr "trop de champs de sortie"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#, c-format
 msgid "no such log level '%s'"
-msgstr "niveau de journalisation inexistant"
+msgstr "niveau de journalisation « %s » inexistant"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
@@ -301,7 +304,7 @@ msgstr "« ) » manquante sur la ligne de commande"
 
 #: grep-dctrl/grep-dctrl.c:817
 msgid "A pattern is mandatory"
-msgstr "Un motif est nécessaire"
+msgstr "Un motif est obligatoire"
 
 #: grep-dctrl/grep-dctrl.c:824
 msgid "a predicate is required"
@@ -323,8 +326,8 @@ msgstr "-I nécessite au moins une instance de -s"
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
-"impossible de supprimer les noms de champs lors de l'affichage des "
-"paragraphes complets"
+"impossible de supprimer les noms de champs lors de l'affichage complet "
+"des paragraphes"
 
 #: grep-dctrl/rc.c:55
 msgid "Malformed default input file name"
@@ -356,11 +359,11 @@ msgstr "erreur de syntaxe : nécessite un nom de fichier d'entrée"
 
 #: grep-dctrl/rc.c:176
 msgid "considering executable name"
-msgstr "étude de l'exécutable nommé"
+msgstr "étude du nom d'exécutable"
 
 #: grep-dctrl/rc.c:179
 msgid "yes, will use executable name"
-msgstr "utilise l'exécutable nommé"
+msgstr "oui, utilisera le nom d'exécutable"
 
 #: grep-dctrl/rc.c:181
 msgid "default input file"
@@ -408,7 +411,7 @@ msgstr "Ajouter la colonne spécifiée."
 
 #: tbl-dctrl/tbl-dctrl.c:277
 msgid "invalid column length"
-msgstr "taille de colonne invalide"
+msgstr "longueur de colonne non valable"
 
 #: tbl-dctrl/tbl-dctrl.c:331
 msgid "tbl-dctrl -- tabularize Debian control files"
@@ -467,7 +470,7 @@ msgstr "le champ de jointure pour le second fichier a déjà été spécifié"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr "« . » absent dans la spécification du champ de sortie"
+msgstr "« . » manquant dans la spécification du champ de sortie"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
@@ -479,7 +482,7 @@ msgstr "join-dctrl -- fusionner deux fichiers de contrôle Debian"
 
 #: join-dctrl/join-dctrl.c:270
 msgid "need exactly two input files"
-msgstr "nécessite d'exactement deux fichiers d'entrée"
+msgstr "nécessite exactement deux fichiers d'entrée"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
