@@ -1,4 +1,4 @@
-dctrl-tools (2.14.1) UNRELEASED; urgency=low
+dctrl-tools (2.14.1) unstable; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * grep-dctrl: Make a help string more comprehensible
@@ -11,7 +11,7 @@ dctrl-tools (2.14.1) UNRELEASED; urgency=low
   * Russian translation updated by Yuri Kozlov (closes: #513026)
   * German translation updated by myself.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 21:00:30 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 21:08:39 +0300
 
 dctrl-tools (2.14) unstable; urgency=low
 
