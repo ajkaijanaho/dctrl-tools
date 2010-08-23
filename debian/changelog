@@ -5,12 +5,13 @@ dctrl-tools (2.14.1) UNRELEASED; urgency=low
   * po/fi.po: Updated translation.
   * Further Russian translation update from Yuri Kozlov (closes: #593240)
   * French translation updated by David Prévot (closes: #593990)
+  * Standards-Version updated to 3.9.1 with no packaging changes.
   
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
   * German translation updated by myself.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 20:38:54 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 21:00:30 +0300
 
 dctrl-tools (2.14) unstable; urgency=low
 
