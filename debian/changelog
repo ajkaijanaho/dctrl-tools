@@ -6,15 +6,27 @@ dctrl-tools (2.15) UNRELEASED; urgency=low
   * tbl-dctrl (linewrap): Force a line break where the field has one.
   * Update FSF address in license blurbs all over the source tree.
   * debian/copyright: Update copyright years
-  * grep-dctrl: Make a help string more comprehensible
+  * Merge 2.14.1
   
   [ Cyril Brulebois ]
   * Add Build-Depends/Build-Depends-Indep search example (closes: #339380)
 
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Aug 2010 09:38:24 +0300
+
+dctrl-tools (2.14.1) unstable; urgency=low
+
+  [ Antti-Juhani Kaijanaho ]
+  * grep-dctrl: Make a help string more comprehensible
+  * po/fi.po: Updated translation.
+  * Further Russian translation update from Yuri Kozlov (closes: #593240)
+  * French translation updated by David Prévot (closes: #593990)
+  * Standards-Version updated to 3.9.1 with no packaging changes.
+  
   [ Gerfried Fuchs ]
   * Russian translation updated by Yuri Kozlov (closes: #513026)
+  * German translation updated by myself.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 08 Aug 2010 12:28:01 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 23 Aug 2010 21:08:39 +0300
 
 dctrl-tools (2.14) unstable; urgency=low
 
