@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2008 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -97,6 +97,7 @@ redo:
 	struct field_data * field_data = 0;
 
 #define GETC (c = fsaf_getc(fp, pos++), c == '\n' ? line++ : line)
+#define UNGETC (fsaf_getc(fp, --pos) == '\n' ? --line : line)
         int c;
 START:
         GETC;
@@ -111,7 +112,8 @@ START:
                 para->start++;
                 goto START_SKIPCOMMENT;
         default:
-                field_start = --pos;
+                UNGETC;
+                field_start = pos;
                 goto FIELD_NAME;
         }
         assert(0);
@@ -135,7 +137,7 @@ FIELD_NAME:
         switch (c) {
         case '\n': case -1:
                 if (pp->ignore_broken_paras) {
-                        line_message(L_IMPORTANT, fp->fname, 
+                        line_message(L_IMPORTANT, fp->fname,
                                      c == '\n' ?line-1:line,
                                      _("warning: expected a colon"));
                         goto FAIL;
@@ -208,7 +210,8 @@ BODY_NEWLINE:
         case '#':
                 goto BODY_SKIPCOMMENT;
         default:
-                field_start = --pos;
+                UNGETC;
+                field_start = pos;
 		goto FIELD_NAME;
         }
         assert(0);
@@ -249,7 +252,9 @@ FAIL:
         goto redo;
 
 END:
-	para->end = pos-2;
+        UNGETC;
+        UNGETC;
+	para->end = pos;
 	pp->loc = para->end;
-	pp->line = fsaf_getc(fp, pp->loc) == '\n' ? line-1 : line;
+	pp->line = line;
 }
