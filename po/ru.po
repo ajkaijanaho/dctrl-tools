@@ -1,23 +1,24 @@
 # translation of ru.po to Russian
 # Copyright (C) YEAR Antti-Juhani Kaijanaho
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the dctrl-tools package.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2006.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.13.1\n"
+"Project-Id-Version: dctrl-tools 2.14\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2009-12-13 17:39+0100\n"
-"PO-Revision-Date: 2009-01-25 23:09+0300\n"
+"POT-Creation-Date: 2010-08-08 12:45+0300\n"
+"PO-Revision-Date: 2010-08-16 19:11+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lib/ifile.c:54
 #, c-format
@@ -233,12 +234,12 @@ msgid "Specify the pattern to search for"
 msgstr "Задать шаблон поиска"
 
 #: grep-dctrl/grep-dctrl.c:142
-msgid "Do (eregex) matching on whole package names"
-msgstr ""
+msgid "Match only whole package names (this implies -e)"
+msgstr "Искать во всех именах пакетов (подразумевает -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "имена файлов в предикате не разрешены"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -254,17 +255,17 @@ msgid "too many output fields"
 msgstr "слишком много выходных файлов"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
-#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
+#, c-format
 msgid "no such log level '%s'"
-msgstr "нет такого уровня отладки"
+msgstr "уровня журнала %s не существует"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
 msgstr "Нельзя задать несколько шаблонов для одно атома"
 
 #: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
-#: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
+#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "слишком много имён файлов"
 
@@ -325,47 +326,47 @@ msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "невозможно не выводить имена полей, если показываются параграфы целиком"
 
-#: grep-dctrl/rc.c:54
+#: grep-dctrl/rc.c:55
 msgid "Malformed default input file name"
 msgstr "Неправильный формат имени по умолчанию входного файла"
 
-#: grep-dctrl/rc.c:67
+#: grep-dctrl/rc.c:68
 msgid "not owned by you or root, ignoring"
 msgstr "не принадлежит вам или root, игнорируется"
 
-#: grep-dctrl/rc.c:72
+#: grep-dctrl/rc.c:73
 msgid "write permissions for group or others, ignoring"
 msgstr "разрешена запись для группы или всеми, игнорируется"
 
-#: grep-dctrl/rc.c:112
+#: grep-dctrl/rc.c:113
 msgid "reading config file"
 msgstr "чтение файла настройки"
 
-#: grep-dctrl/rc.c:139
+#: grep-dctrl/rc.c:140
 msgid "read failure or out of memory"
 msgstr "ошибка при чтении или нехватка памяти"
 
-#: grep-dctrl/rc.c:161
+#: grep-dctrl/rc.c:162
 msgid "syntax error: need a executable name"
 msgstr "синтаксическая ошибка: требуется имя исполняемого файла"
 
-#: grep-dctrl/rc.c:169
+#: grep-dctrl/rc.c:170
 msgid "syntax error: need an input file name"
 msgstr "синтаксическая ошибка: требуется имя входного файла"
 
-#: grep-dctrl/rc.c:175
+#: grep-dctrl/rc.c:176
 msgid "considering executable name"
 msgstr "рассматривается имя исполняемого файла"
 
-#: grep-dctrl/rc.c:178
+#: grep-dctrl/rc.c:179
 msgid "yes, will use executable name"
 msgstr "да, будет использовано имя исполняемого файла"
 
-#: grep-dctrl/rc.c:180
+#: grep-dctrl/rc.c:181
 msgid "default input file"
 msgstr "входной файл по умолчанию"
 
-#: grep-dctrl/rc.c:192
+#: grep-dctrl/rc.c:193
 msgid "executable name not found; reading from standard input"
 msgstr "имя исполняемого файла не найдено; чтение со стандартного входа"
 
@@ -405,16 +406,16 @@ msgstr "SPEC"
 msgid "Append the specified column."
 msgstr "Добавить указанную колонку."
 
-#: tbl-dctrl/tbl-dctrl.c:284
+#: tbl-dctrl/tbl-dctrl.c:277
 msgid "invalid column length"
 msgstr "неправильная длина колонки"
 
-#: tbl-dctrl/tbl-dctrl.c:338
+#: tbl-dctrl/tbl-dctrl.c:331
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr ""
 "tbl-dctrl -- показать информацию из управляющих файлов Debian в виде таблицы"
 
-#: tbl-dctrl/tbl-dctrl.c:359
+#: tbl-dctrl/tbl-dctrl.c:346
 msgid "bad multibyte character"
 msgstr "плохой мультибайтовый символ"
 
@@ -482,3 +483,4 @@ msgstr "требуется ровно два входных файла"
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "невозможно объединить поток сам с собой"
+
