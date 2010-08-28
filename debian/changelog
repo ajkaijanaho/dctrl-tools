@@ -1,4 +1,4 @@
-dctrl-tools (2.15) UNRELEASED; urgency=low
+dctrl-tools (2.15) experimental; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * tbl-dctrl: Fix field line length detection for multi-line fields
@@ -13,7 +13,7 @@ dctrl-tools (2.15) UNRELEASED; urgency=low
   [ Cyril Brulebois ]
   * Add Build-Depends/Build-Depends-Indep search example (closes: #339380)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Aug 2010 20:41:31 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Aug 2010 20:52:28 +0300
 
 dctrl-tools (2.14.1) unstable; urgency=low
 
