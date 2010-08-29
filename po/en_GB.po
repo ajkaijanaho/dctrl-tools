@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the dctrl-tools package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2006-09-27 07:58+0000\n"
+"PO-Revision-Date: 2010-08-30 00:24+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
 "Language: \n"
@@ -151,7 +150,7 @@ msgstr "Show only paragraphs that do not match."
 
 #: grep-dctrl/grep-dctrl.c:123
 msgid "Show those fields that have NOT been selected with -s"
-msgstr ""
+msgstr "Show those fields that have NOT been selected with -s"
 
 #: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
@@ -233,11 +232,11 @@ msgstr "Specify the pattern to search for"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Match only whole package names (this implies -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "file names are not allowed within the predicate"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -254,9 +253,9 @@ msgstr "too many output fields"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#, c-format
 msgid "no such log level '%s'"
-msgstr "no such log level"
+msgstr "no such log level '%s'"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
@@ -317,7 +316,7 @@ msgstr "Adding \"Description\" to selected output fields because of -d"
 
 #: grep-dctrl/grep-dctrl.c:847
 msgid "-I requires at least one instance of -s"
-msgstr ""
+msgstr "-I requires at least one instance of -s"
 
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
@@ -393,7 +392,7 @@ msgstr "Specify a delimiter."
 
 #: tbl-dctrl/tbl-dctrl.c:39
 msgid "Do not print a table heading"
-msgstr ""
+msgstr "Do not print a table heading"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
@@ -418,67 +417,64 @@ msgstr "bad multibyte character"
 #: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
 #: join-dctrl/join-dctrl.c:41
 msgid "FIELD"
-msgstr ""
+msgstr "FIELD"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr ""
+msgstr "Specify the join field to use for the first file"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
-msgstr ""
+msgstr "Specify the join field to use for the second file"
 
 #: join-dctrl/join-dctrl.c:41
 msgid "Specify the common join field"
-msgstr ""
+msgstr "Specify the common join field"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "FIELDNO"
-msgstr ""
+msgstr "FIELDNO"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "Print unpairable records from the indicated file (either 1 or 2)"
-msgstr ""
+msgstr "Print unpairable records from the indicated file (either 1 or 2)"
 
 #: join-dctrl/join-dctrl.c:43
-#, fuzzy
 msgid "FIELDSPEC"
-msgstr "KEYSPEC"
+msgstr "FIELDSPEC"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "Specify the format of the output file"
-msgstr ""
+msgstr "Specify the format of the output file"
 
 #: join-dctrl/join-dctrl.c:81
 msgid "malformed argument to '-a'"
-msgstr ""
+msgstr "malformed argument to '-a'"
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
-msgstr ""
+msgstr "the join field of the first file has already been specified"
 
 #: join-dctrl/join-dctrl.c:89
 msgid "the join field of the second file has already been specified"
-msgstr ""
+msgstr "the join field of the second file has already been specified"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr ""
+msgstr "missing '.' in output field specification"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr ""
+msgstr "expected either '1.' or '2.' at the start of the field specification"
 
 #: join-dctrl/join-dctrl.c:251
-#, fuzzy
 msgid "join-dctrl -- join two Debian control files"
-msgstr "sort-dctrl -- sort Debian control files"
+msgstr "join-dctrl -- join two Debian control files"
 
 #: join-dctrl/join-dctrl.c:270
-#, fuzzy
 msgid "need exactly two input files"
-msgstr "default input file"
+msgstr "need exactly two input files"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
-msgstr ""
+msgstr "cannot join a stream with itself"
