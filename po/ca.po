@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2006-10-30 14:38+0000\n"
-"Last-Translator: Jordi Mallach <jordi@canonical.com>\n"
+"PO-Revision-Date: 2010-09-01 09:55+0100\n"
+"Last-Translator: Agustí Grau <fletxa@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,9 @@ msgstr "avís: s'esperaven dos punts"
 msgid "expected a colon"
 msgstr "s'esperaven dos punts"
 
-#: lib/predicate.c:43 grep-dctrl/grep-dctrl.c:228 grep-dctrl/grep-dctrl.c:343
+#: lib/predicate.c:43
+#: grep-dctrl/grep-dctrl.c:228
+#: grep-dctrl/grep-dctrl.c:343
 msgid "predicate is too complex"
 msgstr "el predicat és massa complexe"
 
@@ -90,17 +92,22 @@ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 msgid "Show the testing banner."
 msgstr "Mostra l'avís de prova."
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+#: grep-dctrl/grep-dctrl.c:112
+#: sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "NIVELL"
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+#: grep-dctrl/grep-dctrl.c:112
+#: sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
 msgstr "Estableix el nivell de depuració a NIVELL."
 
-#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "CAMP,CAMP,..."
 
@@ -121,12 +128,8 @@ msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Mostra només el cos d'aquests camps dels paràgrafs coincidents."
 
 #: grep-dctrl/grep-dctrl.c:117
-msgid ""
-"Show only the first line of the \"Description\" field from the matching "
-"paragraphs."
-msgstr ""
-"Mostra només la primera línia del camp «Description» dels paràgrafs "
-"coincidents."
+msgid "Show only the first line of the \"Description\" field from the matching paragraphs."
+msgstr "Mostra només la primera línia del camp «Description» dels paràgrafs coincidents."
 
 #: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
@@ -142,8 +145,7 @@ msgstr "El patró és una expressió regular estàndard POSIX."
 
 #: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
-msgstr ""
-"No distigueixes entre majúscules i minúscules quan cerca una coincidència."
+msgstr "No distigueixes entre majúscules i minúscules quan cerca una coincidència."
 
 #: grep-dctrl/grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
@@ -151,7 +153,7 @@ msgstr "Mostra només els paràgrafs que no coincideixen."
 
 #: grep-dctrl/grep-dctrl.c:123
 msgid "Show those fields that have NOT been selected with -s"
-msgstr ""
+msgstr "Mostra aquells camps que NO s'han seleccionat amb -s"
 
 #: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
@@ -169,8 +171,10 @@ msgstr "Utilitza NOMFITXER com el fitxer de configuració."
 msgid "Do an exact match."
 msgstr "Fes una coincidència exacta."
 
-#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
-#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
+#: grep-dctrl/grep-dctrl.c:127
+#: sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41
+#: join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
@@ -210,12 +214,15 @@ msgstr "Comparació del número de versió: >=."
 msgid "Debug option parsing."
 msgstr "Depura l'anàlisi d'opcions."
 
-#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
 msgstr "No mostres res a l'eixida estàndard."
 
-#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
-#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
+#: grep-dctrl/grep-dctrl.c:139
+#: sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43
+#: join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Intenta fer «mmap» dels fitxers d'entrada"
 
@@ -233,11 +240,11 @@ msgstr "Especifiqueu el patró que voleu cercar"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Coincideir només tot el nom dels paquets (implica -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "no es permeten noms de fitxer dins del predicat"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -247,23 +254,28 @@ msgstr "el predicat és massa llarg"
 msgid "inconsistent atom modifiers"
 msgstr "els modificadors d'àtom no són consistents"
 
-#: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
+#: grep-dctrl/grep-dctrl.c:430
+#: grep-dctrl/grep-dctrl.c:835
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
 
-#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
-#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#: grep-dctrl/grep-dctrl.c:454
+#: sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:294
+#: join-dctrl/join-dctrl.c:168
+#, c-format
 msgid "no such log level '%s'"
-msgstr "aquest nivell de registre no existeix"
+msgstr "aquest nivell de registre '%s' no existeix"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
 msgstr "No es permeten múltiples patrons per al mateix àtom"
 
-#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
-#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
+#: grep-dctrl/grep-dctrl.c:586
+#: sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:306
+#: join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
@@ -313,12 +325,11 @@ msgstr "predicat malformat"
 
 #: grep-dctrl/grep-dctrl.c:839
 msgid "Adding \"Description\" to selected output fields because of -d"
-msgstr ""
-"S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
+msgstr "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
 #: grep-dctrl/grep-dctrl.c:847
 msgid "-I requires at least one instance of -s"
-msgstr ""
+msgstr "-I requereix com a mínim una instància de -s"
 
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
@@ -366,9 +377,7 @@ msgstr "fitxer d'entrada per defecte"
 
 #: grep-dctrl/rc.c:193
 msgid "executable name not found; reading from standard input"
-msgstr ""
-"no s'ha trobat el nom de l'executable; s'està llegint des de l'entrada "
-"estàndard"
+msgstr "no s'ha trobat el nom de l'executable; s'està llegint des de l'entrada estàndard"
 
 #: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
@@ -396,7 +405,7 @@ msgstr "Especifica un delimitador."
 
 #: tbl-dctrl/tbl-dctrl.c:39
 msgid "Do not print a table heading"
-msgstr ""
+msgstr "No imprimir la capçalera de la taula"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
@@ -418,73 +427,71 @@ msgstr "tbl-dctrl -- tabula fitxers de control de Debian"
 msgid "bad multibyte character"
 msgstr "el caràcter multioctet és invàlid"
 
-#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:39
+#: join-dctrl/join-dctrl.c:40
 #: join-dctrl/join-dctrl.c:41
 msgid "FIELD"
-msgstr ""
+msgstr "CAMP"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr ""
+msgstr "Especifiqueu el camp d'unió per a utilitzar amb el primer fitxer"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
-msgstr ""
+msgstr "Especifiqueu el camp d'unió per a utilitzar amb el segon fitxer"
 
 #: join-dctrl/join-dctrl.c:41
 msgid "Specify the common join field"
-msgstr ""
+msgstr "Especifiqueu el camp d'unió comú"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "FIELDNO"
-msgstr ""
+msgstr "NOCAMP"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "Print unpairable records from the indicated file (either 1 or 2)"
-msgstr ""
+msgstr "Imprimir registres no aparellables del fitxer indicat (també 1 o 2)"
 
 #: join-dctrl/join-dctrl.c:43
-#, fuzzy
 msgid "FIELDSPEC"
-msgstr "ESPECCLAU"
+msgstr "ESPECCAMP"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "Specify the format of the output file"
-msgstr ""
+msgstr "Especifiqueu el format del fitxer de sortida"
 
 #: join-dctrl/join-dctrl.c:81
 msgid "malformed argument to '-a'"
-msgstr ""
+msgstr "argument incorrecte a '-a'"
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
-msgstr ""
+msgstr "el camp d'unió del primer fitxer ja s'ha especificat"
 
 #: join-dctrl/join-dctrl.c:89
 msgid "the join field of the second file has already been specified"
-msgstr ""
+msgstr "el camp d'unió del segon fitxer ja s'ha especificat"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr ""
+msgstr "no s'ha trobat '.' en la especificació del camp de sortida"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr ""
+msgstr "s'esperava '1.' o '2.' al principi de la especificació del camp"
 
 #: join-dctrl/join-dctrl.c:251
-#, fuzzy
 msgid "join-dctrl -- join two Debian control files"
-msgstr "sort-dctrl -- ordena fitxers de control de Debian"
+msgstr "join-dctrl -- uneix dos fitxers de control de Debian"
 
 #: join-dctrl/join-dctrl.c:270
-#, fuzzy
 msgid "need exactly two input files"
-msgstr "fitxer d'entrada per defecte"
+msgstr "necessita exactament dos fitxers d'entrada"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
-msgstr ""
+msgstr "no es pot unir un flux de dades amb ell mateix"
 
 #~ msgid "unexpected end of file"
 #~ msgstr "s'ha trobat un final de fitxer inesperat"

@@ -2,6 +2,7 @@ dctrl-tools (2.14.2) UNRELEASED; urgency=low
 
   * po/pt_BR.po: Updated by Maurício Vieira.
   * po/en_GB.po: Updated by Jeff Bailes.
+  * po/ca.po: Updated by Agusti Grau.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 29 Aug 2010 17:41:17 +0300
 
