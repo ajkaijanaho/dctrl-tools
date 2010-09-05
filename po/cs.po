@@ -1,14 +1,14 @@
 # Czech translation of dctrl-tools.
 # Copyright (C) YEAR Antti-Juhani Kaijanaho
 # This file is distributed under the same license as the dctrl-tools package.
-# Miroslav Kure <kurem@debian.cz>, 2006, 2008.
+# Miroslav Kure <kurem@debian.cz>, 2006, 2008, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2008-08-04 11:22-0300\n"
+"PO-Revision-Date: 2010-08-25 18:25+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "Language: cs\n"
@@ -231,11 +231,11 @@ msgstr "Zadá vzor, který se má hledat"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Shoduje se pouze s celými názvy balíků (implikuje -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "jména souborů nejsou uvnitř predikátu povolena"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -252,9 +252,9 @@ msgstr "příliš mnoho výstupních polí"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#, c-format
 msgid "no such log level '%s'"
-msgstr "taková úroveň logování neexistuje"
+msgstr "úroveň logování „%s“ neexistuje"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
