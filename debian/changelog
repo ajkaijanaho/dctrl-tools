@@ -1,11 +1,11 @@
-dctrl-tools (2.14.2) UNRELEASED; urgency=low
+dctrl-tools (2.14.2) unstable; urgency=low
 
   * po/pt_BR.po: Updated by Maurício Vieira.
   * po/en_GB.po: Updated by Jeff Bailes.
   * po/ca.po: Updated by Agusti Grau.
   * po/cs.po: Updated by Miroslav Kure (closes: #595513).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 05 Sep 2010 10:21:54 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 10 Sep 2010 19:38:32 +0300
 
 dctrl-tools (2.14.1) unstable; urgency=low
 
