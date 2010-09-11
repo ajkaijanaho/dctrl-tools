@@ -1,8 +1,8 @@
 dctrl-tools (2.16) UNRELEASED; urgency=low
 
-  * 
+  * Merge 2.14.2
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Aug 2010 21:58:27 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 11 Sep 2010 11:35:20 +0300
 
 dctrl-tools (2.15) experimental; urgency=low
 
@@ -20,6 +20,15 @@ dctrl-tools (2.15) experimental; urgency=low
   * Add Build-Depends/Build-Depends-Indep search example (closes: #339380)
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 28 Aug 2010 20:52:28 +0300
+
+dctrl-tools (2.14.2) unstable; urgency=low
+
+  * po/pt_BR.po: Updated by Maurício Vieira.
+  * po/en_GB.po: Updated by Jeff Bailes.
+  * po/ca.po: Updated by Agusti Grau.
+  * po/cs.po: Updated by Miroslav Kure (closes: #595513).
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 10 Sep 2010 19:38:32 +0300
 
 dctrl-tools (2.14.1) unstable; urgency=low
 
