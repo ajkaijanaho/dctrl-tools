@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2005, 2006, 2007, 2008, 2009 Antti-Juhani Kaijanaho
+    Copyright © 2005, 2006, 2007, 2008, 2009, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -385,23 +385,40 @@ int main(int argc, char * argv[])
 		};
 	}
 
-	if (args.need_preprocessing) {
+	if (args.num_columns == 0 || args.need_preprocessing) {
 		struct para_bundle pb;
 
 		bundle_init(&pb);
 		
 		for (size_t i = 0; i < args.num_fnames; i++) {
-			bundle_slurp(&pb, args.fname[i]);
+			bundle_slurp(&pb, args.fname[i],
+                                     args.num_columns == 0);
 		}
 
-		size_t n = fieldtrie_count();
+		const size_t n = fieldtrie_count();
+
+                if (args.num_columns == 0) {
+                        size_t m = n <= MAX_COLUMNS ? n : MAX_COLUMNS;
+                        for (size_t i = 0; i < m; i++) {
+                                struct field_attr *fa = fieldtrie_get(i);
+                                args.columns[i].heading =
+                                        strndup(fa->name, fa->namelen);
+                                if (args.columns[i].heading == NULL)
+                                        fatal_enomem(NULL);
+                                args.columns[i].field_inx = fa->inx;
+                                args.columns[i].column_width = -1;
+                        }
+                        args.num_columns = m;
+                }
+
 		size_t lens[n];
 		for (size_t i = 0; i < n; i++) lens[i] = 0;
 
 		for (size_t i = 0; i < pb.num_paras; i++) {
 			struct paragraph *p = pb.paras[i];
-			assert(p->nfields == n);
+			assert(p->nfields <= n);
 			for (size_t j = 0; j < p->nfields; j++) {
+                                if (!p->fields[j].present) continue;
 				struct fsaf_read_rv r = get_field(p, j, -1);
 				size_t len = mbs_len(r.b, r.len,
 						     p->common->fp->fname);

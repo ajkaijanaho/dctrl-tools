@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2005 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2005, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #include "fieldtrie.h"
 
 struct field_data {
+        _Bool present;
 	size_t line;
 	size_t start, end; /* offsets to the file; [start,end) is the body */
 };
@@ -45,9 +46,8 @@ struct paragraph {
 	size_t line;
 	struct paragraph_parser * common;
 	size_t start, end; /* offsets to the file; [start,end) is the paragraph */
-	size_t nfields;
+	size_t nfields, maxfields;
 	struct field_data * fields;
-	//struct field_data fields[MAX_FIELDS];
 };
 
 typedef struct paragraph_parser para_parser_t;
@@ -70,11 +70,37 @@ struct fsaf_read_rv get_whole_para(para_t * p)
 }
 
 static inline
+struct field_data * find_field(const para_t *p, size_t fld_inx)
+{
+	struct field_data * fd = fld_inx < p->nfields
+                ? &p->fields[fld_inx]
+                : NULL;
+        if (fd != NULL && !fd->present) fd = NULL;
+        return fd;
+}
+
+static inline
+struct field_data *find_field_wr(const para_t *p,
+                                 size_t fld_inx,
+                                 size_t repl_inx)
+{
+	struct field_data * fd = find_field(p, fld_inx);
+        if ((fd == NULL || fd->start == fd->end) && repl_inx != (size_t)(-1)) {
+                fd = find_field(p, repl_inx);
+        }
+        return fd;
+}
+
+static inline
 struct fsaf_read_rv get_field(para_t * p, size_t fld_inx, size_t repl_inx)
 {
-	struct field_data * fd = &p->fields[fld_inx];
-        if (fd->start == fd->end && repl_inx != (size_t)(-1)) {
-                 fd = &p->fields[repl_inx];
+        struct field_data *fd = find_field_wr(p, fld_inx, repl_inx);
+        if (fd == NULL) {
+                const struct fsaf_read_rv fail = {
+                        .b = NULL,
+                        .len = 0
+                };
+                return fail;
         }
 	return fsaf_read(p->common->fp, fd->start, fd->end - fd->start);
 }
@@ -82,7 +108,8 @@ struct fsaf_read_rv get_field(para_t * p, size_t fld_inx, size_t repl_inx)
 static inline
 char * get_field_as(const para_t * p, size_t fld_inx)
 {
-	struct field_data * fd = &p->fields[fld_inx];
+	struct field_data * fd = find_field(p, fld_inx);
+        if (fd == NULL) return strdup("");
 	return fsaf_getas(p->common->fp, fd->start, fd->end - fd->start);
 }
 

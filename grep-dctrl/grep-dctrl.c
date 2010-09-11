@@ -766,11 +766,14 @@ static void show_field(struct arguments *args,
                        struct paragraph *para,
                        struct field_attr *fa)
 {
-        struct fsaf_read_rv r 
-                = get_field(para, 
-                            fa->inx,
-                            GET_BACKUP_FIELD(fa->application_data));
-        
+        struct field_data *fd =
+                find_field_wr(para,
+                              fa->inx,
+                              GET_BACKUP_FIELD(fa->application_data));
+        if (fd == NULL) return;
+        struct fsaf_read_rv r =
+                fsaf_read(para->common->fp, fd->start, fd->end - fd->start);
+
         if (args->short_descr &&
             fa == description_attr) {
                 char * nl = memchr(r.b, '\n', r.len);

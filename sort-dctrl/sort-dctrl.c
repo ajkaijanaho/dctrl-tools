@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004, 2005, 2006, 2007, 2008, 2009 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2005, 2006, 2007, 2008, 2009, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -174,7 +174,7 @@ int main(int argc, char * argv[])
 	bundle_init(&pb);
 
 	for (size_t i = 0; i < args.num_fnames; i++) {
-		bundle_slurp(&pb, args.fname[i]);
+		bundle_slurp(&pb, args.fname[i], false);
 	}
 
 	sort_bundle(&args.keys, &pb);

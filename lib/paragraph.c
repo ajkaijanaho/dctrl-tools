@@ -26,7 +26,7 @@ void para_parser_init(para_parser_t * pp, FSAF * fp,
                       bool register_unknown_fields)
 {
 	pp->fp = fp;
-	pp->eof = false;
+	pp->eof = 0;
 	pp->loc = 0;
 	pp->line = 1;
 	pp->invalidate_p = invalidate_p;
@@ -40,11 +40,17 @@ void para_init(para_parser_t * pp, para_t * para)
 	para->line = pp->line;
 	para->start = 0;
 	para->end = 0;
-	para->fields = 0;
-	para->nfields = 0;
 	para->nfields = fieldtrie_count();
-	para->fields = malloc(para->nfields * sizeof *para->fields);
-	if (para->fields == 0) fatal_enomem(0);
+	para->maxfields = para->nfields;
+        if (para->nfields > 0) {
+                para->fields = malloc(para->nfields * sizeof *para->fields);
+                if (para->fields == 0) fatal_enomem(0);
+                for (size_t i = 0; i < para->nfields; i++) {
+                        para->fields[i].present = 0;
+                }
+        } else {
+                para->fields = NULL;
+        }
 }
 
 void para_finalize(para_t * para)
@@ -55,6 +61,7 @@ void para_finalize(para_t * para)
 	if (para->fields != 0) {
 		free(para->fields);
 	}
+        para->maxfields = 0;
 	para->nfields = 0;
 	para->fields = 0;
 }
@@ -63,14 +70,18 @@ static struct field_data * register_field(para_t * para,
                                           char const * s, size_t slen)
 {
         size_t inx = fieldtrie_insert_n(s, slen)->inx;
-        if (inx >= para->nfields) {
-                assert(para->nfields > 0);
-                para->nfields = para->nfields * 2;
+        if (inx >= para->maxfields) {
+                if (para->maxfields == 0) para->maxfields = 2;
+                while (inx >= para->maxfields) {
+                        para->maxfields = para->maxfields * 2;
+                }
                 para->fields = realloc(para->fields,
-                                       para->nfields * sizeof(para->fields[0])
-                                      );
+                                       para->maxfields *
+                                       sizeof(para->fields[0]));
                 if (para->fields == 0) fatal_enomem(0);
         }
+        if (inx >= para->nfields) para->nfields = inx + 1;
+        assert(para->nfields <= para->maxfields);
         struct field_data *field_data = &para->fields[inx];
         return field_data;
 }
@@ -83,6 +94,7 @@ redo:
 	para->start = pp->loc;
 	para->line = pp->line;
 	for (size_t i = 0; i < para->nfields; i++) {
+                para->fields[i].present = 0;
 		para->fields[i].start = 0;
 		para->fields[i].end = 0;
 	}
@@ -159,18 +171,18 @@ FIELD_NAME:
                 if (attr == NULL) {
                         if (para->common->
                             register_unknown_fields) {
-                                field_data =
-                                        register_field(para,
-                                                       r.b,
-                                                       len);
-                        } else {
-                                field_data = 0;
+                                register_field(para, r.b, len);
                         }
+                }
+                attr = fieldtrie_lookup(r.b, len);
+                if (attr == NULL) {
+                        field_data = 0;
                 } else {
                         assert(attr->inx < para->nfields);
                         field_data = &para->fields[attr->inx];
                 }
                 if (field_data != NULL) {
+                        field_data->present = 1;
                         field_data->start = pos;
                         field_data->line = line;
                 }

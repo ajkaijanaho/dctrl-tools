@@ -1,5 +1,5 @@
 .TH tbl\-dctrl 1 2006-04-02 "Debian Project" "Debian administrator's manual"
-\" Copyright (C) 2005  Antti-Juhani Kaijanaho <ajk@debian.org>
+\" Copyright (C) 2005, 2010  Antti-Juhani Kaijanaho <ajk@debian.org>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
 \"      the Free Software Foundation; either version 2 of the License, or
@@ -20,9 +20,10 @@ tbl\-dctrl \- generate tabular representations of data in dctrl format
 .B tbl\-dctrl
 [
 .I options
-]
+] [
 .B \-c
 .IR column\-specification " ..."
+]
 [
 .I filename
 ] ...
@@ -58,7 +59,11 @@ In such a case,
 will include in the output a column whose title is the literal column
 specification and whose data is drawn from fields with that name.
 .
-At least one column must be requested.
+If no
+.B \-c
+options are given,
+.B tbl\-dctrl
+will use all fields in the input in the order in which they first appear.
 .PP
 There are two optional additions one can make to a column
 specification.

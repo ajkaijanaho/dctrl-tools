@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2008 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -93,19 +93,21 @@ void predicate_finish_atom(struct predicate * p)
 
 static bool verify_atom(struct atom * atom, para_t * para)
 {
-	size_t start, end;
+	size_t start = 0;
+        size_t end = 0;
 	if (atom->field_inx == -1) {
 		/* Take the full paragraph */
 		start = para->start;
 		end = para->end;
 	} else {
 		/* Take the field */
-		struct field_data * fd = &para->fields[atom->field_inx];
-                if (fd->start == fd->end && atom->repl_inx != (size_t)(-1)) {
-                        fd = &para->fields[atom->repl_inx];
-                }
-		start = fd->start;
-		end = fd->end;
+		struct field_data * fd = find_field_wr(para,
+                                                       atom->field_inx,
+                                                       atom->repl_inx);
+                if (fd != NULL) {
+                        start = fd->start;
+                        end = fd->end;
+                }                        
 	}
 	size_t len = end - start;
 	struct fsaf_read_rv r = fsaf_read(para->common->fp, start, len);

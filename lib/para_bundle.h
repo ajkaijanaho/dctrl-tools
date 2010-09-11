@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2010 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -51,7 +51,8 @@ void bundle_init(struct para_bundle * pb)
 	pb->files = 0;
 }
 
-void bundle_slurp(struct para_bundle *, struct ifile);
+void bundle_slurp(struct para_bundle *, struct ifile,
+                  _Bool register_unknown_fields);
 
 static inline
 size_t bundle_size(struct para_bundle * pb)
