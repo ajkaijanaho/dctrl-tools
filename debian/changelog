@@ -1,8 +1,8 @@
 dctrl-tools (2.14.3) UNRELEASED; urgency=low
 
-  * 
+  * po/sv.po: Updated by Martin Bagge (closes: #597013)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 10 Sep 2010 21:01:58 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 16 Sep 2010 09:57:53 +0300
 
 dctrl-tools (2.14.2) unstable; urgency=low
 

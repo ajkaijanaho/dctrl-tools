@@ -1,16 +1,16 @@
 # Swedish translation for grep-dctrl
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright © 2010 Martin Bagge <brother@bsnet.se>
 # This file is distributed under the same license as the grep-dctrl package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#, fuzzy
+# Daniel Nylander <po@danielnylander.se>, 2006
+# Martin Bagge <brother@bsnet.se>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2006-10-30 12:09+0000\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"PO-Revision-Date: 2010-09-15 23:18+0100\n"
+"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -150,7 +150,7 @@ msgstr "Visa endast stycken som inte matchar."
 
 #: grep-dctrl/grep-dctrl.c:123
 msgid "Show those fields that have NOT been selected with -s"
-msgstr ""
+msgstr "Visa de fält som INTE har valts med -s"
 
 #: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
@@ -207,7 +207,7 @@ msgstr "Jämförelse av versionsnummer: >=."
 
 #: grep-dctrl/grep-dctrl.c:136
 msgid "Debug option parsing."
-msgstr ""
+msgstr "Läs avlusningsalternativ."
 
 #: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
@@ -216,7 +216,7 @@ msgstr "Skriv inte ut till standard ut."
 #: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
-msgstr ""
+msgstr "Försök använda så kallad \"mmapping\" på indatafiler"
 
 #: grep-dctrl/grep-dctrl.c:140
 msgid "Ignore parse errors"
@@ -232,11 +232,11 @@ msgstr "Ange mönstret att söka efter"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Passa endast ihop kompletta paketnamn (detta innebär att -e används)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "filnamn är inte tillåtet inom påståendet"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -244,7 +244,7 @@ msgstr "påståendet är för långt"
 
 #: grep-dctrl/grep-dctrl.c:371
 msgid "inconsistent atom modifiers"
-msgstr ""
+msgstr "inkosekvent atom-modifiering"
 
 #: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
 #: join-dctrl/join-dctrl.c:113
@@ -253,13 +253,13 @@ msgstr "för många utmatningsfält"
 
 #: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#, c-format
 msgid "no such log level '%s'"
-msgstr "ingen sådan loggnivå"
+msgstr "ingen sådan loggnivå \"%s\""
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr ""
+msgstr "Flera mönster för samma atom är inte tillåtet"
 
 #: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
@@ -292,7 +292,7 @@ msgstr "oväntat \")\" på kommandorad"
 
 #: grep-dctrl/grep-dctrl.c:695
 msgid "unexpected atom in command line"
-msgstr ""
+msgstr "oväntad atom på kommandorad"
 
 #: grep-dctrl/grep-dctrl.c:708
 msgid "missing ')' in command line"
@@ -317,7 +317,7 @@ msgstr ""
 
 #: grep-dctrl/grep-dctrl.c:847
 msgid "-I requires at least one instance of -s"
-msgstr ""
+msgstr "-I kräver åtminstone en förekomst av -s"
 
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
@@ -393,7 +393,7 @@ msgstr "Ange en avgränsare."
 
 #: tbl-dctrl/tbl-dctrl.c:39
 msgid "Do not print a table heading"
-msgstr ""
+msgstr "Skriv inte ett tabellhuvud"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
@@ -418,67 +418,67 @@ msgstr "felaktigt flerbytestecken"
 #: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
 #: join-dctrl/join-dctrl.c:41
 msgid "FIELD"
-msgstr ""
+msgstr "FÄLT"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr ""
+msgstr "Ange sammanslagningsfält att använda för den första filen"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
-msgstr ""
+msgstr "Ange sammanslagningsfält att använda för den andra filen"
 
 #: join-dctrl/join-dctrl.c:41
 msgid "Specify the common join field"
-msgstr ""
+msgstr "Ange gemensamt sammanslagningsfält"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "FIELDNO"
-msgstr ""
+msgstr "FÄLTNO"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "Print unpairable records from the indicated file (either 1 or 2)"
 msgstr ""
+"Skriv ut markeringar som inte kunde kombineras till par från den utpekade "
+"filen (antingen 1 eller 2)"
 
 #: join-dctrl/join-dctrl.c:43
-#, fuzzy
 msgid "FIELDSPEC"
-msgstr "NYCKELSPEC"
+msgstr "FÄLTSPEC"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "Specify the format of the output file"
-msgstr ""
+msgstr "Ange format för utdatafil"
 
 #: join-dctrl/join-dctrl.c:81
 msgid "malformed argument to '-a'"
-msgstr ""
+msgstr "felaktigt formaterat argument till \"-a\""
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
-msgstr ""
+msgstr "sammanslagningsfältet för första filen har redan angivits"
 
 #: join-dctrl/join-dctrl.c:89
 msgid "the join field of the second file has already been specified"
-msgstr ""
+msgstr "sammanslagningsfältet för andra filen har redan angivits"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr ""
+msgstr "saknade \".\" i fältspecifikationen för utdata"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
 msgstr ""
+"förväntade att få antingen \"1\" eller \"2\" i början på fältspecifikationen"
 
 #: join-dctrl/join-dctrl.c:251
-#, fuzzy
 msgid "join-dctrl -- join two Debian control files"
-msgstr "sort-dctrl -- sortera Debians kontrollfiler"
+msgstr "join-dctrl -- slå samman två Debian kontrollfiler"
 
 #: join-dctrl/join-dctrl.c:270
-#, fuzzy
 msgid "need exactly two input files"
-msgstr "standardinmatningsfil"
+msgstr "behöver exakt två indatafiler"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
-msgstr ""
+msgstr "kan inte slå samman en ström med sig själv"
