@@ -1,8 +1,8 @@
 dctrl-tools (2.14.4) UNRELEASED; urgency=low
 
-  * 
+  * vi.po: Updated by Clytie Siddall (closes: #598494)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 26 Sep 2010 17:28:11 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 29 Sep 2010 22:41:54 +0300
 
 dctrl-tools (2.14.3) unstable; urgency=low
 
