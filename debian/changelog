@@ -1,8 +1,8 @@
 dctrl-tools (2.14.5) UNRELEASED; urgency=low
 
-  * 
+  * po/es.po: Updated by Javier Fernández-Sanguino Peña (closes: #599858)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 09 Oct 2010 11:02:00 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 13 Oct 2010 07:42:34 +0300
 
 dctrl-tools (2.14.4) unstable; urgency=low
 
