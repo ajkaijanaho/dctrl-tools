@@ -1,15 +1,16 @@
 # Catalan translation of dctrl-tools.
-# Copyright © 2004, 2006 Antti-Juhani Kaijanaho.
+# Copyright © 2004, 2006, 2010 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Jordi Mallach <jordi@debian.org>, 2004, 2006.
+# Jordi Mallach <jordi@debian.org>, 2004, 2006, 2010.
+# Agustí Grau <fletxa@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2010-09-01 09:55+0100\n"
-"Last-Translator: Agustí Grau <fletxa@gmail.com>\n"
+"PO-Revision-Date: 2010-10-23 17:49+0200\n"
+"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +60,7 @@ msgstr "el tipus de fitxer és desconegut, s'està ometent"
 #: lib/misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr "%s: s'està usant «%s com a paginador\n"
+msgstr "%s: s'està usant «%s» com a paginador\n"
 
 #: lib/misc.c:47
 #, c-format
@@ -145,7 +146,7 @@ msgstr "El patró és una expressió regular estàndard POSIX."
 
 #: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
-msgstr "No distigueixes entre majúscules i minúscules quan cerca una coincidència."
+msgstr "No distigueixes entre majúscules i minúscules quan cerques una coincidència."
 
 #: grep-dctrl/grep-dctrl.c:122
 msgid "Show only paragraphs that do not match."
@@ -165,7 +166,7 @@ msgstr "NOMFITXER"
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Use FNAME as the config file."
-msgstr "Utilitza NOMFITXER com el fitxer de configuració."
+msgstr "Utilitza NOMFITXER com a fitxer de configuració."
 
 #: grep-dctrl/grep-dctrl.c:126
 msgid "Do an exact match."
@@ -240,7 +241,7 @@ msgstr "Especifiqueu el patró que voleu cercar"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr "Coincideir només tot el nom dels paquets (implica -e)"
+msgstr "Fes coincidir només noms de paquets sencers (implica -e)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
@@ -266,7 +267,7 @@ msgstr "hi ha massa camps d'eixida"
 #: join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
-msgstr "aquest nivell de registre '%s' no existeix"
+msgstr "el nivell de registre «%s» no existeix"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
@@ -333,7 +334,7 @@ msgstr "-I requereix com a mínim una instància de -s"
 
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr "no es pot suprimir els noms de camp quan es mostren paràgrafs sencers"
+msgstr "no es poden suprimir els noms de camp quan es mostren paràgrafs sencers"
 
 #: grep-dctrl/rc.c:55
 msgid "Malformed default input file name"
@@ -405,7 +406,7 @@ msgstr "Especifica un delimitador."
 
 #: tbl-dctrl/tbl-dctrl.c:39
 msgid "Do not print a table heading"
-msgstr "No imprimir la capçalera de la taula"
+msgstr "No imprimeixes la capçalera de la taula"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
@@ -459,11 +460,11 @@ msgstr "ESPECCAMP"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "Specify the format of the output file"
-msgstr "Especifiqueu el format del fitxer de sortida"
+msgstr "Especifiqueu el format del fitxer d'eixida"
 
 #: join-dctrl/join-dctrl.c:81
 msgid "malformed argument to '-a'"
-msgstr "argument incorrecte a '-a'"
+msgstr "argument incorrecte a «-a»"
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
@@ -475,11 +476,11 @@ msgstr "el camp d'unió del segon fitxer ja s'ha especificat"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr "no s'ha trobat '.' en la especificació del camp de sortida"
+msgstr "manca un «.» en la especificació del camp d'eixida"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr "s'esperava '1.' o '2.' al principi de la especificació del camp"
+msgstr "s'esperava «1.» o «2.» al principi de la especificació del camp"
 
 #: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"
@@ -487,7 +488,7 @@ msgstr "join-dctrl -- uneix dos fitxers de control de Debian"
 
 #: join-dctrl/join-dctrl.c:270
 msgid "need exactly two input files"
-msgstr "necessita exactament dos fitxers d'entrada"
+msgstr "es necessiten exactament dos fitxers d'entrada"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
