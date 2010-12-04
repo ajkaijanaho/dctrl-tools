@@ -1,13 +1,13 @@
 # Vietnamese translation for DCTRL Tools.
-# Copyright © 2006 Free Software Foundation, Inc.
-# Clytie Siddall <clytie@riverland.net.au>, 2006.
+# Copyright © 2010 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2006-2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools\n"
+"Project-Id-Version: dctrl-tools 2.14.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2010-08-08 12:45+0300\n"
-"PO-Revision-Date: 2006-10-31 14:12+1030\n"
+"PO-Revision-Date: 2010-09-29 21:43+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6fc1\n"
+"X-Generator: LocFactoryEditor 1.8\n"
 
 #: lib/ifile.c:54
 #, c-format
@@ -25,25 +25,25 @@ msgstr "%s (con): lỗi thực hiện « /bin/sh »: %s\n"
 #: lib/ifile.c:100
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr "%s: lệnh (%s) bị lỗi (trạng thái thoát %d)\n"
+msgstr "%s: câu lệnh (%s) bị lỗi (trạng thái thoát %d)\n"
 
 #: lib/ifile.c:109
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
-msgstr "%s: lệnh (%s) bị chấm dứt bằng tín hiệu %d\n"
+msgstr "%s: lệnh (%s) bị chấm dứt do tín hiệu %d\n"
 
 #: lib/ifile.c:127
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
-msgstr "%s: %s: không thể lấy các thông tin: %s\n"
+msgstr "%s: %s: không thể lấy trạng thái: %s\n"
 
 #: lib/ifile.c:138
 msgid "is a directory, skipping"
-msgstr "là thư mục nên bỏ qua"
+msgstr "là một thư mục nên bỏ qua"
 
 #: lib/ifile.c:139
 msgid "is a block device, skipping"
-msgstr "là thiết bị khối nên bỏ qua"
+msgstr "là một thiết bị khối nên bỏ qua"
 
 #: lib/ifile.c:140
 msgid "internal error"
@@ -51,16 +51,16 @@ msgstr "lỗi nội bộ"
 
 #: lib/ifile.c:141
 msgid "is a socket, skipping"
-msgstr "là ổ cắm nên bỏ qua"
+msgstr "là một ổ cắm nên bỏ qua"
 
 #: lib/ifile.c:142
 msgid "unknown file type, skipping"
-msgstr "kiểu tập tin lạ nên bỏ qua"
+msgstr "không rõ dạng tập tin nên bỏ qua"
 
 #: lib/misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr "%s:dùng « %s » là bộ dàn trang\n"
+msgstr "%s: dùng « %s » làm bộ dàn trang\n"
 
 #: lib/misc.c:47
 #, c-format
@@ -69,19 +69,21 @@ msgstr "%s: popen bị lỗi cho %s: %s\n"
 
 #: lib/paragraph.c:140
 msgid "warning: expected a colon"
-msgstr "cảnh báo: trông đợi dấu hai chấm"
+msgstr "cảnh báo : mong đợi một dấu hai chấm"
 
 #: lib/paragraph.c:145
 msgid "expected a colon"
-msgstr "trông đợi dấu hai chấm"
+msgstr "mong đợi một dấu hai chấm"
 
-#: lib/predicate.c:43 grep-dctrl/grep-dctrl.c:228 grep-dctrl/grep-dctrl.c:343
+#: lib/predicate.c:43
+#: grep-dctrl/grep-dctrl.c:228
+#: grep-dctrl/grep-dctrl.c:343
 msgid "predicate is too complex"
 msgstr "vị ngữ quá phức tạp"
 
 #: lib/sorter.c:49
 msgid "Parse error in field."
-msgstr "Gặp lỗi phân tách trong trường."
+msgstr "Gặp lỗi phân tích cú pháp trong trường."
 
 #: grep-dctrl/grep-dctrl.c:47
 msgid "grep-dctrl -- grep Debian control files"
@@ -89,25 +91,30 @@ msgstr "grep-dctrl -- grep tập tin điều khiển Debian"
 
 #: grep-dctrl/grep-dctrl.c:110
 msgid "Show the testing banner."
-msgstr "Hiện biểu ngữ thử ra."
+msgstr "Hiển thị biểu ngữ thử ra."
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+#: grep-dctrl/grep-dctrl.c:112
+#: sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "CẤP"
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+#: grep-dctrl/grep-dctrl.c:112
+#: sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
-msgstr "Đặt cấp gỡ lỗi thành CẤP."
+msgstr "Lập cấp gỡ rối thành CẤP."
 
-#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:116
 msgid "FIELD,FIELD,..."
 msgstr "TRƯỜNG,TRƯỜNG,..."
 
 #: grep-dctrl/grep-dctrl.c:113
 msgid "Restrict pattern matching to the FIELDs given."
-msgstr "Hạn chế việc khớp mẫu trong những TRƯỜNG đưa ra"
+msgstr "Hạn chế việc khớp mẫu thành những TRƯỜNG đưa ra."
 
 #: grep-dctrl/grep-dctrl.c:114
 msgid "This is a shorthand for -FPackage."
@@ -119,27 +126,26 @@ msgstr "Đây là tốc ký cho « -FSource:Package »."
 
 #: grep-dctrl/grep-dctrl.c:116
 msgid "Show only the body of these fields from the matching paragraphs."
-msgstr "Hiển thị chỉ thân của những trường này từ các đoạn văn khớp được."
+msgstr "Hiển thị chỉ thân của những trường này từ các đoạn văn tương ứng."
 
 #: grep-dctrl/grep-dctrl.c:117
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Hiển thị chỉ dòng đầu của trường « Mô tả » (Description) từ các đoạn văn "
-"khớp được."
+"Hiển thị chỉ dòng đầu tiên của trường « Mô tả » (Description) từ các đoạn văn tương ứng."
 
 #: grep-dctrl/grep-dctrl.c:118
 msgid "Suppress field names when showing specified fields."
-msgstr "Thu hồi các tên trường khi hiển thị trường đã xác định."
+msgstr "Thu hồi tên trường khi hiển thị trường đã xác định."
 
 #: grep-dctrl/grep-dctrl.c:119
 msgid "Regard the pattern as an extended POSIX regular expression."
-msgstr "Xử lý mẫu như là biểu thức chính quy kiểu POSIX đã mở rộng."
+msgstr "Thấy mẫu như là một biểu thức chính quy kiểu POSIX đã mở rộng."
 
 #: grep-dctrl/grep-dctrl.c:120
 msgid "The pattern is a standard POSIX regular expression."
-msgstr "Mẫu là biểu thức chính quy kiểu POSIX đã mở rộng."
+msgstr "Mẫu là một biểu thức chính quy kiểu POSIX đã mở rộng."
 
 #: grep-dctrl/grep-dctrl.c:121
 msgid "Ignore case when looking for a match."
@@ -151,32 +157,34 @@ msgstr "Hiển thị chỉ những đoạn văn không khớp."
 
 #: grep-dctrl/grep-dctrl.c:123
 msgid "Show those fields that have NOT been selected with -s"
-msgstr ""
+msgstr "Hiển thị những trường KHÔNG PHẢI được lựa chọn dùng « -s »"
 
 #: grep-dctrl/grep-dctrl.c:124
 msgid "Show only the count of matching paragraphs."
-msgstr "Hiển thị chỉ tổng số đoạn văn khớp được."
+msgstr "Hiển thị chỉ số các đoạn văn tương ứng."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "FNAME"
-msgstr "TÊN_TẬP_TIN"
+msgstr "TÊN_TỆP"
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Use FNAME as the config file."
-msgstr "Dùng TÊN_TẬP_TIN như là tập tin cấu hình."
+msgstr "Dùng TÊN_TỆP như là tập tin cấu hình."
 
 #: grep-dctrl/grep-dctrl.c:126
 msgid "Do an exact match."
 msgstr "Khớp chính xác."
 
-#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
-#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
+#: grep-dctrl/grep-dctrl.c:127
+#: sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41
+#: join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "In ra giấy phép tác quyền."
 
 #: grep-dctrl/grep-dctrl.c:128
 msgid "Conjunct predicates."
-msgstr "Liên kết các vị ngữ với nhau."
+msgstr "Liên kết với nhau các vị ngữ."
 
 #: grep-dctrl/grep-dctrl.c:129
 msgid "Disjunct predicates."
@@ -188,40 +196,43 @@ msgstr "Phủ định vị ngữ sau."
 
 #: grep-dctrl/grep-dctrl.c:131
 msgid "Test for version number equality."
-msgstr "Thử ra các số hiệu phiên bản là bằng nhau."
+msgstr "Kiểm tra có số thứ tự phiên bản trùng."
 
 #: grep-dctrl/grep-dctrl.c:132
 msgid "Version number comparison: <."
-msgstr "So sánh số hiệu phiên bản: <."
+msgstr "So sánh số thứ tự phiên bản: <."
 
 #: grep-dctrl/grep-dctrl.c:133
 msgid "Version number comparison: <=."
-msgstr "So sánh số hiệu phiên bản: ≤."
+msgstr "So sánh số thứ tự phiên bản: ≤."
 
 #: grep-dctrl/grep-dctrl.c:134
 msgid "Version number comparison: >."
-msgstr "So sánh số hiệu phiên bản: >."
+msgstr "So sánh số thứ tự phiên bản: >."
 
 #: grep-dctrl/grep-dctrl.c:135
 msgid "Version number comparison: >=."
-msgstr "So sánh số hiệu phiên bản: ≥."
+msgstr "So sánh số thứ tự phiên bản: ≥."
 
 #: grep-dctrl/grep-dctrl.c:136
 msgid "Debug option parsing."
-msgstr "Gỡ lỗi việc phân tách tùy chọn."
+msgstr "Gỡ rối việc phân tích cú pháp của tùy chọn."
 
-#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:138
 msgid "Do no output to stdout."
-msgstr "Không xuất ra thiết bị xuất chuẩn."
+msgstr "Không xuất ra đầu ra tiêu chuẩn."
 
-#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
-#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
+#: grep-dctrl/grep-dctrl.c:139
+#: sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43
+#: join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
-msgstr "Cố gắng mmap các tập tin nhập"
+msgstr "Cố gắng mmap các tập tin nhập vào"
 
 #: grep-dctrl/grep-dctrl.c:140
 msgid "Ignore parse errors"
-msgstr "Bỏ qua lỗi phân tách"
+msgstr "Bỏ qua lỗi phân tích cú pháp"
 
 #: grep-dctrl/grep-dctrl.c:141
 msgid "PATTERN"
@@ -233,11 +244,11 @@ msgstr "Xác định mẫu cần tìm"
 
 #: grep-dctrl/grep-dctrl.c:142
 msgid "Match only whole package names (this implies -e)"
-msgstr ""
+msgstr "Khớp chỉ nguyên tên gói (cũng ngụ ý « -e »)"
 
 #: grep-dctrl/grep-dctrl.c:304
 msgid "file names are not allowed within the predicate"
-msgstr ""
+msgstr "không cho phép tên tập tin bên trong vị ngữ"
 
 #: grep-dctrl/grep-dctrl.c:311
 msgid "predicate is too long"
@@ -247,23 +258,28 @@ msgstr "vị ngữ quá dài"
 msgid "inconsistent atom modifiers"
 msgstr "các bộ bổ nghĩa atom không thống nhất"
 
-#: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
+#: grep-dctrl/grep-dctrl.c:430
+#: grep-dctrl/grep-dctrl.c:835
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
-msgstr "quá nhiều trường xuất"
+msgstr "quá nhiều trường kết xuất"
 
-#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
-#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
-#, fuzzy, c-format
+#: grep-dctrl/grep-dctrl.c:454
+#: sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:294
+#: join-dctrl/join-dctrl.c:168
+#, c-format
 msgid "no such log level '%s'"
-msgstr "không có cấp ghi lưu như vậy"
+msgstr "không có cấp ghi lưu như vậy « %s »"
 
 #: grep-dctrl/grep-dctrl.c:548
 msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Không cho phép có nhiều mẫu cho cùng một atom"
+msgstr "Không cho phép nhiều mẫu cho cùng một atom"
 
-#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
-#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
+#: grep-dctrl/grep-dctrl.c:586
+#: sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:306
+#: join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "quá nhiều tên tập tin"
 
@@ -297,7 +313,7 @@ msgstr "gặp atom bất thường trên dòng lệnh"
 
 #: grep-dctrl/grep-dctrl.c:708
 msgid "missing ')' in command line"
-msgstr "thiếu dấu ngoặc đóng « ) » bất thường trên dòng lệnh"
+msgstr "thiếu dấu ngoặc đóng « ) » trên dòng lệnh"
 
 #: grep-dctrl/grep-dctrl.c:817
 msgid "A pattern is mandatory"
@@ -305,7 +321,7 @@ msgstr "Bắt buộc phải có một mẫu"
 
 #: grep-dctrl/grep-dctrl.c:824
 msgid "a predicate is required"
-msgstr "cần thiết một vị ngữ"
+msgstr "yêu cầu một vị ngữ"
 
 #: grep-dctrl/grep-dctrl.c:829
 msgid "malformed predicate"
@@ -314,16 +330,15 @@ msgstr "vị ngữ dạng sai"
 #: grep-dctrl/grep-dctrl.c:839
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
-"Đang thêm « Mô tả » (Description) vào những trường xuất đã chọn do tùy chọn "
-"« -d »"
+"Đang thêm « Mô tả » (Description) vào những trường kết xuất đã chọn do tùy chọn « -d »"
 
 #: grep-dctrl/grep-dctrl.c:847
 msgid "-I requires at least one instance of -s"
-msgstr ""
+msgstr "« -l » cũng yêu cầu ít nhất một thể hiện của « -s »"
 
 #: grep-dctrl/grep-dctrl.c:853
 msgid "cannot suppress field names when showing whole paragraphs"
-msgstr "không thể thu hồi các tên trường khi hiển thị toàn bộ đoạn văn"
+msgstr "không thể thu hồi các tên trường khi hiển thị nguyên đoạn văn"
 
 #: grep-dctrl/rc.c:55
 msgid "Malformed default input file name"
@@ -343,23 +358,23 @@ msgstr "đang đọc tập tin cấu hình"
 
 #: grep-dctrl/rc.c:140
 msgid "read failure or out of memory"
-msgstr "lỗi đọc hoặc hết bộ nhớ"
+msgstr "lỗi đọc hoặc không đủ bộ nhớ"
 
 #: grep-dctrl/rc.c:162
 msgid "syntax error: need a executable name"
-msgstr "lỗi cú pháp: cần có một tên có khả năng chạy"
+msgstr "lỗi cú pháp: cần có một tên có khả năng thực hiện"
 
 #: grep-dctrl/rc.c:170
 msgid "syntax error: need an input file name"
-msgstr "lỗi cú pháp: cần có một tên tập tin nhập"
+msgstr "lỗi cú pháp: cần có một tên tập tin nhập vào"
 
 #: grep-dctrl/rc.c:176
 msgid "considering executable name"
-msgstr "đang suy tính tên có khả năng chạy"
+msgstr "đang suy tính tên có khả năng thực hiện"
 
 #: grep-dctrl/rc.c:179
 msgid "yes, will use executable name"
-msgstr "có phải, sẽ dùng tên có khả năng chạy"
+msgstr "có phải, sẽ dùng tên có khả năng thực hiện"
 
 #: grep-dctrl/rc.c:181
 msgid "default input file"
@@ -368,7 +383,7 @@ msgstr "tập tin nhập mặc định"
 #: grep-dctrl/rc.c:193
 msgid "executable name not found; reading from standard input"
 msgstr ""
-"không tìm thấy tên có khả năng chạy nên đang đọc từ thiết bị nhập chuẩn"
+"không tìm thấy tên có khả năng thực hiện nên đọc từ đầu vào tiêu chuẩn"
 
 #: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
@@ -376,11 +391,11 @@ msgstr "GHI_RÕ_KHOÁ"
 
 #: sort-dctrl/sort-dctrl.c:40
 msgid "Specify sort keys."
-msgstr "Ghi rõ khoá sắp xếp"
+msgstr "Ghi rõ khoá sắp xếp."
 
 #: sort-dctrl/sort-dctrl.c:88
 msgid "invalid key flag"
-msgstr "cờ khoá không hợp lệ"
+msgstr "sai lập cờ khoá"
 
 #: sort-dctrl/sort-dctrl.c:140
 msgid "sort-dctrl -- sort Debian control files"
@@ -388,15 +403,15 @@ msgstr "sort-dctrl -- sắp xếp các tập tin điều khiển Debian"
 
 #: tbl-dctrl/tbl-dctrl.c:38
 msgid "DELIM"
-msgstr "HẠN_CHẾ"
+msgstr "TÁCH"
 
 #: tbl-dctrl/tbl-dctrl.c:38
 msgid "Specify a delimiter."
-msgstr "Ghi rõ một dấu hạn chế."
+msgstr "Ghi rõ một dấu tách."
 
 #: tbl-dctrl/tbl-dctrl.c:39
 msgid "Do not print a table heading"
-msgstr ""
+msgstr "Đừng in ra một tiêu đề bảng"
 
 #: tbl-dctrl/tbl-dctrl.c:40
 msgid "SPEC"
@@ -408,7 +423,7 @@ msgstr "Phụ thêm cột đã ghi rõ."
 
 #: tbl-dctrl/tbl-dctrl.c:277
 msgid "invalid column length"
-msgstr "độ dài cột không hợp lệ"
+msgstr "sai lập chiều dài cột"
 
 #: tbl-dctrl/tbl-dctrl.c:331
 msgid "tbl-dctrl -- tabularize Debian control files"
@@ -418,70 +433,68 @@ msgstr "tbl-dctrl -- xếp thành bảng các tập tin điều khiển Debian"
 msgid "bad multibyte character"
 msgstr "ký tự đa byte sai"
 
-#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:39
+#: join-dctrl/join-dctrl.c:40
 #: join-dctrl/join-dctrl.c:41
 msgid "FIELD"
-msgstr ""
+msgstr "TRƯỜNG"
 
 #: join-dctrl/join-dctrl.c:39
 msgid "Specify the join field to use for the first file"
-msgstr ""
+msgstr "Ghi rõ trường nối lại cần dùng cho tập tin đầu tiên"
 
 #: join-dctrl/join-dctrl.c:40
 msgid "Specify the join field to use for the second file"
-msgstr ""
+msgstr "Ghi rõ trường nối lại cần dùng cho tập tin thứ hai"
 
 #: join-dctrl/join-dctrl.c:41
 msgid "Specify the common join field"
-msgstr ""
+msgstr "Ghi rõ trường nối lại dùng chung"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "FIELDNO"
-msgstr ""
+msgstr "SỐ_TRƯỜNG"
 
 #: join-dctrl/join-dctrl.c:42
 msgid "Print unpairable records from the indicated file (either 1 or 2)"
-msgstr ""
+msgstr "In từ tập tin đưa ra các mục ghi không kết đôi được (hoặc 1 hoặc 2)"
 
 #: join-dctrl/join-dctrl.c:43
-#, fuzzy
 msgid "FIELDSPEC"
-msgstr "GHI_RÕ_KHOÁ"
+msgstr "GHI_RÕ_TRƯỜNG"
 
 #: join-dctrl/join-dctrl.c:43
 msgid "Specify the format of the output file"
-msgstr ""
+msgstr "Ghi rõ định dạng của trường kết xuất"
 
 #: join-dctrl/join-dctrl.c:81
 msgid "malformed argument to '-a'"
-msgstr ""
+msgstr "gặp đối số dạng sai với « -a »"
 
 #: join-dctrl/join-dctrl.c:88
 msgid "the join field of the first file has already been specified"
-msgstr ""
+msgstr "đã ghi rõ trường nối lại của tập tin đầu tiên"
 
 #: join-dctrl/join-dctrl.c:89
 msgid "the join field of the second file has already been specified"
-msgstr ""
+msgstr "đã ghi rõ trường nối lại của tập tin thứ hai"
 
 #: join-dctrl/join-dctrl.c:128
 msgid "missing '.' in output field specification"
-msgstr ""
+msgstr "thiếu dấu chấm « . » trong đặc tả trường kết xuất"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr ""
+msgstr "mong đợi hoặc « 1. » hoặc « 2. » ở đầu của đặc tả trường"
 
 #: join-dctrl/join-dctrl.c:251
-#, fuzzy
 msgid "join-dctrl -- join two Debian control files"
-msgstr "sort-dctrl -- sắp xếp các tập tin điều khiển Debian"
+msgstr "join-dctrl -- nối lại hai tập tin điều khiển Debian"
 
 #: join-dctrl/join-dctrl.c:270
-#, fuzzy
 msgid "need exactly two input files"
-msgstr "tập tin nhập mặc định"
+msgstr "yêu cầu chính xác 2 tập tin nhập vào"
 
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
-msgstr ""
+msgstr "không thể nối lại một luồng với chính nó"
