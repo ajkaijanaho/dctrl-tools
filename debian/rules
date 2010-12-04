@@ -2,82 +2,8 @@
 # Written by Antti-Juhani Kaijanaho <ajk@debian.org>.  
 # You may treat this file as if it were in the public domain.
 
-librules_interface = 2
-librules_native_pkg=yes
-include debian/librules.mk
+%:
+	dh $@
 
-include langs.mk
-
-debian/stamp/build: #debian/stamp/build-configure
-	$(MAKE) CC=gcc CFLAGS="-O2 -g -Wall"
-	-$(MAKE) test
-	touch $@
-
-#debian/stamp/build-configure:
-#	./configure --prefix=/usr --sysconfdir=/etc --mandir=/usr/share
-#	touch $@
-
-clean-build:
-	$(MAKE) clean
-
-debian/stamp/binary/arch: debian/stamp/binary/dctrl-tools
-
-aliases = grep-status grep-available grep-aptavail grep-debtags
-
-debian/stamp/binary/dctrl-tools: package=dctrl-tools
-debian/stamp/binary/dctrl-tools: debian/stamp/build
-	$(prebinary)
-#	Install by the master makefile
-#	$(MAKE) prefix=$(rootdir)/usr sysconfdir=$(rootdir)/etc \
-#	  mandir=$(mandir) install
-#	Install configuration file
-	$(install_dir) $(etcdir)
-	$(install_nonex) grep-dctrl/grep-dctrl.rc $(etcdir)
-#	Install the binaries.
-	$(install_dir) $(sbindir)
-	$(install_script) sync-available/sync-available $(sbindir)
-	$(install_dir) $(bindir)
-	$(install_exec) join-dctrl/join-dctrl $(bindir)
-	$(install_exec) tbl-dctrl/tbl-dctrl $(bindir)
-	$(install_exec) sort-dctrl/sort-dctrl $(bindir)
-	$(install_exec) grep-dctrl/grep-dctrl $(bindir)
-	set -e ; for dest in $(aliases) ; do \
-	   $(install_symlink) grep-dctrl $(bindir)/$$dest ; \
-	 done
-#	Install and zip the manual pages.
-	$(install_dir) $(man8dir)
-	$(install_nonex) man/sync-available.8 $(man8dir)/
-	$(gzip) $(man8dir)/sync-available.8
-	$(install_dir) $(man1dir)
-	$(install_nonex) man/sort-dctrl.1 $(man1dir)/
-	$(gzip) $(man1dir)/sort-dctrl.1
-	$(install_nonex) man/tbl-dctrl.1 $(man1dir)/
-	$(gzip) $(man1dir)/tbl-dctrl.1
-	$(install_nonex) man/join-dctrl.1 $(man1dir)/
-	$(gzip) $(man1dir)/join-dctrl.1
-	$(install_nonex) man/grep-dctrl.1 $(man1dir)/
-	$(gzip) $(man1dir)/grep-dctrl.1
-	set -e ; for dest in $(aliases) ; do \
-	   $(install_symlink) grep-dctrl.1.gz $(man1dir)/$$dest.1.gz ; \
-	 done
-#	Install the supporting documentation.
-	$(install_nonex) TODO $(docdir)
-	$(install_nonex) debian/README $(docdir)/README.Debian
-#	Install message catalogues
-	set -e ; for lang in $(langs) ; do \
-		$(install_dir) $(rootdir)/usr/share/locale/$$lang/LC_MESSAGES ; \
-		$(install_nonex) po/$$lang.mo \
-		  $(rootdir)/usr/share/locale/$$lang/LC_MESSAGES/$(package).mo ; \
-	done
-#	Install config file information
-	$(install_nonex) debian/conffiles $(rootdir)/DEBIAN
-#	Get the shared library deps
-	dpkg-shlibdeps $(bindir)/grep-dctrl \
-		       $(bindir)/sort-dctrl \
-                       $(bindir)/tbl-dctrl \
-                       $(bindir)/join-dctrl
-	$(postbinary)
-	touch $@
-
-clean-binary:
-	$(RM) *~ */*~
+override_dh_auto_install:
+	dh_auto_install -- prefix=/usr sysconfdir=/etc

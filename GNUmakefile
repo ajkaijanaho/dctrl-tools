@@ -1,7 +1,17 @@
 
-sysconfdir = /etc
-localedir = /usr/share/locale
 version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
+maintainer := "$(shell grep ^Maintainer: debian/control | cut -b13-)"
+prefix = /usr/local
+exec_prefix = $(prefix)
+sysconfdir = $(prefix)/etc
+bindir = $(exec_prefix)/bin
+sbindir = $(exec_prefix)/sbin
+datarootdir = $(prefix)/share
+docdir = $(datarootdir)/doc/dctrl-tools
+mandir = $(datarootdir)/man
+man1dir = $(mandir)/man1
+man8dir = $(mandir)/man8
+localedir = $(datarootdir)/locale
 
 CC = gcc 
 CFLAGS = -g -Wall -Werror
@@ -10,12 +20,12 @@ ALL_CFLAGS = $(CFLAGS) -std=gnu99 -Ilib \
          -DHAVE_GETTEXT -DPACKAGE=\"dctrl-tools\" -DLOCALEDIR=\"$(localedir)\" 
 
 ALL_CFLAGS += -DVERSION=\"$(version)\"
-ALL_CFLAGS += -DMAINTAINER='"$(shell grep ^Maintainer: debian/control | cut -b13-)"'
+ALL_CFLAGS += -DMAINTAINER='$(maintainer)'
 
-#CFLAGS += -DNDEBUG
-
-#CFLAGS += -pg
-#LDFLAGS += -pg
+INSTALL = install
+INSTALL_PROGRAM = $(INSTALL)
+INSTALL_DATA = $(INSTALL) -m644
+INSTALL_DIR = $(INSTALL) -d
 
 libsrc = $(wildcard lib/*.c)
 libobj = $(libsrc:.c=.o)
@@ -43,6 +53,45 @@ all :	all-no-mo mo
 all-no-mo :	sync-available/sync-available \
 		man/grep-dctrl.1 \
 		$(exe)
+aliases = grep-status grep-available grep-aptavail grep-debtags
+
+install :
+	$(INSTALL_DIR) $(DESTDIR)$(sysconfdir)
+	$(INSTALL_DIR) $(DESTDIR)$(sbindir)
+	$(INSTALL_DIR) $(DESTDIR)$(bindir)
+	$(INSTALL_DIR) $(DESTDIR)$(docdir)
+	$(INSTALL_DIR) $(DESTDIR)$(man1dir)
+	$(INSTALL_DIR) $(DESTDIR)$(man8dir)
+	$(INSTALL_DATA) grep-dctrl/grep-dctrl.rc $(DESTDIR)$(sysconfdir)
+	$(INSTALL_DATA) grep-dctrl/grep-dctrl.rc $(DESTDIR)$(sysconfdir)
+	$(INSTALL_PROGRAM) sync-available/sync-available $(DESTDIR)$(sbindir)
+	$(INSTALL_PROGRAM) join-dctrl/join-dctrl $(DESTDIR)$(bindir)
+	$(INSTALL_PROGRAM) tbl-dctrl/tbl-dctrl $(DESTDIR)$(bindir)
+	$(INSTALL_PROGRAM) sort-dctrl/sort-dctrl $(DESTDIR)$(bindir)
+	$(INSTALL_PROGRAM) grep-dctrl/grep-dctrl $(DESTDIR)$(bindir)
+	set -e ; for dest in $(aliases) ; do \
+		ln -s grep-dctrl $(DESTDIR)$(bindir)/$$dest ; \
+	 done
+	$(INSTALL_DATA) man/sync-available.8 $(DESTDIR)$(man8dir)/
+	gzip -9 $(DESTDIR)$(man8dir)/sync-available.8
+	$(INSTALL_DATA) man/sort-dctrl.1 $(DESTDIR)$(man1dir)/
+	gzip -9 $(DESTDIR)$(man1dir)/sort-dctrl.1
+	$(INSTALL_DATA) man/tbl-dctrl.1 $(DESTDIR)$(man1dir)/
+	gzip -9 $(DESTDIR)$(man1dir)/tbl-dctrl.1
+	$(INSTALL_DATA) man/join-dctrl.1 $(DESTDIR)$(man1dir)/
+	gzip -9 $(DESTDIR)$(man1dir)/join-dctrl.1
+	$(INSTALL_DATA) man/grep-dctrl.1 $(DESTDIR)$(man1dir)/
+	gzip -9 $(DESTDIR)$(man1dir)/grep-dctrl.1
+	set -e ; for dest in $(aliases) ; do \
+		ln -s grep-dctrl.1.gz $(DESTDIR)$(man1dir)/$$dest.1.gz ; \
+	 done
+	$(INSTALL_DATA) TODO README $(DESTDIR)$(docdir)
+	set -e ; for lang in $(langs) ; do \
+		$(INSTALL_DIR) $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES ; \
+		$(INSTALL_DATA) po/$$lang.mo \
+		  $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/dctrl-tools.mo ; \
+	done
+
 
 pot : po/dctrl-tools.pot
 

@@ -1,6 +1,0 @@
-
-$Id: README.build-system,v 1.7 2004/01/06 10:30:17 ajk Exp $
-
-This package uses a new experimental debian/rules helper, librules.mk,
-written by Antti-Juhani Kaijanaho <ajk@debian.org>.  Documentation for
-it is available in the file librules-manual.txt.

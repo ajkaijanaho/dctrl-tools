@@ -3,8 +3,11 @@ dctrl-tools (2.17) UNRELEASED; urgency=low
   * Merge 2.14.3, 2.14.4, and 2.14.5.
   * Removed Jon Bernard <jbernard@debian.org> from uploaders
     (no uploads in two years; seems to have left the team mailing list)
+  * Moved detailed installation from debian/rules to GNUmakefile
+  * Moved debian/README to ./README
+  * changed from my own build system to Debhelper v8 (dh).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 04 Dec 2010 12:53:10 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 04 Dec 2010 20:35:40 +0200
 
 dctrl-tools (2.16) experimental; urgency=low
 
