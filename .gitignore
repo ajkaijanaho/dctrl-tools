@@ -1,1 +1,4 @@
 libdctrl.a
+debian/dctrl-tools
+debian/dctrl-tools.debhelper.log
+debian/dctrl-tools.substvars
