@@ -1,3 +1,9 @@
+dctrl-tools (2.19) UNRELEASED; urgency=low
+
+  * 
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 06 Feb 2011 11:30:15 +0200
+
 dctrl-tools (2.18) unstable; urgency=low
 
   * debian/rules: Override prefix and sysconfdir even for building
