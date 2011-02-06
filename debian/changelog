@@ -1,12 +1,13 @@
-dctrl-tools (2.18) UNRELEASED; urgency=low
+dctrl-tools (2.18) unstable; urgency=low
 
   * debian/rules: Override prefix and sysconfdir even for building
     Closes: #607359 (doesn't read /etc/grep-dctrl.rc)
     Reported by Jakub Wilk <jwilk@debian.org>
     Closes: #611596 (experimental's version of grep-dctrl doesn't grep anything)
     Reported by Rogério Brito <rbrito@ime.usp.br>
+  * Upload to unstable.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 06 Feb 2011 11:12:20 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 06 Feb 2011 11:18:33 +0200
 
 dctrl-tools (2.17) experimental; urgency=low
 
