@@ -440,7 +440,8 @@ same line.  For example, the following command outputs the list of
 installed packages, sorted by their Installed\-Size.
 .nf
 % grep\-status \-FStatus \-sInstalled\-Size,Package \-n \\
-  "install ok installed" | paste \-sd "  \\n" | sort \-n             
+  "install ok installed" -a -FInstalled-Size --gt 0 \\
+  | paste \-sd "  \\n" | sort \-n
 .fi
 Note that there should be exactly 2 spaces in the "  \\n" string.
 .PP
