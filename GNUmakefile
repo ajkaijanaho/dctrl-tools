@@ -27,6 +27,9 @@ INSTALL_PROGRAM = $(INSTALL)
 INSTALL_DATA = $(INSTALL) -m644
 INSTALL_DIR = $(INSTALL) -d
 
+PO4A = po4a
+PO4A_CONFIG = man/po4a/po4a.cfg
+
 libsrc = $(wildcard lib/*.c)
 libobj = $(libsrc:.c=.o)
 
@@ -48,7 +51,7 @@ LDLIBS = -L. -ldctrl
 # List of translated languages is given in langs.mk
 include langs.mk
 
-all :	all-no-mo mo
+all :	all-no-mo mo translated-man
 
 all-no-mo :	sync-available/sync-available \
 		man/grep-dctrl.1 \
@@ -84,7 +87,29 @@ install :
 	gzip -9 $(DESTDIR)$(man1dir)/grep-dctrl.1
 	set -e ; for dest in $(aliases) ; do \
 		ln -s grep-dctrl.1.gz $(DESTDIR)$(man1dir)/$$dest.1.gz ; \
-	 done
+	done
+	set -e ; for d in man/translated/*; do \
+		lang=`echo $$d | cut -c16-`; \
+		if [ -e $$d/sync-available.8 ]; then \
+			$(INSTALL_DIR) $(DESTDIR)$(mandir)/$$lang/man8; \
+			$(INSTALL_DATA) $$d/sync-available.8 $(DESTDIR)$(mandir)/$$lang/man8/; \
+			gzip -9 $(DESTDIR)$(mandir)/$$lang/man8/sync-available.8; \
+		fi; \
+		for file in sort-dctrl.1 tbl-dctrl.1 join-dctrl.1 grep-dctrl.1; do \
+			if [ -e $$d/$$file ]; then \
+				if ! [ -d $(DESTDIR)$(mandir)/$$lang/man1 ]; then \
+					$(INSTALL_DIR) $(DESTDIR)$(mandir)/$$lang/man1; \
+				fi; \
+				$(INSTALL_DATA) $$d/$$file $(DESTDIR)$(mandir)/$$lang/man1/; \
+				gzip -9 $(DESTDIR)$(mandir)/$$lang/man1/$$file; \
+			fi; \
+		done; \
+		if [ -e $(DESTDIR)$(mandir)$$lang/man1/grep-dctrl.1.gz ]; then \
+			for dest in $(aliases) ; do \
+				ln -s grep-dctrl.1.gz $(DESTDIR)$(mandir)/$$lang/man1/$$dest.1.gz ; \
+			done; \
+		fi; \
+	done;
 	$(INSTALL_DATA) TODO README $(DESTDIR)$(docdir)
 	set -e ; for lang in $(langs) ; do \
 		$(INSTALL_DIR) $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES ; \
@@ -93,7 +118,7 @@ install :
 	done
 
 
-pot : po/dctrl-tools.pot
+pot : po/dctrl-tools.pot man/po4a/po/dctrl-tools-man.pot
 
 po : $(foreach f,$(langs),po/$(f).po)
 
@@ -154,6 +179,25 @@ po/dctrl-tools.pot : $(src)
 	xgettext $(xgettext_opts) -d grep-dctrl $^
 	mv grep-dctrl.po $@
 
+# create (or update) dctrl-tools-man.pot
+man/po4a/po/dctrl-tools-man.pot :
+	touch man/po4a/po/dctrl-tools-man.pot
+	$(PO4A) --force --no-translations $(PO4A_CONFIG)
+
+# build translated manpages in man/translated/$lang/
+po4a :
+	touch man/po4a/po/dctrl-tools-man.pot
+	$(PO4A) --force --no-backups $(PO4A_CONFIG)
+
+# handle the "%.1 : %.1.cp" rule if and only if the grep-dctrl.1.cp file exists
+translated-man : po4a
+	set -e ; for d in man/translated/*; do \
+		if [ -e $$d/grep-dctrl.1.cp ]; then \
+			sed 's*SYSCONF*$(sysconfdir)*' \
+			$$d/grep-dctrl.1.cp > $$d/grep-dctrl.1; \
+		fi; \
+       done
+
 fsaf.test : fsaf.test.o msg.o
 
 test :	all-no-mo
@@ -163,11 +207,12 @@ clean :
 	$(RM) core $(exe) man/grep-dctrl.1 $(obj) so/*.o libdctrl.a libdctrl.so
 	$(RM) po/*.mo TAGS *.d */*.d
 	$(RM) sync-available/sync-available
+	$(RM) -r man/translated
 
 distclean : clean
 
 maintainer-clean : distclean
-	$(RM) po/*.pot
+	$(RM) po/*.pot man/po4a/po/*.pot
 
 tags :
 	etags *.[hc]
