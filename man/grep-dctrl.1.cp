@@ -19,12 +19,9 @@
 grep\-dctrl, grep\-status, grep\-available, grep\-aptavail, grep\-debtags \- grep Debian control files
 .SH SYNOPSIS
 .I command
---copying|-C | --help|-h | --version|-V 
+.BR --copying "|" -C " | " --help "|" -h " | " --version "|" -V 
 .sp
-.I command
-[options] predicate [
-.IR file "..."
-]
+.IR command " [" options "] " predicate " [ " file "... ]"
 .sp
 where
 .I command
@@ -72,28 +69,35 @@ Debian).
 You must give a filter expression on the command line.  The filter
 defines which kind of paragraphs (aka package records) are output.  A
 simple filter is a search pattern along with any options that modify
-it.  Possible modifiers are \-\-eregex, \-\-field, \-\-ignore\-case,
-\-\-regex and \-\-exact\-match, along with their single-letter
-equivalents.   By
+it.  Possible modifiers are
+.BR \-\-eregex ", " \-\-field ", " \-\-ignore\-case ", " \-\-regex
+and
+.BR \-\-exact\-match ,
+along with their single-letter equivalents.  By
 default, the search is a case-sensitive fixed substring match on each
 paragraph (in other words, package record) in the input.  With
 suitable modifiers, this can be changed: the search can be
 case-insensitive and the pattern can be seen as an extended POSIX
 regular expression. 
 .PP
-Filters can be combined to form more complex filters using the
-connectives \-\-and, \-\-or and \-\-not.  Parentheses (which usually
+Filters can be combined to form more complex filters using the connectives
+.BR \-\-and ", " \-\-or " and " \-\-not .
+Parentheses (which usually
 need to be escaped for the shell) can be used for grouping.
 .PP
 By default, the full matching paragraphs are printed on the standard
-output; specific fields can be selected for output with the \-s option.
+output; specific fields can be selected for output with the
+.B \-s
+option.
 .PP
 After the filter expression comes zero or more file names.  If no file names
 are specified, the file name is searched in configuration files.  The
 input file from the first program name \- input file association with
 the correct program name is used.  The program names are matched with
 the base form of the name of the current program (the 0'th command
-line argument, if you will).  The file name "\-" is taken to mean the
+line argument, if you will).  The file name
+.B \-
+is taken to mean the
 standard input stream.  The files are searched in order but
 separately; they are
 .B not
@@ -106,147 +110,194 @@ the default input source is always standard input; this cannot be
 overridden by the configuration file.
 .SH OPTIONS
 .SS Specifying the search pattern
-.IP "\-\-pattern=PATTERN"
-Specify a pattern to be searched. This switch is not generally needed, as
-the pattern can be given by itself. However, patterns that start
-with a dash must be given using this switch, so that they wouldn't
+.IP "\fB\-\-pattern=\fIPATTERN"
+Specify a
+.I PATTERN
+to be searched. This switch is not generally needed, as the
+.I PATTERN
+can be given by itself. However,
+.IR PATTERN s
+that start
+with a dash
+.RB ( - )
+must be given using this switch, so that they wouldn't
 be mistaken for switches.
 .SS Modifiers of simple filters
-.IP "\-F FIELD,FIELD,...; \-\-field=FIELD,FIELD,..."
-Restrict pattern matching to the FIELDs given.  Multiple field names
-in one \-F option and multiple \-F options in one simple filter are
+.IP "\fB\-F \fIFIELD\fR,\fIFIELD\fR,... | \fB\-\-field=\fIFIELD\fR,\fIFIELD\fR,..."
+Restrict pattern matching to the 
+.IR FIELD s
+given.  Multiple field names
+in one 
+.B -F
+option and multiple 
+.B -F
+options in one simple filter are
 allowed. The search named by the filter will be performed
 among all the fields named, and as soon as any one of them matches, the
 whole simple filter is considered matching.
 .PP
-A FIELD specification can contain a colon. In such a case, the part
+A 
+.I FIELD 
+specification can contain a colon
+.RB ( : ).
+In such a case, the part
 up to the colon is taken as the name of the field to be searched in,
 and the part after the colon is taken as the name of the field whose
 content is to be used if the field to search in is empty.
-.IP \-P
-Shorthand for "\-FPackage".
-.IP \-S
-Shorthand for "\-FSource:Package".
-.IP "\-e, \-\-eregex"
+.IP \fB\-P
+Shorthand for
+.BR \-FPackage .
+.IP \fB\-S
+Shorthand for
+.BR \-FSource:Package .
+.IP "\fB\-e\fR, \fB\-\-eregex"
 Regard the pattern of the current simple filter as an extended
 POSIX regular expression
-.IP "\-r, \-\-regex"
+.IP "\fB\-r\fR, \fB\-\-regex"
 The pattern of the current simple filter is a standard POSIX regular expression.
-.IP "\-i, \-\-ignore\-case"
+.IP "\fB\-i\fR, \fB\-\-ignore\-case"
 Ignore case when looking for a match in the current simple filter.
-.IP "\-X, \-\-exact\-match"
+.IP "\fB\-X\fR, \fB\-\-exact\-match"
 Do an exact match (as opposed to a substring match) in the current
 simple filter.
-.IP "\-w, \-\-whole\-pkg"
+.IP "\fB\-w\fR, \fB\-\-whole\-pkg"
 Do an extended regular expression match on whole package names,
 assuming the syntax of inter-package relationship fields such as
-Depends, Recommends, ... When this flag is given you should not worry
+.BR Depends , Recommends ,...
+When this flag is given you should not worry
 about sub-package names such as "libpcre3" also matching
-"libpcre3-dev". This flag implies (and is incompatible with) \-e.
-.IP "\-\-eq"
+"libpcre3-dev". This flag implies (and is incompatible with)
+.BR \-e .
+.IP "\fB\-\-eq"
 Do an equality comparison under the Debian version number system.  If
 the pattern or the field to be searched in is not a valid Debian
 version number, the paragraph is regarded as not matching.  As a
 special case, this is capable of comparing simple nonnegative integers
 for equality.
-.IP "\-\-lt"
+.IP "\fB\-\-lt"
 Do an strictly-less-than comparison under the Debian version number
 system.  If the pattern or the field to be searched in is not a valid
 Debian version number, the paragraph is regarded as not matching.  As
 a special case, this is capable of comparing simple nonnegative
 integers.
-.IP "\-\-le"
+.IP "\fB\-\-le"
 Do an less-than-or-equal comparison under the Debian version number
 system.  If the pattern or the field to be searched in is not a valid
 Debian version number, the paragraph is regarded as not matching.  As
 a special case, this is capable of comparing simple nonnegative
 integers.
-.IP "\-\-gt"
+.IP "\fB\-\-gt"
 Do an strictly-greater-than comparison under the Debian version number
 system.  If the pattern or the field to be searched in is not a valid
 Debian version number, the paragraph is regarded as not matching.  As
 a special case, this is capable of comparing simple nonnegative
 integers.
-.IP "\-\-ge"
+.IP "\fB\-\-ge"
 Do an greater-than-or-equal comparison under the Debian version number
 system.  If the pattern or the field to be searched in is not a valid
 Debian version number, the paragraph is regarded as not matching.  As
 a special case, this is capable of comparing simple nonnegative
 integers.
 .SS Combining filters
-.IP "\-!, \-\-not, !"
+.IP "\fB\-!\fR, \fB\-\-not\fR, \fB!"
 Match if the following filter does 
 .I not
 match.
-.IP "\-o, \-\-or"
+.IP "\fB\-o\fR, \fB\-\-or"
 Match if either one or both of the preceding and following filters
 matches.
-.IP "\-a, \-\-and"
+.IP "\fB\-a\fR, \fB\-\-and"
 Match if both the preceding and the following filter match.
-.IP "( ... )"
+.IP "\fB(\fR ... \fB)"
 Parentheses can be used for grouping.  Note that they need to be
 escaped for most shells.
 .SS Output format modifiers
-.IP "\-s FIELD,FIELD,...; \-\-show\-field=FIELD,FIELD,..."
-Show only the body of these fields from the matching paragraphs.  The
-field names must not include any colons or commas.  Commas are used to
-delimit field names in the argument to this option.  The fields are
-shown in the order given here.  See also the option \-I.
-.IP "\-I; \-\-invert\-show"
-Invert the meaning of option \-s: show only the fields that have
+.IP "\fB\-s \fIFIELD\fR,\fIFIELD\fR,... | \fB\-\-show\-field=\fIFIELD\fR,\fIFIELD\fR,..."
+Show only the body of these
+.IR FIELD s
+from the matching paragraphs.  The
+.I FIELD
+names must not include any colons or commas.  Commas are used to
+delimit field names in the argument to this option.  The
+.IR FIELD s
+are shown in the order given here.  See also the option
+.BR \-I .
+.IP "\fB\-I\fR, \fB\-\-invert\-show"
+Invert the meaning of option
+.BR \-s :
+show only the fields that have
 .B not
-been named using a \-s option.  As an artefact of the implementation,
+been named using a 
+.B \-s
+option.  As an artefact of the implementation,
 the order of the fields in the original paragraph is not preserved.
 .PP
-A FIELD specification can contain a colon. In such a case, the part
+A 
+.I FIELD
+specification can contain a colon. In such a case, the part
 up to the colon is taken as the name of the field to be shown, and the
 part after the colon is taken as the name of the field whose content
 is to be used if the field to be shown is empty.
-.IP "\-d"
+.IP "\fB\-d"
 Show only the first line of the Description field from the matching
-paragraphs.  If no "\-s" option is specified, this option also effects
-"\-s Description"; if there is a "\-s" option but it does not include
+paragraphs.  If no 
+.B \-s
+option is specified, this option also effects
+.BR "\-s Description";
+if there is a 
+.B \-s
+option but it does not include
 the Description field name, one is appended to the option.  Thus the
-Description field's location in the output is determined by the "\-s"
+Description field's location in the output is determined by the 
+.B \-s
 option, if any, the last field being the default.
-.IP "\-n, \-\-no\-field\-names"
+.IP "\fB\-n\fR, \fB\-\-no\-field\-names"
 Suppress field names when showing specified fields, only their bodies
 are shown.  Each field is printed in its original form without the
 field name, the colon after it and any whitespace preceding the start
 of the body.
-.IP "\-v, \-\-invert\-match"
+.IP "\fB\-v\fR, \fB\-\-invert\-match"
 Instead of showing all the paragraphs that match, show those paragraphs
 that do
-.I not
+.B not
 match.
-.IP "\-c, \-\-count"
-Instead of showing the paragraphs that match (or, with \-v, that don't
+.IP "\fB\-c\fR, \fB\-\-count"
+Instead of showing the paragraphs that match (or, with 
+.BR \-v ,
+that don't
 match), show the count of those paragraphs.
-.IP "\-q, \-\-quiet, \-\-silent"
+.IP "\fB\-q\fR, \fB\-\-quiet\fR, \fB\-\-silent"
 Output nothing to the standard output stream.  Instead, exit
 immediately after finding the first match.
 .SS Miscellaneous
-.IP "\-\-ignore\-parse\-errors"
+.IP "\fB\-\-ignore\-parse\-errors"
 Ignore errors in parsing input.  A paragraph which cannot be parsed
 is ignored in its entirety, and the next paragraph is assumed to start
 after the first newline since the location of the error.
-.IP "\-\-config\-file=FNAME"
+.IP "\fB\-\-config\-file=\fIFNAME"
 Use FNAME as the config file instead of the defaults.
-.IP "\-\-debug\-optparse"
+.IP "\fB\-\-debug\-optparse"
 Show how the current command line has been parsed. 
-.IP "\-l LEVEL, \-\-errorlevel=LEVEL"
-Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
-"informational" and "debug", but the last may not be available,
+.IP "\fB\-l \fILEVEL\fR, \fB\-\-errorlevel=\fILEVEL"
+Set debugging level to
+.IR LEVEL .
+.I LEVEL
+is one of 
+.BR fatal ", " important ", " informational " and " debug ,
+but the last may not be available,
 depending on the compile-time options.  These categories are given
-here in order; every message that is emitted when "fatal" is in
-effect, will be emitted in the "important" error level, and so on.
-The default is "important".
-.IP "\-V, \-\-version"
+here in order; every message that is emitted when 
+.B fatal
+is in effect, will be emitted in the 
+.B important
+error level, and so on. The default is 
+.BR important .
+.IP "\fB\-V\fR, \fB\-\-version"
 Print out version information.
-.IP "\-C, \-\-copying"
+.IP "\fB\-C\fR, \fB\-\-copying"
 Print out the copyright license.  This produces much output; be sure
 to redirect or pipe it somewhere (such as your favourite pager).
-.IP "\-h, \-\-help"
+.IP "\fB\-h\fR, \fB\-\-help"
 Print out a help summary.
 .SH EXAMPLES
 The following example queries assume that the default configuration is
@@ -389,14 +440,15 @@ same line.  For example, the following command outputs the list of
 installed packages, sorted by their Installed\-Size.
 .nf
 % grep\-status \-FStatus \-sInstalled\-Size,Package \-n \\
-    "install ok installed" | paste \-sd "  \\n" | sort \-n             
+  "install ok installed" | paste \-sd "  \\n" | sort \-n             
 .fi
 Note that there should be exactly 2 spaces in the "  \\n" string.
 .PP
 Another usual use-case is looking for packages that have another one as
 build dependency:
 .nf
-% grep\-dctrl \-s Package \-F Build\-Depends,Build\-Depends\-Indep quilt /var/lib/apt/lists/*Sources
+% grep\-dctrl \-s Package \-F Build\-Depends,Build\-Depends\-Indep \\
+  quilt /var/lib/apt/lists/*Sources
 .fi
 .PP
 These examples cover a lot of typical uses of this utility, but not
@@ -406,69 +458,89 @@ there, and if something's missing, let me know.
 In the absence of errors, the exit code 0 is used if at least one
 match was found, and the exit code 1 is used if no matches were found.
 If there were errors, the exit code is 2, with one exception.  If the
-\-q, \-\-quiet or \-\-silent options are used, the exit code 0 is used when
+.BR \-q ", " \-\-quiet " or " \-\-silent
+options are used, the exit code 
+.B 0
+is used when
 a match is found regardless of whether there have been non-fatal
 errors.
 .PP
-These messages are emitted in log levels "fatal" and "important".
+These messages are emitted in log levels 
+.BR fatal " and " important .
 Additional messages may be provided by the system libraries.
 .B This list is out of date.
-.IP "a pattern is mandatory"
+.IP "\fBa pattern is mandatory"
 You must specify a pattern to be searched for.
-.IP "a predicate is required"
+.IP "\fBa predicate is required"
 No predicate was specified, but one is required.
-.IP "cannot find enough memory"
+.IP "\fBcannot find enough memory"
 More memory was needed than was available.  This error may be
 transient, that is, if you try again, all may go well.
-.IP "cannot suppress field names when showing whole paragraphs"
-When you do not use the \-s switch,
+.IP "\fBcannot suppress field names when showing whole paragraphs"
+When you do not use the 
+.B \-s
+switch,
 .B grep\-dctrl
 just passes the matching paragraphs through, not touching them any
-way.  This means, for example, that you can only use \-n when you use
-\-s.
-.IP "inconsistent atom modifiers"
-Conflicting atom modifiers were used; for example, perhaps both \-X and
-\-e were specified for the same atom.
-.IP "missing ')' in command line"
+way.  This means, for example, that you can only use
+.B \-n
+when you use
+.BR \-s .
+.IP "\fBinconsistent atom modifiers"
+Conflicting atom modifiers were used; for example, perhaps both
+.B \-X
+and
+.B \-e
+were specified for the same atom.
+.IP "\fBmissing ')' in command line"
 There were more opening than closing parentheses in the given
 predicate.
-.IP "no such log level"
-The argument to \-l was invalid.
-.IP "predicate is too complex"
+.IP "\fBno such log level"
+The argument to
+.B \-l
+was invalid.
+.IP "\fBpredicate is too complex"
 The predicate's complexity (the number of atoms and connectives)
 exceed compile-time limits.
-.IP "read failure or out of memory"
+.IP "\fBread failure or out of memory"
 There was a problem reading the configuration file.  Maybe there was a
 transput error; maybe memory was exhausted.  This error may be
 transient, that is, if you try again, all may go well.
-.IP "syntax error in command line"
+.IP "\fBsyntax error in command line"
 There is a problem in the command line.  Look, and you shall find it.
-.IP "syntax error: need a executable name"
+.IP "\fBsyntax error: need a executable name"
 There is a problem in the configuration file.  Look, and you shall find it.
-.IP "syntax error: need an input file name"
+.IP "\fBsyntax error: need an input file name"
 There is a problem in the configuration file.  Look, and you shall find it.
-.IP "too many file names"
+.IP "\fBtoo many file names"
 The number of file names specified in the command line exceeded a
 compile-time limit.
-.IP "too many output fields"
-The argument to \-s had too many field names in it.  This number is
+.IP "\fBtoo many output fields"
+The argument to
+.B \-s
+had too many field names in it.  This number is
 limited to 256.
-.IP "unexpected ')' in command line"
+.IP "\fBunexpected ')' in command line"
 There was no opening parenthesis that would match some closing
 parenthesis in the command line.
-.IP "unexpected end of file"
+.IP "\fBunexpected end of file"
 The input file is broken: it ends before it should.
-.IP "unexpected end of line"
+.IP "\fBunexpected end of line"
 The input file is broken: a line ends before it should.
-.IP "Unexpected atom in command line. Did you forget to use a connective?"
+.IP "\fBUnexpected atom in command line. Did you forget to use a connective?"
 There was an atom on the command line where there should not be any.
-The most likely reason is that an atom modifier option (such as \-F)
+The most likely reason is that an atom modifier option (such as
+.BR \-F )
 follows directly after a closing parenthesis.  Adding a connective
-(\-\-and, \-\-or) between the parenthesis and the option is often the
+.RB ( \-\-and ", " \-\-or )
+between the parenthesis and the option is often the
 correct solution.
 .SH COMPATIBILITY
-If you use grep\-dctrl in a Debian package, you should depend on the
-grep\-dctrl package and heed the following compatibility notes:
+If you use
+.B grep\-dctrl
+in a Debian package, you should depend on the
+.B grep\-dctrl
+package and heed the following compatibility notes:
 .PP
 .IP "Always call only the \fBgrep\-dctrl\fR executable."
 Although the \fBgrep\-status\fR and \fBgrep\-available\fR symlinks are installed
@@ -477,38 +549,49 @@ for manual and not scripted use.
 .IP "Always specify an explicit file name"
 Don't rely on the implicit file name feature.  The system
 administrator may have changed the default file name.  You should
-always specify the "\-" file, too.
+always specify the 
+.B \-
+file, too.
 .IP "Not all features have been with us in every version"
 Check if any of the features you use is mentioned in the changelog.
 Use a versioned dependency on grep\-dctrl, if it is necessary.
 .SH FILES
-.IP SYSCONF/grep\-dctrl.rc
+.IP \fISYSCONF/grep\-dctrl.rc
 See the next file.
-.IP ~/.grep\-dctrlrc
+.IP \fI~/.grep\-dctrlrc
 These files are the default configuration files for
 .BR grep\-dctrl .
-The format is line-based, with `#' introducing a comment that lasts to
+The format is line-based, with
+-RB ` # '
+introducing a comment that lasts to
 the end of the line.  Each line defines one association between a
 program name and a default input file.  These two things are listed in
 the line in order, separated by whitespace.  Empty lines are ignored.
 .sp
-If the default input file name starts with two at (@) signs, one of
+If the default input file name starts with two at
+.RB ( @ )
+signs, one of
 them is ignored.  This allows specifying a file name that starts with
-an at sign.  If it starts with the string "@exec", the rest of the
+an at sign.  If it starts with the string 
+.BR @exec ,
+the rest of the
 name is interpreted as a command name that is fed to 
 .BR /bin/sh " " \-c ,
 and the standard output stream is used as the default input.
-.IP /var/lib/dpkg/available
+.IP \fI/var/lib/dpkg/available
 The default input file of
 .B grep\-available
 when the shipped configuration is in effect.
-.IP /var/lib/dpkg/status
+.IP \fI/var/lib/dpkg/status
 The default input file of
 .B grep\-status
 when the shipped configuration is in effect.
 .SH AUTHOR
 The program and this manual page were written by Antti-Juhani
-Kaijanaho <gaia@iki.fi>.  Bill Allombert <ballombe@debian.org>
+Kaijanaho 
+.RI < gaia@iki.fi >.
+Bill Allombert
+.RI < ballombe@debian.org >
 provided one of the examples in the manual page.
 .SH "SEE ALSO"
 Ian Jackson et al.: Debian Packaging Manual.  Published as the Debian
