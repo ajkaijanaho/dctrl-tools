@@ -1,8 +1,11 @@
 dctrl-tools (2.19) UNRELEASED; urgency=low
 
-  * 
+  [ David Prévot ]
+  * Stylish fix to grep-dctrl(1) manpage
+  * Makes manpages translatable (using po4a)
+  * Fix example in manpage (closes: #589827)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 06 Feb 2011 11:30:15 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 13 Mar 2011 14:26:29 +0200
 
 dctrl-tools (2.18) unstable; urgency=low
 
