@@ -104,7 +104,7 @@ install :
 				gzip -9 $(DESTDIR)$(mandir)/$$lang/man1/$$file; \
 			fi; \
 		done; \
-		if [ -e $(DESTDIR)$(mandir)$$lang/man1/grep-dctrl.1.gz ]; then \
+		if [ -e $(DESTDIR)$(mandir)/$$lang/man1/grep-dctrl.1.gz ]; then \
 			for dest in $(aliases) ; do \
 				ln -s grep-dctrl.1.gz $(DESTDIR)$(mandir)/$$lang/man1/$$dest.1.gz ; \
 			done; \
