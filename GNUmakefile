@@ -170,7 +170,7 @@ xgettext_opts=--copyright-holder="Antti-Juhani Kaijanaho" \
 	      --msgid-bugs-address="ajk@debian.org" -kN_ -k_
 
 po/%.po : po/dctrl-tools.pot
-	msgmerge -q -U --backup=existing $@ $^
+	msgmerge --previous -q -U --backup=existing $@ $^
 
 po/%.mo : po/%.po
 	msgfmt -c --statistics -o $@ $< 
