@@ -175,7 +175,7 @@ po/%.po : po/dctrl-tools.pot
 po/%.mo : po/%.po
 	msgfmt -c --statistics -o $@ $< 
 
-po/dctrl-tools.pot : $(src)
+po/dctrl-tools.pot : $(src) lib/msg.h
 	xgettext $(xgettext_opts) -d grep-dctrl $^
 	mv grep-dctrl.po $@
 
