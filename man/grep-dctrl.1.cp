@@ -21,7 +21,7 @@ grep\-dctrl, grep\-status, grep\-available, grep\-aptavail, grep\-debtags \- gre
 .I command
 .BR --copying "|" -C " | " --help "|" -h " | " --version "|" -V 
 .sp
-.IR command " [" options "] " predicate " [ " file "... ]"
+.IR command " [" options "] " filter " [ " file "... ]"
 .sp
 where
 .I command
@@ -33,42 +33,65 @@ is one of
 and
 .BR grep\-debtags .
 .SH DESCRIPTION
-The grep\-dctrl program can answer such questions as 
+The
+.B grep\-dctrl
+program can answer such questions as 
 .IR "What is the Debian package foo?" , 
 .IR "Which version of the Debian package bar is now current?" ,
 .IR "Which Debian packages does John Doe maintain?" ,
 .I  "Which Debian packages are somehow related to the Scheme"
-.IR " programming language?" ,
+.IR "programming language?" ,
 and with some help,
 .IR "Who maintain the essential packages of a Debian system?" ,
 given a useful input file.
 .PP
 The programs
-.BR grep\-available,
+.BR grep\-available ,
 .BR grep\-status ,
-.B grep\-aptavail 
+.B grep\-aptavail
 and
 .B grep\-debtags
 are aliases of (actually, symbolic links to)
 .BR grep\-dctrl .
 In the shipped configuration, these aliases use as their default input
 the
-.BR dpkg (8)
-available and status files, the apt\-cache dumpavail output
-and the debtags dumpavail output,
-respectively.
+.BR dpkg (1)
+.I available
+and
+.I status
+files, the
+.B apt\-cache dumpavail
+output and the
+.B debtags dumpavail
+output, respectively.
 .PP
 .B grep\-dctrl
-is a specialised grep program that is meant for processing any file
-which has the general format of a Debian package control file, as
-described in the Debian Packaging Manual.  These include the dpkg
-available file, the dpkg status file, and the Packages files on a
+is a specialised
+.B grep
+program that is meant for processing any file
+which has the general format of a Debian package
+.I control
+file, as
+described in the Debian Policy.  These include the
+.B dpkg
+.I available
+file, the
+.B dpkg
+.I status
+file, and the
+.I Packages
+files on a
 distribution medium (such as a Debian CD-ROM or an FTP site carrying
 Debian).
 .PP
-You must give a filter expression on the command line.  The filter
+You must give a
+.I filter
+expression on the command line.  The
+.I filter
 defines which kind of paragraphs (aka package records) are output.  A
-simple filter is a search pattern along with any options that modify
+simple 
+.I filter
+is a search pattern along with any options that modify
 it.  Possible modifiers are
 .BR \-\-eregex ", " \-\-field ", " \-\-ignore\-case ", " \-\-regex
 and
@@ -80,7 +103,10 @@ suitable modifiers, this can be changed: the search can be
 case-insensitive and the pattern can be seen as an extended POSIX
 regular expression. 
 .PP
-Filters can be combined to form more complex filters using the connectives
+.IR Filter s
+can be combined to form more complex
+.IR filter s
+using the connectives
 .BR \-\-and ", " \-\-or " and " \-\-not .
 Parentheses (which usually
 need to be escaped for the shell) can be used for grouping.
@@ -90,18 +116,34 @@ output; specific fields can be selected for output with the
 .B \-s
 option.
 .PP
-After the filter expression comes zero or more file names.  If no file names
-are specified, the file name is searched in configuration files.  The
-input file from the first program name \- input file association with
+After the 
+.I filter
+expression comes zero or more 
+.I file
+names.  If no 
+.I file
+names
+are specified, the 
+.I file
+name is searched in configuration files.  The
+input
+.I file
+in association with
 the correct program name is used.  The program names are matched with
 the base form of the name of the current program (the 0'th command
-line argument, if you will).  The file name
+line argument, if you will).  The 
+.I file
+name
 .B \-
 is taken to mean the
-standard input stream.  The files are searched in order but
+standard input stream.  The 
+.IR file s
+are searched in order but
 separately; they are
 .B not
-concatenated together.  In other words, the end of a file always
+concatenated together.  In other words, the end of a 
+.I file
+always
 implies the end of the current paragraph.
 .PP
 There is one exception to the above: if the program name is
@@ -110,34 +152,41 @@ the default input source is always standard input; this cannot be
 overridden by the configuration file.
 .SH OPTIONS
 .SS Specifying the search pattern
-.IP "\fB\-\-pattern=\fIPATTERN"
+.IP "\fB\-\-pattern=\fIpattern"
 Specify a
-.I PATTERN
+.I pattern
 to be searched. This switch is not generally needed, as the
-.I PATTERN
+.I pattern
 can be given by itself. However,
-.IR PATTERN s
+.IR pattern s
 that start
 with a dash
 .RB ( - )
 must be given using this switch, so that they wouldn't
 be mistaken for switches.
 .SS Modifiers of simple filters
-.IP "\fB\-F \fIFIELD\fR,\fIFIELD\fR,... | \fB\-\-field=\fIFIELD\fR,\fIFIELD\fR,..."
+.IP "\fB\-F \fIfield\fR,\fIfield\fR, ... | \fB\-\-field=\fIfield\fR,\fIfield\fR, ..."
 Restrict pattern matching to the 
-.IR FIELD s
-given.  Multiple field names
-in one 
+.IR field s
+given.  Multiple
+.I field
+names in one 
 .B -F
 option and multiple 
 .B -F
-options in one simple filter are
+options in one simple 
+.I filter 
+are
 allowed. The search named by the filter will be performed
-among all the fields named, and as soon as any one of them matches, the
-whole simple filter is considered matching.
+among all the
+.IR field s
+named, and as soon as any one of them matches, the
+whole simple 
+.I filter
+is considered matching.
 .PP
 A 
-.I FIELD 
+.I field
 specification can contain a colon
 .RB ( : ).
 In such a case, the part
@@ -154,7 +203,7 @@ Shorthand for
 Regard the pattern of the current simple filter as an extended
 POSIX regular expression
 .IP "\fB\-r\fR, \fB\-\-regex"
-The pattern of the current simple filter is a standard POSIX regular expression.
+Regard the pattern of the current simple filter as a standard POSIX regular expression.
 .IP "\fB\-i\fR, \fB\-\-ignore\-case"
 Ignore case when looking for a match in the current simple filter.
 .IP "\fB\-X\fR, \fB\-\-exact\-match"
@@ -163,7 +212,7 @@ simple filter.
 .IP "\fB\-w\fR, \fB\-\-whole\-pkg"
 Do an extended regular expression match on whole package names,
 assuming the syntax of inter-package relationship fields such as
-.BR Depends , Recommends ,...
+.BR Depends , Recommends ", ..."
 When this flag is given you should not worry
 about sub-package names such as "libpcre3" also matching
 "libpcre3-dev". This flag implies (and is incompatible with)
@@ -201,7 +250,7 @@ integers.
 .SS Combining filters
 .IP "\fB\-!\fR, \fB\-\-not\fR, \fB!"
 Match if the following filter does 
-.I not
+.B not
 match.
 .IP "\fB\-o\fR, \fB\-\-or"
 Match if either one or both of the preceding and following filters
@@ -212,14 +261,16 @@ Match if both the preceding and the following filter match.
 Parentheses can be used for grouping.  Note that they need to be
 escaped for most shells.
 .SS Output format modifiers
-.IP "\fB\-s \fIFIELD\fR,\fIFIELD\fR,... | \fB\-\-show\-field=\fIFIELD\fR,\fIFIELD\fR,..."
+.IP "\fB\-s \fIfield\fR,\fIfield\fR, ... | \fB\-\-show\-field=\fIfield\fR,\fIfield\fR, ..."
 Show only the body of these
-.IR FIELD s
+.IR field s
 from the matching paragraphs.  The
-.I FIELD
+.I field
 names must not include any colons or commas.  Commas are used to
-delimit field names in the argument to this option.  The
-.IR FIELD s
+delimit
+.I field
+names in the argument to this option.  The
+.IR field s
 are shown in the order given here.  See also the option
 .BR \-I .
 .IP "\fB\-I\fR, \fB\-\-invert\-show"
@@ -233,13 +284,15 @@ option.  As an artefact of the implementation,
 the order of the fields in the original paragraph is not preserved.
 .PP
 A 
-.I FIELD
+.I field
 specification can contain a colon. In such a case, the part
 up to the colon is taken as the name of the field to be shown, and the
 part after the colon is taken as the name of the field whose content
 is to be used if the field to be shown is empty.
 .IP "\fB\-d"
-Show only the first line of the Description field from the matching
+Show only the first line of the
+.B Description
+field from the matching
 paragraphs.  If no 
 .B \-s
 option is specified, this option also effects
@@ -247,8 +300,11 @@ option is specified, this option also effects
 if there is a 
 .B \-s
 option but it does not include
-the Description field name, one is appended to the option.  Thus the
-Description field's location in the output is determined by the 
+the
+.B Description
+field name, one is appended to the option.  Thus the
+.B Description
+field's location in the output is determined by the 
 .B \-s
 option, if any, the last field being the default.
 .IP "\fB\-n\fR, \fB\-\-no\-field\-names"
@@ -274,14 +330,16 @@ immediately after finding the first match.
 Ignore errors in parsing input.  A paragraph which cannot be parsed
 is ignored in its entirety, and the next paragraph is assumed to start
 after the first newline since the location of the error.
-.IP "\fB\-\-config\-file=\fIFNAME"
-Use FNAME as the config file instead of the defaults.
+.IP "\fB\-\-config\-file=\fIfilename"
+Use
+.I filename
+as the config file instead of the defaults.
 .IP "\fB\-\-debug\-optparse"
 Show how the current command line has been parsed. 
-.IP "\fB\-l \fILEVEL\fR, \fB\-\-errorlevel=\fILEVEL"
-Set debugging level to
-.IR LEVEL .
-.I LEVEL
+.IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
+Set log level to
+.IR level .
+.I level
 is one of 
 .BR fatal ", " important ", " informational " and " debug ,
 but the last may not be available,
@@ -319,8 +377,10 @@ and to get its available record, use
 % grep\-available \-PX mixal
 .fi
 In fact, you can ask for the record of the "mixal" package
-from any Debian control file.  Say, you have the Debian 2.2
-CD-ROM's Packages file in the current directory; now you
+from any Debian control file.  Say, you have the Debian 6.0
+CD-ROM's
+.I Packages
+file in the current directory; now you
 can do a
 .nf
 % grep\-dctrl \-PX mixal Packages
@@ -371,7 +431,11 @@ Here's one thing neither
 .B dpkg
 nor
 .B apt\-cache
-do.  Search for a string in the whole status or available file (or
+do.  Search for a string in the whole
+.I status
+or
+.I available
+file (or
 any Debian control file, for that matter) and print out all package
 records where we have a match.  Try
 .nf
@@ -404,7 +468,9 @@ If you want to see the packages' names, too, use
 % grep\-available \-F Maintainer \-s Package,Depends \\
   'ajk@debian.org'
 .fi
-Note that there must be no spaces in the argument to the \-s switch.
+Note that there must be no spaces in the argument to the
+.B \-s
+switch.
 .PP
 More complex queries are also possible.  For example, to see the list of packages
 maintained by me and depending on libc6, do
@@ -412,12 +478,14 @@ maintained by me and depending on libc6, do
 % grep\-available \-F Maintainer 'ajk@debian.org' \\
    \-a \-F Depends libc6 \-s Package,Depends
 .fi
-Remember that you can use other Unix filters to help you, too.  Ever
+Remember that you can use other UNIX filters to help you, too.  Ever
 wondered, who's the most active Debian developer based on the number
 of source packages being maintained?  Easy.  You just need to have a
-copy of the most recent Sources file from any Debian mirror.
+copy of the most recent
+.I Sources
+file from any Debian mirror.
 .nf
-% grep\-dctrl \-n \-s Maintainer '' Sources | sort |
+% grep\-dctrl \-n \-s Maintainer '' Sources | sort | \\
   uniq \-c | sort \-nr
 .fi
 This example shows a neat trick: if you want to selectively
@@ -428,16 +496,17 @@ packages, just supply an empty pattern.
 The term "bogopackage" means the count of the packages that a Debian
 developer maintains.  To get the bogopackage count for the maintainer
 of
-.BR grep\-dctrl ,
+.BR dctrl\-tools ,
 say
 .nf
 % grep\-available \-c \-FMaintainer \\
-  "`grep\-available \-sMaintainer \-n \-PX grep\-dctrl`"
+  "`grep\-available \-sMaintainer \-n \-PX dctrl\-tools`"
 .fi
 .PP
 Sometimes it is useful to output the data of several fields on the
 same line.  For example, the following command outputs the list of
-installed packages, sorted by their Installed\-Size.
+installed packages, sorted by their
+.BR Installed\-Size .
 .nf
 % grep\-status \-FStatus \-sInstalled\-Size,Package \-n \\
   "install ok installed" -a -FInstalled-Size --gt 0 \\
@@ -456,9 +525,15 @@ These examples cover a lot of typical uses of this utility, but not
 all possible uses.  Use your imagination!  The building blocks are
 there, and if something's missing, let me know.
 .SH DIAGNOSTICS
-In the absence of errors, the exit code 0 is used if at least one
-match was found, and the exit code 1 is used if no matches were found.
-If there were errors, the exit code is 2, with one exception.  If the
+In the absence of errors, the exit code
+.B 0
+is used if at least one
+match was found, and the exit code
+.B 1
+is used if no matches were found.
+If there were errors, the exit code is
+.BR 2 ,
+with one exception.  If the
 .BR \-q ", " \-\-quiet " or " \-\-silent
 options are used, the exit code 
 .B 0
@@ -469,8 +544,8 @@ errors.
 These messages are emitted in log levels 
 .BR fatal " and " important .
 Additional messages may be provided by the system libraries.
-.B This list is out of date.
-.IP "\fBa pattern is mandatory"
+.B This list is incomplete.
+.IP "\fBA pattern is mandatory"
 You must specify a pattern to be searched for.
 .IP "\fBa predicate is required"
 No predicate was specified, but one is required.
@@ -507,8 +582,6 @@ exceed compile-time limits.
 There was a problem reading the configuration file.  Maybe there was a
 transput error; maybe memory was exhausted.  This error may be
 transient, that is, if you try again, all may go well.
-.IP "\fBsyntax error in command line"
-There is a problem in the command line.  Look, and you shall find it.
 .IP "\fBsyntax error: need a executable name"
 There is a problem in the configuration file.  Look, and you shall find it.
 .IP "\fBsyntax error: need an input file name"
@@ -524,26 +597,14 @@ limited to 256.
 .IP "\fBunexpected ')' in command line"
 There was no opening parenthesis that would match some closing
 parenthesis in the command line.
-.IP "\fBunexpected end of file"
-The input file is broken: it ends before it should.
-.IP "\fBunexpected end of line"
-The input file is broken: a line ends before it should.
-.IP "\fBUnexpected atom in command line. Did you forget to use a connective?"
-There was an atom on the command line where there should not be any.
-The most likely reason is that an atom modifier option (such as
-.BR \-F )
-follows directly after a closing parenthesis.  Adding a connective
-.RB ( \-\-and ", " \-\-or )
-between the parenthesis and the option is often the
-correct solution.
 .SH COMPATIBILITY
 If you use
 .B grep\-dctrl
-in a Debian package, you should depend on the
-.B grep\-dctrl
+in a Debian package, it should depend on the
+.B dctrl\-tools
 package and heed the following compatibility notes:
 .PP
-.IP "Always call only the \fBgrep\-dctrl\fR executable."
+.IP "Always call only the \fBgrep\-dctrl\fR executable"
 Although the \fBgrep\-status\fR and \fBgrep\-available\fR symlinks are installed
 by default, this may change in the future.  Those symlinks are meant
 for manual and not scripted use.
@@ -555,7 +616,9 @@ always specify the
 file, too.
 .IP "Not all features have been with us in every version"
 Check if any of the features you use is mentioned in the changelog.
-Use a versioned dependency on grep\-dctrl, if it is necessary.
+Use a versioned dependency on
+.BR dctrl\-tools ,
+if it is necessary.
 .SH FILES
 .IP \fISYSCONF/grep\-dctrl.rc
 See the next file.
@@ -563,7 +626,7 @@ See the next file.
 These files are the default configuration files for
 .BR grep\-dctrl .
 The format is line-based, with
--RB ` # '
+.RB ` # '
 introducing a comment that lasts to
 the end of the line.  Each line defines one association between a
 program name and a default input file.  These two things are listed in
@@ -595,9 +658,10 @@ Bill Allombert
 .RI < ballombe@debian.org >
 provided one of the examples in the manual page.
 .SH "SEE ALSO"
-Ian Jackson et al.: Debian Packaging Manual.  Published as the Debian
-package packaging\-manual.  Also available in the Debian website.  The
-Debian project, 2003.
+Debian Policy Manual.  Published as the Debian
+package
+.BR debian\-policy .
+Also available in the Debian website.
 .PP
 .BR ara (1),
 .BR apt\-cache (1),

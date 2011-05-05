@@ -97,30 +97,35 @@ If all requested columns have a specified width,
 will produce output immediately, not waiting for the whole input to be
 read in.
 .SH OPTIONS
-.TP
-.BI \-d " DELIMITER, " \-\-delimiter= DELIMITER
+.IP "\fB\-d \fIdelimiter\fR, \fB\-\-delimiter=\fIdelimiter"
 Instead of drawing nice borders to the table, use the specified
-delimiter string to delimit columns in a row.
-.TP
-.BR \-H ", " \-\-no\-heading
+.I delimiter
+string to delimit columns in a row.
+.IP "\fB\-H\fR, \fB\-\-no\-heading
 Do not print a table heading (column titles).
-.TP
-.BI \-l " LEVEL, " \-\-errorlevel= LEVEL
-Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
-"informational" and "debug", but the last may not be available,
+.IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
+Set log level to
+.IR level .
+.I level
+is one of
+.BR fatal ", " important ", " informational " and " debug ,
+but the last may not be available,
 depending on the compile-time options.  These categories are given
-here in order; every message that is emitted when "fatal" is in
-effect, will be emitted in the "important" error level, and so on.
-The default is "important".
+here in order; every message that is emitted when
+.B fatal
+is in effect, will be emitted in the
+.B important
+error level, and so on. The default is
+.BR important .
 .TP
-.BI \-V ", " \-\-version
+.BR \-V ", " \-\-version
 Print out version information.
 .TP
-.BI \-C ", " \-\-copying
+.BR \-C ", " \-\-copying
 Print out the copyright license.  This produces much output; be sure
 to redirect or pipe it somewhere (such as your favourite pager).
 .TP
-.BI \-h ", " \-\-help
+.BR \-h ", " \-\-help
 Print out a help summary.
 .SH OPERANDS
 .B tbl\-dctrl
@@ -137,7 +142,9 @@ alone had been named, that is, input is read from the standard input
 stream.
 .SH STDIN
 The standard input stream may be used as input as specified above in
-the OPERANDS section.
+the
+.B OPERANDS
+section.
 .SH "INPUT FILES"
 All input to
 .B tbl\-dctrl
@@ -168,7 +175,7 @@ The standard locale environment, specifically its character set
 setting, affects the interpretation of input and output as character
 streams.
 .SH "ASYNCHRONOUS EVENTS"
-Standard Unix signals have their usual meaning.
+Standard UNIX signals have their usual meaning.
 .SH STDOUT
 All output is sent to the standard output stream.
 .
@@ -176,13 +183,17 @@ The output is a tabular representation of the input database restricted
 to the specified fields.  Logically, the output is a table; when the
 .B \-d
 option is used, this table is represented simply by separating columns
-in each row by the specified delimiter; when the option is not used, a
+in each row by the specified
+.IR delimiter ;
+when the option is not used, a
 frame is drawn around the table.  The order of the columns is the same
 as the order of the column specifications on the command line.
 .SH "OUTPUT FILES"
 There are no output files.
 .SH "EXIT STATUS"
-This utility exits with 0 when successful.  It uses a nonzero exit
+This utility exits with
+.B 0
+when successful.  It uses a nonzero exit
 code inconsistently when an error is noticed (this is a bug).
 .SH "CONSEQUENCES OF ERRORS"
 In case of errors in the input, the output will be partially or
@@ -193,9 +204,13 @@ The following command line pipe outputs a table of all packages, with
 their maintainer data, sorted by the maintainer data, that have no
 content:
 .nf
-% grep\-available \-FInstalled\-Size \-\-eq 0 | sort\-dctrl \-kMaintainer \- |
-  tbl\-dctrl \-cPackage \-cMaintainer
+% grep\-available \-FInstalled\-Size \-\-eq 0 | sort\-dctrl \-kMaintainer \- \\
+  | tbl\-dctrl \-cPackage \-cMaintainer
 .fi
+.SH AUTHOR
+The
+.B tbl\-dctrl
+program and this manual page were written by Antti-Juhani Kaijanaho.
 .SH "SEE ALSO"
 .BR ara (1),
 .BR apt\-cache (1),
@@ -204,8 +219,4 @@ content:
 .BR dpkg\-query (1),
 .BR grep\-dctrl (1),
 .BR sort\-dctrl (1)
-.SH AUTHOR
-The
-.B tbl\-dctrl
-program and this manual page were written by Antti-Juhani Kaijanaho.
 

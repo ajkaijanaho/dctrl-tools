@@ -31,13 +31,22 @@ The
 program sorts Debian control files according to specified criteria.
 .PP
 A Debian control (dctrl) file is a semistructured single-table
-database stored in a machine-parseable text file.  Such a database
+database stored in a machine-parseable text file.
+.
+Such a database
 consists of a set of records; each record is a mapping from field
-names to field content.  Textually, records are separated by empty
+names to field content.
+.
+Textually, records are separated by empty
 lines, while each field is encoded as one or more nonempty lines
-inside a record.  A field starts with its name, followed by a colon,
-followed by the field content.  The colon must reside on the first
+inside a record.
+.
+A field starts with its name, followed by a colon,
+followed by the field content.
+.
+The colon must reside on the first
 line of the field, and the first line must start with no whitespace.
+.
 Subsequent lines, in contrast, always start with linear whitespace
 (one or more space or tab characters).
 .PP
@@ -54,7 +63,8 @@ conform, and equal to any other nonconforming field content.  The
 .B sort\-dctrl
 program assumes all fields are string fields unless told otherwise.
 .PP
-You can specify arbitrary number of keys for sorting, using the \-k
+You can specify arbitrary number of keys for sorting, using the
+.B \-k
 option.  The keys are interpreted in a descending order of priority:
 the first key specified is primary, the second key specified is
 secondary, and so on.  If two records compare equal under the primary
@@ -62,9 +72,11 @@ key, then they are compared under the secondary key, and so on.  If no
 keys are specified, a default key is assumed (the "Package" field with
 no modifiers).
 .SH OPTIONS
-.IP "-k KEYSPEC, --key-spec=KEYSPEC"
+.IP "\fB\-k \fIkeyspec\fR, \fB\-\-key-spec=\fIkeyspec"
 Specify one or more keys for sorting.  You may specify this option any
-number of times.  The KEYSPEC argument consists of a comma-separated
+number of times.  The
+.I keyspec
+argument consists of a comma-separated
 list of key specifications.  Each key specification consists of the
 name of the field that serves as the key, optionally followed by a
 colon and key modifiers.  The following key modifiers are supported:
@@ -80,47 +92,70 @@ Treat this field as a version number field.
 Treat this field as numeric, which currently is synonymous with 
 .BR v .
 .RE
-.IP "\-q, \-\-quiet, \-\-silent"
+.IP "\fB\-q\fR, \fB\-\-quiet\fR, \fB\-\-silent"
 Output nothing to the standard output stream.  Instead, exit
 immediately after finding the first match.
-.IP "\-l LEVEL, \-\-errorlevel=LEVEL"
-Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
-"informational" and "debug", but the last may not be available,
+.IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
+Set log level to
+.IR level .
+.I level
+is one of
+.BR fatal ", " important ", " informational " and " debug ,
+but the last may not be available,
 depending on the compile-time options.  These categories are given
-here in order; every message that is emitted when "fatal" is in
-effect, will be emitted in the "important" error level, and so on.
-The default is "important".
-.IP "\-V, \-\-version"
+here in order; every message that is emitted when
+.B fatal
+is in effect, will be emitted in the
+.B important
+error level, and so on. The default is
+.BR important .
+.IP "\fB\-V\fR, \fB\-\-version"
 Print out version information.
-.IP "\-C, \-\-copying"
+.IP "\fB\-C\fR, \fB\-\-copying"
 Print out the copyright license.  This produces much output; be sure
 to redirect or pipe it somewhere (such as your favourite pager).
-.IP "\-h, \-\-help"
+.IP "\fB\-h\fR, \fB\-\-help"
 Print out a help summary.
 .SH EXAMPLES
 Here are some sample invocations of the program:
 .IP "sort\-dctrl /var/lib/dpkg/available"
-Output the dpkg available file sorted by the package name.
+Output the
+.B dpkg
+.I available
+file sorted by the package name.
 .IP "sort\-dctrl -k Version:v /var/lib/dpkg/available"
-Output the dpkg available file sorted in ascending order of
+Output the
+.B dpkg
+.I available
+file sorted in ascending order of
 version numbers.
 .IP "sort\-dctrl -k Version:vr /var/lib/dpkg/available"
-Output the dpkg available file sorted in descending order of
+Output the
+.B dpkg
+.I available
+file sorted in descending order of
 version numbers.
 .IP "sort\-dctrl -k Package,Version:v /var/lib/dpkg/available"
-Output the dpkg available file sorted primarily in ascending order of
+Output the
+.B dpkg
+.I available
+file sorted primarily in ascending order of
 package names and secondarily in descending order of version numbers.
 .IP "sort\-dctrl -k Installed-Size:n,Size:nr /var/lib/dpkg/available"
-Output the dpkg available file sorted primarily in ascending order of
+Output the
+.B dpkg
+.I available
+file sorted primarily in ascending order of
 installation sizes and secondarily in descending order of package
 sizes.
 .SH AUTHOR
 The program and this manual page were written by Antti-Juhani
 Kaijanaho <ajk@debian.org>.
 .SH "SEE ALSO"
-Ian Jackson et al.: Debian Policy Manual.  Published as the Debian
-package debian\-policy.  Also available in the Debian website.  The
-Debian project, 2004.
+Debian Policy Manual.  Published as the Debian
+package
+.BR debian\-policy .
+Also available in the Debian website.
 .PP
 .BR grep-dctrl (1)
 \" Local variables:

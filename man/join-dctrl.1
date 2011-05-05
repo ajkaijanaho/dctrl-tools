@@ -36,8 +36,12 @@ file format.
 .PP
 A
 .I "join field"
-must be specified using either the switches \-1 and \-2 or the switch
-\-j.
+must be specified using either the switches 
+.B \-1
+and
+.B \-2
+or the switch
+.BR \-j .
 .
 Conceptually, the program creates all ordered pairs of records
 that can be formed by having a record from the first file as the first
@@ -54,24 +58,31 @@ The
 .BR sort\-dctrl (1)
 program can be used to make it so.
 .SH OPTIONS
-.TP
-.BI \-1 " FIELD, " \-\-1st\-join\-field= FIELD
-Specify the join field of the first input file.
-.TP
-.BI \-2 " FIELD, " \-\-2nd\-join\-field= FIELD
-Specify the join field of the second input file.
-.TP
-.BI \-j " FIELD, " \-\-join\-field= FIELD
-Specify a common join field for all files.
-.TP
-.BI \-a " FIELDNO," \-\-unpairable\-from= FIELDNO
-Specify that unmatched paragraphs from the first (if 1 is given) or
-the second (if 2 is given) file are printed.
-.TP
-.BI \-o " FIELDSPEC, " \-\-output\-fields= FIELDSPEC
+.IP "\fB\-1 \fIfield\fR, \fB\-\-1st\-join\-field=\fIfield"
+Specify the join
+.I field
+of the first input file.
+.IP "\fB\-2 \fIfield\fR, \fB\-\-2nd\-join\-field=\fIfield"
+Specify the join
+.I field
+of the second input file.
+.IP "\fB\-j \fIfield\fR, \fB\-\-join\-field=\fIfield"
+Specify a common join
+.I field
+for all files.
+.IP "\fB\-a \fIfileno\fR, \fB\-\-unpairable\-from=\fIfileno"
+Specify that unmatched paragraphs from the first (if
+.B 1
+is given) or
+the second (if
+.B 2
+is given) file are printed.
+.IP "\fB\-o \fIfieldspec\fR, \fB\-\-output\-fields=\fIfieldspec"
 Specify which fields are included in the output.
 .
-Fields are separated by commas (more than one \-o option can be used,
+Fields are separated by commas (more than one
+.B \-o
+option can be used,
 too).
 .
 Each field is specified in the format
@@ -79,7 +90,9 @@ Each field is specified in the format
 in which
 .I fileno
 is the ordinal number of the input file from which the field is drawn
-(either 1 or 2), and
+(either
+.BR 1 " or " 2 ),
+and
 .I field
 gives the name of the field to use.
 .
@@ -108,25 +121,33 @@ field of the first input file, and the third field should be
 drawing its data from the field with the same name in the second input
 file, and these are the only fields in an output record.
 .IP
-If no \-o option is given, all fields of all the records being joined
+If no
+.B \-o
+option is given, all fields of all the records being joined
 are included in the output.
-.TP
-.BI \-l " LEVEL, " \-\-errorlevel= LEVEL
-Set debugging level to LEVEL.  LEVEL is one of "fatal", "important",
-"informational" and "debug", but the last may not be available,
+.IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
+Set log level to
+.IR level .
+.I level
+is one of
+.BR fatal ", " important ", " informational " and " debug ,
+but the last may not be available,
 depending on the compile-time options.  These categories are given
-here in order; every message that is emitted when "fatal" is in
-effect, will be emitted in the "important" error level, and so on.
-The default is "important".
+here in order; every message that is emitted when
+.B fatal
+is in effect, will be emitted in the
+.B important
+error level, and so on. The default is
+.BR important .
 .TP
-.BI \-V ", " \-\-version
+.BR \-V ", " \-\-version
 Print out version information.
 .TP
-.BI \-C ", " \-\-copying
+.BR \-C ", " \-\-copying
 Print out the copyright license.  This produces much output; be sure
 to redirect or pipe it somewhere (such as your favourite pager).
 .TP
-.BI \-h ", " \-\-help
+.BR \-h ", " \-\-help
 Print out a help summary.
 .SH OPERANDS
 .B join\-dctrl
@@ -140,16 +161,18 @@ represents the program's standard input stream.
 Currently, exactly two files must be named.
 .SH STDIN
 The standard input stream may be used as input as specified above in
-the OPERANDS section.
+the
+.B OPERANDS
+section.
 .SH "INPUT FILES"
 All input to
 .B join\-dctrl
 is in the format of a Debian control file.
 .PP
-A Debian control (dctrl) file is a single table of a semistructured
+A Debian control (dctrl) file is a semistructured single-table
 database stored in a machine-parseable text file.
 .
-Such a table consists of a set of records; each record is a mapping
+Such a database consists of a set of records; each record is a mapping
 from field names to field content.
 .
 Textually, records are separated by empty lines, while each field is
@@ -170,7 +193,7 @@ The standard locale environment, specifically its character set
 setting, affects the interpretation of input and output as character
 streams.
 .SH "ASYNCHRONOUS EVENTS"
-Standard Unix signals have their usual meaning.
+Standard UNIX signals have their usual meaning.
 .SH STDOUT
 All output is sent to the standard output stream.
 .
@@ -184,7 +207,9 @@ field is included in the output.
 .SH "OUTPUT FILES"
 There are no output files.
 .SH "EXIT STATUS"
-This utility exits with 0 when successful.  It uses a nonzero exit
+This utility exits with
+.B 0
+when successful.  It uses a nonzero exit
 code inconsistently when an error is noticed (this is a bug).
 .SH "CONSEQUENCES OF ERRORS"
 In case of errors in the input, the output will be partially or
@@ -192,17 +217,19 @@ completely garbage.  In case of errors in invocation, the program will
 refuse to function.
 .SH "EXAMPLES"
 Suppose that a file containing data about binary packages for the
-AMD64 architecture contained in the Debian etch (4.0) release, section
-main, is in the current directory and named Packages.
+AMD64 architecture contained in the Debian squeeze (6.0) release, section
+.BR main ,
+is in the current directory and named
+.IR Packages .
 .
 Suppose that we are currently on a Debian system.
 .
 Suppose further that the current directory does not contain files named
-stat and pkg.
+.IR stat " and " pkg .
 .
 The following commands gives, for each package currently installed and
-available in Debian etch (4.0), its currently installed version (as
-Old-Version) and the version in etch (as New-Version):
+available in Debian squeeze (6.0), its currently installed version (as
+Old-Version) and the version in squeeze (as New-Version):
 .nf
 $ sort-dctrl -kPackage /var/lib/dpkg/status > stat
 $ sort-dctrl -kPackage Packages > pkg
@@ -210,12 +237,12 @@ $ join-dctrl -j Package \\
   -o 0,1.Version:Old-Version,2.Version:New-Version \\
   stat pkg
 .fi
-.SH "SEE ALSO"
-.BR grep\-dctrl (1),
-.BR sort\-dctrl (1),
-.BR tbl\-dctrl (1)
 .SH AUTHOR
 The
 .B join\-dctrl
 program and this manual page were written by Antti-Juhani Kaijanaho.
+.SH "SEE ALSO"
+.BR grep\-dctrl (1),
+.BR sort\-dctrl (1),
+.BR tbl\-dctrl (1)
 
