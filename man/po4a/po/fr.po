@@ -1,0 +1,2810 @@
+# Translation of dctrl-tools manual pages to French
+# Copyright (C) 2011 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the dctrl-tools package.
+#
+# David Prévot <david@tilapin.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"POT-Creation-Date: 2011-05-05 11:44-0400\n"
+"PO-Revision-Date: 2011-05-05 11:43-0400\n"
+"Last-Translator: David Prévot <david@tilapin.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. type: TH
+#: man/grep-dctrl.1.cp:1
+#, no-wrap
+msgid "GREP-DCTRL"
+msgstr "GREP-DCTRL"
+
+#. type: TH
+#: man/grep-dctrl.1.cp:1
+#, no-wrap
+msgid "2007-10-27"
+msgstr "2007-10-27"
+
+#. type: TH
+#: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1 man/sync-available.8:1
+#: man/tbl-dctrl.1:1
+#, no-wrap
+msgid "Debian Project"
+msgstr "Projet Debian"
+
+#. type: TH
+#: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1
+#, no-wrap
+msgid "Debian user's manual"
+msgstr "Manuel de l'utilisateur Debian"
+
+#.  Copyright (C) 2005, 2010  Antti-Juhani Kaijanaho <ajk@debian.org>
+#.       This program is free software; you can redistribute it and/or modify
+#.       it under the terms of the GNU General Public License as published by
+#.       the Free Software Foundation; either version 2 of the License, or
+#.       (at your option) any later version.
+#.       This program is distributed in the hope that it will be useful,
+#.       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#.       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#.       GNU General Public License for more details. 
+#.       You should have received a copy of the GNU General Public License
+#.       along with this program; see the file COPYING.  If not, write to
+#.       the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+#.       Boston, MA 02111-1307, USA.
+#. type: SH
+#: man/grep-dctrl.1.cp:18 man/join-dctrl.1:17 man/sort-dctrl.1:17
+#: man/sync-available.8:17 man/tbl-dctrl.1:17
+#, no-wrap
+msgid "NAME"
+msgstr "NOM"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:20
+msgid ""
+"grep-dctrl, grep-status, grep-available, grep-aptavail, grep-debtags - grep "
+"Debian control files"
+msgstr ""
+"grep-dctrl, grep-status, grep-available, grep-aptavail, grep-debtags - "
+"Rechercher dans des fichiers de contrôle Debian"
+
+#. type: SH
+#: man/grep-dctrl.1.cp:20 man/join-dctrl.1:19 man/sort-dctrl.1:19
+#: man/sync-available.8:19 man/tbl-dctrl.1:19
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "SYNOPSIS"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:23
+msgid "I<command> B<--copying>|B<-C> | B<--help>|B<-h> | B<--version>|B<-V>"
+msgstr "I<commande> B<--copying>|B<-C> | B<--help>|B<-h> | B<--version>|B<-V>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:25
+msgid "I<command> [I<options>] I<filter> [ I<file>... ]"
+msgstr "I<commande> [I<options>] I<filtre> [ I<fichier>... ]"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:35
+msgid ""
+"where I<command> is one of B<grep-dctrl>, B<grep-status>, B<grep-available>, "
+"B<grep-aptavail> and B<grep-debtags>."
+msgstr ""
+"où I<commande> est B<grep-dctrl>, B<grep-status>, B<grep-available>, B<grep-"
+"aptavail> ou B<grep-debtags>."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:35 man/join-dctrl.1:32 man/sort-dctrl.1:28
+#: man/sync-available.8:25 man/tbl-dctrl.1:36
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:47
+msgid ""
+"The B<grep-dctrl> program can answer such questions as I<What is the Debian "
+"package foo?>, I<Which version of the Debian package bar is now current?>, "
+"I<Which Debian packages does John Doe maintain?>, I<Which Debian packages "
+"are somehow related to the Scheme> I<programming language?>, and with some "
+"help, I<Who maintain the essential packages of a Debian system?>, given a "
+"useful input file."
+msgstr ""
+"Le programme B<grep-dctrl> peut répondre à des questions comme « I<Qu'est-ce "
+"que le paquet Debian bidule ?> », « I<Quelle est la dernière version du "
+"paquet Debian machin ?> », « I<Quels sont les paquets Debian maintenus par "
+"Anne Onyme ?> », « I<Quels sont les paquets Debian ayant un quelconque "
+"rapport avec le language de programmation Scheme ?> » et, avec un peu "
+"d'aide, « I<Qui sont les responsables des paquets essentiels d'un système "
+"Debian ?> » à partir d'un fichier utile donné."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:67
+msgid ""
+"The programs B<grep-available>, B<grep-status>, B<grep-aptavail> and B<grep-"
+"debtags> are aliases of (actually, symbolic links to)  B<grep-dctrl>.  In "
+"the shipped configuration, these aliases use as their default input the "
+"B<dpkg>(1)  I<available> and I<status> files, the B<apt-cache dumpavail> "
+"output and the B<debtags dumpavail> output, respectively."
+msgstr ""
+"Les programmes B<grep-available>, B<grep-status>, B<grep-aptavail> et B<grep-"
+"debtags> sont des alias de (en réalité, des liens symboliques vers) B<grep-"
+"dctrl>. Dans la configuration par défaut, ces alias utilisent en entrée "
+"respectivement les fichiers I<available> et I<status> de B<dpkg>(1), la "
+"sortie de B<apt-cache dumpavail>, et celle de B<debtags dumpavail>."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:86
+msgid ""
+"B<grep-dctrl> is a specialised B<grep> program that is meant for processing "
+"any file which has the general format of a Debian package I<control> file, "
+"as described in the Debian Policy.  These include the B<dpkg> I<available> "
+"file, the B<dpkg> I<status> file, and the I<Packages> files on a "
+"distribution medium (such as a Debian CD-ROM or an FTP site carrying Debian)."
+msgstr ""
+"B<grep-dctrl> est un programme à la B<grep> spécifique pour traiter "
+"n'importe quel fichier au format des fichiers I<control> de paquet Debian, "
+"décrit dans la Charte Debian. Cela comprend les fichiers I<available> et "
+"I<status> de B<dpkg>, et les fichiers I<Packages> d'un support de "
+"distribution (comme un CD Debian ou un site FTP de dépôt Debian)."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:105
+msgid ""
+"You must give a I<filter> expression on the command line.  The I<filter> "
+"defines which kind of paragraphs (aka package records) are output.  A simple "
+"I<filter> is a search pattern along with any options that modify it.  "
+"Possible modifiers are B<--eregex>, B<--field>, B<--ignore-case>, B<--regex> "
+"and B<--exact-match>, along with their single-letter equivalents.  By "
+"default, the search is a case-sensitive fixed substring match on each "
+"paragraph (in other words, package record) in the input.  With suitable "
+"modifiers, this can be changed: the search can be case-insensitive and the "
+"pattern can be seen as an extended POSIX regular expression."
+msgstr ""
+"Il faut donner une expression de I<filtre> sur la ligne de commande. Le "
+"I<filtre> définit le type de paragraphe (c'est à dire les enregistrements de "
+"paquet) qui seront affichés. Un I<filtre> élémentaire est un motif de "
+"recherche accompagné d'options pour le modifier. Les modificateurs possibles "
+"sont B<--eregex>, B<--field>, B<--ignore-case>, B<--regex> et B<--exact-"
+"match>, ainsi que les options courtes équivalentes. Par défaut, une portion "
+"figée de chaîne de caractères qui respecte la casse est recherchée dans "
+"chaque paragraphe (autrement dit, chaque enregistrement de paquet) de "
+"l'entrée. Avec les modificateurs adéquats, ce comportement peut être "
+"modifié : la recherche peut être indépendante de la casse et le motif peut "
+"être considéré comme une expression rationnelle étendue POSIX."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:113
+msgid ""
+"I<Filter>s can be combined to form more complex I<filter>s using the "
+"connectives B<--and>, B<--or> and B<--not>.  Parentheses (which usually need "
+"to be escaped for the shell) can be used for grouping."
+msgstr ""
+"Les I<filtre>s peuvent être combinés en I<filtre>s plus compliqués avec les "
+"opérateurs B<--and>, B<--or> et B<--not>. Les parenthèses (qui doivent "
+"normalement être protégées pour l'interpréteur de commandes) peuvent servir "
+"à grouper les filtres."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:118
+msgid ""
+"By default, the full matching paragraphs are printed on the standard output; "
+"specific fields can be selected for output with the B<-s> option."
+msgstr ""
+"Par défaut, les paragraphes correspondants sont affichés en entier sur la "
+"sortie standard. Des champs particuliers peuvent être choisis pour "
+"l'affichage avec l'option B<-s>."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:148
+msgid ""
+"After the I<filter> expression comes zero or more I<file> names.  If no "
+"I<file> names are specified, the I<file> name is searched in configuration "
+"files.  The input I<file> in association with the correct program name is "
+"used.  The program names are matched with the base form of the name of the "
+"current program (the 0'th command line argument, if you will).  The I<file> "
+"name B<-> is taken to mean the standard input stream.  The I<file>s are "
+"searched in order but separately; they are B<not> concatenated together.  In "
+"other words, the end of a I<file> always implies the end of the current "
+"paragraph."
+msgstr ""
+"L'expression I<filtre> est suivie de zéro ou plusieurs noms de I<fichier>. "
+"Si aucun nom de I<fichier> n'est précisé, le nom de I<fichier> est recherché "
+"dans les fichiers de configuration. Le I<fichier> d'entrée associé au nom de "
+"programme valable est utilisé. Les noms de programme correspondent à la "
+"forme du nom de programme actuel (l'argument zéro de la ligne de commande si "
+"vous préférez). Le nom de I<fichier> B<-> est utilisé pour désigner le flux "
+"d'entrée standard. Les I<fichier>s sont parcourus dans l'ordre, mais un par "
+"un : il ne sont B<pas> concaténés. Autrement dit, la fin d'un I<fichier> "
+"indique toujours la fin d'un paragraphe."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:153
+msgid ""
+"There is one exception to the above: if the program name is B<grep-dctrl>, "
+"the default input source is always standard input; this cannot be overridden "
+"by the configuration file."
+msgstr ""
+"Il existe une exception à ce qui précède : si le nom de programme est B<grep-"
+"dctrl>, la source d'entrée par défaut est toujours l'entrée standard. Il "
+"n'est pas possible de modifier ce comportement dans le fichier de "
+"configuration."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:153 man/join-dctrl.1:60 man/sort-dctrl.1:74
+#: man/sync-available.8:47 man/tbl-dctrl.1:99
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONS"
+
+#. type: SS
+#: man/grep-dctrl.1.cp:154
+#, no-wrap
+msgid "Specifying the search pattern"
+msgstr "Indication du motif de recherche"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:155
+#, no-wrap
+msgid "B<--pattern=>I<pattern>"
+msgstr "B<--pattern=>I<motif>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:167
+msgid ""
+"Specify a I<pattern> to be searched. This switch is not generally needed, as "
+"the I<pattern> can be given by itself. However, I<pattern>s that start with "
+"a dash (B<->)  must be given using this switch, so that they wouldn't be "
+"mistaken for switches."
+msgstr ""
+"Indiquer un I<motif> à rechercher. Cette option n'est généralement pas "
+"nécessaire, car le I<motif> peut être donné directement. Cependant, les "
+"I<motif>s qui commencent par un tiret (B<->) doivent être donnés en "
+"utilisant cette option, pour ne pas être confondus avec des options."
+
+#. type: SS
+#: man/grep-dctrl.1.cp:167
+#, no-wrap
+msgid "Modifiers of simple filters"
+msgstr "Modificateurs de filtres élémentaires"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:168
+#, no-wrap
+msgid "B<-F >I<field>,I<field>, ... | B<--field=>I<field>,I<field>, ..."
+msgstr "B<-F >I<champ>,I<champ>, ... | B<--field=>I<champ>,I<champ>, ..."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:187
+msgid ""
+"Restrict pattern matching to the I<field>s given.  Multiple I<field> names "
+"in one B<-F> option and multiple B<-F> options in one simple I<filter> are "
+"allowed. The search named by the filter will be performed among all the "
+"I<field>s named, and as soon as any one of them matches, the whole simple "
+"I<filter> is considered matching."
+msgstr ""
+"Réduire le motif correspondant aux I<champ>s donnés. Plusieurs noms de "
+"I<champ> dans une option B<-F> et plusieurs options B<-F> dans un seul "
+"I<filtre> sont permis. La recherche désignée par le filtre sera réalisée "
+"parmi tous les I<champ>s désignés, et dès que l'un d'entre eux correspond, "
+"l'intégralité du I<filtre> élémentaire sera considéré comme correspondant."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:196
+msgid ""
+"A I<field> specification can contain a colon (B<:>).  In such a case, the "
+"part up to the colon is taken as the name of the field to be searched in, "
+"and the part after the colon is taken as the name of the field whose content "
+"is to be used if the field to search in is empty."
+msgstr ""
+"Une spécification de I<champ> peut contenir un deux-points (B<:>). Dans ce "
+"cas, la partie précédant le deux-points est considérée comme le nom du champ "
+"dans lequel il faut chercher, et la partie après le deux-points est "
+"considérée comme le nom du champ dont le contenu sera utilisé si le champ à "
+"chercher est vide."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:196
+#, no-wrap
+msgid "B<-P>"
+msgstr "B<-P>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:199
+msgid "Shorthand for B<-FPackage>."
+msgstr "Raccourci pour B<-FPackage>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:199
+#, no-wrap
+msgid "B<-S>"
+msgstr "B<-S>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:202
+msgid "Shorthand for B<-FSource:Package>."
+msgstr "Raccourci pour B<-FSource:Package>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:202
+#, no-wrap
+msgid "B<-e>, B<--eregex>"
+msgstr "B<-e>, B<--eregex>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:205
+msgid ""
+"Regard the pattern of the current simple filter as an extended POSIX regular "
+"expression"
+msgstr ""
+"Considérer le motif du filtre élémentaire actuel comme une expression "
+"rationnelle étendue POSIX."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:205
+#, no-wrap
+msgid "B<-r>, B<--regex>"
+msgstr "B<-r>, B<--regex>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:207
+msgid ""
+"Regard the pattern of the current simple filter as a standard POSIX regular "
+"expression."
+msgstr ""
+"Considérer le motif du filtre élémentaire actuel comme une expression "
+"rationnelle standard POSIX."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:207
+#, no-wrap
+msgid "B<-i>, B<--ignore-case>"
+msgstr "B<-i>, B<--ignore-case>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:209
+msgid "Ignore case when looking for a match in the current simple filter."
+msgstr ""
+"Ignorer la casse lors de la recherche d'une correspondance dans le filtre "
+"élémentaire actuel."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:209
+#, no-wrap
+msgid "B<-X>, B<--exact-match>"
+msgstr "B<-X>, B<--exact-match>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:212
+msgid ""
+"Do an exact match (as opposed to a substring match) in the current simple "
+"filter."
+msgstr ""
+"Faire une correspondance exacte (contrairement à une correspondance de "
+"portion de chaîne) dans le filtre élémentaire actuel."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:212
+#, no-wrap
+msgid "B<-w>, B<--whole-pkg>"
+msgstr "B<-w>, B<--whole-pkg>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:220
+msgid ""
+"Do an extended regular expression match on whole package names, assuming the "
+"syntax of inter-package relationship fields such as B<Depends>,"
+"B<Recommends>, ...  When this flag is given you should not worry about sub-"
+"package names such as \"libpcre3\" also matching \"libpcre3-dev\". This flag "
+"implies (and is incompatible with)  B<-e>."
+msgstr ""
+"Faire correspondre une expression rationnelle étendue sur l'ensemble des "
+"noms de paquet, en supposant que la syntaxe des champs reliant les paquets "
+"est comme B<Depends>, B<Recommends>, etc. Quand cette option est donnée, ce "
+"n'est pas la peine de se préoccuper des noms de sous-paquets comme par "
+"exemple « libpcre3 » qui correspond aussi à « libpcre3-dev ». Cette option "
+"implique (et est incompatible avec) B<-e>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:220
+#, no-wrap
+msgid "B<--eq>"
+msgstr "B<--eq>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:226
+msgid ""
+"Do an equality comparison under the Debian version number system.  If the "
+"pattern or the field to be searched in is not a valid Debian version number, "
+"the paragraph is regarded as not matching.  As a special case, this is "
+"capable of comparing simple nonnegative integers for equality."
+msgstr ""
+"Faire un test d'égalité dans le système de numérotation de version Debian. "
+"Si le motif ou le champ dans lequel il faut chercher n'est pas un numéro de "
+"version Debian valable, le paragraphe est considéré comme non correspondant. "
+"En particulier, le test d'égalité entre simples entiers positifs est "
+"possible."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:226
+#, no-wrap
+msgid "B<--lt>"
+msgstr "B<--lt>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:232
+msgid ""
+"Do an strictly-less-than comparison under the Debian version number system.  "
+"If the pattern or the field to be searched in is not a valid Debian version "
+"number, the paragraph is regarded as not matching.  As a special case, this "
+"is capable of comparing simple nonnegative integers."
+msgstr ""
+"Faire une comparaison de stricte infériorité dans le système de numérotation "
+"de version Debian. Si le motif ou le champ dans lequel il faut chercher "
+"n'est pas un numéro de version Debian valable, le paragraphe est considéré "
+"comme non correspondant. En particulier, la comparaison de simples entiers "
+"positifs est possible."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:232
+#, no-wrap
+msgid "B<--le>"
+msgstr "B<--le>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:238
+msgid ""
+"Do an less-than-or-equal comparison under the Debian version number system.  "
+"If the pattern or the field to be searched in is not a valid Debian version "
+"number, the paragraph is regarded as not matching.  As a special case, this "
+"is capable of comparing simple nonnegative integers."
+msgstr ""
+"Faire une comparaison d'infériorité ou d'égalité dans le système de "
+"numérotation de version Debian. Si le motif ou le champ dans lequel il faut "
+"chercher n'est pas un numéro de version Debian valable, le paragraphe est "
+"considéré comme non correspondant. En particulier, la comparaison de simples "
+"entiers positifs est possible."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:238
+#, no-wrap
+msgid "B<--gt>"
+msgstr "B<--gt>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:244
+msgid ""
+"Do an strictly-greater-than comparison under the Debian version number "
+"system.  If the pattern or the field to be searched in is not a valid Debian "
+"version number, the paragraph is regarded as not matching.  As a special "
+"case, this is capable of comparing simple nonnegative integers."
+msgstr ""
+"Faire une comparaison de stricte supériorité dans le système de numérotation "
+"de version Debian. Si le motif ou le champ dans lequel il faut chercher "
+"n'est pas un numéro de version Debian valable, le paragraphe est considéré "
+"comme non correspondant. En particulier, la comparaison de simples entiers "
+"positifs est possible."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:244
+#, no-wrap
+msgid "B<--ge>"
+msgstr "B<--ge>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:250
+msgid ""
+"Do an greater-than-or-equal comparison under the Debian version number "
+"system.  If the pattern or the field to be searched in is not a valid Debian "
+"version number, the paragraph is regarded as not matching.  As a special "
+"case, this is capable of comparing simple nonnegative integers."
+msgstr ""
+"Faire une comparaison de supériorité ou d'égalité dans le système de "
+"numérotation de version Debian. Si le motif ou le champ dans lequel il faut "
+"chercher n'est pas un numéro de version Debian valable, le paragraphe est "
+"considéré comme non correspondant. En particulier, la comparaison de simples "
+"entiers positifs est possible."
+
+#. type: SS
+#: man/grep-dctrl.1.cp:250
+#, no-wrap
+msgid "Combining filters"
+msgstr "Combinaison de filtres"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:251
+#, no-wrap
+msgid "B<-!>, B<--not>, B<!>"
+msgstr "B<-!>, B<--not>, B<!>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:255
+msgid "Match if the following filter does B<not> match."
+msgstr "Correspondre si le filtre suivant ne correspond B<pas>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:255
+#, no-wrap
+msgid "B<-o>, B<--or>"
+msgstr "B<-o>, B<--or>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:258
+msgid ""
+"Match if either one or both of the preceding and following filters matches."
+msgstr ""
+"Correspondre si l'un des deux filtres (précédent et suivant) correspond."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:258
+#, no-wrap
+msgid "B<-a>, B<--and>"
+msgstr "B<-a>, B<--and>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:260
+msgid "Match if both the preceding and the following filter match."
+msgstr "Correspondre si les deux filtres (précédent et suivant) correspondent."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:260
+#, no-wrap
+msgid "B<(> ... B<)>"
+msgstr "B<(> ... B<)>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:263
+msgid ""
+"Parentheses can be used for grouping.  Note that they need to be escaped for "
+"most shells."
+msgstr ""
+"Les parenthèses peuvent être utilisées pour grouper. Remarquez qu'il faut "
+"les protéger dans la plupart des interpréteurs de commandes."
+
+#. type: SS
+#: man/grep-dctrl.1.cp:263
+#, no-wrap
+msgid "Output format modifiers"
+msgstr "Modificateurs de format de sortie"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:264
+#, no-wrap
+msgid "B<-s >I<field>,I<field>, ... | B<--show-field=>I<field>,I<field>, ..."
+msgstr "B<-s >I<champ>,I<champ>, ... | B<--show-field=>I<champ>,I<champ>, ..."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:276
+msgid ""
+"Show only the body of these I<field>s from the matching paragraphs.  The "
+"I<field> names must not include any colons or commas.  Commas are used to "
+"delimit I<field> names in the argument to this option.  The I<field>s are "
+"shown in the order given here.  See also the option B<-I>."
+msgstr ""
+"Montrer seulement le corps de ces I<champ>s pour les paragraphes "
+"correspondants. Les noms de I<champ> ne doivent pas contenir de deux-points "
+"ni de virgule. Les virgules sont utilisées pour délimiter les noms de "
+"I<champ> dans l'argument de cette option. Les I<champ>s sont montrés dans "
+"l'ordre donné. Consultez aussi l'option B<-I>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:276
+#, no-wrap
+msgid "B<-I>, B<--invert-show>"
+msgstr "B<-I>, B<--invert-show>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:285
+msgid ""
+"Invert the meaning of option B<-s>: show only the fields that have B<not> "
+"been named using a B<-s> option.  As an artefact of the implementation, the "
+"order of the fields in the original paragraph is not preserved."
+msgstr ""
+"Inverser le sens de l'option B<-s> : montrer seulement les champs qui n'ont "
+"B<pas> été nommés en utilisant l'option B<-s>. À cause de l'implémentation, "
+"l'ordre des champs du paragraphe d'origine n'est pas conservé."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:292
+msgid ""
+"A I<field> specification can contain a colon. In such a case, the part up to "
+"the colon is taken as the name of the field to be shown, and the part after "
+"the colon is taken as the name of the field whose content is to be used if "
+"the field to be shown is empty."
+msgstr ""
+"Une spécification de I<champ> peut contenir un deux-points. Dans ce cas, la "
+"partie qui précède le deux-points est considérée comme le nom du champ à "
+"montrer, et la partie qui suit le deux-points est considérée comme le nom du "
+"champ dont le contenu sera utilisé si le champ à montrer est vide."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:292
+#, no-wrap
+msgid "B<-d>"
+msgstr "B<-d>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:310
+msgid ""
+"Show only the first line of the B<Description> field from the matching "
+"paragraphs.  If no B<-s> option is specified, this option also effects B<-s "
+"Description>; if there is a B<-s> option but it does not include the "
+"B<Description> field name, one is appended to the option.  Thus the "
+"B<Description> field's location in the output is determined by the B<-s> "
+"option, if any, the last field being the default."
+msgstr ""
+"Montrer seulement la première ligne du champ B<Description> des paragraphes "
+"correspondants. Si l'option B<-s> n'est pas indiquée, B<-s Description> est "
+"implicitement ajouté ; si une option B<-s> est indiquée sans champ "
+"B<Description>, il est ajouté à l'option. Ainsi l'emplacement du champ "
+"B<Description> dépend de l'option B<-s>, c'est le dernier par défaut."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:310
+#, no-wrap
+msgid "B<-n>, B<--no-field-names>"
+msgstr "B<-n>, B<--no-field-names>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:315
+msgid ""
+"Suppress field names when showing specified fields, only their bodies are "
+"shown.  Each field is printed in its original form without the field name, "
+"the colon after it and any whitespace preceding the start of the body."
+msgstr ""
+"Supprimer les noms de champ à l'affichage : seul les corps sont affichés. "
+"Chaque champ est affiché dans sa forme d'origine sans nom de champ ni les "
+"deux points ni les espaces qui précèdent le début du corps."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:315
+#, no-wrap
+msgid "B<-v>, B<--invert-match>"
+msgstr "B<-v>, B<--invert-match>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:320
+msgid ""
+"Instead of showing all the paragraphs that match, show those paragraphs that "
+"do B<not> match."
+msgstr ""
+"Au lieu de montrer tous les paragraphes qui correspondent, afficher ceux qui "
+"ne correspondent B<pas>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:320
+#, no-wrap
+msgid "B<-c>, B<--count>"
+msgstr "B<-c>, B<--count>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:325
+msgid ""
+"Instead of showing the paragraphs that match (or, with B<-v>, that don't "
+"match), show the count of those paragraphs."
+msgstr ""
+"Au lieu de montrer tous les paragraphes qui correspondent (ou, avec B<-v>, "
+"ceux qui ne correspondent B<pas>), afficher le décompte de ces paragraphes."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:325 man/sort-dctrl.1:95
+#, no-wrap
+msgid "B<-q>, B<--quiet>, B<--silent>"
+msgstr "B<-q>, B<--quiet>, B<--silent>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:328 man/sort-dctrl.1:98
+msgid ""
+"Output nothing to the standard output stream.  Instead, exit immediately "
+"after finding the first match."
+msgstr ""
+"Ne rien afficher sur le flux de sortie standard. À la place, quitter "
+"directement après avoir trouvé la première correspondance."
+
+#. type: SS
+#: man/grep-dctrl.1.cp:328
+#, no-wrap
+msgid "Miscellaneous"
+msgstr "Divers"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:329
+#, no-wrap
+msgid "B<--ignore-parse-errors>"
+msgstr "B<--ignore-parse-errors>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:333
+msgid ""
+"Ignore errors in parsing input.  A paragraph which cannot be parsed is "
+"ignored in its entirety, and the next paragraph is assumed to start after "
+"the first newline since the location of the error."
+msgstr ""
+"Ignorer les erreurs dans l'analyse en entrée. Un paragraphe qui ne peut pas "
+"être analysé est intégralement ignoré. Le paragraphe suivant est supposé "
+"commencer après le premier changement de ligne qui suit l'erreur."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:333
+#, no-wrap
+msgid "B<--config-file=>I<filename>"
+msgstr "B<--config-file=>I<nomdefichier>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:337
+msgid "Use I<filename> as the config file instead of the defaults."
+msgstr ""
+"Utiliser I<nomdefichier> comme fichier de configuration au lieu du fichier "
+"par défaut."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:337
+#, no-wrap
+msgid "B<--debug-optparse>"
+msgstr "B<--debug-optparse>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:339
+msgid "Show how the current command line has been parsed."
+msgstr "Afficher la façon dont la ligne de commande actuelle a été analysée."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:339 man/join-dctrl.1:128 man/sort-dctrl.1:98
+#: man/tbl-dctrl.1:106
+#, no-wrap
+msgid "B<-l >I<level>, B<--errorlevel=>I<level>"
+msgstr "B<-l >I<niveau>, B<--errorlevel=>I<niveau>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:353 man/join-dctrl.1:142 man/sort-dctrl.1:112
+#: man/tbl-dctrl.1:120
+msgid ""
+"Set log level to I<level>.  I<level> is one of B<fatal>, B<important>, "
+"B<informational> and B<debug>, but the last may not be available, depending "
+"on the compile-time options.  These categories are given here in order; "
+"every message that is emitted when B<fatal> is in effect, will be emitted in "
+"the B<important> error level, and so on. The default is B<important>."
+msgstr ""
+"Configurer le I<niveau> de journalisation, où I<niveau> est B<fatal>, "
+"B<important>, B<informational> ou B<debug>. La disponibilité de B<debug> "
+"depend des options de compilation. Ces catégories sont ici données dans "
+"l'ordre : tous les messages émis lorsque B<fatal> est choisi seront affichés "
+"pour un niveau d'erreur B<important>, etc. Par défaut, B<important> est "
+"sélectionné."
+
+#. type: TP
+#: man/grep-dctrl.1.cp:353 man/join-dctrl.1:142 man/sort-dctrl.1:112
+#: man/tbl-dctrl.1:120
+#, no-wrap
+msgid "B<-V>, B<--version>"
+msgstr "B<-V>, B<--version>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:355 man/join-dctrl.1:145 man/sort-dctrl.1:114
+#: man/tbl-dctrl.1:123
+msgid "Print out version information."
+msgstr "Afficher les informations de version."
+
+#. type: TP
+#: man/grep-dctrl.1.cp:355 man/join-dctrl.1:145 man/sort-dctrl.1:114
+#: man/tbl-dctrl.1:123
+#, no-wrap
+msgid "B<-C>, B<--copying>"
+msgstr "B<-C>, B<--copying>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:358 man/join-dctrl.1:149 man/sort-dctrl.1:117
+#: man/tbl-dctrl.1:127
+msgid ""
+"Print out the copyright license.  This produces much output; be sure to "
+"redirect or pipe it somewhere (such as your favourite pager)."
+msgstr ""
+"Afficher la licence. La sortie est particulièrement longue, veuillez la "
+"rediriger quelque part, ou utiliser une conduite (vers votre afficheur de "
+"texte préféré par exemple)."
+
+#. type: TP
+#: man/grep-dctrl.1.cp:358 man/join-dctrl.1:149 man/sort-dctrl.1:117
+#: man/tbl-dctrl.1:127
+#, no-wrap
+msgid "B<-h>, B<--help>"
+msgstr "B<-h>, B<--help>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:360 man/join-dctrl.1:152 man/sort-dctrl.1:119
+#: man/tbl-dctrl.1:130
+msgid "Print out a help summary."
+msgstr "Afficher une courte aide."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:360 man/join-dctrl.1:218 man/sort-dctrl.1:119
+#: man/tbl-dctrl.1:202
+#, no-wrap
+msgid "EXAMPLES"
+msgstr "EXEMPLES"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:363
+msgid ""
+"The following example queries assume that the default configuration is in "
+"effect."
+msgstr ""
+"Les exemples de requêtes suivants supposent que la configuration est celle "
+"par défaut."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:372
+msgid ""
+"The almost simplest use of this program is to print out the status or "
+"available record of a package.  In this respect, B<grep-dctrl> is like "
+"B<dpkg -s> or B<dpkg --print-avail>.  To print out the status record of the "
+"package \"mixal\", do"
+msgstr ""
+"L'utilisation la plus simple de ce programme, ou presque, est d'afficher "
+"l'enregistrement d'état ou de disponibilité d'un paquet. À cet égard, B<grep-"
+"dctrl> ressemble à B<dpkg -s> ou B<dpkg --print-avail>. Pour afficher "
+"l'enregistrement d'état du paquet « mixal », faire"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:374
+#, no-wrap
+msgid "% grep-status -PX mixal\n"
+msgstr "% grep-status -PX mixal\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:376
+msgid "and to get its available record, use"
+msgstr "et pour obtenir l'enregistrement de disponibilité, utiliser"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:378
+#, no-wrap
+msgid "% grep-available -PX mixal\n"
+msgstr "% grep-available -PX mixal\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:385
+msgid ""
+"In fact, you can ask for the record of the \"mixal\" package from any Debian "
+"control file.  Say, you have the Debian 6.0 CD-ROM's I<Packages> file in the "
+"current directory; now you can do a"
+msgstr ""
+"iEn fait, vous pouvez demander l'enregistrement du paquet « mixal » dans "
+"n'importe quel fichier de contrôle Debian. Si par exemple vous possédez les "
+"fichiers I<Packages> des CD de Debian 6.0 dans le répertoire actuel, vous "
+"pouvez faire"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:387
+#, no-wrap
+msgid "% grep-dctrl -PX mixal Packages\n"
+msgstr "% grep-dctrl -PX mixal Packages\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:397
+msgid ""
+"But B<grep-dctrl> can do more than just emulate B<dpkg>.  It can more-or-"
+"less emulate B<apt-cache>! That program has a search feature that searches "
+"package descriptions.  But we can do that too:"
+msgstr ""
+"Mais B<grep-dctrl> peut faire bien plus qu'émuler seulement B<dpkg>. Il peut "
+"plus ou moins émuler B<apt-cache> ! Ce programme contient une fonctionnalité "
+"de recherche dans les descriptions de paquets. Mais on peut aussi faire"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:399
+#, no-wrap
+msgid "% grep-available -F Description foo\n"
+msgstr "% grep-available -F Description bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:402
+msgid ""
+"searches for the string \"foo\" case-sensitively in the descriptions of all "
+"available packages.  If you want case-insensitivity, use"
+msgstr ""
+"qui recherche la chaîne « bidule » sensible à la casse dans les descriptions "
+"de tous les paquets disponibles. Pour une recherche insensible à la casse, "
+"utiliser"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:404
+#, no-wrap
+msgid "% grep-available -F Description -i foo\n"
+msgstr "% grep-available -F Description -i bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:409
+msgid ""
+"Truth to be told, B<apt-cache> searches package names, too.  We can "
+"separately search in the names; to do so, do"
+msgstr ""
+"À vrai dire, B<apt-cache> recherche aussi les noms de paquet. La recherche "
+"dans les noms peut être faite séparément, à l'aide de"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:411
+#, no-wrap
+msgid "% grep-available -F Package foo\n"
+msgstr "% grep-available -F Package bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:413 man/grep-dctrl.1.cp:423
+msgid "or"
+msgstr "ou"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:415
+#, no-wrap
+msgid "% grep-available -P foo\n"
+msgstr "% grep-available -P bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:419
+msgid ""
+"which is pretty much the same thing.  We can also search in both "
+"descriptions and names; if match is found in either, the package record is "
+"printed:"
+msgstr ""
+"ce qui revient à peu près au même. On peut aussi rechercher à la fois dans "
+"les descriptions et les noms. Si une correspondance est trouvée dans l'un "
+"des deux, l'enregistrement du paquet est affiché avec"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:421
+#, no-wrap
+msgid "% grep-available -P -F Description foo\n"
+msgstr "% grep-available -P -F Description bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:425
+#, no-wrap
+msgid "% grep-available -F Package -F Description foo\n"
+msgstr "% grep-available -F Package -F Description bidule\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:429
+msgid "This kind of search is the exactly same that B<apt-cache> does."
+msgstr "Ce genre de recherche est identique à celle d'B<apt-cache>."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:441
+msgid ""
+"Here's one thing neither B<dpkg> nor B<apt-cache> do.  Search for a string "
+"in the whole I<status> or I<available> file (or any Debian control file, for "
+"that matter) and print out all package records where we have a match.  Try"
+msgstr ""
+"Voici quelque chose que ne font ni B<dpkg> ni B<apt-cache>. Rechercher une "
+"chaîne dans le fichier I<status> ou I<available> complet (ou n'importe quel "
+"fichier de contrôle Debian d'ailleurs) et afficher tous les enregistrements "
+"de paquet correspondants. Essayer"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:443
+#, no-wrap
+msgid "% grep-available dpkg\n"
+msgstr "% grep-available dpkg\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:447
+msgid "sometime and watch how thoroughly B<dpkg> has infiltrated Debian."
+msgstr ""
+"de temps en temps pour observer à quel point B<dpkg> s'est infiltré en "
+"profondeurdans Debian."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:454
+msgid ""
+"All the above queries were based on simple substring searches.  But B<grep-"
+"dctrl> can handle regular expressions in the search pattern.  For example, "
+"to see the status records of all packages with either \"apt\" or \"dpkg\" in "
+"their names, use"
+msgstr ""
+"Toutes les requêtes précédentes sont basées sur de simples recherches de "
+"sous-chaînes. Mais B<grep-dctrl> peut gérer des expressions rationnelles "
+"dans les motif de recherche. Par exemple, pour voir les enregistrement "
+"d'état de tous les paquets ayant soit « apt » soit « dpkg » dans leurs noms, "
+"utiliser"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:456
+#, no-wrap
+msgid "% grep-status -P -e 'apt|dpkg'\n"
+msgstr "% grep-status -P -e 'apt|dpkg'\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:463
+msgid ""
+"Now that we have seen all these fine and dandy queries, you might begin to "
+"wonder whether it is necessary to always see the whole paragraph.  You may "
+"be, for example, interest only in the dependency information of the packages "
+"involved.  Fine.  To show the depends lines of all packages maintained by "
+"me, do a"
+msgstr ""
+"Après avoir vu toutes ces requêtes qui fonctionnent bien, vous devez vous "
+"demander s'il est nécessaire de toujours voir l'intégralité du paragraphe. "
+"Vous pourriez, par exemple, n'être intéressé que par les informations de "
+"dépendances des paquets concernés. Pour montrer les lignes de dépendances de "
+"tous les paquets que je maintiens, faire"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:465
+#, no-wrap
+msgid "% grep-available -F Maintainer -s Depends 'ajk@debian.org'\n"
+msgstr "% grep-available -F Maintainer -s Depends 'ajk@debian.org'\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:467
+msgid "If you want to see the packages' names, too, use"
+msgstr "Pour voir aussi les noms de paquet, utiliser"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:470
+#, no-wrap
+msgid ""
+"% grep-available -F Maintainer -s Package,Depends \\e\n"
+"  'ajk@debian.org'\n"
+msgstr ""
+"% grep-available -F Maintainer -s Package,Depends \\e\n"
+"  'ajk@debian.org'\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:474
+msgid "Note that there must be no spaces in the argument to the B<-s> switch."
+msgstr ""
+"Remarquez qu'il ne peut pas y avoir d'espace dans l'argument de l'option B<-"
+"s>."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:477
+msgid ""
+"More complex queries are also possible.  For example, to see the list of "
+"packages maintained by me and depending on libc6, do"
+msgstr ""
+"On peut aussi faire des requêtes plus compliquées. Par exemple, pour voir la "
+"liste des paquets que je maintiens et qui dépendent de libc6, faire"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:480
+#, no-wrap
+msgid ""
+"% grep-available -F Maintainer 'ajk@debian.org' \\e\n"
+"   -a -F Depends libc6 -s Package,Depends\n"
+msgstr ""
+"% grep-available -F Maintainer 'ajk@debian.org' \\e\n"
+"   -a -F Depends libc6 -s Package,Depends\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:487
+msgid ""
+"Remember that you can use other UNIX filters to help you, too.  Ever "
+"wondered, who's the most active Debian developer based on the number of "
+"source packages being maintained? Easy.  You just need to have a copy of the "
+"most recent I<Sources> file from any Debian mirror."
+msgstr ""
+"Rappelez-vous que d'autres filtres UNIX peuvent également être utilisés. "
+"Vous-êtes vous déjà demandé qui est le développeur Debian le plus actif "
+"d'après le nombre de paquets source maintenus ? Il suffit d'avoir une copie "
+"du dernier fichier I<Sources> de n'importe quel miroir Debian."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:490
+#, no-wrap
+msgid ""
+"% grep-dctrl -n -s Maintainer '' Sources | sort | \\e\n"
+"  uniq -c | sort -nr\n"
+msgstr ""
+"% grep-dctrl -n -s Maintainer \\(aq\\(aq Sources | sort | \\e\n"
+"  uniq -c | sort -nr\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:495
+msgid ""
+"This example shows a neat trick: if you want to selectively show only some "
+"field of I<all> packages, just supply an empty pattern."
+msgstr ""
+"Cet exemple montre une astuce : si vous voulez montrer de façon selective "
+"seulement certains champs de I<tous> les paquets, il suffit de fournir un "
+"motif vide."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:501
+msgid ""
+"The term \"bogopackage\" means the count of the packages that a Debian "
+"developer maintains.  To get the bogopackage count for the maintainer of "
+"B<dctrl-tools>, say"
+msgstr ""
+"Le terme « bogopaquet » signifie le décompte de paquets qu'un développeur "
+"Debian maintient. Pour obtenir par exemple le décompte de bogopaquet pour le "
+"responsable de B<dctrl-tools>, exécuter"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:504
+#, no-wrap
+msgid ""
+"% grep-available -c -FMaintainer \\e\n"
+"  \"`grep-available -sMaintainer -n -PX dctrl-tools`\"\n"
+msgstr ""
+"% grep-available -c -FMaintainer \\e\n"
+"  \"`grep-available -sMaintainer -n -PX dctrl-tools`\"\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:510
+msgid ""
+"Sometimes it is useful to output the data of several fields on the same "
+"line.  For example, the following command outputs the list of installed "
+"packages, sorted by their B<Installed-Size>."
+msgstr ""
+"Parfois, afficher les données de plusieurs champs sur une seule ligne est "
+"pratique. Par exemple, la commande suivante affiche la liste des paquets "
+"installés, triés en fonction de B<Installed-Size>."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:514
+#, no-wrap
+msgid ""
+"% grep-status -FStatus -sInstalled-Size,Package -n \\e\n"
+"  \"install ok installed\" -a -FInstalled-Size --gt 0 \\e\n"
+"  | paste -sd \"  \\en\" | sort -n\n"
+msgstr ""
+"% grep-status -FStatus -sInstalled-Size,Package -n \\e\n"
+"  \"install ok installed\" -a -FInstalled-Size --gt 0 \\e\n"
+"  | paste -sd \"  \\en\" | sort -n\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:516
+msgid "Note that there should be exactly 2 spaces in the \" \\en\" string."
+msgstr "Remarquez qu'il y a exactement deux espaces dans la chaîne \"  \\en\"."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:519
+msgid ""
+"Another usual use-case is looking for packages that have another one as "
+"build dependency:"
+msgstr ""
+"Un autre cas d'utilisation classique est de chercher les paquets qui en ont "
+"un autre dans leurs dépendances de construction."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:522
+#, no-wrap
+msgid ""
+"% grep-dctrl -s Package -F Build-Depends,Build-Depends-Indep \\e\n"
+"  quilt /var/lib/apt/lists/*Sources\n"
+msgstr ""
+"% grep-dctrl -s Package -F Build-Depends,Build-Depends-Indep \\e\n"
+"  quilt /var/lib/apt/lists/*Sources\n"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:527
+msgid ""
+"These examples cover a lot of typical uses of this utility, but not all "
+"possible uses.  Use your imagination! The building blocks are there, and if "
+"something's missing, let me know."
+msgstr ""
+"Ces exemples couvrent beaucoup d'utilisations typiques de cet utilitaire, "
+"mais pas toutes les utilisations possibles. Soyez imaginatifs ! Les "
+"fondations sont là, et s'il manque quelque chose, faites-le moi savoir."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:527
+#, no-wrap
+msgid "DIAGNOSTICS"
+msgstr "DIAGNOSTICS"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:543
+msgid ""
+"In the absence of errors, the exit code B<0> is used if at least one match "
+"was found, and the exit code B<1> is used if no matches were found.  If "
+"there were errors, the exit code is B<2>, with one exception.  If the B<-q>, "
+"B<--quiet> or B<--silent> options are used, the exit code B<0> is used when "
+"a match is found regardless of whether there have been non-fatal errors."
+msgstr ""
+"En absence d'erreurs, le code de retour B<0> est utilisé si au moins une "
+"correspondance a été trouvée, et le code de retour B<1> est utilisé si "
+"aucune correspondance n'a été trouvée. En cas d'erreur, le code de retour "
+"est B<2>, à une exception. Si les options B<-q>, B<--quiet> ou B<--silent> "
+"sont utilisées, le code de retour B<0> est utilisé quand une correspondance "
+"est trouvée même s'il y a eu des erreurs non fatales."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:548
+msgid ""
+"These messages are emitted in log levels B<fatal> and B<important>.  "
+"Additional messages may be provided by the system libraries.  B<This list is "
+"incomplete.>"
+msgstr ""
+"Ces messages sont émis dans les niveaux de journalisation B<fatal> et "
+"B<important>. Des messages complémentaires peuvent être fournis par les "
+"bibliothèques du système. B<Cette liste est incomplète.>"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:548
+#, no-wrap
+msgid "B<A pattern is mandatory>"
+msgstr "B<Un motif est obligatoire>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:550
+msgid "You must specify a pattern to be searched for."
+msgstr "Vous devez indiquer un motif à rechercher."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:550
+#, no-wrap
+msgid "B<a predicate is required>"
+msgstr "B<un prédicat est nécessaire>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:552
+msgid "No predicate was specified, but one is required."
+msgstr "Aucun filtre n'a été indiqué, alors que c'est nécessaire."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:552
+#, no-wrap
+msgid "B<cannot find enough memory>"
+msgstr "B<impossible de trouver suffisamment de mémoire>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:555
+msgid ""
+"More memory was needed than was available.  This error may be transient, "
+"that is, if you try again, all may go well."
+msgstr ""
+"Plus de mémoire que disponible était nécessaire. Ce peut être une erreur "
+"passagère, ainsi, en recommençant, elle peut ne pas réapparaître."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:555
+#, no-wrap
+msgid "B<cannot suppress field names when showing whole paragraphs>"
+msgstr "B<impossible de supprimer les noms de champs lors de l'affichage complet des paragraphes>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:565
+msgid ""
+"When you do not use the B<-s> switch, B<grep-dctrl> just passes the matching "
+"paragraphs through, not touching them any way.  This means, for example, "
+"that you can only use B<-n> when you use B<-s>."
+msgstr ""
+"Si vous n'utilisez pas l'option B<-s>, B<grep-dctrl> transmet simplement les "
+"paragraphes correspondants, sans les modifier du tout. Cela signifie, par "
+"exemple, que vous ne pouvez utiliser l'option B<-n> qu'avec l'option B<-s>."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:565
+#, no-wrap
+msgid "B<inconsistent atom modifiers>"
+msgstr "B<modificateurs d'atome incohérents>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:571
+msgid ""
+"Conflicting atom modifiers were used; for example, perhaps both B<-X> and B<-"
+"e> were specified for the same atom."
+msgstr ""
+"Des modificateurs de filtres élémentaires incompatibles ont été utilisés. "
+"Par exemple, peut-être que B<-X> et B<-e> ont été indiqués pour le même "
+"filtre élémentaire."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:571
+#, no-wrap
+msgid "B<missing ')' in command line>"
+msgstr "B<« ) » manquante sur la ligne de commande>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:574
+msgid ""
+"There were more opening than closing parentheses in the given predicate."
+msgstr ""
+"Il y avait plus de parenthèses ouvrantes que fermantes dans le filtre donné."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:574
+#, no-wrap
+msgid "B<no such log level>"
+msgstr "B<niveau de journalisation « %s » inexistant>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:578
+msgid "The argument to B<-l> was invalid."
+msgstr "L'argument de B<-l> n'était pas valable."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:578
+#, no-wrap
+msgid "B<predicate is too complex>"
+msgstr "B<le prédicat est trop complexe>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:581
+msgid ""
+"The predicate's complexity (the number of atoms and connectives)  exceed "
+"compile-time limits."
+msgstr ""
+"La complexité du filtre (le nombre de filtres élémentaires et de "
+"combinaisons) dépasse les limites de compilation."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:581
+#, no-wrap
+msgid "B<read failure or out of memory>"
+msgstr "B<erreur de lecture ou manque de mémoire>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:585
+msgid ""
+"There was a problem reading the configuration file.  Maybe there was a "
+"transput error; maybe memory was exhausted.  This error may be transient, "
+"that is, if you try again, all may go well."
+msgstr ""
+"Un problème est survenu lors de la lecture du fichier de configuration. Ce "
+"peut être dû à une erreur d'entrée sortie, ou une surconsommation de "
+"mémoire. Ce peut être une erreur passagère, ainsi, en recommençant, elle "
+"peut ne pas réapparaître."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:585
+#, no-wrap
+msgid "B<syntax error: need a executable name>"
+msgstr "B<erreur de syntaxe : nécessite un nom d'exécutable>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:587 man/grep-dctrl.1.cp:589
+msgid ""
+"There is a problem in the configuration file.  Look, and you shall find it."
+msgstr ""
+"Un problème existe dans le fichier de configuration. Regardez-le, et vous "
+"devriez la trouver."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:587
+#, no-wrap
+msgid "B<syntax error: need an input file name>"
+msgstr "B<erreur de syntaxe : nécessite un nom de fichier d'entrée>"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:589
+#, no-wrap
+msgid "B<too many file names>"
+msgstr "B<trop de noms de fichiers>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:592
+msgid ""
+"The number of file names specified in the command line exceeded a compile-"
+"time limit."
+msgstr ""
+"Le nombre de fichiers indiqués sur la ligne de commande dépasse les limites "
+"de compilation."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:592
+#, no-wrap
+msgid "B<too many output fields>"
+msgstr "B<trop de champs de sortie>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:597
+msgid ""
+"The argument to B<-s> had too many field names in it.  This number is "
+"limited to 256."
+msgstr ""
+"L'argument de B<-s> contenait trop de noms de fichier. Ce nombre est limité "
+"à 256."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:597
+#, no-wrap
+msgid "B<unexpected ')' in command line>"
+msgstr "B<« ) » inattendue sur la ligne de commande>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:600
+msgid ""
+"There was no opening parenthesis that would match some closing parenthesis "
+"in the command line."
+msgstr ""
+"Il n'y avait pas de parenthèse ouvrante correspondant à une des parenthèses "
+"fermantes de la ligne de commande."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:600
+#, no-wrap
+msgid "COMPATIBILITY"
+msgstr "COMPATIBILITÉ"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:606
+msgid ""
+"If you use B<grep-dctrl> in a Debian package, it should depend on the "
+"B<dctrl-tools> package and heed the following compatibility notes:"
+msgstr ""
+"Si vous utilisez B<grep-dctrl> dans un paquet Debian, il devrait dépendre du "
+"paquet B<dctrl-tools> et tenir compte des notes de compatibilité suivantes :"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:607
+#, no-wrap
+msgid "Always call only the B<grep-dctrl> executable"
+msgstr "Toujours appeler exclusivement l'exécutable B<grep-dctrl>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:611
+msgid ""
+"Although the B<grep-status> and B<grep-available> symlinks are installed by "
+"default, this may change in the future.  Those symlinks are meant for manual "
+"and not scripted use."
+msgstr ""
+"Même si les liens symboliques B<grep-status> et B<grep-available> sont "
+"installés par défaut, cela pourrait changer dans l'avenir. Ces liens "
+"symboliques sont destinés à l'utilisation directe et non pour les scripts."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:611
+#, no-wrap
+msgid "Always specify an explicit file name"
+msgstr "Toujours indiquer un nom de fichier explicite"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:617
+msgid ""
+"Don't rely on the implicit file name feature.  The system administrator may "
+"have changed the default file name.  You should always specify the B<-> "
+"file, too."
+msgstr ""
+"Ne comptez pas sur la fonctionnalité de nom de fichier implicite. "
+"L'administrateur système peut avoir modifié le nom de fichier par défaut. "
+"Vous devriez aussi toujours indiquer le fichier B<->."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:617
+#, no-wrap
+msgid "Not all features have been with us in every version"
+msgstr "Les fonctionnalités n'ont pas toujours été présentes suivant les versions"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:622
+msgid ""
+"Check if any of the features you use is mentioned in the changelog.  Use a "
+"versioned dependency on B<dctrl-tools>, if it is necessary."
+msgstr ""
+"Vérifier si toutes les fonctionnalités utilisées sont indiquées dans le "
+"journal de modifications. Utilisez une dépendance sur la version de B<dctrl-"
+"tools> si nécessaire."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:622
+#, no-wrap
+msgid "FILES"
+msgstr "FICHIERS"
+
+#. type: IP
+#: man/grep-dctrl.1.cp:623
+#, no-wrap
+msgid "I<SYSCONF/grep-dctrl.rc>"
+msgstr "I<SYSCONF/grep-dctrl.rc>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:625
+msgid "See the next file."
+msgstr "Consultez le fichier suivant."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:625
+#, no-wrap
+msgid "I<~/.grep-dctrlrc>"
+msgstr "I<~/.grep-dctrlrc>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:634
+msgid ""
+"These files are the default configuration files for B<grep-dctrl>.  The "
+"format is line-based, with `B<#>' introducing a comment that lasts to the "
+"end of the line.  Each line defines one association between a program name "
+"and a default input file.  These two things are listed in the line in order, "
+"separated by whitespace.  Empty lines are ignored."
+msgstr ""
+"Ces fichiers sont les fichiers de configuration par défaut de B<grep-dctrl>. "
+"Le format est composé de lignes indépendantes, avec « B<#> » pour introduire "
+"un commentaire jusqu'à la fin de la ligne. Chaque ligne définit une "
+"association entre un nom de programme et un fichier d'entrée par défaut, "
+"dans cet ordre, séparés par une espace. Les lignes vides sont ignorées."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:645
+msgid ""
+"If the default input file name starts with two at (B<@>)  signs, one of them "
+"is ignored.  This allows specifying a file name that starts with an at "
+"sign.  If it starts with the string B<@exec>, the rest of the name is "
+"interpreted as a command name that is fed to B</bin/sh> B<-c>, and the "
+"standard output stream is used as the default input."
+msgstr ""
+"Si le nom du fichier d'entrée par défaut commence par deux arobase (B<@>), "
+"l'une d'elles est ignorée. Cela permet d'indiquer un nom de fichier qui "
+"commence avec une arobase. S'il commence par la chaîne B<@exec>, le reste du "
+"nom est interprété comme un nom de commande qui est fournie à B</bin/sh> B<-"
+"c>, et le flux d'entrée standard est utilisé comme entrée par défaut."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:645
+#, no-wrap
+msgid "I</var/lib/dpkg/available>"
+msgstr "I</var/lib/dpkg/available>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:649
+msgid ""
+"The default input file of B<grep-available> when the shipped configuration "
+"is in effect."
+msgstr ""
+"Le fichier d'entrée par défaut de B<grep-available> quand la configuration "
+"d'origine est utilisée."
+
+#. type: IP
+#: man/grep-dctrl.1.cp:649
+#, no-wrap
+msgid "I</var/lib/dpkg/status>"
+msgstr "I</var/lib/dpkg/status>"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:653
+msgid ""
+"The default input file of B<grep-status> when the shipped configuration is "
+"in effect."
+msgstr ""
+"Le fichier d'entrée par défaut de B<grep-status> quand la configuration "
+"d'origine est utilisée."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:653 man/join-dctrl.1:240 man/sort-dctrl.1:151
+#: man/sync-available.8:56 man/tbl-dctrl.1:210
+#, no-wrap
+msgid "AUTHOR"
+msgstr "AUTEUR"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:660
+msgid ""
+"The program and this manual page were written by Antti-Juhani Kaijanaho "
+"E<lt>I<gaia@iki.fi>E<gt>.  Bill Allombert E<lt>I<ballombe@debian.org>E<gt> "
+"provided one of the examples in the manual page."
+msgstr ""
+"Le programme et cette page de manuel ont été écrits par Antti-Juhani "
+"Kaijanaho E<lt>I<gaia@iki.fi>E<gt>. Bill Allombert E<lt>I<ballombe@debian."
+"org>E<gt> a fourni un des exemples de la page de manuel."
+
+#. type: SH
+#: man/grep-dctrl.1.cp:660 man/join-dctrl.1:244 man/sort-dctrl.1:154
+#: man/sync-available.8:59 man/tbl-dctrl.1:214
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "VOIR AUSSI"
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:665 man/sort-dctrl.1:159
+msgid ""
+"Debian Policy Manual.  Published as the Debian package B<debian-policy>.  "
+"Also available in the Debian website."
+msgstr ""
+"La Charte Debian. Publiée dans le paquet Debian B<debian-policy>. Également "
+"disponible sur le site de Debian."
+
+#. type: Plain text
+#: man/grep-dctrl.1.cp:671
+msgid "B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<sgrep>(1)"
+msgstr "B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<sgrep>(1)"
+
+#. type: TH
+#: man/join-dctrl.1:1
+#, no-wrap
+msgid "join-dctrl"
+msgstr "join-dctrl"
+
+#. type: Plain text
+#: man/join-dctrl.1:19
+msgid "join-dctrl - perform relational join on data in dctrl format"
+msgstr ""
+"join-dctrl - Réaliser des jointures relationnelles de données au format dctrl"
+
+#. type: Plain text
+#: man/join-dctrl.1:26
+msgid "B<join-dctrl> [ I<options> ] I<filename> I<filename>"
+msgstr "B<join-dctrl> [ I<options> ] I<fichier> I<fichier>"
+
+#. type: Plain text
+#: man/join-dctrl.1:29
+msgid "B<join-dctrl> B<--version>"
+msgstr "B<join-dctrl> B<--version>"
+
+#. type: Plain text
+#: man/join-dctrl.1:32
+msgid "B<join-dctrl> B<--help>"
+msgstr "B<join-dctrl> B<--help>"
+
+#. type: Plain text
+#: man/join-dctrl.1:36
+msgid ""
+"B<join-dctrl> performs a relational join operation on data given to it in "
+"Debian control file format."
+msgstr ""
+"B<join-dctrl> réalise une opération de jointure relationnelle sur des "
+"données au format de fichiers de contrôle Debian."
+
+#. type: Plain text
+#: man/join-dctrl.1:45
+msgid ""
+"A I<join field> must be specified using either the switches B<-1> and B<-2> "
+"or the switch B<-j>."
+msgstr ""
+"Un I<champ de jointure> doit être indiqué en utilisant soit les options "
+"B<-1> et B<-2>, soit l'option B<-j>."
+
+#. type: Plain text
+#: man/join-dctrl.1:51
+msgid ""
+"Conceptually, the program creates all ordered pairs of records that can be "
+"formed by having a record from the first file as the first member of the "
+"pair and having a record from the second file as the second member of the "
+"pair; and then it deletes all such pairs where the join fields are not equal."
+msgstr ""
+"Conceptuellement, le programme crée toutes les paires ordonnées "
+"d'enregistrement qui peuvent être formées en ayant un enregistrement du "
+"premier fichier comme premier membre de la paire et un enregistrement du "
+"second fichier comme second membre de la paire ; puis il supprime toutes les "
+"paires où les champs de jointure ne sont pas égaux."
+
+#. type: Plain text
+#: man/join-dctrl.1:53
+msgid ""
+"Effectively, each of the input files is treated as a relational database "
+"table."
+msgstr ""
+"En réalité, tous les fichiers d'entrée sont traités comme des tables de base "
+"de données relationnelle."
+
+#. type: Plain text
+#: man/join-dctrl.1:56
+msgid ""
+"Every input file must be in ascending order on its join field; this allows "
+"the program to work fast."
+msgstr ""
+"Tous les fichiers d'entrée doivent être dans l'ordre croissant de leur champ "
+"de jointure ; cela permet au programme de fonctionner plus rapidement."
+
+#. type: Plain text
+#: man/join-dctrl.1:60
+msgid "The B<sort-dctrl>(1)  program can be used to make it so."
+msgstr "Le programme B<sort-dctrl>(1) peut-être utilisé pour ce faire."
+
+#. type: IP
+#: man/join-dctrl.1:61
+#, no-wrap
+msgid "B<-1 >I<field>, B<--1st-join-field=>I<field>"
+msgstr "B<-1> I<champ>, B<--1st-join-field=>I<champ>"
+
+#. type: Plain text
+#: man/join-dctrl.1:65
+msgid "Specify the join I<field> of the first input file."
+msgstr "Indiquer le I<champ> de jointure du premier fichier d'entrée."
+
+#. type: IP
+#: man/join-dctrl.1:65
+#, no-wrap
+msgid "B<-2 >I<field>, B<--2nd-join-field=>I<field>"
+msgstr "B<-2> I<champ>, B<--2nd-join-field=>I<champ>"
+
+#. type: Plain text
+#: man/join-dctrl.1:69
+msgid "Specify the join I<field> of the second input file."
+msgstr "Indiquer le I<champ> de jointure du second fichier d'entrée."
+
+#. type: IP
+#: man/join-dctrl.1:69
+#, no-wrap
+msgid "B<-j >I<field>, B<--join-field=>I<field>"
+msgstr "B<-j >I<champ>, B<--join-field=>I<champ>"
+
+#. type: Plain text
+#: man/join-dctrl.1:73
+msgid "Specify a common join I<field> for all files."
+msgstr "Indiquer un I<champ> de jointure commun pour tous les fichiers."
+
+#. type: IP
+#: man/join-dctrl.1:73
+#, no-wrap
+msgid "B<-a >I<fileno>, B<--unpairable-from=>I<fileno>"
+msgstr "B<-a >I<nofichier>, B<--unpairable-from=>I<nofichier>"
+
+#. type: Plain text
+#: man/join-dctrl.1:80
+msgid ""
+"Specify that unmatched paragraphs from the first (if B<1> is given) or the "
+"second (if B<2> is given) file are printed."
+msgstr ""
+"Indiquer que les paragraphes non correspondants du premier (si B<1> est "
+"donné) ou du second (si B<2> est donné) fichier doivent être affichés."
+
+#. type: IP
+#: man/join-dctrl.1:80
+#, no-wrap
+msgid "B<-o >I<fieldspec>, B<--output-fields=>I<fieldspec>"
+msgstr "B<-o >I<specchamp>, B<--output-fields=>I<specchamp>"
+
+#. type: Plain text
+#: man/join-dctrl.1:82
+msgid "Specify which fields are included in the output."
+msgstr "Indiquer quels champs sont inclus dans la sortie."
+
+#. type: Plain text
+#: man/join-dctrl.1:87
+msgid ""
+"Fields are separated by commas (more than one B<-o> option can be used, too)."
+msgstr ""
+"Les champs sont séparés par des virgules (plus d'une option B<-o> peut aussi "
+"être utilisée)."
+
+#. type: Plain text
+#: man/join-dctrl.1:98
+msgid ""
+"Each field is specified in the format I<fileno>B<.>I<field> in which "
+"I<fileno> is the ordinal number of the input file from which the field is "
+"drawn (either B<1> or B<2>), and I<field> gives the name of the field to use."
+msgstr ""
+"Chaque champ est indiqué au format I<nofichier>B<.>I<champ> dans lequel "
+"I<nofichier> est le numéro du fichier d'entrée duquel le champ est tiré "
+"(soit B<1> soit B<2>), et I<champ> donne le nom du champ à utiliser."
+
+#. type: Plain text
+#: man/join-dctrl.1:104
+msgid ""
+"As a special case, simple B<0> can be used instead of I<fileno>B<.>I<field> "
+"to refer to the common value of the join fields."
+msgstr ""
+"En particulier, un simple B<0> peut être utilisé à la place de "
+"I<nofichier>B<.>I<champ> pour faire référence à la valeur commune des champs "
+"de jointure."
+
+#. type: Plain text
+#: man/join-dctrl.1:107
+msgid ""
+"The name of the field (not including the file number) is used in the output "
+"as the name of the field."
+msgstr ""
+"Le nom du champ (numéro de fichier non compris) est utilisé dans la sortie "
+"comme nom du champ."
+
+#. type: Plain text
+#: man/join-dctrl.1:111
+msgid ""
+"However, a different name for output purposes can be specified by suffixing "
+"the field specification by a colon and the preferred visible name."
+msgstr ""
+"Cependant, un nom différent spécifique à la sortie peut être indiqué en "
+"ajoutant après l'indication du champ un deux-points suivi du nom choisi pour "
+"l'affichage."
+
+#. type: Plain text
+#: man/join-dctrl.1:123
+msgid ""
+"For example, the option B<-o 0,1.Version:Old-Version,2.Version> specifies "
+"that the first field in any output record should be the join field, the "
+"second field should be B<Old-Version> drawing its data from the B<Version> "
+"field of the first input file, and the third field should be B<Version> "
+"drawing its data from the field with the same name in the second input file, "
+"and these are the only fields in an output record."
+msgstr ""
+"Par exemple, l'option B<-o 0,1.Version:Ancienne-Version,2.Version> indique "
+"que le premier champ de n'importe quel enregistrement en sortie devra-t-être "
+"le champ de jointure, le deuxième champ devra-t-être B<Ancienne-Version> "
+"dont les données sont tirées du champ B<Version> du premier fichier "
+"d'entrée, et le troisième champ devra-t-être le champ B<Version> dont les "
+"données sont tirées du champ de même nom dans le second fichier d'entrée, et "
+"ce sont les seuls champs affichés en sortie."
+
+#. type: Plain text
+#: man/join-dctrl.1:128
+msgid ""
+"If no B<-o> option is given, all fields of all the records being joined are "
+"included in the output."
+msgstr ""
+"Si aucune option B<-o> n'est données, tous les champs de tous les "
+"enregistrements joints sont inclus dans la sortie."
+
+#. type: SH
+#: man/join-dctrl.1:152 man/tbl-dctrl.1:130
+#, no-wrap
+msgid "OPERANDS"
+msgstr "OPÉRANDES"
+
+#. type: Plain text
+#: man/join-dctrl.1:156
+msgid ""
+"B<join-dctrl> will treat each file named on the command line as a relational "
+"database table."
+msgstr ""
+"B<join-dctrl> traitera chaque fichier nommé sur la ligne de commande comme "
+"une table de base de données relationnelle."
+
+#. type: Plain text
+#: man/join-dctrl.1:160 man/tbl-dctrl.1:138
+msgid "A file called B<-> represents the program's standard input stream."
+msgstr ""
+"Un fichier appelé B<-> représente le flux d'entrée standard du programme."
+
+#. type: Plain text
+#: man/join-dctrl.1:162
+msgid "Currently, exactly two files must be named."
+msgstr "Actuellement, exactement deux fichiers doivent être nommés."
+
+#. type: SH
+#: man/join-dctrl.1:162 man/tbl-dctrl.1:143
+#, no-wrap
+msgid "STDIN"
+msgstr "STDIN"
+
+#. type: Plain text
+#: man/join-dctrl.1:167 man/tbl-dctrl.1:148
+msgid ""
+"The standard input stream may be used as input as specified above in the "
+"B<OPERANDS> section."
+msgstr ""
+"Le flux d'entrée standard peut être utilisé comme entrée du programme "
+"conformément à l'indication précédente dans la section B<OPÉRANDES>."
+
+#. type: SH
+#: man/join-dctrl.1:167 man/tbl-dctrl.1:148
+#, no-wrap
+msgid "INPUT FILES"
+msgstr "FICHIERS D'ENTRÉE"
+
+#. type: Plain text
+#: man/join-dctrl.1:171
+msgid "All input to B<join-dctrl> is in the format of a Debian control file."
+msgstr ""
+"Toutes les entrées de B<join-dctrl> sont au format d'un fichier de contrôle "
+"Debian."
+
+#. type: Plain text
+#: man/join-dctrl.1:174 man/sort-dctrl.1:35 man/tbl-dctrl.1:155
+msgid ""
+"A Debian control (dctrl) file is a semistructured single-table database "
+"stored in a machine-parseable text file."
+msgstr ""
+"Un fichier de contrôle Debian (dctrl) est une base de donnée semi-structurée "
+"avec une seule table conservée dans un fichier texte analysable par une "
+"machine."
+
+#. type: Plain text
+#: man/join-dctrl.1:177 man/sort-dctrl.1:39 man/tbl-dctrl.1:158
+msgid ""
+"Such a database consists of a set of records; each record is a mapping from "
+"field names to field content."
+msgstr ""
+"Une telle base est constituée d'un ensemble d'enregistrements ; chaque "
+"enregistrement est une association de noms de champ et de contenus de champ."
+
+#. type: Plain text
+#: man/join-dctrl.1:180 man/sort-dctrl.1:43 man/tbl-dctrl.1:161
+msgid ""
+"Textually, records are separated by empty lines, while each field is encoded "
+"as one or more nonempty lines inside a record."
+msgstr ""
+"Le fichier texte présente les enregistrements séparés par des lignes vides, "
+"tandis que chaque champ est constitué d'une ou plusieurs lignes non vides à "
+"l'intérieur d'un enregistrement."
+
+#. type: Plain text
+#: man/join-dctrl.1:183 man/sort-dctrl.1:46 man/tbl-dctrl.1:164
+msgid ""
+"A field starts with its name, followed by a colon, followed by the field "
+"content."
+msgstr ""
+"Un champ commence par son nom, suivi d'un deux-points, suivi par le contenu "
+"du champ."
+
+#. type: Plain text
+#: man/join-dctrl.1:186 man/sort-dctrl.1:49 man/tbl-dctrl.1:167
+msgid ""
+"The colon must reside on the first line of the field, and the first line "
+"must start with no whitespace."
+msgstr ""
+"Les deux-points doivent rester sur la première ligne du champ, et la "
+"première ligne ne doit pas commencer par un espace."
+
+#. type: Plain text
+#: man/join-dctrl.1:189 man/sort-dctrl.1:52 man/tbl-dctrl.1:170
+msgid ""
+"Subsequent lines, in contrast, always start with linear whitespace (one or "
+"more space or tab characters)."
+msgstr ""
+"Les lignes suivantes, au contraire, doivent commencer par un espace (un ou "
+"plusieurs caractères espace ou tabulation)."
+
+#. type: Plain text
+#: man/join-dctrl.1:191
+msgid "Each input file must be in the ascending order of its join field."
+msgstr ""
+"Chaque fichier d'entrée doit être dans l'ordre croissant de son champ de "
+"jointure."
+
+#. type: SH
+#: man/join-dctrl.1:191 man/tbl-dctrl.1:173
+#, no-wrap
+msgid "ENVIRONMENT VARIABLES"
+msgstr "VARIABLES D'ENVIRONNEMENT"
+
+#. type: Plain text
+#: man/join-dctrl.1:195 man/tbl-dctrl.1:177
+msgid ""
+"The standard locale environment, specifically its character set setting, "
+"affects the interpretation of input and output as character streams."
+msgstr ""
+"Les paramètres régionaux de d'environnement, en particulier la configuration "
+"du jeu de caractères, a une incidence sur l'interprétation des flux de "
+"caractères en entrée et en sortie."
+
+#. type: SH
+#: man/join-dctrl.1:195 man/tbl-dctrl.1:177
+#, no-wrap
+msgid "ASYNCHRONOUS EVENTS"
+msgstr "ÉVÉNEMENTS ASYNCHRONES"
+
+#. type: Plain text
+#: man/join-dctrl.1:197 man/tbl-dctrl.1:179
+msgid "Standard UNIX signals have their usual meaning."
+msgstr "Les signaux UNIX normalisés ont leur signification habituelle."
+
+#. type: SH
+#: man/join-dctrl.1:197 man/tbl-dctrl.1:179
+#, no-wrap
+msgid "STDOUT"
+msgstr "STDOUT"
+
+#. type: Plain text
+#: man/join-dctrl.1:199 man/tbl-dctrl.1:181
+msgid "All output is sent to the standard output stream."
+msgstr "Toute la sortie est envoyée sur le flux de sortie standard."
+
+#. type: Plain text
+#: man/join-dctrl.1:204
+msgid ""
+"The output is in the format of a Debian control file, described above in the "
+"B<INPUT FILES> section."
+msgstr ""
+"La sortie est au format d'un fichier de contrôle Debian, précédemment décrit "
+"dans la section B<FICHIERS D'ENTRÉE>."
+
+#. type: Plain text
+#: man/join-dctrl.1:207
+msgid ""
+"The output will be in the ascending order of the join field, if that field "
+"is included in the output."
+msgstr ""
+"La sortie sera dans l'ordre croissant de son champ de jointure, si ce champ "
+"est inclus dans la sortie."
+
+#. type: SH
+#: man/join-dctrl.1:207 man/tbl-dctrl.1:191
+#, no-wrap
+msgid "OUTPUT FILES"
+msgstr "FICHIERS DE SORTIE"
+
+#. type: Plain text
+#: man/join-dctrl.1:209 man/tbl-dctrl.1:193
+msgid "There are no output files."
+msgstr "Il n'y a aucun fichier de sortie."
+
+#. type: SH
+#: man/join-dctrl.1:209 man/sync-available.8:42 man/tbl-dctrl.1:193
+#, no-wrap
+msgid "EXIT STATUS"
+msgstr "CODE DE RETOUR"
+
+#. type: Plain text
+#: man/join-dctrl.1:214 man/tbl-dctrl.1:198
+msgid ""
+"This utility exits with B<0> when successful.  It uses a nonzero exit code "
+"inconsistently when an error is noticed (this is a bug)."
+msgstr ""
+"Cet utilitaire renvoie B<0> lors d'une exécution réussie. Un code de retour "
+"non nul incohérent est renvoyé si une erreur est détectée (c'est un bogue)."
+
+#. type: SH
+#: man/join-dctrl.1:214 man/tbl-dctrl.1:198
+#, no-wrap
+msgid "CONSEQUENCES OF ERRORS"
+msgstr "CONSÉQUENCE DES ERREURS"
+
+#. type: Plain text
+#: man/join-dctrl.1:218 man/tbl-dctrl.1:202
+msgid ""
+"In case of errors in the input, the output will be partially or completely "
+"garbage.  In case of errors in invocation, the program will refuse to "
+"function."
+msgstr ""
+"En cas d'erreur en entrée, la sortie sera partiellement ou complètement "
+"incorrecte. En cas d'erreur d'appel, le programme refusera de fonctionner."
+
+#. type: Plain text
+#: man/join-dctrl.1:224
+msgid ""
+"Suppose that a file containing data about binary packages for the AMD64 "
+"architecture contained in the Debian squeeze (6.0) release, section B<main>, "
+"is in the current directory and named I<Packages>."
+msgstr ""
+"Soit un fichier contenant des données de paquets binaires pour "
+"l'architecture AMD64 de la publication Squeeze de Debian (6.0), section "
+"B<main>, nommé I<Packages> dans le répertoire actuel."
+
+#. type: Plain text
+#: man/join-dctrl.1:226
+msgid "Suppose that we are currently on a Debian system."
+msgstr "Supposons que les commandes sont exécutées sur un système Debian."
+
+#. type: Plain text
+#: man/join-dctrl.1:229
+msgid ""
+"Suppose further that the current directory does not contain files named "
+"I<stat> and I<pkg>."
+msgstr ""
+"Supposons de plus qu'aucun fichier I<stat> ni I<pkg> n'est déjà présent dans "
+"le répertoire actuel."
+
+#. type: Plain text
+#: man/join-dctrl.1:233
+msgid ""
+"The following commands gives, for each package currently installed and "
+"available in Debian squeeze (6.0), its currently installed version (as Old-"
+"Version) and the version in squeeze (as New-Version):"
+msgstr ""
+"Les commandes suivantes donnent, pour chaque paquet actuellement installé et "
+"disponible dans Debian Squeeze (6.0), la version actuellement installée (en "
+"tant qu'B<Ancienne-Version>) et la version de Squeeze (en tant que "
+"B<Nouvelle-Version>) :"
+
+#. type: Plain text
+#: man/join-dctrl.1:239
+#, no-wrap
+msgid ""
+"$ sort-dctrl -kPackage /var/lib/dpkg/status E<gt> stat\n"
+"$ sort-dctrl -kPackage Packages E<gt> pkg\n"
+"$ join-dctrl -j Package \\e\n"
+"  -o 0,1.Version:Old-Version,2.Version:New-Version \\e\n"
+"  stat pkg\n"
+msgstr ""
+"$ sort-dctrl -kPackage /var/lib/dpkg/status E<gt> stat\n"
+"$ sort-dctrl -kPackage Packages E<gt> pkg\n"
+"$ join-dctrl -j Package \\e\n"
+"  -o 0,1.Version:Ancienne-Version,2.Version:Nouvelle-Version \\e\n"
+"  stat pkg\n"
+
+#. type: Plain text
+#: man/join-dctrl.1:244
+msgid ""
+"The B<join-dctrl> program and this manual page were written by Antti-Juhani "
+"Kaijanaho."
+msgstr ""
+"Le programme B<join-dctrl> et cette page de manuel ont été écrits par Antti-"
+"Juhani Kaijanaho."
+
+#. type: Plain text
+#: man/join-dctrl.1:248
+msgid "B<grep-dctrl>(1), B<sort-dctrl>(1), B<tbl-dctrl>(1)"
+msgstr "B<grep-dctrl>(1), B<sort-dctrl>(1), B<tbl-dctrl>(1)"
+
+#. type: TH
+#: man/sort-dctrl.1:1
+#, no-wrap
+msgid "SORT-DCTRL"
+msgstr "SORT-DCTRL"
+
+#. type: TH
+#: man/sort-dctrl.1:1
+#, no-wrap
+msgid "2005-06-08"
+msgstr "2005-06-08"
+
+#. type: Plain text
+#: man/sort-dctrl.1:19
+msgid "sort-dctrl - sort Debian control files"
+msgstr "sort-dctrl - Ordonner des fichiers de contrôle Debian"
+
+#. type: Plain text
+#: man/sort-dctrl.1:25
+msgid "B<sort-dctrl> [options] [ I<file> ...  ]"
+msgstr "B<sort-dctrl> [I<options>] [ I<fichier> ...  ]"
+
+#. type: Plain text
+#: man/sort-dctrl.1:28
+msgid "B<sort-dctrl> --copying | --help | --version | -ChV"
+msgstr "B<sort-dctrl> B<--copying> | B<--help> | B<--version> | B<-ChV>"
+
+#. type: Plain text
+#: man/sort-dctrl.1:32
+msgid ""
+"The B<sort-dctrl> program sorts Debian control files according to specified "
+"criteria."
+msgstr ""
+"Le programme B<sort-dctrl> ordonne des fichiers de contrôle Debian suivant "
+"les critères indiqués."
+
+#. type: Plain text
+#: man/sort-dctrl.1:65
+msgid ""
+"The B<sort-dctrl> program recognizes two field types: string fields and "
+"version fields.  Version fields act also as numeric fields.  String fields "
+"are compared according to strict lexicographical octet-by-octet comparison, "
+"after ignoring any initial whitespace after the colon.  Version fields are "
+"parsed and compared as Debian version numbers.  When comparing version "
+"numbers, if a field content does not in fact conform to the version number "
+"syntax, it compares less than any field content that does conform, and equal "
+"to any other nonconforming field content.  The B<sort-dctrl> program assumes "
+"all fields are string fields unless told otherwise."
+msgstr ""
+"Le programme B<sort-dctrl> reconnaît deux types de champs : les champs de "
+"chaîne de caractères et les champs de version. Les champs de version "
+"agissent aussi comme des champs numériques. Les champs de chaîne de "
+"caractères sont comparés d'après une stricte comparaison octet par octet, "
+"après avoir ignoré tous les espaces initiaux suivant le deux-points. Les "
+"champs de version sont parcourus et comparés comme des numéros de version "
+"Debian. Lors de la comparaison de numéros de version, si un contenu de champ "
+"s'avère non conforme à la syntaxe de numéro de version, il est considéré "
+"plus petit que n'importe quel contenu conforme, et égal à tout autre contenu "
+"non conforme. Le programme B<sort-dctrl> suppose que tous les champs sont "
+"des champs de chaîne de caractères, sauf indication contraire."
+
+#. type: Plain text
+#: man/sort-dctrl.1:74
+msgid ""
+"You can specify arbitrary number of keys for sorting, using the B<-k> "
+"option.  The keys are interpreted in a descending order of priority: the "
+"first key specified is primary, the second key specified is secondary, and "
+"so on.  If two records compare equal under the primary key, then they are "
+"compared under the secondary key, and so on.  If no keys are specified, a "
+"default key is assumed (the \"Package\" field with no modifiers)."
+msgstr ""
+"Vous pouvez indiquer un nombre arbitraire de clefs pour le tri, en utilisant "
+"l'option B<-k>. Les clefs sont interprétées par ordre décroissant de "
+"priorité : la première clef indiquée est primaire, la deuxième clef indiquée "
+"est secondaire, etc. Si deux enregistrements sont égaux d'après la clef "
+"primaire, alors les clefs secondaires sont comparées, etc. Si aucune clef "
+"n'est indiquée, le champ « Package » sans modificateur est considéré comme "
+"clef par défaut."
+
+#. type: IP
+#: man/sort-dctrl.1:75
+#, no-wrap
+msgid "B<-k >I<keyspec>, B<--key-spec=>I<keyspec>"
+msgstr "B<-k >I<clef>, B<--key-spec=>I<clef>"
+
+#. type: Plain text
+#: man/sort-dctrl.1:83
+msgid ""
+"Specify one or more keys for sorting.  You may specify this option any "
+"number of times.  The I<keyspec> argument consists of a comma-separated list "
+"of key specifications.  Each key specification consists of the name of the "
+"field that serves as the key, optionally followed by a colon and key "
+"modifiers.  The following key modifiers are supported:"
+msgstr ""
+"Indiquer une ou plusieurs clefs pour le tri. Vous pouvez indiquer cette "
+"option autant de fois que nécessaire. L'argument I<clef> est une liste de "
+"clefs séparées par des virgules. Chaque clef indiquée est le nom du champ "
+"qui sert de clef, éventuellement suivi d'un deux-points et du modificateur. "
+"Les modificateurs de clef suivants sont pris en charge :"
+
+#. type: TP
+#: man/sort-dctrl.1:84
+#, no-wrap
+msgid "B<r>"
+msgstr "B<r>"
+
+#. type: Plain text
+#: man/sort-dctrl.1:87
+msgid "Invert the comparison for this key, reversing the sorting order."
+msgstr "Inverser la comparaison pour cette clef, en inversant l'ordre de tri."
+
+#. type: TP
+#: man/sort-dctrl.1:87
+#, no-wrap
+msgid "B<v>"
+msgstr "B<v>"
+
+#. type: Plain text
+#: man/sort-dctrl.1:90
+msgid "Treat this field as a version number field."
+msgstr "Considérer ce champ comme un champ de numéro de version."
+
+#. type: TP
+#: man/sort-dctrl.1:90
+#, no-wrap
+msgid "B<n>"
+msgstr "B<n>"
+
+#. type: Plain text
+#: man/sort-dctrl.1:94
+msgid "Treat this field as numeric, which currently is synonymous with B<v>."
+msgstr ""
+"Considérer ce champ comme un nombre, ce qui est pour l'instant synonyme de "
+"B<v>."
+
+#. type: Plain text
+#: man/sort-dctrl.1:121
+msgid "Here are some sample invocations of the program:"
+msgstr "Voici quelques exemples d'appel du programme."
+
+#. type: IP
+#: man/sort-dctrl.1:121
+#, no-wrap
+msgid "sort-dctrl /var/lib/dpkg/available"
+msgstr "sort-dctrl /var/lib/dpkg/available"
+
+#. type: Plain text
+#: man/sort-dctrl.1:126
+msgid "Output the B<dpkg> I<available> file sorted by the package name."
+msgstr "Affiche le fichier I<available> de B<dpkg> ordonné par nom de paquet."
+
+#. type: IP
+#: man/sort-dctrl.1:126
+#, no-wrap
+msgid "sort-dctrl -k Version:v /var/lib/dpkg/available"
+msgstr "sort-dctrl -k Version:v /var/lib/dpkg/available"
+
+#. type: Plain text
+#: man/sort-dctrl.1:132
+msgid ""
+"Output the B<dpkg> I<available> file sorted in ascending order of version "
+"numbers."
+msgstr ""
+"Affiche le fichier I<available> de B<dpkg> dans l'ordre croissant des "
+"numéros de version."
+
+#. type: IP
+#: man/sort-dctrl.1:132
+#, no-wrap
+msgid "sort-dctrl -k Version:vr /var/lib/dpkg/available"
+msgstr "sort-dctrl -k Version:vr /var/lib/dpkg/available"
+
+#. type: Plain text
+#: man/sort-dctrl.1:138
+msgid ""
+"Output the B<dpkg> I<available> file sorted in descending order of version "
+"numbers."
+msgstr ""
+"Affiche le fichier I<available> de B<dpkg> dans l'ordre décroissant des "
+"numéros de version."
+
+#. type: IP
+#: man/sort-dctrl.1:138
+#, no-wrap
+msgid "sort-dctrl -k Package,Version:v /var/lib/dpkg/available"
+msgstr "sort-dctrl -k Package,Version:v /var/lib/dpkg/available"
+
+#. type: Plain text
+#: man/sort-dctrl.1:144
+msgid ""
+"Output the B<dpkg> I<available> file sorted primarily in ascending order of "
+"package names and secondarily in descending order of version numbers."
+msgstr ""
+"Affiche le fichier I<available> de B<dpkg> ordonné en priorité par nom de "
+"paquet puis dans l'ordre décroissant des numéros de version."
+
+#. type: IP
+#: man/sort-dctrl.1:144
+#, no-wrap
+msgid "sort-dctrl -k Installed-Size:n,Size:nr /var/lib/dpkg/available"
+msgstr "sort-dctrl -k Installed-Size:n,Size:nr /var/lib/dpkg/available"
+
+#. type: Plain text
+#: man/sort-dctrl.1:151
+msgid ""
+"Output the B<dpkg> I<available> file sorted primarily in ascending order of "
+"installation sizes and secondarily in descending order of package sizes."
+msgstr ""
+"Affiche le fichier I<available> de B<dpkg> ordonné en priorité dans l'ordre "
+"croissant des tailles d'installation puis dans l'ordre décroissant des "
+"tailles de paquet."
+
+#. type: Plain text
+#: man/sort-dctrl.1:154 man/sync-available.8:59
+msgid ""
+"The program and this manual page were written by Antti-Juhani Kaijanaho "
+"E<lt>ajk@debian.orgE<gt>."
+msgstr ""
+"Le programme et cette page de manuel ont été écrits par Antti-Juhani "
+"Kaijanaho E<lt>ajk@debian.orgE<gt>."
+
+#. type: Plain text
+#: man/sort-dctrl.1:161
+msgid "B<grep-dctrl>(1)"
+msgstr "B<grep-dctrl>(1)"
+
+#. type: TH
+#: man/sync-available.8:1
+#, no-wrap
+msgid "SYNC-AVAILABLE"
+msgstr "SYNC-AVAILABLE"
+
+#. type: TH
+#: man/sync-available.8:1
+#, no-wrap
+msgid "2005-07-11"
+msgstr "2005-07-11"
+
+#. type: TH
+#: man/sync-available.8:1 man/tbl-dctrl.1:1
+#, no-wrap
+msgid "Debian administrator's manual"
+msgstr "Manuel de l'administrateur Debian"
+
+#. type: Plain text
+#: man/sync-available.8:19
+msgid "sync-available - sync dpkg's available database with apt's database"
+msgstr ""
+"sync-available - Synchroniser la base de données available de dpkg avec "
+"celle d'apt"
+
+#. type: Plain text
+#: man/sync-available.8:21
+msgid "B<sync-available>"
+msgstr "B<sync-available>"
+
+#. type: Plain text
+#: man/sync-available.8:23
+msgid "B<sync-available --version>"
+msgstr "B<sync-available --version>"
+
+#. type: Plain text
+#: man/sync-available.8:25
+msgid "B<sync-available --help>"
+msgstr "B<sync-available --help>"
+
+#. type: Plain text
+#: man/sync-available.8:34
+msgid ""
+"This program updates the B<dpkg>(8)  I<available> database with the data in "
+"the B<apt>(8)  package database.  This is required for B<grep-available>(1)  "
+"and other similar programs to give up-to-date results."
+msgstr ""
+"Ce programme met à jour la base de données I<available> de B<dpkg>(8) à "
+"partir de la base de données de paquets d'B<apt>(8). C'est nécessaire à "
+"B<grep-available>(1) et d'autres programmes similaires pour fournir des "
+"résultats à jour."
+
+#. type: Plain text
+#: man/sync-available.8:42
+msgid ""
+"The same functionality is available through B<dselect>(8), when it is "
+"configured to use B<apt>(8)  as its acquisition method.  However, this "
+"program does not require that B<dselect>(8)  is installed."
+msgstr ""
+"La même fonctionnalité est disponible avec B<dselect>(8) quand il est "
+"configuré pour utiliser B<apt>(8) comme méthode d'acquisition. Cependant, ce "
+"programme ne dépend pas de B<dselect>(8)."
+
+#. type: Plain text
+#: man/sync-available.8:47
+msgid ""
+"The program exits with status code B<0> if all went well, and a non-zero "
+"status code otherwise."
+msgstr ""
+"Le programme renvoie le code de retour B<0> lorsque tout s'est bien passé et "
+"une valeur non nulle dans le cas contraire."
+
+#. type: IP
+#: man/sync-available.8:48
+#, no-wrap
+msgid "B<--version>"
+msgstr "B<--version>"
+
+#. type: Plain text
+#: man/sync-available.8:50
+msgid "Output the name and version of the program onto standard output stream."
+msgstr "Afficher le nom et la version du programme sur la sortie standard."
+
+#. type: IP
+#: man/sync-available.8:50
+#, no-wrap
+msgid "B<--help>"
+msgstr "B<--help>"
+
+#. type: Plain text
+#: man/sync-available.8:52
+msgid "Give a brief usage statement on the standard output stream."
+msgstr "Afficher une brève notice d'utilisation sur la sortie standard."
+
+#. type: SH
+#: man/sync-available.8:52
+#, no-wrap
+msgid "ENVIRONMENT"
+msgstr "ENVIRONNEMENT"
+
+#. type: IP
+#: man/sync-available.8:53
+#, no-wrap
+msgid "B<TMPDIR>"
+msgstr "B<TMPDIR>"
+
+#. type: Plain text
+#: man/sync-available.8:56
+msgid ""
+"The name of the directory where temporary files are created.  Default is I</"
+"tmp>."
+msgstr ""
+"Le nom du répertoire où les fichiers temporaires sont créés, I</tmp> par "
+"défaut."
+
+#. type: Plain text
+#: man/sync-available.8:63
+msgid "B<apt>(8), B<dpkg>(8), B<dselect>(8), B<grep-available>(1)"
+msgstr "B<apt>(8), B<dpkg>(8), B<dselect>(8), B<grep-available>(1)"
+
+#. type: TH
+#: man/tbl-dctrl.1:1
+#, no-wrap
+msgid "tbl-dctrl"
+msgstr "tbl-dctrl"
+
+#. type: TH
+#: man/tbl-dctrl.1:1
+#, no-wrap
+msgid "2006-04-02"
+msgstr "2006-04-02"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:19
+msgid "tbl-dctrl - generate tabular representations of data in dctrl format"
+msgstr "tbl-dctrl - Créer des tableaux de données exprimées au format dctrl"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:30
+msgid ""
+"B<tbl-dctrl> [ I<options> ] [ B<-c> I<column-specification> ...  ] "
+"[ I<filename> ] ..."
+msgstr ""
+"B<tbl-dctrl> [ I<options> ] [ B<-c> I<colonne> ...  ] [ I<fichier> ] ..."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:33
+msgid "B<tbl-dctrl> B<--version>"
+msgstr "B<tbl-dctrl> B<--version>"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:36
+msgid "B<tbl-dctrl> B<--help>"
+msgstr "B<tbl-dctrl> B<--help>"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:40
+msgid ""
+"B<tbl-dctrl> creates tabular representations of data given to it in Debian "
+"control file format."
+msgstr ""
+"B<tbl-dctrl> crée des tableaux à partir de données exprimées au format de "
+"fichiers de contrôle Debian."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:47
+msgid ""
+"By default, B<tbl-dctrl> reads the whole database, looking for the longest "
+"entry in each requested column; it then outputs a table, with borders and "
+"column titles, where each column is just wide enough to fit the longest "
+"entry."
+msgstr ""
+"Par défaut, B<tbl-dctrl> lit l'ensemble de la base de données, à la "
+"recherche de la plus longue entrée de chaque colonne indiquée. Il affiche "
+"ensuite le tableau, avec des cadres et des titres de colonne, où chaque "
+"colonne est juste assez large pour afficher la plus longue entrée."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:49
+msgid "Most of this behaviour can be customized as described below."
+msgstr ""
+"Ce comportement peut être personnalisé conformément aux descriptions "
+"suivantes."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:53
+msgid ""
+"A column is requested by specifying the B<-c> (B<--column>)  switch with a "
+"column specification."
+msgstr ""
+"Une colonne est demandée en indiquant l'option B<-c> (B<--column>) suivie "
+"d'une spécification de colonne."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:56
+msgid ""
+"The simplest kind of a column specification consists solely of the name of a "
+"field."
+msgstr "Le nom d'un champ est la spécification de colonne la plus simple."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:61
+msgid ""
+"In such a case, B<tbl-dctrl> will include in the output a column whose title "
+"is the literal column specification and whose data is drawn from fields with "
+"that name."
+msgstr ""
+"Dans ce cas, B<tbl-dctrl> inclura dans la sortie une colonne dont le titre "
+"est le nom de colonne indiqué et dont les données sont tirées des champs de "
+"ce nom."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:67
+msgid ""
+"If no B<-c> options are given, B<tbl-dctrl> will use all fields in the input "
+"in the order in which they first appear."
+msgstr ""
+"En absence d'option B<-c>, B<tbl-dctrl> utilisera tous les champs en entrée "
+"dans l'ordre où ils sont apparus pour la première fois."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:70
+msgid ""
+"There are two optional additions one can make to a column specification."
+msgstr ""
+"Deux ajouts facultatifs peuvent être faits à une spécification de colonne."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:77
+msgid ""
+"Prefixing the field name with some text followed by an equality sign (for "
+"example, B<-c 'Package name=Package'>)  modifies the column in such a way "
+"that the text before the equality sign is used as the column title, while "
+"the text after the equality sign is used as the name of the field from which "
+"data is drawn."
+msgstr ""
+"Précéder le nom de champ avec du texte suivi d'un signe égal (par exemple B<-"
+"c 'Nom de paquet=Package'>) modifie la colonne pour que le texte précédant "
+"le signe égal soit utilisé en titre de colonne, alors que le texte qui le "
+"suit est utilisé comme nom de champ à partir duquel les données sont tirées."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:81
+msgid ""
+"One can also append a colon followed by a positive whole number to the field "
+"name.  In such a case, the number after the colon specifies the width of the "
+"column."
+msgstr ""
+"Un deux-points suivi d'un entier positif peut être ajouté au nom de champ. "
+"Dans ce cas, le nombre qui suit le deux-points indique la largeur de la "
+"colonne."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:83
+msgid "These two additions can be used separately or together."
+msgstr "Ces deux ajouts peuvent être utilisés séparément ou ensemble."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:85
+msgid "If there are more than one colon, the last one is significant."
+msgstr "S'il y a plus d'un deux-point, seul le dernier est pris en compte."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:87
+msgid "If there are more than one equals sign, the first one is significant."
+msgstr "S'il y a plus d'un signe égal, seul le premier est pris en compte."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:89
+msgid "Other colons and equals signs are used simply as data."
+msgstr ""
+"Les autres deux-points et signes égal sont simplement utilisés comme des "
+"données."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:94
+msgid ""
+"Note that the whole column specification must be given to B<tbl-dctrl> as "
+"one argument, so if it contains spaces, it must be quoted for the shell."
+msgstr ""
+"Remarquez que la totalité de la spécification de colonne doit être donnée à "
+"B<tbl-dctrl> comme un argument, donc si elle contient des espaces, il faut "
+"les protéger pour l'interpréteur."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:99
+msgid ""
+"If all requested columns have a specified width, B<tbl-dctrl> will produce "
+"output immediately, not waiting for the whole input to be read in."
+msgstr ""
+"Si toutes les colonnes demandées ont une largeur indiquée, B<tbl-dctrl> "
+"affichera le résultat directement, sans attendre d'avoir lu toute l'entrée."
+
+#. type: IP
+#: man/tbl-dctrl.1:100
+#, no-wrap
+msgid "B<-d >I<delimiter>, B<--delimiter=>I<delimiter>"
+msgstr "B<-d >I<délimiteur>, B<--delimiter=>I<délimiteur>"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:104
+msgid ""
+"Instead of drawing nice borders to the table, use the specified I<delimiter> "
+"string to delimit columns in a row."
+msgstr ""
+"Au lieu de dessiner de jolis cadres pour le tableau, utiliser le "
+"I<délimiteur> indiqué pour séparer les colonnes sur chaque ligne."
+
+#. type: IP
+#: man/tbl-dctrl.1:104
+#, no-wrap
+msgid "B<-H>, B<--no-heading>"
+msgstr "B<-H>, B<--no-heading>"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:106
+msgid "Do not print a table heading (column titles)."
+msgstr "Ne pas afficher d'en-tête (titres de colonne)."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:134
+msgid ""
+"B<tbl-dctrl> will read its input from the files named on the command line, "
+"in the specified order."
+msgstr ""
+"B<tbl-dctrl> lira son entrée à partir des fichier nommées sur la ligne de "
+"commande, dans l'ordre indiqué."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:143
+msgid ""
+"If no files are named, the program behaves as if B<-> alone had been named, "
+"that is, input is read from the standard input stream."
+msgstr ""
+"Si aucun fichier n'est indiqué, le programme se comporte comme si seul B<-> "
+"avait été nommé, c'est à dire que l'entrée est lue depuis le flux d'entrée "
+"standard."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:152
+msgid "All input to B<tbl-dctrl> is in the format of a Debian control file."
+msgstr ""
+"Toutes les entrées de B<tbl-dctrl> sont au format d'un fichier de contrôle "
+"Debian."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:173
+msgid ""
+"When input is read from multiple files, a record separator is implicit "
+"between two adjacent files."
+msgstr ""
+"Quand l'entrée est lue depuis plusieurs fichiers, un séparateur est "
+"implicite entre deux fichiers adjacent."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:191
+msgid ""
+"The output is a tabular representation of the input database restricted to "
+"the specified fields.  Logically, the output is a table; when the B<-d> "
+"option is used, this table is represented simply by separating columns in "
+"each row by the specified I<delimiter>; when the option is not used, a frame "
+"is drawn around the table.  The order of the columns is the same as the "
+"order of the column specifications on the command line."
+msgstr ""
+"La sortie est un tableau qui représente la base de donnée en entrée limitée "
+"aux champs indiqués. Lorsque l'option B<-d> est utilisée, le tableau est "
+"simplement représentée en séparant les colonnes de chaque ligne par le "
+"I<délimiteur> indiqué, sinon, un cadre est dessiné autour du tableau. "
+"L'ordre des colonnes est le même que l'ordre des spécifications de colonne "
+"sur la ligne de commande."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:206
+msgid ""
+"The following command line pipe outputs a table of all packages, with their "
+"maintainer data, sorted by the maintainer data, that have no content:"
+msgstr ""
+"La commande suivante renvoie le tableau de tous les paquets sans contenu, "
+"avec leur responsable, ordonnés par responsable."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:209
+#, no-wrap
+msgid ""
+"% grep-available -FInstalled-Size --eq 0 | sort-dctrl -kMaintainer - \\e\n"
+"  | tbl-dctrl -cPackage -cMaintainer\n"
+msgstr ""
+"% grep-available -FInstalled-Size --eq 0 | sort-dctrl -kMaintainer - \\e\n"
+"  | tbl-dctrl -cPackage -cMaintainer\n"
+
+#. type: Plain text
+#: man/tbl-dctrl.1:214
+msgid ""
+"The B<tbl-dctrl> program and this manual page were written by Antti-Juhani "
+"Kaijanaho."
+msgstr ""
+"Le programme B<tbl-dctrl> et cette page de manuel ont été écrits par Antti-"
+"Juhani Kaijanaho."
+
+#. type: Plain text
+#: man/tbl-dctrl.1:222
+msgid ""
+"B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<dpkg-query>(1), "
+"B<grep-dctrl>(1), B<sort-dctrl>(1)"
+msgstr ""
+"B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<dpkg-query>(1), "
+"B<grep-dctrl>(1), B<sort-dctrl>(1)"
+
+#~ msgid ""
+#~ "This program and this manual page were written by Antti-Juhani Kaijanaho "
+#~ "E<lt>ajk@debian.orgE<gt>."
+#~ msgstr ""
+#~ "Ce programme et cette page de manuel ont été écrits par Antti-Juhani "
+#~ "Kaijanaho E<lt>ajk@debian.orgE<gt>."
+
+#~ msgid ""
+#~ "A Debian control (dctrl) file is a single table of a semistructured "
+#~ "database stored in a machine-parseable text file."
+#~ msgstr ""
+#~ "Un fichier de contrôle Debian (dctrl) est une unique table de base de "
+#~ "donnée semi-structurée conservée dans un fichier texte analysable par une "
+#~ "machine."
+
+#~ msgid ""
+#~ "Such a table consists of a set of records; each record is a mapping from "
+#~ "field names to field content."
+#~ msgstr ""
+#~ "Une telle table est constituée d'un ensemble d'enregistrements ; chaque "
+#~ "enregistrement est une association de noms de champ et de contenus de "
+#~ "champ."
+
+#~ msgid ""
+#~ "A Debian control (dctrl) file is a semistructured single-table database "
+#~ "stored in a machine-parseable text file.  Such a database consists of a "
+#~ "set of records; each record is a mapping from field names to field "
+#~ "content.  Textually, records are separated by empty lines, while each "
+#~ "field is encoded as one or more nonempty lines inside a record.  A field "
+#~ "starts with its name, followed by a colon, followed by the field "
+#~ "content.  The colon must reside on the first line of the field, and the "
+#~ "first line must start with no whitespace.  Subsequent lines, in contrast, "
+#~ "always start with linear whitespace (one or more space or tab characters)."
+#~ msgstr ""
+#~ "Un fichier de contrôle Debian (dctrl) est une base de donnée semi-"
+#~ "structurée avec une seule table conservée dans un fichier texte "
+#~ "analysable par une machine. Une telle base est constituée d'un ensemble "
+#~ "d'enregistrements ; chaque enregistrement est une association de noms de "
+#~ "champ et de contenus de champ. Le fichier texte présente les "
+#~ "enregistrements séparés par des lignes vides, tandis que chaque champ est "
+#~ "constitué d'une ou plusieurs lignes non vides à l'intérieur d'un "
+#~ "enregistrement. Un champ commence avec son nom, suivi d'un deux-points, "
+#~ "suivi par le contenu du champ. Les deux-points doivent rester sur la "
+#~ "première ligne du champ, et la première ligne ne doit pas commencer par "
+#~ "un espace. Les lignes suivantes, au contraire, doivent commencer par un "
+#~ "espace (un ou plusieurs caractères espace ou tabulation)."
+
+#~| msgid ""
+#~| "Set log level to I<level>.  I<level> is one of B<fatal>, B<important>, "
+#~| "B<informational> and B<debug>, but the last may not be available, "
+#~| "depending on the compile-time options.  These categories are given here "
+#~| "in order; every message that is emitted when B<fatal> is in effect, will "
+#~| "be emitted in the B<important> error level, and so on. The default is "
+#~| "B<important>."
+#~ msgid ""
+#~ "Set log level to I<level>.I< level> is one of B<fatal>,B< important>,B< "
+#~ "informational> and B<debug>, but the last may not be available, depending "
+#~ "on the compile-time options.  These categories are given here in order; "
+#~ "every message that is emitted when B<fatal> is in effect, will be emitted "
+#~ "in the B<important> error level, and so on.  The default is B<important>."
+#~ msgstr ""
+#~ "Configurer le I<niveau> de journalisation, où I<niveau> est B<fatal>, "
+#~ "B<important>, B<informational> ou B<debug>. le disponibilité de B<debug> "
+#~ "depend des options de compilation. Ces catégories sont ici données dans "
+#~ "l'ordre : tous les messages émis lorsque B<fatal> est choisi seront "
+#~ "affichés pour un niveau d'erreur B<important>, etc. Par défaut, "
+#~ "B<important> est sélectionné."
+
+#~ msgid ""
+#~ "The pattern of the current simple filter is a standard POSIX regular "
+#~ "expression."
+#~ msgstr ""
+#~ "Le motif du filtre simple actuel est une expression rationnelle standard "
+#~ "POSIX."
