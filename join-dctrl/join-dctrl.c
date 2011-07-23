@@ -91,7 +91,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 for (size_t i = 0; i < 2; i++) {
                         if (key == the_other_key[i]) continue;
                         if (args->join_field[0] != NULL) {
-                                message(L_FATAL, 0, gettext(errmsg[i]));
+                                message(L_FATAL, 0, "%s", gettext(errmsg[i]));
                                 fail();
                         }
                 }

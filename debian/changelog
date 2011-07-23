@@ -5,7 +5,17 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
   * Makes manpages translatable (using po4a)
   * Fix example in manpage (closes: #589827)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 13 Mar 2011 14:26:29 +0200
+  [ Antti-Juhani Kaijanaho ]
+  * Merge 2.18ubuntu1
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 23 Jul 2011 16:36:19 +0300
+
+dctrl-tools (2.18ubuntu1) oneiric; urgency=low
+
+  * lib/msg.h, grep-dctrl/rc.c, join-dctrl/join-dctrl.c: Pass the arguments to
+    message() in the right order (fixes FTBFS; lp: #774391, Closes: #624707)
+
+ -- Michael Bienia <geser@ubuntu.com>  Mon, 02 May 2011 08:25:34 +0100
 
 dctrl-tools (2.18) unstable; urgency=low
 

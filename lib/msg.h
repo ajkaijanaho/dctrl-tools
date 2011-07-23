@@ -112,7 +112,7 @@ inline static void
 debug_message (const char * s, const char * fname)
 {
 #ifdef INCLUDE_DEBUG_MSGS
-  message (L_DEBUG, s, fname);
+  message (L_DEBUG, fname, "%s", s);
 #endif
 }
 
@@ -137,7 +137,7 @@ debug(const char * s, ...)
 inline static void
 errno_msg(int severity, char const * fname)
 {
-	message(severity, strerror(errno), fname);
+	message(severity, fname, "%s", strerror(errno));
 }
 
 #define enomem_msg _("cannot find enough memory")
@@ -145,13 +145,13 @@ errno_msg(int severity, char const * fname)
 inline static void
 enomem (const char * fname)
 {
-  message (L_IMPORTANT, enomem_msg, fname);
+  message (L_IMPORTANT, fname, enomem_msg);
 }
 
 inline static void
 fatal_enomem (const char * fname)
 {
-  message(L_FATAL, enomem_msg, fname);
+  message(L_FATAL, fname, enomem_msg);
   fail();
 }
 
