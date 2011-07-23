@@ -64,14 +64,14 @@ static bool perms_ok(char const * fname, int fd)
 		return false;
 	}
 	if (stat.st_uid != 0 && stat.st_uid != getuid()) {
-		message(L_IMPORTANT, _("not owned by you or root, ignoring"),
-			fname);
+		message(L_IMPORTANT, fname,
+			_("not owned by you or root, ignoring"));
 		return false;
 	}
 	if ((stat.st_mode & (S_IWGRP | S_IWOTH)) != 0) {
-		message(L_IMPORTANT, _("write permissions for "
-				       "group or others, ignoring"),
-			fname);
+		message(L_IMPORTANT, fname,
+			_("write permissions for "
+			  "group or others, ignoring"));
 		return false;
 	}
 	return true;
@@ -109,11 +109,11 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 		return (struct ifile){ .mode = m_error, .s = 0 };
 	}
 
-	message(L_INFORMATIONAL, _("reading config file"), fname);
+	message(L_INFORMATIONAL, fname, _("reading config file"));
 
 	f = fopen(fname, "r");
 	if (f == 0) {
-		message(L_INFORMATIONAL, strerror(errno), fname);
+		message(L_INFORMATIONAL, fname, "%s", strerror(errno));
 		return (struct ifile){ .mode = m_error, .s = 0 };
 	}
 
@@ -136,8 +136,8 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 
 		line = getaline (f);
 		if (line == 0) {
-			message(L_FATAL, _("read failure or out of memory"),
-				fname);
+			message(L_FATAL, fname,
+				_("read failure or out of memory"));
 			fail();
 		}
 

@@ -1,3 +1,10 @@
+dctrl-tools (2.18ubuntu1) oneiric; urgency=low
+
+  * lib/msg.h, grep-dctrl/rc.c, join-dctrl/join-dctrl.c: Pass the arguments to
+    message() in the right order (fixes FTBFS; lp: #774391, Closes: #624707)
+
+ -- Michael Bienia <geser@ubuntu.com>  Mon, 02 May 2011 08:25:34 +0100
+
 dctrl-tools (2.18) unstable; urgency=low
 
   * debian/rules: Override prefix and sysconfdir even for building
