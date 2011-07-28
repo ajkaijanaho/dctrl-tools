@@ -7,8 +7,9 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * Merge 2.18ubuntu1
+  * debian/control [Standards-Version]: Updated to 3.6.2 (no changes needed).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 23 Jul 2011 16:36:19 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 28 Jul 2011 12:45:01 +0300
 
 dctrl-tools (2.18ubuntu1) oneiric; urgency=low
 
