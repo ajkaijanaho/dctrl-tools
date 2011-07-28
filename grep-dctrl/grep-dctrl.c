@@ -1,5 +1,6 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010
+    Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
+                2010, 2011
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -936,7 +937,10 @@ int main (int argc, char * argv[])
                                         show_field(&args, &para, fa);
                                 }
                         }
-			if (args.num_show_fields > 1) puts("");
+                        /* let's see how many users howl in pain after
+                           deactivating this conditional (see BTS #525525)
+
+                           if (args.num_show_fields > 1)*/ puts("");
 		}
 
 		fsaf_close(fp);

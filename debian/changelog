@@ -8,6 +8,10 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
   [ Antti-Juhani Kaijanaho ]
   * Merge 2.18ubuntu1
   * debian/control [Standards-Version]: Updated to 3.6.2 (no changes needed).
+  * grep-dctrl/grep-dctrl.c: Output a stanza separator unconditionally.
+    Closes: #525525 (do not separate stanzas with empty lines when showing
+                     Description field only)
+    [Reported by Stefano Zacchiroli <zack@debian.org>]
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 28 Jul 2011 12:45:01 +0300
 
