@@ -2,7 +2,7 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
 
   [ David Prévot ]
   * Stylish fix to grep-dctrl(1) manpage
-  * Makes manpages translatable (using po4a)
+  * Makes manpages translatable (using po4a), closes: #615877
   * Fix example in manpage (closes: #589827)
 
   [ Antti-Juhani Kaijanaho ]
