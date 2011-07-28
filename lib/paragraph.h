@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2005, 2010 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2005, 2010, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@ struct field_data {
         _Bool present;
 	size_t line;
 	size_t start, end; /* offsets to the file; [start,end) is the body */
+        size_t name_start, name_end; /* as start and end, but for the name */
 };
 
 struct paragraph_parser {

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2008, 2010 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008, 2010, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -185,6 +185,8 @@ FIELD_NAME:
                         field_data->present = 1;
                         field_data->start = pos;
                         field_data->line = line;
+                        field_data->name_start = field_start;
+                        field_data->name_end = pos-1;
                 }
                 goto BODY;
         }

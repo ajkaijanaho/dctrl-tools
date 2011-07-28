@@ -787,7 +787,12 @@ static void show_field(struct arguments *args,
         }
 
         if (args->show_field_name) {
-                printf("%s: ", fa->name);
+                struct fsaf_read_rv rn =
+                        fsaf_read(para->common->fp,
+                                  fd->name_start,
+                                  fd->name_end - fd->name_start);
+                fwrite(rn.b, 1, rn.len, stdout);
+                fputs(": ", stdout);
         }
 
         fwrite(r.b, 1, r.len, stdout);
