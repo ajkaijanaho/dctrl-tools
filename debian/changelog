@@ -1,10 +1,12 @@
 dctrl-tools (2.19) UNRELEASED; urgency=low
 
   [ David Prévot ]
-  * Stylish fix to grep-dctrl(1) manpage
+  * Stylish fix to grep-dctrl(1) manpage (closes: #325169)
   * Makes manpages translatable (using po4a), closes: #615877
   * Fix example in manpage (closes: #589827)
-
+  * Update French runtime translation (closes: #628013)
+  * Initial French manpages translation
+  
   [ Antti-Juhani Kaijanaho ]
   * Merge 2.18ubuntu1
   * debian/control [Standards-Version]: Updated to 3.6.2 (no changes needed).
@@ -17,7 +19,7 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
     Closes: #209134 (keyword case shouldn't be influenced by -s)
     Reported by Dan Jacobson <jidanni@jidanni.org>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 28 Jul 2011 13:24:12 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 28 Jul 2011 19:10:42 +0300
 
 dctrl-tools (2.18ubuntu1) oneiric; urgency=low
 
