@@ -28,85 +28,161 @@
 #include "strutil.h"
 #include "version.h"
 
-void init_predicate(struct predicate * p)
+typedef bool (*eval_t)(struct predicate *, para_t * para);
+
+struct predicate_vtbl {
+        bool (*eval)(struct predicate *, para_t *);
+        void (*print)(struct predicate *, size_t indent);
+};
+
+struct predicate {
+        const struct predicate_vtbl *vtbl;
+};
+
+static void print(struct predicate *p, size_t indent)
 {
-	p->num_atoms = 0;
-	p->proglen = 0;
-        p->atoms = malloc(MAX_ATOMS * sizeof p->atoms[0]);
-        if (p->atoms == 0) enomem(0);
+        p->vtbl->print(p, indent);
 }
 
-void addinsn(struct predicate * p, int insn)
+struct unary_predicate {
+        struct predicate super;
+        struct predicate *rand;
+};
+
+struct binary_predicate {
+        struct predicate super;
+        struct predicate *lrand;
+        struct predicate *rrand;
+};
+
+struct atomary_predicate {
+        struct predicate super;
+        struct atom *atom;
+};
+
+static bool eval_AND(struct predicate *base_p, para_t * para)
 {
-	if (insn == I_NOP) return;
-	if (p->proglen >= MAX_OPS) {
-		message(L_FATAL, 0, _("predicate is too complex"));
-		fail();
-	}
-	p->program[p->proglen++] = insn;
+        struct binary_predicate *p = (struct binary_predicate *)base_p;
+        if (!does_para_satisfy(p->lrand, para)) return false;
+        return does_para_satisfy(p->rrand, para);
+}
+
+static void print_AND(struct predicate *base_p, size_t indent)
+{
+        struct binary_predicate *p = (struct binary_predicate *)base_p;
+        for (int i = 0; i < indent; i++) putchar(' ');
+        puts("AND");
+        print(p->lrand, indent+1);
+        print(p->rrand, indent+1);
+}
+
+static bool eval_OR(struct predicate *base_p, para_t * para)
+{
+        struct binary_predicate *p = (struct binary_predicate *)base_p;
+        if (does_para_satisfy(p->lrand, para)) return true;
+        return does_para_satisfy(p->rrand, para);
+}
+
+static void print_OR(struct predicate *base_p, size_t indent)
+{
+        struct binary_predicate *p = (struct binary_predicate *)base_p;
+        for (int i = 0; i < indent; i++) putchar(' ');
+        puts("OR");
+        print(p->lrand, indent+1);
+        print(p->rrand, indent+1);
+}
+
+static bool eval_NOT(struct predicate *base_p, para_t * para)
+{
+        struct unary_predicate *p = (struct unary_predicate *)base_p;
+        return !does_para_satisfy(p->rand, para);
+}
+
+static void print_NOT(struct predicate *base_p, size_t indent)
+{
+        struct unary_predicate *p = (struct unary_predicate *)base_p;
+        for (int i = 0; i < indent; i++) putchar(' ');
+        puts("NOT");
+        print(p->rand, indent+1);
+}
+
+
+static bool eval_ATOM(struct predicate *base_p, para_t * para)
+{
+        struct atomary_predicate *p = (struct atomary_predicate *)base_p;
+        return atom_verify(p->atom, para);
+}
+
+static void print_ATOM(struct predicate *base_p, size_t indent)
+{
+        struct atomary_predicate *p = (struct atomary_predicate *)base_p;
+        char ind[indent+1];
+        for (int i = 0; i < indent; i++) ind[i] = ' ';
+        ind[indent] = '\0';
+        printf("%sATOM", ind);
+        printf("%s field_name = %s\n", ind, p->atom->field_name);
+        printf("%s mode = %i\n", ind, p->atom->mode);
+        printf("%s ignore_case = %i\n", ind, p->atom->ignore_case);
+        printf("%s whole_pkg = %i\n", ind, p->atom->whole_pkg);
+        printf("%s pat = %s\n", ind, p->atom->pat);
+}
+
+struct predicate *binary_predicate(const struct predicate_vtbl *vtbl,
+                                   struct predicate *pl, struct predicate *pr){
+        struct binary_predicate *rv = malloc(sizeof *rv);
+        if (rv == 0) enomem(0);
+        rv->super.vtbl = vtbl;
+        rv->lrand= pl;
+        rv->rrand = pr;
+        return &rv->super;
+}
+struct predicate *predicate_AND(struct predicate *pl, struct predicate *pr)
+{
+        static const struct predicate_vtbl vtbl =
+                { .eval = eval_AND, .print = print_AND };
+        return binary_predicate(&vtbl, pl, pr);
+}
+struct predicate *predicate_OR(struct predicate *pl, struct predicate *pr)
+{
+        static const struct predicate_vtbl vtbl =
+                { .eval = eval_OR, .print = print_OR };
+        return binary_predicate(&vtbl, pl, pr);
+}
+struct predicate *predicate_NOT(struct predicate *p)
+{
+        static const struct predicate_vtbl vtbl =
+                { .eval = eval_NOT, .print = print_NOT };
+        struct unary_predicate *rv = malloc(sizeof *rv);
+        if (rv == 0) enomem(0);
+        rv->super.vtbl = &vtbl;
+        rv->rand = p;
+        return &rv->super;
+}
+struct predicate *predicate_ATOM(struct atom *at)
+{
+        static const struct predicate_vtbl vtbl =
+                { .eval = eval_ATOM, .print = print_ATOM };
+        struct atomary_predicate *rv = malloc(sizeof *rv);
+        if (rv == 0) enomem(0);
+        rv->super.vtbl = &vtbl;
+        rv->atom = at;
+        return &rv->super;
 }
 
 
 bool check_predicate(struct predicate * p)
 {
-	size_t sp = 0;
-	/* Simulate the program. */
-	for (size_t i = 0; i < p->proglen; i++) {
-		switch (p->program[i]) {
-		case I_NOP: break;
-		case I_NEG:
-			if (sp == 0) return false;
-			break;
-		case I_AND: case I_OR:
-			if (sp < 2) return false;
-			--sp;
-			break;
-		default:
-			++sp;
-		}
-	}
-	if (sp != 1) return false;
-	return true;
+        // static checking of predicate
+        // currently no operation
+        return true;
 }
 
 bool does_para_satisfy(struct predicate * p, para_t * para)
 {
-	bool sat_atom[MAX_ATOMS];
-	bool stack[MAX_OPS];
-	size_t sp = 0;
+        return p->vtbl->eval(p, para);
+}
 
-	/* Verify atoms. */
-	for (size_t i = 0; i < p->num_atoms; i++) {
-		sat_atom[i] = atom_verify(&p->atoms[i], para);
-	}
-
-	/* Run the program. */
-	for (size_t i = 0; i < p->proglen; i++) {
-		switch (p->program[i]) {
-		case I_NOP: break;
-		case I_NEG:
-			assert(sp >= 1);
-			stack[sp-1] = !stack[sp-1];
-			break;
-		case I_AND:
-			assert(sp >= 2);
-			stack[sp-2] = stack[sp-2] && stack[sp-1];
-			--sp;
-			break;
-		case I_OR:
-			assert(sp >= 2);
-			stack[sp-2] = stack[sp-2] || stack[sp-1];
-			--sp;
-			break;
-		default:
-		{
-			int atom = p->program[i] - I_PUSH(0);
-			assert(atom <= p->num_atoms);
-			stack[sp] = sat_atom[atom];
-			++sp;
-		}
-		}
-	}
-	assert(sp == 1);
-	return stack[0];
+void predicate_print(struct predicate *p)
+{
+        print(p, 0);
 }

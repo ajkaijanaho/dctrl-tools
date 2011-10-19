@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 1999, 2008 Antti-Juhani Kaijanaho
+    Copyright © 1999, 2008, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,6 +26,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "i18n.h"
+
+static void fail(void) __attribute__((noreturn));
 
 static inline
 void fail(void) { exit(2); }

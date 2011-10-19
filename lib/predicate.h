@@ -21,44 +21,18 @@
 
 #include "paragraph.h"
 
-#define MAX_OPS 4096
-#define MAX_ATOMS 4096
-
-#define I_NOP  0
-#define I_NEG  1 /* --not; 1-1 */
-#define I_AND  2 /* --and; 2-1 */
-#define I_OR   3 /* --or;  2-1 */
-#define I_PUSH(n) (4+(n)) /* push result of nth atomic proposition */
-
 struct atom;
+struct predicate;
 
-/* A predicate is represented as a set of atomic predicates and a
- * program - a sequence of stack-based "bytecode" instructions - that
- * specifies the structure of the combined predicate.  */
-struct predicate {
-	/* Number of atomic predicates.  */
-	size_t num_atoms;
-	/* Length of the program */
-	size_t proglen;
-	/* The program */
-	int program[MAX_OPS];
-	/* The atomic predicates */
-	struct atom *atoms;
-};
-
-void init_predicate(struct predicate * p);
-
-static inline
-struct atom * get_current_atom(struct predicate * p)
-{
-	assert(p->num_atoms > 0);
-	return &p->atoms[p->num_atoms-1];
-}
-
-void addinsn(struct predicate * p, int insn);
+struct predicate *predicate_AND(struct predicate *, struct predicate *);
+struct predicate *predicate_OR(struct predicate *, struct predicate *);
+struct predicate *predicate_NOT(struct predicate *);
+struct predicate *predicate_ATOM(struct atom *);
 
 bool does_para_satisfy(struct predicate * p, para_t *);
 
 bool check_predicate(struct predicate * p);
+
+void predicate_print(struct predicate *p);
 
 #endif /* PREDICATE_H */

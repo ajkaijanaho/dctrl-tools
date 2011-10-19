@@ -180,7 +180,7 @@ struct arguments {
 	/**/
 	size_t num_show_fields;
 	/* A machine-readable representation of the predicate.  */
-	struct predicate p;
+	struct predicate * p;
 	/* Configuration file name */
 	char const * rcname;
 	/* Ignore parse errors? */
@@ -203,8 +203,6 @@ struct arguments {
 	size_t toks_np;
         /* Token read position. */
 	size_t toks_pos;
-	/* Pattern error? */
-	bool pattern_error;
 	/* Token stream for the predicate parser. */
 	int toks[MAX_TOKS];
         /* The string value, if any, of each token*/
@@ -327,7 +325,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case 'o':
 		debug_message("parse_opt: o", 0);
-		APPTOK(I_OR);
+		APPTOK(TOK_OR);
 		break;
         case 'S':
                 debug_message("parse_opt: S", 0);
@@ -447,30 +445,9 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 
 static void dump_args(struct arguments * args)
 {
-	size_t i;
-	printf("num_atoms = %zi\n", args->p.num_atoms);
-	for (i = 0; i < args->p.num_atoms; i++) {
-		printf("atoms[%zi].field_name = %s\n", i, args->p.atoms[i].field_name);
-		printf("atoms[%zi].mode = %i\n", i, args->p.atoms[i].mode);
-		printf("atoms[%zi].ignore_case = %i\n", i, args->p.atoms[i].ignore_case);
-		printf("atoms[%zi].whole_pkg = %i\n", i, args->p.atoms[i].whole_pkg);
-		printf("atoms[%zi].pat = %s\n", i, args->p.atoms[i].pat);
-	}
-	printf("proglen = %zi\n", args->p.proglen);
-	for (i = 0; i < args->p.proglen; i++) {
-		int op = args->p.program[i];
-		printf("program[%zi] = ", i);
-		switch (op) {
-		case I_NOP:  puts("NOP"); break;
-		case I_NEG:  puts("NEG"); break;
-		case I_AND:  puts("AND"); break;
-		case I_OR:   puts("OR"); break;
-		default:
-			printf("PUSH(%i)\n", op - I_PUSH(0));
-		}
-	}
+        predicate_print(args->p);
 	printf("num_fnames = %zi\n", args->num_fnames);
-	for (i = 0; i < args->num_fnames; i++) {
+	for (size_t i = 0; i < args->num_fnames; i++) {
 		printf("fname[%zi].mode = %s, fname[%zi].s = %s\n",
 		       i, ifile_modes[args->fname[i].mode],
 		       i, args->fname[i].s);
@@ -567,18 +544,18 @@ static void unexpected(int tok)
 	}
 }
 
-static void parse_conj(struct arguments * args);
+static struct predicate * parse_conj(struct arguments * args);
 
-static void parse_prim(struct arguments * args)
+static struct predicate * parse_prim(struct arguments * args)
 {
 	if (peek_token(args) == TOK_LP) {
 		get_token(args);
-		parse_conj(args);
+		struct predicate * rv = parse_conj(args);
 		if (get_token(args) != TOK_RP) {
 			message(L_FATAL, 0, _("missing ')' in command line"));
 			fail();
 		}
-		return;
+		return rv;
 	}
 
         char *pattern = 0;
@@ -670,21 +647,19 @@ static void parse_prim(struct arguments * args)
          }
 
          if (pattern == 0) {
-                 args->pattern_error = true;
-                 return;
+                 message(L_FATAL, 0, _("A pattern is mandatory"));
+                 fail();
          }
 
          if (num_fields == 0) {
                  num_fields = 1;
                  fields[0] = 0;
          }
-         if (args->p.num_atoms + num_fields > MAX_ATOMS) {
-                 message(L_FATAL, 0, _("predicate is too complex"));
-                 fail();
-         }
+         
+         struct predicate *rv = 0;
          for (size_t i = 0; i < num_fields; i++) {
-                 size_t ati = args->p.num_atoms++;
-                 struct atom * atom = &args->p.atoms[ati];
+                 struct atom * atom = malloc(sizeof *atom);
+                 if (atom == 0) enomem(0);
                  atom->field_name = fields[i];
                  atom->field_inx = -1;
                  atom->mode = mm;
@@ -693,51 +668,55 @@ static void parse_prim(struct arguments * args)
                  atom->pat = pattern;
                  atom->patlen = strlen(pattern);
                  atom_finish(atom);
-                 addinsn(&args->p, I_PUSH(ati));
-                 if (i > 0) addinsn(&args->p, I_OR);
+                 struct predicate *tmp = predicate_ATOM(atom);
+                 rv = rv != 0 ? predicate_OR(rv, tmp) : tmp;
          }
 
-        return;
+        return rv;
 failmode:
         message(L_FATAL, 0, _("inconsistent atom modifiers")); 
-        fail(); 
+        fail();
+        return 0;
 }
 
-static void parse_neg(struct arguments * args)
+static struct predicate * parse_neg(struct arguments * args)
 {
 	bool neg = false;
 	if (peek_token(args) == TOK_NOT) {
 		neg = true;
 		get_token(args);
 	}
-	parse_prim(args);
-	if (neg) addinsn(&args->p, I_NEG);
+	struct predicate * rv = parse_prim(args);
+	if (neg) rv = predicate_NOT(rv);
+        return rv;
 }
 
-static void parse_disj(struct arguments * args)
+static struct predicate * parse_disj(struct arguments * args)
 {
-	parse_neg(args);
+	struct predicate * rv = parse_neg(args);
 	while (peek_token(args) == TOK_OR) {
 		get_token(args);
-		parse_neg(args);
-		addinsn(&args->p, I_OR);
+		struct predicate * tmp = parse_neg(args);
+                rv = predicate_OR(rv, tmp);
 	}
+        return rv;
 }
 
-static void parse_conj(struct arguments * args)
+static struct predicate * parse_conj(struct arguments * args)
 {
-	parse_disj(args);
+	struct predicate * rv = parse_disj(args);
 	while (peek_token(args) == TOK_AND) {
 		get_token(args);
-		parse_disj(args);
-		addinsn(&args->p, I_AND);
+		struct predicate * tmp = parse_disj(args);
+                rv = predicate_AND(rv, tmp);
 	}
+        return rv;
 }
 
 static void parse_predicate(struct arguments * args)
 {
 	args->toks_pos = 0;
-	parse_conj(args);
+	args->p = parse_conj(args);
         while (peek_token(args) == TOK_STR) {
                 if (args->num_fnames >= MAX_FNAMES) {
                         message(L_FATAL, 0, _("too many file names"));
@@ -806,26 +785,16 @@ int main (int argc, char * argv[])
 	static struct arguments args;
 	args.show_field_name = true;
 	msg_set_progname(argv[0]);
-	init_predicate(&args.p);
 	description_attr = fieldtrie_insert(description);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
 #ifdef BANNER
 	banner(true);
 #endif
 	parse_predicate(&args);
-	if (args.pattern_error) {
-		message(L_FATAL, 0, _("A pattern is mandatory"));
-		fail();
-	}
 
 	if (debug_optparse) { dump_args(&args); return 0; }
 
-	if (args.p.num_atoms == 0) {
-		message(L_FATAL, 0, _("a predicate is required"));
-		fail();
-	}
-
-	if (!check_predicate(&args.p)) {
+	if (!check_predicate(args.p)) {
 		message(L_FATAL, 0, _("malformed predicate"));
 		fail();
 	}
@@ -890,9 +859,9 @@ int main (int argc, char * argv[])
 			para_parse_next(&para);
 			if (para_eof(&pp)) break;
 			if ((args.invert_match 
-			     || !does_para_satisfy(&args.p, &para))
+			     || !does_para_satisfy(args.p, &para))
 			    && (!args.invert_match 
-				|| does_para_satisfy(&args.p, &para))) {
+				|| does_para_satisfy(args.p, &para))) {
 				continue;
 			}
 			if (args.quiet) {
