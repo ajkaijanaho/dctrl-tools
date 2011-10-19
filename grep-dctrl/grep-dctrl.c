@@ -147,14 +147,25 @@ static struct argp_option options[] = {
 
 
 // Tokens
-#define TOK_EOD 0
-#define TOK_NOT 1
-#define TOK_AND 2
-#define TOK_OR  3
-#define TOK_LP  4 /* left paren */
-#define TOK_RP  5 /* right paren */
-#define TOK_ATOM_BASE 6 /* All tokens >= TOK_ATOM_BASE are atoms; the
-			   difference is the atom index.  */
+#define TOK_EOD    0
+#define TOK_NOT    1
+#define TOK_AND    2
+#define TOK_OR     3
+#define TOK_LP     4 /* left paren */
+#define TOK_RP     5 /* right paren */
+#define TOK_EXACT  6 /* -X */
+#define TOK_ERGEX  7 /* -e */
+#define TOK_REGEX  8 /* -r */
+#define TOK_EQ     9
+#define TOK_LT    10
+#define TOK_LE    11
+#define TOK_GT    12
+#define TOK_GE    13
+#define TOK_ICASE 14 /* -i */
+#define TOK_PAT   15 /* --pattern */
+#define TOK_STR   16 /* a plain string */
+#define TOK_WHOLE 17 /* --whole-pkg */
+#define TOK_FIELD 18 /* -F */
 
 #define MAX_FNAMES 4096
 #define MAX_TOKS   16384
@@ -168,8 +179,6 @@ struct arguments {
 	size_t num_fnames;
 	/**/
 	size_t num_show_fields;
-	/**/
-	size_t num_search_fields;
 	/* A machine-readable representation of the predicate.  */
 	struct predicate p;
 	/* Configuration file name */
@@ -194,25 +203,16 @@ struct arguments {
 	size_t toks_np;
         /* Token read position. */
 	size_t toks_pos;
-	/* Finished with the predicate scanning? */
-	bool finished;
-	/* Are we inside an atom? */
-	bool in_atom;
 	/* Pattern error? */
 	bool pattern_error;
 	/* Token stream for the predicate parser. */
 	int toks[MAX_TOKS];
-	/* For each atom, give code with which it can be accessed.  */
-	struct atom_code {
-		size_t n;
-		int * routine;
-	} *atom_code[MAX_ATOMS];
+        /* The string value, if any, of each token*/
+        char * strings[MAX_TOKS];
 	/* File names seen on the command line.  */
 	struct ifile fname[MAX_FNAMES];
         /**/
         size_t show_fields[MAX_FIELDS];
-	/* Search field names seen during current atom.  */
-	char * search_fields[MAX_FIELDS];
 };
 
 #define IS_SHOW_FIELD(field_app_data) ((field_app_data) & 1)
@@ -222,67 +222,11 @@ struct arguments {
 #define SET_BACKUP_FIELD(field_app_data,val) \
   ((field_app_data) = (((field_app_data)&1) | (val<<1)))
 
-struct atom * clone_atom(struct arguments * args)
-{
-	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, 0, _("predicate is too complex"));
-		fail();
-	}
-	int oa = args->p.num_atoms-1;
-	struct atom * atom = get_current_atom(&args->p);
-	int na = args->p.num_atoms;
-	struct atom * rv = &args->p.atoms[args->p.num_atoms++];
-	rv->field_name = atom->field_name;
-	rv->field_inx = atom->field_inx;
-	rv->mode = atom->mode;
-	rv->ignore_case = atom->ignore_case;
-	rv->whole_pkg = atom->whole_pkg;
-	rv->pat = atom->pat;
-	rv->patlen = atom->patlen;
-	struct atom_code * ac = args->atom_code[oa];
-	args->atom_code[na] = ac;
-	assert(ac->n > 0);
-	ac->n += 2;
-	ac->routine = realloc(ac->routine, ac->n * sizeof *ac->routine);
-	if (ac->routine == 0) fatal_enomem(0);
-	ac->routine[ac->n-2] = I_PUSH(na);
-	ac->routine[ac->n-1] = I_OR;
-	return rv;
-}
-
-static void finish_atom(struct arguments * args)
-{
-	assert(args->in_atom);
-	args->in_atom = false;
-	struct atom * atom = get_current_atom(&args->p);
-	if (atom->pat == 0) {
-		args->pattern_error = true;
-		return;
-	}
-	for (size_t i = 0; i < args->num_search_fields; i++) {
-		if (i > 0) atom = clone_atom(args);
-		atom->field_name = args->search_fields[i];
-		atom_finish(atom);
-	}
-	// If there are no fields, we have not yet run this...
-	// ... but it must be done (especially with -r/-e atoms)
-	if (args->num_search_fields == 0) atom_finish(atom);
-	args->num_search_fields = 0;
-}
-
 #define APPTOK(tok) do { apptok(args, (tok)); } while (0)
 
 static void apptok(struct arguments * args, const int tok)
 {
 	debug_message("apptok", 0);
-        if (args->finished) {
-                message(L_FATAL, 0,
-                        _("file names are not allowed within the predicate"));
-                fail();
-        }
-	if (args->in_atom && tok < TOK_ATOM_BASE) {
-		finish_atom(args);
-	}
 	if (args->toks_np >= MAX_TOKS) {
 		message(L_FATAL, 0, _("predicate is too long"));
 		fail();
@@ -290,81 +234,20 @@ static void apptok(struct arguments * args, const int tok)
 	args->toks[args->toks_np++] = tok;
 }
 
-#define FINISH do { finish(args); } while (0)
+#define APPSTR(tok,str) do { appstr(args, (tok), (str)); } while (0)
 
-/* Flush the state stack. */
-static void finish(struct arguments * args)
-{
-	assert(!args->finished);
-	if (args->in_atom) finish_atom(args);
-	args->finished = true;
+static void appstr(struct arguments * args, const int tok, char * str) {
+        debug_message("appstr", 0);
+        apptok(args, tok);
+        args->strings[args->toks_np-1] = str;
 }
-
-#define ENTER_ATOM (enter_atom((args)))
-
-/* FIXME: UPDATE COMMENT
-If necessary, enter STATE_ATOM and allocate a new atom, pushing
- * along with the old state a PUSH instruction for the new atom to the
- * parser stack.  If we are already in STATE_ATOM, reuse the current
- * atom. */
-static struct atom * enter_atom(struct arguments * args)
-{
-	struct atom * rv;
-	if (args->in_atom) {
-		assert(args->p.num_atoms > 0);
-		return &args->p.atoms[args->p.num_atoms-1];
-	}
-	args->in_atom = true;
-	if (args->p.num_atoms >= MAX_ATOMS) {
-		message(L_FATAL, 0, _("predicate is too complex"));
-		fail();
-	}
-	APPTOK(args->p.num_atoms + TOK_ATOM_BASE);
-	args->atom_code[args->p.num_atoms] =
-		malloc(sizeof *args->atom_code[args->p.num_atoms]);
-	if (args->atom_code[args->p.num_atoms] == 0) fatal_enomem(0);
-	args->atom_code[args->p.num_atoms]->n = 1;
-	args->atom_code[args->p.num_atoms]->routine = malloc(1 * sizeof(int));
-	if (args->atom_code[args->p.num_atoms]->routine == 0) {
-		fatal_enomem(0);
-	}
-	args->atom_code[args->p.num_atoms]->routine[0] 
-		= I_PUSH(args->p.num_atoms);
-	rv = &args->p.atoms[args->p.num_atoms++];
-	rv->field_name = 0;
-	rv->field_inx = -1;
-	rv->mode = M_SUBSTR;
-	rv->ignore_case = 0;
-	rv->whole_pkg = 0;
-	rv->pat = 0;
-	rv->patlen = 0;
-	return rv;
-}
-
-#define set_mode(nmode) do { \
-	atom = ENTER_ATOM; \
-	if (atom->mode != M_SUBSTR) { \
-		message(L_FATAL, 0, _("inconsistent atom modifiers")); \
-		fail(); \
-	} \
-	atom->mode = (nmode); \
-} while (0)
 
 static error_t parse_opt (int key, char * arg, struct argp_state * state)
 {
 	struct arguments * args = state->input;
-	bool just_seen_cparen = args->just_seen_cparen;
-	args->just_seen_cparen = false;
-	struct atom * atom;
 	debug_message("parse_opt", 0);
-#ifdef INCLUDE_DEBUG_MSGS
-		if (do_msg(L_DEBUG)) {
-			fprintf(stderr, "%s: in_atom = %s\n",
-				get_progname(),
-				args->in_atom ? "true" : "false");
-		}
-#endif
 	switch (key) {
+                char *carg;
 	case 'C':
 		if (!to_stdout (COPYING)) fail();
 		exit(0);
@@ -455,50 +338,48 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		arg = "Package";
                 goto case_F;
         case_F:
-	case 'F': {
+	case 'F':
 		debug_message("parse_opt: Fv", 0);
-		atom = ENTER_ATOM;
-		char * carg = strdup(arg);
+		carg = strdup(arg);
 		if (carg == 0) fatal_enomem(0);
 		for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
 			char * tmp = strdup(s);
 			if (tmp == 0) fatal_enomem(0);
-			args->search_fields[args->num_search_fields++] = tmp;
+                        APPSTR(TOK_FIELD, tmp);
 		}
 		free(carg);
-	}
 		break;
 	case 'X':
 		debug_message("parse_opt: X", 0);
-		set_mode(M_EXACT);
+		APPTOK(TOK_EXACT);
 		break;
 	case 'r':
 		debug_message("parse_opt: r", 0);
-		set_mode(M_REGEX);
+		APPTOK(TOK_REGEX);
 		break;
 	case 'e':
 		debug_message("parse_opt: e", 0);
-		set_mode(M_EREGEX);
+		APPTOK(TOK_ERGEX);
 		break;
 	case OPT_EQ:
 		debug_message("parse_opt: eq", 0);
-		set_mode(M_VER_EQ);
+		APPTOK(TOK_EQ);
 		break;
 	case OPT_LT:
 		debug_message("parse_opt: lt", 0);
-		set_mode(M_VER_LT);
+		APPTOK(TOK_LT);
 		break;
 	case OPT_LE:
 		debug_message("parse_opt: le", 0);
-		set_mode(M_VER_LE);
+		APPTOK(TOK_LE);
 		break;
 	case OPT_GT:
 		debug_message("parse_opt: gt", 0);
-		set_mode(M_VER_GT);
+		APPTOK(TOK_GT);
 		break;
 	case OPT_GE:
 		debug_message("parse_opt: ge", 0);
-		set_mode(M_VER_GE);
+		APPTOK(TOK_GE);
 		break;
 	case OPT_MMAP:
 		debug_message("parse_opt: mmap", 0);
@@ -506,8 +387,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
-		atom = ENTER_ATOM;
-		atom->ignore_case = 1;
+                APPTOK(TOK_ICASE);
 		break;
 	case OPT_OPTPARSE:
 		debug_message("parse_opt: optparse", 0);
@@ -519,27 +399,16 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
         case OPT_PATTERN:
                 debug_message("parse_opt: pattern", 0);
-		atom = ENTER_ATOM;
-		if (atom->pat != 0) {
-                        message(L_FATAL, 0, _("Multiple patterns for the same "
-                                              "atom are not allowed"));
-                        fail();
-                }
-		atom->patlen = strlen(arg);
-		atom->pat = malloc(atom->patlen+1);
-		if (atom->pat == 0) fatal_enomem(0);
-		strcpy((char*)atom->pat, arg);
+		carg = strdup(arg);
+		if (carg == 0) fatal_enomem(0);
+                APPSTR(TOK_PAT, carg);
 		break;
 	case 'w':
 		debug_message("parse_opt: whole-pkg", 0);
-		atom = ENTER_ATOM;
-		atom->whole_pkg = 1;
-		set_mode(M_EREGEX);
+                APPTOK(TOK_WHOLE);
 		break;
 	case ARGP_KEY_ARG:
 		debug_message("parse_opt: argument", 0);
-	redo:
-		debug_message("!!!", 0);
 		if (strcmp(arg, "!") == 0) {
 			debug_message("parse_opt: !", 0);
 			APPTOK(TOK_NOT);
@@ -552,34 +421,15 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		}
 		if (strcmp(arg, ")") == 0) {
 			debug_message("parse_opt: )", 0);
-			args->just_seen_cparen = true;
 			APPTOK(TOK_RP);
 			break;
 		}
-		if (args->finished) {
-			char const * s;
-			if (args->num_fnames >= MAX_FNAMES) {
-				message(L_FATAL, 0, _("too many file names"));
-				fail();
-			}
-			s = strdup(arg);
-			if (s == 0) fatal_enomem(0);
-			args->fname[args->num_fnames++] =
-				(struct ifile){ .mode = m_read, .s = s };
-			break;
-		}
-		if (just_seen_cparen) { FINISH; goto redo; }
-		if (strcmp(arg, "--") == 0) { FINISH; break; }
-		atom = ENTER_ATOM;
-		if (atom->pat != 0) { FINISH; goto redo; }
-		atom->patlen = strlen(arg);
-		atom->pat = malloc(atom->patlen+1);
-		if (atom->pat == 0) fatal_enomem(0);
-		strcpy((char*)atom->pat, arg);
+                carg = strdup(arg);
+		if (carg == 0) fatal_enomem(0);
+                APPSTR(TOK_STR, carg);
 		break;
 	case ARGP_KEY_END:
 		debug_message("parse_opt: end", 0);
-		if (!args->finished) FINISH;
 		break;
 	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS:
 	case ARGP_KEY_ERROR: case ARGP_KEY_FINI: case ARGP_KEY_NO_ARGS:
@@ -598,7 +448,6 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 static void dump_args(struct arguments * args)
 {
 	size_t i;
-	assert(args->finished);
 	printf("num_atoms = %zi\n", args->p.num_atoms);
 	for (i = 0; i < args->p.num_atoms; i++) {
 		printf("atoms[%zi].field_name = %s\n", i, args->p.atoms[i].field_name);
@@ -644,6 +493,13 @@ int get_token(struct arguments * args)
 	return args->toks[args->toks_pos++];
 }
 
+static
+char * get_string(struct arguments * args)
+{
+	assert(args->toks_pos < args->toks_np);
+	return args->strings[args->toks_pos++];
+}
+
 static void unexpected(int tok)
 {
 	switch (tok) {
@@ -665,9 +521,48 @@ static void unexpected(int tok)
 	case TOK_RP :
 		message(L_FATAL, 0, _("unexpected ')' in command line"));
 		fail();
+        case TOK_EXACT :
+                message(L_FATAL, 0, _("unexpected '-X' in command line"));
+                fail();
+        case TOK_ERGEX :
+                message(L_FATAL, 0, _("unexpected '-e' in command line"));
+                fail();
+        case TOK_REGEX :
+                message(L_FATAL, 0, _("unexpected '-r' in command line"));
+                fail();
+        case TOK_EQ :
+                message(L_FATAL, 0, _("unexpected '--eq' in command line"));
+                fail();
+        case TOK_LT :
+                message(L_FATAL, 0, _("unexpected '--lt' in command line"));
+                fail();
+        case TOK_LE :
+                message(L_FATAL, 0, _("unexpected '--le' in command line"));
+                fail();
+        case TOK_GT :
+                message(L_FATAL, 0, _("unexpected '--gt' in command line"));
+                fail();
+        case TOK_GE :
+                message(L_FATAL, 0, _("unexpected '--ge' in command line"));
+                fail();
+        case TOK_ICASE :
+                message(L_FATAL, 0, _("unexpected '-i' in command line"));
+                fail();
+        case TOK_PAT :
+                message(L_FATAL, 0, _("unexpected pattern in command line"));
+                fail();
+        case TOK_STR :
+                message(L_FATAL, 0, _("unexpected string in command line"));
+                fail();
+        case TOK_WHOLE :
+                message(L_FATAL, 0,
+                        _("unexpected '--whole-pkg' in command line"));
+                fail();
+        case TOK_FIELD :
+                message(L_FATAL, 0, _("unexpected '-F' in command line"));
+                fail();
 	default:
-		assert(tok >=TOK_ATOM_BASE);
-		message(L_FATAL, 0, _("unexpected atom in command line"));
+		message(L_FATAL, 0, _("internal error: unknown token"));
 		fail();
 	}
 }
@@ -685,17 +580,127 @@ static void parse_prim(struct arguments * args)
 		}
 		return;
 	}
-	if (peek_token(args) < TOK_ATOM_BASE) unexpected(peek_token(args));
-	int atom = get_token(args) - TOK_ATOM_BASE;
-	assert(atom >= 0);
-	assert(atom < MAX_ATOMS);
-	struct atom_code *ac = args->atom_code[atom];
-	for (size_t i = 0; i < ac->n; i++) {
-		addinsn(&args->p, ac->routine[i]);
-	}
-/*
-	addinsn(&args->p, I_PUSH(atom));
-*/
+
+        char *pattern = 0;
+        char *fields[MAX_FIELDS];
+        size_t num_fields = 0;
+        enum matching_mode mm = M_SUBSTR;
+        bool ignore_case = false;
+        bool whole_pkg = false;
+        bool nonempty = false;
+
+        while (1) {
+                switch (peek_token(args)) {
+                case TOK_FIELD:
+                        if (num_fields >= MAX_FIELDS) {
+                                message(L_FATAL, 0, _("too many field names"));
+                                fail();
+                        }
+                        fields[num_fields++] = get_string(args);
+                        break;
+                case TOK_ERGEX:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_EREGEX;
+                        get_token(args);
+                        break;
+                case TOK_REGEX:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_REGEX;
+                        get_token(args);
+                        break;
+                case TOK_ICASE:
+                        ignore_case = true;
+                        get_token(args);
+                        break;
+                case TOK_EXACT:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_EXACT;
+                        get_token(args);
+                        break;
+                case TOK_WHOLE:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_EREGEX;
+                        whole_pkg = true;
+                        break;
+                case TOK_EQ:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_VER_EQ;
+                        get_token(args);
+                        break;
+                case TOK_LT:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_VER_LT;
+                        get_token(args);
+                        break;
+                case TOK_LE:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_VER_LE;
+                        get_token(args);
+                        break;
+                case TOK_GT:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_VER_GT;
+                        get_token(args);
+                        break;
+                case TOK_GE:
+                        if (mm != M_SUBSTR) goto failmode;
+                        mm = M_VER_GE;
+                        get_token(args);
+                        break;
+                case TOK_PAT:
+                        if (pattern != 0) {
+                                message(L_FATAL, 0,
+                                        _("Multiple patterns for the same "
+                                          "atom are not allowed"));
+                                fail();
+                        }
+                        /* passthrough */
+                case TOK_STR:
+                        if (pattern != 0) goto loop_done;
+                        pattern = get_string(args);
+                        break;
+                default:
+                        goto loop_done;
+                }
+                 nonempty = true;
+         } loop_done:
+
+         if (!nonempty) {
+                 unexpected(get_token(args));
+         }
+
+         if (pattern == 0) {
+                 args->pattern_error = true;
+                 return;
+         }
+
+         if (num_fields == 0) {
+                 num_fields = 1;
+                 fields[0] = 0;
+         }
+         if (args->p.num_atoms + num_fields > MAX_ATOMS) {
+                 message(L_FATAL, 0, _("predicate is too complex"));
+                 fail();
+         }
+         for (size_t i = 0; i < num_fields; i++) {
+                 size_t ati = args->p.num_atoms++;
+                 struct atom * atom = &args->p.atoms[ati];
+                 atom->field_name = fields[i];
+                 atom->field_inx = -1;
+                 atom->mode = mm;
+                 atom->ignore_case = ignore_case;
+                 atom->whole_pkg = whole_pkg;
+                 atom->pat = pattern;
+                 atom->patlen = strlen(pattern);
+                 atom_finish(atom);
+                 addinsn(&args->p, I_PUSH(ati));
+                 if (i > 0) addinsn(&args->p, I_OR);
+         }
+
+        return;
+failmode:
+        message(L_FATAL, 0, _("inconsistent atom modifiers")); 
+        fail(); 
 }
 
 static void parse_neg(struct arguments * args)
@@ -733,8 +738,20 @@ static void parse_predicate(struct arguments * args)
 {
 	args->toks_pos = 0;
 	parse_conj(args);
-	int tok = peek_token(args);
-	if (tok != TOK_EOD) unexpected(tok);
+        while (peek_token(args) == TOK_STR) {
+                if (args->num_fnames >= MAX_FNAMES) {
+                        message(L_FATAL, 0, _("too many file names"));
+                        fail();
+                }
+                char * s = get_string(args);
+                args->fname[args->num_fnames++] =
+                        (struct ifile){ .mode = m_read, .s = s };
+        }
+	if (peek_token(args) != TOK_EOD) {
+                message(L_FATAL, 0,
+                        _("file names are not allowed within the predicate"));
+                fail();
+        }
 }
 
 static void show_field(struct arguments *args,
