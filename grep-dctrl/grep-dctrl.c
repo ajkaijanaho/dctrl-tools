@@ -163,8 +163,6 @@ static int debug_optparse = 0;
 struct arguments {
 	/* Parser state flag: last token seen was ')' */
 	bool just_seen_cparen;
-	/* Top of the parser stack.  */
-	size_t top;
 	/* Number of file names seen.  */
 	size_t num_fnames;
 	/**/
@@ -270,30 +268,6 @@ static void finish_atom(struct arguments * args)
 	if (args->num_search_fields == 0) predicate_finish_atom(&args->p);
 	args->num_search_fields = 0;
 }
-
-#if 0
-/* Pop off one stack state, inserting the associated instructions to
- * the predicate program.  If paren is true, current state must be
- * STATE_PAREN, and if paren is false, it must not be STATE_PAREN. */
-static void leave(struct arguments * args, int paren)
-{
-	debug_message("leaving...", 0);
-	assert(paren == (args->state == STATE_PAREN));
-	if (args->state == STATE_ATOM) finish_atom(args);
-	assert(args->top > 0);
-	--args->top;
-	for (struct insn_node * it = args->stack[args->top].insns_first;
-	     it != 0;) {
-		addinsn(&args->p, it->insn);
-		struct insn_node * next = it->next;
-		free(it);
-		it = next;
-	}
-	args->stack[args->top].insns_first = 0;
-	args->stack[args->top].insns_last = 0;
-	args->state = args->stack[args->top].state;
-}
-#endif
 
 #define APPTOK(tok) do { apptok(args, (tok)); } while (0)
 
@@ -624,7 +598,6 @@ static void dump_args(struct arguments * args)
 {
 	size_t i;
 	assert(args->finished);
-	assert(args->top == 0);
 	printf("num_atoms = %zi\n", args->p.num_atoms);
 	for (i = 0; i < args->p.num_atoms; i++) {
 		printf("atoms[%zi].field_name = %s\n", i, args->p.atoms[i].field_name);

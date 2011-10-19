@@ -18,8 +18,9 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
     field names in output, instead of the command line spelling.
     Closes: #209134 (keyword case shouldn't be influenced by -s)
     Reported by Dan Jacobson <jidanni@jidanni.org>.
+  * grep-dctrl/grep-dctrl.c: Clean up some dead code.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 28 Jul 2011 19:10:42 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 19 Oct 2011 21:09:47 +0300
 
 dctrl-tools (2.18ubuntu1) oneiric; urgency=low
 
