@@ -19,10 +19,6 @@
 #ifndef PREDICATE_H
 #define PREDICATE_H
 
-#include <assert.h>
-#include <regex.h>
-#include <stdint.h>
-#include "fieldtrie.h"
 #include "paragraph.h"
 
 #define MAX_OPS 4096
@@ -34,41 +30,7 @@
 #define I_OR   3 /* --or;  2-1 */
 #define I_PUSH(n) (4+(n)) /* push result of nth atomic proposition */
 
-/* An atomic predicate. */
-struct atom {
-	/* The name of field to which matching is limited.  Empty
-	 * field_name specifies the whole paragraph (in which case
-	 * field_inx is -1. */
-	char const * field_name; size_t field_inx;
-        /* The index to the field whose value is to be used when this
-         * field is empty. */
-        size_t repl_inx;
-	/* Matching mode */
-	enum matching_mode {
-		M_SUBSTR, /* substring matching */
-		M_REGEX, /* POSIX regular expression match */
-		M_EREGEX, /* POSIX extended regular expression matching */
-		M_EXACT, /* exact string match */
-#define M_FIRST_VERSION M_VER_EQ
-		M_VER_EQ, /* numeric equality comparison */
-		M_VER_LT, /* numeric < */
-		M_VER_LE, /* numeric <= */
-		M_VER_GT, /* numeric > */
-		M_VER_GE, /* numeric >= */
-#define M_LAST_VERSION M_VER_GE
-	} mode;
-	/* Flag: should matching ignore case */
-	unsigned ignore_case;
-	/* The pattern as given on the command line; interpretation
-	 * depends on matching mode. Must be null-terminated and
-	 * patlen must equal strlen(pat).  */
-	char const * pat; size_t patlen;
-	/* A compiled version of pat; valid only when mode is M_REGEX
-	 * or M_EREGEX.  */
-	regex_t regex;
-	/* Flag: (extended) regex should match whole package names */
-	unsigned whole_pkg;
-};
+struct atom;
 
 /* A predicate is represented as a set of atomic predicates and a
  * program - a sequence of stack-based "bytecode" instructions - that
@@ -81,7 +43,7 @@ struct predicate {
 	/* The program */
 	int program[MAX_OPS];
 	/* The atomic predicates */
-	struct atom atoms[MAX_ATOMS];
+	struct atom *atoms;
 };
 
 void init_predicate(struct predicate * p);
@@ -92,8 +54,6 @@ struct atom * get_current_atom(struct predicate * p)
 	assert(p->num_atoms > 0);
 	return &p->atoms[p->num_atoms-1];
 }
-
-void predicate_finish_atom(struct predicate *);
 
 void addinsn(struct predicate * p, int insn);
 

@@ -29,6 +29,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include "atom.h"
 #include "fnutil.h"
 #include "fsaf.h"
 #include "i18n.h"
@@ -261,11 +262,11 @@ static void finish_atom(struct arguments * args)
 	for (size_t i = 0; i < args->num_search_fields; i++) {
 		if (i > 0) atom = clone_atom(args);
 		atom->field_name = args->search_fields[i];
-		predicate_finish_atom(&args->p);
+		atom_finish(atom);
 	}
 	// If there are no fields, we have not yet run this...
 	// ... but it must be done (especially with -r/-e atoms)
-	if (args->num_search_fields == 0) predicate_finish_atom(&args->p);
+	if (args->num_search_fields == 0) atom_finish(atom);
 	args->num_search_fields = 0;
 }
 
