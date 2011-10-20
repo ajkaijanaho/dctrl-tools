@@ -1,4 +1,4 @@
-dctrl-tools (2.19) UNRELEASED; urgency=low
+dctrl-tools (2.19) unstable; urgency=low
 
   [ David Prévot ]
   * Stylish fix to grep-dctrl(1) manpage (closes: #325169)
@@ -21,7 +21,7 @@ dctrl-tools (2.19) UNRELEASED; urgency=low
   * grep-dctrl/grep-dctrl.c: Clean up some dead code.
   * grep-dctrl: Rewrite predicate code to use a tree instead of a bytecode.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 20 Oct 2011 00:24:39 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 20 Oct 2011 09:56:38 +0300
 
 dctrl-tools (2.18ubuntu1) oneiric; urgency=low
 
