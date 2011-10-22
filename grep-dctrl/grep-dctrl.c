@@ -600,6 +600,7 @@ static struct predicate * parse_prim(struct arguments * args)
                         if (mm != M_SUBSTR) goto failmode;
                         mm = M_EREGEX;
                         whole_pkg = true;
+                        get_token(args);
                         break;
                 case TOK_EQ:
                         if (mm != M_SUBSTR) goto failmode;
