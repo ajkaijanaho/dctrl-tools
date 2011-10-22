@@ -230,6 +230,7 @@ static void apptok(struct arguments * args, const int tok)
 		fail();
 	}
 	args->toks[args->toks_np++] = tok;
+        args->strings[args->toks_np-1] = 0;
 }
 
 #define APPSTR(tok,str) do { appstr(args, (tok), (str)); } while (0)
@@ -477,70 +478,70 @@ char * get_string(struct arguments * args)
 	return args->strings[args->toks_pos++];
 }
 
+static const char *tokdescr(int tok) {
+	switch (tok) {
+        case TOK_EOD:
+                return "EOD";
+	case TOK_NOT: 
+		return "!";
+	case TOK_AND:
+		return "-a";
+	case TOK_OR : 
+		return "-o";
+	case TOK_LP :
+		return "(";
+	case TOK_RP :
+		return ")";
+        case TOK_EXACT :
+                return "-X";
+        case TOK_ERGEX :
+                return "-e";
+        case TOK_REGEX :
+                return "-r";
+        case TOK_EQ :
+                return "--eq";
+        case TOK_LT :
+                return "--lt";
+        case TOK_LE :
+                return "--le";
+        case TOK_GT :
+                return "--gt";
+        case TOK_GE :
+                return "--ge";
+        case TOK_ICASE :
+                return "-i";
+        case TOK_PAT :
+                return "--pattern";
+        case TOK_STR :
+                return "string";
+        case TOK_WHOLE :
+                return "-w";
+        case TOK_FIELD :
+                return "-F";
+	default:
+		message(L_FATAL, 0,
+                        _("internal error: unknown token %d"), tok);
+		fail();
+	}
+}
+
 static void unexpected(int tok)
 {
 	switch (tok) {
 	case TOK_EOD:
 		message(L_FATAL, 0, _("unexpected end of predicate"));
 		fail();
-	case TOK_NOT: 
-		message(L_FATAL, 0, _("unexpected '!' in command line"));
-		fail();
-	case TOK_AND:
-		message(L_FATAL, 0, _("unexpected '-a' in command line"));
-		fail();
-	case TOK_OR : 
-		message(L_FATAL, 0, _("unexpected '-o' in command line"));
-		fail();
-	case TOK_LP :
-		message(L_FATAL, 0, _("unexpected '(' in command line"));
-		fail();
-	case TOK_RP :
-		message(L_FATAL, 0, _("unexpected ')' in command line"));
-		fail();
-        case TOK_EXACT :
-                message(L_FATAL, 0, _("unexpected '-X' in command line"));
-                fail();
-        case TOK_ERGEX :
-                message(L_FATAL, 0, _("unexpected '-e' in command line"));
-                fail();
-        case TOK_REGEX :
-                message(L_FATAL, 0, _("unexpected '-r' in command line"));
-                fail();
-        case TOK_EQ :
-                message(L_FATAL, 0, _("unexpected '--eq' in command line"));
-                fail();
-        case TOK_LT :
-                message(L_FATAL, 0, _("unexpected '--lt' in command line"));
-                fail();
-        case TOK_LE :
-                message(L_FATAL, 0, _("unexpected '--le' in command line"));
-                fail();
-        case TOK_GT :
-                message(L_FATAL, 0, _("unexpected '--gt' in command line"));
-                fail();
-        case TOK_GE :
-                message(L_FATAL, 0, _("unexpected '--ge' in command line"));
-                fail();
-        case TOK_ICASE :
-                message(L_FATAL, 0, _("unexpected '-i' in command line"));
-                fail();
         case TOK_PAT :
                 message(L_FATAL, 0, _("unexpected pattern in command line"));
                 fail();
         case TOK_STR :
                 message(L_FATAL, 0, _("unexpected string in command line"));
                 fail();
-        case TOK_WHOLE :
+        default:
                 message(L_FATAL, 0,
-                        _("unexpected '--whole-pkg' in command line"));
+                        _("unexpected '%s' in command line"),
+                        tokdescr(tok));
                 fail();
-        case TOK_FIELD :
-                message(L_FATAL, 0, _("unexpected '-F' in command line"));
-                fail();
-	default:
-		message(L_FATAL, 0, _("internal error: unknown token"));
-		fail();
 	}
 }
 
@@ -567,6 +568,7 @@ static struct predicate * parse_prim(struct arguments * args)
         bool nonempty = false;
 
         while (1) {
+                debug("tok = %s, mm = %d", tokdescr(peek_token(args)), mm);
                 switch (peek_token(args)) {
                 case TOK_FIELD:
                         if (num_fields >= MAX_FIELDS) {
@@ -790,6 +792,20 @@ int main (int argc, char * argv[])
 #ifdef BANNER
 	banner(true);
 #endif
+        if (debug_optparse) {
+                fflush(stderr);
+                fputs("tokens:", stdout);
+                for (int i = 0; i < args.toks_np; i++) {
+                        putchar(' ');
+                        fputs(tokdescr(args.toks[i]), stdout);
+                        if (args.strings[i] != 0) {
+                                printf("[%s]", args.strings[i]);
+                        }
+                }
+                puts("");
+                fflush(stdout);
+        }
+
 	parse_predicate(&args);
 
 	if (debug_optparse) { dump_args(&args); return 0; }
