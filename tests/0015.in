@@ -1,0 +1,16 @@
+A: foo
+
+B: foo
+
+A: foo
+B: foo
+
+A: bar
+B: foo
+
+A: foo
+B: bar
+
+A: bar
+B: bar
+
