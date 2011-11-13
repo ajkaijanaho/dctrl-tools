@@ -29,4 +29,3 @@ Provides: grep-dctrl
 Depends: libc6 (>= 2.3.5-1)
 Suggests: apt
 Conflicts: grep-dctrl
-

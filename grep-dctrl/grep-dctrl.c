@@ -61,6 +61,8 @@ enum {
         OPT_GE,
         OPT_MMAP,
         OPT_IGN_ERRS,
+        OPT_ENSURE,
+        OPT_COMPAT,
         OPT_PATTERN
 };
 
@@ -142,6 +144,8 @@ static struct argp_option options[] = {
 	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
         { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for") },
 	{ "whole-pkg",	    'w', 0,                 0, N_("Match only whole package names (this implies -e)") },
+        { "ensure-dctrl",   OPT_ENSURE, 0,          0, N_("Ensure that the output is in dctrl format (overridden by -n)") },
+        { "compat",         OPT_COMPAT, 0,          0, N_("Override the effect of an earlier --ensure-dctrl") },
 	{ 0 }
 };
 
@@ -189,6 +193,9 @@ struct arguments {
 	bool quiet;
 	/* Do show field names? */
 	bool show_field_name;
+        /* Ensure that the output is in dctrl format? (Ignored if
+           show_field_name is false.) */
+        bool ensure_dctrl;
 	/* Do show (only) first line of Description? */
 	bool short_descr;
 	/* Does show_fields contain Description? */
@@ -254,6 +261,12 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 'B':
 		banner(false);
 #endif
+        case OPT_ENSURE:
+                args->ensure_dctrl = true;
+                break;
+        case OPT_COMPAT:
+                args->ensure_dctrl = false;
+                break;
 	case 'v':
 		args->invert_match = true;
 		break;
@@ -918,11 +931,10 @@ int main (int argc, char * argv[])
                                                (fa->application_data));
                                         show_field(&args, &para, fa);
                                 }
+                                if ((args.show_field_name &&
+                                     args.ensure_dctrl) ||
+                                    args.num_show_fields > 1) puts("");
                         }
-                        /* let's see how many users howl in pain after
-                           deactivating this conditional (see BTS #525525)
-
-                           if (args.num_show_fields > 1)*/ puts("");
 		}
 
 		fsaf_close(fp);

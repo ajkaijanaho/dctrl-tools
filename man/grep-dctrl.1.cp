@@ -1,5 +1,5 @@
-.TH GREP-DCTRL 1 2007-10-27 "Debian Project" "Debian user's manual"
-\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007
+.TH GREP-DCTRL 1 2011-11-13 "Debian Project" "Debian user's manual"
+\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2011
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
@@ -273,6 +273,9 @@ names in the argument to this option.  The
 .IR field s
 are shown in the order given here.  See also the option
 .BR \-I .
+Note that in the absence of the
+.B \-\-ensure\--dctrl
+option, if only one field is selected, no paragraph separator is output.
 .IP "\fB\-I\fR, \fB\-\-invert\-show"
 Invert the meaning of option
 .BR \-s :
@@ -326,6 +329,18 @@ match), show the count of those paragraphs.
 Output nothing to the standard output stream.  Instead, exit
 immediately after finding the first match.
 .SS Miscellaneous
+.IP "\fB\-\-ensure\-dctrl"
+Ensure that the output is in dctrl format, specifically that there always
+is an empty line separating paragraphs.  This option is not honored if 
+the 
+.B \-n
+option has been selected, as that option deliberately requests a non-dctrl
+format for the output.  In a future version, this option may be made the
+default behaviour.
+.IP "\fB\-\-compat"
+Override any
+.B \-\-ensure\-dctrl
+option given earlier on the command line.
 .IP "\fB\-\-ignore\-parse\-errors"
 Ignore errors in parsing input.  A paragraph which cannot be parsed
 is ignored in its entirety, and the next paragraph is assumed to start
