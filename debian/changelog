@@ -1,8 +1,8 @@
 dctrl-tools (2.20) UNRELEASED; urgency=low
 
-  * 
+  * Improve the testsuite.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 20 Oct 2011 11:17:30 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 13 Nov 2011 19:33:00 +0200
 
 dctrl-tools (2.19) unstable; urgency=low
 
