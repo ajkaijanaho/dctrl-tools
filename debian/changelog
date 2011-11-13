@@ -1,6 +1,7 @@
 dctrl-tools (2.20) UNRELEASED; urgency=low
 
   * Improve the testsuite.
+  * tester.sh: Do not output .differr if it wasn't constructed.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 13 Nov 2011 19:33:00 +0200
 

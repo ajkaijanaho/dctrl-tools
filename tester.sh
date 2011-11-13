@@ -1,6 +1,6 @@
 #!/bin/sh
 #     dctrl-tools - Debian control file inspection tools
-#     Copyright (C) 2007, 2010 Antti-Juhani Kaijanaho
+#     Copyright (C) 2007, 2010, 2011 Antti-Juhani Kaijanaho
 #
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -82,8 +82,10 @@ for tst in $tests ; do
         echo "FAILED."
         echo "stdout diff:"
         cat .diffout
-        echo "stderr diff:"
-        cat .differr
+        if [ -r $tst_ero ] ; then
+            echo "stderr diff:"
+            cat .differr
+        fi
         rv=1
     fi
 done
