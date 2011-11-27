@@ -1,4 +1,4 @@
-dctrl-tools (2.20) UNRELEASED; urgency=low
+dctrl-tools (2.20) unstable; urgency=low
 
   * Improve the testsuite.
   * tester.sh: Do not output .differr if it wasn't constructed.
@@ -11,7 +11,7 @@ dctrl-tools (2.20) UNRELEASED; urgency=low
     Closes: #641255 (grep-dctrl -c does not print out 0 when it should)
     [ Reported by Antti-Juhani Kaijanaho <ajk@debian.org> ]
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 Nov 2011 20:19:51 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 Nov 2011 21:23:53 +0200
 
 dctrl-tools (2.19) unstable; urgency=low
 
