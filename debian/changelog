@@ -7,8 +7,11 @@ dctrl-tools (2.20) UNRELEASED; urgency=low
     is in dctrl format.
     - Later on we may want to make --ensure-dctrl the default.  In anticipation,
       a --compat option has been added that countermands any --ensure-dctrl.
+  * grep-dctrl: With -c, output even a zero count and exit successfully.
+    Closes: #641255 (grep-dctrl -c does not print out 0 when it should)
+    [ Reported by Antti-Juhani Kaijanaho <ajk@debian.org> ]
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 13 Nov 2011 20:24:48 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 Nov 2011 20:19:51 +0200
 
 dctrl-tools (2.19) unstable; urgency=low
 

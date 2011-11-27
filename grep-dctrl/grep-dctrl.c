@@ -940,7 +940,7 @@ int main (int argc, char * argv[])
 		fsaf_close(fp);
 		close_ifile(fname, fd);
 	}
-	if (count) printf("%zi\n", count);
-	return errors_reported() ? 2 : found ? 0 : 1;
+	if (args.count) printf("%zi\n", count);
+	return errors_reported() ? 2 : found || args.count ? 0 : 1;
 }
 
