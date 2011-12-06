@@ -11,7 +11,11 @@ dctrl-tools (2.20) UNRELEASED; urgency=low
     Closes: #641255 (grep-dctrl -c does not print out 0 when it should)
     [ Reported by Antti-Juhani Kaijanaho <ajk@debian.org> ]
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 Nov 2011 20:19:51 +0200
+  [ David Prévot ]
+  * Initial German manpages translation, thanks to Chris Leick (closes:
+    #651218).
+
+ -- David Prévot <taffit@debian.org>  Tue, 06 Dec 2011 18:52:02 -0400
 
 dctrl-tools (2.19) unstable; urgency=low
 
