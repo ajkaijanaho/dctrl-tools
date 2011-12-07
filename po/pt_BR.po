@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 18:22+0200\n"
+"POT-Creation-Date: 2011-12-07 16:55-0400\n"
 "PO-Revision-Date: 2010-08-25 10:24-0300\n"
 "Last-Translator: Mauricio Vieira <mauricio@mauriciovieira.net>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
@@ -84,6 +84,10 @@ msgid "grep-dctrl -- grep Debian control files"
 msgstr ""
 "grep-dctrl -- busca por expressões regulares em arquivos de controle Debian"
 
+#: grep-dctrl/grep-dctrl.c:51
+msgid "FILTER [FILENAME...]"
+msgstr ""
+
 #: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
 msgstr "Mostra a mensagem de aviso teste."
@@ -93,9 +97,10 @@ msgstr "Mostra a mensagem de aviso teste."
 msgid "LEVEL"
 msgstr "NÍVEL"
 
-#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
-msgid "Set debugging level to LEVEL."
+#: grep-dctrl/grep-dctrl.c:116
+#, fuzzy
+#| msgid "Set debugging level to LEVEL."
+msgid "Set log level to LEVEL."
 msgstr "Ajusta o nível de depuração para NÍVEL."
 
 #: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
@@ -137,8 +142,10 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Trata o padrão como uma expressão regular POSIX estendida."
 
 #: grep-dctrl/grep-dctrl.c:124
-msgid "The pattern is a standard POSIX regular expression."
-msgstr "O padrão é uma expressão regular POSIX padrão."
+#, fuzzy
+#| msgid "Regard the pattern as an extended POSIX regular expression."
+msgid "Regard the pattern as a standard POSIX regular expression."
+msgstr "Trata o padrão como uma expressão regular POSIX estendida."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
@@ -176,15 +183,21 @@ msgid "Print out the copyright license."
 msgstr "Imprime a licença de copyright."
 
 #: grep-dctrl/grep-dctrl.c:132
-msgid "Conjunct predicates."
+#, fuzzy
+#| msgid "Conjunct predicates."
+msgid "Conjunct filters."
 msgstr "Faz conjunção dos predicados."
 
 #: grep-dctrl/grep-dctrl.c:133
-msgid "Disjunct predicates."
+#, fuzzy
+#| msgid "Disjunct predicates."
+msgid "Disjunct filters."
 msgstr "Faz disjunção dos predicados."
 
 #: grep-dctrl/grep-dctrl.c:134
-msgid "Negate the following predicate."
+#, fuzzy
+#| msgid "Negate the following predicate."
+msgid "Negate the following filters."
 msgstr "Nega o predicado seguinte."
 
 #: grep-dctrl/grep-dctrl.c:135
@@ -192,7 +205,9 @@ msgid "Test for version number equality."
 msgstr "Testa igualdade do número de versão."
 
 #: grep-dctrl/grep-dctrl.c:136
-msgid "Version number comparison: <."
+#, fuzzy
+#| msgid "Version number comparison: <."
+msgid "Version number comparison: <<."
 msgstr "Comparação do número de versão: <."
 
 #: grep-dctrl/grep-dctrl.c:137
@@ -200,7 +215,9 @@ msgid "Version number comparison: <=."
 msgstr "Comparação do número de versão: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-msgid "Version number comparison: >."
+#, fuzzy
+#| msgid "Version number comparison: >."
+msgid "Version number comparison: >>."
 msgstr "Comparação do número de versão: >."
 
 #: grep-dctrl/grep-dctrl.c:139
@@ -245,7 +262,9 @@ msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr ""
 
 #: grep-dctrl/grep-dctrl.c:236
-msgid "predicate is too long"
+#, fuzzy
+#| msgid "predicate is too long"
+msgid "filter is too long"
 msgstr "predicado é muito longo"
 
 #: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
@@ -261,25 +280,31 @@ msgstr "não existe nível de log '%s'"
 
 #: grep-dctrl/grep-dctrl.c:536
 #, fuzzy, c-format
+#| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "erro interno"
 
 #: grep-dctrl/grep-dctrl.c:545
-msgid "unexpected end of predicate"
-msgstr "fim de predicado inesperado"
+#, fuzzy
+#| msgid "unexpected end of file"
+msgid "unexpected end of filter"
+msgstr "fim de arquivo inesperado"
 
 #: grep-dctrl/grep-dctrl.c:548
 #, fuzzy
+#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "átomo inesperado na linha de comando"
 
 #: grep-dctrl/grep-dctrl.c:551
 #, fuzzy
+#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "átomo inesperado na linha de comando"
 
 #: grep-dctrl/grep-dctrl.c:555
 #, fuzzy, c-format
+#| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "'!' inesperado na linha de comando"
 
@@ -289,11 +314,14 @@ msgstr "')' faltando na linha de comando"
 
 #: grep-dctrl/grep-dctrl.c:588
 #, fuzzy
+#| msgid "too many file names"
 msgid "too many field names"
 msgstr "muitos nomes de arquivos"
 
 #: grep-dctrl/grep-dctrl.c:646
-msgid "Multiple patterns for the same atom are not allowed"
+#, fuzzy
+#| msgid "Multiple patterns for the same atom are not allowed"
+msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Múltiplos padrões para o mesmo átomo não é permitida"
 
 #: grep-dctrl/grep-dctrl.c:666
@@ -301,7 +329,9 @@ msgid "A pattern is mandatory"
 msgstr "Um padrão é obrigatório"
 
 #: grep-dctrl/grep-dctrl.c:693
-msgid "inconsistent atom modifiers"
+#, fuzzy
+#| msgid "inconsistent atom modifiers"
+msgid "inconsistent modifiers of simple filters"
 msgstr "modificadores atômicos inconsistentes"
 
 #: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
@@ -310,11 +340,15 @@ msgid "too many file names"
 msgstr "muitos nomes de arquivos"
 
 #: grep-dctrl/grep-dctrl.c:747
-msgid "file names are not allowed within the predicate"
+#, fuzzy
+#| msgid "file names are not allowed within the predicate"
+msgid "file names are not allowed within the filter"
 msgstr "nomes de arquivos não são permitidos dentro do predicado"
 
 #: grep-dctrl/grep-dctrl.c:828
-msgid "malformed predicate"
+#, fuzzy
+#| msgid "malformed predicate"
+msgid "malformed filter"
 msgstr "predicado malformado"
 
 #: grep-dctrl/grep-dctrl.c:838
@@ -375,6 +409,11 @@ msgstr "arquivo de entrada padrão"
 #: grep-dctrl/rc.c:192
 msgid "executable name not found; reading from standard input"
 msgstr "nome executável não encontrado; lendo da entrada padrão"
+
+#: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
+msgid "Set debugging level to LEVEL."
+msgstr "Ajusta o nível de depuração para NÍVEL."
 
 #: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
@@ -489,8 +528,22 @@ msgstr "precisa de exatamente dois arquivos de entrada"
 msgid "cannot join a stream with itself"
 msgstr "não é possível agrupar um fluxo com ele mesmo"
 
+#: lib/msg.h:52
+msgid "I'm broken - please report this bug."
+msgstr ""
+
+#: lib/msg.h:145
+msgid "cannot find enough memory"
+msgstr ""
+
 #~ msgid "predicate is too complex"
 #~ msgstr "predicado é muito complexo"
+
+#~ msgid "The pattern is a standard POSIX regular expression."
+#~ msgstr "O padrão é uma expressão regular POSIX padrão."
+
+#~ msgid "unexpected end of predicate"
+#~ msgstr "fim de predicado inesperado"
 
 #~ msgid "unexpected '-a' in command line"
 #~ msgstr "'-a' inesperado na linha de comando"
@@ -514,9 +567,6 @@ msgstr "não é possível agrupar um fluxo com ele mesmo"
 #, fuzzy
 #~ msgid "unexpected end of line (expected a colon)"
 #~ msgstr "fim de linha inesperado"
-
-#~ msgid "unexpected end of file"
-#~ msgstr "fim de arquivo inesperado"
 
 #, fuzzy
 #~ msgid "pretty-dctrl -- pretty-print Debian control files"

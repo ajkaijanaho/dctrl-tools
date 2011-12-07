@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 18:22+0200\n"
+"POT-Creation-Date: 2011-12-07 16:55-0400\n"
 "PO-Revision-Date: 2010-08-08 12:19+0300\n"
 "Last-Translator: Antti-Juhani Kaijanaho <ajk@debian.org>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -82,6 +82,10 @@ msgstr "Jäsennysvirhe kentässä"
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- hae Debianin kontrollitiedostoista"
 
+#: grep-dctrl/grep-dctrl.c:51
+msgid "FILTER [FILENAME...]"
+msgstr ""
+
 #: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
 msgstr "Näytä testausviesti."
@@ -91,9 +95,10 @@ msgstr "Näytä testausviesti."
 msgid "LEVEL"
 msgstr "TASO"
 
-#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
-#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
-msgid "Set debugging level to LEVEL."
+#: grep-dctrl/grep-dctrl.c:116
+#, fuzzy
+#| msgid "Set debugging level to LEVEL."
+msgid "Set log level to LEVEL."
 msgstr "Aseta vianetsintätasoksi TASO."
 
 #: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
@@ -132,8 +137,10 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
 #: grep-dctrl/grep-dctrl.c:124
-msgid "The pattern is a standard POSIX regular expression."
-msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
+#, fuzzy
+#| msgid "Regard the pattern as an extended POSIX regular expression."
+msgid "Regard the pattern as a standard POSIX regular expression."
+msgstr "Käsittele hakuehtoa laajennettuna POSIXin siäännöllisenä lausekkeena."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
@@ -169,15 +176,21 @@ msgid "Print out the copyright license."
 msgstr "Tulosta tekijänoikeuslisenssi."
 
 #: grep-dctrl/grep-dctrl.c:132
-msgid "Conjunct predicates."
+#, fuzzy
+#| msgid "Conjunct predicates."
+msgid "Conjunct filters."
 msgstr "Yhdistä predikaatit JA-konnektiivilla"
 
 #: grep-dctrl/grep-dctrl.c:133
-msgid "Disjunct predicates."
+#, fuzzy
+#| msgid "Disjunct predicates."
+msgid "Disjunct filters."
 msgstr "Yhdistä predikaatit TAI-konnektiivilla"
 
 #: grep-dctrl/grep-dctrl.c:134
-msgid "Negate the following predicate."
+#, fuzzy
+#| msgid "Negate the following predicate."
+msgid "Negate the following filters."
 msgstr "Negatoi seuraava predikaatti."
 
 #: grep-dctrl/grep-dctrl.c:135
@@ -185,7 +198,9 @@ msgid "Test for version number equality."
 msgstr "Testaa versionumeroiden yhtäsuuruutta."
 
 #: grep-dctrl/grep-dctrl.c:136
-msgid "Version number comparison: <."
+#, fuzzy
+#| msgid "Version number comparison: <."
+msgid "Version number comparison: <<."
 msgstr "Versionumeron vertailu: <."
 
 #: grep-dctrl/grep-dctrl.c:137
@@ -193,7 +208,9 @@ msgid "Version number comparison: <=."
 msgstr "Versionumeroiden vertailu: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-msgid "Version number comparison: >."
+#, fuzzy
+#| msgid "Version number comparison: >."
+msgid "Version number comparison: >>."
 msgstr "Versionumeroiden vertailu: >."
 
 #: grep-dctrl/grep-dctrl.c:139
@@ -238,7 +255,9 @@ msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr ""
 
 #: grep-dctrl/grep-dctrl.c:236
-msgid "predicate is too long"
+#, fuzzy
+#| msgid "predicate is too long"
+msgid "filter is too long"
 msgstr "predikaatti on liian pitkä"
 
 #: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
@@ -254,25 +273,31 @@ msgstr "ei sellaista seurantatasoa kuin '%s' ole"
 
 #: grep-dctrl/grep-dctrl.c:536
 #, fuzzy, c-format
+#| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "ohjelman oma virhe"
 
 #: grep-dctrl/grep-dctrl.c:545
-msgid "unexpected end of predicate"
+#, fuzzy
+#| msgid "unexpected end of predicate"
+msgid "unexpected end of filter"
 msgstr "odottamaton predikaatin loppu"
 
 #: grep-dctrl/grep-dctrl.c:548
 #, fuzzy
+#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "odottamaton atomi komentorivill�"
 
 #: grep-dctrl/grep-dctrl.c:551
 #, fuzzy
+#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "odottamaton atomi komentorivill�"
 
 #: grep-dctrl/grep-dctrl.c:555
 #, fuzzy, c-format
+#| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "odottamaton '!' komentorivillä"
 
@@ -282,11 +307,14 @@ msgstr "komentoriviltä puuttuu ')'"
 
 #: grep-dctrl/grep-dctrl.c:588
 #, fuzzy
+#| msgid "too many file names"
 msgid "too many field names"
 msgstr "liikaa tiedostonimiä"
 
 #: grep-dctrl/grep-dctrl.c:646
-msgid "Multiple patterns for the same atom are not allowed"
+#, fuzzy
+#| msgid "Multiple patterns for the same atom are not allowed"
+msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Samassa atomissa ei saa olla useita hahmoja"
 
 #: grep-dctrl/grep-dctrl.c:666
@@ -294,7 +322,9 @@ msgid "A pattern is mandatory"
 msgstr "Hakuehto on välttämätön."
 
 #: grep-dctrl/grep-dctrl.c:693
-msgid "inconsistent atom modifiers"
+#, fuzzy
+#| msgid "inconsistent atom modifiers"
+msgid "inconsistent modifiers of simple filters"
 msgstr "ristitiitaiset atomin määritteet"
 
 #: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
@@ -303,11 +333,15 @@ msgid "too many file names"
 msgstr "liikaa tiedostonimiä"
 
 #: grep-dctrl/grep-dctrl.c:747
-msgid "file names are not allowed within the predicate"
+#, fuzzy
+#| msgid "file names are not allowed within the predicate"
+msgid "file names are not allowed within the filter"
 msgstr "tiedostonimiä ei sallita predikaatin sisällä"
 
 #: grep-dctrl/grep-dctrl.c:828
-msgid "malformed predicate"
+#, fuzzy
+#| msgid "malformed predicate"
+msgid "malformed filter"
 msgstr "rikkinäinen predikaatti"
 
 #: grep-dctrl/grep-dctrl.c:838
@@ -366,6 +400,11 @@ msgstr "oletussyötetiedosto"
 #: grep-dctrl/rc.c:192
 msgid "executable name not found; reading from standard input"
 msgstr "en löydä ohjelmannimeä; luen vakiosyötteestä"
+
+#: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
+msgid "Set debugging level to LEVEL."
+msgstr "Aseta vianetsintätasoksi TASO."
 
 #: sort-dctrl/sort-dctrl.c:40
 msgid "KEYSPEC"
@@ -480,8 +519,19 @@ msgstr "tarvitaan täsmälleen kaksi syötetiedostoa"
 msgid "cannot join a stream with itself"
 msgstr "virtaa ei voi liittää yhteen itsensä kanssa"
 
+#: lib/msg.h:52
+msgid "I'm broken - please report this bug."
+msgstr ""
+
+#: lib/msg.h:145
+msgid "cannot find enough memory"
+msgstr ""
+
 #~ msgid "predicate is too complex"
 #~ msgstr "predikaatti on liian monimutkainen"
+
+#~ msgid "The pattern is a standard POSIX regular expression."
+#~ msgstr "Hakuehto on tavallinen POSIXin säännöllinen lauseke."
 
 #~ msgid "unexpected '-a' in command line"
 #~ msgstr "odottamaton '-a' komentorivill�"
