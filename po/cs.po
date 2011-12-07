@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2010-08-08 12:45+0300\n"
+"POT-Creation-Date: 2011-12-07 18:22+0200\n"
 "PO-Revision-Date: 2010-08-25 18:25+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -66,262 +66,263 @@ msgstr "%s: používám „%s“ jako pager\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: volání popen selhalo pro %s: %s\n"
 
-#: lib/paragraph.c:140
+#: lib/paragraph.c:154
 msgid "warning: expected a colon"
 msgstr "varování: očekávána dvojtečka"
 
-#: lib/paragraph.c:145
+#: lib/paragraph.c:159
 msgid "expected a colon"
 msgstr "očekávána dvojtečka"
-
-#: lib/predicate.c:43 grep-dctrl/grep-dctrl.c:228 grep-dctrl/grep-dctrl.c:343
-msgid "predicate is too complex"
-msgstr "predikát je příliš složitý"
 
 #: lib/sorter.c:49
 msgid "Parse error in field."
 msgstr "Chyba analýzy pole."
 
-#: grep-dctrl/grep-dctrl.c:47
+#: grep-dctrl/grep-dctrl.c:49
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- vyhledává v debianích souborech control"
 
-#: grep-dctrl/grep-dctrl.c:110
+#: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
 msgstr "Zobrazí testovací nápis."
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "ÚROVEŇ"
 
-#: grep-dctrl/grep-dctrl.c:112 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "Set debugging level to LEVEL."
 msgstr "Nastaví ladicí úroveň na ÚROVEŇ."
 
-#: grep-dctrl/grep-dctrl.c:113 grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
 msgid "FIELD,FIELD,..."
 msgstr "POLE,POLE,..."
 
-#: grep-dctrl/grep-dctrl.c:113
+#: grep-dctrl/grep-dctrl.c:117
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Omezí porovnávání vzorů na zadaná POLE."
 
-#: grep-dctrl/grep-dctrl.c:114
+#: grep-dctrl/grep-dctrl.c:118
 msgid "This is a shorthand for -FPackage."
 msgstr "Toto je zkratka za -FPackage."
 
-#: grep-dctrl/grep-dctrl.c:115
+#: grep-dctrl/grep-dctrl.c:119
 msgid "This is a shorthand for -FSource:Package."
 msgstr "Toto je zkratka za -FSource:Package."
 
-#: grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:120
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Z nalezených odstavců zobrazí pouze obsah těchto polí."
 
-#: grep-dctrl/grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:121
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr "Z nalezených odstavců zobrazí pouze první řádek pole „Description“."
 
-#: grep-dctrl/grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:122
 msgid "Suppress field names when showing specified fields."
 msgstr "Při zobrazování zadaných polí potlačí názvy těchto polí."
 
-#: grep-dctrl/grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:123
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr ""
 "Bude se vzorem pracovat jako s rozšířeným POSIXovým regulárním výrazem."
 
-#: grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:124
 msgid "The pattern is a standard POSIX regular expression."
 msgstr "Vzor je standardní POSIXový regulární výraz."
 
-#: grep-dctrl/grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
 msgstr "Při hledání shody ignoruje velikost písmen."
 
-#: grep-dctrl/grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:126
 msgid "Show only paragraphs that do not match."
 msgstr "Zobrazí pouze odstavce, které se neshodují."
 
-#: grep-dctrl/grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:127
 msgid "Show those fields that have NOT been selected with -s"
 msgstr "Zobrazí pole, která NEBYLA vybrána pomocí -s"
 
-#: grep-dctrl/grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:128
 msgid "Show only the count of matching paragraphs."
 msgstr "Zobrazí pouze počet shodujících se odstavců."
 
-#: grep-dctrl/grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:129
 msgid "FNAME"
 msgstr "JMSOUB"
 
-#: grep-dctrl/grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:129
 msgid "Use FNAME as the config file."
 msgstr "Jako konfigurační soubor použije JMSOUB."
 
-#: grep-dctrl/grep-dctrl.c:126
+#: grep-dctrl/grep-dctrl.c:130
 msgid "Do an exact match."
 msgstr "Provede přesnou shodu."
 
-#: grep-dctrl/grep-dctrl.c:127 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:131 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Vytiskne licenci."
 
-#: grep-dctrl/grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:132
 msgid "Conjunct predicates."
 msgstr "Konjunkce predikátů."
 
-#: grep-dctrl/grep-dctrl.c:129
+#: grep-dctrl/grep-dctrl.c:133
 msgid "Disjunct predicates."
 msgstr "Disjunkce predikátů."
 
-#: grep-dctrl/grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:134
 msgid "Negate the following predicate."
 msgstr "Neguje následující predikát."
 
-#: grep-dctrl/grep-dctrl.c:131
+#: grep-dctrl/grep-dctrl.c:135
 msgid "Test for version number equality."
 msgstr "Testuje rovnost čísla verze."
 
-#: grep-dctrl/grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:136
 msgid "Version number comparison: <."
 msgstr "Porovnání čísla verze: <."
 
-#: grep-dctrl/grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:137
 msgid "Version number comparison: <=."
 msgstr "Porovnání čísla verze: <=."
 
-#: grep-dctrl/grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:138
 msgid "Version number comparison: >."
 msgstr "Porovnání čísla verze: >."
 
-#: grep-dctrl/grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:139
 msgid "Version number comparison: >=."
 msgstr "Porovnání čísla verze: >=."
 
-#: grep-dctrl/grep-dctrl.c:136
+#: grep-dctrl/grep-dctrl.c:140
 msgid "Debug option parsing."
 msgstr "Ladí zpracování parametrů."
 
-#: grep-dctrl/grep-dctrl.c:137 grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
 msgid "Do no output to stdout."
 msgstr "Nebude nic vypisovat na std. výstup."
 
-#: grep-dctrl/grep-dctrl.c:139 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Zkusí mmapovat vstupní soubory"
 
-#: grep-dctrl/grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:144
 msgid "Ignore parse errors"
 msgstr "Ignorovat chyby analýzy"
 
-#: grep-dctrl/grep-dctrl.c:141
+#: grep-dctrl/grep-dctrl.c:145
 msgid "PATTERN"
 msgstr "VZOR"
 
-#: grep-dctrl/grep-dctrl.c:141
+#: grep-dctrl/grep-dctrl.c:145
 msgid "Specify the pattern to search for"
 msgstr "Zadá vzor, který se má hledat"
 
-#: grep-dctrl/grep-dctrl.c:142
+#: grep-dctrl/grep-dctrl.c:146
 msgid "Match only whole package names (this implies -e)"
 msgstr "Shoduje se pouze s celými názvy balíků (implikuje -e)"
 
-#: grep-dctrl/grep-dctrl.c:304
-msgid "file names are not allowed within the predicate"
-msgstr "jména souborů nejsou uvnitř predikátu povolena"
+#: grep-dctrl/grep-dctrl.c:147
+msgid "Ensure that the output is in dctrl format (overridden by -n)"
+msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:311
+#: grep-dctrl/grep-dctrl.c:148
+msgid "Override the effect of an earlier --ensure-dctrl"
+msgstr ""
+
+#: grep-dctrl/grep-dctrl.c:236
 msgid "predicate is too long"
 msgstr "predikát je příliš dlouhý"
 
-#: grep-dctrl/grep-dctrl.c:371
-msgid "inconsistent atom modifiers"
-msgstr "nekonzistentní modifikátory atomu"
-
-#: grep-dctrl/grep-dctrl.c:430 grep-dctrl/grep-dctrl.c:835
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "příliš mnoho výstupních polí"
 
-#: grep-dctrl/grep-dctrl.c:454 sort-dctrl/sort-dctrl.c:104
-#: tbl-dctrl/tbl-dctrl.c:294 join-dctrl/join-dctrl.c:168
+#: grep-dctrl/grep-dctrl.c:325 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
 msgstr "úroveň logování „%s“ neexistuje"
 
-#: grep-dctrl/grep-dctrl.c:548
-msgid "Multiple patterns for the same atom are not allowed"
-msgstr "Více vzorů pro stejný atom není povoleno"
+#: grep-dctrl/grep-dctrl.c:536
+#, fuzzy, c-format
+msgid "internal error: unknown token %d"
+msgstr "vnitřní chyba"
 
-#: grep-dctrl/grep-dctrl.c:586 sort-dctrl/sort-dctrl.c:120
-#: tbl-dctrl/tbl-dctrl.c:306 join-dctrl/join-dctrl.c:180
-msgid "too many file names"
-msgstr "příliš mnoho názvů souborů"
-
-#: grep-dctrl/grep-dctrl.c:676
+#: grep-dctrl/grep-dctrl.c:545
 msgid "unexpected end of predicate"
 msgstr "neočekávaný konec predikátu"
 
-#: grep-dctrl/grep-dctrl.c:679
-msgid "unexpected '!' in command line"
-msgstr "neočekávaný „!“ v příkazové řádce"
-
-#: grep-dctrl/grep-dctrl.c:682
-msgid "unexpected '-a' in command line"
-msgstr "neočekávané „-a“ v příkazové řádce"
-
-#: grep-dctrl/grep-dctrl.c:685
-msgid "unexpected '-o' in command line"
-msgstr "neočekávané „-o“ v příkazové řádce"
-
-#: grep-dctrl/grep-dctrl.c:688
-msgid "unexpected '(' in command line"
-msgstr "neočekávaná „(“ v příkazové řádce"
-
-#: grep-dctrl/grep-dctrl.c:691
-msgid "unexpected ')' in command line"
-msgstr "neočekávaná „)“ v příkazové řádce"
-
-#: grep-dctrl/grep-dctrl.c:695
-msgid "unexpected atom in command line"
+#: grep-dctrl/grep-dctrl.c:548
+#, fuzzy
+msgid "unexpected pattern in command line"
 msgstr "neočekávaný atom v příkazové řádce"
 
-#: grep-dctrl/grep-dctrl.c:708
+#: grep-dctrl/grep-dctrl.c:551
+#, fuzzy
+msgid "unexpected string in command line"
+msgstr "neočekávaný atom v příkazové řádce"
+
+#: grep-dctrl/grep-dctrl.c:555
+#, fuzzy, c-format
+msgid "unexpected '%s' in command line"
+msgstr "neočekávaný „!“ v příkazové řádce"
+
+#: grep-dctrl/grep-dctrl.c:569
 msgid "missing ')' in command line"
 msgstr "chybějící „)“ v příkazové řádce"
 
-#: grep-dctrl/grep-dctrl.c:817
+#: grep-dctrl/grep-dctrl.c:588
+#, fuzzy
+msgid "too many field names"
+msgstr "příliš mnoho názvů souborů"
+
+#: grep-dctrl/grep-dctrl.c:646
+msgid "Multiple patterns for the same atom are not allowed"
+msgstr "Více vzorů pro stejný atom není povoleno"
+
+#: grep-dctrl/grep-dctrl.c:666
 msgid "A pattern is mandatory"
 msgstr "Vzor je povinný"
 
-#: grep-dctrl/grep-dctrl.c:824
-msgid "a predicate is required"
-msgstr "je vyžadován predikát"
+#: grep-dctrl/grep-dctrl.c:693
+msgid "inconsistent atom modifiers"
+msgstr "nekonzistentní modifikátory atomu"
 
-#: grep-dctrl/grep-dctrl.c:829
+#: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
+msgid "too many file names"
+msgstr "příliš mnoho názvů souborů"
+
+#: grep-dctrl/grep-dctrl.c:747
+msgid "file names are not allowed within the predicate"
+msgstr "jména souborů nejsou uvnitř predikátu povolena"
+
+#: grep-dctrl/grep-dctrl.c:828
 msgid "malformed predicate"
 msgstr "zkomolený predikát"
 
-#: grep-dctrl/grep-dctrl.c:839
+#: grep-dctrl/grep-dctrl.c:838
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "K vybraným výstupním polím přidávám „Description“ (díky parametru -d)"
 
-#: grep-dctrl/grep-dctrl.c:847
+#: grep-dctrl/grep-dctrl.c:846
 msgid "-I requires at least one instance of -s"
 msgstr "-I vyžaduje nejméně jeden výskyt -s"
 
-#: grep-dctrl/grep-dctrl.c:853
+#: grep-dctrl/grep-dctrl.c:852
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "při zobrazování celých odstavců nemohu potlačit názvy polí"
 
-#: grep-dctrl/rc.c:55
+#: grep-dctrl/rc.c:54
 msgid "Malformed default input file name"
 msgstr "Zkomolené jméno výchozího vstupního souboru"
 
@@ -333,7 +334,7 @@ msgstr "není vlastněn vámi nebo rootem, ignoruji"
 msgid "write permissions for group or others, ignoring"
 msgstr "práva zápisu pro skupinu nebo ostatní, ignoruji"
 
-#: grep-dctrl/rc.c:113
+#: grep-dctrl/rc.c:112
 msgid "reading config file"
 msgstr "načítám konfigurační soubor"
 
@@ -341,27 +342,27 @@ msgstr "načítám konfigurační soubor"
 msgid "read failure or out of memory"
 msgstr "chyba čtení nebo nedostatek paměti"
 
-#: grep-dctrl/rc.c:162
+#: grep-dctrl/rc.c:161
 msgid "syntax error: need a executable name"
 msgstr "chyba syntaxe: potřebuji jméno spustitelného souboru"
 
-#: grep-dctrl/rc.c:170
+#: grep-dctrl/rc.c:169
 msgid "syntax error: need an input file name"
 msgstr "chyba syntaxe: potřebuji jméno vstupního souboru"
 
-#: grep-dctrl/rc.c:176
+#: grep-dctrl/rc.c:175
 msgid "considering executable name"
 msgstr "zvažuji spustitelný soubor"
 
-#: grep-dctrl/rc.c:179
+#: grep-dctrl/rc.c:178
 msgid "yes, will use executable name"
 msgstr "ano, použiji spustitelný soubor"
 
-#: grep-dctrl/rc.c:181
+#: grep-dctrl/rc.c:180
 msgid "default input file"
 msgstr "výchozí vstupní soubor"
 
-#: grep-dctrl/rc.c:193
+#: grep-dctrl/rc.c:192
 msgid "executable name not found; reading from standard input"
 msgstr "spustitelný soubor nenalezen; čtu ze standardního vstupu"
 
@@ -401,15 +402,15 @@ msgstr "SPEC"
 msgid "Append the specified column."
 msgstr "Přidá zadaný sloupec."
 
-#: tbl-dctrl/tbl-dctrl.c:277
+#: tbl-dctrl/tbl-dctrl.c:284
 msgid "invalid column length"
 msgstr "neplatná délka sloupce"
 
-#: tbl-dctrl/tbl-dctrl.c:331
+#: tbl-dctrl/tbl-dctrl.c:338
 msgid "tbl-dctrl -- tabularize Debian control files"
 msgstr "tbl-dctrl -- převádí debianí soubory control do tabulek"
 
-#: tbl-dctrl/tbl-dctrl.c:346
+#: tbl-dctrl/tbl-dctrl.c:359
 msgid "bad multibyte character"
 msgstr "chybný vícebajtový znak"
 
@@ -477,3 +478,21 @@ msgstr "vyžaduji právě dva vstupní soubory"
 #: join-dctrl/join-dctrl.c:295
 msgid "cannot join a stream with itself"
 msgstr "nemohu sloučit proud sám se sebou"
+
+#~ msgid "predicate is too complex"
+#~ msgstr "predikát je příliš složitý"
+
+#~ msgid "unexpected '-a' in command line"
+#~ msgstr "neočekávané „-a“ v příkazové řádce"
+
+#~ msgid "unexpected '-o' in command line"
+#~ msgstr "neočekávané „-o“ v příkazové řádce"
+
+#~ msgid "unexpected '(' in command line"
+#~ msgstr "neočekávaná „(“ v příkazové řádce"
+
+#~ msgid "unexpected ')' in command line"
+#~ msgstr "neočekávaná „)“ v příkazové řádce"
+
+#~ msgid "a predicate is required"
+#~ msgstr "je vyžadován predikát"
