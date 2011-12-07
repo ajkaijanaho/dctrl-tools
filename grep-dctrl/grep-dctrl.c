@@ -48,7 +48,7 @@ struct field_attr *description_attr;
 
 static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 
-static char argsdoc [] = "PREDICATE [FILENAME...]";
+static char argsdoc [] = N_("FILTER [FILENAME...]");
 
 enum {
         OPT_CONFIG=256,
@@ -113,7 +113,7 @@ static struct argp_option options[] = {
 #ifdef BANNER
 	{ "banner",	    'B', 0,		    0, N_("Show the testing banner.") },
 #endif
-	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set debugging level to LEVEL.") },
+	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set log level to LEVEL.") },
 	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
 	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
 	{ 0,		    'S', 0,		    0, N_("This is a shorthand for -FSource:Package.") },
@@ -121,7 +121,7 @@ static struct argp_option options[] = {
 	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
 	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
 	{ "eregex",	    'e', 0,		    0, N_("Regard the pattern as an extended POSIX regular expression.") },
-	{ "regex",	    'r', 0,		    0, N_("The pattern is a standard POSIX regular expression.") },
+	{ "regex",	    'r', 0,		    0, N_("Regard the pattern as a standard POSIX regular expression.") },
 	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match.") },
 	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match.") },
         { "invert-show",    'I', 0,                 0, N_("Show those fields that have NOT been selected with -s") },
@@ -129,9 +129,9 @@ static struct argp_option options[] = {
 	{ "config-file",    OPT_CONFIG, N_("FNAME"),0, N_("Use FNAME as the config file.") },
 	{ "exact-match",    'X', 0,		    0, N_("Do an exact match.") },
 	{ "copying",	    'C', 0,		    0, N_("Print out the copyright license.") },
-	{ "and",	    'a', 0,		    0, N_("Conjunct predicates.") },
-	{ "or",		    'o', 0,		    0, N_("Disjunct predicates.") },
-	{ "not",	    '!', 0,		    0, N_("Negate the following predicate.") },
+	{ "and",	    'a', 0,		    0, N_("Conjunct filters.") },
+	{ "or",		    'o', 0,		    0, N_("Disjunct filters.") },
+	{ "not",	    '!', 0,		    0, N_("Negate the following filters.") },
 	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for version number equality.") },
 	{ "lt",		    OPT_LT, 0,		    0, N_("Version number comparison: <.") },
 	{ "le",		    OPT_LE, 0,		    0, N_("Version number comparison: <=.") },
@@ -233,7 +233,7 @@ static void apptok(struct arguments * args, const int tok)
 {
 	debug_message("apptok", 0);
 	if (args->toks_np >= MAX_TOKS) {
-		message(L_FATAL, 0, _("predicate is too long"));
+		message(L_FATAL, 0, _("filter is too long"));
 		fail();
 	}
 	args->toks[args->toks_np++] = tok;
@@ -542,7 +542,7 @@ static void unexpected(int tok)
 {
 	switch (tok) {
 	case TOK_EOD:
-		message(L_FATAL, 0, _("unexpected end of predicate"));
+		message(L_FATAL, 0, _("unexpected end of filter"));
 		fail();
         case TOK_PAT :
                 message(L_FATAL, 0, _("unexpected pattern in command line"));
@@ -644,7 +644,7 @@ static struct predicate * parse_prim(struct arguments * args)
                         if (pattern != 0) {
                                 message(L_FATAL, 0,
                                         _("Multiple patterns for the same "
-                                          "atom are not allowed"));
+                                          "simple filter are not allowed"));
                                 fail();
                         }
                         /* passthrough */
@@ -690,7 +690,7 @@ static struct predicate * parse_prim(struct arguments * args)
 
         return rv;
 failmode:
-        message(L_FATAL, 0, _("inconsistent atom modifiers")); 
+        message(L_FATAL, 0, _("inconsistent modifiers of simple filters")); 
         fail();
         return 0;
 }
@@ -744,7 +744,7 @@ static void parse_predicate(struct arguments * args)
         }
 	if (peek_token(args) != TOK_EOD) {
                 message(L_FATAL, 0,
-                        _("file names are not allowed within the predicate"));
+                        _("file names are not allowed within the filter"));
                 fail();
         }
 }
@@ -825,7 +825,7 @@ int main (int argc, char * argv[])
 	if (debug_optparse) { dump_args(&args); return 0; }
 
 	if (!check_predicate(args.p)) {
-		message(L_FATAL, 0, _("malformed predicate"));
+		message(L_FATAL, 0, _("malformed filter"));
 		fail();
 	}
 
