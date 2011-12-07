@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: dctrl-tools 2.11\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2011-12-07 16:55-0400\n"
-"PO-Revision-Date: 2011-05-03 23:49-0400\n"
+"PO-Revision-Date: 2011-12-07 18:44-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: lib/ifile.c:54
@@ -241,11 +241,11 @@ msgstr ""
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "S'assurer que la sortie est au format dctrl (écrasé par -n)"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Écraser l'effet d'un --ensure-dctrl précédent"
 
 #: grep-dctrl/grep-dctrl.c:236
 msgid "filter is too long"
@@ -263,42 +263,34 @@ msgid "no such log level '%s'"
 msgstr "niveau de journalisation « %s » inexistant"
 
 #: grep-dctrl/grep-dctrl.c:536
-#, fuzzy, c-format
-#| msgid "internal error"
+#, c-format
 msgid "internal error: unknown token %d"
-msgstr "erreur interne"
+msgstr "erreur interne : marque %d inconnu"
 
 #: grep-dctrl/grep-dctrl.c:545
 msgid "unexpected end of filter"
 msgstr "fin de filtre inattendue"
 
 #: grep-dctrl/grep-dctrl.c:548
-#, fuzzy
-#| msgid "unexpected '-a' in command line"
 msgid "unexpected pattern in command line"
-msgstr "« -a » inattendue sur la ligne de commande"
+msgstr "motif inattendu sur la ligne de commande"
 
 #: grep-dctrl/grep-dctrl.c:551
-#, fuzzy
-#| msgid "unexpected '!' in command line"
 msgid "unexpected string in command line"
-msgstr "« ! » inattendu sur la ligne de commande"
+msgstr "chaîne inattendue sur la ligne de commande"
 
 #: grep-dctrl/grep-dctrl.c:555
-#, fuzzy, c-format
-#| msgid "unexpected '!' in command line"
+#, c-format
 msgid "unexpected '%s' in command line"
-msgstr "« ! » inattendu sur la ligne de commande"
+msgstr "« %s » inattendu sur la ligne de commande"
 
 #: grep-dctrl/grep-dctrl.c:569
 msgid "missing ')' in command line"
 msgstr "« ) » manquante sur la ligne de commande"
 
 #: grep-dctrl/grep-dctrl.c:588
-#, fuzzy
-#| msgid "too many file names"
 msgid "too many field names"
-msgstr "trop de noms de fichiers"
+msgstr "trop de noms de champs"
 
 #: grep-dctrl/grep-dctrl.c:646
 msgid "Multiple patterns for the same simple filter are not allowed"
