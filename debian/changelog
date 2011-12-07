@@ -3,8 +3,9 @@ dctrl-tools (2.20.1) UNRELEASED; urgency=low
   [ David Prévot ]
   * Initial German manpages translation, thanks to Chris Leick (closes:
     #651218).
+  * man pages order in SEE ALSO, thanks to Chris Leick (closes: #651219).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 07 Dec 2011 18:10:16 +0200
+ -- David Prévot <taffit@debian.org>  Wed, 07 Dec 2011 11:56:51 -0400
 
 dctrl-tools (2.20) unstable; urgency=low
 

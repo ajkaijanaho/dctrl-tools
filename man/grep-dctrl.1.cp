@@ -678,11 +678,11 @@ package
 .BR debian\-policy .
 Also available in the Debian website.
 .PP
-.BR ara (1),
 .BR apt\-cache (1),
-.BR dpkg (8),
+.BR ara (1),
 .BR dpkg\-awk (1),
-.BR sgrep (1)
+.BR sgrep (1),
+.BR dpkg (8)
 \" Local variables:
 \" mode: nroff
 \" End:

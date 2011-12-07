@@ -16,5 +16,5 @@ oder als Fehlerbericht an das Paket
 
 Sie können mit dem folgenden Befehl das englische 
 Original anzeigen
-.RB "« " "man -L C"
-.IR "section page_de_man" " »."
+.RB » "man -L C"
+.IR "Abschnitt deutsche_Handbuchseite" «.
