@@ -562,8 +562,8 @@ Additional messages may be provided by the system libraries.
 .B This list is incomplete.
 .IP "\fBA pattern is mandatory"
 You must specify a pattern to be searched for.
-.IP "\fBa predicate is required"
-No predicate was specified, but one is required.
+.IP "\fBmalformed filter"
+No filter was specified, but one is required.
 .IP "\fBcannot find enough memory"
 More memory was needed than was available.  This error may be
 transient, that is, if you try again, all may go well.
@@ -577,22 +577,19 @@ way.  This means, for example, that you can only use
 .B \-n
 when you use
 .BR \-s .
-.IP "\fBinconsistent atom modifiers"
-Conflicting atom modifiers were used; for example, perhaps both
+.IP "\fBinconsistent modifiers of simple filters"
+Conflicting modifiers of simple filters were used; for example, perhaps both
 .B \-X
 and
 .B \-e
-were specified for the same atom.
+were specified for the same simple filter.
 .IP "\fBmissing ')' in command line"
 There were more opening than closing parentheses in the given
-predicate.
+filter.
 .IP "\fBno such log level"
 The argument to
 .B \-l
 was invalid.
-.IP "\fBpredicate is too complex"
-The predicate's complexity (the number of atoms and connectives)
-exceed compile-time limits.
 .IP "\fBread failure or out of memory"
 There was a problem reading the configuration file.  Maybe there was a
 transput error; maybe memory was exhausted.  This error may be
