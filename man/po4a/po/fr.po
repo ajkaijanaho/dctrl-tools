@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
-"POT-Creation-Date: 2011-12-07 11:47-0400\n"
+"POT-Creation-Date: 2011-12-07 18:13-0400\n"
 "PO-Revision-Date: 2011-05-05 11:43-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -1273,12 +1273,14 @@ msgstr "Vous devez indiquer un motif à rechercher."
 #. type: IP
 #: man/grep-dctrl.1.cp:565
 #, no-wrap
-msgid "B<a predicate is required>"
-msgstr "B<un prédicat est nécessaire>"
+msgid "B<malformed filter>"
+msgstr ""
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:567
-msgid "No predicate was specified, but one is required."
+#, fuzzy
+#| msgid "No predicate was specified, but one is required."
+msgid "No filter was specified, but one is required."
 msgstr "Aucun filtre n'a été indiqué, alors que c'est nécessaire."
 
 #. type: IP
@@ -1315,15 +1317,20 @@ msgstr ""
 
 #. type: IP
 #: man/grep-dctrl.1.cp:580
-#, no-wrap
-msgid "B<inconsistent atom modifiers>"
-msgstr "B<modificateurs d'atome incohérents>"
+#, fuzzy, no-wrap
+#| msgid "Modifiers of simple filters"
+msgid "B<inconsistent modifiers of simple filters>"
+msgstr "Modificateurs de filtres élémentaires"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:586
+#, fuzzy
+#| msgid ""
+#| "Conflicting atom modifiers were used; for example, perhaps both B<-X> and "
+#| "B<-e> were specified for the same atom."
 msgid ""
-"Conflicting atom modifiers were used; for example, perhaps both B<-X> and B<-"
-"e> were specified for the same atom."
+"Conflicting modifiers of simple filters were used; for example, perhaps both "
+"B<-X> and B<-e> were specified for the same simple filter."
 msgstr ""
 "Des modificateurs de filtres élémentaires incompatibles ont été utilisés. "
 "Par exemple, peut-être que B<-X> et B<-e> ont été indiqués pour le même "
@@ -1337,8 +1344,10 @@ msgstr "B<« ) » manquante sur la ligne de commande>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:589
-msgid ""
-"There were more opening than closing parentheses in the given predicate."
+#, fuzzy
+#| msgid ""
+#| "There were more opening than closing parentheses in the given predicate."
+msgid "There were more opening than closing parentheses in the given filter."
 msgstr ""
 "Il y avait plus de parenthèses ouvrantes que fermantes dans le filtre donné."
 
@@ -1356,26 +1365,11 @@ msgstr "L'argument de B<-l> n'était pas valable."
 #. type: IP
 #: man/grep-dctrl.1.cp:593
 #, no-wrap
-msgid "B<predicate is too complex>"
-msgstr "B<le prédicat est trop complexe>"
-
-#. type: Plain text
-#: man/grep-dctrl.1.cp:596
-msgid ""
-"The predicate's complexity (the number of atoms and connectives)  exceed "
-"compile-time limits."
-msgstr ""
-"La complexité du filtre (le nombre de filtres élémentaires et de "
-"combinaisons) dépasse les limites de compilation."
-
-#. type: IP
-#: man/grep-dctrl.1.cp:596
-#, no-wrap
 msgid "B<read failure or out of memory>"
 msgstr "B<erreur de lecture ou manque de mémoire>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:600
+#: man/grep-dctrl.1.cp:597
 msgid ""
 "There was a problem reading the configuration file.  Maybe there was a "
 "transput error; maybe memory was exhausted.  This error may be transient, "
@@ -1387,13 +1381,13 @@ msgstr ""
 "peut ne pas réapparaître."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:600
+#: man/grep-dctrl.1.cp:597
 #, no-wrap
 msgid "B<syntax error: need a executable name>"
 msgstr "B<erreur de syntaxe : nécessite un nom d'exécutable>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:602 man/grep-dctrl.1.cp:604
+#: man/grep-dctrl.1.cp:599 man/grep-dctrl.1.cp:601
 msgid ""
 "There is a problem in the configuration file.  Look, and you shall find it."
 msgstr ""
@@ -1401,19 +1395,19 @@ msgstr ""
 "devriez la trouver."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:602
+#: man/grep-dctrl.1.cp:599
 #, no-wrap
 msgid "B<syntax error: need an input file name>"
 msgstr "B<erreur de syntaxe : nécessite un nom de fichier d'entrée>"
 
 #. type: IP
-#: man/grep-dctrl.1.cp:604
+#: man/grep-dctrl.1.cp:601
 #, no-wrap
 msgid "B<too many file names>"
 msgstr "B<trop de noms de fichiers>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:607
+#: man/grep-dctrl.1.cp:604
 msgid ""
 "The number of file names specified in the command line exceeded a compile-"
 "time limit."
@@ -1422,13 +1416,13 @@ msgstr ""
 "de compilation."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:607
+#: man/grep-dctrl.1.cp:604
 #, no-wrap
 msgid "B<too many output fields>"
 msgstr "B<trop de champs de sortie>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:612
+#: man/grep-dctrl.1.cp:609
 msgid ""
 "The argument to B<-s> had too many field names in it.  This number is "
 "limited to 256."
@@ -1437,13 +1431,13 @@ msgstr ""
 "à 256."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:612
+#: man/grep-dctrl.1.cp:609
 #, no-wrap
 msgid "B<unexpected ')' in command line>"
 msgstr "B<« ) » inattendue sur la ligne de commande>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:615
+#: man/grep-dctrl.1.cp:612
 msgid ""
 "There was no opening parenthesis that would match some closing parenthesis "
 "in the command line."
@@ -1452,13 +1446,13 @@ msgstr ""
 "fermantes de la ligne de commande."
 
 #. type: SH
-#: man/grep-dctrl.1.cp:615
+#: man/grep-dctrl.1.cp:612
 #, no-wrap
 msgid "COMPATIBILITY"
 msgstr "COMPATIBILITÉ"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:621
+#: man/grep-dctrl.1.cp:618
 msgid ""
 "If you use B<grep-dctrl> in a Debian package, it should depend on the "
 "B<dctrl-tools> package and heed the following compatibility notes:"
@@ -1467,13 +1461,13 @@ msgstr ""
 "paquet B<dctrl-tools> et tenir compte des notes de compatibilité suivantes :"
 
 #. type: IP
-#: man/grep-dctrl.1.cp:622
+#: man/grep-dctrl.1.cp:619
 #, no-wrap
 msgid "Always call only the B<grep-dctrl> executable"
 msgstr "Toujours appeler exclusivement l'exécutable B<grep-dctrl>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:626
+#: man/grep-dctrl.1.cp:623
 msgid ""
 "Although the B<grep-status> and B<grep-available> symlinks are installed by "
 "default, this may change in the future.  Those symlinks are meant for manual "
@@ -1484,13 +1478,13 @@ msgstr ""
 "symboliques sont destinés à l'utilisation directe et non pour les scripts."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:626
+#: man/grep-dctrl.1.cp:623
 #, no-wrap
 msgid "Always specify an explicit file name"
 msgstr "Toujours indiquer un nom de fichier explicite"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:632
+#: man/grep-dctrl.1.cp:629
 msgid ""
 "Don't rely on the implicit file name feature.  The system administrator may "
 "have changed the default file name.  You should always specify the B<-> "
@@ -1501,13 +1495,13 @@ msgstr ""
 "Vous devriez aussi toujours indiquer le fichier B<->."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:632
+#: man/grep-dctrl.1.cp:629
 #, no-wrap
 msgid "Not all features have been with us in every version"
 msgstr "Les fonctionnalités n'ont pas toujours été présentes suivant les versions"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:637
+#: man/grep-dctrl.1.cp:634
 msgid ""
 "Check if any of the features you use is mentioned in the changelog.  Use a "
 "versioned dependency on B<dctrl-tools>, if it is necessary."
@@ -1517,30 +1511,30 @@ msgstr ""
 "tools> si nécessaire."
 
 #. type: SH
-#: man/grep-dctrl.1.cp:637
+#: man/grep-dctrl.1.cp:634
 #, no-wrap
 msgid "FILES"
 msgstr "FICHIERS"
 
 #. type: IP
-#: man/grep-dctrl.1.cp:638
+#: man/grep-dctrl.1.cp:635
 #, no-wrap
 msgid "I<SYSCONF/grep-dctrl.rc>"
 msgstr "I<SYSCONF/grep-dctrl.rc>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:640
+#: man/grep-dctrl.1.cp:637
 msgid "See the next file."
 msgstr "Consultez le fichier suivant."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:640
+#: man/grep-dctrl.1.cp:637
 #, no-wrap
 msgid "I<~/.grep-dctrlrc>"
 msgstr "I<~/.grep-dctrlrc>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:649
+#: man/grep-dctrl.1.cp:646
 msgid ""
 "These files are the default configuration files for B<grep-dctrl>.  The "
 "format is line-based, with `B<#>' introducing a comment that lasts to the "
@@ -1555,7 +1549,7 @@ msgstr ""
 "dans cet ordre, séparés par une espace. Les lignes vides sont ignorées."
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:660
+#: man/grep-dctrl.1.cp:657
 msgid ""
 "If the default input file name starts with two at (B<@>)  signs, one of them "
 "is ignored.  This allows specifying a file name that starts with an at "
@@ -1570,13 +1564,13 @@ msgstr ""
 "c>, et le flux d'entrée standard est utilisé comme entrée par défaut."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:660
+#: man/grep-dctrl.1.cp:657
 #, no-wrap
 msgid "I</var/lib/dpkg/available>"
 msgstr "I</var/lib/dpkg/available>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:664
+#: man/grep-dctrl.1.cp:661
 msgid ""
 "The default input file of B<grep-available> when the shipped configuration "
 "is in effect."
@@ -1585,13 +1579,13 @@ msgstr ""
 "d'origine est utilisée."
 
 #. type: IP
-#: man/grep-dctrl.1.cp:664
+#: man/grep-dctrl.1.cp:661
 #, no-wrap
 msgid "I</var/lib/dpkg/status>"
 msgstr "I</var/lib/dpkg/status>"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:668
+#: man/grep-dctrl.1.cp:665
 msgid ""
 "The default input file of B<grep-status> when the shipped configuration is "
 "in effect."
@@ -1600,14 +1594,14 @@ msgstr ""
 "d'origine est utilisée."
 
 #. type: SH
-#: man/grep-dctrl.1.cp:668 man/join-dctrl.1:240 man/sort-dctrl.1:151
+#: man/grep-dctrl.1.cp:665 man/join-dctrl.1:240 man/sort-dctrl.1:151
 #: man/sync-available.8:56 man/tbl-dctrl.1:210
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTEUR"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:675
+#: man/grep-dctrl.1.cp:672
 msgid ""
 "The program and this manual page were written by Antti-Juhani Kaijanaho "
 "E<lt>I<gaia@iki.fi>E<gt>.  Bill Allombert E<lt>I<ballombe@debian.org>E<gt> "
@@ -1618,14 +1612,14 @@ msgstr ""
 "org>E<gt> a fourni un des exemples de la page de manuel."
 
 #. type: SH
-#: man/grep-dctrl.1.cp:675 man/join-dctrl.1:244 man/sort-dctrl.1:154
+#: man/grep-dctrl.1.cp:672 man/join-dctrl.1:244 man/sort-dctrl.1:154
 #: man/sync-available.8:59 man/tbl-dctrl.1:214
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:680 man/sort-dctrl.1:159
+#: man/grep-dctrl.1.cp:677 man/sort-dctrl.1:159
 msgid ""
 "Debian Policy Manual.  Published as the Debian package B<debian-policy>.  "
 "Also available in the Debian website."
@@ -1634,7 +1628,7 @@ msgstr ""
 "disponible sur le site de Debian."
 
 #. type: Plain text
-#: man/grep-dctrl.1.cp:686
+#: man/grep-dctrl.1.cp:683
 msgid "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<sgrep>(1), B<dpkg>(8)"
 msgstr "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<sgrep>(1), B<dpkg>(8)"
 
@@ -2769,6 +2763,22 @@ msgid ""
 msgstr ""
 "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<dpkg-query>(1), B<grep-dctrl>"
 "(1), B<sort-dctrl>(1), B<dpkg>(8)"
+
+#~ msgid "B<a predicate is required>"
+#~ msgstr "B<un prédicat est nécessaire>"
+
+#~ msgid "B<inconsistent atom modifiers>"
+#~ msgstr "B<modificateurs d'atome incohérents>"
+
+#~ msgid "B<predicate is too complex>"
+#~ msgstr "B<le prédicat est trop complexe>"
+
+#~ msgid ""
+#~ "The predicate's complexity (the number of atoms and connectives)  exceed "
+#~ "compile-time limits."
+#~ msgstr ""
+#~ "La complexité du filtre (le nombre de filtres élémentaires et de "
+#~ "combinaisons) dépasse les limites de compilation."
 
 #~ msgid "2007-10-27"
 #~ msgstr "2007-10-27"
