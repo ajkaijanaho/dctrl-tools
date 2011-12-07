@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.19\n"
 "Report-Msgid-Bugs-To: dctrl-tools@packages.debian.org\n"
-"POT-Creation-Date: 2011-12-06 19:01-0400\n"
+"POT-Creation-Date: 2011-12-07 11:47-0400\n"
 "PO-Revision-Date: 2011-12-06 21:12+0100\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -726,10 +726,9 @@ msgstr "Verschiedenes"
 
 #. type: IP
 #: man/grep-dctrl.1.cp:332
-#, fuzzy, no-wrap
-#| msgid "B<grep-dctrl>(1)"
+#, no-wrap
 msgid "B<--ensure-dctrl>"
-msgstr "B<grep-dctrl>(1)"
+msgstr "B<--ensure-dctrl>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:340
@@ -743,10 +742,9 @@ msgstr ""
 
 #. type: IP
 #: man/grep-dctrl.1.cp:340
-#, fuzzy, no-wrap
-#| msgid "B<--lt>"
+#, no-wrap
 msgid "B<--compat>"
-msgstr "B<--lt>"
+msgstr "B<--compat>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:344
@@ -1647,11 +1645,10 @@ msgstr ""
 "Debian-Richtlinien-Handbuch (Debian Policy Manual) – herausgegeben als "
 "Debian-Paket B<debian-policy> – außerdem auf der Debian-Website verfügbar"
 
-# FIXME wrong order
 #. type: Plain text
 #: man/grep-dctrl.1.cp:686
-msgid "B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<sgrep>(1)"
-msgstr "B<ara>(1), B<apt-cache>(1), B<dpkg-awk>(1), B<sgrep>(1), B<dpkg>(8)"
+msgid "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<sgrep>(1), B<dpkg>(8)"
+msgstr "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<sgrep>(1), B<dpkg>(8)"
 
 #. type: TH
 #: man/join-dctrl.1:1
@@ -2498,10 +2495,9 @@ msgstr ""
 "der Name des Verzeichnisses, in dem temporäre Dateien erstellt werden. "
 "Vorgabe ist I</tmp>."
 
-# FIXME wrong order
 #. type: Plain text
 #: man/sync-available.8:63
-msgid "B<apt>(8), B<dpkg>(8), B<dselect>(8), B<grep-available>(1)"
+msgid "B<grep-available>(1), B<apt>(8), B<dpkg>(8), B<dselect>(8)"
 msgstr "B<grep-available>(1), B<apt>(8), B<dpkg>(8), B<dselect>(8)"
 
 #. type: TH
@@ -2786,12 +2782,11 @@ msgstr ""
 "Das Programm B<tbl-dctrl> und diese Handbuchseite wurden von Antti-Juhani "
 "Kaijanaho  geschrieben."
 
-# FIXME wrong order
 #. type: Plain text
 #: man/tbl-dctrl.1:222
 msgid ""
-"B<ara>(1), B<apt-cache>(1), B<dpkg>(8), B<dpkg-awk>(1), B<dpkg-query>(1), "
-"B<grep-dctrl>(1), B<sort-dctrl>(1)"
+"B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<dpkg-query>(1), B<grep-dctrl>"
+"(1), B<sort-dctrl>(1), B<dpkg>(8)"
 msgstr ""
 "B<apt-cache>(1), B<ara>(1), B<dpkg-awk>(1), B<dpkg-query>(1), B<grep-dctrl>"
 "(1), B<sort-dctrl>(1), B<dpkg>(8)"
