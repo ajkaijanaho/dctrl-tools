@@ -1,6 +1,8 @@
 dctrl-tools (2.21) UNRELEASED; urgency=low
 
-  * 
+  [ David Prévot ]
+  * Initial German manpages translation, thanks to Chris Leick (closes:
+    #651218).
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 07 Dec 2011 10:46:50 +0200
 

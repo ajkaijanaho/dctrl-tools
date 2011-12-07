@@ -1,0 +1,20 @@
+PO4A-HEADER:mode=after;position=^\.SH "SIEHE AUCH";beginboundary=^\.SH
+.SH TRADUCTION
+Diese Übersetzung wurde mit dem Werkzeug
+.B po4a
+<URL:http://po4a.alioth.debian.org/>
+durch Chris Leick
+.I c.leick@vollbio.de
+und das deutsche Debian-Übersetzer-Team im 
+Dezember 2011 erstellt.
+
+
+Bitte melden Sie alle Fehler in der Übersetzung an
+.I debian-l10n-german@lists.debian.org
+oder als Fehlerbericht an das Paket
+.IR dctrl-tools .
+
+Sie können mit dem folgenden Befehl das englische 
+Original anzeigen
+.RB "« " "man -L C"
+.IR "section page_de_man" " »."
