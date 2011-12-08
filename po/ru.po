@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the dctrl-tools package.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2006.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.14\n"
+"Project-Id-Version: dctrl-tools 2.20.1\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2011-12-07 16:55-0400\n"
-"PO-Revision-Date: 2010-08-16 19:11+0400\n"
+"PO-Revision-Date: 2011-12-08 20:35+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lib/ifile.c:54
 #, c-format
@@ -88,7 +88,7 @@ msgstr "grep-dctrl -- grep по управляющим файлам Debian"
 
 #: grep-dctrl/grep-dctrl.c:51
 msgid "FILTER [FILENAME...]"
-msgstr ""
+msgstr "ФИЛЬТР [ИМЯ_ФАЙЛА…]"
 
 #: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
@@ -100,14 +100,13 @@ msgid "LEVEL"
 msgstr "УРОВЕНЬ"
 
 #: grep-dctrl/grep-dctrl.c:116
-#, fuzzy
 #| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
-msgstr "Установить уровень отладки равным УРОВНЮ."
+msgstr "Установить уровень протоколирования равным УРОВНЮ."
 
 #: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
 msgid "FIELD,FIELD,..."
-msgstr "ПОЛЕ,ПОЛЕ,..."
+msgstr "ПОЛЕ,ПОЛЕ,…"
 
 #: grep-dctrl/grep-dctrl.c:117
 msgid "Restrict pattern matching to the FIELDs given."
@@ -141,10 +140,9 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Рассматривать шаблон как расширенное регулярное выражение POSIX."
 
 #: grep-dctrl/grep-dctrl.c:124
-#, fuzzy
 #| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
-msgstr "Рассматривать шаблон как расширенное регулярное выражение POSIX."
+msgstr "Рассматривать шаблон как стандартное регулярное выражение POSIX."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
@@ -180,46 +178,41 @@ msgid "Print out the copyright license."
 msgstr "Показать лицензию на программу."
 
 #: grep-dctrl/grep-dctrl.c:132
-#, fuzzy
 #| msgid "Conjunct predicates."
 msgid "Conjunct filters."
-msgstr "Выполнить конъюнкцию предикатов."
+msgstr "Выполнить конъюнкцию фильтров."
 
 #: grep-dctrl/grep-dctrl.c:133
-#, fuzzy
 #| msgid "Disjunct predicates."
 msgid "Disjunct filters."
-msgstr "Выполнить дизъюнкцию предикатов."
+msgstr "Выполнить дизъюнкцию фильтров."
 
 #: grep-dctrl/grep-dctrl.c:134
-#, fuzzy
 #| msgid "Negate the following predicate."
 msgid "Negate the following filters."
-msgstr "Взять противоположное значение последующего предиката."
+msgstr "Взять противоположное значение последующих фильтров."
 
 #: grep-dctrl/grep-dctrl.c:135
 msgid "Test for version number equality."
 msgstr "Сравнить номера версий на равность."
 
 #: grep-dctrl/grep-dctrl.c:136
-#, fuzzy
 #| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
-msgstr "Сравнить номера версии: <."
+msgstr "Сравнение номеров версий: <<."
 
 #: grep-dctrl/grep-dctrl.c:137
 msgid "Version number comparison: <=."
-msgstr "Сравнить номера версии: <=."
+msgstr "Сравнение номеров версий: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-#, fuzzy
 #| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
-msgstr "Сравнить номера версии: >."
+msgstr "Сравнение номеров версий: >>."
 
 #: grep-dctrl/grep-dctrl.c:139
 msgid "Version number comparison: >=."
-msgstr "Сравнить номера версии: >=."
+msgstr "Сравнение номеров версий: >=."
 
 #: grep-dctrl/grep-dctrl.c:140
 msgid "Debug option parsing."
@@ -252,17 +245,16 @@ msgstr "Искать во всех именах пакетов (подразум
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "Проверить, что вывод в формате dctrl (заменяется -n)"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Отменить эффект имеющегося --ensure-dctrl"
 
 #: grep-dctrl/grep-dctrl.c:236
-#, fuzzy
 #| msgid "predicate is too long"
 msgid "filter is too long"
-msgstr "предикат слишком длинный"
+msgstr "фильтр слишком длинный"
 
 #: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
 #: join-dctrl/join-dctrl.c:113
@@ -273,63 +265,57 @@ msgstr "слишком много выходных файлов"
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
-msgstr "уровня журнала %s не существует"
+msgstr "уровня журнала «%s» не существует"
 
 #: grep-dctrl/grep-dctrl.c:536
-#, fuzzy, c-format
+#, c-format
 #| msgid "internal error"
 msgid "internal error: unknown token %d"
-msgstr "внутренняя ошибка"
+msgstr "внутренняя ошибка: неизвестный токен %d"
 
 #: grep-dctrl/grep-dctrl.c:545
-#, fuzzy
 #| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
-msgstr "неожиданный конец предиката"
+msgstr "неожиданный конец фильтра"
 
 #: grep-dctrl/grep-dctrl.c:548
-#, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
-msgstr "неожиданный атом в командной строке"
+msgstr "неожиданный шаблон в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:551
-#, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
-msgstr "неожиданный атом в командной строке"
+msgstr "неожиданная строка в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:555
-#, fuzzy, c-format
+#, c-format
 #| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
-msgstr "неожиданный '!' в командной строке"
+msgstr "неожиданное «%s» в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:569
 msgid "missing ')' in command line"
-msgstr "пропущенная ')' в командной строке"
+msgstr "пропущенная «)» в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:588
-#, fuzzy
 #| msgid "too many file names"
 msgid "too many field names"
-msgstr "слишком много имён файлов"
+msgstr "слишком много имён полей"
 
 #: grep-dctrl/grep-dctrl.c:646
-#, fuzzy
 #| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "Нельзя задать несколько шаблонов для одно атома"
+msgstr "Нельзя задать несколько шаблонов для одного простого фильтра"
 
 #: grep-dctrl/grep-dctrl.c:666
 msgid "A pattern is mandatory"
 msgstr "Шаблон обязателен"
 
 #: grep-dctrl/grep-dctrl.c:693
-#, fuzzy
 #| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
-msgstr "Несовместимые модификаторы атома"
+msgstr "Несовместимые модификаторы простых фильтров"
 
 #: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
@@ -337,20 +323,18 @@ msgid "too many file names"
 msgstr "слишком много имён файлов"
 
 #: grep-dctrl/grep-dctrl.c:747
-#, fuzzy
 #| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
-msgstr "имена файлов в предикате не разрешены"
+msgstr "имена файлов в фильтре запрещены"
 
 #: grep-dctrl/grep-dctrl.c:828
-#, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
-msgstr "неправильно составлен предикат"
+msgstr "неправильно составленный фильтр"
 
 #: grep-dctrl/grep-dctrl.c:838
 msgid "Adding \"Description\" to selected output fields because of -d"
-msgstr "Добавляется \"Description\" к выбранным для вывода полям из-за -d"
+msgstr "Добавляется «Description» к выбранным для вывода полям из-за -d"
 
 #: grep-dctrl/grep-dctrl.c:846
 msgid "-I requires at least one instance of -s"
@@ -526,11 +510,11 @@ msgstr "невозможно объединить поток сам с собо�
 
 #: lib/msg.h:52
 msgid "I'm broken - please report this bug."
-msgstr ""
+msgstr "Что-то сломалось — сообщите об ошибке."
 
 #: lib/msg.h:145
 msgid "cannot find enough memory"
-msgstr ""
+msgstr "не хватает памяти"
 
 #~ msgid "predicate is too complex"
 #~ msgstr "слишком сложный предикат"
