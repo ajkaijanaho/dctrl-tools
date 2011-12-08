@@ -158,7 +158,7 @@ struct ifile find_ifile_by_exename(const char * exename, const char * rcfname)
 		line_exe = strtok(line, " \t");
 		if (line_exe == 0) {
 			line_message(L_IMPORTANT, fname, lineno,
-				     _("syntax error: need a executable name")
+				     _("syntax error: need an executable name")
                                 );
 			continue;
 		}
