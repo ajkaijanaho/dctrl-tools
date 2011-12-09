@@ -1,16 +1,16 @@
 # German translation of dctrl-tools
-# Copyright © 2004, 2006, 2008, 2009, 2010 by Gerfried Fuchs <rhonda@debian.at>
+# Copyright © 2004, 2006, 2008, 2009, 2010, 2011 by Gerfried Fuchs <rhonda@debian.org>
 # This file is distributed under the same license as the dctrl-tools package.
 #
-# Gerfried Fuchs <rhonda@debian.at>, 2004, 2006, 2008, 2009, 2010.
+# Gerfried Fuchs <rhonda@debian.org>, 2004, 2006, 2008, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
-"PO-Revision-Date: 2010-08-08 12:39+0200\n"
-"Last-Translator: Gerfried Fuchs <rhonda@debian.at>\n"
+"POT-Creation-Date: 2011-12-09 11:16+0100\n"
+"PO-Revision-Date: 2011-12-09 11:27+0100\n"
+"Last-Translator: Gerfried Fuchs <rhonda@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgstr "grep-dctrl -- durchsucht Debian-Control-Dateien"
 
 #: grep-dctrl/grep-dctrl.c:51
 msgid "FILTER [FILENAME...]"
-msgstr ""
+msgstr "FILTER [DATEINAME...]"
 
 #: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
@@ -98,10 +98,8 @@ msgid "LEVEL"
 msgstr "EBENE"
 
 #: grep-dctrl/grep-dctrl.c:116
-#, fuzzy
-#| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
-msgstr "Setzt Debugging-Ebene auf EBENE."
+msgstr "Setzt Log-Ebene auf EBENE."
 
 #: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
 msgid "FIELD,FIELD,..."
@@ -139,10 +137,8 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
 
 #: grep-dctrl/grep-dctrl.c:124
-#, fuzzy
-#| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
-msgstr "Behandelt das Muster als erweiterten POSIX-regulären Ausdruck."
+msgstr "Behandelt das Muster als standard-POSIX-regulären Ausdruck."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
@@ -178,42 +174,32 @@ msgid "Print out the copyright license."
 msgstr "Gibt die Copyright-Lizenz aus."
 
 #: grep-dctrl/grep-dctrl.c:132
-#, fuzzy
-#| msgid "Conjunct predicates."
 msgid "Conjunct filters."
-msgstr "UND-verknüpfte Eigenschaften."
+msgstr "UND-verknüpfte Filter."
 
 #: grep-dctrl/grep-dctrl.c:133
-#, fuzzy
-#| msgid "Disjunct predicates."
 msgid "Disjunct filters."
-msgstr "ODER-verknüpfte Eigenschaften."
+msgstr "ODER-verknüpfte Filter."
 
 #: grep-dctrl/grep-dctrl.c:134
-#, fuzzy
-#| msgid "Negate the following predicate."
 msgid "Negate the following filters."
-msgstr "Negiert die folgende Eigenschaft."
+msgstr "Negiert die folgenden Filter."
 
 #: grep-dctrl/grep-dctrl.c:135
 msgid "Test for version number equality."
 msgstr "Test auf Versionsnummern-Übereinstimmung."
 
 #: grep-dctrl/grep-dctrl.c:136
-#, fuzzy
-#| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
-msgstr "Versionsnummern-Vergleich: <."
+msgstr "Versionsnummern-Vergleich: <<."
 
 #: grep-dctrl/grep-dctrl.c:137
 msgid "Version number comparison: <=."
 msgstr "Versionsnummern-Vergleich: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-#, fuzzy
-#| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
-msgstr "Versionsnummern-Vergleich: >."
+msgstr "Versionsnummern-Vergleich: >>."
 
 #: grep-dctrl/grep-dctrl.c:139
 msgid "Version number comparison: >=."
@@ -224,7 +210,7 @@ msgid "Debug option parsing."
 msgstr "Optionenverarbeitung debuggen."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
+msgid "Do not output to stdout."
 msgstr "Keine Ausgabe auf die Standardausgabe."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
@@ -250,17 +236,15 @@ msgstr "Nur auf komplett passende Paketnamen prüfen (impliziert -e)"
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "Stellt sicher, dass die Ausgabe im dctrl-Format ist (aufgehoben durch -n"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Hebt die Auswirkung eines früheren --ensure-dctrl auf"
 
 #: grep-dctrl/grep-dctrl.c:236
-#, fuzzy
-#| msgid "predicate is too long"
 msgid "filter is too long"
-msgstr "Eigenschaft ist zu lang"
+msgstr "Filter ist zu lang"
 
 #: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
 #: join-dctrl/join-dctrl.c:113
@@ -274,60 +258,46 @@ msgid "no such log level '%s'"
 msgstr "Keine Log-Ebene »%s«"
 
 #: grep-dctrl/grep-dctrl.c:536
-#, fuzzy, c-format
-#| msgid "internal error"
+#, c-format
 msgid "internal error: unknown token %d"
-msgstr "interner Fehler"
+msgstr "interner Fehler: Unbekanntes Token %d"
 
 #: grep-dctrl/grep-dctrl.c:545
-#, fuzzy
-#| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
-msgstr "unerwartetes Eigenschaftsende"
+msgstr "unerwartetes Filterende"
 
 #: grep-dctrl/grep-dctrl.c:548
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
-msgstr "Unerwartetes Atom in der Befehlszeile"
+msgstr "Unerwartetes Muster in der Befehlszeile"
 
 #: grep-dctrl/grep-dctrl.c:551
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
-msgstr "Unerwartetes Atom in der Befehlszeile"
+msgstr "Unerwartete Zeichenkette in der Befehlszeile"
 
 #: grep-dctrl/grep-dctrl.c:555
-#, fuzzy, c-format
-#| msgid "unexpected '!' in command line"
+#, c-format
 msgid "unexpected '%s' in command line"
-msgstr "Unerwartetes »!« in der Befehlszeile"
+msgstr "Unerwartetes »%s« in der Befehlszeile"
 
 #: grep-dctrl/grep-dctrl.c:569
 msgid "missing ')' in command line"
 msgstr "Fehlende »)« in der Befehlszeile"
 
 #: grep-dctrl/grep-dctrl.c:588
-#, fuzzy
-#| msgid "too many file names"
 msgid "too many field names"
-msgstr "Zu viele Dateinamen"
+msgstr "Zu viele Feldnamen"
 
 #: grep-dctrl/grep-dctrl.c:646
-#, fuzzy
-#| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "Mehrere Muster für das selbe Atom sind nicht erlaubt"
+msgstr "Mehrere Muster für den gleichen einfachen Filter sind nicht erlaubt"
 
 #: grep-dctrl/grep-dctrl.c:666
 msgid "A pattern is mandatory"
 msgstr "Ein Muster wird benötigt"
 
 #: grep-dctrl/grep-dctrl.c:693
-#, fuzzy
-#| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
-msgstr "Inkonsistenter Atom-Modifikator"
+msgstr "Inkonsistenter Modifikator für einfachen Filter"
 
 #: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
@@ -335,16 +305,12 @@ msgid "too many file names"
 msgstr "Zu viele Dateinamen"
 
 #: grep-dctrl/grep-dctrl.c:747
-#, fuzzy
-#| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
-msgstr "Dateinamen sind in der Eigenschaft nicht erlaubt"
+msgstr "Dateinamen sind im Filter nicht erlaubt"
 
 #: grep-dctrl/grep-dctrl.c:828
-#, fuzzy
-#| msgid "malformed predicate"
 msgid "malformed filter"
-msgstr "Missgebildete Eigenschaft"
+msgstr "Missgebildeter Filter"
 
 #: grep-dctrl/grep-dctrl.c:838
 msgid "Adding \"Description\" to selected output fields because of -d"
@@ -380,7 +346,7 @@ msgid "read failure or out of memory"
 msgstr "Lesefehler oder zuwenig Speicher verfügbar"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
 msgstr "Syntaxfehler: Benötige einen Programmnamen"
 
 #: grep-dctrl/rc.c:169
@@ -525,29 +491,8 @@ msgstr "ein Datenstrom kann nicht mit sich selbst verbunden werden"
 
 #: lib/msg.h:52
 msgid "I'm broken - please report this bug."
-msgstr ""
+msgstr "Fehler entdeckt – bitte diesen Fehler melden."
 
 #: lib/msg.h:145
 msgid "cannot find enough memory"
-msgstr ""
-
-#~ msgid "predicate is too complex"
-#~ msgstr "Eigenschaft ist zu komplex"
-
-#~ msgid "The pattern is a standard POSIX regular expression."
-#~ msgstr "Das Muster ist ein Standard-POSIX-regulärer Ausdruck."
-
-#~ msgid "unexpected '-a' in command line"
-#~ msgstr "Unerwartetes »-a« in der Befehlszeile"
-
-#~ msgid "unexpected '-o' in command line"
-#~ msgstr "Unerwartetes »-o« in der Befehlszeile"
-
-#~ msgid "unexpected '(' in command line"
-#~ msgstr "Unerwartete »(« in der Befehlszeile"
-
-#~ msgid "unexpected ')' in command line"
-#~ msgstr "Unerwartete »)« in der Befehlszeile"
-
-#~ msgid "a predicate is required"
-#~ msgstr "Eine Eigenschaft wird benötigt"
+msgstr "nicht genügend Speicher vorhanden"
