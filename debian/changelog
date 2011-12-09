@@ -1,15 +1,30 @@
 dctrl-tools (2.20.1) UNRELEASED; urgency=low
 
-  [ David Prévot ]
-  * Initial German manpages translation, thanks to Chris Leick (closes:
-    #651218).
-  * man pages order in SEE ALSO, thanks to Chris Leick (closes: #651219).
-
   [ Antti-Juhani Kaijanaho ]
   * Handle multiple instances of the same field gracefully.  No string changes.
     Closes: #652034 (reported by myself)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 14 Dec 2011 20:33:28 +0200
+  [ David Prévot ]
+  * Man pages order in SEE ALSO, thanks to Chris Leick (closes: #651219).
+  * Consistently avoid use of CS vocabulary.
+  * Keep previous msgids of translated messages.
+  * Handle two missing translatable strings.
+  * Use of Policy compliant relations.
+  * Runtime strings review by Justin B Rye.
+
+  [ Program translations ]
+  * Catalan, by Jordi Mallach (closes: #652083).
+  * English – United Kingdom, by Jeff Bailes.
+  * French, by David Prévot.
+  * German, by Gerfried Fuchs.
+  * Spanish, by Javier Fernández-Sanguino (closes: #651409).
+  * Russian, by Yuri Kozlov (closes: #651444).
+
+  [ Documentation translations ]
+  * French, by David Prévot.
+  * German, by Chris Leick (closes: #651218, #651706).
+
+ -- David Prévot <taffit@debian.org>  Thu, 15 Dec 2011 19:14:48 -0400
 
 dctrl-tools (2.20) unstable; urgency=low
 
