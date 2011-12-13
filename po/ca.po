@@ -1,15 +1,15 @@
 # Catalan translation of dctrl-tools.
-# Copyright © 2004, 2006, 2010 Antti-Juhani Kaijanaho.
+# Copyright © 2004, 2006, 2010, 2011 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Jordi Mallach <jordi@debian.org>, 2004, 2006, 2010.
+# Jordi Mallach <jordi@debian.org>, 2004, 2006, 2010, 2011.
 # Agustí Grau <fletxa@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools\n"
+"Project-Id-Version: dctrl-tools 2.20.1\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2011-12-07 16:55-0400\n"
-"PO-Revision-Date: 2010-10-23 17:49+0200\n"
+"PO-Revision-Date: 2011-12-13 11:30+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
@@ -60,7 +60,7 @@ msgstr "el tipus de fitxer és desconegut, s'està ometent"
 #: lib/misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr "%s: s'està usant «%s» com a paginador\n"
+msgstr "%s: s'està emprant «%s» com a paginador\n"
 
 #: lib/misc.c:47
 #, c-format
@@ -85,7 +85,7 @@ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
 #: grep-dctrl/grep-dctrl.c:51
 msgid "FILTER [FILENAME...]"
-msgstr ""
+msgstr "FILTRE [NOMFITXER...]"
 
 #: grep-dctrl/grep-dctrl.c:114
 msgid "Show the testing banner."
@@ -97,10 +97,8 @@ msgid "LEVEL"
 msgstr "NIVELL"
 
 #: grep-dctrl/grep-dctrl.c:116
-#, fuzzy
-#| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
-msgstr "Estableix el nivell de depuració a NIVELL."
+msgstr "Estableix el nivell de registre a NIVELL."
 
 #: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
 msgid "FIELD,FIELD,..."
@@ -139,10 +137,8 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Considera el patró com una expressió regular estesa POSIX."
 
 #: grep-dctrl/grep-dctrl.c:124
-#, fuzzy
-#| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
-msgstr "Considera el patró com una expressió regular estesa POSIX."
+msgstr "Considera el patró com una expressió regular estàndard POSIX."
 
 #: grep-dctrl/grep-dctrl.c:125
 msgid "Ignore case when looking for a match."
@@ -179,42 +175,32 @@ msgid "Print out the copyright license."
 msgstr "Mostra la llicència del copyright."
 
 #: grep-dctrl/grep-dctrl.c:132
-#, fuzzy
-#| msgid "Conjunct predicates."
 msgid "Conjunct filters."
-msgstr "Predicats conjunts."
+msgstr "Filtres conjunts."
 
 #: grep-dctrl/grep-dctrl.c:133
-#, fuzzy
-#| msgid "Disjunct predicates."
 msgid "Disjunct filters."
-msgstr "Predicats disjunts."
+msgstr "Filtres disjunts."
 
 #: grep-dctrl/grep-dctrl.c:134
-#, fuzzy
-#| msgid "Negate the following predicate."
 msgid "Negate the following filters."
-msgstr "Nega el següent predicat."
+msgstr "Nega els filtres següents."
 
 #: grep-dctrl/grep-dctrl.c:135
 msgid "Test for version number equality."
 msgstr "Comprova la igualtat del número de versió."
 
 #: grep-dctrl/grep-dctrl.c:136
-#, fuzzy
-#| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
-msgstr "Comparació del número de versió: <."
+msgstr "Comparació del número de versió: <<."
 
 #: grep-dctrl/grep-dctrl.c:137
 msgid "Version number comparison: <=."
 msgstr "Comparació del número de versió: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-#, fuzzy
-#| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
-msgstr "Comparació del número de versió: >."
+msgstr "Comparació del número de versió: >>."
 
 #: grep-dctrl/grep-dctrl.c:139
 msgid "Version number comparison: >=."
@@ -251,17 +237,15 @@ msgstr "Fes coincidir només noms de paquets sencers (implica -e)"
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "Assegura't que l'eixida és en format dctrl (omès amb -n)"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Omet l'efecte d'un --ensure-dctrl anterior"
 
 #: grep-dctrl/grep-dctrl.c:236
-#, fuzzy
-#| msgid "predicate is too long"
 msgid "filter is too long"
-msgstr "el predicat és massa llarg"
+msgstr "el filtre és massa llarg"
 
 #: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
 #: join-dctrl/join-dctrl.c:113
@@ -275,60 +259,46 @@ msgid "no such log level '%s'"
 msgstr "el nivell de registre «%s» no existeix"
 
 #: grep-dctrl/grep-dctrl.c:536
-#, fuzzy, c-format
-#| msgid "internal error"
+#, c-format
 msgid "internal error: unknown token %d"
-msgstr "s'ha produït un error intern"
+msgstr "error intern: el testimoni %d és desconegut"
 
 #: grep-dctrl/grep-dctrl.c:545
-#, fuzzy
-#| msgid "unexpected end of file"
 msgid "unexpected end of filter"
-msgstr "s'ha trobat un final de fitxer inesperat"
+msgstr "s'ha trobat un final de filtre inesperat"
 
 #: grep-dctrl/grep-dctrl.c:548
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
-msgstr "s'ha trobat un àtom inesperat a la línia d'ordres"
+msgstr "s'ha trobat un patró inesperat a la línia d'ordres"
 
 #: grep-dctrl/grep-dctrl.c:551
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
-msgstr "s'ha trobat un àtom inesperat a la línia d'ordres"
+msgstr "s'ha trobat una cadena inesperada a la línia d'ordres"
 
 #: grep-dctrl/grep-dctrl.c:555
-#, fuzzy, c-format
-#| msgid "unexpected '!' in command line"
+#, c-format
 msgid "unexpected '%s' in command line"
-msgstr "s'ha trobat un «!» inesperat a la línia d'ordres"
+msgstr "s'ha trobat un «%s» inesperat a la línia d'ordres"
 
 #: grep-dctrl/grep-dctrl.c:569
 msgid "missing ')' in command line"
 msgstr "manca un «)» en la línia d'ordres"
 
 #: grep-dctrl/grep-dctrl.c:588
-#, fuzzy
-#| msgid "too many file names"
 msgid "too many field names"
-msgstr "hi ha massa noms de fitxers"
+msgstr "hi ha massa noms de camps"
 
 #: grep-dctrl/grep-dctrl.c:646
-#, fuzzy
-#| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "No es permeten múltiples patrons per al mateix àtom"
+msgstr "No es permeten múltiples patrons per al mateix filtre simple"
 
 #: grep-dctrl/grep-dctrl.c:666
 msgid "A pattern is mandatory"
 msgstr "Es requereix un patró"
 
 #: grep-dctrl/grep-dctrl.c:693
-#, fuzzy
-#| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
-msgstr "els modificadors d'àtom no són consistents"
+msgstr "els modificadors de filtre simple no són consistents"
 
 #: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
@@ -336,16 +306,12 @@ msgid "too many file names"
 msgstr "hi ha massa noms de fitxers"
 
 #: grep-dctrl/grep-dctrl.c:747
-#, fuzzy
-#| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
-msgstr "no es permeten noms de fitxer dins del predicat"
+msgstr "no es permeten noms de fitxer dins del filtre"
 
 #: grep-dctrl/grep-dctrl.c:828
-#, fuzzy
-#| msgid "malformed predicate"
 msgid "malformed filter"
-msgstr "predicat malformat"
+msgstr "filtre malformat"
 
 #: grep-dctrl/grep-dctrl.c:838
 msgid "Adding \"Description\" to selected output fields because of -d"
@@ -527,11 +493,11 @@ msgstr "no es pot unir un flux de dades amb ell mateix"
 
 #: lib/msg.h:52
 msgid "I'm broken - please report this bug."
-msgstr ""
+msgstr "M'he trencat - si us plau informeu d'aquesta errada"
 
 #: lib/msg.h:145
 msgid "cannot find enough memory"
-msgstr ""
+msgstr "no s'ha trobat memòria suficient"
 
 #~ msgid "predicate is too complex"
 #~ msgstr "el predicat és massa complexe"
