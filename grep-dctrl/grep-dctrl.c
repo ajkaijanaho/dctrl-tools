@@ -753,36 +753,38 @@ static void show_field(struct arguments *args,
                        struct paragraph *para,
                        struct field_attr *fa)
 {
-        struct field_data *fd =
+        struct field_data fds =
                 find_field_wr(para,
                               fa->inx,
                               GET_BACKUP_FIELD(fa->application_data));
-        if (fd == NULL) return;
-        struct fsaf_read_rv r =
-                fsaf_read(para->common->fp, fd->start, fd->end - fd->start);
-
-        if (args->short_descr &&
-            fa == description_attr) {
-                char * nl = memchr(r.b, '\n', r.len);
-                if (nl != 0) r.len = nl - r.b;
-        }
-
-        if (r.len == 0) {
-                /* don't display a field with an empty value */
-                return;
-        }
-
-        if (args->show_field_name) {
-                struct fsaf_read_rv rn =
+        for (struct field_datum *fd = fds.first; fd != NULL; fd = fd->next) {
+                struct fsaf_read_rv r =
                         fsaf_read(para->common->fp,
-                                  fd->name_start,
-                                  fd->name_end - fd->name_start);
-                fwrite(rn.b, 1, rn.len, stdout);
-                fputs(": ", stdout);
-        }
+                                  fd->start, fd->end - fd->start);
 
-        fwrite(r.b, 1, r.len, stdout);
-        puts("");
+                if (args->short_descr &&
+                    fa == description_attr) {
+                        char * nl = memchr(r.b, '\n', r.len);
+                        if (nl != 0) r.len = nl - r.b;
+                }
+
+                if (r.len == 0) {
+                        /* don't display a field with an empty value */
+                        break;
+                }
+
+                if (args->show_field_name) {
+                        struct fsaf_read_rv rn =
+                                fsaf_read(para->common->fp,
+                                          fd->name_start,
+                                          fd->name_end - fd->name_start);
+                        fwrite(rn.b, 1, rn.len, stdout);
+                        fputs(": ", stdout);
+                }
+
+                fwrite(r.b, 1, r.len, stdout);
+                puts("");
+        }
 }
 
 static struct argp argp = { .options = options,

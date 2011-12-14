@@ -5,7 +5,11 @@ dctrl-tools (2.20.1) UNRELEASED; urgency=low
     #651218).
   * man pages order in SEE ALSO, thanks to Chris Leick (closes: #651219).
 
- -- David Prévot <taffit@debian.org>  Wed, 07 Dec 2011 11:56:51 -0400
+  [ Antti-Juhani Kaijanaho ]
+  * Handle multiple instances of the same field gracefully.  No string changes.
+    Closes: #652034 (reported by myself)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Wed, 14 Dec 2011 20:33:28 +0200
 
 dctrl-tools (2.20) unstable; urgency=low
 

@@ -46,6 +46,9 @@ for tst in $tests ; do
     if [ ! -r $tst_in ] ; then
         tst_in=/dev/null
     fi
+    if [ ! -r $tst_ero ] ; then
+        tst_ero=/dev/null
+    fi
     if [ ! -r $tst_out ] && [ ! -r $tst_err ] ; then
         echo 1>&2 "neither $tst_out nor $tst_err exists"
         exit 1
@@ -82,10 +85,8 @@ for tst in $tests ; do
         echo "FAILED."
         echo "stdout diff:"
         cat .diffout
-        if [ -r $tst_ero ] ; then
-            echo "stderr diff:"
-            cat .differr
-        fi
+        echo "stderr diff:"
+        cat .differr
         rv=1
     fi
 done

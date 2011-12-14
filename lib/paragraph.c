@@ -46,7 +46,8 @@ void para_init(para_parser_t * pp, para_t * para)
                 para->fields = malloc(para->nfields * sizeof *para->fields);
                 if (para->fields == 0) fatal_enomem(0);
                 for (size_t i = 0; i < para->nfields; i++) {
-                        para->fields[i].present = 0;
+                        para->fields[i].first = 0;
+                        para->fields[i].last = 0;
                 }
         } else {
                 para->fields = NULL;
@@ -59,6 +60,14 @@ void para_finalize(para_t * para)
 	para->start = 0;
 	para->end = 0;
 	if (para->fields != 0) {
+                for (size_t i = 0; i < para->nfields; i++) {
+                        struct field_datum *fp = para->fields[i].first;
+                        while (fp != 0) {
+                                struct field_datum *tmp = fp;
+                                fp = fp->next;
+                                free(tmp);
+                        }
+                }
 		free(para->fields);
 	}
         para->maxfields = 0;
@@ -80,7 +89,11 @@ static struct field_data * register_field(para_t * para,
                                        sizeof(para->fields[0]));
                 if (para->fields == 0) fatal_enomem(0);
         }
-        if (inx >= para->nfields) para->nfields = inx + 1;
+        if (inx >= para->nfields) {
+                para->nfields = inx + 1;
+                para->fields[inx].first = 0;
+                para->fields[inx].last = 0;
+        }
         assert(para->nfields <= para->maxfields);
         struct field_data *field_data = &para->fields[inx];
         return field_data;
@@ -94,9 +107,14 @@ redo:
 	para->start = pp->loc;
 	para->line = pp->line;
 	for (size_t i = 0; i < para->nfields; i++) {
-                para->fields[i].present = 0;
-		para->fields[i].start = 0;
-		para->fields[i].end = 0;
+                struct field_datum *fp = para->fields[i].first;
+                while (fp != 0) {
+                        struct field_datum *tmp = fp;
+                        fp = fp->next;
+                        free(tmp);
+                }
+                para->fields[i].first = 0;
+                para->fields[i].last = 0;
 	}
 	if (pp->invalidate_p) {
 		fsaf_invalidate(pp->fp, para->start);
@@ -106,7 +124,7 @@ redo:
 	register size_t line = para->line;
 	register FSAF * fp = pp->fp;
 	size_t field_start = 0;
-	struct field_data * field_data = 0;
+	struct field_datum * field_datum = 0;
 
 #define GETC (c = fsaf_getc(fp, pos++), c == '\n' ? line++ : line)
 #define UNGETC (fsaf_getc(fp, --pos) == '\n' ? --line : line)
@@ -176,17 +194,22 @@ FIELD_NAME:
                 }
                 attr = fieldtrie_lookup(r.b, len);
                 if (attr == NULL) {
-                        field_data = 0;
+                        field_datum = 0;
                 } else {
                         assert(attr->inx < para->nfields);
-                        field_data = &para->fields[attr->inx];
-                }
-                if (field_data != NULL) {
-                        field_data->present = 1;
-                        field_data->start = pos;
-                        field_data->line = line;
-                        field_data->name_start = field_start;
-                        field_data->name_end = pos-1;
+                        struct field_data * fds = &para->fields[attr->inx];
+                        assert((fds->first == 0) == (fds->last == 0));
+                        field_datum = malloc(sizeof *field_datum);
+                        if (field_datum == 0) enomem(0);
+                        field_datum->start = pos;
+                        field_datum->line = line;
+                        field_datum->name_start = field_start;
+                        field_datum->name_end = pos-1;
+                        field_datum->next = 0;
+                        field_datum->prev = fds->last;
+                        if (fds->last != 0) fds->last->next = field_datum;
+                        fds->last = field_datum;
+                        if (fds->first == 0) fds->first = field_datum;
                 }
                 goto BODY;
         }
@@ -198,12 +221,12 @@ FIELD_NAME:
 BODY:
         GETC;
         if (c == -1 || c == '\n') {
-                if (field_data != 0) {
-                        field_data->end = pos-1;
-                        while (field_data->start < field_data->end
-                               && fsaf_getc(fp, field_data->start)
+                if (field_datum != 0) {
+                        field_datum->end = pos-1;
+                        while (field_datum->start < field_datum->end
+                               && fsaf_getc(fp, field_datum->start)
                                == ' ') {
-                                ++field_data->start;
+                                ++field_datum->start;
                         }
                 }
                 goto BODY_NEWLINE;

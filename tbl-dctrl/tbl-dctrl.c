@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2005, 2006, 2007, 2008, 2009, 2010 Antti-Juhani Kaijanaho
+    Copyright © 2005, 2006, 2007, 2008, 2009, 2010, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -418,7 +418,7 @@ int main(int argc, char * argv[])
 			struct paragraph *p = pb.paras[i];
 			assert(p->nfields <= n);
 			for (size_t j = 0; j < p->nfields; j++) {
-                                if (!p->fields[j].present) continue;
+                                if (p->fields[j].first == NULL) continue;
 				struct fsaf_read_rv r = get_field(p, j, -1);
 				size_t len = mbs_len(r.b, r.len,
 						     p->common->fp->fname);

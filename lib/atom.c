@@ -69,26 +69,11 @@ void atom_finish(struct atom * atom)
 
 }
 
-bool atom_verify(struct atom * atom, para_t * para)
+static bool atom_field_verify(struct atom * atom, FSAF * fp,
+                              size_t start, size_t end)
 {
-	size_t start = 0;
-        size_t end = 0;
-	if (atom->field_inx == -1) {
-		/* Take the full paragraph */
-		start = para->start;
-		end = para->end;
-	} else {
-		/* Take the field */
-		struct field_data * fd = find_field_wr(para,
-                                                       atom->field_inx,
-                                                       atom->repl_inx);
-                if (fd != NULL) {
-                        start = fd->start;
-                        end = fd->end;
-                }                        
-	}
 	size_t len = end - start;
-	struct fsaf_read_rv r = fsaf_read(para->common->fp, start, len);
+	struct fsaf_read_rv r = fsaf_read(fp, start, len);
 	assert(r.len == len);
 	switch (atom->mode) {
 	case M_EXACT:
@@ -168,4 +153,19 @@ bool atom_verify(struct atom * atom, para_t * para)
 		}
 	}
 	assert(0);
+}
+
+bool atom_verify(struct atom * at, para_t * par)
+{
+        FSAF * fp = par->common->fp;
+	if (at->field_inx == -1) {
+		/* Take the full paragraph */
+                return atom_field_verify(at, fp, par->start, par->end);
+        }
+        /* Test field(s) */
+        struct field_data fds = find_field_wr(par, at->field_inx, at->repl_inx);
+        for (struct field_datum * fd = fds.first; fd != NULL; fd = fd->next) {
+                if (atom_field_verify(at, fp, fd->start, fd->end)) return true;
+        }
+        return false;
 }

@@ -25,11 +25,16 @@
 #include "fsaf.h"
 #include "fieldtrie.h"
 
-struct field_data {
-        _Bool present;
+struct field_datum {
 	size_t line;
 	size_t start, end; /* offsets to the file; [start,end) is the body */
         size_t name_start, name_end; /* as start and end, but for the name */
+        struct field_datum *next, *prev;
+};
+
+struct field_data {
+        struct field_datum *first;
+        struct field_datum *last;
 };
 
 struct paragraph_parser {
@@ -71,48 +76,51 @@ struct fsaf_read_rv get_whole_para(para_t * p)
 }
 
 static inline
-struct field_data * find_field(const para_t *p, size_t fld_inx)
+struct field_data find_field(const para_t *p, size_t fld_inx)
 {
-	struct field_data * fd = fld_inx < p->nfields
-                ? &p->fields[fld_inx]
-                : NULL;
-        if (fd != NULL && !fd->present) fd = NULL;
-        return fd;
+	return fld_inx < p->nfields
+                ? p->fields[fld_inx]
+                : (struct field_data){ NULL, NULL };
 }
 
 static inline
-struct field_data *find_field_wr(const para_t *p,
-                                 size_t fld_inx,
-                                 size_t repl_inx)
+struct field_data find_field_wr(const para_t *p,
+                                size_t fld_inx,
+                                size_t repl_inx)
 {
-	struct field_data * fd = find_field(p, fld_inx);
-        if ((fd == NULL || fd->start == fd->end) && repl_inx != (size_t)(-1)) {
+	struct field_data fd = find_field(p, fld_inx);
+        if (fd.first == NULL && repl_inx != (size_t)(-1)) {
                 fd = find_field(p, repl_inx);
         }
         return fd;
 }
 
+// NOTE: get_field finds the FIRST field of the name!
 static inline
 struct fsaf_read_rv get_field(para_t * p, size_t fld_inx, size_t repl_inx)
 {
-        struct field_data *fd = find_field_wr(p, fld_inx, repl_inx);
-        if (fd == NULL) {
+        struct field_data fds = find_field_wr(p, fld_inx, repl_inx);
+        if (fds.first == NULL) {
                 const struct fsaf_read_rv fail = {
                         .b = NULL,
                         .len = 0
                 };
                 return fail;
         }
+        struct field_datum *fd = fds.first;
 	return fsaf_read(p->common->fp, fd->start, fd->end - fd->start);
 }
 
+// NOTE: get_field_as finds the FIRST field of the name!
 static inline
 char * get_field_as(const para_t * p, size_t fld_inx)
 {
-	struct field_data * fd = find_field(p, fld_inx);
-        if (fd == NULL) return strdup("");
+	struct field_data fds = find_field(p, fld_inx);
+        if (fds.first == NULL) return strdup("");
+        struct field_datum *fd = fds.first;
 	return fsaf_getas(p->common->fp, fd->start, fd->end - fd->start);
 }
+
 
 static inline
 bool para_eof(para_parser_t * para) { return para->eof; }
