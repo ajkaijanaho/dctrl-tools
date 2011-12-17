@@ -216,8 +216,8 @@ msgid "Debug option parsing."
 msgstr "Debug option parsing."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
-msgstr "Do no output to stdout."
+msgid "Do not output to stdout."
+msgstr "Do not output to stdout."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
@@ -362,8 +362,8 @@ msgid "read failure or out of memory"
 msgstr "read failure or out of memory"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
-msgstr "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
+msgstr "syntax error: need an executable name"
 
 #: grep-dctrl/rc.c:169
 msgid "syntax error: need an input file name"

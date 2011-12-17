@@ -219,7 +219,7 @@ msgid "Debug option parsing."
 msgstr "Показать отладочную информацию грамматического разбора."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
+msgid "Do not output to stdout."
 msgstr "Не выдавать результат в стандартный вывод."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
@@ -366,7 +366,7 @@ msgid "read failure or out of memory"
 msgstr "ошибка при чтении или нехватка памяти"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
 msgstr "синтаксическая ошибка: требуется имя исполняемого файла"
 
 #: grep-dctrl/rc.c:169

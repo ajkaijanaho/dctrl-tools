@@ -213,7 +213,7 @@ msgid "Debug option parsing."
 msgstr "Déboguer l'analyse des options."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
+msgid "Do not output to stdout."
 msgstr "Pas d'affichage sur la sortie standard."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
@@ -355,7 +355,7 @@ msgid "read failure or out of memory"
 msgstr "erreur de lecture ou manque de mémoire"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
 msgstr "erreur de syntaxe : nécessite un nom d'exécutable"
 
 #: grep-dctrl/rc.c:169

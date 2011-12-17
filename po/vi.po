@@ -224,7 +224,7 @@ msgid "Debug option parsing."
 msgstr "Gỡ rối việc phân tích cú pháp của tùy chọn."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
+msgid "Do not output to stdout."
 msgstr "Không xuất ra đầu ra tiêu chuẩn."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
@@ -381,7 +381,7 @@ msgid "read failure or out of memory"
 msgstr "lỗi đọc hoặc không đủ bộ nhớ"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
 msgstr "lỗi cú pháp: cần có một tên có khả năng thực hiện"
 
 #: grep-dctrl/rc.c:169

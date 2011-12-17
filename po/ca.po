@@ -211,7 +211,7 @@ msgid "Debug option parsing."
 msgstr "Depura l'anàlisi d'opcions."
 
 #: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
-msgid "Do no output to stdout."
+msgid "Do not output to stdout."
 msgstr "No mostres res a l'eixida estàndard."
 
 #: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
@@ -348,7 +348,7 @@ msgid "read failure or out of memory"
 msgstr "ha fallat la lectura o la memòria s'ha exhaurit"
 
 #: grep-dctrl/rc.c:161
-msgid "syntax error: need a executable name"
+msgid "syntax error: need an executable name"
 msgstr "error de sintaxi: es necessita un nom d'executable"
 
 #: grep-dctrl/rc.c:169
