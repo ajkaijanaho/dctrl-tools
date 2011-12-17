@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.20.1\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2011-12-13 11:30+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -67,11 +67,11 @@ msgstr "%s: s'està emprant «%s» com a paginador\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen ha fallat per a %s: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "avís: s'esperaven dos punts"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "s'esperaven dos punts"
 
@@ -247,7 +247,7 @@ msgstr "Omet l'efecte d'un --ensure-dctrl anterior"
 msgid "filter is too long"
 msgstr "el filtre és massa llarg"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "hi ha massa camps d'eixida"
@@ -309,20 +309,20 @@ msgstr "hi ha massa noms de fitxers"
 msgid "file names are not allowed within the filter"
 msgstr "no es permeten noms de fitxer dins del filtre"
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 msgid "malformed filter"
 msgstr "filtre malformat"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "S'està afegint «Description» als camps d'eixida seleccionats a causa de -d"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr "-I requereix com a mínim una instància de -s"
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "no es poden suprimir els noms de camp quan es mostren paràgrafs sencers"

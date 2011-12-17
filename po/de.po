@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-09 11:16+0100\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2011-12-09 11:27+0100\n"
 "Last-Translator: Gerfried Fuchs <rhonda@debian.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -68,11 +68,11 @@ msgstr "%s: »%s« wird als Pager verwendet\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen für %s schlug fehl: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "Warnung: Doppelpunkt wurde erwartet"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "Doppelpunkt wurde erwartet"
 
@@ -236,7 +236,8 @@ msgstr "Nur auf komplett passende Paketnamen prüfen (impliziert -e)"
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr "Stellt sicher, dass die Ausgabe im dctrl-Format ist (aufgehoben durch -n"
+msgstr ""
+"Stellt sicher, dass die Ausgabe im dctrl-Format ist (aufgehoben durch -n"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
@@ -246,7 +247,7 @@ msgstr "Hebt die Auswirkung eines früheren --ensure-dctrl auf"
 msgid "filter is too long"
 msgstr "Filter ist zu lang"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "Zu viele Ausgabefelder"
@@ -308,19 +309,19 @@ msgstr "Zu viele Dateinamen"
 msgid "file names are not allowed within the filter"
 msgstr "Dateinamen sind im Filter nicht erlaubt"
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 msgid "malformed filter"
 msgstr "Missgebildeter Filter"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Füge »Description« wegen -d zu den gewählten Ausgabefeldern hinzu"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr "-I benötigt zumindest eine Verwendung von -s"
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "Kann keine Feldnamen unterdrücken, wenn komplette Abschnitte angezeigt werden"

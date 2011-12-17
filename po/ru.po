@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.20.1\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2011-12-08 20:35+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lib/ifile.c:54
 #, c-format
@@ -70,11 +70,11 @@ msgstr "%s: в качестве программы просмотра испол
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: ошибка при выполнении popen для %s: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "предупреждение: ожидается двоеточие"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "ожидается двоеточие"
 
@@ -100,7 +100,6 @@ msgid "LEVEL"
 msgstr "УРОВЕНЬ"
 
 #: grep-dctrl/grep-dctrl.c:116
-#| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
 msgstr "Установить уровень протоколирования равным УРОВНЮ."
 
@@ -140,7 +139,6 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Рассматривать шаблон как расширенное регулярное выражение POSIX."
 
 #: grep-dctrl/grep-dctrl.c:124
-#| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "Рассматривать шаблон как стандартное регулярное выражение POSIX."
 
@@ -178,17 +176,14 @@ msgid "Print out the copyright license."
 msgstr "Показать лицензию на программу."
 
 #: grep-dctrl/grep-dctrl.c:132
-#| msgid "Conjunct predicates."
 msgid "Conjunct filters."
 msgstr "Выполнить конъюнкцию фильтров."
 
 #: grep-dctrl/grep-dctrl.c:133
-#| msgid "Disjunct predicates."
 msgid "Disjunct filters."
 msgstr "Выполнить дизъюнкцию фильтров."
 
 #: grep-dctrl/grep-dctrl.c:134
-#| msgid "Negate the following predicate."
 msgid "Negate the following filters."
 msgstr "Взять противоположное значение последующих фильтров."
 
@@ -197,7 +192,6 @@ msgid "Test for version number equality."
 msgstr "Сравнить номера версий на равность."
 
 #: grep-dctrl/grep-dctrl.c:136
-#| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
 msgstr "Сравнение номеров версий: <<."
 
@@ -206,7 +200,6 @@ msgid "Version number comparison: <=."
 msgstr "Сравнение номеров версий: <=."
 
 #: grep-dctrl/grep-dctrl.c:138
-#| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
 msgstr "Сравнение номеров версий: >>."
 
@@ -252,11 +245,10 @@ msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr "Отменить эффект имеющегося --ensure-dctrl"
 
 #: grep-dctrl/grep-dctrl.c:236
-#| msgid "predicate is too long"
 msgid "filter is too long"
 msgstr "фильтр слишком длинный"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "слишком много выходных файлов"
@@ -269,28 +261,23 @@ msgstr "уровня журнала «%s» не существует"
 
 #: grep-dctrl/grep-dctrl.c:536
 #, c-format
-#| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "внутренняя ошибка: неизвестный токен %d"
 
 #: grep-dctrl/grep-dctrl.c:545
-#| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
 msgstr "неожиданный конец фильтра"
 
 #: grep-dctrl/grep-dctrl.c:548
-#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "неожиданный шаблон в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:551
-#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "неожиданная строка в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:555
 #, c-format
-#| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "неожиданное «%s» в командной строке"
 
@@ -299,12 +286,10 @@ msgid "missing ')' in command line"
 msgstr "пропущенная «)» в командной строке"
 
 #: grep-dctrl/grep-dctrl.c:588
-#| msgid "too many file names"
 msgid "too many field names"
 msgstr "слишком много имён полей"
 
 #: grep-dctrl/grep-dctrl.c:646
-#| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Нельзя задать несколько шаблонов для одного простого фильтра"
 
@@ -313,7 +298,6 @@ msgid "A pattern is mandatory"
 msgstr "Шаблон обязателен"
 
 #: grep-dctrl/grep-dctrl.c:693
-#| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
 msgstr "Несовместимые модификаторы простых фильтров"
 
@@ -323,24 +307,22 @@ msgid "too many file names"
 msgstr "слишком много имён файлов"
 
 #: grep-dctrl/grep-dctrl.c:747
-#| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
 msgstr "имена файлов в фильтре запрещены"
 
-#: grep-dctrl/grep-dctrl.c:828
-#| msgid "malformed predicate"
+#: grep-dctrl/grep-dctrl.c:830
 msgid "malformed filter"
 msgstr "неправильно составленный фильтр"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Добавляется «Description» к выбранным для вывода полям из-за -d"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr "для -I требуется как минимум один параметр -s"
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "невозможно не выводить имена полей, если показываются параграфы целиком"

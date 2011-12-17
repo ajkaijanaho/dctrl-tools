@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.9.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2006-10-30 23:27+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese\n"
@@ -68,11 +68,11 @@ msgstr "%s: ページャとして `%s' を使用します\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: %s の popen に失敗しました: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "警告: コロンを期待しました"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "コロンを期待しました"
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "filter is too long"
 msgstr "述部が長すぎます"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "出力フィールドが多すぎます"
@@ -339,23 +339,23 @@ msgstr "ファイル名が多すぎます"
 msgid "file names are not allowed within the filter"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 #, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
 msgstr "述部が不正です"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "-d がついているので選択された出力フィールドに \"Description\" (パッケージ説"
 "明) を追加します。"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "パラグラフ全体を表示する際にフィールド名を表示しないようにできません"
 

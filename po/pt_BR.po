@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2010-08-25 10:24-0300\n"
 "Last-Translator: Mauricio Vieira <mauricio@mauriciovieira.net>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
@@ -67,11 +67,11 @@ msgstr "%s: usando `%s' como paginador\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: popen falhou para %s: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "aviso: dois-pontos esperado"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "dois-pontos esperado"
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "filter is too long"
 msgstr "predicado é muito longo"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "muitos campos de saída"
@@ -345,22 +345,22 @@ msgstr "muitos nomes de arquivos"
 msgid "file names are not allowed within the filter"
 msgstr "nomes de arquivos não são permitidos dentro do predicado"
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 #, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
 msgstr "predicado malformado"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "Adicionando \"Descrição\" aos campos de saída selecionados por causa do -d"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr "-l requer ao menos uma instância de -s"
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "não pode suprimir nomes dos campos quando estiver mostrando parágrafos "

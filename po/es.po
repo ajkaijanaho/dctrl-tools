@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2011-12-08 12:43+0100\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian l10n spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -98,11 +98,11 @@ msgstr "%s: se utilizará «%s» como paginador\n"
 msgid "%s: popen failed for %s: %s\n"
 msgstr "%s: falló «popen» para %s: %s\n"
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr "aviso: se esperaba un signo de dos puntos"
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr "se esperaba un signo de dos puntos"
 
@@ -158,8 +158,8 @@ msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
-"Muestra sólo la primera línea del campo «Description» (Descripción) en "
-"los párrafos coincidentes."
+"Muestra sólo la primera línea del campo «Description» (Descripción) en los "
+"párrafos coincidentes."
 
 #: grep-dctrl/grep-dctrl.c:122
 msgid "Suppress field names when showing specified fields."
@@ -267,12 +267,14 @@ msgstr "Especificar el patrón a utilizar en las búsquedas"
 #: grep-dctrl/grep-dctrl.c:146
 msgid "Match only whole package names (this implies -e)"
 msgstr ""
-"Sólo hace coincidir en los nombres completos de los paquetes (ésto implica "
-"-e)"
+"Sólo hace coincidir en los nombres completos de los paquetes (ésto implica -"
+"e)"
 
 #: grep-dctrl/grep-dctrl.c:147
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr "Asegurar que la salida tiene el formato de dctrl (la opción -n tiene preferencia)"
+msgstr ""
+"Asegurar que la salida tiene el formato de dctrl (la opción -n tiene "
+"preferencia)"
 
 #: grep-dctrl/grep-dctrl.c:148
 msgid "Override the effect of an earlier --ensure-dctrl"
@@ -282,7 +284,7 @@ msgstr "Anular el efecto de una opción --ensure-dctrl anterior"
 msgid "filter is too long"
 msgstr "el filtro es demasiado largo"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "demasiados campos de salida"
@@ -325,7 +327,9 @@ msgstr "demasiados nombres de campos"
 
 #: grep-dctrl/grep-dctrl.c:646
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "No se permite la utilización de múltiples filtros para el mismo filtro sencillo"
+msgstr ""
+"No se permite la utilización de múltiples filtros para el mismo filtro "
+"sencillo"
 
 #: grep-dctrl/grep-dctrl.c:666
 msgid "A pattern is mandatory"
@@ -344,21 +348,21 @@ msgstr "demasiados nombres de archivo"
 msgid "file names are not allowed within the filter"
 msgstr "no se permiten nombres de archivo dentro del filtro"
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 msgid "malformed filter"
 msgstr "filtro mal formado"
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
-"Se añadirá el campo «Description» a los campos de salida porque se "
-"utilizó «-d»"
+"Se añadirá el campo «Description» a los campos de salida porque se utilizó «-"
+"d»"
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr "-I necesita que se utilice al menos una instancia de -s"
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 "no se puede suprimir el nombre del campo cuando se muestran párrafos "
@@ -513,8 +517,7 @@ msgstr "falta un '.' en la especificación de campos de salida"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr ""
-"se esperaba «1.» o «2.» al principio de la especificación de campo"
+msgstr "se esperaba «1.» o «2.» al principio de la especificación de campo"
 
 #: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"

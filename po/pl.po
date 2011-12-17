@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"POT-Creation-Date: 2011-12-17 17:58-0400\n"
 "PO-Revision-Date: 2006-08-04 19:33+0000\n"
 "Last-Translator: Simek <gosimek@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -67,11 +67,11 @@ msgstr ""
 msgid "%s: popen failed for %s: %s\n"
 msgstr ""
 
-#: lib/paragraph.c:154
+#: lib/paragraph.c:172
 msgid "warning: expected a colon"
 msgstr ""
 
-#: lib/paragraph.c:159
+#: lib/paragraph.c:177
 msgid "expected a colon"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "filter is too long"
 msgstr "orzeczenie jest za długie"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "za dużo wyjściowych pól"
@@ -330,19 +330,19 @@ msgstr "za dużo nazw pliku"
 msgid "file names are not allowed within the filter"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:828
+#: grep-dctrl/grep-dctrl.c:830
 msgid "malformed filter"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:838
+#: grep-dctrl/grep-dctrl.c:840
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:846
+#: grep-dctrl/grep-dctrl.c:848
 msgid "-I requires at least one instance of -s"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:852
+#: grep-dctrl/grep-dctrl.c:854
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr ""
 
