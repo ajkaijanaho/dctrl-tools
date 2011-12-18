@@ -19,12 +19,13 @@ dctrl-tools (2.20.1) UNRELEASED; urgency=low
   * German, by Gerfried Fuchs.
   * Spanish, by Javier Fernández-Sanguino (closes: #651409).
   * Russian, by Yuri Kozlov (closes: #651444).
+  * Finnish, by Antti-Juhani Kaijanaho.
 
   [ Documentation translations ]
   * French, by David Prévot.
   * German, by Chris Leick (closes: #651218, #651706).
 
- -- David Prévot <taffit@debian.org>  Thu, 15 Dec 2011 19:14:48 -0400
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 18:48:07 +0200
 
 dctrl-tools (2.20) unstable; urgency=low
 
