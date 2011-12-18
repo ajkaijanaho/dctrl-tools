@@ -1,8 +1,8 @@
 dctrl-tools (2.21) unstable; urgency=low
 
-  * 
+  * grep-dctrl: Remove the old dead annoying banner code.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 20:12:44 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 20:16:49 +0200
 
 dctrl-tools (2.20.1) unstable; urgency=low
 

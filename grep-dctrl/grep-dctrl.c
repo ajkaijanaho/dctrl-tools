@@ -66,53 +66,7 @@ enum {
         OPT_PATTERN
 };
 
-#undef BANNER
-
-#ifdef BANNER
-void banner(bool automatic)
-{
-	char * fname = fnqualify_xalloc("~/.grep-dctrl-banner-shown");
-	struct stat st;
-	if (automatic) {
-		int r = stat(fname, &st);
-		if (r == 0) goto end;
-	}
-	FILE * fp = fopen("/dev/tty", "w");
-	if (fp == 0) {
-		perror("/dev/tty");
-		goto end;
-	}
-	fprintf(fp,
-		"==========================================================================\n"
-		"                                  NOTE                                    \n"
-		" grep-dctrl has been rewritten from scratch.  Although this does add new  \n"
-		" features, regressions are certainly possible.  Please watch for them and \n"
-		" report them to the BTS.                                                  \n"
-		"==========================================================================\n"
-		"(The above annoying banner will not be shown to you again, unless you\n"
-		"request it with the -B switch.  It will also be removed entirely soon.)\n");
-
-	int r = creat(fname, 0644);
-	if (r == -1) perror(fname);
-
-	if (!automatic) exit(0);
-
-	for (int i = 15; i > 0; i--) {
-		fprintf(fp, "%2d seconds until program is resumed...\r", i);
-		fflush(fp);
-		sleep(1);
-	}
-	fprintf(fp, "                                       \r");
-	fflush(fp);
-end:
-	free(fname);
-}
-#endif
-
 static struct argp_option options[] = {
-#ifdef BANNER
-	{ "banner",	    'B', 0,		    0, N_("Show the testing banner.") },
-#endif
 	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set log level to LEVEL.") },
 	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
 	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
@@ -257,10 +211,6 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 'C':
 		if (!to_stdout (COPYING)) fail();
 		exit(0);
-#ifdef BANNER
-	case 'B':
-		banner(false);
-#endif
         case OPT_ENSURE:
                 args->ensure_dctrl = true;
                 break;
@@ -805,9 +755,6 @@ int main (int argc, char * argv[])
 	msg_set_progname(argv[0]);
 	description_attr = fieldtrie_insert(description);
 	argp_parse (&argp, argc, argv, ARGP_IN_ORDER, 0, &args);
-#ifdef BANNER
-	banner(true);
-#endif
         if (debug_optparse) {
                 fflush(stderr);
                 fputs("tokens:", stdout);
