@@ -59,14 +59,11 @@ all-no-mo :	sync-available/sync-available \
 aliases = grep-status grep-available grep-aptavail grep-debtags
 
 install :
-	$(INSTALL_DIR) $(DESTDIR)$(sysconfdir)
 	$(INSTALL_DIR) $(DESTDIR)$(sbindir)
 	$(INSTALL_DIR) $(DESTDIR)$(bindir)
 	$(INSTALL_DIR) $(DESTDIR)$(docdir)
 	$(INSTALL_DIR) $(DESTDIR)$(man1dir)
 	$(INSTALL_DIR) $(DESTDIR)$(man8dir)
-	$(INSTALL_DATA) grep-dctrl/grep-dctrl.rc $(DESTDIR)$(sysconfdir)
-	$(INSTALL_DATA) grep-dctrl/grep-dctrl.rc $(DESTDIR)$(sysconfdir)
 	$(INSTALL_PROGRAM) sync-available/sync-available $(DESTDIR)$(sbindir)
 	$(INSTALL_PROGRAM) join-dctrl/join-dctrl $(DESTDIR)$(bindir)
 	$(INSTALL_PROGRAM) tbl-dctrl/tbl-dctrl $(DESTDIR)$(bindir)
@@ -124,7 +121,7 @@ po : $(foreach f,$(langs),po/$(f).po)
 
 mo : $(foreach f,$(langs),po/$(f).mo)
 
-grep-dctrl/grep-dctrl : grep-dctrl/grep-dctrl.o grep-dctrl/rc.o libdctrl.a
+grep-dctrl/grep-dctrl : grep-dctrl/grep-dctrl.o libdctrl.a
 
 sort-dctrl/sort-dctrl : sort-dctrl/sort-dctrl.o libdctrl.a
 

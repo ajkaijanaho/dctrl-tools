@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,6 +23,10 @@
 #include <unistd.h>
 #include "ifile.h"
 #include "msg.h"
+
+char const * const ifile_modes[] = { [m_error] = "m_error",
+                                     [m_read]  = "m_read",
+                                     [m_exec]  = "m_exec" };
 
 static int open_pipe(char const * s)
 {

@@ -1,4 +1,4 @@
-.TH GREP-DCTRL 1 2011-11-13 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2011-12-18 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2011
 \"               Antti-Juhani Kaijanaho <gaia@iki.fi>
 \"      This program is free software; you can redistribute it and/or modify
@@ -53,7 +53,7 @@ and
 .B grep\-debtags
 are aliases of (actually, symbolic links to)
 .BR grep\-dctrl .
-In the shipped configuration, these aliases use as their default input
+These aliases use as their default input
 the
 .BR dpkg (1)
 .I available
@@ -120,36 +120,24 @@ After the
 .I filter
 expression comes zero or more 
 .I file
-names.  If no 
-.I file
-names
-are specified, the 
-.I file
-name is searched in configuration files.  The
-input
-.I file
-in association with
-the correct program name is used.  The program names are matched with
-the base form of the name of the current program (the 0'th command
-line argument, if you will).  The 
+names.  The 
 .I file
 name
 .B \-
-is taken to mean the
-standard input stream.  The 
+is taken to mean the standard input stream.  The
 .IR file s
-are searched in order but
-separately; they are
+are searched in order but separately; they are
 .B not
 concatenated together.  In other words, the end of a 
 .I file
-always
-implies the end of the current paragraph.
+always implies the end of the current paragraph.
 .PP
-There is one exception to the above: if the program name is
-.BR grep\-dctrl ,
-the default input source is always standard input; this cannot be
-overridden by the configuration file.
+If no
+.I file
+names are specified, the program name is used to identify a default
+input file.  The program names are matched with the base form of the
+name of the current program (the 0'th command line argument, if you
+will).
 .SH OPTIONS
 .SS Specifying the search pattern
 .IP "\fB\-\-pattern=\fIpattern"
@@ -345,10 +333,6 @@ option given earlier on the command line.
 Ignore errors in parsing input.  A paragraph which cannot be parsed
 is ignored in its entirety, and the next paragraph is assumed to start
 after the first newline since the location of the error.
-.IP "\fB\-\-config\-file=\fIfilename"
-Use
-.I filename
-as the config file instead of the defaults.
 .IP "\fB\-\-debug\-optparse"
 Show how the current command line has been parsed. 
 .IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
@@ -373,9 +357,6 @@ to redirect or pipe it somewhere (such as your favourite pager).
 .IP "\fB\-h\fR, \fB\-\-help"
 Print out a help summary.
 .SH EXAMPLES
-The following example queries assume that the default configuration is
-in effect.
-.PP
 The almost simplest use of this program is to print out the status or
 available record of a package.  In this respect,
 .B grep\-dctrl
@@ -590,14 +571,6 @@ filter.
 The argument to
 .B \-l
 was invalid.
-.IP "\fBread failure or out of memory"
-There was a problem reading the configuration file.  Maybe there was a
-transput error; maybe memory was exhausted.  This error may be
-transient, that is, if you try again, all may go well.
-.IP "\fBsyntax error: need a executable name"
-There is a problem in the configuration file.  Look, and you shall find it.
-.IP "\fBsyntax error: need an input file name"
-There is a problem in the configuration file.  Look, and you shall find it.
 .IP "\fBtoo many file names"
 The number of file names specified in the command line exceeded a
 compile-time limit.
@@ -609,59 +582,13 @@ limited to 256.
 .IP "\fBunexpected ')' in command line"
 There was no opening parenthesis that would match some closing
 parenthesis in the command line.
-.SH COMPATIBILITY
-If you use
-.B grep\-dctrl
-in a Debian package, it should depend on the
-.B dctrl\-tools
-package and heed the following compatibility notes:
-.PP
-.IP "Always call only the \fBgrep\-dctrl\fR executable"
-Although the \fBgrep\-status\fR and \fBgrep\-available\fR symlinks are installed
-by default, this may change in the future.  Those symlinks are meant
-for manual and not scripted use.
-.IP "Always specify an explicit file name"
-Don't rely on the implicit file name feature.  The system
-administrator may have changed the default file name.  You should
-always specify the 
-.B \-
-file, too.
-.IP "Not all features have been with us in every version"
-Check if any of the features you use is mentioned in the changelog.
-Use a versioned dependency on
-.BR dctrl\-tools ,
-if it is necessary.
 .SH FILES
-.IP \fISYSCONF/grep\-dctrl.rc
-See the next file.
-.IP \fI~/.grep\-dctrlrc
-These files are the default configuration files for
-.BR grep\-dctrl .
-The format is line-based, with
-.RB ` # '
-introducing a comment that lasts to
-the end of the line.  Each line defines one association between a
-program name and a default input file.  These two things are listed in
-the line in order, separated by whitespace.  Empty lines are ignored.
-.sp
-If the default input file name starts with two at
-.RB ( @ )
-signs, one of
-them is ignored.  This allows specifying a file name that starts with
-an at sign.  If it starts with the string 
-.BR @exec ,
-the rest of the
-name is interpreted as a command name that is fed to 
-.BR /bin/sh " " \-c ,
-and the standard output stream is used as the default input.
 .IP \fI/var/lib/dpkg/available
 The default input file of
-.B grep\-available
-when the shipped configuration is in effect.
+.BR grep\-available .
 .IP \fI/var/lib/dpkg/status
 The default input file of
-.B grep\-status
-when the shipped configuration is in effect.
+.BR grep\-status .
 .SH AUTHOR
 The program and this manual page were written by Antti-Juhani
 Kaijanaho 

@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2011 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@ struct ifile {
 	enum ifile_mode { m_error, m_read, m_exec } mode;
 	char const * s;
 };
+
+extern char const * const ifile_modes[];
 
 // returns fd
 int open_ifile(struct ifile f);

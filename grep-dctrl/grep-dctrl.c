@@ -33,11 +33,11 @@
 #include "fnutil.h"
 #include "fsaf.h"
 #include "i18n.h"
+#include "ifile.h"
 #include "misc.h"
 #include "msg.h"
 #include "paragraph.h"
 #include "predicate.h"
-#include "rc.h"
 #include "util.h"
 
 const char * argp_program_version = "grep-dctrl (dctrl-tools) " VERSION;
@@ -51,8 +51,7 @@ static char progdoc [] = N_("grep-dctrl -- grep Debian control files");
 static char argsdoc [] = N_("FILTER [FILENAME...]");
 
 enum {
-        OPT_CONFIG=256,
-        OPT_OPTPARSE,
+        OPT_OPTPARSE=256,
         OPT_SILENT,
         OPT_EQ,
         OPT_LT,
@@ -80,7 +79,6 @@ static struct argp_option options[] = {
 	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match.") },
         { "invert-show",    'I', 0,                 0, N_("Show those fields that have NOT been selected with -s") },
 	{ "count",	    'c', 0,		    0, N_("Show only the count of matching paragraphs.") },
-	{ "config-file",    OPT_CONFIG, N_("FNAME"),0, N_("Use FNAME as the config file.") },
 	{ "exact-match",    'X', 0,		    0, N_("Do an exact match.") },
 	{ "copying",	    'C', 0,		    0, N_("Print out the copyright license.") },
 	{ "and",	    'a', 0,		    0, N_("Conjunct filters.") },
@@ -139,8 +137,6 @@ struct arguments {
 	size_t num_show_fields;
 	/* A machine-readable representation of the predicate.  */
 	struct predicate * p;
-	/* Configuration file name */
-	char const * rcname;
 	/* Ignore parse errors? */
 	bool ignore_errors;
 	/* Quiet operation? */
@@ -396,10 +392,6 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case ARGP_KEY_ARGS:  case ARGP_KEY_INIT: case  ARGP_KEY_SUCCESS:
 	case ARGP_KEY_ERROR: case ARGP_KEY_FINI: case ARGP_KEY_NO_ARGS:
 		debug_message("parse_opt: ignored", 0);
-		break;
-	case OPT_CONFIG:
-		debug_message("parse_opt: --config-file", 0);
-		args->rcname = strdup(arg);
 		break;
 	default:
 		return ARGP_ERR_UNKNOWN;
@@ -808,14 +800,31 @@ int main (int argc, char * argv[])
 		int fd;
 		struct ifile fname;
 		if (args.num_fnames == 0) {
-			// Hardcode grep-dctrl <-> "-" mapping so that
-			// Debian packages can genuinely depend on it.
 			char * argv0 = fnbase(argv[0]);
 			if (strcmp(argv0, "grep-dctrl") == 0) {
 				fname = (struct ifile){ .mode = m_read,
 							.s = "-" };
+                        } else if (strcmp(argv0, "grep-status") == 0) {
+                                fname = (struct ifile){
+                                        .mode = m_read,
+                                        .s = "/var/lib/dpkg/status" };
+                        } else if (strcmp(argv0, "grep-available") == 0) {
+                                fname = (struct ifile){
+                                        .mode = m_read,
+                                        .s = "/var/lib/dpkg/available" };
+                        } else if (strcmp(argv0, "grep-aptavail") == 0) {
+                                fname = (struct ifile){
+                                        .mode = m_exec,
+                                        .s = "apt-cache dumpavail" };
+                        } else if (strcmp(argv0, "grep-debtags") == 0) {
+                                fname = (struct ifile){
+                                        .mode = m_exec,
+                                        .s = "debtags dumpavail" };
 			} else {
-				fname = find_ifile_by_exename(argv0, args.rcname);
+                                message(L_FATAL, 0,
+                                        _("executable name '%s' is not recognised"),
+                                        argv0);
+                                fail();
 			}
 		} else {
 			fname = args.fname[i];
