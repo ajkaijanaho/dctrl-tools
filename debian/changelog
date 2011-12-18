@@ -1,4 +1,4 @@
-dctrl-tools (2.20.1) UNRELEASED; urgency=low
+dctrl-tools (2.20.1) unstable; urgency=low
 
   [ Antti-Juhani Kaijanaho ]
   * Handle multiple instances of the same field gracefully.  No string changes.
@@ -25,7 +25,7 @@ dctrl-tools (2.20.1) UNRELEASED; urgency=low
   * French, by David Prévot.
   * German, by Chris Leick (closes: #651218, #651706).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 18:48:07 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 19:30:36 +0200
 
 dctrl-tools (2.20) unstable; urgency=low
 
