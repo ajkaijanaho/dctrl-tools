@@ -172,7 +172,7 @@ named, and as soon as any one of them matches, the
 whole simple 
 .I filter
 is considered matching.
-.PP
+.IP
 A 
 .I field
 specification can contain a colon
