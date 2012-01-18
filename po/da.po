@@ -1,0 +1,502 @@
+# Danish messages for the dctrl-tools.
+# Copyright (C) 2012 Antti-Juhani Kaijanaho & nedenstående oversættere.
+# This file is distributed under the same license as the dctrl-tools package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2011-12-07 16:55-0400\n"
+"PO-Revision-Date: 2012-01-03 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/ifile.c:54
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (underproces): kunne ikke køre /bin/sh: %s\n"
+
+#: lib/ifile.c:100
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: kommando (%s) mislykkedes (afslutningsstatus %d)\n"
+
+#: lib/ifile.c:109
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: kommando (%s) blev dræbt af signal %d\n"
+
+#: lib/ifile.c:127
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: kan ikke køre stat: %s\n"
+
+#: lib/ifile.c:138
+msgid "is a directory, skipping"
+msgstr "er en mappe, springer over"
+
+#: lib/ifile.c:139
+msgid "is a block device, skipping"
+msgstr "er en blokenhed, springer over"
+
+#: lib/ifile.c:140
+msgid "internal error"
+msgstr "intern fejl"
+
+#: lib/ifile.c:141
+msgid "is a socket, skipping"
+msgstr "er en sokkel, springer over"
+
+#: lib/ifile.c:142
+msgid "unknown file type, skipping"
+msgstr "ukendt filtype, springer over"
+
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: bruger »%s« som tekstviser\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: popen mislykkedes for %s: %s\n"
+
+#: lib/paragraph.c:154
+msgid "warning: expected a colon"
+msgstr "advarsel: forventede et kolon"
+
+#: lib/paragraph.c:159
+msgid "expected a colon"
+msgstr "forventede et kolon"
+
+#: lib/sorter.c:49
+msgid "Parse error in field."
+msgstr "Fortolkningsfejl i felt."
+
+#: grep-dctrl/grep-dctrl.c:49
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl - grep Debian-kontrolfiler"
+
+#: grep-dctrl/grep-dctrl.c:51
+msgid "FILTER [FILENAME...]"
+msgstr "FILTER [FILNAVN...]"
+
+#: grep-dctrl/grep-dctrl.c:114
+msgid "Show the testing banner."
+msgstr "Vis testbanneret."
+
+#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+msgid "LEVEL"
+msgstr "NIVEAU"
+
+#: grep-dctrl/grep-dctrl.c:116
+msgid "Set log level to LEVEL."
+msgstr "Sæt logniveau til NIVEAU."
+
+#: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
+msgid "FIELD,FIELD,..."
+msgstr "FELT,FELT,..."
+
+#: grep-dctrl/grep-dctrl.c:117
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Begræns mønstermatchning til de angivne FELTer."
+
+#: grep-dctrl/grep-dctrl.c:118
+msgid "This is a shorthand for -FPackage."
+msgstr "Dette er kort for -FPackage."
+
+#: grep-dctrl/grep-dctrl.c:119
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Dette er kort for -FSource:Package."
+
+#: grep-dctrl/grep-dctrl.c:120
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Vis kun indholdet for disse felter fra de matchende paragraffer."
+
+#: grep-dctrl/grep-dctrl.c:121
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+"Vis kun den første linje af »Beskrivelsesfeltet« fra de matchende "
+"paragraffer."
+
+#: grep-dctrl/grep-dctrl.c:122
+msgid "Suppress field names when showing specified fields."
+msgstr "Undertryk feltnavne når der vises angivne felter."
+
+# opfat/anse
+#: grep-dctrl/grep-dctrl.c:123
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Opfat mønsteret som et udvidet POSIX-regulært udtryk."
+
+#: grep-dctrl/grep-dctrl.c:124
+msgid "Regard the pattern as a standard POSIX regular expression."
+msgstr "Opfat mønsteret som et standard POSIX-regulært udtryk."
+
+#: grep-dctrl/grep-dctrl.c:125
+msgid "Ignore case when looking for a match."
+msgstr "Ignorer store/små bogstaver under søgning efter match."
+
+#: grep-dctrl/grep-dctrl.c:126
+msgid "Show only paragraphs that do not match."
+msgstr "Vis kun paragraffer som ikke matcher."
+
+#: grep-dctrl/grep-dctrl.c:127
+msgid "Show those fields that have NOT been selected with -s"
+msgstr "Vis de felter som IKKE er blevet valgt med -s"
+
+#: grep-dctrl/grep-dctrl.c:128
+msgid "Show only the count of matching paragraphs."
+msgstr "Vis kun antallet af matchende paragraffer."
+
+#: grep-dctrl/grep-dctrl.c:129
+msgid "FNAME"
+msgstr "FNAME"
+
+#: grep-dctrl/grep-dctrl.c:129
+msgid "Use FNAME as the config file."
+msgstr "Brug FNAME som konfigurationsfil."
+
+#: grep-dctrl/grep-dctrl.c:130
+msgid "Do an exact match."
+msgstr "Udfør en præcis søgning."
+
+#: grep-dctrl/grep-dctrl.c:131 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
+msgid "Print out the copyright license."
+msgstr "Udskriv ophavsretlicensen."
+
+# A verb form, for example the conjunct verb endings of Old Irish or the conjunct mood
+# (sometimes called the subjunctive mood) of the Algonquian languages.
+# har vi et dansk udtryk for det her?
+# http://www.denstoredanske.dk/Samfund,_jura_og_politik/Sprog/Morfologi_og_syntaks/konjunktion
+#: grep-dctrl/grep-dctrl.c:132
+msgid "Conjunct filters."
+msgstr "Konjunktfiltre."
+
+# og hvad gør vi her!!!
+#: grep-dctrl/grep-dctrl.c:133
+msgid "Disjunct filters."
+msgstr "Fjern konjunktion fra filtre."
+
+#: grep-dctrl/grep-dctrl.c:134
+msgid "Negate the following filters."
+msgstr "Neger de følgende filtre."
+
+#: grep-dctrl/grep-dctrl.c:135
+msgid "Test for version number equality."
+msgstr "Test for lighed mellem versionsnummer."
+
+#: grep-dctrl/grep-dctrl.c:136
+msgid "Version number comparison: <<."
+msgstr "Sammenligning af versionsnummer: <<."
+
+#: grep-dctrl/grep-dctrl.c:137
+msgid "Version number comparison: <=."
+msgstr "Sammenligning af versionsnummer: <=."
+
+#: grep-dctrl/grep-dctrl.c:138
+msgid "Version number comparison: >>."
+msgstr "Sammenligning af versionsnummer: >>."
+
+#: grep-dctrl/grep-dctrl.c:139
+msgid "Version number comparison: >=."
+msgstr "Sammenligning af versionsnummer: >=."
+
+#: grep-dctrl/grep-dctrl.c:140
+msgid "Debug option parsing."
+msgstr "Fejlsøg tilvalgsfortolkning."
+
+#: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
+msgid "Do not output to stdout."
+msgstr "Send ikke resultat til standardud."
+
+#: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
+msgid "Attempt mmapping input files"
+msgstr "Forsøg mmapping-inddatafiler"
+
+#: grep-dctrl/grep-dctrl.c:144
+msgid "Ignore parse errors"
+msgstr "Ignorer fortolkningsfejl"
+
+#: grep-dctrl/grep-dctrl.c:145
+msgid "PATTERN"
+msgstr "MØNSTER"
+
+#: grep-dctrl/grep-dctrl.c:145
+msgid "Specify the pattern to search for"
+msgstr "Angiv mønstrene at søge efter"
+
+#: grep-dctrl/grep-dctrl.c:146
+msgid "Match only whole package names (this implies -e)"
+msgstr "Find kun hele pakkenavne (dermed underforstås -e)"
+
+#: grep-dctrl/grep-dctrl.c:147
+msgid "Ensure that the output is in dctrl format (overridden by -n)"
+msgstr "Sikr at uddata er i dctrl-format (tilsidesættes af -n)"
+
+#: grep-dctrl/grep-dctrl.c:148
+msgid "Override the effect of an earlier --ensure-dctrl"
+msgstr "Tilsidesæt effekten af en tidligere --ensure-dctrl"
+
+#: grep-dctrl/grep-dctrl.c:236
+msgid "filter is too long"
+msgstr "filter er for langt"
+
+#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:834
+#: join-dctrl/join-dctrl.c:113
+msgid "too many output fields"
+msgstr "for mange uddatafelter"
+
+#: grep-dctrl/grep-dctrl.c:325 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
+#, c-format
+msgid "no such log level '%s'"
+msgstr "intet sådant logniveau »%s«"
+
+#: grep-dctrl/grep-dctrl.c:536
+#, c-format
+msgid "internal error: unknown token %d"
+msgstr "intern fejl: ukendt symbol %d"
+
+#: grep-dctrl/grep-dctrl.c:545
+msgid "unexpected end of filter"
+msgstr "uventet filterafslutning"
+
+#: grep-dctrl/grep-dctrl.c:548
+msgid "unexpected pattern in command line"
+msgstr "uventet mønster i kommandolinje"
+
+#: grep-dctrl/grep-dctrl.c:551
+msgid "unexpected string in command line"
+msgstr "uventet streng i kommandolinje"
+
+#: grep-dctrl/grep-dctrl.c:555
+#, c-format
+msgid "unexpected '%s' in command line"
+msgstr "uventet »%s« i kommandolinje"
+
+#: grep-dctrl/grep-dctrl.c:569
+msgid "missing ')' in command line"
+msgstr "mangler »)« i kommandolinje"
+
+#: grep-dctrl/grep-dctrl.c:588
+msgid "too many field names"
+msgstr "for mange feltnavne"
+
+#: grep-dctrl/grep-dctrl.c:646
+msgid "Multiple patterns for the same simple filter are not allowed"
+msgstr "Flere mønstre for det samme simple filter er ikke tilladt"
+
+#: grep-dctrl/grep-dctrl.c:666
+msgid "A pattern is mandatory"
+msgstr "Et mønster er krævet"
+
+#: grep-dctrl/grep-dctrl.c:693
+msgid "inconsistent modifiers of simple filters"
+msgstr "selvmodsigende modifikationer af simple filtre"
+
+#: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
+msgid "too many file names"
+msgstr "for mange filnavne"
+
+#: grep-dctrl/grep-dctrl.c:747
+msgid "file names are not allowed within the filter"
+msgstr "filnavne er ikke tilladt inden i filteret"
+
+#: grep-dctrl/grep-dctrl.c:828
+msgid "malformed filter"
+msgstr "forkert udformet filter"
+
+#: grep-dctrl/grep-dctrl.c:838
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "Tilføjer »Beskrivelse« til valgte uddatafelter da -d"
+
+#: grep-dctrl/grep-dctrl.c:846
+msgid "-I requires at least one instance of -s"
+msgstr "-I kræver mindst en instans af -s"
+
+#: grep-dctrl/grep-dctrl.c:852
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr "kan ikke undertrykke feltnavne når der vises hele paragraffer"
+
+#: grep-dctrl/rc.c:54
+msgid "Malformed default input file name"
+msgstr "Forkert udformet filnavn for standardinddata"
+
+#: grep-dctrl/rc.c:68
+msgid "not owned by you or root, ignoring"
+msgstr "ikke ejet af dig eller root, ignorerer"
+
+#: grep-dctrl/rc.c:73
+msgid "write permissions for group or others, ignoring"
+msgstr "skriverettigheder for gruppe eller andre, ignorerer"
+
+#: grep-dctrl/rc.c:112
+msgid "reading config file"
+msgstr "læser konfigurationsfil"
+
+#: grep-dctrl/rc.c:140
+msgid "read failure or out of memory"
+msgstr "læsningsfejl eller ikke nok hukommelse"
+
+#: grep-dctrl/rc.c:161
+msgid "syntax error: need an executable name"
+msgstr "syntaksfejl: kræver et kørbart navn"
+
+#: grep-dctrl/rc.c:169
+msgid "syntax error: need an input file name"
+msgstr "syntaksfejl: kræver et filnavn for inddata"
+
+#: grep-dctrl/rc.c:175
+msgid "considering executable name"
+msgstr "overvejer kørbar fils navn"
+
+#: grep-dctrl/rc.c:178
+msgid "yes, will use executable name"
+msgstr "ja, vil bruge kørbar fils navn"
+
+#: grep-dctrl/rc.c:180
+msgid "default input file"
+msgstr "standardinddatafil"
+
+#: grep-dctrl/rc.c:192
+msgid "executable name not found; reading from standard input"
+msgstr "kørbar fils navn er ikke fundet; læser fra standardind"
+
+#: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
+msgid "Set debugging level to LEVEL."
+msgstr "Sæt fejlsøgningsniveau til NIVEAU."
+
+# nøgle / tast her og i det følgende ?
+#: sort-dctrl/sort-dctrl.c:40
+msgid "KEYSPEC"
+msgstr "NØGLESPEC"
+
+#: sort-dctrl/sort-dctrl.c:40
+msgid "Specify sort keys."
+msgstr "Angiv sorteringsnøgler."
+
+#: sort-dctrl/sort-dctrl.c:88
+msgid "invalid key flag"
+msgstr "ugyldigt nøgleflag"
+
+#: sort-dctrl/sort-dctrl.c:140
+msgid "sort-dctrl -- sort Debian control files"
+msgstr "sort-dctrl -- sorter Debian-kontrolfiler"
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "DELIM"
+msgstr "AFG."
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "Specify a delimiter."
+msgstr "Angiv en afgrænser."
+
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr "Udskriv ikke en tabeloverskrift"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "SPEC"
+msgstr "SPEC"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "Append the specified column."
+msgstr "Tilføj den angivet kolonne."
+
+#: tbl-dctrl/tbl-dctrl.c:284
+msgid "invalid column length"
+msgstr "ugyldig kolonnelængde"
+
+#: tbl-dctrl/tbl-dctrl.c:338
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "tbl-dctrl - placer Debian-kontrolfiler i tabelform"
+
+#: tbl-dctrl/tbl-dctrl.c:359
+msgid "bad multibyte character"
+msgstr "ugyldigt multibyte-tegn"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr "FELT"
+
+# sammenføj / foren
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr "Angiv feltet for sammenføj at bruge for den første fil"
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr "Angiv feltet for sammenføj at bruge for den anden fil"
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr "Angiv feltet for den fælles sammenføjelse"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr "FELTNEJ"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr "Udskriv poster der ikke kan parres fra indikeret fil (enten 1 eller 2)"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "FIELDSPEC"
+msgstr "FELTSPEC"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr "Angiv formatet for uddatafilen"
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr "forkert udformet argument for »-a«"
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr "feltet for sammenføj for den første fil er allerede blevet angivet"
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr "feltet for sammenføj for den anden fil er allerede blevet angivet"
+
+#: join-dctrl/join-dctrl.c:128
+msgid "missing '.' in output field specification"
+msgstr "mangler ».« i feltspecifikation for uddata"
+
+#: join-dctrl/join-dctrl.c:146
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr "forventede enten »1.« eller »2.« i starten af feltspecifikationen"
+
+#: join-dctrl/join-dctrl.c:251
+msgid "join-dctrl -- join two Debian control files"
+msgstr "join-dctrl - sammenføj to Debian-kontrolfiler"
+
+#: join-dctrl/join-dctrl.c:270
+msgid "need exactly two input files"
+msgstr "kræver præcis to inddatafiler"
+
+#: join-dctrl/join-dctrl.c:295
+msgid "cannot join a stream with itself"
+msgstr "kan ikke sammenføje en strøm med sig selv"
+
+#: lib/msg.h:52
+msgid "I'm broken - please report this bug."
+msgstr "Jeg er gået i stykker - rapporter venligst denne fejl."
+
+#: lib/msg.h:145
+msgid "cannot find enough memory"
+msgstr "kan ikke finde nok hukommelse"

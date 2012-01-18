@@ -6,7 +6,10 @@ dctrl-tools (2.21) unstable; urgency=low
       - grep-dctrl.1.cp: Updated to match.
   * grep-dctrl.1.cp: Fix indentation.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 18 Dec 2011 21:21:13 +0200
+  [ Program translations ]
+  * Danish, by Joe Hansen (closes: #654519).
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 17 Jan 2012 21:13:38 -0400
 
 dctrl-tools (2.20.1) unstable; urgency=low
 
