@@ -1,16 +1,16 @@
 # French translation for dctrl-tools
-# Copyright (C) 2004-2007, 2010, 2011 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# Copyright (C) 2004-2007, 2010-2012 Debian French l10n team <debian-l10n-french@lists.debian.org>
 # This file is distributed under the same license as the dctrl-tools package.
 #
 # Nicolas Bertolissio <nico.bertol@free.fr>, 2004, 2005.
 # Frédéric Bothamy <frederic.bothamy@free.fr>, 2006, 2007.
-# David Prévot <david@tilapin.org>, 2010, 2011.
+# David Prévot <david@tilapin.org>, 2010-2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.11\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2011-12-07 18:44-0400\n"
+"PO-Revision-Date: 2012-03-05 21:50-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -325,7 +325,7 @@ msgstr ""
 #: grep-dctrl/grep-dctrl.c:825
 #, c-format
 msgid "executable name '%s' is not recognised"
-msgstr ""
+msgstr "le nom d'exécutable « %s » n'est pas reconnu"
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45

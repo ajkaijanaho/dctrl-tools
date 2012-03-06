@@ -12,6 +12,10 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * Japanese, by Noritada Kobayashi.
   * Russian, by Yuri Kozlov (closes: #663608).
   * English – United Kingdom removed.
+  * French, by David Prévot.
+
+  [ Documentation translations ]
+  * French, by David Prévot.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 11 Mar 2012 22:14:51 +0200
 
