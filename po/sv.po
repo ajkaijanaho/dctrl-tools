@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grep-dctrl\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-17 17:58-0400\n"
+"POT-Creation-Date: 2012-03-05 20:13-0400\n"
 "PO-Revision-Date: 2010-09-15 23:18+0100\n"
 "Last-Translator: Martin Bagge <brother@bsnet.se>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/ifile.c:54
+#: lib/ifile.c:58
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (barn): misslyckades med att köra /bin/sh: %s\n"
 
-#: lib/ifile.c:100
+#: lib/ifile.c:104
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: kommandot (%s) misslyckades (felkod %d)\n"
 
-#: lib/ifile.c:109
+#: lib/ifile.c:113
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: kommandot (%s) dödades av signalen %d\n"
 
-#: lib/ifile.c:127
+#: lib/ifile.c:131
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: kan inte få status: %s\n"
 
-#: lib/ifile.c:138
+#: lib/ifile.c:142
 msgid "is a directory, skipping"
 msgstr "är en katalog, hoppar över"
 
-#: lib/ifile.c:139
+#: lib/ifile.c:143
 msgid "is a block device, skipping"
 msgstr "är en blockenhet, hoppar över"
 
-#: lib/ifile.c:140
+#: lib/ifile.c:144
 msgid "internal error"
 msgstr "internt fel"
 
-#: lib/ifile.c:141
+#: lib/ifile.c:145
 msgid "is a socket, skipping"
 msgstr "är ett uttag, hoppar över"
 
-#: lib/ifile.c:142
+#: lib/ifile.c:146
 msgid "unknown file type, skipping"
 msgstr "okänd filtyp, hoppar över"
 
@@ -87,320 +87,269 @@ msgstr "grep-dctrl -- kör \"grep\" på Debians kontrollfiler"
 msgid "FILTER [FILENAME...]"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:114
-msgid "Show the testing banner."
-msgstr "Visa testningsrubriken."
-
-#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "NIVÅ"
 
-#: grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:69
 #, fuzzy
 #| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
 msgstr "Ställ in felsökningsnivå till NIVÅ."
 
-#: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
 msgid "FIELD,FIELD,..."
 msgstr "FÄLT,FÄLT,..."
 
-#: grep-dctrl/grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:70
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Begränsa mönstermatchning till angivna FÄLT."
 
-#: grep-dctrl/grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:71
 msgid "This is a shorthand for -FPackage."
 msgstr "Det här är en förkortning för -FPackage."
 
-#: grep-dctrl/grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:72
 msgid "This is a shorthand for -FSource:Package."
 msgstr "Det här är en förkortning för -FSource:Package."
 
-#: grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:73
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Visa endast kroppen för dessa fält från matchande stycken."
 
-#: grep-dctrl/grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:74
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 msgstr ""
 "Visa endast första raden av fältet \"Beskrivning\" från matchande stycken."
 
-#: grep-dctrl/grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:75
 msgid "Suppress field names when showing specified fields."
 msgstr "Visa inte fältnamn när angivna fält visas."
 
-#: grep-dctrl/grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:76
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Anse mönstret som ett utökat reguljärt POSIX-uttryck."
 
-#: grep-dctrl/grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:77
 #, fuzzy
 #| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "Anse mönstret som ett utökat reguljärt POSIX-uttryck."
 
-#: grep-dctrl/grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:78
 msgid "Ignore case when looking for a match."
 msgstr "Ignorera skiftläge vid sökning efter en träff."
 
-#: grep-dctrl/grep-dctrl.c:126
+#: grep-dctrl/grep-dctrl.c:79
 msgid "Show only paragraphs that do not match."
 msgstr "Visa endast stycken som inte matchar."
 
-#: grep-dctrl/grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:80
 msgid "Show those fields that have NOT been selected with -s"
 msgstr "Visa de fält som INTE har valts med -s"
 
-#: grep-dctrl/grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:81
 msgid "Show only the count of matching paragraphs."
 msgstr "Visa endast antalet matchande stycken."
 
-#: grep-dctrl/grep-dctrl.c:129
-msgid "FNAME"
-msgstr "FNAMN"
-
-#: grep-dctrl/grep-dctrl.c:129
-msgid "Use FNAME as the config file."
-msgstr "Använd FNAMN som konfigurationsfil."
-
-#: grep-dctrl/grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:82
 msgid "Do an exact match."
 msgstr "Gör en exakt matchning."
 
-#: grep-dctrl/grep-dctrl.c:131 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:83 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Skriv ut copyrightlicensen."
 
-#: grep-dctrl/grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:84
 #, fuzzy
 #| msgid "Conjunct predicates."
 msgid "Conjunct filters."
 msgstr "Förena påståenden."
 
-#: grep-dctrl/grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:85
 #, fuzzy
 #| msgid "Disjunct predicates."
 msgid "Disjunct filters."
 msgstr "Separera påståenden."
 
-#: grep-dctrl/grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:86
 #, fuzzy
 #| msgid "Negate the following predicate."
 msgid "Negate the following filters."
 msgstr "Gör följande påstående negativt."
 
-#: grep-dctrl/grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:87
 msgid "Test for version number equality."
 msgstr "Testa jämförelse för versionsnummer."
 
-#: grep-dctrl/grep-dctrl.c:136
+#: grep-dctrl/grep-dctrl.c:88
 #, fuzzy
 #| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
 msgstr "Jämförelse av versionsnummer: <."
 
-#: grep-dctrl/grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:89
 msgid "Version number comparison: <=."
 msgstr "Jämförelse av versionsnummer: <=."
 
-#: grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:90
 #, fuzzy
 #| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
 msgstr "Jämförelse av versionsnummer: >."
 
-#: grep-dctrl/grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:91
 msgid "Version number comparison: >=."
 msgstr "Jämförelse av versionsnummer: >=."
 
-#: grep-dctrl/grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:92
 msgid "Debug option parsing."
 msgstr "Läs avlusningsalternativ."
 
-#: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
+#: grep-dctrl/grep-dctrl.c:93 grep-dctrl/grep-dctrl.c:94
 msgid "Do not output to stdout."
 msgstr "Skriv inte ut till standard ut."
 
-#: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:95 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Försök använda så kallad \"mmapping\" på indatafiler"
 
-#: grep-dctrl/grep-dctrl.c:144
+#: grep-dctrl/grep-dctrl.c:96
 msgid "Ignore parse errors"
 msgstr "Ignorera tolkningsfel"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "PATTERN"
 msgstr "MÖNSTER"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "Specify the pattern to search for"
 msgstr "Ange mönstret att söka efter"
 
-#: grep-dctrl/grep-dctrl.c:146
+#: grep-dctrl/grep-dctrl.c:98
 msgid "Match only whole package names (this implies -e)"
 msgstr "Passa endast ihop kompletta paketnamn (detta innebär att -e används)"
 
-#: grep-dctrl/grep-dctrl.c:147
+#: grep-dctrl/grep-dctrl.c:99
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:148
+#: grep-dctrl/grep-dctrl.c:100
 msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:236
+#: grep-dctrl/grep-dctrl.c:186
 #, fuzzy
 #| msgid "predicate is too long"
 msgid "filter is too long"
 msgstr "påståendet är för långt"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
+#: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "för många utmatningsfält"
 
-#: grep-dctrl/grep-dctrl.c:325 sort-dctrl/sort-dctrl.c:104
+#: grep-dctrl/grep-dctrl.c:271 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
 msgstr "ingen sådan loggnivå \"%s\""
 
-#: grep-dctrl/grep-dctrl.c:536
+#: grep-dctrl/grep-dctrl.c:478
 #, fuzzy, c-format
 #| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "internt fel"
 
-#: grep-dctrl/grep-dctrl.c:545
+#: grep-dctrl/grep-dctrl.c:487
 #, fuzzy
 #| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
 msgstr "oväntat slut på påstående"
 
-#: grep-dctrl/grep-dctrl.c:548
+#: grep-dctrl/grep-dctrl.c:490
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "oväntad atom på kommandorad"
 
-#: grep-dctrl/grep-dctrl.c:551
+#: grep-dctrl/grep-dctrl.c:493
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "oväntad atom på kommandorad"
 
-#: grep-dctrl/grep-dctrl.c:555
+#: grep-dctrl/grep-dctrl.c:497
 #, fuzzy, c-format
 #| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "oväntat \"!\" på kommandorad"
 
-#: grep-dctrl/grep-dctrl.c:569
+#: grep-dctrl/grep-dctrl.c:511
 msgid "missing ')' in command line"
 msgstr "saknar \")\" på kommandorad"
 
-#: grep-dctrl/grep-dctrl.c:588
+#: grep-dctrl/grep-dctrl.c:530
 #, fuzzy
 #| msgid "too many file names"
 msgid "too many field names"
 msgstr "för många filnamn"
 
-#: grep-dctrl/grep-dctrl.c:646
+#: grep-dctrl/grep-dctrl.c:588
 #, fuzzy
 #| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Flera mönster för samma atom är inte tillåtet"
 
-#: grep-dctrl/grep-dctrl.c:666
+#: grep-dctrl/grep-dctrl.c:608
 msgid "A pattern is mandatory"
 msgstr "Ett mönster är obligatoriskt"
 
-#: grep-dctrl/grep-dctrl.c:693
+#: grep-dctrl/grep-dctrl.c:635
 #, fuzzy
 #| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
 msgstr "inkosekvent atom-modifiering"
 
-#: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "för många filnamn"
 
-#: grep-dctrl/grep-dctrl.c:747
+#: grep-dctrl/grep-dctrl.c:689
 #, fuzzy
 #| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
 msgstr "filnamn är inte tillåtet inom påståendet"
 
-#: grep-dctrl/grep-dctrl.c:830
+#: grep-dctrl/grep-dctrl.c:769
 #, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
 msgstr "felformulerat påstående"
 
-#: grep-dctrl/grep-dctrl.c:840
+#: grep-dctrl/grep-dctrl.c:779
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "Lägger till \"Beskrivning\" till valda utmatningsfält därför -d angivits"
 
-#: grep-dctrl/grep-dctrl.c:848
+#: grep-dctrl/grep-dctrl.c:787
 msgid "-I requires at least one instance of -s"
 msgstr "-I kräver åtminstone en förekomst av -s"
 
-#: grep-dctrl/grep-dctrl.c:854
+#: grep-dctrl/grep-dctrl.c:793
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "kan inte ta bort fältnamn vid visning av hela stycken"
 
-#: grep-dctrl/rc.c:54
-msgid "Malformed default input file name"
-msgstr "Felformulerat filnamn för standardinmatning"
-
-#: grep-dctrl/rc.c:68
-msgid "not owned by you or root, ignoring"
-msgstr "ägs inte av dig eller root, ignorerar"
-
-#: grep-dctrl/rc.c:73
-msgid "write permissions for group or others, ignoring"
-msgstr "skrivrättigheter för grupp eller övriga, ignorerar"
-
-#: grep-dctrl/rc.c:112
-msgid "reading config file"
-msgstr "läser konfigurationsfil"
-
-#: grep-dctrl/rc.c:140
-msgid "read failure or out of memory"
-msgstr "läsfel eller slut på minne"
-
-#: grep-dctrl/rc.c:161
-msgid "syntax error: need an executable name"
-msgstr "syntaxfel: behöver ett namn på körbar fil"
-
-#: grep-dctrl/rc.c:169
-msgid "syntax error: need an input file name"
-msgstr "syntaxfel: behöver ett filnamn för inmatning"
-
-#: grep-dctrl/rc.c:175
-msgid "considering executable name"
-msgstr "överväg körbart namn"
-
-#: grep-dctrl/rc.c:178
-msgid "yes, will use executable name"
-msgstr "ja, kommer att använda namn på körbar fil"
-
-#: grep-dctrl/rc.c:180
-msgid "default input file"
-msgstr "standardinmatningsfil"
-
-#: grep-dctrl/rc.c:192
-msgid "executable name not found; reading from standard input"
-msgstr "körbart namn hittades inte; läser från standard in"
+#: grep-dctrl/grep-dctrl.c:825
+#, c-format
+msgid "executable name '%s' is not recognised"
+msgstr ""
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
@@ -530,6 +479,48 @@ msgstr ""
 #: lib/msg.h:145
 msgid "cannot find enough memory"
 msgstr ""
+
+#~ msgid "Show the testing banner."
+#~ msgstr "Visa testningsrubriken."
+
+#~ msgid "FNAME"
+#~ msgstr "FNAMN"
+
+#~ msgid "Use FNAME as the config file."
+#~ msgstr "Använd FNAMN som konfigurationsfil."
+
+#~ msgid "Malformed default input file name"
+#~ msgstr "Felformulerat filnamn för standardinmatning"
+
+#~ msgid "not owned by you or root, ignoring"
+#~ msgstr "ägs inte av dig eller root, ignorerar"
+
+#~ msgid "write permissions for group or others, ignoring"
+#~ msgstr "skrivrättigheter för grupp eller övriga, ignorerar"
+
+#~ msgid "reading config file"
+#~ msgstr "läser konfigurationsfil"
+
+#~ msgid "read failure or out of memory"
+#~ msgstr "läsfel eller slut på minne"
+
+#~ msgid "syntax error: need an executable name"
+#~ msgstr "syntaxfel: behöver ett namn på körbar fil"
+
+#~ msgid "syntax error: need an input file name"
+#~ msgstr "syntaxfel: behöver ett filnamn för inmatning"
+
+#~ msgid "considering executable name"
+#~ msgstr "överväg körbart namn"
+
+#~ msgid "yes, will use executable name"
+#~ msgstr "ja, kommer att använda namn på körbar fil"
+
+#~ msgid "default input file"
+#~ msgstr "standardinmatningsfil"
+
+#~ msgid "executable name not found; reading from standard input"
+#~ msgstr "körbart namn hittades inte; läser från standard in"
 
 #~ msgid "predicate is too complex"
 #~ msgstr "påståendet är för komplext"

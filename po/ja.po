@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.9.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-17 17:58-0400\n"
+"POT-Creation-Date: 2012-03-05 20:13-0400\n"
 "PO-Revision-Date: 2006-10-30 23:27+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese\n"
@@ -18,43 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/ifile.c:54
+#: lib/ifile.c:58
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (子プロセス): /bin/sh の実行に失敗しました: %s\n"
 
-#: lib/ifile.c:100
+#: lib/ifile.c:104
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: コマンド (%s) が失敗しました (終了ステータス %d)\n"
 
-#: lib/ifile.c:109
+#: lib/ifile.c:113
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: コマンド (%s) がシグナル %d によって kill されました\n"
 
-#: lib/ifile.c:127
+#: lib/ifile.c:131
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: stat できません: %s\n"
 
-#: lib/ifile.c:138
+#: lib/ifile.c:142
 msgid "is a directory, skipping"
 msgstr "ディレクトリなので飛ばします"
 
-#: lib/ifile.c:139
+#: lib/ifile.c:143
 msgid "is a block device, skipping"
 msgstr "ブロックデバイスなので飛ばします"
 
-#: lib/ifile.c:140
+#: lib/ifile.c:144
 msgid "internal error"
 msgstr "内部エラーです"
 
-#: lib/ifile.c:141
+#: lib/ifile.c:145
 msgid "is a socket, skipping"
 msgstr "ソケットなので飛ばします"
 
-#: lib/ifile.c:142
+#: lib/ifile.c:146
 msgid "unknown file type, skipping"
 msgstr "ファイル形式が不明なので飛ばします"
 
@@ -88,42 +88,38 @@ msgstr "grep-dctrl -- Debian control ファイルを grep します"
 msgid "FILTER [FILENAME...]"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:114
-msgid "Show the testing banner."
-msgstr "テスト用のバナーを表示します。"
-
-#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "<レベル>"
 
-#: grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:69
 #, fuzzy
 #| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
 msgstr "デバッグレベルを <レベル> に設定します。"
 
-#: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
 msgid "FIELD,FIELD,..."
 msgstr "<フィールド>,<フィールド>,..."
 
-#: grep-dctrl/grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:70
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "パターンマッチの対象を指定のフィールドに制限します。"
 
-#: grep-dctrl/grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:71
 msgid "This is a shorthand for -FPackage."
 msgstr "これは -FPackage の省略表現です。"
 
-#: grep-dctrl/grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:72
 msgid "This is a shorthand for -FSource:Package."
 msgstr "これは -FSource:Package の省略表現です。"
 
-#: grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:73
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "マッチするパラグラフの、これらのフィールドの中身のみを表示します。"
 
-#: grep-dctrl/grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:74
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -131,277 +127,230 @@ msgstr ""
 "マッチするパラグラフの、\"Description\" (パッケージ説明) フィールドの 1 行目"
 "のみを表示します。"
 
-#: grep-dctrl/grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:75
 msgid "Suppress field names when showing specified fields."
 msgstr "指定のフィールドを表示する際にフィールド名を表示しません。"
 
-#: grep-dctrl/grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:76
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "パターンを POSIX 拡張正規表現と見なします。"
 
-#: grep-dctrl/grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:77
 #, fuzzy
 #| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "パターンを POSIX 拡張正規表現と見なします。"
 
-#: grep-dctrl/grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:78
 msgid "Ignore case when looking for a match."
 msgstr "マッチするものを探す際に大文字・小文字を区別しません。"
 
-#: grep-dctrl/grep-dctrl.c:126
+#: grep-dctrl/grep-dctrl.c:79
 msgid "Show only paragraphs that do not match."
 msgstr "マッチしないパラグラフのみ表示します。"
 
-#: grep-dctrl/grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:80
 msgid "Show those fields that have NOT been selected with -s"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:81
 msgid "Show only the count of matching paragraphs."
 msgstr "マッチするパラグラフの数のみ表示します。"
 
-#: grep-dctrl/grep-dctrl.c:129
-msgid "FNAME"
-msgstr "<ファイル名>"
-
-#: grep-dctrl/grep-dctrl.c:129
-msgid "Use FNAME as the config file."
-msgstr "設定ファイルとして <ファイル名> を使用します。"
-
-#: grep-dctrl/grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:82
 msgid "Do an exact match."
 msgstr "正確なマッチを行います。"
 
-#: grep-dctrl/grep-dctrl.c:131 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:83 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "著作権使用許諾を表示します。"
 
-#: grep-dctrl/grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:84
 #, fuzzy
 #| msgid "Conjunct predicates."
 msgid "Conjunct filters."
 msgstr "述部を結合します。"
 
-#: grep-dctrl/grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:85
 #, fuzzy
 #| msgid "Disjunct predicates."
 msgid "Disjunct filters."
 msgstr "述部を分離します。"
 
-#: grep-dctrl/grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:86
 #, fuzzy
 #| msgid "Negate the following predicate."
 msgid "Negate the following filters."
 msgstr "以降の述部を否定します。"
 
-#: grep-dctrl/grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:87
 msgid "Test for version number equality."
 msgstr "バージョン番号が等しいかをテストします。"
 
-#: grep-dctrl/grep-dctrl.c:136
+#: grep-dctrl/grep-dctrl.c:88
 #, fuzzy
 #| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
 msgstr "バージョン番号の比較: <。"
 
-#: grep-dctrl/grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:89
 msgid "Version number comparison: <=."
 msgstr "バージョン番号の比較: <=。"
 
-#: grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:90
 #, fuzzy
 #| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
 msgstr "バージョン番号の比較: >。"
 
-#: grep-dctrl/grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:91
 msgid "Version number comparison: >=."
 msgstr "バージョン番号の比較: >=。"
 
-#: grep-dctrl/grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:92
 msgid "Debug option parsing."
 msgstr "デバッグオプションをパースします。"
 
-#: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
+#: grep-dctrl/grep-dctrl.c:93 grep-dctrl/grep-dctrl.c:94
 msgid "Do not output to stdout."
 msgstr "標準出力に出力しません。"
 
-#: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:95 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "mmap 用入力ファイルを試します"
 
-#: grep-dctrl/grep-dctrl.c:144
+#: grep-dctrl/grep-dctrl.c:96
 msgid "Ignore parse errors"
 msgstr "パースエラーを無視します"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "PATTERN"
 msgstr "<パターン>"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "Specify the pattern to search for"
 msgstr "検索に用いるパターンを指定します"
 
-#: grep-dctrl/grep-dctrl.c:146
+#: grep-dctrl/grep-dctrl.c:98
 msgid "Match only whole package names (this implies -e)"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:147
+#: grep-dctrl/grep-dctrl.c:99
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:148
+#: grep-dctrl/grep-dctrl.c:100
 msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:236
+#: grep-dctrl/grep-dctrl.c:186
 #, fuzzy
 #| msgid "predicate is too long"
 msgid "filter is too long"
 msgstr "述部が長すぎます"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
+#: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "出力フィールドが多すぎます"
 
-#: grep-dctrl/grep-dctrl.c:325 sort-dctrl/sort-dctrl.c:104
+#: grep-dctrl/grep-dctrl.c:271 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, fuzzy, c-format
 msgid "no such log level '%s'"
 msgstr "そのようなログレベルはありません"
 
-#: grep-dctrl/grep-dctrl.c:536
+#: grep-dctrl/grep-dctrl.c:478
 #, fuzzy, c-format
 #| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "内部エラーです"
 
-#: grep-dctrl/grep-dctrl.c:545
+#: grep-dctrl/grep-dctrl.c:487
 #, fuzzy
 #| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
 msgstr "述部が突然途切れました"
 
-#: grep-dctrl/grep-dctrl.c:548
+#: grep-dctrl/grep-dctrl.c:490
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "コマンドラインに想定外の単位が含まれています"
 
-#: grep-dctrl/grep-dctrl.c:551
+#: grep-dctrl/grep-dctrl.c:493
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "コマンドラインに想定外の単位が含まれています"
 
-#: grep-dctrl/grep-dctrl.c:555
+#: grep-dctrl/grep-dctrl.c:497
 #, fuzzy, c-format
 #| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "コマンドラインに想定外の '!' が含まれています"
 
-#: grep-dctrl/grep-dctrl.c:569
+#: grep-dctrl/grep-dctrl.c:511
 msgid "missing ')' in command line"
 msgstr "コマンドラインに ')' が含まれていません"
 
-#: grep-dctrl/grep-dctrl.c:588
+#: grep-dctrl/grep-dctrl.c:530
 #, fuzzy
 #| msgid "too many file names"
 msgid "too many field names"
 msgstr "ファイル名が多すぎます"
 
-#: grep-dctrl/grep-dctrl.c:646
+#: grep-dctrl/grep-dctrl.c:588
 #, fuzzy
 #| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "同じ単位に複数のパターンを使用することはできません"
 
-#: grep-dctrl/grep-dctrl.c:666
+#: grep-dctrl/grep-dctrl.c:608
 msgid "A pattern is mandatory"
 msgstr "パターンが必須です"
 
-#: grep-dctrl/grep-dctrl.c:693
+#: grep-dctrl/grep-dctrl.c:635
 #, fuzzy
 #| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
 msgstr "単位修飾子が矛盾しています"
 
-#: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "ファイル名が多すぎます"
 
-#: grep-dctrl/grep-dctrl.c:747
+#: grep-dctrl/grep-dctrl.c:689
 msgid "file names are not allowed within the filter"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:830
+#: grep-dctrl/grep-dctrl.c:769
 #, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
 msgstr "述部が不正です"
 
-#: grep-dctrl/grep-dctrl.c:840
+#: grep-dctrl/grep-dctrl.c:779
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "-d がついているので選択された出力フィールドに \"Description\" (パッケージ説"
 "明) を追加します。"
 
-#: grep-dctrl/grep-dctrl.c:848
+#: grep-dctrl/grep-dctrl.c:787
 msgid "-I requires at least one instance of -s"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:854
+#: grep-dctrl/grep-dctrl.c:793
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "パラグラフ全体を表示する際にフィールド名を表示しないようにできません"
 
-#: grep-dctrl/rc.c:54
-msgid "Malformed default input file name"
-msgstr "デフォルトの入力ファイル名が不正です"
-
-#: grep-dctrl/rc.c:68
-msgid "not owned by you or root, ignoring"
-msgstr "所持者があなたでも root でもないので無視します"
-
-#: grep-dctrl/rc.c:73
-msgid "write permissions for group or others, ignoring"
-msgstr "グループや他人に書き込み権限があるので無視します"
-
-#: grep-dctrl/rc.c:112
-msgid "reading config file"
-msgstr "設定ファイルを読み込んでいます"
-
-#: grep-dctrl/rc.c:140
-msgid "read failure or out of memory"
-msgstr "読み込みが失敗したか、またはメモリが不足しています"
-
-#: grep-dctrl/rc.c:161
-msgid "syntax error: need an executable name"
-msgstr "構文エラー: 実行ファイル名が必要です"
-
-#: grep-dctrl/rc.c:169
-msgid "syntax error: need an input file name"
-msgstr "構文エラー: 入力ファイル名が必要です"
-
-#: grep-dctrl/rc.c:175
-msgid "considering executable name"
-msgstr "実行ファイル名を検討中です"
-
-#: grep-dctrl/rc.c:178
-msgid "yes, will use executable name"
-msgstr "はい、実行ファイル名を使用します"
-
-#: grep-dctrl/rc.c:180
-msgid "default input file"
-msgstr "デフォルトの入力ファイル"
-
-#: grep-dctrl/rc.c:192
-msgid "executable name not found; reading from standard input"
-msgstr "実行ファイル名が見つかりません。標準入力から読み込みます"
+#: grep-dctrl/grep-dctrl.c:825
+#, c-format
+msgid "executable name '%s' is not recognised"
+msgstr ""
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
@@ -531,6 +480,48 @@ msgstr ""
 #: lib/msg.h:145
 msgid "cannot find enough memory"
 msgstr ""
+
+#~ msgid "Show the testing banner."
+#~ msgstr "テスト用のバナーを表示します。"
+
+#~ msgid "FNAME"
+#~ msgstr "<ファイル名>"
+
+#~ msgid "Use FNAME as the config file."
+#~ msgstr "設定ファイルとして <ファイル名> を使用します。"
+
+#~ msgid "Malformed default input file name"
+#~ msgstr "デフォルトの入力ファイル名が不正です"
+
+#~ msgid "not owned by you or root, ignoring"
+#~ msgstr "所持者があなたでも root でもないので無視します"
+
+#~ msgid "write permissions for group or others, ignoring"
+#~ msgstr "グループや他人に書き込み権限があるので無視します"
+
+#~ msgid "reading config file"
+#~ msgstr "設定ファイルを読み込んでいます"
+
+#~ msgid "read failure or out of memory"
+#~ msgstr "読み込みが失敗したか、またはメモリが不足しています"
+
+#~ msgid "syntax error: need an executable name"
+#~ msgstr "構文エラー: 実行ファイル名が必要です"
+
+#~ msgid "syntax error: need an input file name"
+#~ msgstr "構文エラー: 入力ファイル名が必要です"
+
+#~ msgid "considering executable name"
+#~ msgstr "実行ファイル名を検討中です"
+
+#~ msgid "yes, will use executable name"
+#~ msgstr "はい、実行ファイル名を使用します"
+
+#~ msgid "default input file"
+#~ msgstr "デフォルトの入力ファイル"
+
+#~ msgid "executable name not found; reading from standard input"
+#~ msgstr "実行ファイル名が見つかりません。標準入力から読み込みます"
 
 #~ msgid "predicate is too complex"
 #~ msgstr "述部が複雑すぎます"

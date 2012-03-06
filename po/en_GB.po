@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2011-12-17 17:58-0400\n"
+"POT-Creation-Date: 2012-03-05 20:13-0400\n"
 "PO-Revision-Date: 2011-12-08 23:47+1100\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English (United Kingdom) <debian-l10n-english@lists.debian."
@@ -17,43 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/ifile.c:54
+#: lib/ifile.c:58
 #, c-format
 msgid "%s (child): failed to exec /bin/sh: %s\n"
 msgstr "%s (child): failed to exec /bin/sh: %s\n"
 
-#: lib/ifile.c:100
+#: lib/ifile.c:104
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
 msgstr "%s: command (%s) failed (exit status %d)\n"
 
-#: lib/ifile.c:109
+#: lib/ifile.c:113
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
 msgstr "%s: command (%s) was killed by signal %d\n"
 
-#: lib/ifile.c:127
+#: lib/ifile.c:131
 #, c-format
 msgid "%s: %s: cannot stat: %s\n"
 msgstr "%s: %s: cannot stat: %s\n"
 
-#: lib/ifile.c:138
+#: lib/ifile.c:142
 msgid "is a directory, skipping"
 msgstr "is a directory, skipping"
 
-#: lib/ifile.c:139
+#: lib/ifile.c:143
 msgid "is a block device, skipping"
 msgstr "is a block device, skipping"
 
-#: lib/ifile.c:140
+#: lib/ifile.c:144
 msgid "internal error"
 msgstr "internal error"
 
-#: lib/ifile.c:141
+#: lib/ifile.c:145
 msgid "is a socket, skipping"
 msgstr "is a socket, skipping"
 
-#: lib/ifile.c:142
+#: lib/ifile.c:146
 msgid "unknown file type, skipping"
 msgstr "unknown file type, skipping"
 
@@ -87,40 +87,36 @@ msgstr "grep-dctrl -- grep Debian control files"
 msgid "FILTER [FILENAME...]"
 msgstr "FILTER [FILENAME...]"
 
-#: grep-dctrl/grep-dctrl.c:114
-msgid "Show the testing banner."
-msgstr "Show the testing banner."
-
-#: grep-dctrl/grep-dctrl.c:116 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "LEVEL"
 
-#: grep-dctrl/grep-dctrl.c:116
+#: grep-dctrl/grep-dctrl.c:69
 msgid "Set log level to LEVEL."
 msgstr "Set log level to LEVEL."
 
-#: grep-dctrl/grep-dctrl.c:117 grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
 msgid "FIELD,FIELD,..."
 msgstr "FIELD,FIELD,..."
 
-#: grep-dctrl/grep-dctrl.c:117
+#: grep-dctrl/grep-dctrl.c:70
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Restrict pattern matching to the FIELDs given."
 
-#: grep-dctrl/grep-dctrl.c:118
+#: grep-dctrl/grep-dctrl.c:71
 msgid "This is a shorthand for -FPackage."
 msgstr "This is a shorthand for -FPackage."
 
-#: grep-dctrl/grep-dctrl.c:119
+#: grep-dctrl/grep-dctrl.c:72
 msgid "This is a shorthand for -FSource:Package."
 msgstr "This is a shorthand for -FSource:Package."
 
-#: grep-dctrl/grep-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:73
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Show only the body of these fields from the matching paragraphs."
 
-#: grep-dctrl/grep-dctrl.c:121
+#: grep-dctrl/grep-dctrl.c:74
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -128,245 +124,198 @@ msgstr ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
 
-#: grep-dctrl/grep-dctrl.c:122
+#: grep-dctrl/grep-dctrl.c:75
 msgid "Suppress field names when showing specified fields."
 msgstr "Suppress field names when showing specified fields."
 
-#: grep-dctrl/grep-dctrl.c:123
+#: grep-dctrl/grep-dctrl.c:76
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Regard the pattern as an extended POSIX regular expression."
 
-#: grep-dctrl/grep-dctrl.c:124
+#: grep-dctrl/grep-dctrl.c:77
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "Regard the pattern as a standard POSIX regular expression."
 
-#: grep-dctrl/grep-dctrl.c:125
+#: grep-dctrl/grep-dctrl.c:78
 msgid "Ignore case when looking for a match."
 msgstr "Ignore case when looking for a match."
 
-#: grep-dctrl/grep-dctrl.c:126
+#: grep-dctrl/grep-dctrl.c:79
 msgid "Show only paragraphs that do not match."
 msgstr "Show only paragraphs that do not match."
 
-#: grep-dctrl/grep-dctrl.c:127
+#: grep-dctrl/grep-dctrl.c:80
 msgid "Show those fields that have NOT been selected with -s"
 msgstr "Show those fields that have NOT been selected with -s"
 
-#: grep-dctrl/grep-dctrl.c:128
+#: grep-dctrl/grep-dctrl.c:81
 msgid "Show only the count of matching paragraphs."
 msgstr "Show only the count of matching paragraphs."
 
-#: grep-dctrl/grep-dctrl.c:129
-msgid "FNAME"
-msgstr "FNAME"
-
-#: grep-dctrl/grep-dctrl.c:129
-msgid "Use FNAME as the config file."
-msgstr "Use FNAME as the config file."
-
-#: grep-dctrl/grep-dctrl.c:130
+#: grep-dctrl/grep-dctrl.c:82
 msgid "Do an exact match."
 msgstr "Do an exact match."
 
-#: grep-dctrl/grep-dctrl.c:131 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:83 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "Print out the copyright licence."
 
-#: grep-dctrl/grep-dctrl.c:132
+#: grep-dctrl/grep-dctrl.c:84
 msgid "Conjunct filters."
 msgstr "Conjunct filters."
 
-#: grep-dctrl/grep-dctrl.c:133
+#: grep-dctrl/grep-dctrl.c:85
 msgid "Disjunct filters."
 msgstr "Disjunct filters."
 
-#: grep-dctrl/grep-dctrl.c:134
+#: grep-dctrl/grep-dctrl.c:86
 msgid "Negate the following filters."
 msgstr "Negate the following filters."
 
-#: grep-dctrl/grep-dctrl.c:135
+#: grep-dctrl/grep-dctrl.c:87
 msgid "Test for version number equality."
 msgstr "Test for version number equality."
 
-#: grep-dctrl/grep-dctrl.c:136
+#: grep-dctrl/grep-dctrl.c:88
 msgid "Version number comparison: <<."
 msgstr "Version number comparison: <<."
 
-#: grep-dctrl/grep-dctrl.c:137
+#: grep-dctrl/grep-dctrl.c:89
 msgid "Version number comparison: <=."
 msgstr "Version number comparison: <=."
 
-#: grep-dctrl/grep-dctrl.c:138
+#: grep-dctrl/grep-dctrl.c:90
 msgid "Version number comparison: >>."
 msgstr "Version number comparison: >>."
 
-#: grep-dctrl/grep-dctrl.c:139
+#: grep-dctrl/grep-dctrl.c:91
 msgid "Version number comparison: >=."
 msgstr "Version number comparison: >=."
 
-#: grep-dctrl/grep-dctrl.c:140
+#: grep-dctrl/grep-dctrl.c:92
 msgid "Debug option parsing."
 msgstr "Debug option parsing."
 
-#: grep-dctrl/grep-dctrl.c:141 grep-dctrl/grep-dctrl.c:142
+#: grep-dctrl/grep-dctrl.c:93 grep-dctrl/grep-dctrl.c:94
 msgid "Do not output to stdout."
 msgstr "Do not output to stdout."
 
-#: grep-dctrl/grep-dctrl.c:143 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:95 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Attempt mmapping input files"
 
-#: grep-dctrl/grep-dctrl.c:144
+#: grep-dctrl/grep-dctrl.c:96
 msgid "Ignore parse errors"
 msgstr "Ignore parse errors"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "PATTERN"
 msgstr "PATTERN"
 
-#: grep-dctrl/grep-dctrl.c:145
+#: grep-dctrl/grep-dctrl.c:97
 msgid "Specify the pattern to search for"
 msgstr "Specify the pattern to search for"
 
-#: grep-dctrl/grep-dctrl.c:146
+#: grep-dctrl/grep-dctrl.c:98
 msgid "Match only whole package names (this implies -e)"
 msgstr "Match only whole package names (this implies -e)"
 
-#: grep-dctrl/grep-dctrl.c:147
+#: grep-dctrl/grep-dctrl.c:99
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
 msgstr "Ensure that the output is in dctrl format (overridden by -n)"
 
-#: grep-dctrl/grep-dctrl.c:148
+#: grep-dctrl/grep-dctrl.c:100
 msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr "Override the effect of an earlier --ensure-dctrl"
 
-#: grep-dctrl/grep-dctrl.c:236
+#: grep-dctrl/grep-dctrl.c:186
 msgid "filter is too long"
 msgstr "filter is too long"
 
-#: grep-dctrl/grep-dctrl.c:301 grep-dctrl/grep-dctrl.c:836
+#: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "too many output fields"
 
-#: grep-dctrl/grep-dctrl.c:325 sort-dctrl/sort-dctrl.c:104
+#: grep-dctrl/grep-dctrl.c:271 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
 msgstr "no such log level '%s'"
 
-#: grep-dctrl/grep-dctrl.c:536
+#: grep-dctrl/grep-dctrl.c:478
 #, c-format
 msgid "internal error: unknown token %d"
 msgstr "internal error: unknown token %d"
 
-#: grep-dctrl/grep-dctrl.c:545
+#: grep-dctrl/grep-dctrl.c:487
 msgid "unexpected end of filter"
 msgstr "unexpected end of filter"
 
-#: grep-dctrl/grep-dctrl.c:548
+#: grep-dctrl/grep-dctrl.c:490
 msgid "unexpected pattern in command line"
 msgstr "unexpected pattern in command line"
 
-#: grep-dctrl/grep-dctrl.c:551
+#: grep-dctrl/grep-dctrl.c:493
 msgid "unexpected string in command line"
 msgstr "unexpected string in command line"
 
-#: grep-dctrl/grep-dctrl.c:555
+#: grep-dctrl/grep-dctrl.c:497
 #, c-format
 msgid "unexpected '%s' in command line"
 msgstr "unexpected '%s' in command line"
 
-#: grep-dctrl/grep-dctrl.c:569
+#: grep-dctrl/grep-dctrl.c:511
 msgid "missing ')' in command line"
 msgstr "missing ')' in command line"
 
-#: grep-dctrl/grep-dctrl.c:588
+#: grep-dctrl/grep-dctrl.c:530
 msgid "too many field names"
 msgstr "too many field names"
 
-#: grep-dctrl/grep-dctrl.c:646
+#: grep-dctrl/grep-dctrl.c:588
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Multiple patterns for the same simple filter are not allowed"
 
-#: grep-dctrl/grep-dctrl.c:666
+#: grep-dctrl/grep-dctrl.c:608
 msgid "A pattern is mandatory"
 msgstr "A pattern is mandatory"
 
-#: grep-dctrl/grep-dctrl.c:693
+#: grep-dctrl/grep-dctrl.c:635
 msgid "inconsistent modifiers of simple filters"
 msgstr "inconsistent modifiers of simple filters"
 
-#: grep-dctrl/grep-dctrl.c:738 sort-dctrl/sort-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "too many file names"
 
-#: grep-dctrl/grep-dctrl.c:747
+#: grep-dctrl/grep-dctrl.c:689
 msgid "file names are not allowed within the filter"
 msgstr "file names are not allowed within the filter"
 
-#: grep-dctrl/grep-dctrl.c:830
+#: grep-dctrl/grep-dctrl.c:769
 msgid "malformed filter"
 msgstr "malformed filter"
 
-#: grep-dctrl/grep-dctrl.c:840
+#: grep-dctrl/grep-dctrl.c:779
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr "Adding \"Description\" to selected output fields because of -d"
 
-#: grep-dctrl/grep-dctrl.c:848
+#: grep-dctrl/grep-dctrl.c:787
 msgid "-I requires at least one instance of -s"
 msgstr "-I requires at least one instance of -s"
 
-#: grep-dctrl/grep-dctrl.c:854
+#: grep-dctrl/grep-dctrl.c:793
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "cannot suppress field names when showing whole paragraphs"
 
-#: grep-dctrl/rc.c:54
-msgid "Malformed default input file name"
-msgstr "Malformed default input file name"
-
-#: grep-dctrl/rc.c:68
-msgid "not owned by you or root, ignoring"
-msgstr "not owned by you or root, ignoring"
-
-#: grep-dctrl/rc.c:73
-msgid "write permissions for group or others, ignoring"
-msgstr "write permissions for group or others, ignoring"
-
-#: grep-dctrl/rc.c:112
-msgid "reading config file"
-msgstr "reading config file"
-
-#: grep-dctrl/rc.c:140
-msgid "read failure or out of memory"
-msgstr "read failure or out of memory"
-
-#: grep-dctrl/rc.c:161
-msgid "syntax error: need an executable name"
-msgstr "syntax error: need an executable name"
-
-#: grep-dctrl/rc.c:169
-msgid "syntax error: need an input file name"
-msgstr "syntax error: need an input file name"
-
-#: grep-dctrl/rc.c:175
-msgid "considering executable name"
-msgstr "considering executable name"
-
-#: grep-dctrl/rc.c:178
-msgid "yes, will use executable name"
-msgstr "yes, will use executable name"
-
-#: grep-dctrl/rc.c:180
-msgid "default input file"
-msgstr "default input file"
-
-#: grep-dctrl/rc.c:192
-msgid "executable name not found; reading from standard input"
-msgstr "executable name not found; reading from standard input"
+#: grep-dctrl/grep-dctrl.c:825
+#, c-format
+msgid "executable name '%s' is not recognised"
+msgstr ""
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
@@ -493,6 +442,48 @@ msgstr "I'm broken - please report this bug."
 #: lib/msg.h:145
 msgid "cannot find enough memory"
 msgstr "cannot find enough memory"
+
+#~ msgid "Show the testing banner."
+#~ msgstr "Show the testing banner."
+
+#~ msgid "FNAME"
+#~ msgstr "FNAME"
+
+#~ msgid "Use FNAME as the config file."
+#~ msgstr "Use FNAME as the config file."
+
+#~ msgid "Malformed default input file name"
+#~ msgstr "Malformed default input file name"
+
+#~ msgid "not owned by you or root, ignoring"
+#~ msgstr "not owned by you or root, ignoring"
+
+#~ msgid "write permissions for group or others, ignoring"
+#~ msgstr "write permissions for group or others, ignoring"
+
+#~ msgid "reading config file"
+#~ msgstr "reading config file"
+
+#~ msgid "read failure or out of memory"
+#~ msgstr "read failure or out of memory"
+
+#~ msgid "syntax error: need an executable name"
+#~ msgstr "syntax error: need an executable name"
+
+#~ msgid "syntax error: need an input file name"
+#~ msgstr "syntax error: need an input file name"
+
+#~ msgid "considering executable name"
+#~ msgstr "considering executable name"
+
+#~ msgid "yes, will use executable name"
+#~ msgstr "yes, will use executable name"
+
+#~ msgid "default input file"
+#~ msgstr "default input file"
+
+#~ msgid "executable name not found; reading from standard input"
+#~ msgstr "executable name not found; reading from standard input"
 
 #~ msgid "predicate is too complex"
 #~ msgstr "predicate is too complex"
