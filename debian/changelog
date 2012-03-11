@@ -1,4 +1,4 @@
-dctrl-tools (2.21) unstable; urgency=low
+dctrl-tools (2.21.1) UNRELEASED; urgency=low
 
   * grep-dctrl: Remove the old dead annoying banner code.
   * grep-dctrl: Hardcode default input file names.
@@ -9,7 +9,7 @@ dctrl-tools (2.21) unstable; urgency=low
   [ Program translations ]
   * Danish, by Joe Hansen (closes: #654519).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 17 Jan 2012 21:13:38 -0400
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 11 Mar 2012 22:14:51 +0200
 
 dctrl-tools (2.20.1) unstable; urgency=low
 
