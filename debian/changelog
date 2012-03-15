@@ -7,7 +7,7 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * grep-dctrl.1.cp: Fix indentation.
 
   [ Program translations ]
-  * Danish, by Joe Hansen (closes: #654519).
+  * Danish, by Joe Hansen (closes: #654519, #664157).
   * German, by Gerfried Fuchs.
   * Japanese, by Noritada Kobayashi.
   * Russian, by Yuri Kozlov (closes: #663608).
