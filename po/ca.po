@@ -1,15 +1,15 @@
 # Catalan translation of dctrl-tools.
-# Copyright © 2004, 2006, 2010, 2011 Antti-Juhani Kaijanaho.
+# Copyright © 2004, 2006, 2010, 2011, 2012 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Jordi Mallach <jordi@debian.org>, 2004, 2006, 2010, 2011.
+# Jordi Mallach <jordi@debian.org>, 2004, 2006, 2010, 2011, 2012.
 # Agustí Grau <fletxa@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.20.1\n"
+"Project-Id-Version: dctrl-tools 2.21.1\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2011-12-13 11:30+0100\n"
+"PO-Revision-Date: 2012-03-13 17:59+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
@@ -85,7 +85,7 @@ msgstr "grep-dctrl -- cerca patrons en fitxers de control de Debian"
 
 #: grep-dctrl/grep-dctrl.c:51
 msgid "FILTER [FILENAME...]"
-msgstr "FILTRE [NOMFITXER...]"
+msgstr "FILTRE [NOMFITXER…]"
 
 #: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
@@ -98,7 +98,7 @@ msgstr "Estableix el nivell de registre a NIVELL."
 
 #: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
 msgid "FIELD,FIELD,..."
-msgstr "CAMP,CAMP,..."
+msgstr "CAMP,CAMP,…"
 
 #: grep-dctrl/grep-dctrl.c:70
 msgid "Restrict pattern matching to the FIELDs given."
@@ -318,7 +318,7 @@ msgstr ""
 #: grep-dctrl/grep-dctrl.c:825
 #, c-format
 msgid "executable name '%s' is not recognised"
-msgstr ""
+msgstr "no s'ha reconegut el nom de l'executable «%s»"
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
