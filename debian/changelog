@@ -14,6 +14,7 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * English – United Kingdom removed.
   * French, by David Prévot.
   * Catalan, by Jordi Mallach
+  * Spanish, by Javier Fernández-Sanguino (closes: #664963).
 
   [ Documentation translations ]
   * French, by David Prévot.
