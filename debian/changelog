@@ -13,6 +13,7 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * Russian, by Yuri Kozlov (closes: #663608).
   * English – United Kingdom removed.
   * French, by David Prévot.
+  * Catalan, by Jordi Mallach
 
   [ Documentation translations ]
   * French, by David Prévot.
