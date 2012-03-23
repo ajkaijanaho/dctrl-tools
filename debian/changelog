@@ -13,8 +13,9 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * Russian, by Yuri Kozlov (closes: #663608).
   * English – United Kingdom removed.
   * French, by David Prévot.
-  * Catalan, by Jordi Mallach
+  * Catalan, by Jordi Mallach.
   * Spanish, by Javier Fernández-Sanguino (closes: #664963).
+  * Czech, by Miroslav Kure (closes: #665365).
 
   [ Documentation translations ]
   * French, by David Prévot.
