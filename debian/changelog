@@ -5,6 +5,7 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
       - The /etc/grep-dctrl.rc conffile is removed upon package upgrade.
       - grep-dctrl.1.cp: Updated to match.
   * grep-dctrl.1.cp: Fix indentation.
+  * Update Standards-Version to 3.9.3 with no other changes needed.
 
   [ Program translations ]
   * Danish, by Joe Hansen (closes: #654519, #664157).
@@ -22,7 +23,7 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * French, by David Prévot.
   * German, by Chris Leick (closes: #664783).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 31 Mar 2012 15:26:01 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 31 Mar 2012 21:08:16 +0300
 
 dctrl-tools (2.20.1) unstable; urgency=low
 
