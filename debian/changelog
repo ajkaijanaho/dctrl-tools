@@ -16,12 +16,13 @@ dctrl-tools (2.21.1) UNRELEASED; urgency=low
   * Catalan, by Jordi Mallach.
   * Spanish, by Javier Fernández-Sanguino (closes: #664963).
   * Czech, by Miroslav Kure (closes: #665365).
+  * Finnish, by Antti-Juhani Kaijanaho.
 
   [ Documentation translations ]
   * French, by David Prévot.
   * German, by Chris Leick (closes: #664783).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 11 Mar 2012 22:14:51 +0200
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 31 Mar 2012 15:26:01 +0300
 
 dctrl-tools (2.20.1) unstable; urgency=low
 
