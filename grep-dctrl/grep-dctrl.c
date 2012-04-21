@@ -1,6 +1,6 @@
 /*  dctrl-tools - Debian control file inspection tools
     Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
-                2010, 2011
+                2010, 2011, 2012
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -502,6 +502,23 @@ static void unexpected(int tok)
 
 static struct predicate * parse_conj(struct arguments * args);
 
+
+/* prim -> TOK_LP conj TOK_RP
+   prim -> prim'
+
+   prim' -> primtok
+   prim' -> primtok prim'
+   prim' -> TOK_PAT prim''
+   prim' -> TOK_STR prim''
+
+   prim'' ->
+   prim'' -> primtok prim''
+
+   primtok -> TOK_FIELD
+   primtok -> TOK_ERGEX | TOK_REGEX
+   primtok -> TOK_ICASE | TOK_EXACT | TOK_WHOLE
+   primtok -> TOK_EQ | TOK_LT | TOK_LE | TOK_GE | TOK_GT
+*/
 static struct predicate * parse_prim(struct arguments * args)
 {
 	if (peek_token(args) == TOK_LP) {
@@ -637,6 +654,9 @@ failmode:
         return 0;
 }
 
+/* neg -> TOK_NOT prim
+   neg -> prim
+*/
 static struct predicate * parse_neg(struct arguments * args)
 {
 	bool neg = false;
@@ -649,6 +669,9 @@ static struct predicate * parse_neg(struct arguments * args)
         return rv;
 }
 
+/* disj -> neg
+   disj -> disj TOK_OR neg
+*/
 static struct predicate * parse_disj(struct arguments * args)
 {
 	struct predicate * rv = parse_neg(args);
@@ -660,6 +683,9 @@ static struct predicate * parse_disj(struct arguments * args)
         return rv;
 }
 
+/* conj -> disj
+   conj -> conj TOK_AND disj
+*/
 static struct predicate * parse_conj(struct arguments * args)
 {
 	struct predicate * rv = parse_disj(args);
@@ -671,6 +697,10 @@ static struct predicate * parse_conj(struct arguments * args)
         return rv;
 }
 
+/* predicate -> conj files
+   files ->
+   files -> TOK_STR files
+*/
 static void parse_predicate(struct arguments * args)
 {
 	args->toks_pos = 0;
