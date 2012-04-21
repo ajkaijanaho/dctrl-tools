@@ -1,36 +1,43 @@
-This package and the programs in it were written and debianized by
-Antti-Juhani Kaijanaho <ajk@debian.org>.  The programs contain code by
-Wichert Akkerman, Ian Jackson and Lars Wirzenius.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
+Files: *
+Copyright: 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+           2009, 2010, 2011
+           Antti-Juhani Kaijanaho
+License: GPL-2+
+
+Files: lib/fnutil.c
 Copyright:
+   Copyright (c) 1994 Lars Wirzenius.  All rights reserved.
+   Copyright (C) 2004 Antti-Juhani Kaijanaho.  All rights reserved.
+License: BSD-2-clause
 
-     Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
-                   2009, 2010, 2011
-                   Antti-Juhani Kaijanaho
-  
+Files: lib.version.h lib/version.c:
+Copyright: Copyright © 2005 Antti-Juhani Kaijanaho
+           Copyright © 1995 Ian Jackson <ian@chiark.greenend.org.uk>
+           Copyright © 2001 Wichert Akkerman <wakkerma@debian.org>
+License: GPL-2+
+
+License: GPL-2+
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
      the Free Software Foundation; either version 2 of the License, or
      (at your option) any later version.
-  
+     .  
      This program is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
      GNU General Public License for more details. 
-  
+     .
      You should have received a copy of the GNU General Public License
      along with this program; see the file COPYING.  If not, write to
      the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
      Boston, MA 02110-1301, USA.
-  
-In Debian systems, the GNU GPL version 2 is available at
-/usr/share/common-licenses/GPL .
+     .
+     In Debian systems, the GNU GPL version 2 is available at
+     /usr/share/common-licenses/GPL-2 .
 
-The file fnutil.c are covered by the following copyright:
-
-   Copyright (c) 1994 Lars Wirzenius.  All rights reserved.
-   Copyright (C) 2004 Antti-Juhani Kaijanaho.  All rights reserved.
-
+License: BSD-2-clause
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
    are met:
@@ -54,25 +61,4 @@ The file fnutil.c are covered by the following copyright:
    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Marked portions of the file predicate.c are covered by the following
-copyright:
-
- * libdpkg - Debian packaging suite library routines
- * vercmp.c - comparison of version numbers
- * utils.c - Helper functions for dpkg
- *
- * Copyright (C) 1995 Ian Jackson <ian@chiark.greenend.org.uk>
- * Copyright (C) 2001 Wichert Akkerman <wakkerma@debian.org>
- *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2,
- * or (at your option) any later version.
- *
- * This is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
-
 
