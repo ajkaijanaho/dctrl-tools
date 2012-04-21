@@ -1,14 +1,14 @@
 # Czech translation of dctrl-tools.
 # Copyright (C) YEAR Antti-Juhani Kaijanaho
 # This file is distributed under the same license as the dctrl-tools package.
-# Miroslav Kure <kurem@debian.cz>, 2006, 2008, 2010.
+# Miroslav Kure <kurem@debian.cz>, 2006, 2008, 2010, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2010-08-25 18:25+0200\n"
+"PO-Revision-Date: 2012-03-23 15:17+0100\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "Language: cs\n"
@@ -84,7 +84,7 @@ msgstr "grep-dctrl -- vyhledává v debianích souborech control"
 
 #: grep-dctrl/grep-dctrl.c:51
 msgid "FILTER [FILENAME...]"
-msgstr ""
+msgstr "FILTR [JMÉNOSOUBORU...]"
 
 #: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
@@ -92,10 +92,8 @@ msgid "LEVEL"
 msgstr "ÚROVEŇ"
 
 #: grep-dctrl/grep-dctrl.c:69
-#, fuzzy
-#| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
-msgstr "Nastaví ladicí úroveň na ÚROVEŇ."
+msgstr "Nastaví logovací úroveň na ÚROVEŇ."
 
 #: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
 msgid "FIELD,FIELD,..."
@@ -133,11 +131,9 @@ msgstr ""
 "Bude se vzorem pracovat jako s rozšířeným POSIXovým regulárním výrazem."
 
 #: grep-dctrl/grep-dctrl.c:77
-#, fuzzy
-#| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr ""
-"Bude se vzorem pracovat jako s rozšířeným POSIXovým regulárním výrazem."
+"Bude se vzorem pracovat jako se standardním POSIXovým regulárním výrazem."
 
 #: grep-dctrl/grep-dctrl.c:78
 msgid "Ignore case when looking for a match."
@@ -165,42 +161,32 @@ msgid "Print out the copyright license."
 msgstr "Vytiskne licenci."
 
 #: grep-dctrl/grep-dctrl.c:84
-#, fuzzy
-#| msgid "Conjunct predicates."
 msgid "Conjunct filters."
-msgstr "Konjunkce predikátů."
+msgstr "Konjunkce filtrů."
 
 #: grep-dctrl/grep-dctrl.c:85
-#, fuzzy
-#| msgid "Disjunct predicates."
 msgid "Disjunct filters."
-msgstr "Disjunkce predikátů."
+msgstr "Disjunkce filtrů."
 
 #: grep-dctrl/grep-dctrl.c:86
-#, fuzzy
-#| msgid "Negate the following predicate."
 msgid "Negate the following filters."
-msgstr "Neguje následující predikát."
+msgstr "Neguje následující filtry."
 
 #: grep-dctrl/grep-dctrl.c:87
 msgid "Test for version number equality."
 msgstr "Testuje rovnost čísla verze."
 
 #: grep-dctrl/grep-dctrl.c:88
-#, fuzzy
-#| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
-msgstr "Porovnání čísla verze: <."
+msgstr "Porovnání čísla verze: <<."
 
 #: grep-dctrl/grep-dctrl.c:89
 msgid "Version number comparison: <=."
 msgstr "Porovnání čísla verze: <=."
 
 #: grep-dctrl/grep-dctrl.c:90
-#, fuzzy
-#| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
-msgstr "Porovnání čísla verze: >."
+msgstr "Porovnání čísla verze: >>."
 
 #: grep-dctrl/grep-dctrl.c:91
 msgid "Version number comparison: >=."
@@ -237,17 +223,15 @@ msgstr "Shoduje se pouze s celými názvy balíků (implikuje -e)"
 
 #: grep-dctrl/grep-dctrl.c:99
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "Zajistí, že je výstup ve formátu dctrl (přebito -n)"
 
 #: grep-dctrl/grep-dctrl.c:100
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Přebije význam dřívějšího --ensure-dctrl "
 
 #: grep-dctrl/grep-dctrl.c:186
-#, fuzzy
-#| msgid "predicate is too long"
 msgid "filter is too long"
-msgstr "predikát je příliš dlouhý"
+msgstr "filtr je příliš dlouhý"
 
 #: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
 #: join-dctrl/join-dctrl.c:113
@@ -261,60 +245,46 @@ msgid "no such log level '%s'"
 msgstr "úroveň logování „%s“ neexistuje"
 
 #: grep-dctrl/grep-dctrl.c:478
-#, fuzzy, c-format
-#| msgid "internal error"
+#, c-format
 msgid "internal error: unknown token %d"
-msgstr "vnitřní chyba"
+msgstr "vnitřní chyba: neznámý symbol %d"
 
 #: grep-dctrl/grep-dctrl.c:487
-#, fuzzy
-#| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
-msgstr "neočekávaný konec predikátu"
+msgstr "neočekávaný konec filtru"
 
 #: grep-dctrl/grep-dctrl.c:490
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
-msgstr "neočekávaný atom v příkazové řádce"
+msgstr "neočekávaný vzor v příkazové řádce"
 
 #: grep-dctrl/grep-dctrl.c:493
-#, fuzzy
-#| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
-msgstr "neočekávaný atom v příkazové řádce"
+msgstr "neočekávaný řetězec v příkazové řádce"
 
 #: grep-dctrl/grep-dctrl.c:497
-#, fuzzy, c-format
-#| msgid "unexpected '!' in command line"
+#, c-format
 msgid "unexpected '%s' in command line"
-msgstr "neočekávaný „!“ v příkazové řádce"
+msgstr "neočekávaný „%s“ v příkazové řádce"
 
 #: grep-dctrl/grep-dctrl.c:511
 msgid "missing ')' in command line"
 msgstr "chybějící „)“ v příkazové řádce"
 
 #: grep-dctrl/grep-dctrl.c:530
-#, fuzzy
-#| msgid "too many file names"
 msgid "too many field names"
-msgstr "příliš mnoho názvů souborů"
+msgstr "příliš mnoho názvů polí"
 
 #: grep-dctrl/grep-dctrl.c:588
-#, fuzzy
-#| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "Více vzorů pro stejný atom není povoleno"
+msgstr "Více vzorů pro stejný jednoduchý filtr není povoleno"
 
 #: grep-dctrl/grep-dctrl.c:608
 msgid "A pattern is mandatory"
 msgstr "Vzor je povinný"
 
 #: grep-dctrl/grep-dctrl.c:635
-#, fuzzy
-#| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
-msgstr "nekonzistentní modifikátory atomu"
+msgstr "nekonzistentní modifikátory jednoduchých filtrů"
 
 #: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
@@ -322,16 +292,12 @@ msgid "too many file names"
 msgstr "příliš mnoho názvů souborů"
 
 #: grep-dctrl/grep-dctrl.c:689
-#, fuzzy
-#| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
-msgstr "jména souborů nejsou uvnitř predikátu povolena"
+msgstr "jména souborů nejsou uvnitř filtru povolena"
 
 #: grep-dctrl/grep-dctrl.c:769
-#, fuzzy
-#| msgid "malformed predicate"
 msgid "malformed filter"
-msgstr "zkomolený predikát"
+msgstr "zkomolený filtr"
 
 #: grep-dctrl/grep-dctrl.c:779
 msgid "Adding \"Description\" to selected output fields because of -d"
@@ -348,7 +314,7 @@ msgstr "při zobrazování celých odstavců nemohu potlačit názvy polí"
 #: grep-dctrl/grep-dctrl.c:825
 #, c-format
 msgid "executable name '%s' is not recognised"
-msgstr ""
+msgstr "spustitelné jméno „%s“ nebylo rozpoznáno"
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
@@ -470,11 +436,11 @@ msgstr "nemohu sloučit proud sám se sebou"
 
 #: lib/msg.h:52
 msgid "I'm broken - please report this bug."
-msgstr ""
+msgstr "'sem pokaženej - nahlaste tudlectu chybu autorovi."
 
 #: lib/msg.h:145
 msgid "cannot find enough memory"
-msgstr ""
+msgstr "nelze nalézt dostatek paměti"
 
 #~ msgid "Show the testing banner."
 #~ msgstr "Zobrazí testovací nápis."

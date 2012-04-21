@@ -6,7 +6,7 @@
 # - Initial translation
 #       Javier Fernández-Sanguino, 2006
 # - Translation updates
-#       Javier Fernández-Sanguino <jfs@debian.org>, 2011
+#       Javier Fernández-Sanguino <jfs@debian.org>, 2011-2012
 #
 #
 #  Traductores, si no conoce el formato PO, merece la pena leer la 
@@ -36,7 +36,7 @@ msgstr ""
 "Project-Id-Version: dctrl-tools\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2011-12-08 12:43+0100\n"
+"PO-Revision-Date: 2012-03-21 22:09+0100\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian l10n spanish <debian-l10n-spanish@lists.debian.org>\n"
 "Language: es\n"
@@ -359,7 +359,7 @@ msgstr ""
 #: grep-dctrl/grep-dctrl.c:825
 #, c-format
 msgid "executable name '%s' is not recognised"
-msgstr ""
+msgstr "no se reconoce el nombre del ejecutable «%s»"
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45

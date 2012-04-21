@@ -1,15 +1,29 @@
-dctrl-tools (2.21) unstable; urgency=low
+dctrl-tools (2.21.1) unstable; urgency=low
 
   * grep-dctrl: Remove the old dead annoying banner code.
   * grep-dctrl: Hardcode default input file names.
       - The /etc/grep-dctrl.rc conffile is removed upon package upgrade.
       - grep-dctrl.1.cp: Updated to match.
   * grep-dctrl.1.cp: Fix indentation.
+  * Update Standards-Version to 3.9.3 with no other changes needed.
 
   [ Program translations ]
-  * Danish, by Joe Hansen (closes: #654519).
+  * Danish, by Joe Hansen (closes: #654519, #664157).
+  * German, by Gerfried Fuchs.
+  * Japanese, by Noritada Kobayashi.
+  * Russian, by Yuri Kozlov (closes: #663608).
+  * English – United Kingdom removed.
+  * French, by David Prévot.
+  * Catalan, by Jordi Mallach.
+  * Spanish, by Javier Fernández-Sanguino (closes: #664963).
+  * Czech, by Miroslav Kure (closes: #665365).
+  * Finnish, by Antti-Juhani Kaijanaho.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 17 Jan 2012 21:13:38 -0400
+  [ Documentation translations ]
+  * French, by David Prévot.
+  * German, by Chris Leick (closes: #664783).
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 31 Mar 2012 21:10:48 +0300
 
 dctrl-tools (2.20.1) unstable; urgency=low
 

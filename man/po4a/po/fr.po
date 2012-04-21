@@ -1,13 +1,13 @@
 # Translation of dctrl-tools manual pages to French
-# Copyright (C) 2011 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# Copyright (C) 2011, 2012 Debian French l10n team <debian-l10n-french@lists.debian.org>
 # This file is distributed under the same license as the dctrl-tools package.
 #
-# David Prévot <david@tilapin.org>, 2011.
+# David Prévot <david@tilapin.org>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
-"POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2011-12-07 18:47-0400\n"
+"POT-Creation-Date: 2012-03-05 21:58-0400\n"
+"PO-Revision-Date: 2012-03-05 21:55-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -25,10 +25,9 @@ msgstr "GREP-DCTRL"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1
-#, fuzzy, no-wrap
-#| msgid "2011-11-13"
+#, no-wrap
 msgid "2011-12-18"
-msgstr "13 novembre 2011"
+msgstr "18 décembre 2011"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1 man/sync-available.8:1
@@ -125,13 +124,6 @@ msgstr ""
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:67
-#, fuzzy
-#| msgid ""
-#| "The programs B<grep-available>, B<grep-status>, B<grep-aptavail> and "
-#| "B<grep-debtags> are aliases of (actually, symbolic links to)  B<grep-"
-#| "dctrl>.  In the shipped configuration, these aliases use as their default "
-#| "input the B<dpkg>(1)  I<available> and I<status> files, the B<apt-cache "
-#| "dumpavail> output and the B<debtags dumpavail> output, respectively."
 msgid ""
 "The programs B<grep-available>, B<grep-status>, B<grep-aptavail> and B<grep-"
 "debtags> are aliases of (actually, symbolic links to)  B<grep-dctrl>.  These "
@@ -141,9 +133,9 @@ msgid ""
 msgstr ""
 "Les programmes B<grep-available>, B<grep-status>, B<grep-aptavail> et B<grep-"
 "debtags> sont des alias de (en réalité, des liens symboliques vers) B<grep-"
-"dctrl>. Dans la configuration par défaut, ces alias utilisent en entrée "
-"respectivement les fichiers I<available> et I<status> de B<dpkg>(1), la "
-"sortie de B<apt-cache dumpavail>, et celle de B<debtags dumpavail>."
+"dctrl>. Ces alias utilisent en entrée respectivement les fichiers "
+"I<available> et I<status> de B<dpkg>(1), la sortie de B<apt-cache "
+"dumpavail>, et celle de B<debtags dumpavail>."
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:86
@@ -209,17 +201,6 @@ msgstr ""
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:134
-#, fuzzy
-#| msgid ""
-#| "After the I<filter> expression comes zero or more I<file> names.  If no "
-#| "I<file> names are specified, the I<file> name is searched in "
-#| "configuration files.  The input I<file> in association with the correct "
-#| "program name is used.  The program names are matched with the base form "
-#| "of the name of the current program (the 0'th command line argument, if "
-#| "you will).  The I<file> name B<-> is taken to mean the standard input "
-#| "stream.  The I<file>s are searched in order but separately; they are "
-#| "B<not> concatenated together.  In other words, the end of a I<file> "
-#| "always implies the end of the current paragraph."
 msgid ""
 "After the I<filter> expression comes zero or more I<file> names.  The "
 "I<file> name B<-> is taken to mean the standard input stream.  The I<file>s "
@@ -228,14 +209,10 @@ msgid ""
 "the current paragraph."
 msgstr ""
 "L'expression I<filtre> est suivie de zéro ou plusieurs noms de I<fichier>. "
-"Si aucun nom de I<fichier> n'est précisé, le nom de I<fichier> est recherché "
-"dans les fichiers de configuration. Le I<fichier> d'entrée associé au nom de "
-"programme valable est utilisé. Les noms de programme correspondent à la "
-"forme du nom de programme actuel (l'argument zéro de la ligne de commande si "
-"vous préférez). Le nom de I<fichier> B<-> est utilisé pour désigner le flux "
-"d'entrée standard. Les I<fichier>s sont parcourus dans l'ordre, mais un par "
-"un : ils ne sont B<pas> concaténés. Autrement dit, la fin d'un I<fichier> "
-"indique toujours la fin d'un paragraphe."
+"Le nom de I<fichier> B<-> est utilisé pour désigner le flux d'entrée "
+"standard. Les I<fichier>s sont parcourus dans l'ordre, mais un par un : ils "
+"ne sont B<pas> concaténés. Autrement dit, la fin d'un I<fichier> indique "
+"toujours la fin d'un paragraphe."
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:141
@@ -244,6 +221,10 @@ msgid ""
 "default input file.  The program names are matched with the base form of the "
 "name of the current program (the 0'th command line argument, if you will)."
 msgstr ""
+"Si aucun nom de I<fichier> n'est précisé, le nom de programme est utilisé "
+"pour identifier le fichier d'entrée par défaut. Les noms de programme "
+"correspondent à la forme du nom de programme actuel (l'argument zéro de la "
+"ligne de commande si vous préférez). "
 
 #. type: SH
 #: man/grep-dctrl.1.cp:141 man/join-dctrl.1:60 man/sort-dctrl.1:74
@@ -841,7 +822,7 @@ msgid ""
 "redirect or pipe it somewhere (such as your favourite pager)."
 msgstr ""
 "Afficher la licence. La sortie est particulièrement longue, veuillez la "
-"rediriger quelque part, ou utiliser une conduite (vers votre afficheur de "
+"rediriger quelque part, ou utiliser un tube (vers votre afficheur de "
 "texte préféré par exemple)."
 
 #. type: TP
@@ -1034,7 +1015,7 @@ msgid ""
 msgstr ""
 "Toutes les requêtes précédentes sont basées sur de simples recherches de "
 "sous-chaînes. Mais B<grep-dctrl> peut gérer des expressions rationnelles "
-"dans les motif de recherche. Par exemple, pour voir les enregistrement "
+"dans les motifs de recherche. Par exemple, pour voir les enregistrements "
 "d'état de tous les paquets ayant soit « apt » soit « dpkg » dans leurs noms, "
 "utiliser"
 
@@ -1403,14 +1384,8 @@ msgstr "I</var/lib/dpkg/available>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:589
-#, fuzzy
-#| msgid ""
-#| "The default input file of B<grep-available> when the shipped "
-#| "configuration is in effect."
 msgid "The default input file of B<grep-available>."
-msgstr ""
-"Le fichier d'entrée par défaut de B<grep-available> quand la configuration "
-"d'origine est utilisée."
+msgstr "Le fichier d'entrée par défaut de B<grep-available>."
 
 #. type: IP
 #: man/grep-dctrl.1.cp:589
@@ -1420,14 +1395,8 @@ msgstr "I</var/lib/dpkg/status>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:592
-#, fuzzy
-#| msgid ""
-#| "The default input file of B<grep-status> when the shipped configuration "
-#| "is in effect."
 msgid "The default input file of B<grep-status>."
-msgstr ""
-"Le fichier d'entrée par défaut de B<grep-status> quand la configuration "
-"d'origine est utilisée."
+msgstr "Le fichier d'entrée par défaut de B<grep-status>."
 
 #. type: SH
 #: man/grep-dctrl.1.cp:592 man/join-dctrl.1:240 man/sort-dctrl.1:151
@@ -1548,7 +1517,7 @@ msgstr ""
 #. type: Plain text
 #: man/join-dctrl.1:60
 msgid "The B<sort-dctrl>(1)  program can be used to make it so."
-msgstr "Le programme B<sort-dctrl>(1) peut-être utilisé pour ce faire."
+msgstr "Le programme B<sort-dctrl>(1) peut être utilisé pour ce faire."
 
 #. type: IP
 #: man/join-dctrl.1:61
@@ -1813,7 +1782,7 @@ msgid ""
 "The standard locale environment, specifically its character set setting, "
 "affects the interpretation of input and output as character streams."
 msgstr ""
-"Les paramètres régionaux de d'environnement, en particulier la configuration "
+"Les paramètres régionaux de l'environnement, en particulier la configuration "
 "du jeu de caractères, a une incidence sur l'interprétation des flux de "
 "caractères en entrée et en sortie."
 
@@ -2517,7 +2486,7 @@ msgid ""
 "B<tbl-dctrl> will read its input from the files named on the command line, "
 "in the specified order."
 msgstr ""
-"B<tbl-dctrl> lira son entrée à partir des fichier nommées sur la ligne de "
+"B<tbl-dctrl> lira son entrée à partir des fichiers nommés sur la ligne de "
 "commande, dans l'ordre indiqué."
 
 #. type: Plain text
@@ -2687,7 +2656,8 @@ msgstr ""
 #~ "Vous devriez aussi toujours indiquer le fichier B<->."
 
 #~ msgid "Not all features have been with us in every version"
-#~ msgstr "Les fonctionnalités n'ont pas toujours été présentes dans chaque version"
+#~ msgstr ""
+#~ "Les fonctionnalités n'ont pas toujours été présentes dans chaque version"
 
 #~ msgid ""
 #~ "Check if any of the features you use is mentioned in the changelog.  Use "

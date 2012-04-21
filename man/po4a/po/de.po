@@ -1,14 +1,14 @@
 # Translation of the dctrl-tools documentation to German.
 # Copyright (C) 1999-2010 Antti-Juhani Kaijanaho.
 # This file is distributed under the same license as the dctrl-tools package.
-# Copyright (C) of this file 2011 Chris Leick.
+# Copyright (C) of this file 2011, 2012 Chris Leick.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.20.1\n"
+"Project-Id-Version: dctrl-tools 2.21.1\n"
 "Report-Msgid-Bugs-To: dctrl-tools@packages.debian.org\n"
 "POT-Creation-Date: 2012-03-05 20:13-0400\n"
-"PO-Revision-Date: 2011-12-07 22:22+0100\n"
+"PO-Revision-Date: 2012-03-12 18:22+0100\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -25,10 +25,9 @@ msgstr "GREP-DCTRL"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1
-#, fuzzy, no-wrap
-#| msgid "2011-11-13"
+#, no-wrap
 msgid "2011-12-18"
-msgstr "13. November 2011"
+msgstr "18. Dezember 2011"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1 man/sync-available.8:1
@@ -124,13 +123,6 @@ msgstr ""
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:67
-#, fuzzy
-#| msgid ""
-#| "The programs B<grep-available>, B<grep-status>, B<grep-aptavail> and "
-#| "B<grep-debtags> are aliases of (actually, symbolic links to)  B<grep-"
-#| "dctrl>.  In the shipped configuration, these aliases use as their default "
-#| "input the B<dpkg>(1)  I<available> and I<status> files, the B<apt-cache "
-#| "dumpavail> output and the B<debtags dumpavail> output, respectively."
 msgid ""
 "The programs B<grep-available>, B<grep-status>, B<grep-aptavail> and B<grep-"
 "debtags> are aliases of (actually, symbolic links to)  B<grep-dctrl>.  These "
@@ -140,10 +132,9 @@ msgid ""
 msgstr ""
 "Die Programme B<grep-available>, B<grep-status>, B<grep-aptavail> und B<grep-"
 "debtags> sind Aliase für (tatsächlich symbolische Verweise auf) B<grep-"
-"dctrl>. In der mitgelieferten Konfiguration benutzen diese Aliase als ihre "
-"Standardeingabe die Dateien I<available> und I<status> von B<dpkg>(1), "
-"beziehungsweise die Ausgabe von B<apt-cache dumpavail> und B<debtags "
-"dumpavail>."
+"dctrl>. Diese Aliase benutzen als ihre Standardeingabe die Dateien "
+"I<available> und I<status> von B<dpkg>(1) beziehungsweise die Ausgabe von "
+"B<apt-cache dumpavail> und B<debtags dumpavail>."
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:86
@@ -210,17 +201,6 @@ msgstr ""
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:134
-#, fuzzy
-#| msgid ""
-#| "After the I<filter> expression comes zero or more I<file> names.  If no "
-#| "I<file> names are specified, the I<file> name is searched in "
-#| "configuration files.  The input I<file> in association with the correct "
-#| "program name is used.  The program names are matched with the base form "
-#| "of the name of the current program (the 0'th command line argument, if "
-#| "you will).  The I<file> name B<-> is taken to mean the standard input "
-#| "stream.  The I<file>s are searched in order but separately; they are "
-#| "B<not> concatenated together.  In other words, the end of a I<file> "
-#| "always implies the end of the current paragraph."
 msgid ""
 "After the I<filter> expression comes zero or more I<file> names.  The "
 "I<file> name B<-> is taken to mean the standard input stream.  The I<file>s "
@@ -228,16 +208,11 @@ msgid ""
 "together.  In other words, the end of a I<file> always implies the end of "
 "the current paragraph."
 msgstr ""
-"Nach dem I<Filter>ausdruck kommen keine oder mehr I<Datei>namen. Falls keine "
-"I<Datei>namen angegeben werden, wird der I<Datei>name in "
-"Konfigurationsdateien gesucht. Es wird die EingabeI<datei> in Verbindung mit "
-"dem korrekten Programmnamen benutzt. Die Programmnamen werden mit der "
-"Basisform des Namens des aktuellen Programms verglichen (das nullte "
-"Befehlszeilenargument, wenn Sie so wollen). Der I<Datei>name B<-> wird als "
-"Synonym für den Standardeingabe-Datenstrom benutzt. Die I<Datei>en werden "
-"nacheinander, aber einzeln durchsucht; sie werden I<nicht> zusammengehängt. "
-"In anderen Worten, impliziert das Ende einer I<Datei> immer das Ende des "
-"aktuellen Absatzes."
+"Nach dem I<Filter>ausdruck kommen keine oder mehr I<Datei>namen. Der "
+"I<Datei>name B<-> wird als Synonym für den Standardeingabe-Datenstrom "
+"benutzt. Die I<Datei>en werden nacheinander, aber einzeln durchsucht; sie "
+"werden I<nicht> zusammengehängt. In anderen Worten, impliziert das Ende einer "
+"I<Datei> immer das Ende des aktuellen Absatzes."
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:141
@@ -246,6 +221,10 @@ msgid ""
 "default input file.  The program names are matched with the base form of the "
 "name of the current program (the 0'th command line argument, if you will)."
 msgstr ""
+"Falls keine I<Datei>namen angegeben wurden, wird der Programmname benutzt, um "
+"eine Standardeingabedatei zu identifizieren. Die Programmnamen werden mit der "
+"Basisform des Namens des aktuellen Programms verglichen (das nullte "
+"Befehlszeilenargument, wenn Sie so wollen)."
 
 #. type: SH
 #: man/grep-dctrl.1.cp:141 man/join-dctrl.1:60 man/sort-dctrl.1:74
@@ -1416,14 +1395,8 @@ msgstr "I</var/lib/dpkg/available>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:589
-#, fuzzy
-#| msgid ""
-#| "The default input file of B<grep-available> when the shipped "
-#| "configuration is in effect."
 msgid "The default input file of B<grep-available>."
-msgstr ""
-"die vorgegebene Eingabedatei von B<grep-available>, wenn die mitgelieferte "
-"Konfiguration in Kraft ist"
+msgstr "die vorgegebene Eingabedatei von B<grep-available>"
 
 #. type: IP
 #: man/grep-dctrl.1.cp:589
@@ -1433,14 +1406,8 @@ msgstr "I</var/lib/dpkg/status>"
 
 #. type: Plain text
 #: man/grep-dctrl.1.cp:592
-#, fuzzy
-#| msgid ""
-#| "The default input file of B<grep-status> when the shipped configuration "
-#| "is in effect."
 msgid "The default input file of B<grep-status>."
-msgstr ""
-"die vorgegebene Eingabedatei von B<grep-status>, wenn die mitgelieferte "
-"Konfiguration in Kraft ist"
+msgstr "die vorgegebene Eingabedatei von B<grep-status>"
 
 #. type: SH
 #: man/grep-dctrl.1.cp:592 man/join-dctrl.1:240 man/sort-dctrl.1:151
