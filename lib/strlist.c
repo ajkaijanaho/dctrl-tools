@@ -85,3 +85,17 @@ void strlist_iterator_next(struct strlist_iterator * it)
 {
         it->i++;
 }
+
+struct strlist_memento strlist_save(struct strlist *sl)
+{
+        struct strlist_memento rv = {
+                .sl = sl,
+                .n = sl->n
+        };
+        return rv;
+}
+void strlist_restore(struct strlist_memento mem)
+{
+        mem.sl->n = mem.n;
+}
+

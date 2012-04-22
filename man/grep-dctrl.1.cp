@@ -1,6 +1,7 @@
-.TH GREP-DCTRL 1 2011-12-18 "Debian Project" "Debian user's manual"
-\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2011
-\"               Antti-Juhani Kaijanaho <gaia@iki.fi>
+.TH GREP-DCTRL 1 2012-04-22 "Debian Project" "Debian user's manual"
+\" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2011,
+\"               2012
+\"               Antti-Juhani Kaijanaho <ajk@debian.org>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
 \"      the Free Software Foundation; either version 2 of the License, or
@@ -247,7 +248,9 @@ matches.
 Match if both the preceding and the following filter match.
 .IP "\fB(\fR ... \fB)"
 Parentheses can be used for grouping.  Note that they need to be
-escaped for most shells.
+escaped for most shells.  Filter modifiers can be given before the
+opening parentheses; they will be treated as if they had been repeated
+for each simple filter inside the parentheses.
 .SS Output format modifiers
 .IP "\fB\-s \fIfield\fR,\fIfield\fR, ... | \fB\-\-show\-field=\fIfield\fR,\fIfield\fR, ..."
 Show only the body of these

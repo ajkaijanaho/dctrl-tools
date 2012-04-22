@@ -24,11 +24,18 @@ struct strlist_iterator {
         struct strlist *sl;
         size_t i;
 };
+struct strlist_memento {
+        struct strlist *sl;
+        size_t n;
+};
 
 struct strlist *strlist_new(void);
 _Bool strlist_append(struct strlist *, const char *);
 _Bool strlist_is_empty(struct strlist *);
 void strlist_free(struct strlist *);
+
+struct strlist_memento strlist_save(struct strlist *);
+void strlist_restore(struct strlist_memento);
 
 struct strlist_iterator strlist_begin(struct strlist *);
 _Bool strlist_iterator_at_end(struct strlist_iterator);

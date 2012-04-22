@@ -501,103 +501,109 @@ static void unexpected(int tok)
 	}
 }
 
-static struct predicate * parse_conj(struct arguments * args);
+struct predicate_qualifiers {
+        struct strlist *fields;
+        enum matching_mode mm;
+        bool ignore_case;
+        bool whole_pkg;
+};
 
+static struct predicate * parse_conj(struct arguments * args,
+                                     struct predicate_qualifiers pq);
 
-/* prim -> TOK_LP conj TOK_RP
-   prim -> prim'
+/* prim -> primtok
+   prim -> primtok prim
+   prim -> TOK_LP conj TOK_RP
+   prim -> TOK_PAT prim'
+   prim -> TOK_STR prim'
 
-   prim' -> primtok
+   prim' ->
    prim' -> primtok prim'
-   prim' -> TOK_PAT prim''
-   prim' -> TOK_STR prim''
-
-   prim'' ->
-   prim'' -> primtok prim''
 
    primtok -> TOK_FIELD
    primtok -> TOK_ERGEX | TOK_REGEX
    primtok -> TOK_ICASE | TOK_EXACT | TOK_WHOLE
    primtok -> TOK_EQ | TOK_LT | TOK_LE | TOK_GE | TOK_GT
 */
-static struct predicate * parse_prim(struct arguments * args)
+static struct predicate * parse_prim(struct arguments * args,
+                                     struct predicate_qualifiers pq_)
 {
-	if (peek_token(args) == TOK_LP) {
-		get_token(args);
-		struct predicate * rv = parse_conj(args);
-		if (get_token(args) != TOK_RP) {
-			message(L_FATAL, 0, _("missing ')' in command line"));
-			fail();
-		}
-		return rv;
-	}
-
         char *pattern = 0;
-        struct strlist *fields = strlist_new();
-        if (fields == 0) enomem(0);
-        enum matching_mode mm = M_SUBSTR;
-        bool ignore_case = false;
-        bool whole_pkg = false;
-        bool nonempty = false;
+        struct predicate *rv = 0;
 
+        struct predicate_qualifiers pq = pq_;
+        struct strlist_memento mem = strlist_save(pq.fields);
+
+        bool nonempty = false;
         while (1) {
-                debug("tok = %s, mm = %d", tokdescr(peek_token(args)), mm);
+                debug("tok = %s, mm = %d", tokdescr(peek_token(args)), pq.mm);
                 switch (peek_token(args)) {
                 case TOK_FIELD:
-                        if (!strlist_append(fields, get_string(args))) {
+                        if (!strlist_append(pq.fields, get_string(args))) {
                                 enomem(0);
                         }
                         break;
                 case TOK_ERGEX:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_EREGEX;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_EREGEX;
                         get_token(args);
                         break;
                 case TOK_REGEX:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_REGEX;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_REGEX;
                         get_token(args);
                         break;
                 case TOK_ICASE:
-                        ignore_case = true;
+                        pq.ignore_case = true;
                         get_token(args);
                         break;
                 case TOK_EXACT:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_EXACT;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_EXACT;
                         get_token(args);
                         break;
                 case TOK_WHOLE:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_EREGEX;
-                        whole_pkg = true;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_EREGEX;
+                        pq.whole_pkg = true;
                         get_token(args);
                         break;
                 case TOK_EQ:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_VER_EQ;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_VER_EQ;
                         get_token(args);
                         break;
                 case TOK_LT:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_VER_LT;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_VER_LT;
                         get_token(args);
                         break;
                 case TOK_LE:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_VER_LE;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_VER_LE;
                         get_token(args);
                         break;
                 case TOK_GT:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_VER_GT;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_VER_GT;
                         get_token(args);
                         break;
                 case TOK_GE:
-                        if (mm != M_SUBSTR) goto failmode;
-                        mm = M_VER_GE;
+                        if (pq.mm != M_SUBSTR) goto failmode;
+                        pq.mm = M_VER_GE;
                         get_token(args);
                         break;
+                case TOK_LP:
+                {
+                        get_token(args);
+                        rv = parse_conj(args, pq);
+                        if (get_token(args) != TOK_RP) {
+                                message(L_FATAL, 0,
+                                        _("missing ')' in command line"));
+                                fail();
+                        }
+                        goto finally;
+                }
                 case TOK_PAT:
                         if (pattern != 0) {
                                 message(L_FATAL, 0,
@@ -613,7 +619,7 @@ static struct predicate * parse_prim(struct arguments * args)
                 default:
                         goto loop_done;
                 }
-                 nonempty = true;
+                nonempty = true;
         } loop_done:
 
         if (!nonempty) {
@@ -625,20 +631,19 @@ static struct predicate * parse_prim(struct arguments * args)
                 fail();
         }
         
-        if (strlist_is_empty(fields)) {
-                strlist_append(fields, 0);
+        if (strlist_is_empty(pq.fields)) {
+                strlist_append(pq.fields, 0);
          }
         
-        struct predicate *rv = 0;
-        for (struct strlist_iterator it = strlist_begin(fields);
+        for (struct strlist_iterator it = strlist_begin(pq.fields);
              !strlist_iterator_at_end(it); strlist_iterator_next(&it)) {
                 struct atom * atom = malloc(sizeof *atom);
                 if (atom == 0) enomem(0);
                 atom->field_name = strlist_iterator_get(it);
                 atom->field_inx = -1;
-                atom->mode = mm;
-                atom->ignore_case = ignore_case;
-                atom->whole_pkg = whole_pkg;
+                atom->mode = pq.mm;
+                atom->ignore_case = pq.ignore_case;
+                atom->whole_pkg = pq.whole_pkg;
                 atom->pat = pattern;
                 atom->patlen = strlen(pattern);
                 atom_finish(atom);
@@ -646,26 +651,28 @@ static struct predicate * parse_prim(struct arguments * args)
                 rv = rv != 0 ? predicate_OR(rv, tmp) : tmp;
         }
         
-        strlist_free(fields);
+finally:
+        strlist_restore(mem);
         return rv;
 failmode:
-        strlist_free(fields);
         message(L_FATAL, 0, _("inconsistent modifiers of simple filters")); 
         fail();
-        return 0;
+        rv = 0;
+        goto finally;
 }
 
 /* neg -> TOK_NOT prim
    neg -> prim
 */
-static struct predicate * parse_neg(struct arguments * args)
+static struct predicate * parse_neg(struct arguments * args,
+                                    struct predicate_qualifiers pq)
 {
 	bool neg = false;
 	if (peek_token(args) == TOK_NOT) {
 		neg = true;
 		get_token(args);
 	}
-	struct predicate * rv = parse_prim(args);
+	struct predicate * rv = parse_prim(args, pq);
 	if (neg) rv = predicate_NOT(rv);
         return rv;
 }
@@ -673,12 +680,13 @@ static struct predicate * parse_neg(struct arguments * args)
 /* disj -> neg
    disj -> disj TOK_OR neg
 */
-static struct predicate * parse_disj(struct arguments * args)
+static struct predicate * parse_disj(struct arguments * args,
+                                     struct predicate_qualifiers pq)
 {
-	struct predicate * rv = parse_neg(args);
+	struct predicate * rv = parse_neg(args, pq);
 	while (peek_token(args) == TOK_OR) {
 		get_token(args);
-		struct predicate * tmp = parse_neg(args);
+		struct predicate * tmp = parse_neg(args, pq);
                 rv = predicate_OR(rv, tmp);
 	}
         return rv;
@@ -687,12 +695,13 @@ static struct predicate * parse_disj(struct arguments * args)
 /* conj -> disj
    conj -> conj TOK_AND disj
 */
-static struct predicate * parse_conj(struct arguments * args)
+static struct predicate * parse_conj(struct arguments * args,
+                                     struct predicate_qualifiers pq)
 {
-	struct predicate * rv = parse_disj(args);
+	struct predicate * rv = parse_disj(args, pq);
 	while (peek_token(args) == TOK_AND) {
 		get_token(args);
-		struct predicate * tmp = parse_disj(args);
+		struct predicate * tmp = parse_disj(args, pq);
                 rv = predicate_AND(rv, tmp);
 	}
         return rv;
@@ -705,7 +714,18 @@ static struct predicate * parse_conj(struct arguments * args)
 static void parse_predicate(struct arguments * args)
 {
 	args->toks_pos = 0;
-	args->p = parse_conj(args);
+
+        struct predicate_qualifiers pq;
+        pq.fields = strlist_new();
+        if (pq.fields == 0) enomem(0);
+        pq.mm = M_SUBSTR;
+        pq.ignore_case = false;
+        pq.whole_pkg = false;
+
+	args->p = parse_conj(args, pq);
+
+        strlist_free(pq.fields);
+
         while (peek_token(args) == TOK_STR) {
                 if (args->num_fnames >= MAX_FNAMES) {
                         message(L_FATAL, 0, _("too many file names"));
