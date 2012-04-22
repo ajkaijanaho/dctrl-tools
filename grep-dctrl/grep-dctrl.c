@@ -38,6 +38,7 @@
 #include "msg.h"
 #include "paragraph.h"
 #include "predicate.h"
+#include "strlist.h"
 #include "util.h"
 
 const char * argp_program_version = "grep-dctrl (dctrl-tools) " VERSION;
@@ -532,8 +533,8 @@ static struct predicate * parse_prim(struct arguments * args)
 	}
 
         char *pattern = 0;
-        char *fields[MAX_FIELDS];
-        size_t num_fields = 0;
+        struct strlist *fields = strlist_new();
+        if (fields == 0) enomem(0);
         enum matching_mode mm = M_SUBSTR;
         bool ignore_case = false;
         bool whole_pkg = false;
@@ -543,11 +544,9 @@ static struct predicate * parse_prim(struct arguments * args)
                 debug("tok = %s, mm = %d", tokdescr(peek_token(args)), mm);
                 switch (peek_token(args)) {
                 case TOK_FIELD:
-                        if (num_fields >= MAX_FIELDS) {
-                                message(L_FATAL, 0, _("too many field names"));
-                                fail();
+                        if (!strlist_append(fields, get_string(args))) {
+                                enomem(0);
                         }
-                        fields[num_fields++] = get_string(args);
                         break;
                 case TOK_ERGEX:
                         if (mm != M_SUBSTR) goto failmode;
@@ -615,40 +614,42 @@ static struct predicate * parse_prim(struct arguments * args)
                         goto loop_done;
                 }
                  nonempty = true;
-         } loop_done:
+        } loop_done:
 
-         if (!nonempty) {
-                 unexpected(get_token(args));
+        if (!nonempty) {
+                unexpected(get_token(args));
+        }
+        
+        if (pattern == 0) {
+                message(L_FATAL, 0, _("A pattern is mandatory"));
+                fail();
+        }
+        
+        if (strlist_is_empty(fields)) {
+                strlist_append(fields, 0);
          }
-
-         if (pattern == 0) {
-                 message(L_FATAL, 0, _("A pattern is mandatory"));
-                 fail();
-         }
-
-         if (num_fields == 0) {
-                 num_fields = 1;
-                 fields[0] = 0;
-         }
-         
-         struct predicate *rv = 0;
-         for (size_t i = 0; i < num_fields; i++) {
-                 struct atom * atom = malloc(sizeof *atom);
-                 if (atom == 0) enomem(0);
-                 atom->field_name = fields[i];
-                 atom->field_inx = -1;
-                 atom->mode = mm;
-                 atom->ignore_case = ignore_case;
-                 atom->whole_pkg = whole_pkg;
-                 atom->pat = pattern;
-                 atom->patlen = strlen(pattern);
-                 atom_finish(atom);
-                 struct predicate *tmp = predicate_ATOM(atom);
-                 rv = rv != 0 ? predicate_OR(rv, tmp) : tmp;
-         }
-
+        
+        struct predicate *rv = 0;
+        for (struct strlist_iterator it = strlist_begin(fields);
+             !strlist_iterator_at_end(it); strlist_iterator_next(&it)) {
+                struct atom * atom = malloc(sizeof *atom);
+                if (atom == 0) enomem(0);
+                atom->field_name = strlist_iterator_get(it);
+                atom->field_inx = -1;
+                atom->mode = mm;
+                atom->ignore_case = ignore_case;
+                atom->whole_pkg = whole_pkg;
+                atom->pat = pattern;
+                atom->patlen = strlen(pattern);
+                atom_finish(atom);
+                struct predicate *tmp = predicate_ATOM(atom);
+                rv = rv != 0 ? predicate_OR(rv, tmp) : tmp;
+        }
+        
+        strlist_free(fields);
         return rv;
 failmode:
+        strlist_free(fields);
         message(L_FATAL, 0, _("inconsistent modifiers of simple filters")); 
         fail();
         return 0;
