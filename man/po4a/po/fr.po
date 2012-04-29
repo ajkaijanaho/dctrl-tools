@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools\n"
-"POT-Creation-Date: 2012-04-29 14:40-0400\n"
-"PO-Revision-Date: 2012-03-05 21:55-0400\n"
+"POT-Creation-Date: 2012-04-29 14:50-0400\n"
+"PO-Revision-Date: 2012-04-29 14:50-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -25,10 +25,9 @@ msgstr "GREP-DCTRL"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1
-#, fuzzy, no-wrap
-#| msgid "2006-04-02"
+#, no-wrap
 msgid "2012-04-22"
-msgstr "2006-04-02"
+msgstr "22 avril 2012"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1 man/sync-available.8:1
@@ -167,8 +166,8 @@ msgid ""
 "pattern can be seen as an extended POSIX regular expression."
 msgstr ""
 "Il faut donner une expression de I<filtre> sur la ligne de commande. Le "
-"I<filtre> définit le type de paragraphe (c'est-à-dire les enregistrements de "
-"paquet) qui seront affichés. Un I<filtre> élémentaire est un motif de "
+"I<filtre> définit le type de paragraphes (c'est-à-dire les enregistrements "
+"de paquet) qui seront affichés. Un I<filtre> élémentaire est un motif de "
 "recherche accompagné d'options pour le modifier. Les modificateurs possibles "
 "sont B<--eregex>, B<--field>, B<--ignore-case>, B<--regex> et B<--exact-"
 "match>, ainsi que les options courtes équivalentes. Par défaut, une portion "
@@ -557,6 +556,11 @@ msgid ""
 "they will be treated as if they had been repeated for each simple filter "
 "inside the parentheses."
 msgstr ""
+"Les parenthèses peuvent être utilisées pour grouper. Remarquez qu'il faut "
+"les protéger dans la plupart des interpréteurs de commandes. Des "
+"modificateurs de filtres peuvent être donnés avant les parenthèses "
+"ouvrantes ; ils seront traités comme s'ils avaient été répétés pour chaque "
+"filtre élémentaire entre parenthèses."
 
 #. type: SS
 #: man/grep-dctrl.1.cp:254
@@ -1714,9 +1718,9 @@ msgid ""
 "A Debian control (dctrl) file is a semistructured single-table database "
 "stored in a machine-parseable text file."
 msgstr ""
-"Un fichier de contrôle Debian (dctrl) est une base de donnée semi-structurée "
-"avec une seule table conservée dans un fichier texte analysable par une "
-"machine."
+"Un fichier de contrôle Debian (dctrl) est une base de données semi-"
+"structurée avec une seule table conservée dans un fichier texte analysable "
+"par une machine."
 
 #. type: Plain text
 #: man/join-dctrl.1:177 man/sort-dctrl.1:39 man/tbl-dctrl.1:158
@@ -1946,7 +1950,7 @@ msgstr "SORT-DCTRL"
 #: man/sort-dctrl.1:1
 #, no-wrap
 msgid "2005-06-08"
-msgstr "2005-06-08"
+msgstr "8 juin 2005"
 
 #. type: Plain text
 #: man/sort-dctrl.1:19
@@ -2172,7 +2176,7 @@ msgstr "SYNC-AVAILABLE"
 #: man/sync-available.8:1
 #, no-wrap
 msgid "2005-07-11"
-msgstr "2005-07-11"
+msgstr "11 juillet 2005"
 
 #. type: TH
 #: man/sync-available.8:1 man/tbl-dctrl.1:1
@@ -2292,7 +2296,7 @@ msgstr "tbl-dctrl"
 #: man/tbl-dctrl.1:1
 #, no-wrap
 msgid "2006-04-02"
-msgstr "2006-04-02"
+msgstr "2 avril 2006"
 
 #. type: Plain text
 #: man/tbl-dctrl.1:19
@@ -2528,7 +2532,7 @@ msgid ""
 msgstr ""
 "La sortie est un tableau qui représente la base de données en entrée limitée "
 "aux champs indiqués. Lorsque l'option B<-d> est utilisée, le tableau est "
-"simplement représentée en séparant les colonnes de chaque ligne par le "
+"simplement représenté en séparant les colonnes de chaque ligne par le "
 "I<délimiteur> indiqué, sinon, un cadre est dessiné autour du tableau. "
 "L'ordre des colonnes est le même que l'ordre des spécifications de colonne "
 "sur la ligne de commande."

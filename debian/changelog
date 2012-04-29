@@ -12,6 +12,7 @@ dctrl-tools (2.22) UNRELEASED; urgency=low
 
   [ Documentation translations ]
   * German, by Chris Leick (closes: #671597).
+  * French, by David Prévot.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 22 Apr 2012 22:09:30 +0300
 
