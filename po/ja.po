@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.9.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2012-03-05 20:13-0400\n"
+"POT-Creation-Date: 2012-04-29 14:40-0400\n"
 "PO-Revision-Date: 2012-03-13 02:44+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -80,44 +80,44 @@ msgstr "コロンを期待しました"
 msgid "Parse error in field."
 msgstr "フィールドのパース中にエラーが発生しました。"
 
-#: grep-dctrl/grep-dctrl.c:49
+#: grep-dctrl/grep-dctrl.c:50
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- Debian control ファイルを grep します"
 
-#: grep-dctrl/grep-dctrl.c:51
+#: grep-dctrl/grep-dctrl.c:52
 msgid "FILTER [FILENAME...]"
 msgstr "<フィルタ> [<ファイル名>...]"
 
-#: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:70 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "<レベル>"
 
-#: grep-dctrl/grep-dctrl.c:69
+#: grep-dctrl/grep-dctrl.c:70
 msgid "Set log level to LEVEL."
 msgstr "ログレベルを <レベル> に設定します。"
 
-#: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
+#: grep-dctrl/grep-dctrl.c:71 grep-dctrl/grep-dctrl.c:74
 msgid "FIELD,FIELD,..."
 msgstr "<フィールド>,<フィールド>,..."
 
-#: grep-dctrl/grep-dctrl.c:70
+#: grep-dctrl/grep-dctrl.c:71
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "パターンマッチの対象を指定のフィールドに制限します。"
 
-#: grep-dctrl/grep-dctrl.c:71
+#: grep-dctrl/grep-dctrl.c:72
 msgid "This is a shorthand for -FPackage."
 msgstr "これは -FPackage の省略表現です。"
 
-#: grep-dctrl/grep-dctrl.c:72
+#: grep-dctrl/grep-dctrl.c:73
 msgid "This is a shorthand for -FSource:Package."
 msgstr "これは -FSource:Package の省略表現です。"
 
-#: grep-dctrl/grep-dctrl.c:73
+#: grep-dctrl/grep-dctrl.c:74
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "マッチするパラグラフの、これらのフィールドの中身のみを表示します。"
 
-#: grep-dctrl/grep-dctrl.c:74
+#: grep-dctrl/grep-dctrl.c:75
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -125,200 +125,196 @@ msgstr ""
 "マッチするパラグラフの、\"Description\" (パッケージ説明) フィールドの 1 行目"
 "のみを表示します。"
 
-#: grep-dctrl/grep-dctrl.c:75
+#: grep-dctrl/grep-dctrl.c:76
 msgid "Suppress field names when showing specified fields."
 msgstr "指定のフィールドを表示する際にフィールド名を表示しません。"
 
-#: grep-dctrl/grep-dctrl.c:76
+#: grep-dctrl/grep-dctrl.c:77
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "パターンを POSIX 拡張正規表現と見なします。"
 
-#: grep-dctrl/grep-dctrl.c:77
+#: grep-dctrl/grep-dctrl.c:78
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "パターンを POSIX 標準正規表現と見なします。"
 
-#: grep-dctrl/grep-dctrl.c:78
+#: grep-dctrl/grep-dctrl.c:79
 msgid "Ignore case when looking for a match."
 msgstr "マッチするものを探す際に大文字・小文字を区別しません。"
 
-#: grep-dctrl/grep-dctrl.c:79
+#: grep-dctrl/grep-dctrl.c:80
 msgid "Show only paragraphs that do not match."
 msgstr "マッチしないパラグラフのみ表示します。"
 
-#: grep-dctrl/grep-dctrl.c:80
+#: grep-dctrl/grep-dctrl.c:81
 msgid "Show those fields that have NOT been selected with -s"
 msgstr "-s で選択されて「いない」フィールドを表示します。"
 
-#: grep-dctrl/grep-dctrl.c:81
+#: grep-dctrl/grep-dctrl.c:82
 msgid "Show only the count of matching paragraphs."
 msgstr "マッチするパラグラフの数のみ表示します。"
 
-#: grep-dctrl/grep-dctrl.c:82
+#: grep-dctrl/grep-dctrl.c:83
 msgid "Do an exact match."
 msgstr "正確なマッチを行います。"
 
-#: grep-dctrl/grep-dctrl.c:83 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:84 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "著作権使用許諾を表示します。"
 
-#: grep-dctrl/grep-dctrl.c:84
+#: grep-dctrl/grep-dctrl.c:85
 msgid "Conjunct filters."
 msgstr "フィルタを結合します。"
 
-#: grep-dctrl/grep-dctrl.c:85
+#: grep-dctrl/grep-dctrl.c:86
 msgid "Disjunct filters."
 msgstr "フィルタを分離します。"
 
-#: grep-dctrl/grep-dctrl.c:86
+#: grep-dctrl/grep-dctrl.c:87
 msgid "Negate the following filters."
 msgstr "以降のフィルタを否定します。"
 
-#: grep-dctrl/grep-dctrl.c:87
+#: grep-dctrl/grep-dctrl.c:88
 msgid "Test for version number equality."
 msgstr "バージョン番号が等しいかをテストします。"
 
-#: grep-dctrl/grep-dctrl.c:88
+#: grep-dctrl/grep-dctrl.c:89
 msgid "Version number comparison: <<."
 msgstr "バージョン番号の比較: <<。"
 
-#: grep-dctrl/grep-dctrl.c:89
+#: grep-dctrl/grep-dctrl.c:90
 msgid "Version number comparison: <=."
 msgstr "バージョン番号の比較: <=。"
 
-#: grep-dctrl/grep-dctrl.c:90
+#: grep-dctrl/grep-dctrl.c:91
 msgid "Version number comparison: >>."
 msgstr "バージョン番号の比較: >>。"
 
-#: grep-dctrl/grep-dctrl.c:91
+#: grep-dctrl/grep-dctrl.c:92
 msgid "Version number comparison: >=."
 msgstr "バージョン番号の比較: >=。"
 
-#: grep-dctrl/grep-dctrl.c:92
+#: grep-dctrl/grep-dctrl.c:93
 msgid "Debug option parsing."
 msgstr "デバッグオプションをパースします。"
 
-#: grep-dctrl/grep-dctrl.c:93 grep-dctrl/grep-dctrl.c:94
+#: grep-dctrl/grep-dctrl.c:94 grep-dctrl/grep-dctrl.c:95
 msgid "Do not output to stdout."
 msgstr "標準出力に出力しません。"
 
-#: grep-dctrl/grep-dctrl.c:95 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:96 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "mmap 用入力ファイルを試します"
 
-#: grep-dctrl/grep-dctrl.c:96
+#: grep-dctrl/grep-dctrl.c:97
 msgid "Ignore parse errors"
 msgstr "パースエラーを無視します"
 
-#: grep-dctrl/grep-dctrl.c:97
+#: grep-dctrl/grep-dctrl.c:98
 msgid "PATTERN"
 msgstr "<パターン>"
 
-#: grep-dctrl/grep-dctrl.c:97
+#: grep-dctrl/grep-dctrl.c:98
 msgid "Specify the pattern to search for"
 msgstr "検索に用いるパターンを指定します"
 
 # needs to be checked
-#: grep-dctrl/grep-dctrl.c:98
+#: grep-dctrl/grep-dctrl.c:99
 msgid "Match only whole package names (this implies -e)"
 msgstr "パッケージ名全体のみにマッチします (これは裏で -e を使います)"
 
 # needs to be checked
-#: grep-dctrl/grep-dctrl.c:99
+#: grep-dctrl/grep-dctrl.c:100
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
 msgstr "dctrl 形式で出力します (-n で上書きされます)"
 
 # needs to be checked
-#: grep-dctrl/grep-dctrl.c:100
+#: grep-dctrl/grep-dctrl.c:101
 msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr "前に指定された --ensure-dctrl の効果を上書きします"
 
-#: grep-dctrl/grep-dctrl.c:186
+#: grep-dctrl/grep-dctrl.c:187
 msgid "filter is too long"
 msgstr "フィルタが長すぎます"
 
-#: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
+#: grep-dctrl/grep-dctrl.c:248 grep-dctrl/grep-dctrl.c:826
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "出力フィールドが多すぎます"
 
-#: grep-dctrl/grep-dctrl.c:271 sort-dctrl/sort-dctrl.c:104
+#: grep-dctrl/grep-dctrl.c:272 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
 msgstr "'%s' というログレベルはありません"
 
-#: grep-dctrl/grep-dctrl.c:478
+#: grep-dctrl/grep-dctrl.c:479
 #, c-format
 msgid "internal error: unknown token %d"
 msgstr "内部エラーです: 未知のトークン %d"
 
-#: grep-dctrl/grep-dctrl.c:487
+#: grep-dctrl/grep-dctrl.c:488
 msgid "unexpected end of filter"
 msgstr "フィルタが突然途切れました"
 
-#: grep-dctrl/grep-dctrl.c:490
+#: grep-dctrl/grep-dctrl.c:491
 msgid "unexpected pattern in command line"
 msgstr "コマンドラインに想定外のパターンが含まれています"
 
-#: grep-dctrl/grep-dctrl.c:493
+#: grep-dctrl/grep-dctrl.c:494
 msgid "unexpected string in command line"
 msgstr "コマンドラインに想定外の文字列が含まれています"
 
-#: grep-dctrl/grep-dctrl.c:497
+#: grep-dctrl/grep-dctrl.c:498
 #, c-format
 msgid "unexpected '%s' in command line"
 msgstr "コマンドラインに想定外の '%s' が含まれています"
 
-#: grep-dctrl/grep-dctrl.c:511
+#: grep-dctrl/grep-dctrl.c:602
 msgid "missing ')' in command line"
 msgstr "コマンドラインに ')' が含まれていません"
 
-#: grep-dctrl/grep-dctrl.c:530
-msgid "too many field names"
-msgstr "フィールド名が多すぎます"
-
-#: grep-dctrl/grep-dctrl.c:588
+#: grep-dctrl/grep-dctrl.c:610
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "同一のフィルタに複数のパターンを使用することはできません"
 
-#: grep-dctrl/grep-dctrl.c:608
+#: grep-dctrl/grep-dctrl.c:630
 msgid "A pattern is mandatory"
 msgstr "パターンが必須です"
 
-#: grep-dctrl/grep-dctrl.c:635
+#: grep-dctrl/grep-dctrl.c:658
 msgid "inconsistent modifiers of simple filters"
 msgstr "同一のフィルタに与える修飾子が矛盾しています"
 
-#: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:731 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "ファイル名が多すぎます"
 
-#: grep-dctrl/grep-dctrl.c:689
+#: grep-dctrl/grep-dctrl.c:740
 msgid "file names are not allowed within the filter"
 msgstr "ファイル名はフィルタ内に含めることができません"
 
-#: grep-dctrl/grep-dctrl.c:769
+#: grep-dctrl/grep-dctrl.c:820
 msgid "malformed filter"
 msgstr "フィルタが不正です"
 
-#: grep-dctrl/grep-dctrl.c:779
+#: grep-dctrl/grep-dctrl.c:830
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "-d がついているので選択された出力フィールドに \"Description\" (パッケージ説"
 "明) を追加します。"
 
-#: grep-dctrl/grep-dctrl.c:787
+#: grep-dctrl/grep-dctrl.c:838
 msgid "-I requires at least one instance of -s"
 msgstr "-I には 1 つ以上の -s が必要です"
 
-#: grep-dctrl/grep-dctrl.c:793
+#: grep-dctrl/grep-dctrl.c:844
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "パラグラフ全体を表示する際にフィールド名を表示しないようにできません"
 
-#: grep-dctrl/grep-dctrl.c:825
+#: grep-dctrl/grep-dctrl.c:876
 #, c-format
 msgid "executable name '%s' is not recognised"
 msgstr "実行ファイル名 '%s' を認識できません"
@@ -430,7 +426,9 @@ msgstr "出力フィールド指定子に '.' がありません"
 
 #: join-dctrl/join-dctrl.c:146
 msgid "expected either '1.' or '2.' at the start of the field specification"
-msgstr "フィールド指定子の頭には '1.' と '2.' のどちらか一方がついていなければいけません"
+msgstr ""
+"フィールド指定子の頭には '1.' と '2.' のどちらか一方がついていなければいけま"
+"せん"
 
 #: join-dctrl/join-dctrl.c:251
 msgid "join-dctrl -- join two Debian control files"
@@ -451,6 +449,9 @@ msgstr "壊れています - このバグを報告してください。"
 #: lib/msg.h:145
 msgid "cannot find enough memory"
 msgstr "十分なメモリがありません"
+
+#~ msgid "too many field names"
+#~ msgstr "フィールド名が多すぎます"
 
 #~ msgid "Show the testing banner."
 #~ msgstr "テスト用のバナーを表示します。"

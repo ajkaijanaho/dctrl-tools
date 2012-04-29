@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dctrl-tools 2.14.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
-"POT-Creation-Date: 2012-03-05 20:13-0400\n"
+"POT-Creation-Date: 2012-04-29 14:40-0400\n"
 "PO-Revision-Date: 2010-09-29 21:43+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -79,46 +79,46 @@ msgstr "mong đợi một dấu hai chấm"
 msgid "Parse error in field."
 msgstr "Gặp lỗi phân tích cú pháp trong trường."
 
-#: grep-dctrl/grep-dctrl.c:49
+#: grep-dctrl/grep-dctrl.c:50
 msgid "grep-dctrl -- grep Debian control files"
 msgstr "grep-dctrl -- grep tập tin điều khiển Debian"
 
-#: grep-dctrl/grep-dctrl.c:51
+#: grep-dctrl/grep-dctrl.c:52
 msgid "FILTER [FILENAME...]"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:69 sort-dctrl/sort-dctrl.c:39
+#: grep-dctrl/grep-dctrl.c:70 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
 msgid "LEVEL"
 msgstr "CẤP"
 
-#: grep-dctrl/grep-dctrl.c:69
+#: grep-dctrl/grep-dctrl.c:70
 #, fuzzy
 #| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
 msgstr "Lập cấp gỡ rối thành CẤP."
 
-#: grep-dctrl/grep-dctrl.c:70 grep-dctrl/grep-dctrl.c:73
+#: grep-dctrl/grep-dctrl.c:71 grep-dctrl/grep-dctrl.c:74
 msgid "FIELD,FIELD,..."
 msgstr "TRƯỜNG,TRƯỜNG,..."
 
-#: grep-dctrl/grep-dctrl.c:70
+#: grep-dctrl/grep-dctrl.c:71
 msgid "Restrict pattern matching to the FIELDs given."
 msgstr "Hạn chế việc khớp mẫu thành những TRƯỜNG đưa ra."
 
-#: grep-dctrl/grep-dctrl.c:71
+#: grep-dctrl/grep-dctrl.c:72
 msgid "This is a shorthand for -FPackage."
 msgstr "Đây là tốc ký cho « -FPackage »."
 
-#: grep-dctrl/grep-dctrl.c:72
+#: grep-dctrl/grep-dctrl.c:73
 msgid "This is a shorthand for -FSource:Package."
 msgstr "Đây là tốc ký cho « -FSource:Package »."
 
-#: grep-dctrl/grep-dctrl.c:73
+#: grep-dctrl/grep-dctrl.c:74
 msgid "Show only the body of these fields from the matching paragraphs."
 msgstr "Hiển thị chỉ thân của những trường này từ các đoạn văn tương ứng."
 
-#: grep-dctrl/grep-dctrl.c:74
+#: grep-dctrl/grep-dctrl.c:75
 msgid ""
 "Show only the first line of the \"Description\" field from the matching "
 "paragraphs."
@@ -126,229 +126,223 @@ msgstr ""
 "Hiển thị chỉ dòng đầu tiên của trường « Mô tả » (Description) từ các đoạn "
 "văn tương ứng."
 
-#: grep-dctrl/grep-dctrl.c:75
+#: grep-dctrl/grep-dctrl.c:76
 msgid "Suppress field names when showing specified fields."
 msgstr "Thu hồi tên trường khi hiển thị trường đã xác định."
 
-#: grep-dctrl/grep-dctrl.c:76
+#: grep-dctrl/grep-dctrl.c:77
 msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Thấy mẫu như là một biểu thức chính quy kiểu POSIX đã mở rộng."
 
-#: grep-dctrl/grep-dctrl.c:77
+#: grep-dctrl/grep-dctrl.c:78
 #, fuzzy
 #| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
 msgstr "Thấy mẫu như là một biểu thức chính quy kiểu POSIX đã mở rộng."
 
-#: grep-dctrl/grep-dctrl.c:78
+#: grep-dctrl/grep-dctrl.c:79
 msgid "Ignore case when looking for a match."
 msgstr "Không phân biệt chữ hoa/thường khi tìm điều khớp được."
 
-#: grep-dctrl/grep-dctrl.c:79
+#: grep-dctrl/grep-dctrl.c:80
 msgid "Show only paragraphs that do not match."
 msgstr "Hiển thị chỉ những đoạn văn không khớp."
 
-#: grep-dctrl/grep-dctrl.c:80
+#: grep-dctrl/grep-dctrl.c:81
 msgid "Show those fields that have NOT been selected with -s"
 msgstr "Hiển thị những trường KHÔNG PHẢI được lựa chọn dùng « -s »"
 
-#: grep-dctrl/grep-dctrl.c:81
+#: grep-dctrl/grep-dctrl.c:82
 msgid "Show only the count of matching paragraphs."
 msgstr "Hiển thị chỉ số các đoạn văn tương ứng."
 
-#: grep-dctrl/grep-dctrl.c:82
+#: grep-dctrl/grep-dctrl.c:83
 msgid "Do an exact match."
 msgstr "Khớp chính xác."
 
-#: grep-dctrl/grep-dctrl.c:83 sort-dctrl/sort-dctrl.c:38
+#: grep-dctrl/grep-dctrl.c:84 sort-dctrl/sort-dctrl.c:38
 #: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
 msgid "Print out the copyright license."
 msgstr "In ra giấy phép tác quyền."
 
-#: grep-dctrl/grep-dctrl.c:84
+#: grep-dctrl/grep-dctrl.c:85
 #, fuzzy
 #| msgid "Conjunct predicates."
 msgid "Conjunct filters."
 msgstr "Liên kết với nhau các vị ngữ."
 
-#: grep-dctrl/grep-dctrl.c:85
+#: grep-dctrl/grep-dctrl.c:86
 #, fuzzy
 #| msgid "Disjunct predicates."
 msgid "Disjunct filters."
 msgstr "Làm rời ra các vị ngữ."
 
-#: grep-dctrl/grep-dctrl.c:86
+#: grep-dctrl/grep-dctrl.c:87
 #, fuzzy
 #| msgid "Negate the following predicate."
 msgid "Negate the following filters."
 msgstr "Phủ định vị ngữ sau."
 
-#: grep-dctrl/grep-dctrl.c:87
+#: grep-dctrl/grep-dctrl.c:88
 msgid "Test for version number equality."
 msgstr "Kiểm tra có số thứ tự phiên bản trùng."
 
-#: grep-dctrl/grep-dctrl.c:88
+#: grep-dctrl/grep-dctrl.c:89
 #, fuzzy
 #| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
 msgstr "So sánh số thứ tự phiên bản: <."
 
-#: grep-dctrl/grep-dctrl.c:89
+#: grep-dctrl/grep-dctrl.c:90
 msgid "Version number comparison: <=."
 msgstr "So sánh số thứ tự phiên bản: ≤."
 
-#: grep-dctrl/grep-dctrl.c:90
+#: grep-dctrl/grep-dctrl.c:91
 #, fuzzy
 #| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
 msgstr "So sánh số thứ tự phiên bản: >."
 
-#: grep-dctrl/grep-dctrl.c:91
+#: grep-dctrl/grep-dctrl.c:92
 msgid "Version number comparison: >=."
 msgstr "So sánh số thứ tự phiên bản: ≥."
 
-#: grep-dctrl/grep-dctrl.c:92
+#: grep-dctrl/grep-dctrl.c:93
 msgid "Debug option parsing."
 msgstr "Gỡ rối việc phân tích cú pháp của tùy chọn."
 
-#: grep-dctrl/grep-dctrl.c:93 grep-dctrl/grep-dctrl.c:94
+#: grep-dctrl/grep-dctrl.c:94 grep-dctrl/grep-dctrl.c:95
 msgid "Do not output to stdout."
 msgstr "Không xuất ra đầu ra tiêu chuẩn."
 
-#: grep-dctrl/grep-dctrl.c:95 sort-dctrl/sort-dctrl.c:41
+#: grep-dctrl/grep-dctrl.c:96 sort-dctrl/sort-dctrl.c:41
 #: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
 msgid "Attempt mmapping input files"
 msgstr "Cố gắng mmap các tập tin nhập vào"
 
-#: grep-dctrl/grep-dctrl.c:96
+#: grep-dctrl/grep-dctrl.c:97
 msgid "Ignore parse errors"
 msgstr "Bỏ qua lỗi phân tích cú pháp"
 
-#: grep-dctrl/grep-dctrl.c:97
+#: grep-dctrl/grep-dctrl.c:98
 msgid "PATTERN"
 msgstr "MẪU"
 
-#: grep-dctrl/grep-dctrl.c:97
+#: grep-dctrl/grep-dctrl.c:98
 msgid "Specify the pattern to search for"
 msgstr "Xác định mẫu cần tìm"
 
-#: grep-dctrl/grep-dctrl.c:98
+#: grep-dctrl/grep-dctrl.c:99
 msgid "Match only whole package names (this implies -e)"
 msgstr "Khớp chỉ nguyên tên gói (cũng ngụ ý « -e »)"
 
-#: grep-dctrl/grep-dctrl.c:99
+#: grep-dctrl/grep-dctrl.c:100
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:100
+#: grep-dctrl/grep-dctrl.c:101
 msgid "Override the effect of an earlier --ensure-dctrl"
 msgstr ""
 
-#: grep-dctrl/grep-dctrl.c:186
+#: grep-dctrl/grep-dctrl.c:187
 #, fuzzy
 #| msgid "predicate is too long"
 msgid "filter is too long"
 msgstr "vị ngữ quá dài"
 
-#: grep-dctrl/grep-dctrl.c:247 grep-dctrl/grep-dctrl.c:775
+#: grep-dctrl/grep-dctrl.c:248 grep-dctrl/grep-dctrl.c:826
 #: join-dctrl/join-dctrl.c:113
 msgid "too many output fields"
 msgstr "quá nhiều trường kết xuất"
 
-#: grep-dctrl/grep-dctrl.c:271 sort-dctrl/sort-dctrl.c:104
+#: grep-dctrl/grep-dctrl.c:272 sort-dctrl/sort-dctrl.c:104
 #: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
 #, c-format
 msgid "no such log level '%s'"
 msgstr "không có cấp ghi lưu như vậy « %s »"
 
-#: grep-dctrl/grep-dctrl.c:478
+#: grep-dctrl/grep-dctrl.c:479
 #, fuzzy, c-format
 #| msgid "internal error"
 msgid "internal error: unknown token %d"
 msgstr "lỗi nội bộ"
 
-#: grep-dctrl/grep-dctrl.c:487
+#: grep-dctrl/grep-dctrl.c:488
 #, fuzzy
 #| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
 msgstr "gặp kết thúc vị ngữ bất thường"
 
-#: grep-dctrl/grep-dctrl.c:490
+#: grep-dctrl/grep-dctrl.c:491
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
 msgstr "gặp atom bất thường trên dòng lệnh"
 
-#: grep-dctrl/grep-dctrl.c:493
+#: grep-dctrl/grep-dctrl.c:494
 #, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
 msgstr "gặp atom bất thường trên dòng lệnh"
 
-#: grep-dctrl/grep-dctrl.c:497
+#: grep-dctrl/grep-dctrl.c:498
 #, fuzzy, c-format
 #| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
 msgstr "gặp dấu chấm than « ! » bất thường trên dòng lệnh"
 
-#: grep-dctrl/grep-dctrl.c:511
+#: grep-dctrl/grep-dctrl.c:602
 msgid "missing ')' in command line"
 msgstr "thiếu dấu ngoặc đóng « ) » trên dòng lệnh"
 
-#: grep-dctrl/grep-dctrl.c:530
-#, fuzzy
-#| msgid "too many file names"
-msgid "too many field names"
-msgstr "quá nhiều tên tập tin"
-
-#: grep-dctrl/grep-dctrl.c:588
+#: grep-dctrl/grep-dctrl.c:610
 #, fuzzy
 #| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
 msgstr "Không cho phép nhiều mẫu cho cùng một atom"
 
-#: grep-dctrl/grep-dctrl.c:608
+#: grep-dctrl/grep-dctrl.c:630
 msgid "A pattern is mandatory"
 msgstr "Bắt buộc phải có một mẫu"
 
-#: grep-dctrl/grep-dctrl.c:635
+#: grep-dctrl/grep-dctrl.c:658
 #, fuzzy
 #| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
 msgstr "các bộ bổ nghĩa atom không thống nhất"
 
-#: grep-dctrl/grep-dctrl.c:680 sort-dctrl/sort-dctrl.c:120
+#: grep-dctrl/grep-dctrl.c:731 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
 msgid "too many file names"
 msgstr "quá nhiều tên tập tin"
 
-#: grep-dctrl/grep-dctrl.c:689
+#: grep-dctrl/grep-dctrl.c:740
 #, fuzzy
 #| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
 msgstr "không cho phép tên tập tin bên trong vị ngữ"
 
-#: grep-dctrl/grep-dctrl.c:769
+#: grep-dctrl/grep-dctrl.c:820
 #, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
 msgstr "vị ngữ dạng sai"
 
-#: grep-dctrl/grep-dctrl.c:779
+#: grep-dctrl/grep-dctrl.c:830
 msgid "Adding \"Description\" to selected output fields because of -d"
 msgstr ""
 "Đang thêm « Mô tả » (Description) vào những trường kết xuất đã chọn do tùy "
 "chọn « -d »"
 
-#: grep-dctrl/grep-dctrl.c:787
+#: grep-dctrl/grep-dctrl.c:838
 msgid "-I requires at least one instance of -s"
 msgstr "« -l » cũng yêu cầu ít nhất một thể hiện của « -s »"
 
-#: grep-dctrl/grep-dctrl.c:793
+#: grep-dctrl/grep-dctrl.c:844
 msgid "cannot suppress field names when showing whole paragraphs"
 msgstr "không thể thu hồi các tên trường khi hiển thị nguyên đoạn văn"
 
-#: grep-dctrl/grep-dctrl.c:825
+#: grep-dctrl/grep-dctrl.c:876
 #, c-format
 msgid "executable name '%s' is not recognised"
 msgstr ""
@@ -478,6 +472,11 @@ msgstr ""
 #: lib/msg.h:145
 msgid "cannot find enough memory"
 msgstr ""
+
+#, fuzzy
+#~| msgid "too many file names"
+#~ msgid "too many field names"
+#~ msgstr "quá nhiều tên tập tin"
 
 #~ msgid "Show the testing banner."
 #~ msgstr "Hiển thị biểu ngữ thử ra."
