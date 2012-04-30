@@ -1,10 +1,14 @@
 dctrl-tools (2.22) UNRELEASED; urgency=low
 
+  [ Antti-Juhani Kaijanaho ]
   * debian/copyright: Upgraded to copyright-format/1.0, and updated.
   * grep-dctrl: Allow distributing atom modifiers over a parenthesed predicate.
     Closes: #319760 (allow -F modifiers to apply to an entire expression)
     Reported by Enrico Zini <enrico@debian.org>
   
+  [ Program translations ]
+  * Indonesian (new), by Andika Triwidada.
+
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 22 Apr 2012 22:09:30 +0300
 
 dctrl-tools (2.21.1) unstable; urgency=low

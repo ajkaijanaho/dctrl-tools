@@ -1,0 +1,444 @@
+# Indonesian translation of dctrl-tools
+# Copyright (C) 2012 Antti-Juhani Kaijanaho
+# This file is distributed under the same license as the dctrl-tools package.
+# Andika Triwidada <andika@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools 2.22\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2012-04-29 14:40-0400\n"
+"PO-Revision-Date: 2012-04-30 19:05+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: Indonesia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Indonesian\n"
+"X-Poedit-Country: Indonesia\n"
+
+#: lib/ifile.c:58
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (anak): gagal meng-exec /bin/sh: %s\n"
+
+#: lib/ifile.c:104
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: perintah (%s) gagal (status keluar %d)\n"
+
+#: lib/ifile.c:113
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: perintah (%s) dimatikan oleh sinyal %d\n"
+
+#: lib/ifile.c:131
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: tak bisa stat: %s\n"
+
+#: lib/ifile.c:142
+msgid "is a directory, skipping"
+msgstr "adalah direktori, dilewati"
+
+#: lib/ifile.c:143
+msgid "is a block device, skipping"
+msgstr "adalah perangkat blok, dilewati"
+
+#: lib/ifile.c:144
+msgid "internal error"
+msgstr "galat internal"
+
+#: lib/ifile.c:145
+msgid "is a socket, skipping"
+msgstr "adalah soket, dilewati"
+
+#: lib/ifile.c:146
+msgid "unknown file type, skipping"
+msgstr "jenis berkas tak dikenal, dilewati"
+
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: memakai '%s' sebagai pager\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: popen gagal bagi %s: %s\n"
+
+#: lib/paragraph.c:172
+msgid "warning: expected a colon"
+msgstr "peringatan: mengharapkan titik dua"
+
+#: lib/paragraph.c:177
+msgid "expected a colon"
+msgstr "mengharapkan titik dua"
+
+#: lib/sorter.c:49
+msgid "Parse error in field."
+msgstr "Galat penguraian di ruas."
+
+#: grep-dctrl/grep-dctrl.c:50
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- grep berkas kendali Debian"
+
+#: grep-dctrl/grep-dctrl.c:52
+msgid "FILTER [FILENAME...]"
+msgstr "PENYARING [NAMABERKAS...]"
+
+#: grep-dctrl/grep-dctrl.c:70 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+msgid "LEVEL"
+msgstr "ARAS"
+
+#: grep-dctrl/grep-dctrl.c:70
+msgid "Set log level to LEVEL."
+msgstr "Menata aras log ke ARAS."
+
+#: grep-dctrl/grep-dctrl.c:71 grep-dctrl/grep-dctrl.c:74
+msgid "FIELD,FIELD,..."
+msgstr "RUAS,RUAS,..."
+
+#: grep-dctrl/grep-dctrl.c:71
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Membatasi pencocokan pola ke RUAS yang diberikan."
+
+#: grep-dctrl/grep-dctrl.c:72
+msgid "This is a shorthand for -FPackage."
+msgstr "Ini adalah kependekan dari -FPackage."
+
+#: grep-dctrl/grep-dctrl.c:73
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Ini adalah kependekan dari -FSource:Package."
+
+#: grep-dctrl/grep-dctrl.c:74
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Tampilkan hanya tubuh ruas-ruas ini dari paragraf yang cocok."
+
+#: grep-dctrl/grep-dctrl.c:75
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+"Tampilkan hanya baris pertama dari ruas \"Deskripsi\" dari paragraf yang "
+"cocok."
+
+#: grep-dctrl/grep-dctrl.c:76
+msgid "Suppress field names when showing specified fields."
+msgstr "Sembunyikan nama ruas ketika menampilkan ruas yang dinyatakan."
+
+#: grep-dctrl/grep-dctrl.c:77
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Anggap pola sebagai ekspresi reguler POSIX yang diperluas."
+
+#: grep-dctrl/grep-dctrl.c:78
+msgid "Regard the pattern as a standard POSIX regular expression."
+msgstr "Anggap pola sebagai ekspresi reguler POSIX standar."
+
+#: grep-dctrl/grep-dctrl.c:79
+msgid "Ignore case when looking for a match."
+msgstr "Abaikan huruf besar kecil ketika mencari kecocokan."
+
+#: grep-dctrl/grep-dctrl.c:80
+msgid "Show only paragraphs that do not match."
+msgstr "Tampilkan hanya paragraf yang tak cocok."
+
+#: grep-dctrl/grep-dctrl.c:81
+msgid "Show those fields that have NOT been selected with -s"
+msgstr "Tampilkan ruas yang BELUM dipilih dengan -s"
+
+#: grep-dctrl/grep-dctrl.c:82
+msgid "Show only the count of matching paragraphs."
+msgstr "Tampilkan hanya cacah paragraf yang cocok."
+
+#: grep-dctrl/grep-dctrl.c:83
+msgid "Do an exact match."
+msgstr "Lakukan pencocokan eksak."
+
+#: grep-dctrl/grep-dctrl.c:84 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
+msgid "Print out the copyright license."
+msgstr "Cetak lisensi hak cipta."
+
+#: grep-dctrl/grep-dctrl.c:85
+msgid "Conjunct filters."
+msgstr "Konjungsikan penyaring."
+
+#: grep-dctrl/grep-dctrl.c:86
+msgid "Disjunct filters."
+msgstr "Disjungsikan penyaring."
+
+#: grep-dctrl/grep-dctrl.c:87
+msgid "Negate the following filters."
+msgstr "Negasikan penyaring berikut."
+
+#: grep-dctrl/grep-dctrl.c:88
+msgid "Test for version number equality."
+msgstr "Uji kesamaan nomor versi."
+
+#: grep-dctrl/grep-dctrl.c:89
+msgid "Version number comparison: <<."
+msgstr "Perbandingan nomor versi: <<."
+
+#: grep-dctrl/grep-dctrl.c:90
+msgid "Version number comparison: <=."
+msgstr "Perbandingan nomor versi: <=."
+
+#: grep-dctrl/grep-dctrl.c:91
+msgid "Version number comparison: >>."
+msgstr "Perbandingan nomor versi: >>."
+
+#: grep-dctrl/grep-dctrl.c:92
+msgid "Version number comparison: >=."
+msgstr "Perbandingan nomor versi: >=."
+
+#: grep-dctrl/grep-dctrl.c:93
+msgid "Debug option parsing."
+msgstr "Penguraian opsi awakutu."
+
+#: grep-dctrl/grep-dctrl.c:94 grep-dctrl/grep-dctrl.c:95
+msgid "Do not output to stdout."
+msgstr "Jangan keluarkan ke stdout."
+
+#: grep-dctrl/grep-dctrl.c:96 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
+msgid "Attempt mmapping input files"
+msgstr "Mencoba mmap berkas masukan"
+
+#: grep-dctrl/grep-dctrl.c:97
+msgid "Ignore parse errors"
+msgstr "Abaikan galat penguraian"
+
+#: grep-dctrl/grep-dctrl.c:98
+msgid "PATTERN"
+msgstr "POLA"
+
+#: grep-dctrl/grep-dctrl.c:98
+msgid "Specify the pattern to search for"
+msgstr "Nyatakan pola yang akan dicari"
+
+#: grep-dctrl/grep-dctrl.c:99
+msgid "Match only whole package names (this implies -e)"
+msgstr "Cocok hanya dengan nama paket lengkap (ini menyiratkan -e)"
+
+#: grep-dctrl/grep-dctrl.c:100
+msgid "Ensure that the output is in dctrl format (overridden by -n)"
+msgstr "Pastikan bahwa keluaran dalam format dctrl (ditimpa oleh -n)"
+
+#: grep-dctrl/grep-dctrl.c:101
+msgid "Override the effect of an earlier --ensure-dctrl"
+msgstr "Timpa efek dari --ensure-dctrl sebelumnya"
+
+#: grep-dctrl/grep-dctrl.c:187
+msgid "filter is too long"
+msgstr "penyaring terlalu panjang"
+
+#: grep-dctrl/grep-dctrl.c:248 grep-dctrl/grep-dctrl.c:826
+#: join-dctrl/join-dctrl.c:113
+msgid "too many output fields"
+msgstr "ruas keluaran terlalu banyak"
+
+#: grep-dctrl/grep-dctrl.c:272 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
+#, c-format
+msgid "no such log level '%s'"
+msgstr "tak ada aras log '%s'"
+
+#: grep-dctrl/grep-dctrl.c:479
+#, c-format
+msgid "internal error: unknown token %d"
+msgstr "galat internal: token tak dikenal %d"
+
+#: grep-dctrl/grep-dctrl.c:488
+msgid "unexpected end of filter"
+msgstr "ujung penyaring tak disangka"
+
+#: grep-dctrl/grep-dctrl.c:491
+msgid "unexpected pattern in command line"
+msgstr "pola tak disangka pada baris perintah"
+
+#: grep-dctrl/grep-dctrl.c:494
+msgid "unexpected string in command line"
+msgstr "kalimat tak disangka dalam baris perintah"
+
+#: grep-dctrl/grep-dctrl.c:498
+#, c-format
+msgid "unexpected '%s' in command line"
+msgstr "'%s' tak disangka dalam baris perintah"
+
+#: grep-dctrl/grep-dctrl.c:602
+msgid "missing ')' in command line"
+msgstr "kehilangan ')' dalam baris perintah"
+
+#: grep-dctrl/grep-dctrl.c:610
+msgid "Multiple patterns for the same simple filter are not allowed"
+msgstr "Pola berganda bagi penyaring sederhana yang sama tak diijinkan"
+
+#: grep-dctrl/grep-dctrl.c:630
+msgid "A pattern is mandatory"
+msgstr "Pola wajib ada"
+
+#: grep-dctrl/grep-dctrl.c:658
+msgid "inconsistent modifiers of simple filters"
+msgstr "modifier tak konsisten dari penyaring sederhana"
+
+#: grep-dctrl/grep-dctrl.c:731 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
+msgid "too many file names"
+msgstr "terlalu banyak nama berkas"
+
+#: grep-dctrl/grep-dctrl.c:740
+msgid "file names are not allowed within the filter"
+msgstr "nama berkas tak diijinkan di dalam nama penyaring"
+
+#: grep-dctrl/grep-dctrl.c:820
+msgid "malformed filter"
+msgstr "penyaring salah bentuk"
+
+#: grep-dctrl/grep-dctrl.c:830
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "Menambahkan \"Deskripsi\" ke ruas keluaran yang dipilih karena -d"
+
+#: grep-dctrl/grep-dctrl.c:838
+msgid "-I requires at least one instance of -s"
+msgstr "-l memerlukan paling tidak satu buah -s"
+
+#: grep-dctrl/grep-dctrl.c:844
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr "tak bisa menyembunyikan nama ruas ketika menampilkan seluruh paragraf"
+
+#: grep-dctrl/grep-dctrl.c:876
+#, c-format
+msgid "executable name '%s' is not recognised"
+msgstr "nama executable '%s' tak dikenal"
+
+#: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
+msgid "Set debugging level to LEVEL."
+msgstr "Menata aras pengawakutuan ke ARAS."
+
+#: sort-dctrl/sort-dctrl.c:40
+msgid "KEYSPEC"
+msgstr "KEYSPEC"
+
+#: sort-dctrl/sort-dctrl.c:40
+msgid "Specify sort keys."
+msgstr "Nyatakan kunci pengurutan."
+
+#: sort-dctrl/sort-dctrl.c:88
+msgid "invalid key flag"
+msgstr "bendera kunci tak valid"
+
+#: sort-dctrl/sort-dctrl.c:140
+msgid "sort-dctrl -- sort Debian control files"
+msgstr "sort-dctrl -- urutkan berkas kendali Debian"
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "DELIM"
+msgstr "DELIM"
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "Specify a delimiter."
+msgstr "Nyatakan pembatas."
+
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr "Jangan cetak tajuk tabel"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "SPEC"
+msgstr "SPEK"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "Append the specified column."
+msgstr "Tambahkan kolom yang dinyatakan."
+
+#: tbl-dctrl/tbl-dctrl.c:284
+msgid "invalid column length"
+msgstr "panjang kolom tak valid"
+
+#: tbl-dctrl/tbl-dctrl.c:338
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "tbl-dctrl -- tabelkan berkas kendali Debian"
+
+#: tbl-dctrl/tbl-dctrl.c:359
+msgid "bad multibyte character"
+msgstr "karakter byte berganda buruk"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr "RUAS"
+
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr "Nyatakan ruas gabungan yang dipakai bagi berkas pertama"
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr "Nyatakan ruas gabungan yang dipakai bagi berkas kedua"
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr "Nyatakan berkas gabungan umum"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr "NORUAS"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr ""
+"Cetak rekaman tak terpasangkan dari berkas yang diindikasikan (entah 1 atau "
+"2)"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "FIELDSPEC"
+msgstr "SPEKRUAS"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr "Nyatakan format dari berkas keluaran"
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr "argumen salah bentuk atas '-a'"
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr "ruas penggabungan dari berkas pertama telah dinyatakan"
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr "ruas penggabungan dari berkas kedua telah dinyatakan"
+
+#: join-dctrl/join-dctrl.c:128
+msgid "missing '.' in output field specification"
+msgstr "kehilangan '.' dalam spesifikasi ruas keluaran"
+
+#: join-dctrl/join-dctrl.c:146
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr "mengharapkan entah '1.' atau '2.' di awal spesifikasi ruas"
+
+#: join-dctrl/join-dctrl.c:251
+msgid "join-dctrl -- join two Debian control files"
+msgstr "join-dctrl -- gabungkan dua berkas kendali Debian"
+
+#: join-dctrl/join-dctrl.c:270
+msgid "need exactly two input files"
+msgstr "perlu tepat dua berkas masukan"
+
+#: join-dctrl/join-dctrl.c:295
+msgid "cannot join a stream with itself"
+msgstr "tak bisa menggabung suatu stream dengan dirinya sendiri"
+
+#: lib/msg.h:52
+msgid "I'm broken - please report this bug."
+msgstr "Saya rusak - mohon laporkan kutu ini."
+
+#: lib/msg.h:145
+msgid "cannot find enough memory"
+msgstr "tak dapat menemukan cukup memori"
