@@ -1,5 +1,6 @@
 # Vietnamese translation for DCTRL Tools.
 # Copyright © 2010 Free Software Foundation, Inc.
+# Nguyen Vu Hung <vuhung16plus@gmail.com>, 2012
 # Clytie Siddall <clytie@riverland.net.au>, 2006-2010.
 #
 msgid ""
@@ -7,9 +8,9 @@ msgstr ""
 "Project-Id-Version: dctrl-tools 2.14.2\n"
 "Report-Msgid-Bugs-To: ajk@debian.org\n"
 "POT-Creation-Date: 2012-04-29 14:40-0400\n"
-"PO-Revision-Date: 2010-09-29 21:43+0930\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"PO-Revision-Date: 2012-05-01 10:02+0900\n"
+"Last-Translator: Nguyen Vu Hung <vuhung16plus@gmail.com>\n"
+"Language-Team: The MOST Project <du-an-most@lists.hanoilug.org>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -25,12 +26,12 @@ msgstr "%s (con): lỗi thực hiện « /bin/sh »: %s\n"
 #: lib/ifile.c:104
 #, c-format
 msgid "%s: command (%s) failed (exit status %d)\n"
-msgstr "%s: câu lệnh (%s) bị lỗi (trạng thái thoát %d)\n"
+msgstr "%s: câu lệnh (%s) lỗi (trạng thái thoát %d)\n"
 
 #: lib/ifile.c:113
 #, c-format
 msgid "%s: command (%s) was killed by signal %d\n"
-msgstr "%s: lệnh (%s) bị chấm dứt do tín hiệu %d\n"
+msgstr "%s: lệnh (%s) bị chấm dứt bởi tín hiệu %d\n"
 
 #: lib/ifile.c:131
 #, c-format
@@ -39,11 +40,11 @@ msgstr "%s: %s: không thể lấy trạng thái: %s\n"
 
 #: lib/ifile.c:142
 msgid "is a directory, skipping"
-msgstr "là một thư mục nên bỏ qua"
+msgstr "là thư mục, bỏ qua"
 
 #: lib/ifile.c:143
 msgid "is a block device, skipping"
-msgstr "là một thiết bị khối nên bỏ qua"
+msgstr "là một thiết bị khối, bỏ qua"
 
 #: lib/ifile.c:144
 msgid "internal error"
@@ -51,29 +52,29 @@ msgstr "lỗi nội bộ"
 
 #: lib/ifile.c:145
 msgid "is a socket, skipping"
-msgstr "là một ổ cắm nên bỏ qua"
+msgstr "là một ổ cắm, bỏ qua"
 
 #: lib/ifile.c:146
 msgid "unknown file type, skipping"
-msgstr "không rõ dạng tập tin nên bỏ qua"
+msgstr "kiểu tệp chưa định nghĩa, bỏ qua"
 
 #: lib/misc.c:37
 #, c-format
 msgid "%s: using `%s' as pager\n"
-msgstr "%s: dùng « %s » làm bộ dàn trang\n"
+msgstr "%s: dùng '%s' làm bộ dàn trang\n"
 
 #: lib/misc.c:47
 #, c-format
 msgid "%s: popen failed for %s: %s\n"
-msgstr "%s: popen bị lỗi cho %s: %s\n"
+msgstr "%s: popen lỗi với %s: %s\n"
 
 #: lib/paragraph.c:172
 msgid "warning: expected a colon"
-msgstr "cảnh báo : mong đợi một dấu hai chấm"
+msgstr "cảnh báo : phải là dấu hai chấm"
 
 #: lib/paragraph.c:177
 msgid "expected a colon"
-msgstr "mong đợi một dấu hai chấm"
+msgstr "phải là dấu hai chấm"
 
 #: lib/sorter.c:49
 msgid "Parse error in field."
@@ -85,7 +86,7 @@ msgstr "grep-dctrl -- grep tập tin điều khiển Debian"
 
 #: grep-dctrl/grep-dctrl.c:52
 msgid "FILTER [FILENAME...]"
-msgstr ""
+msgstr "FILTER [FILENAME...] "
 
 #: grep-dctrl/grep-dctrl.c:70 sort-dctrl/sort-dctrl.c:39
 #: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
@@ -93,10 +94,9 @@ msgid "LEVEL"
 msgstr "CẤP"
 
 #: grep-dctrl/grep-dctrl.c:70
-#, fuzzy
 #| msgid "Set debugging level to LEVEL."
 msgid "Set log level to LEVEL."
-msgstr "Lập cấp gỡ rối thành CẤP."
+msgstr "Đặt cấp ghi nhật ký thành LEVEL."
 
 #: grep-dctrl/grep-dctrl.c:71 grep-dctrl/grep-dctrl.c:74
 msgid "FIELD,FIELD,..."
@@ -135,10 +135,9 @@ msgid "Regard the pattern as an extended POSIX regular expression."
 msgstr "Thấy mẫu như là một biểu thức chính quy kiểu POSIX đã mở rộng."
 
 #: grep-dctrl/grep-dctrl.c:78
-#, fuzzy
 #| msgid "Regard the pattern as an extended POSIX regular expression."
 msgid "Regard the pattern as a standard POSIX regular expression."
-msgstr "Thấy mẫu như là một biểu thức chính quy kiểu POSIX đã mở rộng."
+msgstr "Xem mẫu như một biểu thức chính quy POSIX chuẩn."
 
 #: grep-dctrl/grep-dctrl.c:79
 msgid "Ignore case when looking for a match."
@@ -166,42 +165,37 @@ msgid "Print out the copyright license."
 msgstr "In ra giấy phép tác quyền."
 
 #: grep-dctrl/grep-dctrl.c:85
-#, fuzzy
 #| msgid "Conjunct predicates."
 msgid "Conjunct filters."
-msgstr "Liên kết với nhau các vị ngữ."
+msgstr "Bộ lọc liên kết."
 
 #: grep-dctrl/grep-dctrl.c:86
-#, fuzzy
 #| msgid "Disjunct predicates."
 msgid "Disjunct filters."
-msgstr "Làm rời ra các vị ngữ."
+msgstr "Bộ lọc hủy liên kết."
 
 #: grep-dctrl/grep-dctrl.c:87
-#, fuzzy
 #| msgid "Negate the following predicate."
 msgid "Negate the following filters."
-msgstr "Phủ định vị ngữ sau."
+msgstr "Phủ định các bộ lọc sau."
 
 #: grep-dctrl/grep-dctrl.c:88
 msgid "Test for version number equality."
 msgstr "Kiểm tra có số thứ tự phiên bản trùng."
 
 #: grep-dctrl/grep-dctrl.c:89
-#, fuzzy
 #| msgid "Version number comparison: <."
 msgid "Version number comparison: <<."
-msgstr "So sánh số thứ tự phiên bản: <."
+msgstr "So sánh số phiên bản: <<."
 
 #: grep-dctrl/grep-dctrl.c:90
 msgid "Version number comparison: <=."
 msgstr "So sánh số thứ tự phiên bản: ≤."
 
 #: grep-dctrl/grep-dctrl.c:91
-#, fuzzy
 #| msgid "Version number comparison: >."
 msgid "Version number comparison: >>."
-msgstr "So sánh số thứ tự phiên bản: >."
+msgstr "So sánh số phiên bản: >>."
 
 #: grep-dctrl/grep-dctrl.c:92
 msgid "Version number comparison: >=."
@@ -238,17 +232,16 @@ msgstr "Khớp chỉ nguyên tên gói (cũng ngụ ý « -e »)"
 
 #: grep-dctrl/grep-dctrl.c:100
 msgid "Ensure that the output is in dctrl format (overridden by -n)"
-msgstr ""
+msgstr "Đảm bảo rằng đầu ra có định dạng dctrl (bị ghi đè bởi -n)"
 
 #: grep-dctrl/grep-dctrl.c:101
 msgid "Override the effect of an earlier --ensure-dctrl"
-msgstr ""
+msgstr "Ghi đè hiệu ứng trước --ensure-dctrl"
 
 #: grep-dctrl/grep-dctrl.c:187
-#, fuzzy
 #| msgid "predicate is too long"
 msgid "filter is too long"
-msgstr "vị ngữ quá dài"
+msgstr "bộ lọc quá dài"
 
 #: grep-dctrl/grep-dctrl.c:248 grep-dctrl/grep-dctrl.c:826
 #: join-dctrl/join-dctrl.c:113
@@ -262,54 +255,49 @@ msgid "no such log level '%s'"
 msgstr "không có cấp ghi lưu như vậy « %s »"
 
 #: grep-dctrl/grep-dctrl.c:479
-#, fuzzy, c-format
+#, c-format
 #| msgid "internal error"
 msgid "internal error: unknown token %d"
-msgstr "lỗi nội bộ"
+msgstr "lỗi nội bộ: token chưa định nghĩ %d"
 
 #: grep-dctrl/grep-dctrl.c:488
-#, fuzzy
 #| msgid "unexpected end of predicate"
 msgid "unexpected end of filter"
-msgstr "gặp kết thúc vị ngữ bất thường"
+msgstr "phần cuối bộ lọc bất thường"
 
 #: grep-dctrl/grep-dctrl.c:491
-#, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected pattern in command line"
-msgstr "gặp atom bất thường trên dòng lệnh"
+msgstr "mẫu trong dòng lệnh bất thường"
 
 #: grep-dctrl/grep-dctrl.c:494
-#, fuzzy
 #| msgid "unexpected atom in command line"
 msgid "unexpected string in command line"
-msgstr "gặp atom bất thường trên dòng lệnh"
+msgstr "chuỗi trong dòng lệnh bất thường"
 
 #: grep-dctrl/grep-dctrl.c:498
-#, fuzzy, c-format
+#, c-format
 #| msgid "unexpected '!' in command line"
 msgid "unexpected '%s' in command line"
-msgstr "gặp dấu chấm than « ! » bất thường trên dòng lệnh"
+msgstr "'%s' trong dòng lệnh bất thường"
 
 #: grep-dctrl/grep-dctrl.c:602
 msgid "missing ')' in command line"
 msgstr "thiếu dấu ngoặc đóng « ) » trên dòng lệnh"
 
 #: grep-dctrl/grep-dctrl.c:610
-#, fuzzy
 #| msgid "Multiple patterns for the same atom are not allowed"
 msgid "Multiple patterns for the same simple filter are not allowed"
-msgstr "Không cho phép nhiều mẫu cho cùng một atom"
+msgstr "Không cho phép nhiều mẫu trong cùng một bộ lọc"
 
 #: grep-dctrl/grep-dctrl.c:630
 msgid "A pattern is mandatory"
 msgstr "Bắt buộc phải có một mẫu"
 
 #: grep-dctrl/grep-dctrl.c:658
-#, fuzzy
 #| msgid "inconsistent atom modifiers"
 msgid "inconsistent modifiers of simple filters"
-msgstr "các bộ bổ nghĩa atom không thống nhất"
+msgstr "các bộ lọc không thống nhất"
 
 #: grep-dctrl/grep-dctrl.c:731 sort-dctrl/sort-dctrl.c:120
 #: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
@@ -317,16 +305,14 @@ msgid "too many file names"
 msgstr "quá nhiều tên tập tin"
 
 #: grep-dctrl/grep-dctrl.c:740
-#, fuzzy
 #| msgid "file names are not allowed within the predicate"
 msgid "file names are not allowed within the filter"
-msgstr "không cho phép tên tập tin bên trong vị ngữ"
+msgstr "không cho phép tên tập tin bên trong bộ lọc"
 
 #: grep-dctrl/grep-dctrl.c:820
-#, fuzzy
 #| msgid "malformed predicate"
 msgid "malformed filter"
-msgstr "vị ngữ dạng sai"
+msgstr "bộ lọc hỏng"
 
 #: grep-dctrl/grep-dctrl.c:830
 msgid "Adding \"Description\" to selected output fields because of -d"
@@ -345,7 +331,7 @@ msgstr "không thể thu hồi các tên trường khi hiển thị nguyên đo�
 #: grep-dctrl/grep-dctrl.c:876
 #, c-format
 msgid "executable name '%s' is not recognised"
-msgstr ""
+msgstr "Không nhận dạng được tên có thể thực thi '%s'"
 
 #: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
 #: join-dctrl/join-dctrl.c:45
@@ -467,77 +453,8 @@ msgstr "không thể nối lại một luồng với chính nó"
 
 #: lib/msg.h:52
 msgid "I'm broken - please report this bug."
-msgstr ""
+msgstr "Lỗi rồi ;) - Xin hãy gửi báo cáo lỗi."
 
 #: lib/msg.h:145
 msgid "cannot find enough memory"
-msgstr ""
-
-#, fuzzy
-#~| msgid "too many file names"
-#~ msgid "too many field names"
-#~ msgstr "quá nhiều tên tập tin"
-
-#~ msgid "Show the testing banner."
-#~ msgstr "Hiển thị biểu ngữ thử ra."
-
-#~ msgid "FNAME"
-#~ msgstr "TÊN_TỆP"
-
-#~ msgid "Use FNAME as the config file."
-#~ msgstr "Dùng TÊN_TỆP như là tập tin cấu hình."
-
-#~ msgid "Malformed default input file name"
-#~ msgstr "Tên tập tin nhập mặc định dạng sai"
-
-#~ msgid "not owned by you or root, ignoring"
-#~ msgstr "không được sở hữu bởi bạn hoặc người chủ nên bỏ qua"
-
-#~ msgid "write permissions for group or others, ignoring"
-#~ msgstr "quyền ghi cho nhóm hay người khác nên bỏ qua"
-
-#~ msgid "reading config file"
-#~ msgstr "đang đọc tập tin cấu hình"
-
-#~ msgid "read failure or out of memory"
-#~ msgstr "lỗi đọc hoặc không đủ bộ nhớ"
-
-#~ msgid "syntax error: need an executable name"
-#~ msgstr "lỗi cú pháp: cần có một tên có khả năng thực hiện"
-
-#~ msgid "syntax error: need an input file name"
-#~ msgstr "lỗi cú pháp: cần có một tên tập tin nhập vào"
-
-#~ msgid "considering executable name"
-#~ msgstr "đang suy tính tên có khả năng thực hiện"
-
-#~ msgid "yes, will use executable name"
-#~ msgstr "có phải, sẽ dùng tên có khả năng thực hiện"
-
-#~ msgid "default input file"
-#~ msgstr "tập tin nhập mặc định"
-
-#~ msgid "executable name not found; reading from standard input"
-#~ msgstr ""
-#~ "không tìm thấy tên có khả năng thực hiện nên đọc từ đầu vào tiêu chuẩn"
-
-#~ msgid "predicate is too complex"
-#~ msgstr "vị ngữ quá phức tạp"
-
-#~ msgid "The pattern is a standard POSIX regular expression."
-#~ msgstr "Mẫu là một biểu thức chính quy kiểu POSIX đã mở rộng."
-
-#~ msgid "unexpected '-a' in command line"
-#~ msgstr "gặp « -a » bất thường trên dòng lệnh"
-
-#~ msgid "unexpected '-o' in command line"
-#~ msgstr "gặp « -o » bất thường trên dòng lệnh"
-
-#~ msgid "unexpected '(' in command line"
-#~ msgstr "gặp dấu ngoặc mở « ( » bất thường trên dòng lệnh"
-
-#~ msgid "unexpected ')' in command line"
-#~ msgstr "gặp dấu ngoặc đóng « ) » bất thường trên dòng lệnh"
-
-#~ msgid "a predicate is required"
-#~ msgstr "yêu cầu một vị ngữ"
+msgstr "Không đủ bộ nhớ cần thiết"

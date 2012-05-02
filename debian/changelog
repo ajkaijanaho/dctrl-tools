@@ -8,6 +8,7 @@ dctrl-tools (2.22) UNRELEASED; urgency=low
   
   [ Program translations ]
   * Indonesian (new), by Andika Triwidada.
+  * Vietnamese, by Nguyen Vu Hung.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 22 Apr 2012 22:09:30 +0300
 
