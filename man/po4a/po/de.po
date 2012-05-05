@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dctrl-tools 2.21.1\n"
+"Project-Id-Version: dctrl-tools 2.22\n"
 "Report-Msgid-Bugs-To: dctrl-tools@packages.debian.org\n"
 "POT-Creation-Date: 2012-04-29 14:40-0400\n"
-"PO-Revision-Date: 2012-03-12 18:22+0100\n"
+"PO-Revision-Date: 2012-04-29 23:59+0100\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -25,10 +25,9 @@ msgstr "GREP-DCTRL"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1
-#, fuzzy, no-wrap
-#| msgid "2006-04-02"
+#, no-wrap
 msgid "2012-04-22"
-msgstr "2. April 2006"
+msgstr "22. April 2012"
 
 #. type: TH
 #: man/grep-dctrl.1.cp:1 man/sort-dctrl.1:1 man/sync-available.8:1
@@ -559,6 +558,10 @@ msgid ""
 "they will be treated as if they had been repeated for each simple filter "
 "inside the parentheses."
 msgstr ""
+"Klammern können zum Gruppieren benutzt werden. Beachten Sie, dass sie für die "
+"meisten Shells maskiert werden müssen. Filterbestimmungswörter können vor der "
+"öffnenden Klammern angegeben werden; sie werden so behandelt, als wären sie "
+"für jeden einfachen Filter innerhalb der Klammern wiederholt worden."
 
 #. type: SS
 #: man/grep-dctrl.1.cp:254

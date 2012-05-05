@@ -10,6 +10,9 @@ dctrl-tools (2.22) UNRELEASED; urgency=low
   * Indonesian (new), by Andika Triwidada.
   * Vietnamese, by Nguyen Vu Hung.
 
+  [ Documentation translations ]
+  * German, by Chris Leick (closes: #671597).
+
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 22 Apr 2012 22:09:30 +0300
 
 dctrl-tools (2.21.1) unstable; urgency=low
