@@ -1,4 +1,6 @@
-dctrl-tools (2.22) UNRELEASED; urgency=low
+dctrl-tools (2.22) unstable; urgency=low
+
+  * Team upload.
 
   [ Antti-Juhani Kaijanaho ]
   * debian/copyright: Upgraded to copyright-format/1.0, and updated.
@@ -14,7 +16,7 @@ dctrl-tools (2.22) UNRELEASED; urgency=low
   * German, by Chris Leick (closes: #671597).
   * French, by David Prévot.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 22 Apr 2012 22:09:30 +0300
+ -- David Prévot <taffit@debian.org>  Sun, 13 May 2012 16:29:22 -0400
 
 dctrl-tools (2.21.1) unstable; urgency=low
 
