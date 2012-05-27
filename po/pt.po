@@ -1,0 +1,439 @@
+# portuguese messages for dctrl-tools
+# Copyright (C) YEAR Antti-Juhani Kaijanaho
+# This file is distributed under the same license as the dctrl-tools package.
+# Pedro Ribeiro <p.m42.ribeiro@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dctrl-tools\n"
+"Report-Msgid-Bugs-To: ajk@debian.org\n"
+"POT-Creation-Date: 2012-04-29 14:40-0400\n"
+"PO-Revision-Date: 2012-05-26 10:55+0100\n"
+"Last-Translator: Pedro Ribeiro <p.m42.ribeiro@gmail.com>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"Language: Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/ifile.c:58
+#, c-format
+msgid "%s (child): failed to exec /bin/sh: %s\n"
+msgstr "%s (filho): falhou a execução do /bin/sh: %s\n"
+
+#: lib/ifile.c:104
+#, c-format
+msgid "%s: command (%s) failed (exit status %d)\n"
+msgstr "%s: o comando (%s) falhou (estado de saída %d)\n"
+
+#: lib/ifile.c:113
+#, c-format
+msgid "%s: command (%s) was killed by signal %d\n"
+msgstr "%s: o comando (%s) foi morto com o sinal %d\n"
+
+#: lib/ifile.c:131
+#, c-format
+msgid "%s: %s: cannot stat: %s\n"
+msgstr "%s: %s: não posso executar 'stat' em: %s\n"
+
+#: lib/ifile.c:142
+msgid "is a directory, skipping"
+msgstr "é um directório, a ignorar"
+
+#: lib/ifile.c:143
+msgid "is a block device, skipping"
+msgstr "é um dispositivo de bloco, a ignorar"
+
+#: lib/ifile.c:144
+msgid "internal error"
+msgstr "erro interno"
+
+#: lib/ifile.c:145
+msgid "is a socket, skipping"
+msgstr "é um socket, a ignorar"
+
+#: lib/ifile.c:146
+msgid "unknown file type, skipping"
+msgstr "tipo de ficheiro desconhecido, a ignorar"
+
+#: lib/misc.c:37
+#, c-format
+msgid "%s: using `%s' as pager\n"
+msgstr "%s: a usar '%s' como paginador\n"
+
+#: lib/misc.c:47
+#, c-format
+msgid "%s: popen failed for %s: %s\n"
+msgstr "%s: falhou a chamada a 'popen' para %s: %s\n"
+
+#: lib/paragraph.c:172
+msgid "warning: expected a colon"
+msgstr "aviso: era esperado ':'"
+
+#: lib/paragraph.c:177
+msgid "expected a colon"
+msgstr "esperado um ':'"
+
+#: lib/sorter.c:49
+msgid "Parse error in field."
+msgstr "Erro de análise no campo."
+
+#: grep-dctrl/grep-dctrl.c:50
+msgid "grep-dctrl -- grep Debian control files"
+msgstr "grep-dctrl -- grep para ficheiros control de Debian"
+
+#: grep-dctrl/grep-dctrl.c:52
+msgid "FILTER [FILENAME...]"
+msgstr "FILTRO [NOME_DE_FICHEIRO...]"
+
+#: grep-dctrl/grep-dctrl.c:70 sort-dctrl/sort-dctrl.c:39
+#: tbl-dctrl/tbl-dctrl.c:42 join-dctrl/join-dctrl.c:45
+msgid "LEVEL"
+msgstr "NÍVEL"
+
+#: grep-dctrl/grep-dctrl.c:70
+msgid "Set log level to LEVEL."
+msgstr "Definir nível de registo para NÍVEL"
+
+#: grep-dctrl/grep-dctrl.c:71 grep-dctrl/grep-dctrl.c:74
+msgid "FIELD,FIELD,..."
+msgstr "CAMPO,CAMPO,..."
+
+#: grep-dctrl/grep-dctrl.c:71
+msgid "Restrict pattern matching to the FIELDs given."
+msgstr "Restringir a pesquisa aos CAMPOs dados"
+
+#: grep-dctrl/grep-dctrl.c:72
+msgid "This is a shorthand for -FPackage."
+msgstr "Este é um atalho para -FPacote"
+
+#: grep-dctrl/grep-dctrl.c:73
+msgid "This is a shorthand for -FSource:Package."
+msgstr "Este é um atalho para -FFonte:Pacote."
+
+#: grep-dctrl/grep-dctrl.c:74
+msgid "Show only the body of these fields from the matching paragraphs."
+msgstr "Mostrar apenas o corpo destes campos dos parágrafos correspondentes."
+
+#: grep-dctrl/grep-dctrl.c:75
+msgid ""
+"Show only the first line of the \"Description\" field from the matching "
+"paragraphs."
+msgstr ""
+"Mostrar apenas a primeira linha do campo \"Descrição\" dos parágrafos "
+"correspondentes."
+
+#: grep-dctrl/grep-dctrl.c:76
+msgid "Suppress field names when showing specified fields."
+msgstr "Esconder os nomes dos campos ao mostrar campos específicos."
+
+#: grep-dctrl/grep-dctrl.c:77
+msgid "Regard the pattern as an extended POSIX regular expression."
+msgstr "Considerar o padrão como uma expressão regular estendida POSIX."
+
+#: grep-dctrl/grep-dctrl.c:78
+msgid "Regard the pattern as a standard POSIX regular expression."
+msgstr "Considerar o padrão como uma expressão regular POSIX."
+
+#: grep-dctrl/grep-dctrl.c:79
+msgid "Ignore case when looking for a match."
+msgstr "Ignorar maiúsculas/minúsculas ao procurar por uma correspondência."
+
+#: grep-dctrl/grep-dctrl.c:80
+msgid "Show only paragraphs that do not match."
+msgstr "Mostrar apenas parágrafos sem correspondência."
+
+#: grep-dctrl/grep-dctrl.c:81
+msgid "Show those fields that have NOT been selected with -s"
+msgstr "Mostrar os campos que NÃO foram seleccionados com -s"
+
+#: grep-dctrl/grep-dctrl.c:82
+msgid "Show only the count of matching paragraphs."
+msgstr "Mostrar apenas o número de parágrafos com correspondências."
+
+#: grep-dctrl/grep-dctrl.c:83
+msgid "Do an exact match."
+msgstr "Procurar uma correspondência exacta."
+
+#: grep-dctrl/grep-dctrl.c:84 sort-dctrl/sort-dctrl.c:38
+#: tbl-dctrl/tbl-dctrl.c:41 join-dctrl/join-dctrl.c:44
+msgid "Print out the copyright license."
+msgstr "Imprimir a licença de copyright."
+
+#: grep-dctrl/grep-dctrl.c:85
+msgid "Conjunct filters."
+msgstr "Filtros associados."
+
+#: grep-dctrl/grep-dctrl.c:86
+msgid "Disjunct filters."
+msgstr "Filtros separados."
+
+#: grep-dctrl/grep-dctrl.c:87
+msgid "Negate the following filters."
+msgstr "Negar os seguintes filtros."
+
+#: grep-dctrl/grep-dctrl.c:88
+msgid "Test for version number equality."
+msgstr "Testar a igualidade de números de versão."
+
+#: grep-dctrl/grep-dctrl.c:89
+msgid "Version number comparison: <<."
+msgstr "Comparação de números de versão: <<."
+
+#: grep-dctrl/grep-dctrl.c:90
+msgid "Version number comparison: <=."
+msgstr "Comparação de números de versão: <=."
+
+#: grep-dctrl/grep-dctrl.c:91
+msgid "Version number comparison: >>."
+msgstr "Comparação de números de versão: >>."
+
+#: grep-dctrl/grep-dctrl.c:92
+msgid "Version number comparison: >=."
+msgstr "Comparação de números de versão: >=."
+
+#: grep-dctrl/grep-dctrl.c:93
+msgid "Debug option parsing."
+msgstr "Análise de opções de debug."
+
+#: grep-dctrl/grep-dctrl.c:94 grep-dctrl/grep-dctrl.c:95
+msgid "Do not output to stdout."
+msgstr "Não escrever no stdout."
+
+#: grep-dctrl/grep-dctrl.c:96 sort-dctrl/sort-dctrl.c:41
+#: tbl-dctrl/tbl-dctrl.c:43 join-dctrl/join-dctrl.c:46
+msgid "Attempt mmapping input files"
+msgstr "Tentar o 'mmpa' nos ficheiros de entrada"
+
+#: grep-dctrl/grep-dctrl.c:97
+msgid "Ignore parse errors"
+msgstr "Ignorar erros de análise"
+
+#: grep-dctrl/grep-dctrl.c:98
+msgid "PATTERN"
+msgstr "PADRÃO"
+
+#: grep-dctrl/grep-dctrl.c:98
+msgid "Specify the pattern to search for"
+msgstr "Especifique o padrão a pesquisar"
+
+#: grep-dctrl/grep-dctrl.c:99
+msgid "Match only whole package names (this implies -e)"
+msgstr "Tentar correspondência apenas com nomes de pacote completos (implica -e)"
+
+#: grep-dctrl/grep-dctrl.c:100
+msgid "Ensure that the output is in dctrl format (overridden by -n)"
+msgstr "Assegurar-se que a saída está no formato do dctrl (sobrescrito por -n)"
+
+#: grep-dctrl/grep-dctrl.c:101
+msgid "Override the effect of an earlier --ensure-dctrl"
+msgstr "Sobrescrever o efeito de um --ensure-dctrl anterior"
+
+#: grep-dctrl/grep-dctrl.c:187
+msgid "filter is too long"
+msgstr "filtro é demasiado comprido"
+
+#: grep-dctrl/grep-dctrl.c:248 grep-dctrl/grep-dctrl.c:826
+#: join-dctrl/join-dctrl.c:113
+msgid "too many output fields"
+msgstr "demasiados campos de saída"
+
+#: grep-dctrl/grep-dctrl.c:272 sort-dctrl/sort-dctrl.c:104
+#: tbl-dctrl/tbl-dctrl.c:301 join-dctrl/join-dctrl.c:168
+#, c-format
+msgid "no such log level '%s'"
+msgstr "nível de relatório '%s' não existe"
+
+#: grep-dctrl/grep-dctrl.c:479
+#, c-format
+msgid "internal error: unknown token %d"
+msgstr "erro interno: token %d desconhecido"
+
+#: grep-dctrl/grep-dctrl.c:488
+msgid "unexpected end of filter"
+msgstr "fim do filtro inesperado"
+
+#: grep-dctrl/grep-dctrl.c:491
+msgid "unexpected pattern in command line"
+msgstr "padrão inesperado na linha de comandos"
+
+#: grep-dctrl/grep-dctrl.c:494
+msgid "unexpected string in command line"
+msgstr "string inesperado na linha de comandos"
+
+#: grep-dctrl/grep-dctrl.c:498
+#, c-format
+msgid "unexpected '%s' in command line"
+msgstr "'%s' inesperado na linha de comandos"
+
+#: grep-dctrl/grep-dctrl.c:602
+msgid "missing ')' in command line"
+msgstr "')' em falta na linha de comandos"
+
+#: grep-dctrl/grep-dctrl.c:610
+msgid "Multiple patterns for the same simple filter are not allowed"
+msgstr "Não são permitidos vário padrões para o mesmo filtro"
+
+#: grep-dctrl/grep-dctrl.c:630
+msgid "A pattern is mandatory"
+msgstr "É obrigatório um padrão"
+
+#: grep-dctrl/grep-dctrl.c:658
+msgid "inconsistent modifiers of simple filters"
+msgstr "modificadores de filtros simples inconsistentes"
+
+#: grep-dctrl/grep-dctrl.c:731 sort-dctrl/sort-dctrl.c:120
+#: tbl-dctrl/tbl-dctrl.c:313 join-dctrl/join-dctrl.c:180
+msgid "too many file names"
+msgstr "demasiados nomes de ficheiros"
+
+#: grep-dctrl/grep-dctrl.c:740
+msgid "file names are not allowed within the filter"
+msgstr "não são permitidos nomes de ficheiros dentro do filtro"
+
+#: grep-dctrl/grep-dctrl.c:820
+msgid "malformed filter"
+msgstr "filtro malformado"
+
+#: grep-dctrl/grep-dctrl.c:830
+msgid "Adding \"Description\" to selected output fields because of -d"
+msgstr "A acrescentar \"Descrição\" aos campos de saída devido a -d"
+
+#: grep-dctrl/grep-dctrl.c:838
+msgid "-I requires at least one instance of -s"
+msgstr "-I requer pelo menos uma instância de -s"
+
+#: grep-dctrl/grep-dctrl.c:844
+msgid "cannot suppress field names when showing whole paragraphs"
+msgstr "não pode suprimir nomes de campos quando mostra parágrafos completos"
+
+#: grep-dctrl/grep-dctrl.c:876
+#, c-format
+msgid "executable name '%s' is not recognised"
+msgstr "o nome de executável '%s' não é reconhecido"
+
+#: sort-dctrl/sort-dctrl.c:39 tbl-dctrl/tbl-dctrl.c:42
+#: join-dctrl/join-dctrl.c:45
+msgid "Set debugging level to LEVEL."
+msgstr "A definir nível de debugging para NÍVEL."
+
+#: sort-dctrl/sort-dctrl.c:40
+msgid "KEYSPEC"
+msgstr "CHAVE"
+
+#: sort-dctrl/sort-dctrl.c:40
+msgid "Specify sort keys."
+msgstr "Especificar chaves de ordenação."
+
+#: sort-dctrl/sort-dctrl.c:88
+msgid "invalid key flag"
+msgstr "flag de chave inválida"
+
+#: sort-dctrl/sort-dctrl.c:140
+msgid "sort-dctrl -- sort Debian control files"
+msgstr "sort-dctrl -- ordena ficheiros control de Debian"
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "DELIM"
+msgstr "DELIM"
+
+#: tbl-dctrl/tbl-dctrl.c:38
+msgid "Specify a delimiter."
+msgstr "Indique um delimitador."
+
+#: tbl-dctrl/tbl-dctrl.c:39
+msgid "Do not print a table heading"
+msgstr "Não imprimir cabeçalho da tabela"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "SPEC"
+msgstr "SPEC"
+
+#: tbl-dctrl/tbl-dctrl.c:40
+msgid "Append the specified column."
+msgstr "Acrescentar a coluna especificada."
+
+#: tbl-dctrl/tbl-dctrl.c:284
+msgid "invalid column length"
+msgstr "tamanho de coluna inválido"
+
+#: tbl-dctrl/tbl-dctrl.c:338
+msgid "tbl-dctrl -- tabularize Debian control files"
+msgstr "tbl-dctrl -- tabular ficheiros control de Debian"
+
+#: tbl-dctrl/tbl-dctrl.c:359
+msgid "bad multibyte character"
+msgstr "caracter multi-byte errado"
+
+#: join-dctrl/join-dctrl.c:39 join-dctrl/join-dctrl.c:40
+#: join-dctrl/join-dctrl.c:41
+msgid "FIELD"
+msgstr "CAMPO"
+
+#: join-dctrl/join-dctrl.c:39
+msgid "Specify the join field to use for the first file"
+msgstr "Indique o campo de junção para usar no primeiro ficheiro"
+
+#: join-dctrl/join-dctrl.c:40
+msgid "Specify the join field to use for the second file"
+msgstr "Indique o campo de junção para usar no segundo ficheiro"
+
+#: join-dctrl/join-dctrl.c:41
+msgid "Specify the common join field"
+msgstr "Indique o campo comum de junção"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "FIELDNO"
+msgstr "NUMCAMPO"
+
+#: join-dctrl/join-dctrl.c:42
+msgid "Print unpairable records from the indicated file (either 1 or 2)"
+msgstr "Imprimir registos sem par do ficheiro indicado (1 ou 2)"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "FIELDSPEC"
+msgstr "FCAMPO"
+
+#: join-dctrl/join-dctrl.c:43
+msgid "Specify the format of the output file"
+msgstr "Indique o formato do ficheiro de saída"
+
+#: join-dctrl/join-dctrl.c:81
+msgid "malformed argument to '-a'"
+msgstr "argumento para '-a' malformado"
+
+#: join-dctrl/join-dctrl.c:88
+msgid "the join field of the first file has already been specified"
+msgstr "o campo de junção para o primeiro ficheiro já foi definido"
+
+#: join-dctrl/join-dctrl.c:89
+msgid "the join field of the second file has already been specified"
+msgstr "o campo de junção para o segundo ficheiro já foi definido"
+
+#: join-dctrl/join-dctrl.c:128
+msgid "missing '.' in output field specification"
+msgstr "falta '.' na especificação do campo de saída"
+
+#: join-dctrl/join-dctrl.c:146
+msgid "expected either '1.' or '2.' at the start of the field specification"
+msgstr "é esperado '1.' ou '2.' no início da especificação de campo"
+
+#: join-dctrl/join-dctrl.c:251
+msgid "join-dctrl -- join two Debian control files"
+msgstr "join-dctrl -- juntar dois ficheiros control de Debian"
+
+#: join-dctrl/join-dctrl.c:270
+msgid "need exactly two input files"
+msgstr "precisa exactamente de dois ficheiros de entrada"
+
+#: join-dctrl/join-dctrl.c:295
+msgid "cannot join a stream with itself"
+msgstr "não posso juntar uma stream com ela própria"
+
+#: lib/msg.h:52
+msgid "I'm broken - please report this bug."
+msgstr "Estou avariado - por favor reporte este bug"
+
+#: lib/msg.h:145
+msgid "cannot find enough memory"
+msgstr "sem memória suficiente"
