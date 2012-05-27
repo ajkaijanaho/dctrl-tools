@@ -1,10 +1,10 @@
-dctrl-tools (2.22.1) UNRELEASED; urgency=low
+dctrl-tools (2.22.1) unstable; urgency=low
 
   [ Program translations ]
   * Swedish, by Martin Bagge (closes: #673870)
   * Portuguese (new), by Pedro Ribeiro (closes: #674637)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 May 2012 17:58:35 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 May 2012 20:53:25 +0300
 
 dctrl-tools (2.22) unstable; urgency=low
 
