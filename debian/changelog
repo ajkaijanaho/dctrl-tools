@@ -1,8 +1,8 @@
-dctrl-tools (2.22.2) unstable; urgency=low
+dctrl-tools (2.22.2) UNRELEASED; urgency=low
 
   * 
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 May 2012 21:16:07 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 28 May 2012 18:05:31 +0300
 
 dctrl-tools (2.22.1) unstable; urgency=low
 
