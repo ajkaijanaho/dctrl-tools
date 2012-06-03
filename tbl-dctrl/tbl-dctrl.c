@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2005, 2006, 2007, 2008, 2009, 2010, 2011 Antti-Juhani Kaijanaho
+    Copyright © 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #include <argp.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <wchar.h>
 #include "misc.h"
 #include "msg.h"
 #include "i18n.h"
@@ -96,7 +97,8 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 
 	size_t num_lines = 1;
 
-	mblen(NULL, 0);
+        mbstate_t mbs;
+        memset(&mbs, 0, sizeof mbs);
 	for (size_t i = 0; i < orig_len; /**/) {
                 if (orig[i] == '\n') {
                         i++;
@@ -125,7 +127,7 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 			bpo = i;
 			bpr = len;
 		}
-		int n = mblen(orig + i, orig_len - i);
+		int n = mbrlen(orig + i, orig_len - i, &mbs);
 		if (n <= 0) break;
 		for (size_t j = 0; j < n; j++) INSERT(orig[i+j]);
 		i += n;
@@ -161,7 +163,8 @@ void print_line(struct arguments *args,
 			} else if (j > 0) {
 				fputs(args->delim, stdout);
 			}
-			mblen(NULL, 0);
+                        mbstate_t mbs;
+                        memset(&mbs, 0, sizeof mbs);
 			size_t k;
 			size_t m = 0;
 			for (k = data[j].inx;
@@ -171,8 +174,9 @@ void print_line(struct arguments *args,
 					k++;
 					break;
 				}
-				int n = mblen(data[j].wrapped + k,
-					      data[j].wrapped_len - k);
+				int n = mbrlen(data[j].wrapped + k,
+					       data[j].wrapped_len - k,
+                                               &mbs);
 				for (int l = 0; l < n; l++) {
 					putchar(data[j].wrapped[k+l]);
 				}
@@ -344,7 +348,8 @@ static size_t mbs_len(char const *mbs, size_t n, char const *fname)
 	if (n == (size_t)(-1)) n = strlen(mbs);
         size_t mlen = 0;
 	size_t len = 0;
-	mblen(NULL, 0);
+        mbstate_t mbstate;
+        memset(&mbstate, 0, sizeof mbstate);
 	for (size_t k = 0; k < n;/**/) {
 		if (mbs[k] == '\n') {
                         if (len > mlen) mlen = len;
@@ -353,7 +358,7 @@ static size_t mbs_len(char const *mbs, size_t n, char const *fname)
                         continue;
                 }
 		len++;
-		int delta = mblen(mbs + k, n - k);
+		int delta = mbrlen(mbs + k, n - k, &mbstate);
 		if (delta <= 0) {
 			message(L_IMPORTANT, fname, 
                                 _("bad multibyte character"));

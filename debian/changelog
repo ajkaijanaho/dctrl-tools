@@ -4,8 +4,12 @@ dctrl-tools (2.23) UNRELEASED; urgency=low
   * Add a test case (tests/0021.{in,out,sh}) to verify that tbl-dctrl
     handles UTF-8 correctly.
      - As it requires the C.UTF-8 locale, build-depend on libc-bin >= 2.13
+  * Since mblen is unnecessarily marked warn_unused_result with
+    _FORTIFY_SOURCE, (see bug #674917), causing spurious warnings upon
+    mblen initialization calls, switch to using mbrlen in tbl-dctrl.c (a
+    good idea in any case).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 07 Jun 2012 12:07:58 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 07 Jun 2012 12:08:47 +0300
 
 dctrl-tools (2.22.2) unstable; urgency=low
 
