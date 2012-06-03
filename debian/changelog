@@ -1,8 +1,16 @@
 dctrl-tools (2.23) UNRELEASED; urgency=low
 
-  * 
+  * Merge 2.22.1.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 03 Jun 2012 20:50:30 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 03 Jun 2012 20:51:27 +0300
+
+dctrl-tools (2.22.1) unstable; urgency=low
+
+  [ Program translations ]
+  * Swedish, by Martin Bagge (closes: #673870)
+  * Portuguese (new), by Pedro Ribeiro (closes: #674637)
+
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sun, 27 May 2012 20:53:25 +0300
 
 dctrl-tools (2.22) unstable; urgency=low
 
