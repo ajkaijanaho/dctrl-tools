@@ -1,8 +1,14 @@
 dctrl-tools (2.22.2) UNRELEASED; urgency=low
 
-  * 
+  * Closes: #674836 (Builds with wrong CFLAGS), reported by me:
+     - Upgrade debhelper mode to 9.
+     - Work around debhelper bug 674912 by defining the default CFLAGS
+       using ?= in GNUmakefile.
+     - As pointed out by Jonathan Nieder in private mail, -Werror is not
+       a good idea in package builds (it may cause unnecessary FTBFS
+       breakage in the future as the toolchain and libraries change).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 28 May 2012 18:05:31 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 28 May 2012 19:36:34 +0300
 
 dctrl-tools (2.22.1) unstable; urgency=low
 
