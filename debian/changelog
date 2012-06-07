@@ -1,4 +1,4 @@
-dctrl-tools (2.22.2) UNRELEASED; urgency=low
+dctrl-tools (2.22.2) unstable; urgency=low
 
   * Closes: #674836 (Builds with wrong CFLAGS), reported by me:
      - Upgrade debhelper mode to 9.
@@ -8,7 +8,7 @@ dctrl-tools (2.22.2) UNRELEASED; urgency=low
        a good idea in package builds (it may cause unnecessary FTBFS
        breakage in the future as the toolchain and libraries change).
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Mon, 28 May 2012 19:36:34 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Thu, 07 Jun 2012 11:48:25 +0300
 
 dctrl-tools (2.22.1) unstable; urgency=low
 
