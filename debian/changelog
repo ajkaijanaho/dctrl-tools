@@ -12,8 +12,9 @@ dctrl-tools (2.23) UNRELEASED; urgency=low
   * lib/msg.c (msg_primitive): Write the period before the newline, not after!
   * tests/0022.{out,err,fails}: New test case, for grep-dctrl
     --ignore-parse-errors
+  * tester.sh: Handle missing diffs gracefully.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 08 Jun 2012 22:39:44 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Fri, 08 Jun 2012 23:21:58 +0300
 
 dctrl-tools (2.22.2) unstable; urgency=low
 
