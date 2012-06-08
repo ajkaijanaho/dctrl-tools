@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2008, 2010, 2011 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2008, 2010, 2011, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@ static bool eval_AND(struct predicate *base_p, para_t * para)
 static void print_AND(struct predicate *base_p, size_t indent)
 {
         struct binary_predicate *p = (struct binary_predicate *)base_p;
-        for (int i = 0; i < indent; i++) putchar(' ');
+        for (size_t i = 0; i < indent; i++) putchar(' ');
         puts("AND");
         print(p->lrand, indent+1);
         print(p->rrand, indent+1);
@@ -86,7 +86,7 @@ static bool eval_OR(struct predicate *base_p, para_t * para)
 static void print_OR(struct predicate *base_p, size_t indent)
 {
         struct binary_predicate *p = (struct binary_predicate *)base_p;
-        for (int i = 0; i < indent; i++) putchar(' ');
+        for (size_t i = 0; i < indent; i++) putchar(' ');
         puts("OR");
         print(p->lrand, indent+1);
         print(p->rrand, indent+1);
@@ -101,7 +101,7 @@ static bool eval_NOT(struct predicate *base_p, para_t * para)
 static void print_NOT(struct predicate *base_p, size_t indent)
 {
         struct unary_predicate *p = (struct unary_predicate *)base_p;
-        for (int i = 0; i < indent; i++) putchar(' ');
+        for (size_t i = 0; i < indent; i++) putchar(' ');
         puts("NOT");
         print(p->rand, indent+1);
 }
@@ -117,7 +117,7 @@ static void print_ATOM(struct predicate *base_p, size_t indent)
 {
         struct atomary_predicate *p = (struct atomary_predicate *)base_p;
         char ind[indent+1];
-        for (int i = 0; i < indent; i++) ind[i] = ' ';
+        for (size_t i = 0; i < indent; i++) ind[i] = ' ';
         ind[indent] = '\0';
         printf("%sATOM", ind);
         printf("%s field_name = %s\n", ind, p->atom->field_name);
@@ -170,7 +170,7 @@ struct predicate *predicate_ATOM(struct atom *at)
 }
 
 
-bool check_predicate(struct predicate * p)
+bool check_predicate(struct predicate * p __attribute__((unused)))
 {
         // static checking of predicate
         // currently no operation

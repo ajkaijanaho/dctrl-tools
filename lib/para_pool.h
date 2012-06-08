@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ bool para_pool_more(para_pool_t * pp)
 
 // calls para_init
 static inline
-para_t * new_para(para_pool_t * ppo, para_parser_t * ppa)
+para_t * new_para(para_pool_t * ppo __attribute__((unused)), para_parser_t * ppa)
 {
 	para_t * rv = 0;
 /*

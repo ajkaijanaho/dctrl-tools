@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2007, 2008 Antti-Juhani Kaijanaho
+    Copyright © 2007, 2008, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,32 +36,32 @@ const char * argp_program_version = "join-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;
 
 static struct argp_option options[] = {
-        { "1st-join-field",    '1', N_("FIELD"),    0, N_("Specify the join field to use for the first file") },
-        { "2nd-join-field",    '2', N_("FIELD"),    0, N_("Specify the join field to use for the second file") },
-        { "join-field",        'j', N_("FIELD"),    0, N_("Specify the common join field") },
-        { "unpairable-from",   'a', N_("FIELDNO"),  0, N_("Print unpairable records from the indicated file (either 1 or 2)") },
-        { "output-fields",     'o', N_("FIELDSPEC"),0, N_("Specify the format of the output file") },
-	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
-	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
-	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files") },
-	{ 0 }
+        { "1st-join-field",    '1', N_("FIELD"),    0, N_("Specify the join field to use for the first file"), 0 },
+        { "2nd-join-field",    '2', N_("FIELD"),    0, N_("Specify the join field to use for the second file"), 0 },
+        { "join-field",        'j', N_("FIELD"),    0, N_("Specify the common join field"), 0 },
+        { "unpairable-from",   'a', N_("FIELDNO"),  0, N_("Print unpairable records from the indicated file (either 1 or 2)"), 0 },
+        { "output-fields",     'o', N_("FIELDSPEC"),0, N_("Specify the format of the output file"), 0 },
+	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license."), 0 },
+	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL."), 0 },
+	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files"), 0 },
+	{ 0, 0, 0, 0, 0, 0 }
 };
 
 #define MAX_FNAMES 2
 
 struct arguments {
-        int unpairables; /* Print unpairable paragraphs from ...
-                            0 nowhere,
-                            1 the first file
-                            2 the second file 
-                         */
+        size_t unpairables; /* Print unpairable paragraphs from ...
+                               0 nowhere,
+                               1 the first file
+                               2 the second file 
+                            */
         struct field_attr *join_field[MAX_FNAMES];
         size_t num_fnames;
         struct ifile fname[MAX_FNAMES];
         size_t num_show_fields;
         struct show_field {
-                int file_inx; /* indexes join_field, can be -1 to indicate
-                                 common (ignoring nulls) join field
+                size_t file_inx; /* indexes join_field, can be -1 to indicate
+                                    common (ignoring nulls) join field
                                */
                 struct field_attr *field; // null if file_inx is -1
                 char *showname;
@@ -213,7 +213,7 @@ void print_para_config(struct arguments *args, para_t para[], size_t just_this)
                 struct show_field *sf = &args->show_fields[i];
                 struct fsaf_read_rv body = { .b = "", .len = 0 };
                 const char *showname = NULL;
-                if (sf->file_inx == -1) {
+                if (sf->file_inx == (size_t)-1) {
                         for (size_t j = 0;
                              body.len == 0 && j < args->num_fnames;
                              j++) {
@@ -250,7 +250,7 @@ void print_para_config(struct arguments *args, para_t para[], size_t just_this)
 
 static char progdoc [] = N_("join-dctrl -- join two Debian control files");
 
-static struct argp argp = { options, parse_opt, 0, progdoc };
+static struct argp argp = { options, parse_opt, 0, progdoc, 0, 0, 0 };
 
 int main(int argc, char * argv[])
 {

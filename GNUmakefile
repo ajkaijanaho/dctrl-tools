@@ -14,7 +14,7 @@ man8dir = $(mandir)/man8
 localedir = $(datarootdir)/locale
 
 CC = gcc 
-CFLAGS ?= -g -O2 -Wall -Werror
+CFLAGS ?= -g -O2 -Wall -Wextra -Werror
 ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS) -std=gnu99 -Ilib \
 	 -DENABLE_L_DEBUG -D_GNU_SOURCE -DSYSCONF=\"$(sysconfdir)\" \
          -DHAVE_GETTEXT -DPACKAGE=\"dctrl-tools\" -DLOCALEDIR=\"$(localedir)\" 

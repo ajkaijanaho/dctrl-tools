@@ -36,13 +36,13 @@ const char * argp_program_version = "tbl-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;
 
 static struct argp_option options[] = {
-	{ "delimiter",         'd', N_("DELIM"),    0, N_("Specify a delimiter.") },
-        { "no-heading",        'H', 0,              0, N_("Do not print a table heading") },
-	{ "column",            'c', N_("SPEC"),     0, N_("Append the specified column.") },
-	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
-	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
-	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files") },
-	{ 0 }
+	{ "delimiter",         'd', N_("DELIM"),    0, N_("Specify a delimiter."), 0 },
+        { "no-heading",        'H', 0,              0, N_("Do not print a table heading"), 0 },
+	{ "column",            'c', N_("SPEC"),     0, N_("Append the specified column."), 0 },
+	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license."), 0 },
+	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL."), 0 },
+	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files"), 0 },
+	{ 0, 0, 0, 0, 0, 0 }
 };
 
 #define MAX_FNAMES 4096
@@ -129,7 +129,7 @@ size_t linewrap(char **res, char const *orig, size_t orig_len,
 		}
 		int n = mbrlen(orig + i, orig_len - i, &mbs);
 		if (n <= 0) break;
-		for (size_t j = 0; j < n; j++) INSERT(orig[i+j]);
+		for (int j = 0; j < n; j++) INSERT(orig[i+j]);
 		i += n;
 		ll++;
 	}
@@ -286,7 +286,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 			n = n * 10 + (*p - '0');
 		}
 		if (err) message(L_IMPORTANT, 0, _("invalid column length"));
-		col->column_width = n > 0 ? n : -1;
+		col->column_width = n > 0 ? n : (size_t)-1;
 		if (n == 0) args->need_preprocessing = 1;
 		args->num_columns++;
 	}
@@ -341,7 +341,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 static char progdoc [] =
 N_("tbl-dctrl -- tabularize Debian control files");
 
-static struct argp argp = { options, parse_opt, 0, progdoc };
+static struct argp argp = { options, parse_opt, 0, progdoc, 0, 0, 0 };
 
 static size_t mbs_len(char const *mbs, size_t n, char const *fname)
 {

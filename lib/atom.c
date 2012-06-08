@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2011 Antti-Juhani Kaijanaho
+    Copyright © 2011, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -158,7 +158,7 @@ static bool atom_field_verify(struct atom * atom, FSAF * fp,
 bool atom_verify(struct atom * at, para_t * par)
 {
         FSAF * fp = par->common->fp;
-	if (at->field_inx == -1) {
+	if (at->field_inx == (size_t)-1) {
 		/* Take the full paragraph */
                 return atom_field_verify(at, fp, par->start, par->end);
         }

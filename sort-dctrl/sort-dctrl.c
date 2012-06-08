@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2004, 2005, 2006, 2007, 2008, 2009, 2010 Antti-Juhani Kaijanaho
+    Copyright © 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,11 +35,11 @@ const char * argp_program_version = "sort-dctrl (dctrl-tools) " VERSION;
 const char * argp_program_bug_address = MAINTAINER;
 
 static struct argp_option options[] = {
-	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license.") },
-	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL.") },
-	{ "key-spec",          'k', N_("KEYSPEC"),  0, N_("Specify sort keys.") },
-	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files") },
-	{ 0 }
+	{ "copying",	       'C', 0,		    0, N_("Print out the copyright license."), 0 },
+	{ "errorlevel",	       'l', N_("LEVEL"),    0, N_("Set debugging level to LEVEL."), 0 },
+	{ "key-spec",          'k', N_("KEYSPEC"),  0, N_("Specify sort keys."), 0 },
+	{ "mmap",               OPT_MMAP, 0,        0, N_("Attempt mmapping input files"), 0 },
+	{ 0, 0, 0, 0, 0, 0 }
 };
 
 #define MAX_FNAMES 4096
@@ -139,7 +139,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 
 static char progdoc [] = N_("sort-dctrl -- sort Debian control files");
 
-static struct argp argp = { options, parse_opt, 0, progdoc };
+static struct argp argp = { options, parse_opt, 0, progdoc, 0, 0, 0 };
 
 int main(int argc, char * argv[])
 {

@@ -67,39 +67,39 @@ enum {
 };
 
 static struct argp_option options[] = {
-	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set log level to LEVEL.") },
-	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given.") },
-	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage.") },
-	{ 0,		    'S', 0,		    0, N_("This is a shorthand for -FSource:Package.") },
-	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs.") },
-	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs.") },
-	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields.") },
-	{ "eregex",	    'e', 0,		    0, N_("Regard the pattern as an extended POSIX regular expression.") },
-	{ "regex",	    'r', 0,		    0, N_("Regard the pattern as a standard POSIX regular expression.") },
-	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match.") },
-	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match.") },
-        { "invert-show",    'I', 0,                 0, N_("Show those fields that have NOT been selected with -s") },
-	{ "count",	    'c', 0,		    0, N_("Show only the count of matching paragraphs.") },
-	{ "exact-match",    'X', 0,		    0, N_("Do an exact match.") },
-	{ "copying",	    'C', 0,		    0, N_("Print out the copyright license.") },
-	{ "and",	    'a', 0,		    0, N_("Conjunct filters.") },
-	{ "or",		    'o', 0,		    0, N_("Disjunct filters.") },
-	{ "not",	    '!', 0,		    0, N_("Negate the following filters.") },
-	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for version number equality.") },
-	{ "lt",		    OPT_LT, 0,		    0, N_("Version number comparison: <<.") },
-	{ "le",		    OPT_LE, 0,		    0, N_("Version number comparison: <=.") },
-	{ "gt",		    OPT_GT, 0,		    0, N_("Version number comparison: >>.") },
-	{ "ge",		    OPT_GE, 0,		    0, N_("Version number comparison: >=.") },
-	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing.") },
-	{ "quiet",	    'q', 0,		    0, N_("Do not output to stdout.") },
-	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do not output to stdout.") },
-	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files") },
-	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors") },
-        { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for") },
-	{ "whole-pkg",	    'w', 0,                 0, N_("Match only whole package names (this implies -e)") },
-        { "ensure-dctrl",   OPT_ENSURE, 0,          0, N_("Ensure that the output is in dctrl format (overridden by -n)") },
-        { "compat",         OPT_COMPAT, 0,          0, N_("Override the effect of an earlier --ensure-dctrl") },
-	{ 0 }
+	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set log level to LEVEL."), 0 },
+	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given."), 0 },
+	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage."), 0 },
+	{ 0,		    'S', 0,		    0, N_("This is a shorthand for -FSource:Package."), 0 },
+	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs."), 0 },
+	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs."), 0 },
+	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields."), 0 },
+	{ "eregex",	    'e', 0,		    0, N_("Regard the pattern as an extended POSIX regular expression."), 0 },
+	{ "regex",	    'r', 0,		    0, N_("Regard the pattern as a standard POSIX regular expression."), 0 },
+	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match."), 0 },
+	{ "invert-match",   'v', 0,		    0, N_("Show only paragraphs that do not match."), 0 },
+        { "invert-show",    'I', 0,                 0, N_("Show those fields that have NOT been selected with -s"), 0 },
+	{ "count",	    'c', 0,		    0, N_("Show only the count of matching paragraphs."), 0 },
+	{ "exact-match",    'X', 0,		    0, N_("Do an exact match."), 0 },
+	{ "copying",	    'C', 0,		    0, N_("Print out the copyright license."), 0 },
+	{ "and",	    'a', 0,		    0, N_("Conjunct filters."), 0 },
+	{ "or",		    'o', 0,		    0, N_("Disjunct filters."), 0 },
+	{ "not",	    '!', 0,		    0, N_("Negate the following filters."), 0 },
+	{ "eq",		    OPT_EQ, 0,		    0, N_("Test for version number equality."), 0 },
+	{ "lt",		    OPT_LT, 0,		    0, N_("Version number comparison: <<."), 0 },
+	{ "le",		    OPT_LE, 0,		    0, N_("Version number comparison: <=."), 0 },
+	{ "gt",		    OPT_GT, 0,		    0, N_("Version number comparison: >>."), 0 },
+	{ "ge",		    OPT_GE, 0,		    0, N_("Version number comparison: >=."), 0 },
+	{ "debug-optparse", OPT_OPTPARSE, 0,	    0, N_("Debug option parsing."), 0 },
+	{ "quiet",	    'q', 0,		    0, N_("Do not output to stdout."), 0 },
+	{ "silent",	    OPT_SILENT, 0,	    0, N_("Do not output to stdout."), 0 },
+	{ "mmap",           OPT_MMAP, 0,            0, N_("Attempt mmapping input files"), 0 },
+	{ "ignore-parse-errors", OPT_IGN_ERRS, 0,   0, N_("Ignore parse errors"), 0 },
+        { "pattern",        OPT_PATTERN, N_("PATTERN"), 0, N_("Specify the pattern to search for"), 0 },
+	{ "whole-pkg",	    'w', 0,                 0, N_("Match only whole package names (this implies -e)"), 0 },
+        { "ensure-dctrl",   OPT_ENSURE, 0,          0, N_("Ensure that the output is in dctrl format (overridden by -n)"), 0 },
+        { "compat",         OPT_COMPAT, 0,          0, N_("Override the effect of an earlier --ensure-dctrl"), 0 },
+	{ 0, 0, 0, 0, 0, 0 }
 };
 
 
@@ -801,7 +801,7 @@ int main (int argc, char * argv[])
         if (debug_optparse) {
                 fflush(stderr);
                 fputs("tokens:", stdout);
-                for (int i = 0; i < args.toks_np; i++) {
+                for (size_t i = 0; i < args.toks_np; i++) {
                         putchar(' ');
                         fputs(tokdescr(args.toks[i]), stdout);
                         if (args.strings[i] != 0) {
