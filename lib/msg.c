@@ -1,5 +1,5 @@
 /*   grep-dctrl - grep Debian control files
-     Copyright © 1999, 2004, 2008  Antti-Juhani Kaijanaho
+     Copyright © 1999, 2004, 2008, 2012  Antti-Juhani Kaijanaho
   
      This program is free software; you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
@@ -100,5 +100,5 @@ msg_primitive(const char *fname, int line, const char *fmt, va_list ap)
                 fprintf(stderr, "%s: %s: ", get_progname(), fname);
         }
         vfprintf(stderr, fmt, ap);
-        fputs("\n.", stderr);
+        fputs(".\n", stderr);
 }
