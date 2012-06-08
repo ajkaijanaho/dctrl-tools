@@ -58,17 +58,13 @@ struct fsaf_read_rv {
 static inline
 struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
 {
-	struct fsaf_read_rv rv;
-
         void fsaf_slurp(FSAF * fp, size_t len);
 
         /* Reading nothing - since offset can be bogus in this
          * situation, this could foul up our assumptions later, so
          * return already here. */
         if (len == 0) {
-                rv.b = "";
-                rv.len = 0;
-                return rv;
+                return (struct fsaf_read_rv){ .b = "", .len = 0 };
         }
 
 	/* Make sure we don't read past the EOF mark.  */
@@ -85,9 +81,10 @@ struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
 	
 	assert(offset - fp->buf_offset + len <= fp->buf_size);
 	assert(offset + len <= fp->eof_mark);
-	rv.b = fp->buf + (offset - fp->buf_offset);
-	rv.len = len;
-	return rv;
+	return (struct fsaf_read_rv){
+                .b = fp->buf + (offset - fp->buf_offset),
+                .len = len
+        };
 }
 
 /* Behaves like fsaf_read except that the result is put in a malloc'd
