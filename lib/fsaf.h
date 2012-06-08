@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2005 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2005, 2012 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,16 +35,9 @@ struct fsaf_private {
 	size_t buf_size;
 	size_t invalid_mark;
 	size_t eof_mark; /* can be (size_t)(-1) if not reached yet */
-#ifdef _POSIX_MAPPED_FILES
-	bool mapped;
-	size_t topread; /* marks the top of what has been read ahead */
-#endif
 };
 
 typedef struct fsaf_private FSAF;
-
-/* True if FSAF should not use mmap even if it is possible. */
-extern bool fsaf_mmap;
 
 /* Open a FSAF for the given fd. Only read access is supported for
  * now.  The whole file is initially valid.  */

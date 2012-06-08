@@ -342,7 +342,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		break;
 	case OPT_MMAP:
 		debug_message("parse_opt: mmap", 0);
-		fsaf_mmap = 1;
+                /* ignore */
 		break;
 	case 'i':
 		debug_message("parse_opt: i", 0);
