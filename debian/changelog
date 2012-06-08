@@ -15,8 +15,10 @@ dctrl-tools (2.23) UNRELEASED; urgency=low
   * tester.sh: Handle missing diffs gracefully.
   * lib/fsaf.c and others: Remove mmap support (recognize but ignore --mmap).
     It was only complicating matters without giving much benefit.
+  * lib/fsaf.[ch]: Make fsaf_read an inline function (50 % speedup in my
+    tests.)
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 09 Jun 2012 00:07:04 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Sat, 09 Jun 2012 00:20:02 +0300
 
 dctrl-tools (2.22.2) unstable; urgency=low
 

@@ -82,7 +82,7 @@ static void slide(FSAF *fp)
 	fp->buf_size -= delta;
 }
 
-static void slurp(FSAF * fp, size_t len)
+void fsaf_slurp(FSAF * fp, size_t len)
 {
 	assert(fp != 0);
 	assert(len > 0);
@@ -121,38 +121,6 @@ static void slurp(FSAF * fp, size_t len)
 	fp->buf_size += res;
 }
 
-//static inline
-struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
-{
-	struct fsaf_read_rv rv;
-
-        /* Reading nothing - since offset can be bogus in this
-         * situation, this could foul up our assumptions later, so
-         * return already here. */
-        if (len == 0) {
-                rv.b = "";
-                rv.len = 0;
-                return rv;
-        }
-
-	/* Make sure we don't read past the EOF mark.  */
-	if (offset + len > fp->eof_mark) len = fp->eof_mark - offset;
-
-        /* Ensure that we have enough data in the buffer. */
-        assert(offset >= fp->buf_offset);
-        if (offset - fp->buf_offset + len > fp->buf_size) {
-                slurp(fp, offset - fp->buf_offset + len - fp->buf_size);
-                if (offset - fp->buf_offset + len > fp->buf_size) {
-                        len = fp->buf_size - (offset - fp->buf_offset);
-                }
-        }
-	
-	assert(offset - fp->buf_offset + len <= fp->buf_size);
-	assert(offset + len <= fp->eof_mark);
-	rv.b = fp->buf + (offset - fp->buf_offset);
-	rv.len = len;
-	return rv;
-}
 
 void fsaf_invalidate(FSAF * fp, size_t offset)
 {

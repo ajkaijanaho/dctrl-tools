@@ -54,7 +54,41 @@ void fsaf_close(FSAF *);
 struct fsaf_read_rv {
 	char const * b;
 	size_t len;
-} fsaf_read(FSAF *, size_t offset, size_t len);
+};
+static inline
+struct fsaf_read_rv fsaf_read(FSAF * fp, size_t offset, size_t len)
+{
+	struct fsaf_read_rv rv;
+
+        void fsaf_slurp(FSAF * fp, size_t len);
+
+        /* Reading nothing - since offset can be bogus in this
+         * situation, this could foul up our assumptions later, so
+         * return already here. */
+        if (len == 0) {
+                rv.b = "";
+                rv.len = 0;
+                return rv;
+        }
+
+	/* Make sure we don't read past the EOF mark.  */
+	if (offset + len > fp->eof_mark) len = fp->eof_mark - offset;
+
+        /* Ensure that we have enough data in the buffer. */
+        assert(offset >= fp->buf_offset);
+        if (offset - fp->buf_offset + len > fp->buf_size) {
+                fsaf_slurp(fp, offset - fp->buf_offset + len - fp->buf_size);
+                if (offset - fp->buf_offset + len > fp->buf_size) {
+                        len = fp->buf_size - (offset - fp->buf_offset);
+                }
+        }
+	
+	assert(offset - fp->buf_offset + len <= fp->buf_size);
+	assert(offset + len <= fp->eof_mark);
+	rv.b = fp->buf + (offset - fp->buf_offset);
+	rv.len = len;
+	return rv;
+}
 
 /* Behaves like fsaf_read except that the result is put in a malloc'd
  * zero-terminated buffer.  NULL return value indicates either memory
