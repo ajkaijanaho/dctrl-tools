@@ -133,13 +133,7 @@ join-dctrl/join-dctrl : join-dctrl/join-dctrl.o libdctrl.a
 	$(CC) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 %.o : %.c
-	$(CC) $(ALL_CFLAGS) -c -o $@ $<
-
-%.d: %.c
-	$(CC) -M $(ALL_CFLAGS) $< > $@.$$$$; \
-	   sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
-	   rm -f $@.$$$$
-
+	$(CC) $(ALL_CFLAGS) -MD -MF $*.d -c -o $@ $<
 
 libdctrl.a : $(libobj)
 	ar cr $@ $^
@@ -214,9 +208,5 @@ maintainer-clean : distclean
 tags :
 	etags *.[hc]
 
-ifeq ($(MAKECMDGOALS),clean)
-else ifeq ($(MAKECMDGOALS),distclean)
-else ifeq  ($(MAKECMDGOALS),maintainer-clean)
-else
-include $(obj:.o=.d)
-endif
+-include $(obj:.o=.d)
+
