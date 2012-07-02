@@ -27,7 +27,11 @@ struct field_attr {
 	char const *const name;
 	const size_t namelen;
 	const size_t inx;
-        unsigned application_data;
+        _Bool is_show_field; /* whether this field is (globally) selected
+                                for showing */
+        size_t backup_field; /* index to field whose value should be
+                                used if this field is empty, or
+                                (size_t)-1 */
 };
 
 void fieldtrie_init(void);

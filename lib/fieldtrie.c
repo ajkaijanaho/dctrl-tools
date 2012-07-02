@@ -60,7 +60,8 @@ struct field_attr *fieldtrie_insert_n(char const * s, size_t slen)
 	*(size_t*)&b->attr.namelen = slen;
         assert(trie.nextfree < sizeof trie.field_map / sizeof *trie.field_map);
 	*(size_t*)&b->attr.inx = trie.nextfree++;
-        b->attr.application_data = 0;
+        b->attr.is_show_field = 0;
+        b->attr.backup_field = (size_t)-1;
 	unsigned char c = tolower((unsigned char)(b->attr.name[0]));
 	b->next = trie.fields[c];
 	trie.fields[c] = b;

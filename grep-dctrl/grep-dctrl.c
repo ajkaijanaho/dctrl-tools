@@ -171,13 +171,6 @@ struct arguments {
         size_t show_fields[MAX_FIELDS];
 };
 
-#define IS_SHOW_FIELD(field_app_data) ((field_app_data) & 1)
-#define SET_SHOW_FIELD(field_app_data,val) \
-  ((field_app_data) = ((field_app_data & ~1) | val))
-#define GET_BACKUP_FIELD(field_app_data) (((field_app_data & ~0)) == (unsigned)-1 ? (size_t)-1 : (size_t)(field_app_data) >> 1)
-#define SET_BACKUP_FIELD(field_app_data,val) \
-  ((field_app_data) = (((field_app_data)&1) | (val<<1)))
-
 #define APPTOK(tok) do { apptok(args, (tok)); } while (0)
 
 static void apptok(struct arguments * args, const int tok)
@@ -252,13 +245,13 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         if (fa == description_attr) {
                                 args->description_selected = true;
                         }
-                        SET_SHOW_FIELD(fa->application_data, true);
+                        fa->is_show_field = true;
 
                         size_t repl_inx = repl == NULL
                                 ? (size_t)(-1)
                                 : fieldtrie_insert(repl)->inx;
 
-                        SET_BACKUP_FIELD(fa->application_data, repl_inx);
+                        fa->backup_field = repl_inx;
 
 			++args->num_show_fields;
 		}
@@ -749,7 +742,7 @@ static void show_field(struct arguments *args,
         struct field_data fds =
                 find_field_wr(para,
                               fa->inx,
-                              GET_BACKUP_FIELD(fa->application_data));
+                              fa->backup_field);
         for (struct field_datum *fd = fds.first; fd != NULL; fd = fd->next) {
                 struct fsaf_read_rv r =
                         fsaf_read(para->common->fp,
@@ -828,7 +821,7 @@ int main (int argc, char * argv[])
 		}
 		message(L_INFORMATIONAL, 0,
 			_("Adding \"Description\" to selected output fields because of -d"));
-                SET_SHOW_FIELD(description_attr->application_data, 1);
+                description_attr->is_show_field = 1;
                 args.show_fields[args.num_show_fields] = description_attr->inx;
 		++args.num_show_fields;
 	}
@@ -925,7 +918,7 @@ int main (int argc, char * argv[])
                                      j++) {
                                         struct field_attr *fa = 
                                                 fieldtrie_get(j);
-                                        if (IS_SHOW_FIELD(fa->application_data)) {
+                                        if (fa->is_show_field) {
                                                 continue;
                                         }
                                         show_field(&args, &para, fa);
@@ -936,8 +929,7 @@ int main (int argc, char * argv[])
                                         size_t inx = args.show_fields[j];
                                         struct field_attr *fa = 
                                                 fieldtrie_get(inx);
-                                        assert(IS_SHOW_FIELD
-                                               (fa->application_data));
+                                        assert(fa->is_show_field);
                                         show_field(&args, &para, fa);
                                 }
                                 if ((args.show_field_name &&
