@@ -773,6 +773,39 @@ static void show_field(struct arguments *args,
         }
 }
 
+static void print_para(struct arguments *args,
+                       struct paragraph *para)
+{
+        if (args->num_show_fields == 0) {
+                struct fsaf_read_rv r = get_whole_para(para);
+                fwrite(r.b, 1, r.len, stdout);
+                putchar('\n');
+                putchar('\n');
+                return;
+        }
+        if (args->invert_show) {
+                for (size_t j = 0;
+                     j < fieldtrie_count() && j < para->nfields; 
+                     j++) {
+                        struct field_attr *fa = fieldtrie_get(j);
+                        if (fa->is_show_field) continue;
+                        show_field(args, para, fa);
+                }
+        } else {
+                for (size_t j = 0; j < args->num_show_fields; j++) {
+                        size_t inx = args->show_fields[j];
+                        struct field_attr *fa = fieldtrie_get(inx);
+                        assert(fa->is_show_field);
+                        show_field(args, para, fa);
+                }
+                if ((args->show_field_name && args->ensure_dctrl) ||
+                    args->num_show_fields > 1) {
+                        puts("");
+                }
+        }
+}
+
+
 static struct argp argp = { .options = options,
 			    .parser = parse_opt,
 			    .args_doc = argsdoc,
@@ -904,40 +937,8 @@ int main (int argc, char * argv[])
 				++count;
 				continue;
 			}
-			if (args.num_show_fields == 0) {
-				struct fsaf_read_rv r = get_whole_para(&para);
-				fwrite(r.b, 1, r.len, stdout);
-				putchar('\n');
-				putchar('\n');
-				continue;
-			}
-                        if (args.invert_show) {
-                                for (size_t j = 0;
-                                     j < fieldtrie_count() &&
-                                             j < para.nfields; 
-                                     j++) {
-                                        struct field_attr *fa = 
-                                                fieldtrie_get(j);
-                                        if (fa->is_show_field) {
-                                                continue;
-                                        }
-                                        show_field(&args, &para, fa);
-                                }
-                        } else {
-                                for (size_t j = 0;
-                                     j < args.num_show_fields; j++) {
-                                        size_t inx = args.show_fields[j];
-                                        struct field_attr *fa = 
-                                                fieldtrie_get(inx);
-                                        assert(fa->is_show_field);
-                                        show_field(&args, &para, fa);
-                                }
-                                if ((args.show_field_name &&
-                                     args.ensure_dctrl) ||
-                                    args.num_show_fields > 1) puts("");
-                        }
-		}
-
+                        print_para(&args, &para);
+                }
 		fsaf_close(fp);
 		close_ifile(fname, fd);
 	}
