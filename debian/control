@@ -15,6 +15,7 @@ Suggests: apt, debtags
 Conflicts: grep-dctrl
 Replaces: grep-dctrl
 Provides: grep-dctrl
+Multi-Arch: foreign
 Description: Command-line tools to process Debian package information
  Debian package information is generally stored in files having a
  special file format, dubbed the Debian control file format (the dctrl

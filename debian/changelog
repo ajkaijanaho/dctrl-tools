@@ -27,8 +27,11 @@ dctrl-tools (2.23) UNRELEASED; urgency=low
     Thanks to Jakub Wilk for pointing out the version spec was broken.
     It also turns out to be obsolete.
   * Some code cleanup.
+  * debian/control: Add "Multi-Arch: foreign"
+    Closes: 693474 (Add multiarch metadata)
+    Reported by Wookey <wookey@wookware.org>.
 
- -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 07 May 2013 22:36:28 +0300
+ -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 07 May 2013 22:42:37 +0300
 
 dctrl-tools (2.22.2) unstable; urgency=low
 
