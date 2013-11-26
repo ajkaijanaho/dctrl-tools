@@ -1,6 +1,6 @@
-.TH GREP-DCTRL 1 2012-04-22 "Debian Project" "Debian user's manual"
+.TH GREP-DCTRL 1 2013-11-26 "Debian Project" "Debian user's manual"
 \" Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2011,
-\"               2012
+\"               2012, 2013
 \"               Antti-Juhani Kaijanaho <ajk@debian.org>
 \"      This program is free software; you can redistribute it and/or modify
 \"      it under the terms of the GNU General Public License as published by
@@ -252,6 +252,16 @@ escaped for most shells.  Filter modifiers can be given before the
 opening parentheses; they will be treated as if they had been repeated
 for each simple filter inside the parentheses.
 .SS Output format modifiers
+.IP "\fB\-l\fR, \fB\-\-files\-with\-matches"
+Output only the file names, each on its own line, of those files that contain
+at least one matching paragraph.  This is incompatible with the
+.BR \-v " and " \-L
+options, and all other output format modifiers will be ignored.
+.IP "\fB\-L\fR, \fB\-\-files\-without\-matches"
+Output only the file names, each on its own line, of those files that do not
+contain any matching paragraphs.  This is incompatible with the
+.BR \-v " and " \-l
+options, and all other output format modifiers will be ignored.
 .IP "\fB\-s \fIfield\fR,\fIfield\fR, ... | \fB\-\-show\-field=\fIfield\fR,\fIfield\fR, ..."
 Show only the body of these
 .IR field s
@@ -338,7 +348,7 @@ is ignored in its entirety, and the next paragraph is assumed to start
 after the first newline since the location of the error.
 .IP "\fB\-\-debug\-optparse"
 Show how the current command line has been parsed. 
-.IP "\fB\-l \fIlevel\fR, \fB\-\-errorlevel=\fIlevel"
+.IP "\fB\-\-errorlevel=\fIlevel"
 Set log level to
 .IR level .
 .I level
@@ -572,7 +582,7 @@ There were more opening than closing parentheses in the given
 filter.
 .IP "\fBno such log level"
 The argument to
-.B \-l
+.B \-\-errorlevel
 was invalid.
 .IP "\fBtoo many file names"
 The number of file names specified in the command line exceeded a

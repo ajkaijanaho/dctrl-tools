@@ -1,6 +1,6 @@
 /*  dctrl-tools - Debian control file inspection tools
     Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
-                2010, 2011, 2012
+                2010, 2011, 2012, 2013
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -63,17 +63,20 @@ enum {
         OPT_IGN_ERRS,
         OPT_ENSURE,
         OPT_COMPAT,
-        OPT_PATTERN
+        OPT_PATTERN,
+        OPT_ERRORLEVEL,
 };
 
 static struct argp_option options[] = {
-	{ "errorlevel",	    'l', N_("LEVEL"),	    0, N_("Set log level to LEVEL."), 0 },
+	{ "errorlevel",	    OPT_ERRORLEVEL, N_("LEVEL"), 0, N_("Set log level to LEVEL."), 0 },
 	{ "field",	    'F', N_("FIELD,FIELD,..."), 0, N_("Restrict pattern matching to the FIELDs given."), 0 },
 	{ 0,		    'P', 0,		    0, N_("This is a shorthand for -FPackage."), 0 },
 	{ 0,		    'S', 0,		    0, N_("This is a shorthand for -FSource:Package."), 0 },
 	{ "show-field",	    's', N_("FIELD,FIELD,..."), 0, N_("Show only the body of these fields from the matching paragraphs."), 0 },
 	{ 0,		    'd', 0,		    0, N_("Show only the first line of the \"Description\" field from the matching paragraphs."), 0 },
 	{ "no-field-names", 'n', 0,		    0, N_("Suppress field names when showing specified fields."), 0 },
+        { "files-with-matches", 'l', 0,             0, N_("Show only the names of the files that contain matching paragraphs."), 0 },
+        { "files-without-matches", 'L', 0,          0, N_("Show only the names of the files that do not contain matching paragraphs."), 0 },
 	{ "eregex",	    'e', 0,		    0, N_("Regard the pattern as an extended POSIX regular expression."), 0 },
 	{ "regex",	    'r', 0,		    0, N_("Regard the pattern as a standard POSIX regular expression."), 0 },
 	{ "ignore-case",    'i', 0,		    0, N_("Ignore case when looking for a match."), 0 },
@@ -157,6 +160,8 @@ struct arguments {
 	bool invert_match;
         /* Show fields that are NOT listed? */
         bool invert_show;
+        /* Show only file name? */
+        bool only_file_name;
 	/* First unused position in toks.  */
 	size_t toks_np;
         /* Token read position. */
@@ -208,6 +213,13 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 args->ensure_dctrl = false;
                 break;
 	case 'v':
+                if (args->only_file_name) {
+                        message(L_FATAL, 0,
+                                args->invert_match
+                                ? _("-v is incompatible with -L")
+                                : _("-v is incompatible with -l"));
+                        fail();
+                }
 		args->invert_match = true;
 		break;
 	case 'c':
@@ -220,6 +232,31 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 	case 'n':
 		debug_message("parse_opt: n", 0);
 		args->show_field_name = false;
+		break;
+	case 'l':
+                if (args->only_file_name) {
+                        message(L_FATAL, 0,
+                                _("only one -l or -L is allowed"));
+                        fail();
+                }
+                if (args->invert_match) {
+                        message(L_FATAL, 0, _("-l is incompatible with -v"));
+                        fail();
+                }
+		args->only_file_name = true;
+		break;
+	case 'L':
+                if (args->only_file_name) {
+                        message(L_FATAL, 0,
+                                _("only one -l or -L is allowed"));
+                        fail();
+                }
+                if (args->invert_match) {
+                        message(L_FATAL, 0, _("-L is incompatible with -v"));
+                        fail();
+                }
+		args->only_file_name = true;
+                args->invert_match = true;
 		break;
 	case 'd':
 		args->short_descr = true;
@@ -258,7 +295,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 		free(carg);
 	}
 		break;
-	case 'l': {
+	case OPT_ERRORLEVEL: {
 		int ll = str2loglevel(arg);
 		if (ll < 0)
 		{
@@ -922,13 +959,24 @@ int main (int argc, char * argv[])
 		para_init(&pp, &para);
 		while (1) {
 			para_parse_next(&para);
-			if (para_eof(&pp)) break;
-			if ((args.invert_match 
-			     || !does_para_satisfy(args.p, &para))
-			    && (!args.invert_match 
-				|| does_para_satisfy(args.p, &para))) {
-				continue;
-			}
+			if (para_eof(&pp)) {
+                                if (args.only_file_name && args.invert_match) {
+                                        printf("%s\n", fname.s);
+                                        found = true;
+                                }
+                                break;
+                        }
+                        bool sat = does_para_satisfy(args.p, &para);
+                        if (args.only_file_name) {
+                                if (!sat) continue;
+                                if (!args.invert_match) {
+                                        printf("%s\n", fname.s);
+                                        found = true;
+                                }
+                                break;
+                        }
+                        if (sat == args.invert_match) continue;
+
 			if (args.quiet) {
 				exit(0);
 			}
@@ -937,6 +985,7 @@ int main (int argc, char * argv[])
 				++count;
 				continue;
 			}
+
                         print_para(&args, &para);
                 }
 		fsaf_close(fp);
