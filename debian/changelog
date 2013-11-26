@@ -2,6 +2,7 @@ dctrl-tools (2.24) UNRELEASED; urgency=low
 
   * grep-dctrl: Implement -l and -L as in grep.
     (This changes the meaning of -l, but I doubt any scripts have relied on it.)
+  * Add a test case for grep-dctrl -v.
 
  -- Antti-Juhani Kaijanaho <ajk@debian.org>  Tue, 26 Nov 2013 12:10:51 +0200
 
