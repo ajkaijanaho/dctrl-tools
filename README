@@ -4,65 +4,11 @@ Developers and users interested in the future of dctrl-tools
 (grep-dctrl and friends) are encouraged to subscribe to the
 dctrl-tools-devel mailing list at
   http://lists.alioth.debian.org/mailman/listinfo/dctrl-tools-devel
-Early versions are available in the experimental distribution of
-Debian.
+
 
 
                           Source management
 
-Source is managed with git under collab-maint/dctrl-tools.git.  If you
-are a Debian developer or have collab-maint guest privileges, you can
-do
-  git clone ssh://USERNAME@git.debian.org/git/collab-maint/dctrl-tools.git
-For anonymous checkouts, use
-  git clone http://git.debian.org/git/collab-maint/dctrl-tools.git
+Upstream source is managed with git in GitHub
+  https://github.com/ajkaijanaho/dctrl-tools
 
-Anybody may submit proposed changes as git-format-patch(1) mails to
-the mailing list.
-
-Rules of conduct for people with push access to the repository:
-
-  - Commits should be signed off by the submitter and anybody who
-    contributed copyrightable stuff to that commit; a line of the form
-
-      Signed-off-by: Contributor's Name <contributors@email.example>
-
-    in the commit message signifies that the contributor identified on
-    that line asserts the Developer's Certificate of Origin 1.1 for
-    that particular contribution.
-
-    The authoritative version of the Developer's Certificate of Origin
-    for this project is in the Git blob
-    c930ac94c745efafe5a6fb4bbe12def76b3af994; Antti-Juhani Kaijanaho
-    believes that it is identical to the document of the same name
-    used in Linux and other projects.  That blob can be accessed in a
-    Git repository that contains it by the command git-cat-file blob
-    c930ac94c745efafe5a6fb4bbe12def76b3af994
-
-  - It is good form to discuss nontrivial changes on the mailing list
-    (see above) before pushing so no reverts have to be made.
-
-  - Simple bugfixes and translation updates may be pushed by anybody
-    at any time.
-
-  - Anything committed or merged to master (and any release
-    maintenance branches) must compile and pass the test suite at
-    least on the committer or merger's development machine; use topic
-    branches for instable development.
-
-  - Topic branches should not be made public on the collab-maint
-    repository.  Instead, send patch sets to the list when you
-    want to publish.
-
-  - Include an update of debian/changelog in your commits.  One-line
-    summary of the commit is sufficient, as you can elaborate in the
-    commit log and in comments you might add to the source.
-    
-  - Make sure that the distribution in debian/changelog is UNRELEASED
-    unless the commit is about preparing a release; the top line in
-    debian/changelog should look like
-
-      dctrl-tools (2.12) UNRELEASED; urgency=low
-
-    (where 2.12 is the expected version number of the next release,
-    and "low" may be replaced by any other valid urgency value).
