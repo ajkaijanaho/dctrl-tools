@@ -1,0 +1,5 @@
+Version 2.24:
+  - New options -l and -L like in grep
+  - Fixed join-dctrl without -o (Debian #679442)
+  - Fixed grep-dctrl -I (Debian #775351)
+
