@@ -1,6 +1,6 @@
 
-version := $(shell dpkg-parsechangelog | grep '^Version' | cut -b10-)
-maintainer := "$(shell grep ^Maintainer: debian/control | cut -b13-)"
+version := 2.24
+maintainer := "Antti-Juhani Kaijanaho <antti-juhani@kaijanaho.fi>"
 prefix = /usr/local
 exec_prefix = $(prefix)
 sysconfdir = $(prefix)/etc
