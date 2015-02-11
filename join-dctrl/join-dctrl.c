@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2007, 2008, 2012 Antti-Juhani Kaijanaho
+    Copyright © 2007, 2008, 2012, 2015 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -206,7 +206,23 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
 void print_para_config(struct arguments *args, para_t para[], size_t just_this)
 {
         if (args->num_show_fields == 0) {
-                assert(false); // unimplemented as of yet
+                for (size_t i = 0; i < args->num_fnames; i++) {
+                        size_t n = para_num_fields(&para[i]);
+                        for (size_t j = 0; j < n; j++) {
+                                for (struct field_datum * fd =
+                                             find_field(&para[i], j).first;
+                                     fd != NULL; fd = fd->next) {
+                                        struct fsaf_read_rv fld =
+                                                fsaf_read(para[i].common->fp,
+                                                          fd->name_start,
+                                                          fd->end -
+                                                          fd->name_start);
+                                        fwrite(fld.b, 1, fld.len, stdout);
+                                        putchar('\n');
+                                }
+                        }
+                }
+                putchar('\n');
                 return;
         }
         for (size_t i = 0; i < args->num_show_fields; i++) {

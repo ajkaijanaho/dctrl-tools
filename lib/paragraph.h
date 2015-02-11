@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2003, 2004, 2005, 2010, 2011 Antti-Juhani Kaijanaho
+    Copyright © 2003, 2004, 2005, 2010, 2011, 2015 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -68,6 +68,11 @@ void para_parser_init(para_parser_t *, FSAF *,
 void para_init(para_parser_t *, para_t *);
 
 void para_parse_next(para_t *);
+
+static inline
+size_t para_num_fields(para_t *p) {
+        return p->nfields;
+}
 
 static inline
 struct fsaf_read_rv get_whole_para(para_t * p)
