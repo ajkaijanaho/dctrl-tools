@@ -1,0 +1,30 @@
+Package: glotski
+Priority: optional
+Section: gnome
+Installed-Size: 164
+Maintainer: Hwei Sheng Teoh <hsteoh@debian.org>
+Architecture: amd64
+Version: 0.2-4
+Depends: gdk-imlib11, libart2 (>= 1.2.13-5), libaudiofile0 (>= 0.2.3-4), libc6 (>= 2.3.5-1), libdb3 (>= 3.2.9), libesd0 (>= 0.2.35) | libesd-alsa0 (>= 0.2.35), libglib1.2 (>= 1.2.0), libgnome32 (>= 1.2.13-5), libgnomesupport0 (>= 1.2.13-5), libgnomeui32 (>= 1.4.2-3), libgtk1.2 (>= 1.2.10-4), libice6, libsm6, libx11-6, libxext6, libxi6
+Filename: pool/main/g/glotski/glotski_0.2-4_amd64.deb
+Size: 26278
+MD5sum: 77c6a1acc37b1fe5328c5991e5867f62
+SHA1: a3b066c1e4047595e931644d10f2907e93a503e7
+SHA256: f5be012e795d3019ff44d4040a05d4def050bbae908e79c4d52600a3593dd6ef
+Tag: game::puzzle, interface::x11, suite::gnome, uitoolkit::gtk, use::gameplaying, x11::application
+
+Package: glotski
+Priority: optional
+Section: gnome
+Installed-Size: 164
+Maintainer: Hwei Sheng Teoh <hsteoh@debian.org>
+Architecture: amd64
+Version: 0.2-4
+Depends: gdk-imlib11, libart2 (>= 1.2.13-5), libaudiofile0 (>= 0.2.3-4), libc6 (>= 2.3.5-1), libdb3 (>= 3.2.9), libesd0 (>= 0.2.35) | libesd-alsa0 (>= 0.2.35), libglib1.2 (>= 1.2.0), libgnome32 (>= 1.2.13-5), libgnomesupport0 (>= 1.2.13-5), libgnomeui32 (>= 1.4.2-3), libgtk1.2 (>= 1.2.10-4), libice6, libsm6, libx11-6, libxext6, libxi6
+Filename: pool/main/g/glotski/glotski_0.2-4_amd64.deb
+Size: 26278
+MD5sum: 77c6a1acc37b1fe5328c5991e5867f62
+SHA1: a3b066c1e4047595e931644d10f2907e93a503e7
+SHA256: f5be012e795d3019ff44d4040a05d4def050bbae908e79c4d52600a3593dd6ef
+Tag: game::puzzle, interface::x11, suite::gnome, uitoolkit::gtk, use::gameplaying, x11::application
+

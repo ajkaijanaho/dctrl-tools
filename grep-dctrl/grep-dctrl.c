@@ -1,6 +1,6 @@
 /*  dctrl-tools - Debian control file inspection tools
     Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
-                2010, 2011, 2012, 2013
+                2010, 2011, 2012, 2013, 2015
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -828,6 +828,7 @@ static void print_para(struct arguments *args,
                         if (fa->is_show_field) continue;
                         show_field(args, para, fa);
                 }
+                puts("");
         } else {
                 for (size_t j = 0; j < args->num_show_fields; j++) {
                         size_t inx = args->show_fields[j];
