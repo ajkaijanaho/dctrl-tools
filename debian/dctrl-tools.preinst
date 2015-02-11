@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-
-dpkg-maintscript-helper rm_conffile \
-    /etc/grep-dctrl.rc 2.20.1 dctrl-tools -- "$@"
-
-#DEBHELPER#
