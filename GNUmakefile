@@ -1,5 +1,5 @@
 
-version := 2.24
+version := 2.25
 maintainer := "Antti-Juhani Kaijanaho <antti-juhani@kaijanaho.fi>"
 prefix = /usr/local
 exec_prefix = $(prefix)
