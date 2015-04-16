@@ -1,11 +1,14 @@
 Things left to be done on grep-dctrl:
    * Write a good Texinfo manual.
    * Do translations of the messages to other languages
-     (we now have Catalan, English and Finnish).
    * Fix any bugs.
    * Add requested features (see 
 http://bugs.debian.org/cgi-bin/pkgreport.cgi?which=pkg&data=grep-dctrl&sev-inc=wishlist
      )
 
+Some additional features that would be useful:
+    * a frontend accepting a SQL-like query language
+    * expr-dctrl for arithmetic et al
+
 If you want to help with one of these (or you have some other ideas
-for grep-dctrl), contact <ajk@debian.org>.
+for grep-dctrl), contact <antti-juhani@kaijanaho.fi>
