@@ -935,6 +935,10 @@ int main (int argc, char * argv[])
                                 fname = (struct ifile){
                                         .mode = m_exec,
                                         .s = "debtags dumpavail" };
+                        } else if (strcmp(argv0, "grep-sources") == 0) {
+                                fname = (struct ifile){
+                                        .mode = m_exec,
+                                        .s = "apt-get indextargets --format '$(FILENAME)' 'Created-By: Sources' | xargs /usr/lib/apt/apt-helper cat-file" };
 			} else {
                                 message(L_FATAL, 0,
                                         _("executable name '%s' is not recognised"),
