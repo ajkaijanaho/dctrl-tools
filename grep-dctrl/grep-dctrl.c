@@ -1,6 +1,6 @@
 /*  dctrl-tools - Debian control file inspection tools
     Copyright © 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
-                2010, 2011, 2012, 2013, 2015
+                2010, 2011, 2012, 2013, 2015, 2018
                 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
@@ -641,7 +641,7 @@ static struct predicate * parse_prim(struct arguments * args,
                                           "simple filter are not allowed"));
                                 fail();
                         }
-                        /* passthrough */
+                        /* fallthrough */
                 case TOK_STR:
                         if (pattern != 0) goto loop_done;
                         pattern = get_string(args);
