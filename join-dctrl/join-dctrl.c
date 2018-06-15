@@ -1,5 +1,5 @@
 /*  dctrl-tools - Debian control file inspection tools
-    Copyright © 2007, 2008, 2012, 2015 Antti-Juhani Kaijanaho
+    Copyright © 2007, 2008, 2012, 2015, 2018 Antti-Juhani Kaijanaho
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -350,7 +350,8 @@ int main(int argc, char * argv[])
                         size_t k;
                         if (r < 0) {
                                 k = i - 1;
-                        } else if (r > 0) {
+                        } else {
+                                assert(r > 0);
                                 k = i;
                         }
 
