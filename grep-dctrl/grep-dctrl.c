@@ -468,11 +468,11 @@ static const char *tokdescr(int tok) {
 	switch (tok) {
         case TOK_EOD:
                 return "EOD";
-	case TOK_NOT: 
+	case TOK_NOT:
 		return "!";
 	case TOK_AND:
 		return "-a";
-	case TOK_OR : 
+	case TOK_OR :
 		return "-o";
 	case TOK_LP :
 		return "(";
@@ -655,16 +655,16 @@ static struct predicate * parse_prim(struct arguments * args,
         if (!nonempty) {
                 unexpected(get_token(args));
         }
-        
+
         if (pattern == 0) {
                 message(L_FATAL, 0, _("A pattern is mandatory"));
                 fail();
         }
-        
+
         if (strlist_is_empty(pq.fields)) {
                 strlist_append(pq.fields, 0);
          }
-        
+
         for (struct strlist_iterator it = strlist_begin(pq.fields);
              !strlist_iterator_at_end(it); strlist_iterator_next(&it)) {
                 struct atom * atom = malloc(sizeof *atom);
@@ -680,12 +680,12 @@ static struct predicate * parse_prim(struct arguments * args,
                 struct predicate *tmp = predicate_ATOM(atom);
                 rv = rv != 0 ? predicate_OR(rv, tmp) : tmp;
         }
-        
+
 finally:
         strlist_restore(mem);
         return rv;
 failmode:
-        message(L_FATAL, 0, _("inconsistent modifiers of simple filters")); 
+        message(L_FATAL, 0, _("inconsistent modifiers of simple filters"));
         fail();
         rv = 0;
         goto finally;
@@ -822,7 +822,7 @@ static void print_para(struct arguments *args,
         }
         if (args->invert_show) {
                 for (size_t j = 0;
-                     j < fieldtrie_count() && j < para->nfields; 
+                     j < fieldtrie_count() && j < para->nfields;
                      j++) {
                         struct field_attr *fa = fieldtrie_get(j);
                         if (fa->is_show_field) continue;
@@ -995,4 +995,3 @@ int main (int argc, char * argv[])
 	if (args.count) printf("%zi\n", count);
 	return errors_reported() ? 2 : found || args.count ? 0 : 1;
 }
-
