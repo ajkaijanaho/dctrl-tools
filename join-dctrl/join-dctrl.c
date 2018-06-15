@@ -53,7 +53,7 @@ struct arguments {
         size_t unpairables; /* Print unpairable paragraphs from ...
                                0 nowhere,
                                1 the first file
-                               2 the second file 
+                               2 the second file
                             */
         struct field_attr *join_field[MAX_FNAMES];
         size_t num_fnames;
@@ -101,7 +101,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         if (str == NULL) fatal_enomem(0);
                         args->join_field[i] = fieldtrie_insert(str);
                 }
-                
+
         }
                 break;
         case 'o': {
@@ -109,7 +109,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                 if (carg == 0) fatal_enomem(0);
                 for (char * s = strtok(carg, ","); s != 0; s = strtok(0, ",")){
                         if (args->num_show_fields >= MAX_FIELDS) {
-                                message(L_FATAL, 0, 
+                                message(L_FATAL, 0,
                                         _("too many output fields"));
                                 fail();
                         }
@@ -124,7 +124,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         }
                         char * fld = strchr(s, '.');
                         if (fld == NULL) {
-                                message(L_FATAL, 0, 
+                                message(L_FATAL, 0,
                                         _("missing '.' in output "
                                           "field specification"));
                                 fail();
@@ -142,7 +142,7 @@ static error_t parse_opt (int key, char * arg, struct argp_state * state)
                         } else if (s[0] == '2' && s[1] == '\0') {
                                 file_inx = 1;
                         } else {
-                                message(L_FATAL, 0, 
+                                message(L_FATAL, 0,
                                         _("expected either '1.' or "
                                           "'2.' at the start of the "
                                           "field specification"));
@@ -291,13 +291,13 @@ int main(int argc, char * argv[])
         FSAF *fp[MAX_FNAMES];
         para_parser_t pp[MAX_FNAMES];
         para_t para[MAX_FNAMES];
-        
+
         for (size_t i = 0; i < args.num_fnames; i++) {
                 fd[i] = open_ifile(args.fname[i]);
                 if (fd[i] == -1) fail();
                 if (!chk_ifile(args.fname[i], fd[i])) fail();
                 fp[i] = fsaf_fdopen(fd[i], args.fname[i].s);
-                
+
                 para_parser_init(&pp[i], fp[i], true, false,
                                  args.num_show_fields == 0);
                 para_init(&pp[i], &para[i]);
@@ -311,7 +311,7 @@ int main(int argc, char * argv[])
                                         _("cannot join a stream with itself"));
                                 fail();
                         }
-                } 
+                }
         }
 
         while (true) {
