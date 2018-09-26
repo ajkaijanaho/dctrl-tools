@@ -56,7 +56,7 @@ all :	all-no-mo mo translated-man
 all-no-mo :	sync-available/sync-available \
 		man/grep-dctrl.1 \
 		$(exe)
-aliases = grep-status grep-available grep-aptavail grep-debtags
+aliases = grep-status grep-available grep-aptavail grep-debtags grep-sources
 
 install :
 	$(INSTALL_DIR) $(DESTDIR)$(sbindir)

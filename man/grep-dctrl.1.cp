@@ -49,7 +49,8 @@ given a useful input file.
 The programs
 .BR grep\-available ,
 .BR grep\-status ,
-.B grep\-aptavail
+.B grep\-aptavail,
+.B grep\-sources,
 and
 .B grep\-debtags
 are aliases of (actually, symbolic links to)
@@ -62,7 +63,9 @@ and
 .I status
 files, the
 .B apt\-cache dumpavail
-output and the
+output,
+.B all APT source repositories,
+and the
 .B debtags dumpavail
 output, respectively.
 .PP
