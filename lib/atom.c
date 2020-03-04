@@ -23,7 +23,7 @@
 #include "version.h"
 
 #define RE_PKG_BEGIN	"(^| )"
-#define RE_PKG_END	"([, \\(]|$)"
+#define RE_PKG_END	"([, \\(\n<]|$)"
 
 void atom_finish(struct atom * atom)
 {
